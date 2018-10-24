@@ -44,7 +44,7 @@ unsigned short vgs_th_find()
     return 256;
 }
 
-double *nmos_sweep_slow()
+int nmos_sweep_slow()
 {
     //returning a pointer to the array because C doesn't allow the 
     //returning of arrays.
@@ -65,7 +65,7 @@ double *nmos_sweep_slow()
     {
         strcpy(error_msg, "No Vgs_th Found");
         //DisplayText(error_msg);
-        return 0;
+        return -1;
     }
     
     
@@ -146,16 +146,8 @@ double *nmos_sweep_slow()
     }
     */
     
-    
     Output_data = &Output_data_nmos_slow_mat[0][0][0];
-    return Output_data;
-}
-
-int threedim_matrix_element_retrival(int *pointer, int row_size, int column_size, int depth_index, int row_index, int column_index)
-{
-    return *(pointer + ( (row_size * column_size * depth_index) + (column_size * row_index) + column_index));
-    //Because 3d arrays are stored "one-dimensionally" they can be accessed by a single pointer
-    //This pointer however has to be adjusted according to the dimensions of the array as well as index
+    return 0;
 }
 
 int main(void)
@@ -165,11 +157,11 @@ int main(void)
     VDAC8_GS_Start();
     VDAC8_DS_Start();
     ADC_SAR_1_Start();
-    double *data;
+    int return_code;
     
     for(;;)
     {
-        data = nmos_sweep_slow();
+        return_code = nmos_sweep_slow();
     }
 }
 
