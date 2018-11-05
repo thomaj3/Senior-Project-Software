@@ -13,131 +13,139 @@
 #include "stdio.h"
 #include "math.h"
 #include "string.h"
-#define Vgs_step 51
 #define Vds_step_slow 1
 #define Vds_step_fast 5
-#define VDAC_GS_MAX 188
+#define VDAC_GS_MAX 255
 #define VDAC_DS_MAX 188
+#define ID_MAX 4000
+#define ID_TH 200
 
 unsigned char eight_bit_unsigned_round(double x)
 {
-    x = (unsigned char) (x + 0.5);
-    return x;
+    unsigned char x_round;
+    x_round = (unsigned char) (x + 0.5);
+    return x_round;
 }
 
+
+//Finds Vth by sorting through Vgs's until a minumum current of 1 mA is found
+//Id is found by a 1 Ohm series resistor whose potential difference is magnitifed 200 fold
+//For accurate reading
 unsigned short vgs_th_find()
 {
-    unsigned char Vgs;
-    unsigned char Vds = 50;
-    int ADC_code;
-    double Id;
-    double Id_th = 20;
+    unsigned char   Vgs;
+    unsigned char   Vds = 21; //Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
+    double          Id;
     
-    VDAC8_DS_SetValue(Vds);
+    VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     for(Vgs = 0; Vgs < VDAC_GS_MAX; Vgs++)
     {
         VDAC8_GS_SetValue(Vgs);
         ADC_SAR_1_StartConvert();
         ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
         ADC_SAR_1_StopConvert();
-        ADC_code = ADC_SAR_1_GetResult16();
-        Id = ADC_SAR_1_CountsTo_mVolts(ADC_code);
-        if(Id > Id_th)
+        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); //Returns mV of the OpAmp output (200x real Id)
+        if(Id > ID_TH)
         {
-            return Vgs;    
+            return Vgs;
         }
     }
-    return 256;
+    return 64;
 }
+
+//Finds the MAX current 20mA, Id is found through a 1 Ohm series resistor who
+// potential difference is magnified 200 fold for accurate reading
+//Therefor ID_MAX = 20*200 == 4000
+unsigned short vgs_max_id_find(unsigned char Vth)
+{
+    unsigned char   Vgs;
+    double          Id;
+    
+    VDAC8_DS_SetValue(VDAC_DS_MAX); ////Sets Vds = 188/256 * 4.096 * 3 (max Vds to test wtih) to find max current
+    for(Vgs = Vth; Vgs < VDAC_GS_MAX; Vgs++)
+    {
+        //Run through Vgs values until we hit max current of 20mA with max Vds
+        VDAC8_GS_SetValue(Vgs);
+        ADC_SAR_1_StartConvert();
+        ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+        ADC_SAR_1_StopConvert();
+        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
+        if (Id >= ID_MAX)
+        {
+            break;
+        }
+    }
+    return Vgs;
+}
+
 
 int nmos_sweep_slow()
 {
     //returning a pointer to the array because C doesn't allow the 
     //returning of arrays.
-    unsigned char i=0;
-    unsigned char j=1;
-    unsigned char k;
-    unsigned char Vds;
-    int ADC_code;
-    unsigned short Vgs_th;
-    char error_msg[16];
-    double Output_data_nmos_slow_mat[2][6][VDAC_DS_MAX/Vds_step_slow + 1];
-    //Because local variables die after being called, the array has to be static or else
-    //the returning pointer will point to junk
-    unsigned char Vgs_test_points[6];
+    unsigned char   i=0;
+    unsigned char   j=1;
+    unsigned char   k;
+    unsigned char   Vds;
+    int             ADC_code;
+    unsigned short  Vgs_th;
+    unsigned char   Vgs_max;
+    double          Output_data_nmos_slow_mat[2][6][VDAC_DS_MAX/Vds_step_slow + 1] = {0};
+    unsigned char   Vgs_test_points[6]={0};
+    double          Vgs_gain;
+    double          Vgs_step;
     Vgs_th = vgs_th_find();
-    double Vgs_gain;
     if(Vgs_th > 255)
     {
         return 1;
     }
     
-    for(Vgs_gain = 3.0; Vgs_gain*Vgs_th > 255; Vgs_gain -= 0.5)
+    Vgs_max = vgs_max_id_find(Vgs_th); //Vgs max is the Vgs that pulls 20 mA
+    
+    //Doing a linspace between Vth and Vgs_max (the Vgs that pulls 20 mA) for testing points
+    
+    Vgs_step = (Vgs_max - Vgs_th)/6.0;
+    for (k = 0; k < 6; k++)
     {
-        if(Vgs_gain <= 1)
+        if(Vgs_th + k*Vgs_step > VDAC_GS_MAX)
         {
             break;
         }
+        Vgs_test_points[k] = eight_bit_unsigned_round(Vgs_th + k*Vgs_step);    
     }
-    if (Vgs_gain > 1)
+    
+    
+    for(k=0; k < 6; k++)
     {
-        Vgs_test_points[0] = eight_bit_unsigned_round((Vgs_gain/6.0)*Vgs_th); 
-        Vgs_test_points[1] = eight_bit_unsigned_round((2*Vgs_gain/9)*Vgs_th);
-        Vgs_test_points[2] = Vgs_th;
-        Vgs_test_points[3] = eight_bit_unsigned_round((4*Vgs_gain/9)*Vgs_th);
-        Vgs_test_points[4] = eight_bit_unsigned_round((6*Vgs_gain/9)*Vgs_th);
-        Vgs_test_points[5] = eight_bit_unsigned_round(Vgs_gain*Vgs_th);
-    } else
-    {
-        Vgs_test_points[0] = Vgs_th;
-    }
-    if(Vgs_test_points[0] == Vgs_th)
-    {
-        VDAC8_GS_SetValue(Vgs_test_points[0]);
+        if ((k > 0) && (Vgs_test_points[k] == Vgs_test_points[k-1]))
+        {
+            //Skips a value if it's the same as the previous
+            continue;
+        } else if((k > 0) && Vgs_test_points[k] == 0)
+        {
+            break;
+        }
+        VDAC8_GS_SetValue(Vgs_test_points[k]);
         for(Vds = 0;Vds <= VDAC_DS_MAX; Vds += Vds_step_slow)
         {
             VDAC8_DS_SetValue(Vds);
             
-            Output_data_nmos_slow_mat[0][i][0] = (double) Vgs_test_points[0];
-            Output_data_nmos_slow_mat[1][i][0] = (double) Vgs_test_points[0];
+            Output_data_nmos_slow_mat[0][i][0] = ((Vgs_test_points[k])/255.0*4.096);
+            Output_data_nmos_slow_mat[1][i][0] = Output_data_nmos_slow_mat[0][i][0];
             
             Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3;
             
             ADC_SAR_1_StartConvert();
             ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-            ADC_code = ADC_SAR_1_GetResult16();
             ADC_SAR_1_StopConvert();
-            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_code);
+            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); // RIP PSoC MAY ALEN HAVE MERCY ON OUR SOULS
             j++;
         }
-        return 2;
+        i++;
     }
-    else
-    {
-        for(k=0; k < 6; k++)
-        {
-            VDAC8_GS_SetValue(Vgs_test_points[k]);
-            for(Vds = 0;Vds <= VDAC_DS_MAX; Vds += Vds_step_slow)
-            {
-                VDAC8_DS_SetValue(Vds);
-                
-                Output_data_nmos_slow_mat[0][i][0] = (double) Vgs_test_points[k];
-                Output_data_nmos_slow_mat[1][i][0] = (double) Vgs_test_points[k];
-                
-                Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3;
-                
-                ADC_SAR_1_StartConvert();
-                ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-                ADC_code = ADC_SAR_1_GetResult16();
-                ADC_SAR_1_StopConvert();
-                Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_code);
-                j++;
-            }
-            i++;
-        }
-        return 0;
-    }
+    return 0;
 }
+
 
 int main(void)
 {
