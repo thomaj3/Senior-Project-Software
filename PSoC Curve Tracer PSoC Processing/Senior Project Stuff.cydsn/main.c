@@ -82,8 +82,7 @@ unsigned short vgs_max_id_find(unsigned char Vth)
 
 int nmos_sweep_slow()
 {
-    //returning a pointer to the array because C doesn't allow the 
-    //returning of arrays.
+    //returning an error code
     unsigned char   i=0;            
     unsigned char   j=1;
     unsigned char   k;
