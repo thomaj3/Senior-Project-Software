@@ -17,65 +17,66 @@
 #define Vds_step_fast 5
 #define VDAC_GS_MAX 255
 #define VDAC_DS_MAX 188
-#define ID_MAX 4000
-#define ID_TH 200
+#define ID_MAX 2000
+#define ID_TH 100
 
 unsigned char eight_bit_unsigned_round(double x)
 {
     unsigned char x_round;
-    x_round = (unsigned char) (x + 0.5);
+    x_round = (unsigned char) (x + 0.5); //casting double + .5 to uint8_t (flooring) to round
     return x_round;
 }
 
 
-//Finds Vth by sorting through Vgs's until a minumum current of 1 mA is found
-//Id is found by a 1 Ohm series resistor whose potential difference is magnitifed 200 fold
-//For accurate reading
+//Finds Vth (The minimum Vgs needed to turn the transistor by sorting through Vgs's until 
+//a minumum current of 1 mA is found Id is found by a 1 Ohm series resistor whose potential 
+//difference is magnitifed 100 fold for accurate reading
 unsigned short vgs_th_find()
 {
-    unsigned char   Vgs;
-    unsigned char   Vds = 21; //Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
-    double          Id;
+    unsigned char   Vgs;        //The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
+    unsigned char   Vds = 21;   //The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
+    double          Id;         //The Drain Current | Id_real = Id/100
     
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     for(Vgs = 0; Vgs < VDAC_GS_MAX; Vgs++)
     {
-        VDAC8_GS_SetValue(Vgs);
-        ADC_SAR_1_StartConvert();
-        ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-        ADC_SAR_1_StopConvert();
-        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); //Returns mV of the OpAmp output (200x real Id)
+        VDAC8_GS_SetValue(Vgs);     //Step Vgs
+        ADC_SAR_1_StartConvert();   //Start ADC Conversion
+        ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT); //Wait until end of converstion
+        ADC_SAR_1_StopConvert();    //Stop Conversion
+        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); //Returns mV of the OpAmp output (100x real Id)
         if(Id > ID_TH)
         {
+            //Once Id > 1 mV transistor is "on" and we can return Vgs as Vth
             return Vgs;
         }
     }
-    return 64;
+    return 256; //If a Vth cannot be found
 }
 
-//Finds the MAX current 20mA, Id is found through a 1 Ohm series resistor who
-// potential difference is magnified 200 fold for accurate reading
-//Therefor ID_MAX = 20*200 == 4000
+//Finds the MAX current 20mA, Id is found through a 100 Ohm series resistor
+//Sweeps through Vgs until a max current of 20 mA is found
+//Therefor ID_MAX = 20*100 == 2000
 unsigned short vgs_max_id_find(unsigned char Vth)
 {
-    unsigned char   Vgs;
-    double          Id;
+    unsigned char   Vgs; //The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
+    double          Id;  //The Drain Current | Id_real = Id/100
     
-    VDAC8_DS_SetValue(VDAC_DS_MAX); ////Sets Vds = 188/256 * 4.096 * 3 (max Vds to test wtih) to find max current
+    VDAC8_DS_SetValue(VDAC_DS_MAX); ////Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
     for(Vgs = Vth; Vgs < VDAC_GS_MAX; Vgs++)
     {
         //Run through Vgs values until we hit max current of 20mA with max Vds
-        VDAC8_GS_SetValue(Vgs);
-        ADC_SAR_1_StartConvert();
-        ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-        ADC_SAR_1_StopConvert();
-        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16());
+        VDAC8_GS_SetValue(Vgs); //Step Vgs
+        ADC_SAR_1_StartConvert(); //Start ADC Conversion
+        ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT); //Wait until Conversion is Complete
+        ADC_SAR_1_StopConvert(); //End conversion
+        Id = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); //Returns the mV of the OpAmp output (100x real Id)
         if (Id >= ID_MAX)
         {
-            break;
+            break; //Stop stepping once max current is hit
         }
     }
-    return Vgs;
+    return Vgs - 1; //Returns the previous Vgs step to avoid going past 20mA
 }
 
 
@@ -83,20 +84,19 @@ int nmos_sweep_slow()
 {
     //returning a pointer to the array because C doesn't allow the 
     //returning of arrays.
-    unsigned char   i=0;
+    unsigned char   i=0;            
     unsigned char   j=1;
     unsigned char   k;
-    unsigned char   Vds;
-    int             ADC_code;
-    unsigned short  Vgs_th;
-    unsigned char   Vgs_max;
-    double          Output_data_nmos_slow_mat[2][6][VDAC_DS_MAX/Vds_step_slow + 1] = {0};
-    unsigned char   Vgs_test_points[6]={0};
-    double          Vgs_gain;
-    double          Vgs_step;
-    Vgs_th = vgs_th_find();
-    if(Vgs_th > 255)
+    unsigned char   Vds;                    //The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
+    unsigned short  Vgs_th;                 //The Threshold Voltage, the reguired Vgs to turn on
+    unsigned char   Vgs_max;                //The Vgs that prompts the largest allowable current
+    double          Output_data_nmos_slow_mat[2][6][VDAC_DS_MAX/Vds_step_slow + 1] = {0}; //Array for storage of data for output
+    unsigned char   Vgs_test_points[6]={0}; //The 6 Vgs DAC codes for testing
+    double          Vgs_step;               //The step between Vgs points required for their generation
+    Vgs_th = vgs_th_find();                 //Find Vth for this transistor
+    if(Vgs_th > 255)            
     {
+        //If Vgs returns it's "error code" return an error code, 1
         return 1;
     }
     
@@ -109,39 +109,36 @@ int nmos_sweep_slow()
     {
         if(Vgs_th + k*Vgs_step > VDAC_GS_MAX)
         {
-            break;
+            break; //Esnure we don't go over 4 V
         }
         Vgs_test_points[k] = eight_bit_unsigned_round(Vgs_th + k*Vgs_step);    
     }
     
-    
+    //Testing test points
     for(k=0; k < 6; k++)
     {
         if ((k > 0) && (Vgs_test_points[k] == Vgs_test_points[k-1]))
         {
             //Skips a value if it's the same as the previous
             continue;
-        } else if((k > 0) && Vgs_test_points[k] == 0)
-        {
-            break;
         }
-        VDAC8_GS_SetValue(Vgs_test_points[k]);
+        VDAC8_GS_SetValue(Vgs_test_points[k]);//Step Vgs
         for(Vds = 0;Vds <= VDAC_DS_MAX; Vds += Vds_step_slow)
         {
-            VDAC8_DS_SetValue(Vds);
+            VDAC8_DS_SetValue(Vds);//Step Vds
             
-            Output_data_nmos_slow_mat[0][i][0] = ((Vgs_test_points[k])/255.0*4.096);
-            Output_data_nmos_slow_mat[1][i][0] = Output_data_nmos_slow_mat[0][i][0];
+            Output_data_nmos_slow_mat[0][i][0] = ((Vgs_test_points[k])/255.0*4.096); //Storing Vgs as first element of array
+            Output_data_nmos_slow_mat[1][i][0] = Output_data_nmos_slow_mat[0][i][0]; //Storing Vgs as first element of array
             
-            Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3;
+            Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3; //Storing Vds into array
             
             ADC_SAR_1_StartConvert();
-            ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+            ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT); //waiting until conversion is over
             ADC_SAR_1_StopConvert();
-            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()); // RIP PSoC MAY ALEN HAVE MERCY ON OUR SOULS
-            j++;
+            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()/100); //Storing Id into array
+            j++; //incrementing array count
         }
-        i++;
+        i++; //incrementing array count
     }
     return 0;
 }
@@ -149,8 +146,7 @@ int nmos_sweep_slow()
 
 int main(void)
 {
-    
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    //Enabling VDACs and ADCs
     VDAC8_GS_Start();
     VDAC8_DS_Start();
     ADC_SAR_1_Start();
@@ -161,5 +157,4 @@ int main(void)
         return_code = nmos_sweep_slow();
     }
 }
-
 /* [] END OF FILE */
