@@ -38,6 +38,8 @@
         <Files Root="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn">
           <File BuildType="BUILD" Toolchain="">main.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
+          <File BuildType="BUILD" Toolchain="">settings.h</File>
+          <File BuildType="BUILD" Toolchain="">minor_functions.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\Generated_Source\PSoC5">

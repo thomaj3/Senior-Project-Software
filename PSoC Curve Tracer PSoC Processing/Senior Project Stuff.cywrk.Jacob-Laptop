@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Senior Project Stuff\Senior Project Stuff\Source Files\main.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
 <ExpandedNodeIds>
 <v>Senior Project Stuff</v>
 <v>Senior Project Stuff\Senior Project Stuff</v>
@@ -30,6 +30,8 @@
 <v>Senior Project Stuff\Senior Project Stuff\Senior Project Stuff.cydwr\EEPROM</v>
 <v>Senior Project Stuff\Senior Project Stuff\Header Files</v>
 <v>Senior Project Stuff\Senior Project Stuff\Header Files\cyapicallbacks.h</v>
+<v>Senior Project Stuff\Senior Project Stuff\Header Files\minor_functions.h</v>
+<v>Senior Project Stuff\Senior Project Stuff\Header Files\settings.h</v>
 <v>Senior Project Stuff\Senior Project Stuff\Source Files</v>
 <v>Senior Project Stuff\Senior Project Stuff\Source Files\main.c</v>
 <v>Senior Project Stuff\Senior Project Stuff\Generated_Source</v>
@@ -51,6 +53,8 @@
 <v>Senior Project Stuff\Senior Project Stuff\Senior Project Stuff.cydwr\EEPROM</v>
 <v>Senior Project Stuff\Senior Project Stuff\Header Files</v>
 <v>Senior Project Stuff\Senior Project Stuff\Header Files\cyapicallbacks.h</v>
+<v>Senior Project Stuff\Senior Project Stuff\Header Files\minor_functions.h</v>
+<v>Senior Project Stuff\Senior Project Stuff\Header Files\settings.h</v>
 <v>Senior Project Stuff\Senior Project Stuff\Source Files</v>
 <v>Senior Project Stuff\Senior Project Stuff\Source Files\main.c</v>
 <v>Senior Project Stuff\Senior Project Stuff\Generated_Source</v>
@@ -84,7 +88,6 @@
 <v>Senior Project Stuff\Senior Project Stuff\Generated_Source\PSoC5\cyfitteriar.inc</v>
 <v>Senior Project Stuff\Senior Project Stuff\Generated_Source\PSoC5\cyfitterrv.inc</v>
 <v>Senior Project Stuff\Senior Project Stuff\Generated_Source\PSoC5\cymetadata.c</v>
-<v>Senior Project Stuff\Senior Project Stuff\Generated_Source\PSoC5\project.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Senior Project Stuff">
@@ -218,16 +221,14 @@
 </userData>
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
-<OpenDocs>
-<name v=".\Senior Project Stuff.cydsn\main.c" />
-</OpenDocs>
+<OpenDocs />
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
   Actipro Docking/MDI for WinForms
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1474, 751" SelectedTabbedMdiWindow="1537a997-107d-4e0a-9c67-44ebf9548c47"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\main.c" Guid="1537a997-107d-4e0a-9c67-44ebf9548c47" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer /><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
