@@ -4,13 +4,14 @@
 #include "string.h"
 #include "settings.h"
 #include "minor_functions.h"
-#define VDAC_GS_MAX 255
-#define VDAC_DS_MAX 188
+#define VDAC_GS_NMOS_MAX 255
+#define VDAC_DS_NMOS_MAX 188
+#define VDS_NMOS_LENGTH ((VDAC_DS_NMOS_MAX/VD_STEP_NMOS) + 1)
 
 //Finds Vth (The minimum Vgs needed to turn the transistor by sorting through Vgs's until 
 //a minumum current of 1 mA is found Id is found by a 1 Ohm series resistor whose potential 
 //difference is magnitifed 100 fold for accurate reading
-unsigned short vgs_th_find()
+unsigned short vgs_th_find(unsigned char Vgs_max)
 {
     unsigned char   Vgs;        
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
@@ -20,8 +21,8 @@ unsigned short vgs_th_find()
 	//The Drain Current | Id_real = Id/100
     
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
-    /*
-    for(Vgs = 0; Vgs < VDAC_GS_MAX; Vgs++)
+    
+    for(Vgs = 0; Vgs < Vgs_max; Vgs++)
     {
         VDAC8_GS_SetValue(Vgs);     
 		//Step Vgs
@@ -39,23 +40,22 @@ unsigned short vgs_th_find()
             return Vgs;
         }
     }
-    */
-    return 64; //If a Vth cannot be found
+    return Vgs; //If a Vth cannot be found
 }
 
 //Finds the MAX current 20mA, Id is found through a 100 Ohm series resistor
 //Sweeps through Vgs until a max current of 20 mA is found
 //Therefor ID_MAX = 20*100 == 2000
-unsigned short vgs_max_id_find(unsigned char Vth)
+unsigned short vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned char Vgs_max)
 {
     unsigned char   Vgs;
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
     double          Id; 
 	//The Drain Current | Id_real = Id/100
     
-    VDAC8_DS_SetValue(VDAC_DS_MAX);
+    VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
-    for(Vgs = Vth; Vgs < VDAC_GS_MAX; Vgs++)
+    for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
     {
         //Run through Vgs values until we hit max current of 20mA with max Vds
         VDAC8_GS_SetValue(Vgs); //Step Vgs
@@ -69,85 +69,23 @@ unsigned short vgs_max_id_find(unsigned char Vth)
             break; //Stop stepping once max current is hit
         }
     }
-    //return Vgs - 1; //Returns the previous Vgs step to avoid going past 20mA
-    return VDAC_GS_MAX;
+    return Vgs - 1; //Returns the previous Vgs step to avoid going past 20mA
 }
 
 
-int nmos_sweep_slow()
+double single_test(unsigned char Vds, unsigned char Vgs)
 {
-    //returning an error code
-    unsigned char   i=0;            
-    unsigned char   j=1;
-    unsigned char   k;
-    unsigned char   Vds;                    
-	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
-    unsigned short  Vgs_th;                 
-	//The Threshold Voltage, the reguired Vgs to turn on
-    unsigned char   Vgs_max;                
-	//The Vgs that prompts the largest allowable current
-    double          Output_data_nmos_slow_mat[2][CURVE_NUM][VDAC_DS_MAX/VD_STEP_NMOS + 1] = {0};
-	//Array for storage of data for output
-    unsigned char   Vgs_test_points[6]={0};
-	//The 6 Vgs DAC codes for testing
-    double          Vgs_step;               
-	//The step between Vgs points required for their generation
-    Vgs_th = vgs_th_find();                 
-	//Find Vth for this transistor
-    if(Vgs_th > 255)            
-    {
-        //If Vgs returns it's "error code" return an error code, 1
-        return 1;
-    }
-    
-    Vgs_max = vgs_max_id_find(Vgs_th); //Vgs max is the Vgs that pulls 20 mA
-    
-    //Doing a linspace between Vth and Vgs_max (the Vgs that pulls 20 mA) for testing points
-    
-    Vgs_step = (Vgs_max - Vgs_th)/6.0;
-    for (k = 0; k < 6; k++)
-    {
-        if(Vgs_th + k*Vgs_step > VDAC_GS_MAX)
-        {
-            break; //Esnure we don't go over 4 V
-        }
-        Vgs_test_points[k] = eight_bit_unsigned_round(Vgs_th + k*Vgs_step);    
-    }
-    
-    //Testing test points
-    for(k=0; k < 6; k++)
-    {
-        if ((k > 0) && (Vgs_test_points[k] == Vgs_test_points[k-1]))
-        {
-            //Skips a value if it's the same as the previous
-            continue;
-        }
-        VDAC8_GS_SetValue(Vgs_test_points[k]);//Step Vgs
-        for(Vds = 0;Vds <= VDAC_DS_MAX; Vds += VD_STEP_NMOS)
-        {
-            VDAC8_DS_SetValue(Vds);//Step Vds
-            
-            Output_data_nmos_slow_mat[0][i][0] = ((Vgs_test_points[k])/255.0*4.096);
-			//Storing Vgs as first element of array
-            Output_data_nmos_slow_mat[1][i][0] = Output_data_nmos_slow_mat[0][i][0];
-			//Storing Vgs as first element of array
-            
-            Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3;
-			//Storing Vds into array
-            
-            ADC_SAR_1_StartConvert();
-            ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-			//waiting until conversion is over
-            ADC_SAR_1_StopConvert();
-            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()/100);
-			//Storing Id into array
-            j++; //incrementing array count
-        }
-        i++; //incrementing array count
-    }
-    return 0;
+    double Output;
+    VDAC8_DS_SetValue(Vds);
+    VDAC8_GS_SetValue(Vgs);
+    CyDelay(10);
+    ADC_SAR_1_StartConvert();
+    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+	//waiting until conversion is over
+    ADC_SAR_1_StopConvert();
+    Output = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()/100);
+    return Output;
 }
-
 
 int main(void)
 {
@@ -155,14 +93,52 @@ int main(void)
     VDAC8_GS_Start();
     VDAC8_DS_Start();
     ADC_SAR_1_Start();
-    int return_code;
     
-    double Output_data_nmos[2][CURVE_NUM][VDAC_DS_MAX/VD_STEP_NMOS + 1];
+    int return_code;    //Going to be used for error displays
+    
+    int i;  //used for for loop iterations
+    int j;  //used for for loop iterations
+    
+    short Vth;      //VDAC code for the threshold voltage
+    short Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA 
+    
+    unsigned char Vgs_step;                         //The stepping amount to create the Vgs test points
+    unsigned char Vgs_test_points[CURVE_NUM];       //The Vgs stepping points of ammount specified in settings.h
+    unsigned char Vds_test_points[VDS_NMOS_LENGTH]; //The Vds stepping points of ammount specified in settings.h
+    
+    double Output_data_nmos_id[CURVE_NUM][VDS_NMOS_LENGTH] = {0};   //The output data of Id NMOS trace in mA
+    double Output_data_nmos_vds[VDS_NMOS_LENGTH];                   //The Vds points used. Used for plotting
     
     
     for(;;)
     {
-        return_code = 
+        //Assume NMOS input
+        Vth =  126; //vgs_th_find();
+        if (Vth < 0)
+        {
+            //Print error function
+        }
+        Vgs_max = 188;  //vgs_max_id_find(Vth);
+        Vgs_step = (Vgs_max - Vth)/CURVE_NUM; //Creating the step size for linearlly spaced 
+        Vgs_test_points[0] = Vth;
+        for (i=1; i < CURVE_NUM; i++)
+        {
+            Vgs_test_points[i] = Vgs_test_points[i-1] + Vgs_step;
+        }
+        Vds_test_points[0] = 0;
+        Output_data_nmos_vds[0] = 0;
+        for(i=1; i < VDS_NMOS_LENGTH; i++)
+        {
+            Vds_test_points[i] = Vds_test_points[i-1] + VD_STEP_NMOS;
+            Output_data_nmos_vds[i] = Vds_test_points[i-1]/256.0 * 3.0 * 4.096;
+        }
+        for(i = 0; i < CURVE_NUM; i++)
+        {
+            for(j = 0; j < VDS_NMOS_LENGTH; j++)
+            {
+                Output_data_nmos_id[i][j] = single_test(Vds_test_points[j],Vgs_test_points[i]);
+            }
+        }
     }
 }
 /* [] END OF FILE */
