@@ -1,0 +1,73 @@
+int nmos_sweep_slow()
+{
+    //returning an error code
+    unsigned char   i=0;            
+    unsigned char   j=1;
+    unsigned char   k;
+    unsigned char   Vds;                    
+	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
+    unsigned short  Vgs_th;                 
+	//The Threshold Voltage, the reguired Vgs to turn on
+    unsigned char   Vgs_max;                
+	//The Vgs that prompts the largest allowable current
+    double          Output_data_nmos_slow_mat[2][CURVE_NUM][VDAC_DS_NMOS_MAX/VD_STEP_NMOS + 1] = {0};
+	//Array for storage of data for output
+    unsigned char   Vgs_test_points[6]={0};
+	//The 6 Vgs DAC codes for testing
+    double          Vgs_step;               
+	//The step between Vgs points required for their generation
+    Vgs_th = vgs_th_find();                 
+	//Find Vth for this transistor
+    if(Vgs_th > 255)            
+    {
+        //If Vgs returns it's "error code" return an error code, 1
+        return 1;
+    }
+    
+    Vgs_max = vgs_max_id_find(Vgs_th); //Vgs max is the Vgs that pulls 20 mA
+    
+    //Doing a linspace between Vth and Vgs_max (the Vgs that pulls 20 mA) for testing points
+    
+    Vgs_step = (Vgs_max - Vgs_th)/6.0;
+    for (k = 0; k < 6; k++)
+    {
+        if(Vgs_th + k*Vgs_step > VDAC_GS_NMOS_MAX)
+        {
+            break; //Esnure we don't go over 4 V
+        }
+        Vgs_test_points[k] = eight_bit_unsigned_round(Vgs_th + k*Vgs_step);    
+    }
+    
+    //Testing test points
+    for(k=0; k < 6; k++)
+    {
+        if ((k > 0) && (Vgs_test_points[k] == Vgs_test_points[k-1]))
+        {
+            //Skips a value if it's the same as the previous
+            continue;
+        }
+        VDAC8_GS_SetValue(Vgs_test_points[k]);//Step Vgs
+        for(Vds = 0;Vds <= VDAC_DS_NMOS_MAX; Vds += VD_STEP_NMOS)
+        {
+            VDAC8_DS_SetValue(Vds);//Step Vds
+            
+            Output_data_nmos_slow_mat[0][i][0] = ((Vgs_test_points[k])/255.0*4.096);
+			//Storing Vgs as first element of array
+            Output_data_nmos_slow_mat[1][i][0] = Output_data_nmos_slow_mat[0][i][0];
+			//Storing Vgs as first element of array
+            
+            Output_data_nmos_slow_mat[0][i][j] = (double) Vds/256 * 4.096 * 3;
+			//Storing Vds into array
+            
+            ADC_SAR_1_StartConvert();
+            ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+			//waiting until conversion is over
+            ADC_SAR_1_StopConvert();
+            Output_data_nmos_slow_mat[1][i][j] = ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16()/100);
+			//Storing Id into array
+            j++; //incrementing array count
+        }
+        i++; //incrementing array count
+    }
+    return 0;
+}
