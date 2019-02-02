@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Senior Project Stuff">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Senior Project Stuff\Senior Project Stuff\Source Files\main.c">
 <ExpandedNodeIds>
 <v>Senior Project Stuff</v>
 <v>Senior Project Stuff\Senior Project Stuff</v>
@@ -191,7 +191,11 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Senior Project Stuff.cydsn\Senior Project Stuff.cydwr" />
+<name v=".\Senior Project Stuff.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\Senior Project Stuff.cydsn\main.c" />
+<name v=".\Senior Project Stuff.cydsn\cyapicallbacks.h" />
+<name v=".\Senior Project Stuff.cydsn\minor_functions.h" />
+<name v=".\Senior Project Stuff.cydsn\settings.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -199,7 +203,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1631, 751" SelectedTabbedMdiWindow="fd84eeba-511c-42bd-9d23-4ba4fa03d9d7"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Desktop\Senior-Project-Software\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\Senior Project Stuff.cydwr" Guid="fd84eeba-511c-42bd-9d23-4ba4fa03d9d7" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="688, 751" SelectedTabbedMdiWindow="bb569ef0-5960-46a0-bbc3-935ff7199442"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\TopDesign\TopDesign.cysch" Guid="ddf7ca53-d069-4f94-8928-615d22b2880a" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\main.c" Guid="bb569ef0-5960-46a0-bbc3-935ff7199442" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\cyapicallbacks.h" Guid="e9f5504e-49dc-4bcb-b70d-abd94097735c" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\minor_functions.h" Guid="ffeac5d3-a29b-4df4-8dd5-7cd75e1b4b50" /></TabbedMdiContainer><TabbedMdiContainer Size="685, 751" SelectedTabbedMdiWindow="326354da-0a6f-4848-a96b-e8ddabc1ba8f"><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff\PSoC Curve Tracer PSoC Processing\Senior Project Stuff.cydsn\settings.h" Guid="326354da-0a6f-4848-a96b-e8ddabc1ba8f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
