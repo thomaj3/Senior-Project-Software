@@ -158,11 +158,11 @@ CYPACKED typedef struct
 #define cy_cfg_addr_table ((const uint32 CYFAR *)0x48000000u)
 #define cy_cfg_data_table ((const cy_cfg_addrvalue_t CYFAR *)0x48000024u)
 
-/* IOPINS0_1 Address: CYREG_PRT1_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x4800003Cu)
+/* IOPINS0_0 Address: CYREG_PRT0_DM0 Size (bytes): 8 */
+#define BS_IOPINS0_0_VAL ((const uint8 CYFAR *)0x4800003Cu)
 
-/* IOPINS0_2 Address: CYREG_PRT2_DM0 Size (bytes): 8 */
-#define BS_IOPINS0_2_VAL ((const uint8 CYFAR *)0x48000044u)
+/* IOPINS0_1 Address: CYREG_PRT1_DM0 Size (bytes): 8 */
+#define BS_IOPINS0_1_VAL ((const uint8 CYFAR *)0x48000044u)
 
 /* CYDEV_CLKDIST_ACFG0_CFG0 Address: CYREG_CLKDIST_ACFG0_CFG0 Size (bytes): 4 */
 #define BS_CYDEV_CLKDIST_ACFG0_CFG0_VAL ((const uint8 CYFAR *)0x4800004Cu)
@@ -294,12 +294,15 @@ static void AnalogSetDefault(void)
 	/* Disable PRES while setting up SAR voltage reference */
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR4), (cr4 | 0x03u));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR5), (cr5 | 0x03u));
-	CY_SET_XTND_REG16((void CYFAR *)CYREG_PRT2_AMUX, 0x0601u);
+	CY_SET_XTND_REG16((void CYFAR *)CYREG_PRT0_AMUX, 0x2040u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_CSR1, 0x80u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC0_SW0, 0x02u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC2_SW3, 0x01u);
-	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x04u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC0_SW3, 0x01u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC2_SW3, 0x80u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC2_SW4, 0x10u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_DAC3_SW0, 0x10u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW0, 0x20u);
 	CY_SET_XTND_REG8((void CYFAR *)CYREG_SAR0_SW3, 0x20u);
+	CY_SET_XTND_REG8((void CYFAR *)CYREG_BUS_SW0, 0x10u);
 	CyDelayUs(10u); /* Allow vref to settle before re-enabling PRES */
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR5), (cr5));
 	CY_SET_XTND_REG8((void CYFAR *)(CYREG_RESET_CR4), (cr4));
@@ -377,8 +380,7 @@ void cyfitter_cfg(void)
 
 		static const cfg_memset_t CYCODE cfg_memset_list[] = {
 			/* address, size */
-			{(void CYFAR *)(CYREG_PRT0_DR), 16u},
-			{(void CYFAR *)(CYREG_PRT3_DR), 64u},
+			{(void CYFAR *)(CYREG_PRT2_DR), 80u},
 			{(void CYFAR *)(CYREG_PRT12_DR), 16u},
 			{(void CYFAR *)(CYREG_PRT15_DR), 16u},
 			{(void CYFAR *)(CYDEV_UCFG_B0_P0_U0_BASE), 4096u},
@@ -406,8 +408,8 @@ void cyfitter_cfg(void)
 
 
 	/* Perform second pass device configuration. These items must be configured in specific order after the regular configuration is done. */
+	CYCONFIGCPY((void CYFAR *)(CYREG_PRT0_DM0), (const void CYFAR *)(BS_IOPINS0_0_VAL), 8u);
 	CYCONFIGCPY((void CYFAR *)(CYREG_PRT1_DM0), (const void CYFAR *)(BS_IOPINS0_1_VAL), 8u);
-	CYCONFIGCPY((void CYFAR *)(CYREG_PRT2_DM0), (const void CYFAR *)(BS_IOPINS0_2_VAL), 8u);
 	/* Switch Boost to the precision bandgap reference from its internal reference */
 	CY_SET_REG8((void CYXDATA *)CYREG_BOOST_CR2, (CY_GET_REG8((void CYXDATA *)CYREG_BOOST_CR2) | 0x08u));
 

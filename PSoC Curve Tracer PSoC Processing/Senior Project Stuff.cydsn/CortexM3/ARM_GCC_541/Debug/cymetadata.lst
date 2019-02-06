@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 30, 6
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -19,147 +19,147 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.global	cy_metadata
-  20              		.global	cy_meta_flashprotect
-  21              		.global	cy_meta_wonvl
-  22              		.global	cy_meta_custnvl
-  23              		.global	cy_meta_configecc
-  24              		.section	.cyconfigecc,"a",%progbits
-  25              		.align	2
-  26              		.type	cy_meta_configecc, %object
-  27              		.size	cy_meta_configecc, 80
-  28              	cy_meta_configecc:
-  29 0000 01       		.byte	1
-  30 0001 07       		.byte	7
-  31 0002 01       		.byte	1
-  32 0003 40       		.byte	64
-  33 0004 01       		.byte	1
-  34 0005 09       		.byte	9
-  35 0006 01       		.byte	1
-  36 0007 40       		.byte	64
-  37 0008 02       		.byte	2
-  38 0009 40       		.byte	64
-  39 000a 01       		.byte	1
-  40 000b 40       		.byte	64
-  41 000c 01       		.byte	1
-  42 000d 41       		.byte	65
-  43 000e 01       		.byte	1
-  44 000f 40       		.byte	64
-  45 0010 01       		.byte	1
-  46 0011 42       		.byte	66
-  47 0012 01       		.byte	1
-  48 0013 40       		.byte	64
-  49 0014 02       		.byte	2
-  50 0015 43       		.byte	67
-  51 0016 01       		.byte	1
-  52 0017 40       		.byte	64
-  53 0018 02       		.byte	2
-  54 0019 46       		.byte	70
-  55 001a 01       		.byte	1
-  56 001b 40       		.byte	64
-  57 001c 01       		.byte	1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 2
+  19              		.global	cy_meta_configecc
+  20              		.section	.cyconfigecc,"a",%progbits
+  21              		.align	2
+  22              		.type	cy_meta_configecc, %object
+  23              		.size	cy_meta_configecc, 80
+  24              	cy_meta_configecc:
+  25 0000 01       		.byte	1
+  26 0001 07       		.byte	7
+  27 0002 01       		.byte	1
+  28 0003 40       		.byte	64
+  29 0004 01       		.byte	1
+  30 0005 09       		.byte	9
+  31 0006 01       		.byte	1
+  32 0007 40       		.byte	64
+  33 0008 02       		.byte	2
+  34 0009 40       		.byte	64
+  35 000a 01       		.byte	1
+  36 000b 40       		.byte	64
+  37 000c 01       		.byte	1
+  38 000d 41       		.byte	65
+  39 000e 01       		.byte	1
+  40 000f 40       		.byte	64
+  41 0010 01       		.byte	1
+  42 0011 42       		.byte	66
+  43 0012 01       		.byte	1
+  44 0013 40       		.byte	64
+  45 0014 02       		.byte	2
+  46 0015 43       		.byte	67
+  47 0016 01       		.byte	1
+  48 0017 40       		.byte	64
+  49 0018 02       		.byte	2
+  50 0019 46       		.byte	70
+  51 001a 01       		.byte	1
+  52 001b 40       		.byte	64
+  53 001c 01       		.byte	1
+  54 001d 47       		.byte	71
+  55 001e 01       		.byte	1
+  56 001f 40       		.byte	64
+  57 0020 01       		.byte	1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 2
 
 
-  58 001d 47       		.byte	71
-  59 001e 01       		.byte	1
-  60 001f 40       		.byte	64
-  61 0020 01       		.byte	1
-  62 0021 51       		.byte	81
-  63 0022 01       		.byte	1
-  64 0023 40       		.byte	64
-  65 0024 EE       		.byte	-18
-  66 0025 04       		.byte	4
-  67 0026 EE       		.byte	-18
-  68 0027 04       		.byte	4
-  69 0028 33       		.byte	51
-  70 0029 20       		.byte	32
-  71 002a CC       		.byte	-52
-  72 002b 10       		.byte	16
-  73 002c A7       		.byte	-89
-  74 002d 20       		.byte	32
-  75 002e A7       		.byte	-89
-  76 002f 20       		.byte	32
-  77 0030 AB       		.byte	-85
-  78 0031 20       		.byte	32
-  79 0032 EE       		.byte	-18
-  80 0033 20       		.byte	32
-  81 0034 1B       		.byte	27
-  82 0035 04       		.byte	4
-  83 0036 C6       		.byte	-58
-  84 0037 08       		.byte	8
-  85 0038 AB       		.byte	-85
-  86 0039 04       		.byte	4
-  87 003a 00       		.byte	0
-  88 003b 03       		.byte	3
-  89 003c 00       		.byte	0
-  90 003d 0B       		.byte	11
-  91 003e 0B       		.byte	11
-  92 003f 00       		.byte	0
-  93 0040 00       		.byte	0
-  94 0041 00       		.byte	0
-  95 0042 00       		.byte	0
-  96 0043 00       		.byte	0
-  97 0044 00       		.byte	0
-  98 0045 00       		.byte	0
-  99 0046 00       		.byte	0
- 100 0047 00       		.byte	0
- 101 0048 00       		.byte	0
- 102 0049 00       		.byte	0
- 103 004a 07       		.byte	7
- 104 004b 00       		.byte	0
- 105 004c 0E       		.byte	14
- 106 004d 00       		.byte	0
- 107 004e 18       		.byte	24
- 108 004f 01       		.byte	1
- 109              		.section	.cywolatch,"a",%progbits
- 110              		.align	2
- 111              		.type	cy_meta_wonvl, %object
- 112              		.size	cy_meta_wonvl, 4
- 113              	cy_meta_wonvl:
- 114 0000 BC       		.byte	-68
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 3
+  58 0021 51       		.byte	81
+  59 0022 01       		.byte	1
+  60 0023 40       		.byte	64
+  61 0024 EE       		.byte	-18
+  62 0025 04       		.byte	4
+  63 0026 EE       		.byte	-18
+  64 0027 04       		.byte	4
+  65 0028 33       		.byte	51
+  66 0029 20       		.byte	32
+  67 002a CC       		.byte	-52
+  68 002b 10       		.byte	16
+  69 002c A7       		.byte	-89
+  70 002d 20       		.byte	32
+  71 002e A7       		.byte	-89
+  72 002f 20       		.byte	32
+  73 0030 AB       		.byte	-85
+  74 0031 20       		.byte	32
+  75 0032 EE       		.byte	-18
+  76 0033 20       		.byte	32
+  77 0034 1B       		.byte	27
+  78 0035 04       		.byte	4
+  79 0036 C6       		.byte	-58
+  80 0037 08       		.byte	8
+  81 0038 AB       		.byte	-85
+  82 0039 04       		.byte	4
+  83 003a 00       		.byte	0
+  84 003b 03       		.byte	3
+  85 003c 00       		.byte	0
+  86 003d 00       		.byte	0
+  87 003e 00       		.byte	0
+  88 003f 00       		.byte	0
+  89 0040 00       		.byte	0
+  90 0041 00       		.byte	0
+  91 0042 E0       		.byte	-32
+  92 0043 00       		.byte	0
+  93 0044 00       		.byte	0
+  94 0045 0B       		.byte	11
+  95 0046 0B       		.byte	11
+  96 0047 00       		.byte	0
+  97 0048 00       		.byte	0
+  98 0049 00       		.byte	0
+  99 004a 00       		.byte	0
+ 100 004b 00       		.byte	0
+ 101 004c 0E       		.byte	14
+ 102 004d 00       		.byte	0
+ 103 004e 18       		.byte	24
+ 104 004f 01       		.byte	1
+ 105              		.global	cy_meta_custnvl
+ 106              		.section	.cycustnvl,"a",%progbits
+ 107              		.align	2
+ 108              		.type	cy_meta_custnvl, %object
+ 109              		.size	cy_meta_custnvl, 4
+ 110              	cy_meta_custnvl:
+ 111 0000 00       		.byte	0
+ 112 0001 00       		.byte	0
+ 113 0002 40       		.byte	64
+ 114 0003 05       		.byte	5
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 3
 
 
- 115 0001 90       		.byte	-112
- 116 0002 AC       		.byte	-84
- 117 0003 AF       		.byte	-81
- 118              		.section	.cycustnvl,"a",%progbits
- 119              		.align	2
- 120              		.type	cy_meta_custnvl, %object
- 121              		.size	cy_meta_custnvl, 4
- 122              	cy_meta_custnvl:
- 123 0000 00       		.byte	0
- 124 0001 00       		.byte	0
- 125 0002 40       		.byte	64
- 126 0003 05       		.byte	5
- 127              		.section	.cymeta,"a",%progbits
- 128              		.align	2
- 129              		.type	cy_metadata, %object
- 130              		.size	cy_metadata, 12
- 131              	cy_metadata:
- 132 0000 00       		.byte	0
- 133 0001 01       		.byte	1
- 134 0002 2E       		.byte	46
- 135 0003 12       		.byte	18
- 136 0004 30       		.byte	48
- 137 0005 69       		.byte	105
- 138 0006 00       		.byte	0
- 139 0007 01       		.byte	1
- 140 0008 00       		.byte	0
- 141 0009 00       		.byte	0
- 142 000a 00       		.byte	0
- 143 000b 00       		.byte	0
- 144              		.section	.cyflashprotect,"a",%progbits
- 145              		.align	2
- 146              		.type	cy_meta_flashprotect, %object
- 147              		.size	cy_meta_flashprotect, 256
- 148              	cy_meta_flashprotect:
- 149 0000 00000000 		.space	256
- 149      00000000 
- 149      00000000 
- 149      00000000 
- 149      00000000 
+ 115              		.global	cy_meta_wonvl
+ 116              		.section	.cywolatch,"a",%progbits
+ 117              		.align	2
+ 118              		.type	cy_meta_wonvl, %object
+ 119              		.size	cy_meta_wonvl, 4
+ 120              	cy_meta_wonvl:
+ 121 0000 BC       		.byte	-68
+ 122 0001 90       		.byte	-112
+ 123 0002 AC       		.byte	-84
+ 124 0003 AF       		.byte	-81
+ 125              		.global	cy_meta_flashprotect
+ 126              		.section	.cyflashprotect,"a",%progbits
+ 127              		.align	2
+ 128              		.type	cy_meta_flashprotect, %object
+ 129              		.size	cy_meta_flashprotect, 256
+ 130              	cy_meta_flashprotect:
+ 131 0000 00000000 		.space	256
+ 131      00000000 
+ 131      00000000 
+ 131      00000000 
+ 131      00000000 
+ 132              		.global	cy_metadata
+ 133              		.section	.cymeta,"a",%progbits
+ 134              		.align	2
+ 135              		.type	cy_metadata, %object
+ 136              		.size	cy_metadata, 12
+ 137              	cy_metadata:
+ 138 0000 00       		.byte	0
+ 139 0001 01       		.byte	1
+ 140 0002 2E       		.byte	46
+ 141 0003 16       		.byte	22
+ 142 0004 10       		.byte	16
+ 143 0005 69       		.byte	105
+ 144 0006 00       		.byte	0
+ 145 0007 01       		.byte	1
+ 146 0008 00       		.byte	0
+ 147 0009 00       		.byte	0
+ 148 000a 00       		.byte	0
+ 149 000b 00       		.byte	0
  150              		.text
  151              	.Letext0:
  152              		.file 1 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
@@ -172,13 +172,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  159 0006 00000000 		.4byte	.Ldebug_abbrev0
  160 000a 04       		.byte	0x4
  161 000b 01       		.uleb128 0x1
- 162 000c A3000000 		.4byte	.LASF17
+ 162 000c 0A000000 		.4byte	.LASF17
  163 0010 0C       		.byte	0xc
  164 0011 FD010000 		.4byte	.LASF18
- 165 0015 16000000 		.4byte	.LASF19
+ 165 0015 A4000000 		.4byte	.LASF19
  166 0019 00000000 		.4byte	.Ldebug_line0
  167 001d 02       		.uleb128 0x2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 4
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 4
 
 
  168 001e 01       		.byte	0x1
@@ -192,7 +192,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  176 002f 02       		.uleb128 0x2
  177 0030 01       		.byte	0x1
  178 0031 08       		.byte	0x8
- 179 0032 95000000 		.4byte	.LASF1
+ 179 0032 23010000 		.4byte	.LASF1
  180 0036 02       		.uleb128 0x2
  181 0037 02       		.byte	0x2
  182 0038 05       		.byte	0x5
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  222 0087 4F       		.byte	0x4f
  223 0088 00       		.byte	0
  224 0089 02       		.uleb128 0x2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 5
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 5
 
 
  225 008a 04       		.byte	0x4
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  279 0102 05       		.uleb128 0x5
  280 0103 03       		.byte	0x3
  281 0104 00000000 		.4byte	cy_meta_flashprotect
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 6
 
 
  282 0108 07       		.uleb128 0x7
@@ -311,7 +311,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  289 011b 0B       		.byte	0xb
  290 011c 00       		.byte	0
  291 011d 08       		.uleb128 0x8
- 292 011e 0A000000 		.4byte	.LASF16
+ 292 011e 98000000 		.4byte	.LASF16
  293 0122 03       		.byte	0x3
  294 0123 7F       		.byte	0x7f
  295 0124 2E010000 		.4byte	0x12e
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  336 0020 0B       		.uleb128 0xb
  337 0021 3B       		.uleb128 0x3b
  338 0022 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 7
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 7
 
 
  339 0023 49       		.uleb128 0x49
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  393 0059 18       		.uleb128 0x18
  394 005a 00       		.byte	0
  395 005b 00       		.byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 8
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 8
 
 
  396 005c 00       		.byte	0
@@ -443,50 +443,50 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  411 0000 5F5F7569 		.ascii	"__uint8_t\000"
  411      6E74385F 
  411      7400
- 412              	.LASF16:
- 413 000a 63795F6D 		.ascii	"cy_metadata\000"
- 413      65746164 
- 413      61746100 
- 414              	.LASF19:
- 415 0016 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 415      73657273 
- 415      5C4A6163 
- 415      6F622D4C 
- 415      6170746F 
- 416 0044 656E696F 		.ascii	"enior Project Stuff\\PSoC Curve Tracer PSoC Process"
- 416      72205072 
- 416      6F6A6563 
- 416      74205374 
- 416      7566665C 
- 417 0076 696E675C 		.ascii	"ing\\Senior Project Stuff.cydsn\000"
- 417      53656E69 
- 417      6F722050 
- 417      726F6A65 
- 417      63742053 
- 418              	.LASF1:
- 419 0095 756E7369 		.ascii	"unsigned char\000"
- 419      676E6564 
- 419      20636861 
- 419      7200
- 420              	.LASF17:
- 421 00a3 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 421      43313120 
- 421      352E342E 
- 421      31203230 
- 421      31363036 
- 422 00d6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 422      20726576 
- 422      6973696F 
- 422      6E203233 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 9
+ 412              	.LASF17:
+ 413 000a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 413      43313120 
+ 413      352E342E 
+ 413      31203230 
+ 413      31363036 
+ 414 003d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 414      20726576 
+ 414      6973696F 
+ 414      6E203233 
+ 414      37373135 
+ 415 0070 30202D66 		.ascii	"0 -ffunction-sections -ffat-lto-objects\000"
+ 415      66756E63 
+ 415      74696F6E 
+ 415      2D736563 
+ 415      74696F6E 
+ 416              	.LASF16:
+ 417 0098 63795F6D 		.ascii	"cy_metadata\000"
+ 417      65746164 
+ 417      61746100 
+ 418              	.LASF19:
+ 419 00a4 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
+ 419      73657273 
+ 419      5C4A6163 
+ 419      6F622D4C 
+ 419      6170746F 
+ 420 00d2 656E696F 		.ascii	"enior Project Stuff\\PSoC Curve Tracer PSoC Process"
+ 420      72205072 
+ 420      6F6A6563 
+ 420      74205374 
+ 420      7566665C 
+ 421 0104 696E675C 		.ascii	"ing\\Senior Project Stuff.cydsn\000"
+ 421      53656E69 
+ 421      6F722050 
+ 421      726F6A65 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 9
 
 
- 422      37373135 
- 423 0109 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 423      66756E63 
- 423      74696F6E 
- 423      2D736563 
- 423      74696F6E 
+ 421      63742053 
+ 422              	.LASF1:
+ 423 0123 756E7369 		.ascii	"unsigned char\000"
+ 423      676E6564 
+ 423      20636861 
+ 423      7200
  424              	.LASF5:
  425 0131 6C6F6E67 		.ascii	"long unsigned int\000"
  425      20756E73 
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 1
  442              	.LASF11:
  443 01c7 73697A65 		.ascii	"sizetype\000"
  443      74797065 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccjTIK6a.s 			page 10
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccBf0uth.s 			page 10
 
 
  443      00
