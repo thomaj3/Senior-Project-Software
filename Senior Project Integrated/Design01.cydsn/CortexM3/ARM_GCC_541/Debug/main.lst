@@ -1,0 +1,2909 @@
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"main.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.global	__aeabi_i2d
+  20              		.global	__aeabi_ddiv
+  21              		.section	.text.single_test,"ax",%progbits
+  22              		.align	2
+  23              		.global	single_test
+  24              		.thumb
+  25              		.thumb_func
+  26              		.type	single_test, %function
+  27              	single_test:
+  28              	.LFB64:
+  29              		.file 1 "main.c"
+   1:main.c        **** #include "project.h"
+   2:main.c        **** #include "screen.h"
+   3:main.c        **** #include "stdio.h"
+   4:main.c        **** #include "math.h"
+   5:main.c        **** #include "string.h"
+   6:main.c        **** #include "settings.h"
+   7:main.c        **** 
+   8:main.c        **** #define VDAC_G_B_MAX 255 //Max VDAC code for the Gate/Base 
+   9:main.c        **** #define VDAC_D_C_MAX 188 //Max VDAC for the Drain/Common
+  10:main.c        **** #define VDS_NMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_NMOS) + 1)
+  11:main.c        **** #define VCE_NPN_LENGTH  ((VDAC_D_C_MAX/VC_STEP_NPN) + 1)
+  12:main.c        **** #define VDS_PMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_PMOS) + 1)
+  13:main.c        **** #define VCE_PNP_LENGTH  ((VDAC_D_C_MAX/VC_STEP_PNP) + 1)
+  14:main.c        **** #define VDAC_N_1_VOLT 21
+  15:main.c        **** #define VDAC_P_1_VOLT 13
+  16:main.c        **** #define ADC_GAIN 51.7
+  17:main.c        **** #define Y_RES 240
+  18:main.c        **** #define X_RES 320
+  19:main.c        **** 
+  20:main.c        **** //The lengths of Drain or Common testing points
+  21:main.c        **** 
+  22:main.c        **** //Conducts a test for a singular Vds and Vgs
+  23:main.c        **** double single_test(unsigned char Vds, unsigned char Vgs)
+  24:main.c        **** {
+  30              		.loc 1 24 0
+  31              		.cfi_startproc
+  32              		@ args = 0, pretend = 0, frame = 0
+  33              		@ frame_needed = 0, uses_anonymous_args = 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 2
+
+
+  34              	.LVL0:
+  35 0000 10B5     		push	{r4, lr}
+  36              		.cfi_def_cfa_offset 8
+  37              		.cfi_offset 4, -8
+  38              		.cfi_offset 14, -4
+  39 0002 0C46     		mov	r4, r1
+  25:main.c        ****     double Output;
+  26:main.c        ****     VDAC8_DS_SetValue(Vds);
+  40              		.loc 1 26 0
+  41 0004 FFF7FEFF 		bl	VDAC8_DS_SetValue
+  42              	.LVL1:
+  27:main.c        ****     VDAC8_GS_SetValue(Vgs);
+  43              		.loc 1 27 0
+  44 0008 2046     		mov	r0, r4
+  45 000a FFF7FEFF 		bl	VDAC8_GS_SetValue
+  46              	.LVL2:
+  28:main.c        ****     CyDelay(SETTLING_WAIT_TIME);
+  47              		.loc 1 28 0
+  48 000e 0120     		movs	r0, #1
+  49 0010 FFF7FEFF 		bl	CyDelay
+  50              	.LVL3:
+  29:main.c        ****     ADC_SAR_1_StartConvert();
+  51              		.loc 1 29 0
+  52 0014 FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+  53              	.LVL4:
+  30:main.c        ****     ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+  54              		.loc 1 30 0
+  55 0018 0020     		movs	r0, #0
+  56 001a FFF7FEFF 		bl	ADC_SAR_1_IsEndConversion
+  57              	.LVL5:
+  31:main.c        **** 	//waiting until conversion is over
+  32:main.c        ****     ADC_SAR_1_StopConvert();
+  58              		.loc 1 32 0
+  59 001e FFF7FEFF 		bl	ADC_SAR_1_StopConvert
+  60              	.LVL6:
+  33:main.c        ****     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
+  61              		.loc 1 33 0
+  62 0022 FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+  63              	.LVL7:
+  64 0026 FFF7FEFF 		bl	ADC_SAR_1_CountsTo_mVolts
+  65              	.LVL8:
+  66 002a FFF7FEFF 		bl	__aeabi_i2d
+  67              	.LVL9:
+  68 002e 04A3     		adr	r3, .L3
+  69 0030 D3E90023 		ldrd	r2, [r3]
+  70 0034 FFF7FEFF 		bl	__aeabi_ddiv
+  71              	.LVL10:
+  34:main.c        ****     return Output;
+  35:main.c        **** }
+  72              		.loc 1 35 0
+  73 0038 10BD     		pop	{r4, pc}
+  74              	.L4:
+  75 003a 00BFAFF3 		.align	3
+  75      0080
+  76              	.L3:
+  77 0040 9A999999 		.word	-1717986918
+  78 0044 99D94940 		.word	1078581657
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 3
+
+
+  79              		.cfi_endproc
+  80              	.LFE64:
+  81              		.size	single_test, .-single_test
+  82              		.section	.text.single_test_preset_vds,"ax",%progbits
+  83              		.align	2
+  84              		.global	single_test_preset_vds
+  85              		.thumb
+  86              		.thumb_func
+  87              		.type	single_test_preset_vds, %function
+  88              	single_test_preset_vds:
+  89              	.LFB65:
+  36:main.c        **** 
+  37:main.c        **** double single_test_preset_vds(unsigned char Vgs)
+  38:main.c        **** {
+  90              		.loc 1 38 0
+  91              		.cfi_startproc
+  92              		@ args = 0, pretend = 0, frame = 0
+  93              		@ frame_needed = 0, uses_anonymous_args = 0
+  94              	.LVL11:
+  95 0000 08B5     		push	{r3, lr}
+  96              		.cfi_def_cfa_offset 8
+  97              		.cfi_offset 3, -8
+  98              		.cfi_offset 14, -4
+  39:main.c        ****     double Output;
+  40:main.c        ****     VDAC8_GS_SetValue(Vgs);
+  99              		.loc 1 40 0
+ 100 0002 FFF7FEFF 		bl	VDAC8_GS_SetValue
+ 101              	.LVL12:
+  41:main.c        ****     CyDelay(SETTLING_WAIT_TIME);
+ 102              		.loc 1 41 0
+ 103 0006 0120     		movs	r0, #1
+ 104 0008 FFF7FEFF 		bl	CyDelay
+ 105              	.LVL13:
+  42:main.c        ****     ADC_SAR_1_StartConvert();
+ 106              		.loc 1 42 0
+ 107 000c FFF7FEFF 		bl	ADC_SAR_1_StartConvert
+ 108              	.LVL14:
+  43:main.c        ****     ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
+ 109              		.loc 1 43 0
+ 110 0010 0020     		movs	r0, #0
+ 111 0012 FFF7FEFF 		bl	ADC_SAR_1_IsEndConversion
+ 112              	.LVL15:
+  44:main.c        **** 	//waiting until conversion is over
+  45:main.c        ****     ADC_SAR_1_StopConvert();
+ 113              		.loc 1 45 0
+ 114 0016 FFF7FEFF 		bl	ADC_SAR_1_StopConvert
+ 115              	.LVL16:
+  46:main.c        ****     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
+ 116              		.loc 1 46 0
+ 117 001a FFF7FEFF 		bl	ADC_SAR_1_GetResult16
+ 118              	.LVL17:
+ 119 001e FFF7FEFF 		bl	ADC_SAR_1_CountsTo_mVolts
+ 120              	.LVL18:
+ 121 0022 FFF7FEFF 		bl	__aeabi_i2d
+ 122              	.LVL19:
+ 123 0026 04A3     		adr	r3, .L7
+ 124 0028 D3E90023 		ldrd	r2, [r3]
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 4
+
+
+ 125 002c FFF7FEFF 		bl	__aeabi_ddiv
+ 126              	.LVL20:
+  47:main.c        ****     return Output;
+  48:main.c        **** }
+ 127              		.loc 1 48 0
+ 128 0030 08BD     		pop	{r3, pc}
+ 129              	.L8:
+ 130 0032 00BFAFF3 		.align	3
+ 130      0080
+ 131              	.L7:
+ 132 0038 9A999999 		.word	-1717986918
+ 133 003c 99D94940 		.word	1078581657
+ 134              		.cfi_endproc
+ 135              	.LFE65:
+ 136              		.size	single_test_preset_vds, .-single_test_preset_vds
+ 137              		.global	__aeabi_dcmpgt
+ 138              		.section	.text.vgs_th_find,"ax",%progbits
+ 139              		.align	2
+ 140              		.global	vgs_th_find
+ 141              		.thumb
+ 142              		.thumb_func
+ 143              		.type	vgs_th_find, %function
+ 144              	vgs_th_find:
+ 145              	.LFB66:
+  49:main.c        ****     
+  50:main.c        **** 
+  51:main.c        **** //Finds Vth (The minimum Vgs needed to turn the transistor by sorting through Vgs's until 
+  52:main.c        **** //a minumum current of 1 mA is found Id is found by a 1 Ohm series resistor whose potential 
+  53:main.c        **** //difference is magnitifed 100 fold for accurate reading
+  54:main.c        **** int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
+  55:main.c        **** {
+ 146              		.loc 1 55 0
+ 147              		.cfi_startproc
+ 148              		@ args = 0, pretend = 0, frame = 0
+ 149              		@ frame_needed = 0, uses_anonymous_args = 0
+ 150              	.LVL21:
+ 151 0000 38B5     		push	{r3, r4, r5, lr}
+ 152              		.cfi_def_cfa_offset 16
+ 153              		.cfi_offset 3, -16
+ 154              		.cfi_offset 4, -12
+ 155              		.cfi_offset 5, -8
+ 156              		.cfi_offset 14, -4
+ 157 0002 0546     		mov	r5, r0
+ 158              	.LVL22:
+  56:main.c        ****     unsigned char   Vgs;           
+  57:main.c        **** 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
+  58:main.c        ****     double          Id=0;         
+  59:main.c        **** 	//The Drain Current | Id_real = Id/100
+  60:main.c        ****     
+  61:main.c        ****     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
+ 159              		.loc 1 61 0
+ 160 0004 0846     		mov	r0, r1
+ 161              	.LVL23:
+ 162 0006 FFF7FEFF 		bl	VDAC8_DS_SetValue
+ 163              	.LVL24:
+  62:main.c        ****     VDAC8_GS_SetValue(0);
+ 164              		.loc 1 62 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 5
+
+
+ 165 000a 0020     		movs	r0, #0
+ 166 000c FFF7FEFF 		bl	VDAC8_GS_SetValue
+ 167              	.LVL25:
+  63:main.c        ****     for(Vgs = 0; Vgs < Vgs_max; Vgs++)
+ 168              		.loc 1 63 0
+ 169 0010 0024     		movs	r4, #0
+ 170 0012 0BE0     		b	.L10
+ 171              	.LVL26:
+ 172              	.L14:
+  64:main.c        ****     {
+  65:main.c        ****         Id = single_test_preset_vds(Vgs);
+ 173              		.loc 1 65 0
+ 174 0014 2046     		mov	r0, r4
+ 175 0016 FFF7FEFF 		bl	single_test_preset_vds
+ 176              	.LVL27:
+  66:main.c        ****         if(Id > ID_TH)
+ 177              		.loc 1 66 0
+ 178 001a 0022     		movs	r2, #0
+ 179 001c 054B     		ldr	r3, .L18
+ 180 001e FFF7FEFF 		bl	__aeabi_dcmpgt
+ 181              	.LVL28:
+ 182 0022 08B1     		cbz	r0, .L16
+  67:main.c        ****         {
+  68:main.c        ****             //Once Id > 1 mV transistor is "on" and we can return Vgs as Vth
+  69:main.c        ****             return Vgs;
+ 183              		.loc 1 69 0
+ 184 0024 2046     		mov	r0, r4
+ 185 0026 38BD     		pop	{r3, r4, r5, pc}
+ 186              	.LVL29:
+ 187              	.L16:
+  63:main.c        ****     {
+ 188              		.loc 1 63 0 discriminator 2
+ 189 0028 0134     		adds	r4, r4, #1
+ 190              	.LVL30:
+ 191 002a E4B2     		uxtb	r4, r4
+ 192              	.LVL31:
+ 193              	.L10:
+  63:main.c        ****     {
+ 194              		.loc 1 63 0 is_stmt 0 discriminator 1
+ 195 002c AC42     		cmp	r4, r5
+ 196 002e F1D3     		bcc	.L14
+  70:main.c        ****         }
+  71:main.c        ****     }
+  72:main.c        ****     return 0; //If a Vth cannot be found
+ 197              		.loc 1 72 0 is_stmt 1
+ 198 0030 0020     		movs	r0, #0
+  73:main.c        **** }
+ 199              		.loc 1 73 0
+ 200 0032 38BD     		pop	{r3, r4, r5, pc}
+ 201              	.LVL32:
+ 202              	.L19:
+ 203              		.align	2
+ 204              	.L18:
+ 205 0034 0000F03F 		.word	1072693248
+ 206              		.cfi_endproc
+ 207              	.LFE66:
+ 208              		.size	vgs_th_find, .-vgs_th_find
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 6
+
+
+ 209              		.global	__aeabi_dcmpge
+ 210              		.section	.text.vgs_max_id_find,"ax",%progbits
+ 211              		.align	2
+ 212              		.global	vgs_max_id_find
+ 213              		.thumb
+ 214              		.thumb_func
+ 215              		.type	vgs_max_id_find, %function
+ 216              	vgs_max_id_find:
+ 217              	.LFB67:
+  74:main.c        **** 
+  75:main.c        **** //Finds the MAX current 20mA, Id is found through a 100 Ohm series resistor
+  76:main.c        **** //Sweeps through Vgs until a max current of 20 mA is found
+  77:main.c        **** //Therefor ID_MAX = 20*100 == 2000
+  78:main.c        **** unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned char Vgs_max)
+  79:main.c        **** {
+ 218              		.loc 1 79 0
+ 219              		.cfi_startproc
+ 220              		@ args = 0, pretend = 0, frame = 0
+ 221              		@ frame_needed = 0, uses_anonymous_args = 0
+ 222              	.LVL33:
+ 223 0000 38B5     		push	{r3, r4, r5, lr}
+ 224              		.cfi_def_cfa_offset 16
+ 225              		.cfi_offset 3, -16
+ 226              		.cfi_offset 4, -12
+ 227              		.cfi_offset 5, -8
+ 228              		.cfi_offset 14, -4
+ 229 0002 0446     		mov	r4, r0
+ 230 0004 1546     		mov	r5, r2
+  80:main.c        ****     unsigned char   Vgs;
+  81:main.c        **** 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
+  82:main.c        ****     double          Id; 
+  83:main.c        **** 	//The Drain Current | Id_real = Id/100
+  84:main.c        ****     
+  85:main.c        ****     VDAC8_DS_SetValue(Vds_max);
+ 231              		.loc 1 85 0
+ 232 0006 0846     		mov	r0, r1
+ 233              	.LVL34:
+ 234 0008 FFF7FEFF 		bl	VDAC8_DS_SetValue
+ 235              	.LVL35:
+  86:main.c        **** 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
+  87:main.c        ****     for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
+ 236              		.loc 1 87 0
+ 237 000c 09E0     		b	.L21
+ 238              	.L23:
+  88:main.c        ****     {
+  89:main.c        ****         Id = single_test_preset_vds(Vgs);
+ 239              		.loc 1 89 0
+ 240 000e 2046     		mov	r0, r4
+ 241 0010 FFF7FEFF 		bl	single_test_preset_vds
+ 242              	.LVL36:
+  90:main.c        ****         if (Id >= ID_MAX)
+ 243              		.loc 1 90 0
+ 244 0014 0022     		movs	r2, #0
+ 245 0016 054B     		ldr	r3, .L25
+ 246 0018 FFF7FEFF 		bl	__aeabi_dcmpge
+ 247              	.LVL37:
+ 248 001c 18B9     		cbnz	r0, .L22
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 7
+
+
+  87:main.c        ****     {
+ 249              		.loc 1 87 0 discriminator 2
+ 250 001e 0134     		adds	r4, r4, #1
+ 251              	.LVL38:
+ 252 0020 E4B2     		uxtb	r4, r4
+ 253              	.LVL39:
+ 254              	.L21:
+  87:main.c        ****     {
+ 255              		.loc 1 87 0 is_stmt 0 discriminator 1
+ 256 0022 AC42     		cmp	r4, r5
+ 257 0024 F3D3     		bcc	.L23
+ 258              	.L22:
+  91:main.c        ****         {
+  92:main.c        ****             break; //Stop stepping once max current is hit
+  93:main.c        ****         }
+  94:main.c        ****     }
+  95:main.c        ****     return Vgs - 1; //Returns the previous Vgs step to avoid going past 20mA
+  96:main.c        **** }
+ 259              		.loc 1 96 0 is_stmt 1
+ 260 0026 601E     		subs	r0, r4, #1
+ 261 0028 38BD     		pop	{r3, r4, r5, pc}
+ 262              	.LVL40:
+ 263              	.L26:
+ 264 002a 00BF     		.align	2
+ 265              	.L25:
+ 266 002c 00003440 		.word	1077149696
+ 267              		.cfi_endproc
+ 268              	.LFE67:
+ 269              		.size	vgs_max_id_find, .-vgs_max_id_find
+ 270              		.global	__aeabi_dmul
+ 271              		.global	__aeabi_d2iz
+ 272              		.section	.text.main,"ax",%progbits
+ 273              		.align	2
+ 274              		.global	main
+ 275              		.thumb
+ 276              		.thumb_func
+ 277              		.type	main, %function
+ 278              	main:
+ 279              	.LFB68:
+  97:main.c        **** 
+  98:main.c        **** 
+  99:main.c        **** 
+ 100:main.c        **** int main(void)
+ 101:main.c        **** {
+ 280              		.loc 1 101 0
+ 281              		.cfi_startproc
+ 282              		@ args = 0, pretend = 0, frame = 1728
+ 283              		@ frame_needed = 0, uses_anonymous_args = 0
+ 284 0000 2DE9F043 		push	{r4, r5, r6, r7, r8, r9, lr}
+ 285              		.cfi_def_cfa_offset 28
+ 286              		.cfi_offset 4, -28
+ 287              		.cfi_offset 5, -24
+ 288              		.cfi_offset 6, -20
+ 289              		.cfi_offset 7, -16
+ 290              		.cfi_offset 8, -12
+ 291              		.cfi_offset 9, -8
+ 292              		.cfi_offset 14, -4
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 8
+
+
+ 293 0004 ADF2CC6D 		subw	sp, sp, #1740
+ 294              		.cfi_def_cfa_offset 1768
+ 102:main.c        ****     CyGlobalIntEnable; /* Enable global interrupts. */
+ 295              		.loc 1 102 0
+ 296              		.syntax unified
+ 297              	@ 102 "main.c" 1
+ 298 0008 62B6     		CPSIE   i
+ 299              	@ 0 "" 2
+ 103:main.c        ****     
+ 104:main.c        ****     // Starts clock for SPI
+ 105:main.c        ****     SPIM_Start();
+ 300              		.loc 1 105 0
+ 301              		.thumb
+ 302              		.syntax unified
+ 303 000a FFF7FEFF 		bl	SPIM_Start
+ 304              	.LVL41:
+ 106:main.c        ****     Clock_Start();
+ 305              		.loc 1 106 0
+ 306 000e FFF7FEFF 		bl	Clock_Start
+ 307              	.LVL42:
+ 107:main.c        ****     
+ 108:main.c        ****     // Resets screen
+ 109:main.c        ****     Reset_Write(1);
+ 308              		.loc 1 109 0
+ 309 0012 0120     		movs	r0, #1
+ 310 0014 FFF7FEFF 		bl	Reset_Write
+ 311              	.LVL43:
+ 110:main.c        ****     CyDelay(500);
+ 312              		.loc 1 110 0
+ 313 0018 4FF4FA70 		mov	r0, #500
+ 314 001c FFF7FEFF 		bl	CyDelay
+ 315              	.LVL44:
+ 111:main.c        ****     Reset_Write(0);
+ 316              		.loc 1 111 0
+ 317 0020 0020     		movs	r0, #0
+ 318 0022 FFF7FEFF 		bl	Reset_Write
+ 319              	.LVL45:
+ 112:main.c        ****     CyDelay(500);
+ 320              		.loc 1 112 0
+ 321 0026 4FF4FA70 		mov	r0, #500
+ 322 002a FFF7FEFF 		bl	CyDelay
+ 323              	.LVL46:
+ 113:main.c        ****     Reset_Write(1);
+ 324              		.loc 1 113 0
+ 325 002e 0120     		movs	r0, #1
+ 326 0030 FFF7FEFF 		bl	Reset_Write
+ 327              	.LVL47:
+ 114:main.c        ****     CyDelay(500);
+ 328              		.loc 1 114 0
+ 329 0034 4FF4FA70 		mov	r0, #500
+ 330 0038 FFF7FEFF 		bl	CyDelay
+ 331              	.LVL48:
+ 115:main.c        ****     
+ 116:main.c        ****     // Calls start screen
+ 117:main.c        ****     StartScreen();
+ 332              		.loc 1 117 0
+ 333 003c FFF7FEFF 		bl	StartScreen
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 9
+
+
+ 334              	.LVL49:
+ 118:main.c        ****     
+ 119:main.c        ****     // Fills screen in black
+ 120:main.c        ****     fillScreen(WHITE);  
+ 335              		.loc 1 120 0
+ 336 0040 4FF6FF70 		movw	r0, #65535
+ 337 0044 FFF7FEFF 		bl	fillScreen
+ 338              	.LVL50:
+ 121:main.c        ****     
+ 122:main.c        ****     //Enabling VDACs and ADCs
+ 123:main.c        ****     VDAC8_GS_Start();
+ 339              		.loc 1 123 0
+ 340 0048 FFF7FEFF 		bl	VDAC8_GS_Start
+ 341              	.LVL51:
+ 124:main.c        ****     VDAC8_DS_Start();
+ 342              		.loc 1 124 0
+ 343 004c FFF7FEFF 		bl	VDAC8_DS_Start
+ 344              	.LVL52:
+ 125:main.c        ****     ADC_SAR_1_Start();
+ 345              		.loc 1 125 0
+ 346 0050 FFF7FEFF 		bl	ADC_SAR_1_Start
+ 347              	.LVL53:
+ 126:main.c        ****     
+ 127:main.c        ****     int return_code;    //Going to be used for error displays
+ 128:main.c        ****     
+ 129:main.c        ****     int i;  //used for for loop iterations
+ 130:main.c        ****     int j;  //used for for loop iterations
+ 131:main.c        ****     
+ 132:main.c        ****     unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
+ 133:main.c        ****     int y_max_mA = 25;                    //The highest plottable Id in mA
+ 134:main.c        ****     int x_max_mV = 10000;                  //the highest plottable Vds in mV
+ 135:main.c        ****     
+ 136:main.c        ****     int Vth;      //VDAC code for the threshold voltage
+ 137:main.c        ****     int Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA
+ 138:main.c        ****     int x_pixel;
+ 139:main.c        ****     int y_pixel;
+ 140:main.c        ****     int x_pixel_prev;
+ 141:main.c        ****     int y_pixel_prev;
+ 142:main.c        ****     int curve_color[CURVE_NUM] = {BLUE, GREEN, RED, ORANGE};
+ 348              		.loc 1 142 0
+ 349 0054 624B     		ldr	r3, .L41+8
+ 350 0056 0FCB     		ldmia	r3, {r0, r1, r2, r3}
+ 351 0058 0DF5D964 		add	r4, sp, #1736
+ 352 005c 04E90F00 		stmdb	r4, {r0, r1, r2, r3}
+ 143:main.c        ****     
+ 144:main.c        ****     unsigned char Vgs_step;                         //The stepping amount to create the Vgs test po
+ 145:main.c        ****     unsigned char Vgs_test_points[CURVE_NUM];       //The Vgs stepping points of ammount specified 
+ 146:main.c        ****     unsigned char Vds_test_points[VDS_NMOS_LENGTH]; //The Vds stepping points of ammount specified 
+ 147:main.c        ****     
+ 148:main.c        ****     double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};   //The output data of Id NMOS trace in
+ 149:main.c        ****     double Output_data_x[VDS_NMOS_LENGTH];                   //The Vds points used. Used for plotti
+ 150:main.c        ****     double Id;
+ 151:main.c        ****     
+ 152:main.c        ****     
+ 153:main.c        ****     //for(;;)
+ 154:main.c        ****     //{    
+ 155:main.c        ****                 ADC_SAR_1_Wakeup();
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 10
+
+
+ 353              		.loc 1 155 0
+ 354 0060 FFF7FEFF 		bl	ADC_SAR_1_Wakeup
+ 355              	.LVL54:
+ 156:main.c        ****                 //case 0:
+ 157:main.c        ****                 //NMOS input
+ 158:main.c        ****                 Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
+ 356              		.loc 1 158 0
+ 357 0064 1521     		movs	r1, #21
+ 358 0066 FF20     		movs	r0, #255
+ 359 0068 FFF7FEFF 		bl	vgs_th_find
+ 360              	.LVL55:
+ 159:main.c        ****                 if (Vth < 0)
+ 361              		.loc 1 159 0
+ 362 006c 041E     		subs	r4, r0, #0
+ 363 006e C0F2AE80 		blt	.L29
+ 160:main.c        ****                 {
+ 161:main.c        ****                     return 0;
+ 162:main.c        ****                 }
+ 163:main.c        ****                 Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
+ 364              		.loc 1 163 0
+ 365 0072 E5B2     		uxtb	r5, r4
+ 366 0074 DC22     		movs	r2, #220
+ 367 0076 BC21     		movs	r1, #188
+ 368 0078 2846     		mov	r0, r5
+ 369              	.LVL56:
+ 370 007a FFF7FEFF 		bl	vgs_max_id_find
+ 371              	.LVL57:
+ 164:main.c        ****                 Vgs_step = (Vgs_max - Vth)/(CURVE_NUM-1); //Creating the step size for linearlly sp
+ 372              		.loc 1 164 0
+ 373 007e 001B     		subs	r0, r0, r4
+ 374              	.LVL58:
+ 375 0080 0321     		movs	r1, #3
+ 376 0082 90FBF1F1 		sdiv	r1, r0, r1
+ 377 0086 C9B2     		uxtb	r1, r1
+ 378              	.LVL59:
+ 165:main.c        ****                 Vgs_test_points[0] = Vth;
+ 379              		.loc 1 165 0
+ 380 0088 8DF8B456 		strb	r5, [sp, #1716]
+ 381              	.LVL60:
+ 166:main.c        ****                 for (i=1; i < CURVE_NUM; i++)
+ 382              		.loc 1 166 0
+ 383 008c 0123     		movs	r3, #1
+ 384 008e 0AE0     		b	.L30
+ 385              	.LVL61:
+ 386              	.L31:
+ 167:main.c        ****                 {
+ 168:main.c        ****                     Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
+ 387              		.loc 1 168 0 discriminator 3
+ 388 0090 5A1E     		subs	r2, r3, #1
+ 389 0092 0DF5D960 		add	r0, sp, #1736
+ 390 0096 0244     		add	r2, r2, r0
+ 391 0098 12F8142C 		ldrb	r2, [r2, #-20]	@ zero_extendqisi2
+ 392 009c 1844     		add	r0, r0, r3
+ 393 009e 0A44     		add	r2, r2, r1
+ 394 00a0 00F8142C 		strb	r2, [r0, #-20]
+ 166:main.c        ****                 for (i=1; i < CURVE_NUM; i++)
+ 395              		.loc 1 166 0 discriminator 3
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 11
+
+
+ 396 00a4 0133     		adds	r3, r3, #1
+ 397              	.LVL62:
+ 398              	.L30:
+ 166:main.c        ****                 for (i=1; i < CURVE_NUM; i++)
+ 399              		.loc 1 166 0 is_stmt 0 discriminator 1
+ 400 00a6 032B     		cmp	r3, #3
+ 401 00a8 F2DD     		ble	.L31
+ 169:main.c        ****                 }
+ 170:main.c        ****                 Vds_test_points[0] = 0;
+ 402              		.loc 1 170 0 is_stmt 1
+ 403 00aa 0023     		movs	r3, #0
+ 404              	.LVL63:
+ 405 00ac 8DF8F435 		strb	r3, [sp, #1524]
+ 171:main.c        ****                 Output_data_x[0] = 0;
+ 406              		.loc 1 171 0
+ 407 00b0 0022     		movs	r2, #0
+ 408 00b2 0023     		movs	r3, #0
+ 409 00b4 CDE90223 		strd	r2, [sp, #8]
+ 410              	.LVL64:
+ 172:main.c        ****                 for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 411              		.loc 1 172 0
+ 412 00b8 0124     		movs	r4, #1
+ 413              	.LVL65:
+ 414 00ba 21E0     		b	.L32
+ 415              	.LVL66:
+ 416              	.L33:
+ 173:main.c        ****                 {
+ 174:main.c        ****                     Vds_test_points[i] = Vds_test_points[i-1] + VD_STEP_NMOS;
+ 417              		.loc 1 174 0 discriminator 3
+ 418 00bc 631E     		subs	r3, r4, #1
+ 419 00be 0DF5D962 		add	r2, sp, #1736
+ 420 00c2 1344     		add	r3, r3, r2
+ 421 00c4 13F8D42C 		ldrb	r2, [r3, #-212]	@ zero_extendqisi2
+ 422 00c8 0DF5D961 		add	r1, sp, #1736
+ 423 00cc 2144     		add	r1, r1, r4
+ 424 00ce 0132     		adds	r2, r2, #1
+ 425 00d0 01F8D42C 		strb	r2, [r1, #-212]
+ 175:main.c        ****                     Output_data_x[i] = Vds_test_points[i-1] * 3.0 * 4096.0 / 256.0;
+ 426              		.loc 1 175 0 discriminator 3
+ 427 00d4 13F8D40C 		ldrb	r0, [r3, #-212]	@ zero_extendqisi2
+ 428 00d8 FFF7FEFF 		bl	__aeabi_i2d
+ 429              	.LVL67:
+ 430 00dc 0022     		movs	r2, #0
+ 431 00de 414B     		ldr	r3, .L41+12
+ 432 00e0 FFF7FEFF 		bl	__aeabi_dmul
+ 433              	.LVL68:
+ 434 00e4 0022     		movs	r2, #0
+ 435 00e6 404B     		ldr	r3, .L41+16
+ 436 00e8 FFF7FEFF 		bl	__aeabi_dmul
+ 437              	.LVL69:
+ 438 00ec 0022     		movs	r2, #0
+ 439 00ee 3F4B     		ldr	r3, .L41+20
+ 440 00f0 FFF7FEFF 		bl	__aeabi_dmul
+ 441              	.LVL70:
+ 442 00f4 02AB     		add	r3, sp, #8
+ 443 00f6 03EBC403 		add	r3, r3, r4, lsl #3
+ 444 00fa C3E90001 		strd	r0, [r3]
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 12
+
+
+ 172:main.c        ****                 for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 445              		.loc 1 172 0 discriminator 3
+ 446 00fe 0134     		adds	r4, r4, #1
+ 447              	.LVL71:
+ 448              	.L32:
+ 172:main.c        ****                 for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 449              		.loc 1 172 0 is_stmt 0 discriminator 1
+ 450 0100 BC2C     		cmp	r4, #188
+ 451 0102 DBDD     		ble	.L33
+ 452 0104 0027     		movs	r7, #0
+ 453 0106 58E0     		b	.L34
+ 454              	.LVL72:
+ 455              	.L37:
+ 176:main.c        ****                 }
+ 177:main.c        ****                 for(i = 0; i < CURVE_NUM; i++)
+ 178:main.c        ****                 {
+ 179:main.c        ****                     for(j = 0; j <VDS_NMOS_LENGTH; j++)
+ 180:main.c        ****                     {
+ 181:main.c        ****                         Id = single_test(Vds_test_points[j],Vgs_test_points[i]);
+ 456              		.loc 1 181 0 is_stmt 1
+ 457 0108 0DF5D963 		add	r3, sp, #1736
+ 458 010c 3B44     		add	r3, r3, r7
+ 459 010e 13F8141C 		ldrb	r1, [r3, #-20]	@ zero_extendqisi2
+ 460 0112 0DF5D963 		add	r3, sp, #1736
+ 461 0116 2344     		add	r3, r3, r4
+ 462 0118 13F8D40C 		ldrb	r0, [r3, #-212]	@ zero_extendqisi2
+ 463 011c FFF7FEFF 		bl	single_test
+ 464              	.LVL73:
+ 182:main.c        ****                         if (j==0)
+ 465              		.loc 1 182 0
+ 466 0120 D4B9     		cbnz	r4, .L35
+ 183:main.c        ****                         {
+ 184:main.c        ****                             y_pixel_prev = (int) (Id/y_max_mA)*Y_RES;
+ 467              		.loc 1 184 0
+ 468 0122 0022     		movs	r2, #0
+ 469 0124 324B     		ldr	r3, .L41+24
+ 470 0126 FFF7FEFF 		bl	__aeabi_ddiv
+ 471              	.LVL74:
+ 472 012a FFF7FEFF 		bl	__aeabi_d2iz
+ 473              	.LVL75:
+ 474 012e 4FF0F009 		mov	r9, #240
+ 475              	.LVL76:
+ 476 0132 09FB00F9 		mul	r9, r9, r0
+ 477              	.LVL77:
+ 185:main.c        ****                             x_pixel_prev = (int) (Output_data_x[j]/x_max_mV)*X_RES;
+ 478              		.loc 1 185 0
+ 479 0136 02AB     		add	r3, sp, #8
+ 480 0138 03EBC401 		add	r1, r3, r4, lsl #3
+ 481 013c 26A3     		adr	r3, .L41
+ 482 013e D3E90023 		ldrd	r2, [r3]
+ 483 0142 D1E90001 		ldrd	r0, [r1]
+ 484 0146 FFF7FEFF 		bl	__aeabi_ddiv
+ 485              	.LVL78:
+ 486 014a FFF7FEFF 		bl	__aeabi_d2iz
+ 487              	.LVL79:
+ 488 014e 4FF4A078 		mov	r8, #320
+ 489              	.LVL80:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 13
+
+
+ 490 0152 08FB00F8 		mul	r8, r8, r0
+ 491              	.LVL81:
+ 492 0156 2AE0     		b	.L36
+ 493              	.LVL82:
+ 494              	.L35:
+ 495              	.LBB2:
+ 186:main.c        ****                         }
+ 187:main.c        ****                         else
+ 188:main.c        ****                         {
+ 189:main.c        ****                             y_pixel = (int) ((Id*Y_RES)/y_max_mA);
+ 496              		.loc 1 189 0
+ 497 0158 0022     		movs	r2, #0
+ 498 015a 264B     		ldr	r3, .L41+28
+ 499 015c FFF7FEFF 		bl	__aeabi_dmul
+ 500              	.LVL83:
+ 501 0160 0022     		movs	r2, #0
+ 502 0162 234B     		ldr	r3, .L41+24
+ 503 0164 FFF7FEFF 		bl	__aeabi_ddiv
+ 504              	.LVL84:
+ 505 0168 FFF7FEFF 		bl	__aeabi_d2iz
+ 506              	.LVL85:
+ 507 016c 0646     		mov	r6, r0
+ 508              	.LVL86:
+ 190:main.c        ****                             x_pixel = (int) ((Output_data_x[j]*X_RES)/x_max_mV);
+ 509              		.loc 1 190 0
+ 510 016e 02AB     		add	r3, sp, #8
+ 511 0170 03EBC401 		add	r1, r3, r4, lsl #3
+ 512 0174 0022     		movs	r2, #0
+ 513 0176 204B     		ldr	r3, .L41+32
+ 514 0178 D1E90001 		ldrd	r0, [r1]
+ 515              	.LVL87:
+ 516 017c FFF7FEFF 		bl	__aeabi_dmul
+ 517              	.LVL88:
+ 518 0180 15A3     		adr	r3, .L41
+ 519 0182 D3E90023 		ldrd	r2, [r3]
+ 520 0186 FFF7FEFF 		bl	__aeabi_ddiv
+ 521              	.LVL89:
+ 522 018a FFF7FEFF 		bl	__aeabi_d2iz
+ 523              	.LVL90:
+ 524 018e 0546     		mov	r5, r0
+ 525              	.LVL91:
+ 191:main.c        ****                             draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
+ 526              		.loc 1 191 0
+ 527 0190 0DF5D963 		add	r3, sp, #1736
+ 528 0194 03EB8703 		add	r3, r3, r7, lsl #2
+ 529 0198 53F8103C 		ldr	r3, [r3, #-16]
+ 530 019c 0093     		str	r3, [sp]
+ 531 019e 3346     		mov	r3, r6
+ 532 01a0 0246     		mov	r2, r0
+ 533 01a2 4946     		mov	r1, r9
+ 534 01a4 4046     		mov	r0, r8
+ 535              	.LVL92:
+ 536 01a6 FFF7FEFF 		bl	draw_line
+ 537              	.LVL93:
+ 192:main.c        ****                             y_pixel_prev = y_pixel;
+ 538              		.loc 1 192 0
+ 539 01aa B146     		mov	r9, r6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 14
+
+
+ 193:main.c        ****                             x_pixel_prev = x_pixel;
+ 540              		.loc 1 193 0
+ 541 01ac A846     		mov	r8, r5
+ 542              	.LVL94:
+ 543              	.L36:
+ 544              	.LBE2:
+ 179:main.c        ****                     {
+ 545              		.loc 1 179 0 discriminator 2
+ 546 01ae 0134     		adds	r4, r4, #1
+ 547              	.LVL95:
+ 548 01b0 00E0     		b	.L38
+ 549              	.LVL96:
+ 550              	.L39:
+ 551 01b2 0024     		movs	r4, #0
+ 552              	.L38:
+ 553              	.LVL97:
+ 179:main.c        ****                     {
+ 554              		.loc 1 179 0 is_stmt 0 discriminator 1
+ 555 01b4 BC2C     		cmp	r4, #188
+ 556 01b6 A7DD     		ble	.L37
+ 177:main.c        ****                 {
+ 557              		.loc 1 177 0 is_stmt 1 discriminator 2
+ 558 01b8 0137     		adds	r7, r7, #1
+ 559              	.LVL98:
+ 560              	.L34:
+ 177:main.c        ****                 {
+ 561              		.loc 1 177 0 is_stmt 0 discriminator 1
+ 562 01ba 032F     		cmp	r7, #3
+ 563 01bc F9DD     		ble	.L39
+ 194:main.c        ****                         }
+ 195:main.c        ****                     }
+ 196:main.c        ****                 }
+ 197:main.c        **** ////            case 1:
+ 198:main.c        **** ////                //NPN input
+ 199:main.c        **** ////                Vth =  126; //vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
+ 200:main.c        **** ////                if (Vth < 0)
+ 201:main.c        **** ////                {
+ 202:main.c        **** ////                    //Print error function
+ 203:main.c        **** ////                }
+ 204:main.c        **** ////                Vgs_max = 188;  //vgs_max_id_find(Vth,VDAC_D_C_MAX,VDAC_G_B_MAX);
+ 205:main.c        **** ////                Vgs_step = (Vgs_max - Vth)/CURVE_NUM; //Creating the step size for linearlly sp
+ 206:main.c        **** ////                Vgs_test_points[0] = Vth;
+ 207:main.c        **** ////                for (i=1; i < CURVE_NUM; i++)
+ 208:main.c        **** ////                {
+ 209:main.c        **** ////                    Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
+ 210:main.c        **** ////                }
+ 211:main.c        **** ////                Vds_test_points[0] = 0;
+ 212:main.c        **** ////                Output_data_x[0] = 0;
+ 213:main.c        **** ////                for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 214:main.c        **** ////                {
+ 215:main.c        **** ////                    Vds_test_points[i] = Vds_test_points[i-1] + VD_STEP_NMOS;
+ 216:main.c        **** ////                    Output_data_x[i] = Vds_test_points[i-1]/2560.0 * 3.0 * 4.096; //Translates 
+ 217:main.c        **** ////                }
+ 218:main.c        **** ////                for(i = 0; i < CURVE_NUM; i++)
+ 219:main.c        **** ////                {
+ 220:main.c        **** ////                    for(j = 0; j < VDS_NMOS_LENGTH; j++)
+ 221:main.c        **** ////                    {
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 15
+
+
+ 222:main.c        **** ////                        Output_data_y[i][j] = single_test(Vds_test_points[j],Vgs_test_points[i]
+ 223:main.c        **** ////                    }
+ 224:main.c        **** ////                }
+ 225:main.c        **** ////            case 2:
+ 226:main.c        **** ////                //PMOS input
+ 227:main.c        **** ////                Vth =  126; //vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
+ 228:main.c        **** ////                if (Vth < 0)
+ 229:main.c        **** ////                {
+ 230:main.c        **** ////                    //Print error function
+ 231:main.c        **** ////                }
+ 232:main.c        **** ////                Vgs_max = 188;  //vgs_max_id_find(Vth,VDAC_D_C_MAX,VDAC_G_B_MAX);
+ 233:main.c        **** ////                Vgs_step = (Vgs_max - Vth)/CURVE_NUM; //Creating the step size for linearlly sp
+ 234:main.c        **** ////                Vgs_test_points[0] = Vth;
+ 235:main.c        **** ////                for (i=1; i < CURVE_NUM; i++)
+ 236:main.c        **** ////                {
+ 237:main.c        **** ////                    Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
+ 238:main.c        **** ////                }
+ 239:main.c        **** ////                Vds_test_points[0] = 0;
+ 240:main.c        **** ////                Output_data_x[0] = 0;
+ 241:main.c        **** ////                for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 242:main.c        **** ////                {
+ 243:main.c        **** ////                    Vds_test_points[i] = Vds_test_points[i-1] + VD_STEP_NMOS;
+ 244:main.c        **** ////                    Output_data_x[i] = Vds_test_points[i-1]/2560.0 * 3.0 * 4.096; //Translates 
+ 245:main.c        **** ////                }
+ 246:main.c        **** ////                for(i = 0; i < CURVE_NUM; i++)
+ 247:main.c        **** ////                {
+ 248:main.c        **** ////                    for(j = 0; j < VDS_NMOS_LENGTH; j++)
+ 249:main.c        **** ////                    {
+ 250:main.c        **** ////                        Output_data_y[i][j] = single_test(Vds_test_points[j],Vgs_test_points[i]
+ 251:main.c        **** ////                    }
+ 252:main.c        **** ////                }
+ 253:main.c        **** ////            case 3:
+ 254:main.c        **** ////                //PNP input
+ 255:main.c        **** ////                Vth =  126; //vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
+ 256:main.c        **** ////                if (Vth < 0)
+ 257:main.c        **** ////                {
+ 258:main.c        **** ////                    //Print error function
+ 259:main.c        **** ////                }
+ 260:main.c        **** ////                Vgs_max = 188;  //vgs_max_id_find(Vth,VDAC_D_C_MAX,VDAC_G_B_MAX);
+ 261:main.c        **** ////                Vgs_step = (Vgs_max - Vth)/CURVE_NUM; //Creating the step size for linearlly sp
+ 262:main.c        **** ////                Vgs_test_points[0] = Vth;
+ 263:main.c        **** ////                for (i=1; i < CURVE_NUM; i++)
+ 264:main.c        **** ////                {
+ 265:main.c        **** ////                    Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
+ 266:main.c        **** ////                }
+ 267:main.c        **** ////                Vds_test_points[0] = 0;
+ 268:main.c        **** ////                Output_data_x[0] = 0;
+ 269:main.c        **** ////                for(i=1; i < VDS_NMOS_LENGTH; i++)
+ 270:main.c        **** ////                {
+ 271:main.c        **** ////                    Vds_test_points[i] = Vds_test_points[i-1] + VD_STEP_NMOS;
+ 272:main.c        **** ////                    Output_data_x[i] = Vds_test_points[i-1]/2560.0 * 3.0 * 4.096; //Translates 
+ 273:main.c        **** ////                }
+ 274:main.c        **** ////                for(i = 0; i < CURVE_NUM; i++)
+ 275:main.c        **** ////                {
+ 276:main.c        **** ////                    for(j = 0; j < VDS_NMOS_LENGTH; j++)
+ 277:main.c        **** ////                    {
+ 278:main.c        **** ////                        Output_data_y[i][j] = single_test(Vds_test_points[j],Vgs_test_points[i]
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 16
+
+
+ 279:main.c        **** ////                    }
+ 280:main.c        **** ////                }
+ 281:main.c        ****         
+ 282:main.c        ****         ADC_SAR_1_Sleep();
+ 564              		.loc 1 282 0 is_stmt 1
+ 565 01be FFF7FEFF 		bl	ADC_SAR_1_Sleep
+ 566              	.LVL99:
+ 283:main.c        ****     //}
+ 284:main.c        ****         VDAC8_DS_SetValue(0);
+ 567              		.loc 1 284 0
+ 568 01c2 0020     		movs	r0, #0
+ 569 01c4 FFF7FEFF 		bl	VDAC8_DS_SetValue
+ 570              	.LVL100:
+ 285:main.c        ****         VDAC8_GS_SetValue(0);
+ 571              		.loc 1 285 0
+ 572 01c8 0020     		movs	r0, #0
+ 573 01ca FFF7FEFF 		bl	VDAC8_GS_SetValue
+ 574              	.LVL101:
+ 575              	.L29:
+ 286:main.c        **** //        //fillScreen(WHITE);
+ 287:main.c        **** //
+ 288:main.c        **** //    //}
+ 289:main.c        **** }...
+ 576              		.loc 1 289 0
+ 577 01ce 0020     		movs	r0, #0
+ 578 01d0 0DF2CC6D 		addw	sp, sp, #1740
+ 579              		.cfi_def_cfa_offset 28
+ 580              		@ sp needed
+ 581 01d4 BDE8F083 		pop	{r4, r5, r6, r7, r8, r9, pc}
+ 582              	.L42:
+ 583              		.align	3
+ 584              	.L41:
+ 585 01d8 00000000 		.word	0
+ 586 01dc 0088C340 		.word	1086556160
+ 587 01e0 00000000 		.word	.LANCHOR0
+ 588 01e4 00000840 		.word	1074266112
+ 589 01e8 0000B040 		.word	1085276160
+ 590 01ec 0000703F 		.word	1064304640
+ 591 01f0 00003940 		.word	1077477376
+ 592 01f4 00006E40 		.word	1080950784
+ 593 01f8 00007440 		.word	1081344000
+ 594              		.cfi_endproc
+ 595              	.LFE68:
+ 596              		.size	main, .-main
+ 597              		.section	.rodata
+ 598              		.align	2
+ 599              		.set	.LANCHOR0,. + 0
+ 600              	.LC0:
+ 601 0000 1F000000 		.word	31
+ 602 0004 E0070000 		.word	2016
+ 603 0008 00F80000 		.word	63488
+ 604 000c 20FD0000 		.word	64800
+ 605              		.text
+ 606              	.Letext0:
+ 607              		.file 2 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 608              		.file 3 "c:\\program files (x86)\\cypress\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.
+ 609              		.file 4 "Generated_Source\\PSoC5/VDAC8_DS.h"
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 17
+
+
+ 610              		.file 5 "Generated_Source\\PSoC5/VDAC8_GS.h"
+ 611              		.file 6 "Generated_Source\\PSoC5/CyLib.h"
+ 612              		.file 7 "Generated_Source\\PSoC5/ADC_SAR_1.h"
+ 613              		.file 8 "Generated_Source\\PSoC5/SPIM.h"
+ 614              		.file 9 "Generated_Source\\PSoC5/Clock.h"
+ 615              		.file 10 "Generated_Source\\PSoC5/Reset.h"
+ 616              		.file 11 "Generated_Source\\PSoC5/core_cm3.h"
+ 617              		.section	.debug_info,"",%progbits
+ 618              	.Ldebug_info0:
+ 619 0000 F3060000 		.4byte	0x6f3
+ 620 0004 0400     		.2byte	0x4
+ 621 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 622 000a 04       		.byte	0x4
+ 623 000b 01       		.uleb128 0x1
+ 624 000c 22030000 		.4byte	.LASF57
+ 625 0010 0C       		.byte	0xc
+ 626 0011 92020000 		.4byte	.LASF58
+ 627 0015 50010000 		.4byte	.LASF59
+ 628 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 629 001d 00000000 		.4byte	0
+ 630 0021 00000000 		.4byte	.Ldebug_line0
+ 631 0025 02       		.uleb128 0x2
+ 632 0026 01       		.byte	0x1
+ 633 0027 06       		.byte	0x6
+ 634 0028 A3010000 		.4byte	.LASF0
+ 635 002c 02       		.uleb128 0x2
+ 636 002d 01       		.byte	0x1
+ 637 002e 08       		.byte	0x8
+ 638 002f 36010000 		.4byte	.LASF1
+ 639 0033 02       		.uleb128 0x2
+ 640 0034 02       		.byte	0x2
+ 641 0035 05       		.byte	0x5
+ 642 0036 43000000 		.4byte	.LASF2
+ 643 003a 02       		.uleb128 0x2
+ 644 003b 02       		.byte	0x2
+ 645 003c 07       		.byte	0x7
+ 646 003d 65020000 		.4byte	.LASF3
+ 647 0041 03       		.uleb128 0x3
+ 648 0042 D8020000 		.4byte	.LASF9
+ 649 0046 02       		.byte	0x2
+ 650 0047 3F       		.byte	0x3f
+ 651 0048 4C000000 		.4byte	0x4c
+ 652 004c 02       		.uleb128 0x2
+ 653 004d 04       		.byte	0x4
+ 654 004e 05       		.byte	0x5
+ 655 004f F7000000 		.4byte	.LASF4
+ 656 0053 02       		.uleb128 0x2
+ 657 0054 04       		.byte	0x4
+ 658 0055 07       		.byte	0x7
+ 659 0056 99020000 		.4byte	.LASF5
+ 660 005a 02       		.uleb128 0x2
+ 661 005b 08       		.byte	0x8
+ 662 005c 05       		.byte	0x5
+ 663 005d 7E000000 		.4byte	.LASF6
+ 664 0061 02       		.uleb128 0x2
+ 665 0062 08       		.byte	0x8
+ 666 0063 07       		.byte	0x7
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 18
+
+
+ 667 0064 AF010000 		.4byte	.LASF7
+ 668 0068 04       		.uleb128 0x4
+ 669 0069 04       		.byte	0x4
+ 670 006a 05       		.byte	0x5
+ 671 006b 696E7400 		.ascii	"int\000"
+ 672 006f 02       		.uleb128 0x2
+ 673 0070 04       		.byte	0x4
+ 674 0071 07       		.byte	0x7
+ 675 0072 C6010000 		.4byte	.LASF8
+ 676 0076 03       		.uleb128 0x3
+ 677 0077 14020000 		.4byte	.LASF10
+ 678 007b 03       		.byte	0x3
+ 679 007c 2C       		.byte	0x2c
+ 680 007d 41000000 		.4byte	0x41
+ 681 0081 02       		.uleb128 0x2
+ 682 0082 04       		.byte	0x4
+ 683 0083 04       		.byte	0x4
+ 684 0084 BE000000 		.4byte	.LASF11
+ 685 0088 02       		.uleb128 0x2
+ 686 0089 08       		.byte	0x8
+ 687 008a 04       		.byte	0x4
+ 688 008b AB020000 		.4byte	.LASF12
+ 689 008f 02       		.uleb128 0x2
+ 690 0090 01       		.byte	0x1
+ 691 0091 08       		.byte	0x8
+ 692 0092 F8010000 		.4byte	.LASF13
+ 693 0096 02       		.uleb128 0x2
+ 694 0097 08       		.byte	0x8
+ 695 0098 04       		.byte	0x4
+ 696 0099 44010000 		.4byte	.LASF14
+ 697 009d 05       		.uleb128 0x5
+ 698 009e 2C000000 		.4byte	0x2c
+ 699 00a2 AD000000 		.4byte	0xad
+ 700 00a6 06       		.uleb128 0x6
+ 701 00a7 AD000000 		.4byte	0xad
+ 702 00ab 03       		.byte	0x3
+ 703 00ac 00       		.byte	0
+ 704 00ad 02       		.uleb128 0x2
+ 705 00ae 04       		.byte	0x4
+ 706 00af 07       		.byte	0x7
+ 707 00b0 54000000 		.4byte	.LASF15
+ 708 00b4 07       		.uleb128 0x7
+ 709 00b5 B2000000 		.4byte	.LASF16
+ 710 00b9 01       		.byte	0x1
+ 711 00ba 17       		.byte	0x17
+ 712 00bb 88000000 		.4byte	0x88
+ 713 00bf 00000000 		.4byte	.LFB64
+ 714 00c3 48000000 		.4byte	.LFE64-.LFB64
+ 715 00c7 01       		.uleb128 0x1
+ 716 00c8 9C       		.byte	0x9c
+ 717 00c9 65010000 		.4byte	0x165
+ 718 00cd 08       		.uleb128 0x8
+ 719 00ce 56647300 		.ascii	"Vds\000"
+ 720 00d2 01       		.byte	0x1
+ 721 00d3 17       		.byte	0x17
+ 722 00d4 2C000000 		.4byte	0x2c
+ 723 00d8 00000000 		.4byte	.LLST0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 19
+
+
+ 724 00dc 08       		.uleb128 0x8
+ 725 00dd 56677300 		.ascii	"Vgs\000"
+ 726 00e1 01       		.byte	0x1
+ 727 00e2 17       		.byte	0x17
+ 728 00e3 2C000000 		.4byte	0x2c
+ 729 00e7 21000000 		.4byte	.LLST1
+ 730 00eb 09       		.uleb128 0x9
+ 731 00ec 4D000000 		.4byte	.LASF18
+ 732 00f0 01       		.byte	0x1
+ 733 00f1 19       		.byte	0x19
+ 734 00f2 88000000 		.4byte	0x88
+ 735 00f6 06       		.uleb128 0x6
+ 736 00f7 50       		.byte	0x50
+ 737 00f8 93       		.byte	0x93
+ 738 00f9 04       		.uleb128 0x4
+ 739 00fa 51       		.byte	0x51
+ 740 00fb 93       		.byte	0x93
+ 741 00fc 04       		.uleb128 0x4
+ 742 00fd 0A       		.uleb128 0xa
+ 743 00fe 08000000 		.4byte	.LVL1
+ 744 0102 25060000 		.4byte	0x625
+ 745 0106 0B       		.uleb128 0xb
+ 746 0107 0E000000 		.4byte	.LVL2
+ 747 010b 30060000 		.4byte	0x630
+ 748 010f 1A010000 		.4byte	0x11a
+ 749 0113 0C       		.uleb128 0xc
+ 750 0114 01       		.uleb128 0x1
+ 751 0115 50       		.byte	0x50
+ 752 0116 02       		.uleb128 0x2
+ 753 0117 74       		.byte	0x74
+ 754 0118 00       		.sleb128 0
+ 755 0119 00       		.byte	0
+ 756 011a 0B       		.uleb128 0xb
+ 757 011b 14000000 		.4byte	.LVL3
+ 758 011f 3B060000 		.4byte	0x63b
+ 759 0123 2D010000 		.4byte	0x12d
+ 760 0127 0C       		.uleb128 0xc
+ 761 0128 01       		.uleb128 0x1
+ 762 0129 50       		.byte	0x50
+ 763 012a 01       		.uleb128 0x1
+ 764 012b 31       		.byte	0x31
+ 765 012c 00       		.byte	0
+ 766 012d 0A       		.uleb128 0xa
+ 767 012e 18000000 		.4byte	.LVL4
+ 768 0132 46060000 		.4byte	0x646
+ 769 0136 0B       		.uleb128 0xb
+ 770 0137 1E000000 		.4byte	.LVL5
+ 771 013b 51060000 		.4byte	0x651
+ 772 013f 49010000 		.4byte	0x149
+ 773 0143 0C       		.uleb128 0xc
+ 774 0144 01       		.uleb128 0x1
+ 775 0145 50       		.byte	0x50
+ 776 0146 01       		.uleb128 0x1
+ 777 0147 30       		.byte	0x30
+ 778 0148 00       		.byte	0
+ 779 0149 0A       		.uleb128 0xa
+ 780 014a 22000000 		.4byte	.LVL6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 20
+
+
+ 781 014e 5C060000 		.4byte	0x65c
+ 782 0152 0A       		.uleb128 0xa
+ 783 0153 26000000 		.4byte	.LVL7
+ 784 0157 67060000 		.4byte	0x667
+ 785 015b 0A       		.uleb128 0xa
+ 786 015c 2A000000 		.4byte	.LVL8
+ 787 0160 72060000 		.4byte	0x672
+ 788 0164 00       		.byte	0
+ 789 0165 07       		.uleb128 0x7
+ 790 0166 36020000 		.4byte	.LASF17
+ 791 016a 01       		.byte	0x1
+ 792 016b 25       		.byte	0x25
+ 793 016c 88000000 		.4byte	0x88
+ 794 0170 00000000 		.4byte	.LFB65
+ 795 0174 40000000 		.4byte	.LFE65-.LFB65
+ 796 0178 01       		.uleb128 0x1
+ 797 0179 9C       		.byte	0x9c
+ 798 017a F3010000 		.4byte	0x1f3
+ 799 017e 08       		.uleb128 0x8
+ 800 017f 56677300 		.ascii	"Vgs\000"
+ 801 0183 01       		.byte	0x1
+ 802 0184 25       		.byte	0x25
+ 803 0185 2C000000 		.4byte	0x2c
+ 804 0189 42000000 		.4byte	.LLST2
+ 805 018d 09       		.uleb128 0x9
+ 806 018e 4D000000 		.4byte	.LASF18
+ 807 0192 01       		.byte	0x1
+ 808 0193 27       		.byte	0x27
+ 809 0194 88000000 		.4byte	0x88
+ 810 0198 06       		.uleb128 0x6
+ 811 0199 50       		.byte	0x50
+ 812 019a 93       		.byte	0x93
+ 813 019b 04       		.uleb128 0x4
+ 814 019c 51       		.byte	0x51
+ 815 019d 93       		.byte	0x93
+ 816 019e 04       		.uleb128 0x4
+ 817 019f 0A       		.uleb128 0xa
+ 818 01a0 06000000 		.4byte	.LVL12
+ 819 01a4 30060000 		.4byte	0x630
+ 820 01a8 0B       		.uleb128 0xb
+ 821 01a9 0C000000 		.4byte	.LVL13
+ 822 01ad 3B060000 		.4byte	0x63b
+ 823 01b1 BB010000 		.4byte	0x1bb
+ 824 01b5 0C       		.uleb128 0xc
+ 825 01b6 01       		.uleb128 0x1
+ 826 01b7 50       		.byte	0x50
+ 827 01b8 01       		.uleb128 0x1
+ 828 01b9 31       		.byte	0x31
+ 829 01ba 00       		.byte	0
+ 830 01bb 0A       		.uleb128 0xa
+ 831 01bc 10000000 		.4byte	.LVL14
+ 832 01c0 46060000 		.4byte	0x646
+ 833 01c4 0B       		.uleb128 0xb
+ 834 01c5 16000000 		.4byte	.LVL15
+ 835 01c9 51060000 		.4byte	0x651
+ 836 01cd D7010000 		.4byte	0x1d7
+ 837 01d1 0C       		.uleb128 0xc
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 21
+
+
+ 838 01d2 01       		.uleb128 0x1
+ 839 01d3 50       		.byte	0x50
+ 840 01d4 01       		.uleb128 0x1
+ 841 01d5 30       		.byte	0x30
+ 842 01d6 00       		.byte	0
+ 843 01d7 0A       		.uleb128 0xa
+ 844 01d8 1A000000 		.4byte	.LVL16
+ 845 01dc 5C060000 		.4byte	0x65c
+ 846 01e0 0A       		.uleb128 0xa
+ 847 01e1 1E000000 		.4byte	.LVL17
+ 848 01e5 67060000 		.4byte	0x667
+ 849 01e9 0A       		.uleb128 0xa
+ 850 01ea 22000000 		.4byte	.LVL18
+ 851 01ee 72060000 		.4byte	0x672
+ 852 01f2 00       		.byte	0
+ 853 01f3 07       		.uleb128 0x7
+ 854 01f4 C7030000 		.4byte	.LASF19
+ 855 01f8 01       		.byte	0x1
+ 856 01f9 36       		.byte	0x36
+ 857 01fa 68000000 		.4byte	0x68
+ 858 01fe 00000000 		.4byte	.LFB66
+ 859 0202 38000000 		.4byte	.LFE66-.LFB66
+ 860 0206 01       		.uleb128 0x1
+ 861 0207 9C       		.byte	0x9c
+ 862 0208 74020000 		.4byte	0x274
+ 863 020c 0D       		.uleb128 0xd
+ 864 020d 8C000000 		.4byte	.LASF20
+ 865 0211 01       		.byte	0x1
+ 866 0212 36       		.byte	0x36
+ 867 0213 2C000000 		.4byte	0x2c
+ 868 0217 63000000 		.4byte	.LLST3
+ 869 021b 08       		.uleb128 0x8
+ 870 021c 56647300 		.ascii	"Vds\000"
+ 871 0220 01       		.byte	0x1
+ 872 0221 36       		.byte	0x36
+ 873 0222 2C000000 		.4byte	0x2c
+ 874 0226 84000000 		.4byte	.LLST4
+ 875 022a 0E       		.uleb128 0xe
+ 876 022b 56677300 		.ascii	"Vgs\000"
+ 877 022f 01       		.byte	0x1
+ 878 0230 38       		.byte	0x38
+ 879 0231 2C000000 		.4byte	0x2c
+ 880 0235 A5000000 		.4byte	.LLST5
+ 881 0239 0E       		.uleb128 0xe
+ 882 023a 496400   		.ascii	"Id\000"
+ 883 023d 01       		.byte	0x1
+ 884 023e 3A       		.byte	0x3a
+ 885 023f 88000000 		.4byte	0x88
+ 886 0243 CF000000 		.4byte	.LLST6
+ 887 0247 0A       		.uleb128 0xa
+ 888 0248 0A000000 		.4byte	.LVL24
+ 889 024c 25060000 		.4byte	0x625
+ 890 0250 0B       		.uleb128 0xb
+ 891 0251 10000000 		.4byte	.LVL25
+ 892 0255 30060000 		.4byte	0x630
+ 893 0259 63020000 		.4byte	0x263
+ 894 025d 0C       		.uleb128 0xc
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 22
+
+
+ 895 025e 01       		.uleb128 0x1
+ 896 025f 50       		.byte	0x50
+ 897 0260 01       		.uleb128 0x1
+ 898 0261 30       		.byte	0x30
+ 899 0262 00       		.byte	0
+ 900 0263 0F       		.uleb128 0xf
+ 901 0264 1A000000 		.4byte	.LVL27
+ 902 0268 65010000 		.4byte	0x165
+ 903 026c 0C       		.uleb128 0xc
+ 904 026d 01       		.uleb128 0x1
+ 905 026e 50       		.byte	0x50
+ 906 026f 02       		.uleb128 0x2
+ 907 0270 74       		.byte	0x74
+ 908 0271 00       		.sleb128 0
+ 909 0272 00       		.byte	0
+ 910 0273 00       		.byte	0
+ 911 0274 07       		.uleb128 0x7
+ 912 0275 DA000000 		.4byte	.LASF21
+ 913 0279 01       		.byte	0x1
+ 914 027a 4E       		.byte	0x4e
+ 915 027b 6F000000 		.4byte	0x6f
+ 916 027f 00000000 		.4byte	.LFB67
+ 917 0283 30000000 		.4byte	.LFE67-.LFB67
+ 918 0287 01       		.uleb128 0x1
+ 919 0288 9C       		.byte	0x9c
+ 920 0289 F1020000 		.4byte	0x2f1
+ 921 028d 08       		.uleb128 0x8
+ 922 028e 56746800 		.ascii	"Vth\000"
+ 923 0292 01       		.byte	0x1
+ 924 0293 4E       		.byte	0x4e
+ 925 0294 2C000000 		.4byte	0x2c
+ 926 0298 FB000000 		.4byte	.LLST7
+ 927 029c 0D       		.uleb128 0xd
+ 928 029d 94000000 		.4byte	.LASF22
+ 929 02a1 01       		.byte	0x1
+ 930 02a2 4E       		.byte	0x4e
+ 931 02a3 2C000000 		.4byte	0x2c
+ 932 02a7 1C010000 		.4byte	.LLST8
+ 933 02ab 0D       		.uleb128 0xd
+ 934 02ac 8C000000 		.4byte	.LASF20
+ 935 02b0 01       		.byte	0x1
+ 936 02b1 4E       		.byte	0x4e
+ 937 02b2 2C000000 		.4byte	0x2c
+ 938 02b6 3D010000 		.4byte	.LLST9
+ 939 02ba 0E       		.uleb128 0xe
+ 940 02bb 56677300 		.ascii	"Vgs\000"
+ 941 02bf 01       		.byte	0x1
+ 942 02c0 50       		.byte	0x50
+ 943 02c1 2C000000 		.4byte	0x2c
+ 944 02c5 5E010000 		.4byte	.LLST10
+ 945 02c9 0E       		.uleb128 0xe
+ 946 02ca 496400   		.ascii	"Id\000"
+ 947 02cd 01       		.byte	0x1
+ 948 02ce 52       		.byte	0x52
+ 949 02cf 88000000 		.4byte	0x88
+ 950 02d3 7C010000 		.4byte	.LLST11
+ 951 02d7 0A       		.uleb128 0xa
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 23
+
+
+ 952 02d8 0C000000 		.4byte	.LVL35
+ 953 02dc 25060000 		.4byte	0x625
+ 954 02e0 0F       		.uleb128 0xf
+ 955 02e1 14000000 		.4byte	.LVL36
+ 956 02e5 65010000 		.4byte	0x165
+ 957 02e9 0C       		.uleb128 0xc
+ 958 02ea 01       		.uleb128 0x1
+ 959 02eb 50       		.byte	0x50
+ 960 02ec 02       		.uleb128 0x2
+ 961 02ed 74       		.byte	0x74
+ 962 02ee 00       		.sleb128 0
+ 963 02ef 00       		.byte	0
+ 964 02f0 00       		.byte	0
+ 965 02f1 07       		.uleb128 0x7
+ 966 02f2 79000000 		.4byte	.LASF23
+ 967 02f6 01       		.byte	0x1
+ 968 02f7 64       		.byte	0x64
+ 969 02f8 68000000 		.4byte	0x68
+ 970 02fc 00000000 		.4byte	.LFB68
+ 971 0300 FC010000 		.4byte	.LFE68-.LFB68
+ 972 0304 01       		.uleb128 0x1
+ 973 0305 9C       		.byte	0x9c
+ 974 0306 CE050000 		.4byte	0x5ce
+ 975 030a 10       		.uleb128 0x10
+ 976 030b 59020000 		.4byte	.LASF24
+ 977 030f 01       		.byte	0x1
+ 978 0310 75       		.byte	0x75
+ 979 0311 68000000 		.4byte	0x68
+ 980 0315 1B030000 		.4byte	0x31b
+ 981 0319 11       		.uleb128 0x11
+ 982 031a 00       		.byte	0
+ 983 031b 10       		.uleb128 0x10
+ 984 031c D3010000 		.4byte	.LASF25
+ 985 0320 01       		.byte	0x1
+ 986 0321 78       		.byte	0x78
+ 987 0322 68000000 		.4byte	0x68
+ 988 0326 2C030000 		.4byte	0x32c
+ 989 032a 11       		.uleb128 0x11
+ 990 032b 00       		.byte	0
+ 991 032c 12       		.uleb128 0x12
+ 992 032d 0D010000 		.4byte	.LASF37
+ 993 0331 01       		.byte	0x1
+ 994 0332 7F       		.byte	0x7f
+ 995 0333 68000000 		.4byte	0x68
+ 996 0337 0E       		.uleb128 0xe
+ 997 0338 6900     		.ascii	"i\000"
+ 998 033a 01       		.byte	0x1
+ 999 033b 81       		.byte	0x81
+ 1000 033c 68000000 		.4byte	0x68
+ 1001 0340 94010000 		.4byte	.LLST12
+ 1002 0344 0E       		.uleb128 0xe
+ 1003 0345 6A00     		.ascii	"j\000"
+ 1004 0347 01       		.byte	0x1
+ 1005 0348 82       		.byte	0x82
+ 1006 0349 68000000 		.4byte	0x68
+ 1007 034d D5010000 		.4byte	.LLST13
+ 1008 0351 13       		.uleb128 0x13
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 24
+
+
+ 1009 0352 19010000 		.4byte	.LASF26
+ 1010 0356 01       		.byte	0x1
+ 1011 0357 84       		.byte	0x84
+ 1012 0358 2C000000 		.4byte	0x2c
+ 1013 035c 00       		.byte	0
+ 1014 035d 13       		.uleb128 0x13
+ 1015 035e 18000000 		.4byte	.LASF27
+ 1016 0362 01       		.byte	0x1
+ 1017 0363 85       		.byte	0x85
+ 1018 0364 68000000 		.4byte	0x68
+ 1019 0368 19       		.byte	0x19
+ 1020 0369 14       		.uleb128 0x14
+ 1021 036a B2020000 		.4byte	.LASF28
+ 1022 036e 01       		.byte	0x1
+ 1023 036f 86       		.byte	0x86
+ 1024 0370 68000000 		.4byte	0x68
+ 1025 0374 1027     		.2byte	0x2710
+ 1026 0376 0E       		.uleb128 0xe
+ 1027 0377 56746800 		.ascii	"Vth\000"
+ 1028 037b 01       		.byte	0x1
+ 1029 037c 88       		.byte	0x88
+ 1030 037d 68000000 		.4byte	0x68
+ 1031 0381 F3010000 		.4byte	.LLST14
+ 1032 0385 15       		.uleb128 0x15
+ 1033 0386 8C000000 		.4byte	.LASF20
+ 1034 038a 01       		.byte	0x1
+ 1035 038b 89       		.byte	0x89
+ 1036 038c 68000000 		.4byte	0x68
+ 1037 0390 11020000 		.4byte	.LLST15
+ 1038 0394 15       		.uleb128 0x15
+ 1039 0395 E2020000 		.4byte	.LASF29
+ 1040 0399 01       		.byte	0x1
+ 1041 039a 8A       		.byte	0x8a
+ 1042 039b 68000000 		.4byte	0x68
+ 1043 039f 24020000 		.4byte	.LLST16
+ 1044 03a3 15       		.uleb128 0x15
+ 1045 03a4 00000000 		.4byte	.LASF30
+ 1046 03a8 01       		.byte	0x1
+ 1047 03a9 8B       		.byte	0x8b
+ 1048 03aa 68000000 		.4byte	0x68
+ 1049 03ae 4D020000 		.4byte	.LLST17
+ 1050 03b2 15       		.uleb128 0x15
+ 1051 03b3 EA000000 		.4byte	.LASF31
+ 1052 03b7 01       		.byte	0x1
+ 1053 03b8 8C       		.byte	0x8c
+ 1054 03b9 68000000 		.4byte	0x68
+ 1055 03bd 6B020000 		.4byte	.LLST18
+ 1056 03c1 15       		.uleb128 0x15
+ 1057 03c2 00010000 		.4byte	.LASF32
+ 1058 03c6 01       		.byte	0x1
+ 1059 03c7 8D       		.byte	0x8d
+ 1060 03c8 68000000 		.4byte	0x68
+ 1061 03cc 9F020000 		.4byte	.LLST19
+ 1062 03d0 09       		.uleb128 0x9
+ 1063 03d1 2A010000 		.4byte	.LASF33
+ 1064 03d5 01       		.byte	0x1
+ 1065 03d6 8E       		.byte	0x8e
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 25
+
+
+ 1066 03d7 CE050000 		.4byte	0x5ce
+ 1067 03db 02       		.uleb128 0x2
+ 1068 03dc 91       		.byte	0x91
+ 1069 03dd 50       		.sleb128 -48
+ 1070 03de 15       		.uleb128 0x15
+ 1071 03df 0C030000 		.4byte	.LASF34
+ 1072 03e3 01       		.byte	0x1
+ 1073 03e4 90       		.byte	0x90
+ 1074 03e5 2C000000 		.4byte	0x2c
+ 1075 03e9 D3020000 		.4byte	.LLST20
+ 1076 03ed 09       		.uleb128 0x9
+ 1077 03ee DE010000 		.4byte	.LASF35
+ 1078 03f2 01       		.byte	0x1
+ 1079 03f3 91       		.byte	0x91
+ 1080 03f4 9D000000 		.4byte	0x9d
+ 1081 03f8 02       		.uleb128 0x2
+ 1082 03f9 91       		.byte	0x91
+ 1083 03fa 4C       		.sleb128 -52
+ 1084 03fb 09       		.uleb128 0x9
+ 1085 03fc 21000000 		.4byte	.LASF36
+ 1086 0400 01       		.byte	0x1
+ 1087 0401 92       		.byte	0x92
+ 1088 0402 DE050000 		.4byte	0x5de
+ 1089 0406 03       		.uleb128 0x3
+ 1090 0407 91       		.byte	0x91
+ 1091 0408 8C7E     		.sleb128 -244
+ 1092 040a 12       		.uleb128 0x12
+ 1093 040b 6B000000 		.4byte	.LASF38
+ 1094 040f 01       		.byte	0x1
+ 1095 0410 94       		.byte	0x94
+ 1096 0411 EE050000 		.4byte	0x5ee
+ 1097 0415 09       		.uleb128 0x9
+ 1098 0416 5D000000 		.4byte	.LASF39
+ 1099 041a 01       		.byte	0x1
+ 1100 041b 95       		.byte	0x95
+ 1101 041c 04060000 		.4byte	0x604
+ 1102 0420 03       		.uleb128 0x3
+ 1103 0421 91       		.byte	0x91
+ 1104 0422 A072     		.sleb128 -1760
+ 1105 0424 0E       		.uleb128 0xe
+ 1106 0425 496400   		.ascii	"Id\000"
+ 1107 0428 01       		.byte	0x1
+ 1108 0429 96       		.byte	0x96
+ 1109 042a 88000000 		.4byte	0x88
+ 1110 042e E6020000 		.4byte	.LLST21
+ 1111 0432 16       		.uleb128 0x16
+ 1112 0433 58010000 		.4byte	.LBB2
+ 1113 0437 56000000 		.4byte	.LBE2-.LBB2
+ 1114 043b 73040000 		.4byte	0x473
+ 1115 043f 10       		.uleb128 0x10
+ 1116 0440 EE010000 		.4byte	.LASF40
+ 1117 0444 01       		.byte	0x1
+ 1118 0445 BF       		.byte	0xbf
+ 1119 0446 68000000 		.4byte	0x68
+ 1120 044a 50040000 		.4byte	0x450
+ 1121 044e 11       		.uleb128 0x11
+ 1122 044f 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 26
+
+
+ 1123 0450 0F       		.uleb128 0xf
+ 1124 0451 AA010000 		.4byte	.LVL93
+ 1125 0455 7D060000 		.4byte	0x67d
+ 1126 0459 0C       		.uleb128 0xc
+ 1127 045a 01       		.uleb128 0x1
+ 1128 045b 50       		.byte	0x50
+ 1129 045c 02       		.uleb128 0x2
+ 1130 045d 78       		.byte	0x78
+ 1131 045e 00       		.sleb128 0
+ 1132 045f 0C       		.uleb128 0xc
+ 1133 0460 01       		.uleb128 0x1
+ 1134 0461 51       		.byte	0x51
+ 1135 0462 02       		.uleb128 0x2
+ 1136 0463 79       		.byte	0x79
+ 1137 0464 00       		.sleb128 0
+ 1138 0465 0C       		.uleb128 0xc
+ 1139 0466 01       		.uleb128 0x1
+ 1140 0467 52       		.byte	0x52
+ 1141 0468 02       		.uleb128 0x2
+ 1142 0469 75       		.byte	0x75
+ 1143 046a 00       		.sleb128 0
+ 1144 046b 0C       		.uleb128 0xc
+ 1145 046c 01       		.uleb128 0x1
+ 1146 046d 53       		.byte	0x53
+ 1147 046e 02       		.uleb128 0x2
+ 1148 046f 76       		.byte	0x76
+ 1149 0470 00       		.sleb128 0
+ 1150 0471 00       		.byte	0
+ 1151 0472 00       		.byte	0
+ 1152 0473 0A       		.uleb128 0xa
+ 1153 0474 0E000000 		.4byte	.LVL41
+ 1154 0478 88060000 		.4byte	0x688
+ 1155 047c 0A       		.uleb128 0xa
+ 1156 047d 12000000 		.4byte	.LVL42
+ 1157 0481 93060000 		.4byte	0x693
+ 1158 0485 0B       		.uleb128 0xb
+ 1159 0486 18000000 		.4byte	.LVL43
+ 1160 048a 9E060000 		.4byte	0x69e
+ 1161 048e 98040000 		.4byte	0x498
+ 1162 0492 0C       		.uleb128 0xc
+ 1163 0493 01       		.uleb128 0x1
+ 1164 0494 50       		.byte	0x50
+ 1165 0495 01       		.uleb128 0x1
+ 1166 0496 31       		.byte	0x31
+ 1167 0497 00       		.byte	0
+ 1168 0498 0B       		.uleb128 0xb
+ 1169 0499 20000000 		.4byte	.LVL44
+ 1170 049d 3B060000 		.4byte	0x63b
+ 1171 04a1 AD040000 		.4byte	0x4ad
+ 1172 04a5 0C       		.uleb128 0xc
+ 1173 04a6 01       		.uleb128 0x1
+ 1174 04a7 50       		.byte	0x50
+ 1175 04a8 03       		.uleb128 0x3
+ 1176 04a9 0A       		.byte	0xa
+ 1177 04aa F401     		.2byte	0x1f4
+ 1178 04ac 00       		.byte	0
+ 1179 04ad 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 27
+
+
+ 1180 04ae 26000000 		.4byte	.LVL45
+ 1181 04b2 9E060000 		.4byte	0x69e
+ 1182 04b6 C0040000 		.4byte	0x4c0
+ 1183 04ba 0C       		.uleb128 0xc
+ 1184 04bb 01       		.uleb128 0x1
+ 1185 04bc 50       		.byte	0x50
+ 1186 04bd 01       		.uleb128 0x1
+ 1187 04be 30       		.byte	0x30
+ 1188 04bf 00       		.byte	0
+ 1189 04c0 0B       		.uleb128 0xb
+ 1190 04c1 2E000000 		.4byte	.LVL46
+ 1191 04c5 3B060000 		.4byte	0x63b
+ 1192 04c9 D5040000 		.4byte	0x4d5
+ 1193 04cd 0C       		.uleb128 0xc
+ 1194 04ce 01       		.uleb128 0x1
+ 1195 04cf 50       		.byte	0x50
+ 1196 04d0 03       		.uleb128 0x3
+ 1197 04d1 0A       		.byte	0xa
+ 1198 04d2 F401     		.2byte	0x1f4
+ 1199 04d4 00       		.byte	0
+ 1200 04d5 0B       		.uleb128 0xb
+ 1201 04d6 34000000 		.4byte	.LVL47
+ 1202 04da 9E060000 		.4byte	0x69e
+ 1203 04de E8040000 		.4byte	0x4e8
+ 1204 04e2 0C       		.uleb128 0xc
+ 1205 04e3 01       		.uleb128 0x1
+ 1206 04e4 50       		.byte	0x50
+ 1207 04e5 01       		.uleb128 0x1
+ 1208 04e6 31       		.byte	0x31
+ 1209 04e7 00       		.byte	0
+ 1210 04e8 0B       		.uleb128 0xb
+ 1211 04e9 3C000000 		.4byte	.LVL48
+ 1212 04ed 3B060000 		.4byte	0x63b
+ 1213 04f1 FD040000 		.4byte	0x4fd
+ 1214 04f5 0C       		.uleb128 0xc
+ 1215 04f6 01       		.uleb128 0x1
+ 1216 04f7 50       		.byte	0x50
+ 1217 04f8 03       		.uleb128 0x3
+ 1218 04f9 0A       		.byte	0xa
+ 1219 04fa F401     		.2byte	0x1f4
+ 1220 04fc 00       		.byte	0
+ 1221 04fd 0A       		.uleb128 0xa
+ 1222 04fe 40000000 		.4byte	.LVL49
+ 1223 0502 A9060000 		.4byte	0x6a9
+ 1224 0506 0B       		.uleb128 0xb
+ 1225 0507 48000000 		.4byte	.LVL50
+ 1226 050b B4060000 		.4byte	0x6b4
+ 1227 050f 1B050000 		.4byte	0x51b
+ 1228 0513 0C       		.uleb128 0xc
+ 1229 0514 01       		.uleb128 0x1
+ 1230 0515 50       		.byte	0x50
+ 1231 0516 03       		.uleb128 0x3
+ 1232 0517 0A       		.byte	0xa
+ 1233 0518 FFFF     		.2byte	0xffff
+ 1234 051a 00       		.byte	0
+ 1235 051b 0A       		.uleb128 0xa
+ 1236 051c 4C000000 		.4byte	.LVL51
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 28
+
+
+ 1237 0520 BF060000 		.4byte	0x6bf
+ 1238 0524 0A       		.uleb128 0xa
+ 1239 0525 50000000 		.4byte	.LVL52
+ 1240 0529 CA060000 		.4byte	0x6ca
+ 1241 052d 0A       		.uleb128 0xa
+ 1242 052e 54000000 		.4byte	.LVL53
+ 1243 0532 D5060000 		.4byte	0x6d5
+ 1244 0536 0A       		.uleb128 0xa
+ 1245 0537 64000000 		.4byte	.LVL54
+ 1246 053b E0060000 		.4byte	0x6e0
+ 1247 053f 0B       		.uleb128 0xb
+ 1248 0540 6C000000 		.4byte	.LVL55
+ 1249 0544 F3010000 		.4byte	0x1f3
+ 1250 0548 58050000 		.4byte	0x558
+ 1251 054c 0C       		.uleb128 0xc
+ 1252 054d 01       		.uleb128 0x1
+ 1253 054e 50       		.byte	0x50
+ 1254 054f 02       		.uleb128 0x2
+ 1255 0550 09       		.byte	0x9
+ 1256 0551 FF       		.byte	0xff
+ 1257 0552 0C       		.uleb128 0xc
+ 1258 0553 01       		.uleb128 0x1
+ 1259 0554 51       		.byte	0x51
+ 1260 0555 01       		.uleb128 0x1
+ 1261 0556 45       		.byte	0x45
+ 1262 0557 00       		.byte	0
+ 1263 0558 0B       		.uleb128 0xb
+ 1264 0559 7E000000 		.4byte	.LVL57
+ 1265 055d 74020000 		.4byte	0x274
+ 1266 0561 78050000 		.4byte	0x578
+ 1267 0565 0C       		.uleb128 0xc
+ 1268 0566 01       		.uleb128 0x1
+ 1269 0567 50       		.byte	0x50
+ 1270 0568 02       		.uleb128 0x2
+ 1271 0569 75       		.byte	0x75
+ 1272 056a 00       		.sleb128 0
+ 1273 056b 0C       		.uleb128 0xc
+ 1274 056c 01       		.uleb128 0x1
+ 1275 056d 51       		.byte	0x51
+ 1276 056e 02       		.uleb128 0x2
+ 1277 056f 09       		.byte	0x9
+ 1278 0570 BC       		.byte	0xbc
+ 1279 0571 0C       		.uleb128 0xc
+ 1280 0572 01       		.uleb128 0x1
+ 1281 0573 52       		.byte	0x52
+ 1282 0574 02       		.uleb128 0x2
+ 1283 0575 09       		.byte	0x9
+ 1284 0576 DC       		.byte	0xdc
+ 1285 0577 00       		.byte	0
+ 1286 0578 0B       		.uleb128 0xb
+ 1287 0579 20010000 		.4byte	.LVL73
+ 1288 057d B4000000 		.4byte	0xb4
+ 1289 0581 A2050000 		.4byte	0x5a2
+ 1290 0585 0C       		.uleb128 0xc
+ 1291 0586 01       		.uleb128 0x1
+ 1292 0587 50       		.byte	0x50
+ 1293 0588 0A       		.uleb128 0xa
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 29
+
+
+ 1294 0589 91       		.byte	0x91
+ 1295 058a 00       		.sleb128 0
+ 1296 058b 74       		.byte	0x74
+ 1297 058c 00       		.sleb128 0
+ 1298 058d 22       		.byte	0x22
+ 1299 058e 08       		.byte	0x8
+ 1300 058f F4       		.byte	0xf4
+ 1301 0590 1C       		.byte	0x1c
+ 1302 0591 94       		.byte	0x94
+ 1303 0592 01       		.byte	0x1
+ 1304 0593 0C       		.uleb128 0xc
+ 1305 0594 01       		.uleb128 0x1
+ 1306 0595 51       		.byte	0x51
+ 1307 0596 0A       		.uleb128 0xa
+ 1308 0597 91       		.byte	0x91
+ 1309 0598 00       		.sleb128 0
+ 1310 0599 77       		.byte	0x77
+ 1311 059a 00       		.sleb128 0
+ 1312 059b 22       		.byte	0x22
+ 1313 059c 08       		.byte	0x8
+ 1314 059d 34       		.byte	0x34
+ 1315 059e 1C       		.byte	0x1c
+ 1316 059f 94       		.byte	0x94
+ 1317 05a0 01       		.byte	0x1
+ 1318 05a1 00       		.byte	0
+ 1319 05a2 0A       		.uleb128 0xa
+ 1320 05a3 C2010000 		.4byte	.LVL99
+ 1321 05a7 EB060000 		.4byte	0x6eb
+ 1322 05ab 0B       		.uleb128 0xb
+ 1323 05ac C8010000 		.4byte	.LVL100
+ 1324 05b0 25060000 		.4byte	0x625
+ 1325 05b4 BE050000 		.4byte	0x5be
+ 1326 05b8 0C       		.uleb128 0xc
+ 1327 05b9 01       		.uleb128 0x1
+ 1328 05ba 50       		.byte	0x50
+ 1329 05bb 01       		.uleb128 0x1
+ 1330 05bc 30       		.byte	0x30
+ 1331 05bd 00       		.byte	0
+ 1332 05be 0F       		.uleb128 0xf
+ 1333 05bf CE010000 		.4byte	.LVL101
+ 1334 05c3 30060000 		.4byte	0x630
+ 1335 05c7 0C       		.uleb128 0xc
+ 1336 05c8 01       		.uleb128 0x1
+ 1337 05c9 50       		.byte	0x50
+ 1338 05ca 01       		.uleb128 0x1
+ 1339 05cb 30       		.byte	0x30
+ 1340 05cc 00       		.byte	0
+ 1341 05cd 00       		.byte	0
+ 1342 05ce 05       		.uleb128 0x5
+ 1343 05cf 68000000 		.4byte	0x68
+ 1344 05d3 DE050000 		.4byte	0x5de
+ 1345 05d7 06       		.uleb128 0x6
+ 1346 05d8 AD000000 		.4byte	0xad
+ 1347 05dc 03       		.byte	0x3
+ 1348 05dd 00       		.byte	0
+ 1349 05de 05       		.uleb128 0x5
+ 1350 05df 2C000000 		.4byte	0x2c
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 30
+
+
+ 1351 05e3 EE050000 		.4byte	0x5ee
+ 1352 05e7 06       		.uleb128 0x6
+ 1353 05e8 AD000000 		.4byte	0xad
+ 1354 05ec BC       		.byte	0xbc
+ 1355 05ed 00       		.byte	0
+ 1356 05ee 05       		.uleb128 0x5
+ 1357 05ef 88000000 		.4byte	0x88
+ 1358 05f3 04060000 		.4byte	0x604
+ 1359 05f7 06       		.uleb128 0x6
+ 1360 05f8 AD000000 		.4byte	0xad
+ 1361 05fc 03       		.byte	0x3
+ 1362 05fd 06       		.uleb128 0x6
+ 1363 05fe AD000000 		.4byte	0xad
+ 1364 0602 BC       		.byte	0xbc
+ 1365 0603 00       		.byte	0
+ 1366 0604 05       		.uleb128 0x5
+ 1367 0605 88000000 		.4byte	0x88
+ 1368 0609 14060000 		.4byte	0x614
+ 1369 060d 06       		.uleb128 0x6
+ 1370 060e AD000000 		.4byte	0xad
+ 1371 0612 BC       		.byte	0xbc
+ 1372 0613 00       		.byte	0
+ 1373 0614 17       		.uleb128 0x17
+ 1374 0615 15030000 		.4byte	.LASF60
+ 1375 0619 0B       		.byte	0xb
+ 1376 061a 1207     		.2byte	0x712
+ 1377 061c 20060000 		.4byte	0x620
+ 1378 0620 18       		.uleb128 0x18
+ 1379 0621 76000000 		.4byte	0x76
+ 1380 0625 19       		.uleb128 0x19
+ 1381 0626 31000000 		.4byte	.LASF41
+ 1382 062a 31000000 		.4byte	.LASF41
+ 1383 062e 04       		.byte	0x4
+ 1384 062f 37       		.byte	0x37
+ 1385 0630 19       		.uleb128 0x19
+ 1386 0631 EA020000 		.4byte	.LASF42
+ 1387 0635 EA020000 		.4byte	.LASF42
+ 1388 0639 05       		.byte	0x5
+ 1389 063a 37       		.byte	0x37
+ 1390 063b 19       		.uleb128 0x19
+ 1391 063c B0030000 		.4byte	.LASF43
+ 1392 0640 B0030000 		.4byte	.LASF43
+ 1393 0644 06       		.byte	0x6
+ 1394 0645 76       		.byte	0x76
+ 1395 0646 19       		.uleb128 0x19
+ 1396 0647 FD010000 		.4byte	.LASF44
+ 1397 064b FD010000 		.4byte	.LASF44
+ 1398 064f 07       		.byte	0x7
+ 1399 0650 D1       		.byte	0xd1
+ 1400 0651 19       		.uleb128 0x19
+ 1401 0652 1C020000 		.4byte	.LASF45
+ 1402 0656 1C020000 		.4byte	.LASF45
+ 1403 065a 07       		.byte	0x7
+ 1404 065b 39       		.byte	0x39
+ 1405 065c 19       		.uleb128 0x19
+ 1406 065d C4000000 		.4byte	.LASF46
+ 1407 0661 C4000000 		.4byte	.LASF46
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 31
+
+
+ 1408 0665 07       		.byte	0x7
+ 1409 0666 D2       		.byte	0xd2
+ 1410 0667 19       		.uleb128 0x19
+ 1411 0668 9C000000 		.4byte	.LASF47
+ 1412 066c 9C000000 		.4byte	.LASF47
+ 1413 0670 07       		.byte	0x7
+ 1414 0671 3B       		.byte	0x3b
+ 1415 0672 19       		.uleb128 0x19
+ 1416 0673 78020000 		.4byte	.LASF48
+ 1417 0677 78020000 		.4byte	.LASF48
+ 1418 067b 07       		.byte	0x7
+ 1419 067c 3F       		.byte	0x3f
+ 1420 067d 19       		.uleb128 0x19
+ 1421 067e EE010000 		.4byte	.LASF40
+ 1422 0682 EE010000 		.4byte	.LASF40
+ 1423 0686 01       		.byte	0x1
+ 1424 0687 BF       		.byte	0xbf
+ 1425 0688 19       		.uleb128 0x19
+ 1426 0689 89010000 		.4byte	.LASF49
+ 1427 068d 89010000 		.4byte	.LASF49
+ 1428 0691 08       		.byte	0x8
+ 1429 0692 4D       		.byte	0x4d
+ 1430 0693 19       		.uleb128 0x19
+ 1431 0694 BB020000 		.4byte	.LASF50
+ 1432 0698 BB020000 		.4byte	.LASF50
+ 1433 069c 09       		.byte	0x9
+ 1434 069d 27       		.byte	0x27
+ 1435 069e 19       		.uleb128 0x19
+ 1436 069f 4D020000 		.4byte	.LASF51
+ 1437 06a3 4D020000 		.4byte	.LASF51
+ 1438 06a7 0A       		.byte	0xa
+ 1439 06a8 26       		.byte	0x26
+ 1440 06a9 19       		.uleb128 0x19
+ 1441 06aa 59020000 		.4byte	.LASF24
+ 1442 06ae 59020000 		.4byte	.LASF24
+ 1443 06b2 01       		.byte	0x1
+ 1444 06b3 75       		.byte	0x75
+ 1445 06b4 19       		.uleb128 0x19
+ 1446 06b5 D3010000 		.4byte	.LASF25
+ 1447 06b9 D3010000 		.4byte	.LASF25
+ 1448 06bd 01       		.byte	0x1
+ 1449 06be 78       		.byte	0x78
+ 1450 06bf 19       		.uleb128 0x19
+ 1451 06c0 94010000 		.4byte	.LASF52
+ 1452 06c4 94010000 		.4byte	.LASF52
+ 1453 06c8 05       		.byte	0x5
+ 1454 06c9 33       		.byte	0x33
+ 1455 06ca 19       		.uleb128 0x19
+ 1456 06cb B8030000 		.4byte	.LASF53
+ 1457 06cf B8030000 		.4byte	.LASF53
+ 1458 06d3 04       		.byte	0x4
+ 1459 06d4 33       		.byte	0x33
+ 1460 06d5 19       		.uleb128 0x19
+ 1461 06d6 FC020000 		.4byte	.LASF54
+ 1462 06da FC020000 		.4byte	.LASF54
+ 1463 06de 07       		.byte	0x7
+ 1464 06df 34       		.byte	0x34
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 32
+
+
+ 1465 06e0 19       		.uleb128 0x19
+ 1466 06e1 C7020000 		.4byte	.LASF55
+ 1467 06e5 C7020000 		.4byte	.LASF55
+ 1468 06e9 07       		.byte	0x7
+ 1469 06ea 49       		.byte	0x49
+ 1470 06eb 19       		.uleb128 0x19
+ 1471 06ec 08000000 		.4byte	.LASF56
+ 1472 06f0 08000000 		.4byte	.LASF56
+ 1473 06f4 07       		.byte	0x7
+ 1474 06f5 48       		.byte	0x48
+ 1475 06f6 00       		.byte	0
+ 1476              		.section	.debug_abbrev,"",%progbits
+ 1477              	.Ldebug_abbrev0:
+ 1478 0000 01       		.uleb128 0x1
+ 1479 0001 11       		.uleb128 0x11
+ 1480 0002 01       		.byte	0x1
+ 1481 0003 25       		.uleb128 0x25
+ 1482 0004 0E       		.uleb128 0xe
+ 1483 0005 13       		.uleb128 0x13
+ 1484 0006 0B       		.uleb128 0xb
+ 1485 0007 03       		.uleb128 0x3
+ 1486 0008 0E       		.uleb128 0xe
+ 1487 0009 1B       		.uleb128 0x1b
+ 1488 000a 0E       		.uleb128 0xe
+ 1489 000b 55       		.uleb128 0x55
+ 1490 000c 17       		.uleb128 0x17
+ 1491 000d 11       		.uleb128 0x11
+ 1492 000e 01       		.uleb128 0x1
+ 1493 000f 10       		.uleb128 0x10
+ 1494 0010 17       		.uleb128 0x17
+ 1495 0011 00       		.byte	0
+ 1496 0012 00       		.byte	0
+ 1497 0013 02       		.uleb128 0x2
+ 1498 0014 24       		.uleb128 0x24
+ 1499 0015 00       		.byte	0
+ 1500 0016 0B       		.uleb128 0xb
+ 1501 0017 0B       		.uleb128 0xb
+ 1502 0018 3E       		.uleb128 0x3e
+ 1503 0019 0B       		.uleb128 0xb
+ 1504 001a 03       		.uleb128 0x3
+ 1505 001b 0E       		.uleb128 0xe
+ 1506 001c 00       		.byte	0
+ 1507 001d 00       		.byte	0
+ 1508 001e 03       		.uleb128 0x3
+ 1509 001f 16       		.uleb128 0x16
+ 1510 0020 00       		.byte	0
+ 1511 0021 03       		.uleb128 0x3
+ 1512 0022 0E       		.uleb128 0xe
+ 1513 0023 3A       		.uleb128 0x3a
+ 1514 0024 0B       		.uleb128 0xb
+ 1515 0025 3B       		.uleb128 0x3b
+ 1516 0026 0B       		.uleb128 0xb
+ 1517 0027 49       		.uleb128 0x49
+ 1518 0028 13       		.uleb128 0x13
+ 1519 0029 00       		.byte	0
+ 1520 002a 00       		.byte	0
+ 1521 002b 04       		.uleb128 0x4
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 33
+
+
+ 1522 002c 24       		.uleb128 0x24
+ 1523 002d 00       		.byte	0
+ 1524 002e 0B       		.uleb128 0xb
+ 1525 002f 0B       		.uleb128 0xb
+ 1526 0030 3E       		.uleb128 0x3e
+ 1527 0031 0B       		.uleb128 0xb
+ 1528 0032 03       		.uleb128 0x3
+ 1529 0033 08       		.uleb128 0x8
+ 1530 0034 00       		.byte	0
+ 1531 0035 00       		.byte	0
+ 1532 0036 05       		.uleb128 0x5
+ 1533 0037 01       		.uleb128 0x1
+ 1534 0038 01       		.byte	0x1
+ 1535 0039 49       		.uleb128 0x49
+ 1536 003a 13       		.uleb128 0x13
+ 1537 003b 01       		.uleb128 0x1
+ 1538 003c 13       		.uleb128 0x13
+ 1539 003d 00       		.byte	0
+ 1540 003e 00       		.byte	0
+ 1541 003f 06       		.uleb128 0x6
+ 1542 0040 21       		.uleb128 0x21
+ 1543 0041 00       		.byte	0
+ 1544 0042 49       		.uleb128 0x49
+ 1545 0043 13       		.uleb128 0x13
+ 1546 0044 2F       		.uleb128 0x2f
+ 1547 0045 0B       		.uleb128 0xb
+ 1548 0046 00       		.byte	0
+ 1549 0047 00       		.byte	0
+ 1550 0048 07       		.uleb128 0x7
+ 1551 0049 2E       		.uleb128 0x2e
+ 1552 004a 01       		.byte	0x1
+ 1553 004b 3F       		.uleb128 0x3f
+ 1554 004c 19       		.uleb128 0x19
+ 1555 004d 03       		.uleb128 0x3
+ 1556 004e 0E       		.uleb128 0xe
+ 1557 004f 3A       		.uleb128 0x3a
+ 1558 0050 0B       		.uleb128 0xb
+ 1559 0051 3B       		.uleb128 0x3b
+ 1560 0052 0B       		.uleb128 0xb
+ 1561 0053 27       		.uleb128 0x27
+ 1562 0054 19       		.uleb128 0x19
+ 1563 0055 49       		.uleb128 0x49
+ 1564 0056 13       		.uleb128 0x13
+ 1565 0057 11       		.uleb128 0x11
+ 1566 0058 01       		.uleb128 0x1
+ 1567 0059 12       		.uleb128 0x12
+ 1568 005a 06       		.uleb128 0x6
+ 1569 005b 40       		.uleb128 0x40
+ 1570 005c 18       		.uleb128 0x18
+ 1571 005d 9642     		.uleb128 0x2116
+ 1572 005f 19       		.uleb128 0x19
+ 1573 0060 01       		.uleb128 0x1
+ 1574 0061 13       		.uleb128 0x13
+ 1575 0062 00       		.byte	0
+ 1576 0063 00       		.byte	0
+ 1577 0064 08       		.uleb128 0x8
+ 1578 0065 05       		.uleb128 0x5
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 34
+
+
+ 1579 0066 00       		.byte	0
+ 1580 0067 03       		.uleb128 0x3
+ 1581 0068 08       		.uleb128 0x8
+ 1582 0069 3A       		.uleb128 0x3a
+ 1583 006a 0B       		.uleb128 0xb
+ 1584 006b 3B       		.uleb128 0x3b
+ 1585 006c 0B       		.uleb128 0xb
+ 1586 006d 49       		.uleb128 0x49
+ 1587 006e 13       		.uleb128 0x13
+ 1588 006f 02       		.uleb128 0x2
+ 1589 0070 17       		.uleb128 0x17
+ 1590 0071 00       		.byte	0
+ 1591 0072 00       		.byte	0
+ 1592 0073 09       		.uleb128 0x9
+ 1593 0074 34       		.uleb128 0x34
+ 1594 0075 00       		.byte	0
+ 1595 0076 03       		.uleb128 0x3
+ 1596 0077 0E       		.uleb128 0xe
+ 1597 0078 3A       		.uleb128 0x3a
+ 1598 0079 0B       		.uleb128 0xb
+ 1599 007a 3B       		.uleb128 0x3b
+ 1600 007b 0B       		.uleb128 0xb
+ 1601 007c 49       		.uleb128 0x49
+ 1602 007d 13       		.uleb128 0x13
+ 1603 007e 02       		.uleb128 0x2
+ 1604 007f 18       		.uleb128 0x18
+ 1605 0080 00       		.byte	0
+ 1606 0081 00       		.byte	0
+ 1607 0082 0A       		.uleb128 0xa
+ 1608 0083 898201   		.uleb128 0x4109
+ 1609 0086 00       		.byte	0
+ 1610 0087 11       		.uleb128 0x11
+ 1611 0088 01       		.uleb128 0x1
+ 1612 0089 31       		.uleb128 0x31
+ 1613 008a 13       		.uleb128 0x13
+ 1614 008b 00       		.byte	0
+ 1615 008c 00       		.byte	0
+ 1616 008d 0B       		.uleb128 0xb
+ 1617 008e 898201   		.uleb128 0x4109
+ 1618 0091 01       		.byte	0x1
+ 1619 0092 11       		.uleb128 0x11
+ 1620 0093 01       		.uleb128 0x1
+ 1621 0094 31       		.uleb128 0x31
+ 1622 0095 13       		.uleb128 0x13
+ 1623 0096 01       		.uleb128 0x1
+ 1624 0097 13       		.uleb128 0x13
+ 1625 0098 00       		.byte	0
+ 1626 0099 00       		.byte	0
+ 1627 009a 0C       		.uleb128 0xc
+ 1628 009b 8A8201   		.uleb128 0x410a
+ 1629 009e 00       		.byte	0
+ 1630 009f 02       		.uleb128 0x2
+ 1631 00a0 18       		.uleb128 0x18
+ 1632 00a1 9142     		.uleb128 0x2111
+ 1633 00a3 18       		.uleb128 0x18
+ 1634 00a4 00       		.byte	0
+ 1635 00a5 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 35
+
+
+ 1636 00a6 0D       		.uleb128 0xd
+ 1637 00a7 05       		.uleb128 0x5
+ 1638 00a8 00       		.byte	0
+ 1639 00a9 03       		.uleb128 0x3
+ 1640 00aa 0E       		.uleb128 0xe
+ 1641 00ab 3A       		.uleb128 0x3a
+ 1642 00ac 0B       		.uleb128 0xb
+ 1643 00ad 3B       		.uleb128 0x3b
+ 1644 00ae 0B       		.uleb128 0xb
+ 1645 00af 49       		.uleb128 0x49
+ 1646 00b0 13       		.uleb128 0x13
+ 1647 00b1 02       		.uleb128 0x2
+ 1648 00b2 17       		.uleb128 0x17
+ 1649 00b3 00       		.byte	0
+ 1650 00b4 00       		.byte	0
+ 1651 00b5 0E       		.uleb128 0xe
+ 1652 00b6 34       		.uleb128 0x34
+ 1653 00b7 00       		.byte	0
+ 1654 00b8 03       		.uleb128 0x3
+ 1655 00b9 08       		.uleb128 0x8
+ 1656 00ba 3A       		.uleb128 0x3a
+ 1657 00bb 0B       		.uleb128 0xb
+ 1658 00bc 3B       		.uleb128 0x3b
+ 1659 00bd 0B       		.uleb128 0xb
+ 1660 00be 49       		.uleb128 0x49
+ 1661 00bf 13       		.uleb128 0x13
+ 1662 00c0 02       		.uleb128 0x2
+ 1663 00c1 17       		.uleb128 0x17
+ 1664 00c2 00       		.byte	0
+ 1665 00c3 00       		.byte	0
+ 1666 00c4 0F       		.uleb128 0xf
+ 1667 00c5 898201   		.uleb128 0x4109
+ 1668 00c8 01       		.byte	0x1
+ 1669 00c9 11       		.uleb128 0x11
+ 1670 00ca 01       		.uleb128 0x1
+ 1671 00cb 31       		.uleb128 0x31
+ 1672 00cc 13       		.uleb128 0x13
+ 1673 00cd 00       		.byte	0
+ 1674 00ce 00       		.byte	0
+ 1675 00cf 10       		.uleb128 0x10
+ 1676 00d0 2E       		.uleb128 0x2e
+ 1677 00d1 01       		.byte	0x1
+ 1678 00d2 3F       		.uleb128 0x3f
+ 1679 00d3 19       		.uleb128 0x19
+ 1680 00d4 03       		.uleb128 0x3
+ 1681 00d5 0E       		.uleb128 0xe
+ 1682 00d6 3A       		.uleb128 0x3a
+ 1683 00d7 0B       		.uleb128 0xb
+ 1684 00d8 3B       		.uleb128 0x3b
+ 1685 00d9 0B       		.uleb128 0xb
+ 1686 00da 49       		.uleb128 0x49
+ 1687 00db 13       		.uleb128 0x13
+ 1688 00dc 3C       		.uleb128 0x3c
+ 1689 00dd 19       		.uleb128 0x19
+ 1690 00de 01       		.uleb128 0x1
+ 1691 00df 13       		.uleb128 0x13
+ 1692 00e0 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 36
+
+
+ 1693 00e1 00       		.byte	0
+ 1694 00e2 11       		.uleb128 0x11
+ 1695 00e3 18       		.uleb128 0x18
+ 1696 00e4 00       		.byte	0
+ 1697 00e5 00       		.byte	0
+ 1698 00e6 00       		.byte	0
+ 1699 00e7 12       		.uleb128 0x12
+ 1700 00e8 34       		.uleb128 0x34
+ 1701 00e9 00       		.byte	0
+ 1702 00ea 03       		.uleb128 0x3
+ 1703 00eb 0E       		.uleb128 0xe
+ 1704 00ec 3A       		.uleb128 0x3a
+ 1705 00ed 0B       		.uleb128 0xb
+ 1706 00ee 3B       		.uleb128 0x3b
+ 1707 00ef 0B       		.uleb128 0xb
+ 1708 00f0 49       		.uleb128 0x49
+ 1709 00f1 13       		.uleb128 0x13
+ 1710 00f2 00       		.byte	0
+ 1711 00f3 00       		.byte	0
+ 1712 00f4 13       		.uleb128 0x13
+ 1713 00f5 34       		.uleb128 0x34
+ 1714 00f6 00       		.byte	0
+ 1715 00f7 03       		.uleb128 0x3
+ 1716 00f8 0E       		.uleb128 0xe
+ 1717 00f9 3A       		.uleb128 0x3a
+ 1718 00fa 0B       		.uleb128 0xb
+ 1719 00fb 3B       		.uleb128 0x3b
+ 1720 00fc 0B       		.uleb128 0xb
+ 1721 00fd 49       		.uleb128 0x49
+ 1722 00fe 13       		.uleb128 0x13
+ 1723 00ff 1C       		.uleb128 0x1c
+ 1724 0100 0B       		.uleb128 0xb
+ 1725 0101 00       		.byte	0
+ 1726 0102 00       		.byte	0
+ 1727 0103 14       		.uleb128 0x14
+ 1728 0104 34       		.uleb128 0x34
+ 1729 0105 00       		.byte	0
+ 1730 0106 03       		.uleb128 0x3
+ 1731 0107 0E       		.uleb128 0xe
+ 1732 0108 3A       		.uleb128 0x3a
+ 1733 0109 0B       		.uleb128 0xb
+ 1734 010a 3B       		.uleb128 0x3b
+ 1735 010b 0B       		.uleb128 0xb
+ 1736 010c 49       		.uleb128 0x49
+ 1737 010d 13       		.uleb128 0x13
+ 1738 010e 1C       		.uleb128 0x1c
+ 1739 010f 05       		.uleb128 0x5
+ 1740 0110 00       		.byte	0
+ 1741 0111 00       		.byte	0
+ 1742 0112 15       		.uleb128 0x15
+ 1743 0113 34       		.uleb128 0x34
+ 1744 0114 00       		.byte	0
+ 1745 0115 03       		.uleb128 0x3
+ 1746 0116 0E       		.uleb128 0xe
+ 1747 0117 3A       		.uleb128 0x3a
+ 1748 0118 0B       		.uleb128 0xb
+ 1749 0119 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 37
+
+
+ 1750 011a 0B       		.uleb128 0xb
+ 1751 011b 49       		.uleb128 0x49
+ 1752 011c 13       		.uleb128 0x13
+ 1753 011d 02       		.uleb128 0x2
+ 1754 011e 17       		.uleb128 0x17
+ 1755 011f 00       		.byte	0
+ 1756 0120 00       		.byte	0
+ 1757 0121 16       		.uleb128 0x16
+ 1758 0122 0B       		.uleb128 0xb
+ 1759 0123 01       		.byte	0x1
+ 1760 0124 11       		.uleb128 0x11
+ 1761 0125 01       		.uleb128 0x1
+ 1762 0126 12       		.uleb128 0x12
+ 1763 0127 06       		.uleb128 0x6
+ 1764 0128 01       		.uleb128 0x1
+ 1765 0129 13       		.uleb128 0x13
+ 1766 012a 00       		.byte	0
+ 1767 012b 00       		.byte	0
+ 1768 012c 17       		.uleb128 0x17
+ 1769 012d 34       		.uleb128 0x34
+ 1770 012e 00       		.byte	0
+ 1771 012f 03       		.uleb128 0x3
+ 1772 0130 0E       		.uleb128 0xe
+ 1773 0131 3A       		.uleb128 0x3a
+ 1774 0132 0B       		.uleb128 0xb
+ 1775 0133 3B       		.uleb128 0x3b
+ 1776 0134 05       		.uleb128 0x5
+ 1777 0135 49       		.uleb128 0x49
+ 1778 0136 13       		.uleb128 0x13
+ 1779 0137 3F       		.uleb128 0x3f
+ 1780 0138 19       		.uleb128 0x19
+ 1781 0139 3C       		.uleb128 0x3c
+ 1782 013a 19       		.uleb128 0x19
+ 1783 013b 00       		.byte	0
+ 1784 013c 00       		.byte	0
+ 1785 013d 18       		.uleb128 0x18
+ 1786 013e 35       		.uleb128 0x35
+ 1787 013f 00       		.byte	0
+ 1788 0140 49       		.uleb128 0x49
+ 1789 0141 13       		.uleb128 0x13
+ 1790 0142 00       		.byte	0
+ 1791 0143 00       		.byte	0
+ 1792 0144 19       		.uleb128 0x19
+ 1793 0145 2E       		.uleb128 0x2e
+ 1794 0146 00       		.byte	0
+ 1795 0147 3F       		.uleb128 0x3f
+ 1796 0148 19       		.uleb128 0x19
+ 1797 0149 3C       		.uleb128 0x3c
+ 1798 014a 19       		.uleb128 0x19
+ 1799 014b 6E       		.uleb128 0x6e
+ 1800 014c 0E       		.uleb128 0xe
+ 1801 014d 03       		.uleb128 0x3
+ 1802 014e 0E       		.uleb128 0xe
+ 1803 014f 3A       		.uleb128 0x3a
+ 1804 0150 0B       		.uleb128 0xb
+ 1805 0151 3B       		.uleb128 0x3b
+ 1806 0152 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 38
+
+
+ 1807 0153 00       		.byte	0
+ 1808 0154 00       		.byte	0
+ 1809 0155 00       		.byte	0
+ 1810              		.section	.debug_loc,"",%progbits
+ 1811              	.Ldebug_loc0:
+ 1812              	.LLST0:
+ 1813 0000 00000000 		.4byte	.LVL0
+ 1814 0004 07000000 		.4byte	.LVL1-1
+ 1815 0008 0100     		.2byte	0x1
+ 1816 000a 50       		.byte	0x50
+ 1817 000b 07000000 		.4byte	.LVL1-1
+ 1818 000f 48000000 		.4byte	.LFE64
+ 1819 0013 0400     		.2byte	0x4
+ 1820 0015 F3       		.byte	0xf3
+ 1821 0016 01       		.uleb128 0x1
+ 1822 0017 50       		.byte	0x50
+ 1823 0018 9F       		.byte	0x9f
+ 1824 0019 00000000 		.4byte	0
+ 1825 001d 00000000 		.4byte	0
+ 1826              	.LLST1:
+ 1827 0021 00000000 		.4byte	.LVL0
+ 1828 0025 07000000 		.4byte	.LVL1-1
+ 1829 0029 0100     		.2byte	0x1
+ 1830 002b 51       		.byte	0x51
+ 1831 002c 07000000 		.4byte	.LVL1-1
+ 1832 0030 48000000 		.4byte	.LFE64
+ 1833 0034 0400     		.2byte	0x4
+ 1834 0036 F3       		.byte	0xf3
+ 1835 0037 01       		.uleb128 0x1
+ 1836 0038 51       		.byte	0x51
+ 1837 0039 9F       		.byte	0x9f
+ 1838 003a 00000000 		.4byte	0
+ 1839 003e 00000000 		.4byte	0
+ 1840              	.LLST2:
+ 1841 0042 00000000 		.4byte	.LVL11
+ 1842 0046 05000000 		.4byte	.LVL12-1
+ 1843 004a 0100     		.2byte	0x1
+ 1844 004c 50       		.byte	0x50
+ 1845 004d 05000000 		.4byte	.LVL12-1
+ 1846 0051 40000000 		.4byte	.LFE65
+ 1847 0055 0400     		.2byte	0x4
+ 1848 0057 F3       		.byte	0xf3
+ 1849 0058 01       		.uleb128 0x1
+ 1850 0059 50       		.byte	0x50
+ 1851 005a 9F       		.byte	0x9f
+ 1852 005b 00000000 		.4byte	0
+ 1853 005f 00000000 		.4byte	0
+ 1854              	.LLST3:
+ 1855 0063 00000000 		.4byte	.LVL21
+ 1856 0067 06000000 		.4byte	.LVL23
+ 1857 006b 0100     		.2byte	0x1
+ 1858 006d 50       		.byte	0x50
+ 1859 006e 06000000 		.4byte	.LVL23
+ 1860 0072 38000000 		.4byte	.LFE66
+ 1861 0076 0400     		.2byte	0x4
+ 1862 0078 F3       		.byte	0xf3
+ 1863 0079 01       		.uleb128 0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 39
+
+
+ 1864 007a 50       		.byte	0x50
+ 1865 007b 9F       		.byte	0x9f
+ 1866 007c 00000000 		.4byte	0
+ 1867 0080 00000000 		.4byte	0
+ 1868              	.LLST4:
+ 1869 0084 00000000 		.4byte	.LVL21
+ 1870 0088 09000000 		.4byte	.LVL24-1
+ 1871 008c 0100     		.2byte	0x1
+ 1872 008e 51       		.byte	0x51
+ 1873 008f 09000000 		.4byte	.LVL24-1
+ 1874 0093 38000000 		.4byte	.LFE66
+ 1875 0097 0400     		.2byte	0x4
+ 1876 0099 F3       		.byte	0xf3
+ 1877 009a 01       		.uleb128 0x1
+ 1878 009b 51       		.byte	0x51
+ 1879 009c 9F       		.byte	0x9f
+ 1880 009d 00000000 		.4byte	0
+ 1881 00a1 00000000 		.4byte	0
+ 1882              	.LLST5:
+ 1883 00a5 10000000 		.4byte	.LVL25
+ 1884 00a9 14000000 		.4byte	.LVL26
+ 1885 00ad 0200     		.2byte	0x2
+ 1886 00af 30       		.byte	0x30
+ 1887 00b0 9F       		.byte	0x9f
+ 1888 00b1 14000000 		.4byte	.LVL26
+ 1889 00b5 2A000000 		.4byte	.LVL30
+ 1890 00b9 0100     		.2byte	0x1
+ 1891 00bb 54       		.byte	0x54
+ 1892 00bc 2C000000 		.4byte	.LVL31
+ 1893 00c0 34000000 		.4byte	.LVL32
+ 1894 00c4 0100     		.2byte	0x1
+ 1895 00c6 54       		.byte	0x54
+ 1896 00c7 00000000 		.4byte	0
+ 1897 00cb 00000000 		.4byte	0
+ 1898              	.LLST6:
+ 1899 00cf 04000000 		.4byte	.LVL22
+ 1900 00d3 14000000 		.4byte	.LVL26
+ 1901 00d7 0A00     		.2byte	0xa
+ 1902 00d9 9E       		.byte	0x9e
+ 1903 00da 08       		.uleb128 0x8
+ 1904 00db 00000000 		.4byte	0
+ 1905 00df 00000000 		.4byte	0
+ 1906 00e3 1A000000 		.4byte	.LVL27
+ 1907 00e7 21000000 		.4byte	.LVL28-1
+ 1908 00eb 0600     		.2byte	0x6
+ 1909 00ed 50       		.byte	0x50
+ 1910 00ee 93       		.byte	0x93
+ 1911 00ef 04       		.uleb128 0x4
+ 1912 00f0 51       		.byte	0x51
+ 1913 00f1 93       		.byte	0x93
+ 1914 00f2 04       		.uleb128 0x4
+ 1915 00f3 00000000 		.4byte	0
+ 1916 00f7 00000000 		.4byte	0
+ 1917              	.LLST7:
+ 1918 00fb 00000000 		.4byte	.LVL33
+ 1919 00ff 08000000 		.4byte	.LVL34
+ 1920 0103 0100     		.2byte	0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 40
+
+
+ 1921 0105 50       		.byte	0x50
+ 1922 0106 08000000 		.4byte	.LVL34
+ 1923 010a 30000000 		.4byte	.LFE67
+ 1924 010e 0400     		.2byte	0x4
+ 1925 0110 F3       		.byte	0xf3
+ 1926 0111 01       		.uleb128 0x1
+ 1927 0112 50       		.byte	0x50
+ 1928 0113 9F       		.byte	0x9f
+ 1929 0114 00000000 		.4byte	0
+ 1930 0118 00000000 		.4byte	0
+ 1931              	.LLST8:
+ 1932 011c 00000000 		.4byte	.LVL33
+ 1933 0120 0B000000 		.4byte	.LVL35-1
+ 1934 0124 0100     		.2byte	0x1
+ 1935 0126 51       		.byte	0x51
+ 1936 0127 0B000000 		.4byte	.LVL35-1
+ 1937 012b 30000000 		.4byte	.LFE67
+ 1938 012f 0400     		.2byte	0x4
+ 1939 0131 F3       		.byte	0xf3
+ 1940 0132 01       		.uleb128 0x1
+ 1941 0133 51       		.byte	0x51
+ 1942 0134 9F       		.byte	0x9f
+ 1943 0135 00000000 		.4byte	0
+ 1944 0139 00000000 		.4byte	0
+ 1945              	.LLST9:
+ 1946 013d 00000000 		.4byte	.LVL33
+ 1947 0141 0B000000 		.4byte	.LVL35-1
+ 1948 0145 0100     		.2byte	0x1
+ 1949 0147 52       		.byte	0x52
+ 1950 0148 0B000000 		.4byte	.LVL35-1
+ 1951 014c 30000000 		.4byte	.LFE67
+ 1952 0150 0400     		.2byte	0x4
+ 1953 0152 F3       		.byte	0xf3
+ 1954 0153 01       		.uleb128 0x1
+ 1955 0154 52       		.byte	0x52
+ 1956 0155 9F       		.byte	0x9f
+ 1957 0156 00000000 		.4byte	0
+ 1958 015a 00000000 		.4byte	0
+ 1959              	.LLST10:
+ 1960 015e 0C000000 		.4byte	.LVL35
+ 1961 0162 20000000 		.4byte	.LVL38
+ 1962 0166 0100     		.2byte	0x1
+ 1963 0168 54       		.byte	0x54
+ 1964 0169 22000000 		.4byte	.LVL39
+ 1965 016d 2A000000 		.4byte	.LVL40
+ 1966 0171 0100     		.2byte	0x1
+ 1967 0173 54       		.byte	0x54
+ 1968 0174 00000000 		.4byte	0
+ 1969 0178 00000000 		.4byte	0
+ 1970              	.LLST11:
+ 1971 017c 14000000 		.4byte	.LVL36
+ 1972 0180 1B000000 		.4byte	.LVL37-1
+ 1973 0184 0600     		.2byte	0x6
+ 1974 0186 50       		.byte	0x50
+ 1975 0187 93       		.byte	0x93
+ 1976 0188 04       		.uleb128 0x4
+ 1977 0189 51       		.byte	0x51
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 41
+
+
+ 1978 018a 93       		.byte	0x93
+ 1979 018b 04       		.uleb128 0x4
+ 1980 018c 00000000 		.4byte	0
+ 1981 0190 00000000 		.4byte	0
+ 1982              	.LLST12:
+ 1983 0194 8C000000 		.4byte	.LVL60
+ 1984 0198 90000000 		.4byte	.LVL61
+ 1985 019c 0200     		.2byte	0x2
+ 1986 019e 31       		.byte	0x31
+ 1987 019f 9F       		.byte	0x9f
+ 1988 01a0 90000000 		.4byte	.LVL61
+ 1989 01a4 AC000000 		.4byte	.LVL63
+ 1990 01a8 0100     		.2byte	0x1
+ 1991 01aa 53       		.byte	0x53
+ 1992 01ab B8000000 		.4byte	.LVL64
+ 1993 01af BC000000 		.4byte	.LVL66
+ 1994 01b3 0200     		.2byte	0x2
+ 1995 01b5 31       		.byte	0x31
+ 1996 01b6 9F       		.byte	0x9f
+ 1997 01b7 BC000000 		.4byte	.LVL66
+ 1998 01bb 08010000 		.4byte	.LVL72
+ 1999 01bf 0100     		.2byte	0x1
+ 2000 01c1 54       		.byte	0x54
+ 2001 01c2 08010000 		.4byte	.LVL72
+ 2002 01c6 CE010000 		.4byte	.LVL101
+ 2003 01ca 0100     		.2byte	0x1
+ 2004 01cc 57       		.byte	0x57
+ 2005 01cd 00000000 		.4byte	0
+ 2006 01d1 00000000 		.4byte	0
+ 2007              	.LLST13:
+ 2008 01d5 08010000 		.4byte	.LVL72
+ 2009 01d9 B2010000 		.4byte	.LVL96
+ 2010 01dd 0100     		.2byte	0x1
+ 2011 01df 54       		.byte	0x54
+ 2012 01e0 B4010000 		.4byte	.LVL97
+ 2013 01e4 BA010000 		.4byte	.LVL98
+ 2014 01e8 0100     		.2byte	0x1
+ 2015 01ea 54       		.byte	0x54
+ 2016 01eb 00000000 		.4byte	0
+ 2017 01ef 00000000 		.4byte	0
+ 2018              	.LLST14:
+ 2019 01f3 6C000000 		.4byte	.LVL55
+ 2020 01f7 7A000000 		.4byte	.LVL56
+ 2021 01fb 0100     		.2byte	0x1
+ 2022 01fd 50       		.byte	0x50
+ 2023 01fe 7A000000 		.4byte	.LVL56
+ 2024 0202 BA000000 		.4byte	.LVL65
+ 2025 0206 0100     		.2byte	0x1
+ 2026 0208 54       		.byte	0x54
+ 2027 0209 00000000 		.4byte	0
+ 2028 020d 00000000 		.4byte	0
+ 2029              	.LLST15:
+ 2030 0211 7E000000 		.4byte	.LVL57
+ 2031 0215 80000000 		.4byte	.LVL58
+ 2032 0219 0100     		.2byte	0x1
+ 2033 021b 50       		.byte	0x50
+ 2034 021c 00000000 		.4byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 42
+
+
+ 2035 0220 00000000 		.4byte	0
+ 2036              	.LLST16:
+ 2037 0224 90010000 		.4byte	.LVL91
+ 2038 0228 A6010000 		.4byte	.LVL92
+ 2039 022c 0100     		.2byte	0x1
+ 2040 022e 50       		.byte	0x50
+ 2041 022f A6010000 		.4byte	.LVL92
+ 2042 0233 A9010000 		.4byte	.LVL93-1
+ 2043 0237 0100     		.2byte	0x1
+ 2044 0239 52       		.byte	0x52
+ 2045 023a A9010000 		.4byte	.LVL93-1
+ 2046 023e AE010000 		.4byte	.LVL94
+ 2047 0242 0100     		.2byte	0x1
+ 2048 0244 55       		.byte	0x55
+ 2049 0245 00000000 		.4byte	0
+ 2050 0249 00000000 		.4byte	0
+ 2051              	.LLST17:
+ 2052 024d 6E010000 		.4byte	.LVL86
+ 2053 0251 7C010000 		.4byte	.LVL87
+ 2054 0255 0100     		.2byte	0x1
+ 2055 0257 50       		.byte	0x50
+ 2056 0258 7C010000 		.4byte	.LVL87
+ 2057 025c AE010000 		.4byte	.LVL94
+ 2058 0260 0100     		.2byte	0x1
+ 2059 0262 56       		.byte	0x56
+ 2060 0263 00000000 		.4byte	0
+ 2061 0267 00000000 		.4byte	0
+ 2062              	.LLST18:
+ 2063 026b 08010000 		.4byte	.LVL72
+ 2064 026f 52010000 		.4byte	.LVL80
+ 2065 0273 0100     		.2byte	0x1
+ 2066 0275 58       		.byte	0x58
+ 2067 0276 56010000 		.4byte	.LVL81
+ 2068 027a AA010000 		.4byte	.LVL93
+ 2069 027e 0100     		.2byte	0x1
+ 2070 0280 58       		.byte	0x58
+ 2071 0281 AA010000 		.4byte	.LVL93
+ 2072 0285 AE010000 		.4byte	.LVL94
+ 2073 0289 0100     		.2byte	0x1
+ 2074 028b 55       		.byte	0x55
+ 2075 028c AE010000 		.4byte	.LVL94
+ 2076 0290 CE010000 		.4byte	.LVL101
+ 2077 0294 0100     		.2byte	0x1
+ 2078 0296 58       		.byte	0x58
+ 2079 0297 00000000 		.4byte	0
+ 2080 029b 00000000 		.4byte	0
+ 2081              	.LLST19:
+ 2082 029f 08010000 		.4byte	.LVL72
+ 2083 02a3 32010000 		.4byte	.LVL76
+ 2084 02a7 0100     		.2byte	0x1
+ 2085 02a9 59       		.byte	0x59
+ 2086 02aa 36010000 		.4byte	.LVL77
+ 2087 02ae AA010000 		.4byte	.LVL93
+ 2088 02b2 0100     		.2byte	0x1
+ 2089 02b4 59       		.byte	0x59
+ 2090 02b5 AA010000 		.4byte	.LVL93
+ 2091 02b9 AE010000 		.4byte	.LVL94
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 43
+
+
+ 2092 02bd 0100     		.2byte	0x1
+ 2093 02bf 56       		.byte	0x56
+ 2094 02c0 AE010000 		.4byte	.LVL94
+ 2095 02c4 CE010000 		.4byte	.LVL101
+ 2096 02c8 0100     		.2byte	0x1
+ 2097 02ca 59       		.byte	0x59
+ 2098 02cb 00000000 		.4byte	0
+ 2099 02cf 00000000 		.4byte	0
+ 2100              	.LLST20:
+ 2101 02d3 88000000 		.4byte	.LVL59
+ 2102 02d7 BC000000 		.4byte	.LVL66
+ 2103 02db 0100     		.2byte	0x1
+ 2104 02dd 51       		.byte	0x51
+ 2105 02de 00000000 		.4byte	0
+ 2106 02e2 00000000 		.4byte	0
+ 2107              	.LLST21:
+ 2108 02e6 20010000 		.4byte	.LVL73
+ 2109 02ea 29010000 		.4byte	.LVL74-1
+ 2110 02ee 0600     		.2byte	0x6
+ 2111 02f0 50       		.byte	0x50
+ 2112 02f1 93       		.byte	0x93
+ 2113 02f2 04       		.uleb128 0x4
+ 2114 02f3 51       		.byte	0x51
+ 2115 02f4 93       		.byte	0x93
+ 2116 02f5 04       		.uleb128 0x4
+ 2117 02f6 58010000 		.4byte	.LVL82
+ 2118 02fa 5F010000 		.4byte	.LVL83-1
+ 2119 02fe 0600     		.2byte	0x6
+ 2120 0300 50       		.byte	0x50
+ 2121 0301 93       		.byte	0x93
+ 2122 0302 04       		.uleb128 0x4
+ 2123 0303 51       		.byte	0x51
+ 2124 0304 93       		.byte	0x93
+ 2125 0305 04       		.uleb128 0x4
+ 2126 0306 00000000 		.4byte	0
+ 2127 030a 00000000 		.4byte	0
+ 2128              		.section	.debug_aranges,"",%progbits
+ 2129 0000 3C000000 		.4byte	0x3c
+ 2130 0004 0200     		.2byte	0x2
+ 2131 0006 00000000 		.4byte	.Ldebug_info0
+ 2132 000a 04       		.byte	0x4
+ 2133 000b 00       		.byte	0
+ 2134 000c 0000     		.2byte	0
+ 2135 000e 0000     		.2byte	0
+ 2136 0010 00000000 		.4byte	.LFB64
+ 2137 0014 48000000 		.4byte	.LFE64-.LFB64
+ 2138 0018 00000000 		.4byte	.LFB65
+ 2139 001c 40000000 		.4byte	.LFE65-.LFB65
+ 2140 0020 00000000 		.4byte	.LFB66
+ 2141 0024 38000000 		.4byte	.LFE66-.LFB66
+ 2142 0028 00000000 		.4byte	.LFB67
+ 2143 002c 30000000 		.4byte	.LFE67-.LFB67
+ 2144 0030 00000000 		.4byte	.LFB68
+ 2145 0034 FC010000 		.4byte	.LFE68-.LFB68
+ 2146 0038 00000000 		.4byte	0
+ 2147 003c 00000000 		.4byte	0
+ 2148              		.section	.debug_ranges,"",%progbits
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 44
+
+
+ 2149              	.Ldebug_ranges0:
+ 2150 0000 00000000 		.4byte	.LFB64
+ 2151 0004 48000000 		.4byte	.LFE64
+ 2152 0008 00000000 		.4byte	.LFB65
+ 2153 000c 40000000 		.4byte	.LFE65
+ 2154 0010 00000000 		.4byte	.LFB66
+ 2155 0014 38000000 		.4byte	.LFE66
+ 2156 0018 00000000 		.4byte	.LFB67
+ 2157 001c 30000000 		.4byte	.LFE67
+ 2158 0020 00000000 		.4byte	.LFB68
+ 2159 0024 FC010000 		.4byte	.LFE68
+ 2160 0028 00000000 		.4byte	0
+ 2161 002c 00000000 		.4byte	0
+ 2162              		.section	.debug_line,"",%progbits
+ 2163              	.Ldebug_line0:
+ 2164 0000 95020000 		.section	.debug_str,"MS",%progbits,1
+ 2164      02009501 
+ 2164      00000201 
+ 2164      FB0E0D00 
+ 2164      01010101 
+ 2165              	.LASF30:
+ 2166 0000 795F7069 		.ascii	"y_pixel\000"
+ 2166      78656C00 
+ 2167              	.LASF56:
+ 2168 0008 4144435F 		.ascii	"ADC_SAR_1_Sleep\000"
+ 2168      5341525F 
+ 2168      315F536C 
+ 2168      65657000 
+ 2169              	.LASF27:
+ 2170 0018 795F6D61 		.ascii	"y_max_mA\000"
+ 2170      785F6D41 
+ 2170      00
+ 2171              	.LASF36:
+ 2172 0021 5664735F 		.ascii	"Vds_test_points\000"
+ 2172      74657374 
+ 2172      5F706F69 
+ 2172      6E747300 
+ 2173              	.LASF41:
+ 2174 0031 56444143 		.ascii	"VDAC8_DS_SetValue\000"
+ 2174      385F4453 
+ 2174      5F536574 
+ 2174      56616C75 
+ 2174      6500
+ 2175              	.LASF2:
+ 2176 0043 73686F72 		.ascii	"short int\000"
+ 2176      7420696E 
+ 2176      7400
+ 2177              	.LASF18:
+ 2178 004d 4F757470 		.ascii	"Output\000"
+ 2178      757400
+ 2179              	.LASF15:
+ 2180 0054 73697A65 		.ascii	"sizetype\000"
+ 2180      74797065 
+ 2180      00
+ 2181              	.LASF39:
+ 2182 005d 4F757470 		.ascii	"Output_data_x\000"
+ 2182      75745F64 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 45
+
+
+ 2182      6174615F 
+ 2182      7800
+ 2183              	.LASF38:
+ 2184 006b 4F757470 		.ascii	"Output_data_y\000"
+ 2184      75745F64 
+ 2184      6174615F 
+ 2184      7900
+ 2185              	.LASF23:
+ 2186 0079 6D61696E 		.ascii	"main\000"
+ 2186      00
+ 2187              	.LASF6:
+ 2188 007e 6C6F6E67 		.ascii	"long long int\000"
+ 2188      206C6F6E 
+ 2188      6720696E 
+ 2188      7400
+ 2189              	.LASF20:
+ 2190 008c 5667735F 		.ascii	"Vgs_max\000"
+ 2190      6D617800 
+ 2191              	.LASF22:
+ 2192 0094 5664735F 		.ascii	"Vds_max\000"
+ 2192      6D617800 
+ 2193              	.LASF47:
+ 2194 009c 4144435F 		.ascii	"ADC_SAR_1_GetResult16\000"
+ 2194      5341525F 
+ 2194      315F4765 
+ 2194      74526573 
+ 2194      756C7431 
+ 2195              	.LASF16:
+ 2196 00b2 73696E67 		.ascii	"single_test\000"
+ 2196      6C655F74 
+ 2196      65737400 
+ 2197              	.LASF11:
+ 2198 00be 666C6F61 		.ascii	"float\000"
+ 2198      7400
+ 2199              	.LASF46:
+ 2200 00c4 4144435F 		.ascii	"ADC_SAR_1_StopConvert\000"
+ 2200      5341525F 
+ 2200      315F5374 
+ 2200      6F70436F 
+ 2200      6E766572 
+ 2201              	.LASF21:
+ 2202 00da 7667735F 		.ascii	"vgs_max_id_find\000"
+ 2202      6D61785F 
+ 2202      69645F66 
+ 2202      696E6400 
+ 2203              	.LASF31:
+ 2204 00ea 785F7069 		.ascii	"x_pixel_prev\000"
+ 2204      78656C5F 
+ 2204      70726576 
+ 2204      00
+ 2205              	.LASF4:
+ 2206 00f7 6C6F6E67 		.ascii	"long int\000"
+ 2206      20696E74 
+ 2206      00
+ 2207              	.LASF32:
+ 2208 0100 795F7069 		.ascii	"y_pixel_prev\000"
+ 2208      78656C5F 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 46
+
+
+ 2208      70726576 
+ 2208      00
+ 2209              	.LASF37:
+ 2210 010d 72657475 		.ascii	"return_code\000"
+ 2210      726E5F63 
+ 2210      6F646500 
+ 2211              	.LASF26:
+ 2212 0119 64657669 		.ascii	"device_selection\000"
+ 2212      63655F73 
+ 2212      656C6563 
+ 2212      74696F6E 
+ 2212      00
+ 2213              	.LASF33:
+ 2214 012a 63757276 		.ascii	"curve_color\000"
+ 2214      655F636F 
+ 2214      6C6F7200 
+ 2215              	.LASF1:
+ 2216 0136 756E7369 		.ascii	"unsigned char\000"
+ 2216      676E6564 
+ 2216      20636861 
+ 2216      7200
+ 2217              	.LASF14:
+ 2218 0144 6C6F6E67 		.ascii	"long double\000"
+ 2218      20646F75 
+ 2218      626C6500 
+ 2219              	.LASF59:
+ 2220 0150 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Desktop\\Workspace01\\Desi"
+ 2220      73657273 
+ 2220      5C4A6163 
+ 2220      6F622D4C 
+ 2220      6170746F 
+ 2221 017e 676E3031 		.ascii	"gn01.cydsn\000"
+ 2221      2E637964 
+ 2221      736E00
+ 2222              	.LASF49:
+ 2223 0189 5350494D 		.ascii	"SPIM_Start\000"
+ 2223      5F537461 
+ 2223      727400
+ 2224              	.LASF52:
+ 2225 0194 56444143 		.ascii	"VDAC8_GS_Start\000"
+ 2225      385F4753 
+ 2225      5F537461 
+ 2225      727400
+ 2226              	.LASF0:
+ 2227 01a3 7369676E 		.ascii	"signed char\000"
+ 2227      65642063 
+ 2227      68617200 
+ 2228              	.LASF7:
+ 2229 01af 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 2229      206C6F6E 
+ 2229      6720756E 
+ 2229      7369676E 
+ 2229      65642069 
+ 2230              	.LASF8:
+ 2231 01c6 756E7369 		.ascii	"unsigned int\000"
+ 2231      676E6564 
+ 2231      20696E74 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 47
+
+
+ 2231      00
+ 2232              	.LASF25:
+ 2233 01d3 66696C6C 		.ascii	"fillScreen\000"
+ 2233      53637265 
+ 2233      656E00
+ 2234              	.LASF35:
+ 2235 01de 5667735F 		.ascii	"Vgs_test_points\000"
+ 2235      74657374 
+ 2235      5F706F69 
+ 2235      6E747300 
+ 2236              	.LASF40:
+ 2237 01ee 64726177 		.ascii	"draw_line\000"
+ 2237      5F6C696E 
+ 2237      6500
+ 2238              	.LASF13:
+ 2239 01f8 63686172 		.ascii	"char\000"
+ 2239      00
+ 2240              	.LASF44:
+ 2241 01fd 4144435F 		.ascii	"ADC_SAR_1_StartConvert\000"
+ 2241      5341525F 
+ 2241      315F5374 
+ 2241      61727443 
+ 2241      6F6E7665 
+ 2242              	.LASF10:
+ 2243 0214 696E7433 		.ascii	"int32_t\000"
+ 2243      325F7400 
+ 2244              	.LASF45:
+ 2245 021c 4144435F 		.ascii	"ADC_SAR_1_IsEndConversion\000"
+ 2245      5341525F 
+ 2245      315F4973 
+ 2245      456E6443 
+ 2245      6F6E7665 
+ 2246              	.LASF17:
+ 2247 0236 73696E67 		.ascii	"single_test_preset_vds\000"
+ 2247      6C655F74 
+ 2247      6573745F 
+ 2247      70726573 
+ 2247      65745F76 
+ 2248              	.LASF51:
+ 2249 024d 52657365 		.ascii	"Reset_Write\000"
+ 2249      745F5772 
+ 2249      69746500 
+ 2250              	.LASF24:
+ 2251 0259 53746172 		.ascii	"StartScreen\000"
+ 2251      74536372 
+ 2251      65656E00 
+ 2252              	.LASF3:
+ 2253 0265 73686F72 		.ascii	"short unsigned int\000"
+ 2253      7420756E 
+ 2253      7369676E 
+ 2253      65642069 
+ 2253      6E7400
+ 2254              	.LASF48:
+ 2255 0278 4144435F 		.ascii	"ADC_SAR_1_CountsTo_mVolts\000"
+ 2255      5341525F 
+ 2255      315F436F 
+ 2255      756E7473 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 48
+
+
+ 2255      546F5F6D 
+ 2256              	.LASF58:
+ 2257 0292 6D61696E 		.ascii	"main.c\000"
+ 2257      2E6300
+ 2258              	.LASF5:
+ 2259 0299 6C6F6E67 		.ascii	"long unsigned int\000"
+ 2259      20756E73 
+ 2259      69676E65 
+ 2259      6420696E 
+ 2259      7400
+ 2260              	.LASF12:
+ 2261 02ab 646F7562 		.ascii	"double\000"
+ 2261      6C6500
+ 2262              	.LASF28:
+ 2263 02b2 785F6D61 		.ascii	"x_max_mV\000"
+ 2263      785F6D56 
+ 2263      00
+ 2264              	.LASF50:
+ 2265 02bb 436C6F63 		.ascii	"Clock_Start\000"
+ 2265      6B5F5374 
+ 2265      61727400 
+ 2266              	.LASF55:
+ 2267 02c7 4144435F 		.ascii	"ADC_SAR_1_Wakeup\000"
+ 2267      5341525F 
+ 2267      315F5761 
+ 2267      6B657570 
+ 2267      00
+ 2268              	.LASF9:
+ 2269 02d8 5F5F696E 		.ascii	"__int32_t\000"
+ 2269      7433325F 
+ 2269      7400
+ 2270              	.LASF29:
+ 2271 02e2 785F7069 		.ascii	"x_pixel\000"
+ 2271      78656C00 
+ 2272              	.LASF42:
+ 2273 02ea 56444143 		.ascii	"VDAC8_GS_SetValue\000"
+ 2273      385F4753 
+ 2273      5F536574 
+ 2273      56616C75 
+ 2273      6500
+ 2274              	.LASF54:
+ 2275 02fc 4144435F 		.ascii	"ADC_SAR_1_Start\000"
+ 2275      5341525F 
+ 2275      315F5374 
+ 2275      61727400 
+ 2276              	.LASF34:
+ 2277 030c 5667735F 		.ascii	"Vgs_step\000"
+ 2277      73746570 
+ 2277      00
+ 2278              	.LASF60:
+ 2279 0315 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 2279      52784275 
+ 2279      66666572 
+ 2279      00
+ 2280              	.LASF57:
+ 2281 0322 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 2281      43313120 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccZ6aIjh.s 			page 49
+
+
+ 2281      352E342E 
+ 2281      31203230 
+ 2281      31363036 
+ 2282 0355 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 2282      20726576 
+ 2282      6973696F 
+ 2282      6E203233 
+ 2282      37373135 
+ 2283 0388 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 2283      66756E63 
+ 2283      74696F6E 
+ 2283      2D736563 
+ 2283      74696F6E 
+ 2284              	.LASF43:
+ 2285 03b0 43794465 		.ascii	"CyDelay\000"
+ 2285      6C617900 
+ 2286              	.LASF53:
+ 2287 03b8 56444143 		.ascii	"VDAC8_DS_Start\000"
+ 2287      385F4453 
+ 2287      5F537461 
+ 2287      727400
+ 2288              	.LASF19:
+ 2289 03c7 7667735F 		.ascii	"vgs_th_find\000"
+ 2289      74685F66 
+ 2289      696E6400 
+ 2290              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

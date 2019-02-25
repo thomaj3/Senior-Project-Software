@@ -1,0 +1,21 @@
+# Design01
+# 2019-02-19 22:48:15Z
+
+# IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 0
+# IO_1@[IOP=(1)][IoId=(1)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 1
+# IO_3@[IOP=(1)][IoId=(3)] is reserved: SWDDebugEnabled
+dont_use_io iocell 1 3
+set_io "MOSI(0)" iocell 0 5
+set_io "CLK(0)" iocell 0 7
+set_io "SS(0)" iocell 0 1
+set_io "MISO(0)" iocell 0 6
+set_io "D_C(0)" iocell 0 0
+set_io "Reset(0)" iocell 15 5
+set_io "Pin_DS(0)" iocell 3 5
+set_io "Pin_GS(0)" iocell 3 4
+set_io "Pin_ID(0)" iocell 3 3
+set_location "\VDAC8_DS:viDAC8\" vidaccell -1 -1 3
+set_location "\VDAC8_GS:viDAC8\" vidaccell -1 -1 2
+set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1
