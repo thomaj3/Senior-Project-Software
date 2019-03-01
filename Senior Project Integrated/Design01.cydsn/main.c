@@ -117,7 +117,7 @@ int main(void)
     StartScreen();
     
     // Fills screen in black
-    fillScreen(WHITE);  
+    fillScreen(BLACK);  
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();
@@ -128,6 +128,7 @@ int main(void)
     
     int i;  //used for for loop iterations
     int j;  //used for for loop iterations
+    int k;  //used for for loop iterations
     
     unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
     int y_max_mA = 25;                    //The highest plottable Id in mA
@@ -147,7 +148,8 @@ int main(void)
     
     double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};   //The output data of Id NMOS trace in mA
     double Output_data_x[VDS_NMOS_LENGTH];                   //The Vds points used. Used for plottings
-    double Id;
+    double Id[AVG];
+    double Id_avg;
     
     
     //for(;;)
@@ -178,15 +180,27 @@ int main(void)
                 {
                     for(j = 0; j <VDS_NMOS_LENGTH; j++)
                     {
-                        Id = single_test(Vds_test_points[j],Vgs_test_points[i]);
+                        for(k=0; k < AVG; k++)
+                        {
+                            Id[k] = single_test(Vds_test_points[j],Vgs_test_points[i]);
+                            if (k == 0)
+                            {
+                                Id_avg = Id[k];
+                            }
+                            else
+                            {
+                                Id_avg = Id[k] + Id_avg;
+                            }
+                        }
+                        Id_avg = Id_avg/AVG;
                         if (j==0)
                         {
-                            y_pixel_prev = (int) (Id/y_max_mA)*Y_RES;
-                            x_pixel_prev = (int) (Output_data_x[j]/x_max_mV)*X_RES;
+                            y_pixel_prev = (int) (Id_avg*y_max_mA/Y_RES);
+                            x_pixel_prev = (int) (Output_data_x[j]*x_max_mV)/X_RES;
                         }
                         else
                         {
-                            y_pixel = (int) ((Id*Y_RES)/y_max_mA);
+                            y_pixel = (int) ((Id_avg*Y_RES)/y_max_mA);
                             x_pixel = (int) ((Output_data_x[j]*X_RES)/x_max_mV);
                             draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
                             y_pixel_prev = y_pixel;

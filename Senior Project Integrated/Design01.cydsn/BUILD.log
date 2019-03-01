@@ -1,4 +1,4 @@
---------------- Build Started: 02/25/2019 16:26:47 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 03/01/2019 16:22:15 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'main':
@@ -6,32 +6,35 @@ main.c:117:5: warning: implicit declaration of function 'StartScreen' [-Wimplici
      StartScreen();
      ^
 main.c:120:5: warning: implicit declaration of function 'fillScreen' [-Wimplicit-function-declaration]
-     fillScreen(WHITE);  
+     fillScreen(BLACK);  
      ^
-main.c:191:29: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
+main.c:205:29: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
                              draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
                              ^
-main.c:148:12: warning: unused variable 'Output_data_y' [-Wunused-variable]
+main.c:149:12: warning: unused variable 'Output_data_y' [-Wunused-variable]
      double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};   //The output data of Id NMOS trace in mA
             ^
-main.c:132:19: warning: unused variable 'device_selection' [-Wunused-variable]
+main.c:133:19: warning: unused variable 'device_selection' [-Wunused-variable]
      unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
                    ^
 main.c:127:9: warning: unused variable 'return_code' [-Wunused-variable]
      int return_code;    //Going to be used for error displays
          ^
-main.c:191:29: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:192:40: warning: 'Id_avg' may be used uninitialized in this function [-Wmaybe-uninitialized]
+                                 Id_avg = Id[k] + Id_avg;
+                                        ^
+main.c:205:29: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
                              draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
                              ^
-main.c:191:29: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:205:29: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Design01.a .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\MOSI.o .\CortexM3\ARM_GCC_541\Debug\CLK.o .\CortexM3\ARM_GCC_541\Debug\SS.o .\CortexM3\ARM_GCC_541\Debug\MISO.o .\CortexM3\ARM_GCC_541\Debug\D_C.o .\CortexM3\ARM_GCC_541\Debug\Reset.o .\CortexM3\ARM_GCC_541\Debug\Clock.o .\CortexM3\ARM_GCC_541\Debug\SPIM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_PM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_INT.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_GS.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_ID.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_theACLK.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Design01.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o C:\Users\Jacob-Laptop\Desktop\Workspace01\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C C:\Users\Jacob-Laptop\Desktop\Workspace01\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S C:\Users\Jacob-Laptop\Desktop\Workspace01\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf
-Flash used: 7222 of 262144 bytes (2.8%).
+cyelftool.exe -S "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
+Flash used: 7302 of 262144 bytes (2.8%).
 SRAM used: 2537 of 65536 bytes (3.9%). Stack: 2048 bytes. Heap: 128 bytes.
---------------- Build Succeeded: 02/25/2019 16:26:49 ---------------
+--------------- Build Succeeded: 03/01/2019 16:22:17 ---------------
