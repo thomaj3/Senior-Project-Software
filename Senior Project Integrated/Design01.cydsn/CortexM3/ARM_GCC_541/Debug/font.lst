@@ -1,0 +1,3993 @@
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"font.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.draw_character,"ax",%progbits
+  20              		.align	2
+  21              		.global	draw_character
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	draw_character, %function
+  25              	draw_character:
+  26              	.LFB63:
+  27              		.file 1 "font.c"
+   1:font.c        **** // Steven Andresen
+   2:font.c        **** // Senior Project Spring 2019
+   3:font.c        **** 
+   4:font.c        **** #include "project.h"
+   5:font.c        **** #include "font.h"
+   6:font.c        **** #include "screen.h"
+   7:font.c        **** 
+   8:font.c        **** // How to read
+   9:font.c        **** //  // Number
+  10:font.c        **** //  # of array indecies to next number
+  11:font.c        **** 
+  12:font.c        **** //  # of pixels in line 0, 
+  13:font.c        **** //	(index of pixels from 0-4),
+  14:font.c        **** //	# of pixels in line 1...
+  15:font.c        **** 
+  16:font.c        **** //  //Number...
+  17:font.c        **** 
+  18:font.c        **** static const uint8_t font[] = 
+  19:font.c        **** {
+  20:font.c        ****     // Font Height
+  21:font.c        ****     7,
+  22:font.c        ****     
+  23:font.c        ****     // 0
+  24:font.c        ****     26,
+  25:font.c        ****     
+  26:font.c        ****     3,
+  27:font.c        ****     1,2,3,
+  28:font.c        ****     2,
+  29:font.c        ****     0,4,
+  30:font.c        ****     3,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 2
+
+
+  31:font.c        ****     0,1,4,
+  32:font.c        ****     3,
+  33:font.c        ****     0,2,4,
+  34:font.c        ****     3,
+  35:font.c        ****     0,3,4,
+  36:font.c        ****     2,
+  37:font.c        ****     0,4,
+  38:font.c        ****     3,
+  39:font.c        ****     1,2,3,
+  40:font.c        ****     
+  41:font.c        ****     // 1
+  42:font.c        ****     19,
+  43:font.c        ****     
+  44:font.c        ****     5,
+  45:font.c        ****     0,1,2,3,4,
+  46:font.c        ****     1,
+  47:font.c        ****     2,
+  48:font.c        ****     1,
+  49:font.c        ****     2,
+  50:font.c        ****     1,
+  51:font.c        ****     2,
+  52:font.c        ****     1,
+  53:font.c        ****     2,
+  54:font.c        ****     2,
+  55:font.c        ****     1,2,
+  56:font.c        ****     1,
+  57:font.c        ****     2,
+  58:font.c        ****     
+  59:font.c        ****     // 2
+  60:font.c        ****     23,
+  61:font.c        ****     
+  62:font.c        ****     5,
+  63:font.c        ****     0,1,2,3,4,
+  64:font.c        ****     2,
+  65:font.c        ****     0,4,
+  66:font.c        ****     1,
+  67:font.c        ****     1,
+  68:font.c        ****     2,
+  69:font.c        ****     2,3,
+  70:font.c        ****     1,
+  71:font.c        ****     4,
+  72:font.c        ****     2,
+  73:font.c        ****     0,4,
+  74:font.c        ****     3,
+  75:font.c        ****     1,2,3,
+  76:font.c        ****     
+  77:font.c        ****     // 3
+  78:font.c        ****     21,
+  79:font.c        ****     
+  80:font.c        ****     3,
+  81:font.c        ****     1,2,3,
+  82:font.c        ****     2,
+  83:font.c        ****     0,4,
+  84:font.c        ****     1,
+  85:font.c        ****     4,
+  86:font.c        ****     2,
+  87:font.c        ****     2,3,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 3
+
+
+  88:font.c        ****     1,
+  89:font.c        ****     4,
+  90:font.c        ****     2,
+  91:font.c        ****     0,4,
+  92:font.c        ****     3,
+  93:font.c        ****     1,2,3,
+  94:font.c        ****     
+  95:font.c        ****     // 4
+  96:font.c        ****     22,
+  97:font.c        ****     
+  98:font.c        ****     1,
+  99:font.c        ****     4,
+ 100:font.c        ****     1,
+ 101:font.c        ****     4,
+ 102:font.c        ****     5,
+ 103:font.c        ****     0,1,2,3,4,
+ 104:font.c        ****     2,
+ 105:font.c        ****     0,4,
+ 106:font.c        ****     2,
+ 107:font.c        ****     1,4,
+ 108:font.c        ****     2,
+ 109:font.c        ****     2,4,
+ 110:font.c        ****     2,
+ 111:font.c        ****     3,4,
+ 112:font.c        ****     
+ 113:font.c        ****     // 5
+ 114:font.c        ****     24,
+ 115:font.c        ****     
+ 116:font.c        ****     3,
+ 117:font.c        ****     1,2,3,
+ 118:font.c        ****     2,
+ 119:font.c        ****     0,4,
+ 120:font.c        ****     1,
+ 121:font.c        ****     4,
+ 122:font.c        ****     1,
+ 123:font.c        ****     4,
+ 124:font.c        ****     4,
+ 125:font.c        ****     0,1,2,3,
+ 126:font.c        ****     1,
+ 127:font.c        ****     0,
+ 128:font.c        ****     5,
+ 129:font.c        ****     0,1,2,3,4,
+ 130:font.c        ****     
+ 131:font.c        ****     // 6
+ 132:font.c        ****     22,
+ 133:font.c        ****     
+ 134:font.c        ****     3,
+ 135:font.c        ****     1,2,3,
+ 136:font.c        ****     2,
+ 137:font.c        ****     0,4,
+ 138:font.c        ****     2,
+ 139:font.c        ****     0,4,
+ 140:font.c        ****     4,
+ 141:font.c        ****     0,1,2,3,
+ 142:font.c        ****     1,
+ 143:font.c        ****     0,
+ 144:font.c        ****     1,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 4
+
+
+ 145:font.c        ****     1,
+ 146:font.c        ****     2,
+ 147:font.c        ****     2,3,
+ 148:font.c        ****     
+ 149:font.c        ****     // 7
+ 150:font.c        ****     19,
+ 151:font.c        ****     
+ 152:font.c        ****     1,
+ 153:font.c        ****     2,
+ 154:font.c        ****     1,
+ 155:font.c        ****     2,
+ 156:font.c        ****     1,
+ 157:font.c        ****     2,
+ 158:font.c        ****     1,
+ 159:font.c        ****     3,
+ 160:font.c        ****     1,
+ 161:font.c        ****     4,
+ 162:font.c        ****     2,
+ 163:font.c        ****     0,4,
+ 164:font.c        ****     5,
+ 165:font.c        ****     0,1,2,3,4,
+ 166:font.c        ****     
+ 167:font.c        ****     // 8
+ 168:font.c        ****     24,
+ 169:font.c        ****     
+ 170:font.c        ****     3,
+ 171:font.c        ****     1,2,3,
+ 172:font.c        ****     2,
+ 173:font.c        ****     0,4,
+ 174:font.c        ****     2,
+ 175:font.c        ****     0,4,
+ 176:font.c        ****     3,
+ 177:font.c        ****     1,2,3,
+ 178:font.c        ****     2,
+ 179:font.c        ****     0,4,
+ 180:font.c        ****     2,
+ 181:font.c        ****     0,4,
+ 182:font.c        ****     3,
+ 183:font.c        ****     1,2,3,
+ 184:font.c        ****     
+ 185:font.c        ****     // 9
+ 186:font.c        ****     22,
+ 187:font.c        ****     
+ 188:font.c        ****     2,
+ 189:font.c        ****     1,2,
+ 190:font.c        ****     1,
+ 191:font.c        ****     3,
+ 192:font.c        ****     1,
+ 193:font.c        ****     4,
+ 194:font.c        ****     4,
+ 195:font.c        ****     1,2,3,4,
+ 196:font.c        ****     2,
+ 197:font.c        ****     0,4,
+ 198:font.c        ****     2,
+ 199:font.c        ****     0,4,
+ 200:font.c        ****     3,
+ 201:font.c        ****     1,2,3,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 5
+
+
+ 202:font.c        ****     
+ 203:font.c        ****     // .
+ 204:font.c        ****     8,
+ 205:font.c        ****     
+ 206:font.c        ****     1,
+ 207:font.c        ****     2,
+ 208:font.c        ****     0,
+ 209:font.c        **** 
+ 210:font.c        ****     0,
+ 211:font.c        **** 
+ 212:font.c        ****     0,
+ 213:font.c        **** 
+ 214:font.c        ****     0,
+ 215:font.c        **** 
+ 216:font.c        ****     0,
+ 217:font.c        **** 
+ 218:font.c        ****     0,
+ 219:font.c        ****     
+ 220:font.c        ****     // A
+ 221:font.c        ****     25,
+ 222:font.c        ****     
+ 223:font.c        ****     2,
+ 224:font.c        ****     0,4,
+ 225:font.c        ****     2,
+ 226:font.c        ****     0,4,
+ 227:font.c        ****     2,
+ 228:font.c        ****     0,4,
+ 229:font.c        ****     2,
+ 230:font.c        ****     0,4,
+ 231:font.c        ****     5,
+ 232:font.c        ****     0,1,2,3,4,
+ 233:font.c        ****     2,
+ 234:font.c        ****     0,4,
+ 235:font.c        ****     3,
+ 236:font.c        ****     1,2,3,
+ 237:font.c        ****     
+ 238:font.c        ****     // B
+ 239:font.c        ****     27,
+ 240:font.c        ****     
+ 241:font.c        ****     4,
+ 242:font.c        ****     0,1,2,3,
+ 243:font.c        ****     2,
+ 244:font.c        ****     0,4,
+ 245:font.c        ****     2,
+ 246:font.c        ****     0,4,
+ 247:font.c        ****     2,
+ 248:font.c        ****     0,4,
+ 249:font.c        ****     4,
+ 250:font.c        ****     0,1,2,3,
+ 251:font.c        ****     2,
+ 252:font.c        ****     0,4,
+ 253:font.c        ****     4,
+ 254:font.c        ****     0,1,2,3,
+ 255:font.c        ****     
+ 256:font.c        ****     // C
+ 257:font.c        ****     20,
+ 258:font.c        ****     
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 6
+
+
+ 259:font.c        ****     3,
+ 260:font.c        ****     1,2,3,
+ 261:font.c        ****     2,
+ 262:font.c        ****     0,4,
+ 263:font.c        ****     1,
+ 264:font.c        ****     0,
+ 265:font.c        ****     1,
+ 266:font.c        ****     0,
+ 267:font.c        ****     1,
+ 268:font.c        ****     0,
+ 269:font.c        ****     2,
+ 270:font.c        ****     0,4,
+ 271:font.c        ****     3,
+ 272:font.c        ****     1,2,3,
+ 273:font.c        ****     
+ 274:font.c        ****     // D
+ 275:font.c        ****     25,
+ 276:font.c        ****     
+ 277:font.c        ****     4,
+ 278:font.c        ****     0,1,2,3,
+ 279:font.c        ****     2,
+ 280:font.c        ****     0,4,
+ 281:font.c        ****     2,
+ 282:font.c        ****     0,4,
+ 283:font.c        ****     2,
+ 284:font.c        ****     0,4,
+ 285:font.c        ****     2,
+ 286:font.c        ****     0,4,
+ 287:font.c        ****     2,
+ 288:font.c        ****     0,4,
+ 289:font.c        ****     4,
+ 290:font.c        ****     0,1,2,3,
+ 291:font.c        ****     
+ 292:font.c        ****     // E
+ 293:font.c        ****     25,
+ 294:font.c        ****     
+ 295:font.c        ****     5,
+ 296:font.c        ****     0,1,2,3,4,
+ 297:font.c        ****     1,
+ 298:font.c        ****     0,
+ 299:font.c        ****     1,
+ 300:font.c        ****     0,
+ 301:font.c        ****     4,
+ 302:font.c        ****     0,1,2,3,
+ 303:font.c        ****     1,
+ 304:font.c        ****     0,
+ 305:font.c        ****     1,
+ 306:font.c        ****     0,
+ 307:font.c        ****     5,
+ 308:font.c        ****     0,1,2,3,4,
+ 309:font.c        ****     
+ 310:font.c        ****     // F
+ 311:font.c        ****     20,
+ 312:font.c        ****     
+ 313:font.c        ****     1,
+ 314:font.c        ****     0,
+ 315:font.c        ****     1,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 7
+
+
+ 316:font.c        ****     0,
+ 317:font.c        ****     1,
+ 318:font.c        ****     0,
+ 319:font.c        ****     1,
+ 320:font.c        ****     0,
+ 321:font.c        ****     3,
+ 322:font.c        ****     0,1,2,
+ 323:font.c        ****     1,
+ 324:font.c        ****     0,
+ 325:font.c        ****     5,
+ 326:font.c        ****     0,1,2,3,4,
+ 327:font.c        ****     
+ 328:font.c        ****     // G
+ 329:font.c        ****     24,
+ 330:font.c        ****     
+ 331:font.c        ****     3,
+ 332:font.c        ****     1,2,3,
+ 333:font.c        ****     2,
+ 334:font.c        ****     0,4,
+ 335:font.c        ****     2,
+ 336:font.c        ****     0,4,
+ 337:font.c        ****     2,
+ 338:font.c        ****     0,4,
+ 339:font.c        ****     3,
+ 340:font.c        ****     0,3,4,
+ 341:font.c        ****     1,
+ 342:font.c        ****     0,
+ 343:font.c        ****     4,
+ 344:font.c        ****     1,2,3,4,
+ 345:font.c        ****     
+ 346:font.c        ****     // H
+ 347:font.c        ****     24,
+ 348:font.c        ****     
+ 349:font.c        ****     2,
+ 350:font.c        ****     0,4,
+ 351:font.c        ****     2,
+ 352:font.c        ****     0,4,
+ 353:font.c        ****     2,
+ 354:font.c        ****     0,4,
+ 355:font.c        ****     2,
+ 356:font.c        ****     0,4,
+ 357:font.c        ****     5,
+ 358:font.c        ****     0,1,2,3,4,
+ 359:font.c        ****     2,
+ 360:font.c        ****     0,4,
+ 361:font.c        ****     2,
+ 362:font.c        ****     0,4,
+ 363:font.c        ****     
+ 364:font.c        ****     // I
+ 365:font.c        ****     18,
+ 366:font.c        ****     
+ 367:font.c        ****     3,
+ 368:font.c        ****     1,2,3,
+ 369:font.c        ****     1,
+ 370:font.c        ****     2,
+ 371:font.c        ****     1,
+ 372:font.c        ****     2,
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 8
+
+
+ 373:font.c        ****     1,
+ 374:font.c        ****     2,
+ 375:font.c        ****     1,
+ 376:font.c        ****     2,
+ 377:font.c        ****     1,
+ 378:font.c        ****     2,
+ 379:font.c        ****     3,
+ 380:font.c        ****     1,2,3,
+ 381:font.c        ****     
+ 382:font.c        ****     // J
+ 383:font.c        ****     17,
+ 384:font.c        ****     
+ 385:font.c        ****     3,
+ 386:font.c        ****     1,2,3,
+ 387:font.c        ****     2,
+ 388:font.c        ****     0,4,
+ 389:font.c        ****     1,
+ 390:font.c        ****     4,
+ 391:font.c        ****     1,
+ 392:font.c        ****     4,
+ 393:font.c        ****     1,
+ 394:font.c        ****     4,
+ 395:font.c        ****     1,
+ 396:font.c        ****     4,
+ 397:font.c        ****     1,
+ 398:font.c        ****     4,
+ 399:font.c        ****     
+ 400:font.c        ****     // K
+ 401:font.c        ****     22,
+ 402:font.c        ****     
+ 403:font.c        ****     2,
+ 404:font.c        ****     0,4,
+ 405:font.c        ****     2,
+ 406:font.c        ****     0,4,
+ 407:font.c        ****     2,
+ 408:font.c        ****     0,4,
+ 409:font.c        ****     2,
+ 410:font.c        ****     0,3,
+ 411:font.c        ****     3,
+ 412:font.c        ****     0,1,2,
+ 413:font.c        ****     2,
+ 414:font.c        ****     0,3,
+ 415:font.c        ****     2,
+ 416:font.c        ****     0,4
+ 417:font.c        **** };
+ 418:font.c        **** 
+ 419:font.c        **** // Work in progress
+ 420:font.c        **** void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character)
+ 421:font.c        **** {
+  28              		.loc 1 421 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 2DE9F843 		push	{r3, r4, r5, r6, r7, r8, r9, lr}
+  34              		.cfi_def_cfa_offset 32
+  35              		.cfi_offset 3, -32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 9
+
+
+  36              		.cfi_offset 4, -28
+  37              		.cfi_offset 5, -24
+  38              		.cfi_offset 6, -20
+  39              		.cfi_offset 7, -16
+  40              		.cfi_offset 8, -12
+  41              		.cfi_offset 9, -8
+  42              		.cfi_offset 14, -4
+  43 0004 9046     		mov	r8, r2
+  44              	.LVL1:
+  45              	.LBB2:
+ 422:font.c        ****     uint16_t index = 1;
+ 423:font.c        ****     
+ 424:font.c        ****     for(int i=0; i<character;i++)
+  46              		.loc 1 424 0
+  47 0006 0025     		movs	r5, #0
+  48              	.LBE2:
+ 422:font.c        ****     uint16_t index = 1;
+  49              		.loc 1 422 0
+  50 0008 0122     		movs	r2, #1
+  51              	.LVL2:
+  52              	.LBB3:
+  53              		.loc 1 424 0
+  54 000a 06E0     		b	.L2
+  55              	.LVL3:
+  56              	.L3:
+ 425:font.c        ****     {
+ 426:font.c        ****         index = index + font[index] + 1;
+  57              		.loc 1 426 0 discriminator 3
+  58 000c 174C     		ldr	r4, .L9
+  59 000e A45C     		ldrb	r4, [r4, r2]	@ zero_extendqisi2
+  60 0010 2244     		add	r2, r2, r4
+  61              	.LVL4:
+  62 0012 92B2     		uxth	r2, r2
+  63 0014 0132     		adds	r2, r2, #1
+  64 0016 92B2     		uxth	r2, r2
+  65              	.LVL5:
+ 424:font.c        ****     {
+  66              		.loc 1 424 0 discriminator 3
+  67 0018 0135     		adds	r5, r5, #1
+  68              	.LVL6:
+  69              	.L2:
+ 424:font.c        ****     {
+  70              		.loc 1 424 0 is_stmt 0 discriminator 1
+  71 001a 9D42     		cmp	r5, r3
+  72 001c F6DB     		blt	.L3
+  73              	.LBE3:
+ 427:font.c        ****     }
+ 428:font.c        ****     
+ 429:font.c        ****     index = index+1;
+  74              		.loc 1 429 0 is_stmt 1
+  75 001e 0132     		adds	r2, r2, #1
+  76              	.LVL7:
+  77 0020 95B2     		uxth	r5, r2
+  78              	.LVL8:
+ 430:font.c        ****     y = y-2;
+  79              		.loc 1 430 0
+  80 0022 0239     		subs	r1, r1, #2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 10
+
+
+  81              	.LVL9:
+  82 0024 0EB2     		sxth	r6, r1
+  83              	.LVL10:
+ 431:font.c        ****     x = x-2;
+  84              		.loc 1 431 0
+  85 0026 0238     		subs	r0, r0, #2
+  86              	.LVL11:
+  87 0028 07B2     		sxth	r7, r0
+  88              	.LVL12:
+  89              	.LBB4:
+ 432:font.c        ****     uint8_t height = font[0];
+ 433:font.c        ****     
+ 434:font.c        ****     for(int i=0; i<height; i++)
+  90              		.loc 1 434 0
+  91 002a 4FF00009 		mov	r9, #0
+  92 002e 17E0     		b	.L4
+  93              	.LVL13:
+  94              	.L5:
+  95              	.LBB5:
+  96              	.LBB6:
+ 435:font.c        ****     {
+ 436:font.c        ****         for(int j=0; j<font[index] ;j++)
+ 437:font.c        ****         {
+ 438:font.c        ****             draw_pixel(x+font[index+j+1],y,color);
+  97              		.loc 1 438 0 discriminator 3
+  98 0030 6319     		adds	r3, r4, r5
+  99 0032 0133     		adds	r3, r3, #1
+ 100 0034 0D4A     		ldr	r2, .L9
+ 101 0036 D05C     		ldrb	r0, [r2, r3]	@ zero_extendqisi2
+ 102 0038 4246     		mov	r2, r8
+ 103 003a 3146     		mov	r1, r6
+ 104 003c 3844     		add	r0, r0, r7
+ 105 003e FFF7FEFF 		bl	draw_pixel
+ 106              	.LVL14:
+ 107              	.LBE6:
+ 436:font.c        ****         {
+ 108              		.loc 1 436 0 discriminator 3
+ 109 0042 0134     		adds	r4, r4, #1
+ 110              	.LVL15:
+ 111 0044 00E0     		b	.L6
+ 112              	.LVL16:
+ 113              	.L7:
+ 114              	.LBE5:
+ 115 0046 0024     		movs	r4, #0
+ 116              	.L6:
+ 117              	.LVL17:
+ 118              	.LBB7:
+ 436:font.c        ****         {
+ 119              		.loc 1 436 0 is_stmt 0 discriminator 1
+ 120 0048 084B     		ldr	r3, .L9
+ 121 004a 5B5D     		ldrb	r3, [r3, r5]	@ zero_extendqisi2
+ 122 004c 9C42     		cmp	r4, r3
+ 123 004e EFDB     		blt	.L5
+ 124              	.LBE7:
+ 439:font.c        ****         }
+ 440:font.c        ****         y = y+1;
+ 125              		.loc 1 440 0 is_stmt 1 discriminator 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 11
+
+
+ 126 0050 0136     		adds	r6, r6, #1
+ 127              	.LVL18:
+ 128 0052 36B2     		sxth	r6, r6
+ 129              	.LVL19:
+ 441:font.c        ****         index = index+font[index]+1;
+ 130              		.loc 1 441 0 discriminator 2
+ 131 0054 1D44     		add	r5, r5, r3
+ 132              	.LVL20:
+ 133 0056 ADB2     		uxth	r5, r5
+ 134 0058 0135     		adds	r5, r5, #1
+ 135 005a ADB2     		uxth	r5, r5
+ 136              	.LVL21:
+ 434:font.c        ****     {
+ 137              		.loc 1 434 0 discriminator 2
+ 138 005c 09F10109 		add	r9, r9, #1
+ 139              	.LVL22:
+ 140              	.L4:
+ 434:font.c        ****     {
+ 141              		.loc 1 434 0 is_stmt 0 discriminator 1
+ 142 0060 B9F1060F 		cmp	r9, #6
+ 143 0064 EFDD     		ble	.L7
+ 144              	.LBE4:
+ 442:font.c        ****     }
+ 443:font.c        **** }
+ 145              		.loc 1 443 0 is_stmt 1
+ 146 0066 BDE8F883 		pop	{r3, r4, r5, r6, r7, r8, r9, pc}
+ 147              	.LVL23:
+ 148              	.L10:
+ 149 006a 00BF     		.align	2
+ 150              	.L9:
+ 151 006c 00000000 		.word	.LANCHOR0
+ 152              		.cfi_endproc
+ 153              	.LFE63:
+ 154              		.size	draw_character, .-draw_character
+ 155              		.global	__aeabi_dadd
+ 156              		.global	__aeabi_ddiv
+ 157              		.global	__aeabi_d2iz
+ 158              		.global	__aeabi_i2d
+ 159              		.global	__aeabi_dsub
+ 160              		.global	__aeabi_dmul
+ 161              		.section	.text.draw_number,"ax",%progbits
+ 162              		.align	2
+ 163              		.global	draw_number
+ 164              		.thumb
+ 165              		.thumb_func
+ 166              		.type	draw_number, %function
+ 167              	draw_number:
+ 168              	.LFB64:
+ 444:font.c        **** 
+ 445:font.c        **** void draw_number(int16_t x, int16_t y, uint16_t color, double number)
+ 446:font.c        **** {
+ 169              		.loc 1 446 0
+ 170              		.cfi_startproc
+ 171              		@ args = 8, pretend = 0, frame = 16
+ 172              		@ frame_needed = 0, uses_anonymous_args = 0
+ 173              	.LVL24:
+ 174 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 12
+
+
+ 175              		.cfi_def_cfa_offset 36
+ 176              		.cfi_offset 4, -36
+ 177              		.cfi_offset 5, -32
+ 178              		.cfi_offset 6, -28
+ 179              		.cfi_offset 7, -24
+ 180              		.cfi_offset 8, -20
+ 181              		.cfi_offset 9, -16
+ 182              		.cfi_offset 10, -12
+ 183              		.cfi_offset 11, -8
+ 184              		.cfi_offset 14, -4
+ 185 0004 85B0     		sub	sp, sp, #20
+ 186              		.cfi_def_cfa_offset 56
+ 187 0006 0446     		mov	r4, r0
+ 188 0008 0D46     		mov	r5, r1
+ 189 000a 1646     		mov	r6, r2
+ 447:font.c        ****     number = number+0.0005;
+ 190              		.loc 1 447 0
+ 191 000c 52A3     		adr	r3, .L16
+ 192 000e D3E90023 		ldrd	r2, [r3]
+ 193              	.LVL25:
+ 194 0012 DDE90E01 		ldrd	r0, [sp, #56]
+ 195              	.LVL26:
+ 196 0016 FFF7FEFF 		bl	__aeabi_dadd
+ 197              	.LVL27:
+ 198 001a 8146     		mov	r9, r0
+ 199 001c 8A46     		mov	r10, r1
+ 200              	.LVL28:
+ 448:font.c        ****     
+ 449:font.c        ****     int tens        = (int)(number/10);
+ 201              		.loc 1 449 0
+ 202 001e 0022     		movs	r2, #0
+ 203 0020 534B     		ldr	r3, .L16+24
+ 204 0022 FFF7FEFF 		bl	__aeabi_ddiv
+ 205              	.LVL29:
+ 206 0026 FFF7FEFF 		bl	__aeabi_d2iz
+ 207              	.LVL30:
+ 208 002a 0746     		mov	r7, r0
+ 209              	.LVL31:
+ 450:font.c        ****     int ones        = (int)(number-(tens*10));
+ 210              		.loc 1 450 0
+ 211 002c 00EB8003 		add	r3, r0, r0, lsl #2
+ 212 0030 4FEA4308 		lsl	r8, r3, #1
+ 213 0034 4046     		mov	r0, r8
+ 214              	.LVL32:
+ 215 0036 FFF7FEFF 		bl	__aeabi_i2d
+ 216              	.LVL33:
+ 217 003a 0246     		mov	r2, r0
+ 218 003c 0B46     		mov	r3, r1
+ 219 003e CDE9009A 		strd	r9, [sp]
+ 220 0042 4846     		mov	r0, r9
+ 221 0044 5146     		mov	r1, r10
+ 222 0046 FFF7FEFF 		bl	__aeabi_dsub
+ 223              	.LVL34:
+ 224 004a FFF7FEFF 		bl	__aeabi_d2iz
+ 225              	.LVL35:
+ 226 004e 8246     		mov	r10, r0
+ 227              	.LVL36:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 13
+
+
+ 451:font.c        ****     int tenths      = (int)((number-((tens*10)+ones))*10);
+ 228              		.loc 1 451 0
+ 229 0050 4044     		add	r0, r8, r0
+ 230              	.LVL37:
+ 231 0052 FFF7FEFF 		bl	__aeabi_i2d
+ 232              	.LVL38:
+ 233 0056 8046     		mov	r8, r0
+ 234 0058 8946     		mov	r9, r1
+ 235              	.LVL39:
+ 236 005a 0246     		mov	r2, r0
+ 237 005c 0B46     		mov	r3, r1
+ 238 005e DDE90001 		ldrd	r0, [sp]
+ 239 0062 FFF7FEFF 		bl	__aeabi_dsub
+ 240              	.LVL40:
+ 241 0066 0022     		movs	r2, #0
+ 242 0068 414B     		ldr	r3, .L16+24
+ 243 006a FFF7FEFF 		bl	__aeabi_dmul
+ 244              	.LVL41:
+ 245 006e FFF7FEFF 		bl	__aeabi_d2iz
+ 246              	.LVL42:
+ 247 0072 0390     		str	r0, [sp, #12]
+ 248              	.LVL43:
+ 452:font.c        ****     int hundredths  = (int)((number-((tens*10)+ones+(tenths*0.1)))*100);
+ 249              		.loc 1 452 0
+ 250 0074 FFF7FEFF 		bl	__aeabi_i2d
+ 251              	.LVL44:
+ 252 0078 39A3     		adr	r3, .L16+8
+ 253 007a D3E90023 		ldrd	r2, [r3]
+ 254 007e FFF7FEFF 		bl	__aeabi_dmul
+ 255              	.LVL45:
+ 256 0082 0246     		mov	r2, r0
+ 257 0084 0B46     		mov	r3, r1
+ 258 0086 4046     		mov	r0, r8
+ 259 0088 4946     		mov	r1, r9
+ 260 008a FFF7FEFF 		bl	__aeabi_dadd
+ 261              	.LVL46:
+ 262 008e 8046     		mov	r8, r0
+ 263 0090 8946     		mov	r9, r1
+ 264 0092 0246     		mov	r2, r0
+ 265 0094 0B46     		mov	r3, r1
+ 266 0096 DDE90001 		ldrd	r0, [sp]
+ 267 009a FFF7FEFF 		bl	__aeabi_dsub
+ 268              	.LVL47:
+ 269 009e 0022     		movs	r2, #0
+ 270 00a0 344B     		ldr	r3, .L16+28
+ 271 00a2 FFF7FEFF 		bl	__aeabi_dmul
+ 272              	.LVL48:
+ 273 00a6 FFF7FEFF 		bl	__aeabi_d2iz
+ 274              	.LVL49:
+ 275 00aa 8346     		mov	fp, r0
+ 276              	.LVL50:
+ 453:font.c        ****     int thousandths = (int)((number-((tens*10)+ones+(tenths*0.1)+(hundredths*0.01)))*1000);
+ 277              		.loc 1 453 0
+ 278 00ac FFF7FEFF 		bl	__aeabi_i2d
+ 279              	.LVL51:
+ 280 00b0 2DA3     		adr	r3, .L16+16
+ 281 00b2 D3E90023 		ldrd	r2, [r3]
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 14
+
+
+ 282 00b6 FFF7FEFF 		bl	__aeabi_dmul
+ 283              	.LVL52:
+ 284 00ba 0246     		mov	r2, r0
+ 285 00bc 0B46     		mov	r3, r1
+ 286 00be 4046     		mov	r0, r8
+ 287 00c0 4946     		mov	r1, r9
+ 288 00c2 FFF7FEFF 		bl	__aeabi_dadd
+ 289              	.LVL53:
+ 290 00c6 0246     		mov	r2, r0
+ 291 00c8 0B46     		mov	r3, r1
+ 292 00ca DDE90001 		ldrd	r0, [sp]
+ 293 00ce FFF7FEFF 		bl	__aeabi_dsub
+ 294              	.LVL54:
+ 295 00d2 0022     		movs	r2, #0
+ 296 00d4 284B     		ldr	r3, .L16+32
+ 297 00d6 FFF7FEFF 		bl	__aeabi_dmul
+ 298              	.LVL55:
+ 299 00da FFF7FEFF 		bl	__aeabi_d2iz
+ 300              	.LVL56:
+ 301 00de 8046     		mov	r8, r0
+ 302              	.LVL57:
+ 454:font.c        ****     
+ 455:font.c        ****     int x_offset;
+ 456:font.c        ****     
+ 457:font.c        ****     if(tens != 0)
+ 303              		.loc 1 457 0
+ 304 00e0 2FB1     		cbz	r7, .L12
+ 458:font.c        ****     {
+ 459:font.c        ****         draw_character(x,y,color,tens);
+ 305              		.loc 1 459 0
+ 306 00e2 BBB2     		uxth	r3, r7
+ 307 00e4 3246     		mov	r2, r6
+ 308 00e6 2946     		mov	r1, r5
+ 309 00e8 2046     		mov	r0, r4
+ 310              	.LVL58:
+ 311 00ea FFF7FEFF 		bl	draw_character
+ 312              	.LVL59:
+ 313              	.L12:
+ 460:font.c        ****         x_offset = 7;
+ 461:font.c        ****     }
+ 462:font.c        ****     
+ 463:font.c        ****     if(tens == 0)
+ 314              		.loc 1 463 0
+ 315 00ee 0FB1     		cbz	r7, .L14
+ 316 00f0 0720     		movs	r0, #7
+ 317 00f2 00E0     		b	.L13
+ 318              	.L14:
+ 464:font.c        ****     {
+ 465:font.c        ****         x_offset = 0;
+ 319              		.loc 1 465 0
+ 320 00f4 0020     		movs	r0, #0
+ 321              	.L13:
+ 322              	.LVL60:
+ 466:font.c        ****     }
+ 467:font.c        ****     
+ 468:font.c        ****     draw_character(x+x_offset,y,color,ones);
+ 323              		.loc 1 468 0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 15
+
+
+ 324 00f6 0444     		add	r4, r4, r0
+ 325 00f8 A4B2     		uxth	r4, r4
+ 326 00fa 1FFA8AF3 		uxth	r3, r10
+ 327 00fe 3246     		mov	r2, r6
+ 328 0100 2946     		mov	r1, r5
+ 329 0102 20B2     		sxth	r0, r4
+ 330              	.LVL61:
+ 331 0104 FFF7FEFF 		bl	draw_character
+ 332              	.LVL62:
+ 469:font.c        ****     draw_character(x+x_offset+7,y,color,10);
+ 333              		.loc 1 469 0
+ 334 0108 E01D     		adds	r0, r4, #7
+ 335 010a 0A23     		movs	r3, #10
+ 336 010c 3246     		mov	r2, r6
+ 337 010e 2946     		mov	r1, r5
+ 338 0110 00B2     		sxth	r0, r0
+ 339 0112 FFF7FEFF 		bl	draw_character
+ 340              	.LVL63:
+ 470:font.c        ****     draw_character(x+x_offset+14,y,color,tenths);
+ 341              		.loc 1 470 0
+ 342 0116 04F10E00 		add	r0, r4, #14
+ 343 011a BDF80C30 		ldrh	r3, [sp, #12]
+ 344 011e 3246     		mov	r2, r6
+ 345 0120 2946     		mov	r1, r5
+ 346 0122 00B2     		sxth	r0, r0
+ 347 0124 FFF7FEFF 		bl	draw_character
+ 348              	.LVL64:
+ 471:font.c        ****     draw_character(x+x_offset+21,y,color,hundredths);
+ 349              		.loc 1 471 0
+ 350 0128 04F11500 		add	r0, r4, #21
+ 351 012c 1FFA8BF3 		uxth	r3, fp
+ 352 0130 3246     		mov	r2, r6
+ 353 0132 2946     		mov	r1, r5
+ 354 0134 00B2     		sxth	r0, r0
+ 355 0136 FFF7FEFF 		bl	draw_character
+ 356              	.LVL65:
+ 472:font.c        ****     draw_character(x+x_offset+28,y,color,thousandths);
+ 357              		.loc 1 472 0
+ 358 013a 04F11C00 		add	r0, r4, #28
+ 359 013e 1FFA88F3 		uxth	r3, r8
+ 360 0142 3246     		mov	r2, r6
+ 361 0144 2946     		mov	r1, r5
+ 362 0146 00B2     		sxth	r0, r0
+ 363 0148 FFF7FEFF 		bl	draw_character
+ 364              	.LVL66:
+ 473:font.c        **** }...
+ 365              		.loc 1 473 0
+ 366 014c 05B0     		add	sp, sp, #20
+ 367              		.cfi_def_cfa_offset 36
+ 368              	.LVL67:
+ 369              		@ sp needed
+ 370 014e BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 371              	.LVL68:
+ 372              	.L17:
+ 373 0152 00BFAFF3 		.align	3
+ 373      0080
+ 374              	.L16:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 16
+
+
+ 375 0158 FCA9F1D2 		.word	-755914244
+ 376 015c 4D62403F 		.word	1061184077
+ 377 0160 9A999999 		.word	-1717986918
+ 378 0164 9999B93F 		.word	1069128089
+ 379 0168 7B14AE47 		.word	1202590843
+ 380 016c E17A843F 		.word	1065646817
+ 381 0170 00002440 		.word	1076101120
+ 382 0174 00005940 		.word	1079574528
+ 383 0178 00408F40 		.word	1083129856
+ 384              		.cfi_endproc
+ 385              	.LFE64:
+ 386              		.size	draw_number, .-draw_number
+ 387              		.section	.rodata
+ 388              		.align	2
+ 389              		.set	.LANCHOR0,. + 0
+ 390              		.type	font, %object
+ 391              		.size	font, 500
+ 392              	font:
+ 393 0000 07       		.byte	7
+ 394 0001 1A       		.byte	26
+ 395 0002 03       		.byte	3
+ 396 0003 01       		.byte	1
+ 397 0004 02       		.byte	2
+ 398 0005 03       		.byte	3
+ 399 0006 02       		.byte	2
+ 400 0007 00       		.byte	0
+ 401 0008 04       		.byte	4
+ 402 0009 03       		.byte	3
+ 403 000a 00       		.byte	0
+ 404 000b 01       		.byte	1
+ 405 000c 04       		.byte	4
+ 406 000d 03       		.byte	3
+ 407 000e 00       		.byte	0
+ 408 000f 02       		.byte	2
+ 409 0010 04       		.byte	4
+ 410 0011 03       		.byte	3
+ 411 0012 00       		.byte	0
+ 412 0013 03       		.byte	3
+ 413 0014 04       		.byte	4
+ 414 0015 02       		.byte	2
+ 415 0016 00       		.byte	0
+ 416 0017 04       		.byte	4
+ 417 0018 03       		.byte	3
+ 418 0019 01       		.byte	1
+ 419 001a 02       		.byte	2
+ 420 001b 03       		.byte	3
+ 421 001c 13       		.byte	19
+ 422 001d 05       		.byte	5
+ 423 001e 00       		.byte	0
+ 424 001f 01       		.byte	1
+ 425 0020 02       		.byte	2
+ 426 0021 03       		.byte	3
+ 427 0022 04       		.byte	4
+ 428 0023 01       		.byte	1
+ 429 0024 02       		.byte	2
+ 430 0025 01       		.byte	1
+ 431 0026 02       		.byte	2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 17
+
+
+ 432 0027 01       		.byte	1
+ 433 0028 02       		.byte	2
+ 434 0029 01       		.byte	1
+ 435 002a 02       		.byte	2
+ 436 002b 02       		.byte	2
+ 437 002c 01       		.byte	1
+ 438 002d 02       		.byte	2
+ 439 002e 01       		.byte	1
+ 440 002f 02       		.byte	2
+ 441 0030 17       		.byte	23
+ 442 0031 05       		.byte	5
+ 443 0032 00       		.byte	0
+ 444 0033 01       		.byte	1
+ 445 0034 02       		.byte	2
+ 446 0035 03       		.byte	3
+ 447 0036 04       		.byte	4
+ 448 0037 02       		.byte	2
+ 449 0038 00       		.byte	0
+ 450 0039 04       		.byte	4
+ 451 003a 01       		.byte	1
+ 452 003b 01       		.byte	1
+ 453 003c 02       		.byte	2
+ 454 003d 02       		.byte	2
+ 455 003e 03       		.byte	3
+ 456 003f 01       		.byte	1
+ 457 0040 04       		.byte	4
+ 458 0041 02       		.byte	2
+ 459 0042 00       		.byte	0
+ 460 0043 04       		.byte	4
+ 461 0044 03       		.byte	3
+ 462 0045 01       		.byte	1
+ 463 0046 02       		.byte	2
+ 464 0047 03       		.byte	3
+ 465 0048 15       		.byte	21
+ 466 0049 03       		.byte	3
+ 467 004a 01       		.byte	1
+ 468 004b 02       		.byte	2
+ 469 004c 03       		.byte	3
+ 470 004d 02       		.byte	2
+ 471 004e 00       		.byte	0
+ 472 004f 04       		.byte	4
+ 473 0050 01       		.byte	1
+ 474 0051 04       		.byte	4
+ 475 0052 02       		.byte	2
+ 476 0053 02       		.byte	2
+ 477 0054 03       		.byte	3
+ 478 0055 01       		.byte	1
+ 479 0056 04       		.byte	4
+ 480 0057 02       		.byte	2
+ 481 0058 00       		.byte	0
+ 482 0059 04       		.byte	4
+ 483 005a 03       		.byte	3
+ 484 005b 01       		.byte	1
+ 485 005c 02       		.byte	2
+ 486 005d 03       		.byte	3
+ 487 005e 16       		.byte	22
+ 488 005f 01       		.byte	1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 18
+
+
+ 489 0060 04       		.byte	4
+ 490 0061 01       		.byte	1
+ 491 0062 04       		.byte	4
+ 492 0063 05       		.byte	5
+ 493 0064 00       		.byte	0
+ 494 0065 01       		.byte	1
+ 495 0066 02       		.byte	2
+ 496 0067 03       		.byte	3
+ 497 0068 04       		.byte	4
+ 498 0069 02       		.byte	2
+ 499 006a 00       		.byte	0
+ 500 006b 04       		.byte	4
+ 501 006c 02       		.byte	2
+ 502 006d 01       		.byte	1
+ 503 006e 04       		.byte	4
+ 504 006f 02       		.byte	2
+ 505 0070 02       		.byte	2
+ 506 0071 04       		.byte	4
+ 507 0072 02       		.byte	2
+ 508 0073 03       		.byte	3
+ 509 0074 04       		.byte	4
+ 510 0075 18       		.byte	24
+ 511 0076 03       		.byte	3
+ 512 0077 01       		.byte	1
+ 513 0078 02       		.byte	2
+ 514 0079 03       		.byte	3
+ 515 007a 02       		.byte	2
+ 516 007b 00       		.byte	0
+ 517 007c 04       		.byte	4
+ 518 007d 01       		.byte	1
+ 519 007e 04       		.byte	4
+ 520 007f 01       		.byte	1
+ 521 0080 04       		.byte	4
+ 522 0081 04       		.byte	4
+ 523 0082 00       		.byte	0
+ 524 0083 01       		.byte	1
+ 525 0084 02       		.byte	2
+ 526 0085 03       		.byte	3
+ 527 0086 01       		.byte	1
+ 528 0087 00       		.byte	0
+ 529 0088 05       		.byte	5
+ 530 0089 00       		.byte	0
+ 531 008a 01       		.byte	1
+ 532 008b 02       		.byte	2
+ 533 008c 03       		.byte	3
+ 534 008d 04       		.byte	4
+ 535 008e 16       		.byte	22
+ 536 008f 03       		.byte	3
+ 537 0090 01       		.byte	1
+ 538 0091 02       		.byte	2
+ 539 0092 03       		.byte	3
+ 540 0093 02       		.byte	2
+ 541 0094 00       		.byte	0
+ 542 0095 04       		.byte	4
+ 543 0096 02       		.byte	2
+ 544 0097 00       		.byte	0
+ 545 0098 04       		.byte	4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 19
+
+
+ 546 0099 04       		.byte	4
+ 547 009a 00       		.byte	0
+ 548 009b 01       		.byte	1
+ 549 009c 02       		.byte	2
+ 550 009d 03       		.byte	3
+ 551 009e 01       		.byte	1
+ 552 009f 00       		.byte	0
+ 553 00a0 01       		.byte	1
+ 554 00a1 01       		.byte	1
+ 555 00a2 02       		.byte	2
+ 556 00a3 02       		.byte	2
+ 557 00a4 03       		.byte	3
+ 558 00a5 13       		.byte	19
+ 559 00a6 01       		.byte	1
+ 560 00a7 02       		.byte	2
+ 561 00a8 01       		.byte	1
+ 562 00a9 02       		.byte	2
+ 563 00aa 01       		.byte	1
+ 564 00ab 02       		.byte	2
+ 565 00ac 01       		.byte	1
+ 566 00ad 03       		.byte	3
+ 567 00ae 01       		.byte	1
+ 568 00af 04       		.byte	4
+ 569 00b0 02       		.byte	2
+ 570 00b1 00       		.byte	0
+ 571 00b2 04       		.byte	4
+ 572 00b3 05       		.byte	5
+ 573 00b4 00       		.byte	0
+ 574 00b5 01       		.byte	1
+ 575 00b6 02       		.byte	2
+ 576 00b7 03       		.byte	3
+ 577 00b8 04       		.byte	4
+ 578 00b9 18       		.byte	24
+ 579 00ba 03       		.byte	3
+ 580 00bb 01       		.byte	1
+ 581 00bc 02       		.byte	2
+ 582 00bd 03       		.byte	3
+ 583 00be 02       		.byte	2
+ 584 00bf 00       		.byte	0
+ 585 00c0 04       		.byte	4
+ 586 00c1 02       		.byte	2
+ 587 00c2 00       		.byte	0
+ 588 00c3 04       		.byte	4
+ 589 00c4 03       		.byte	3
+ 590 00c5 01       		.byte	1
+ 591 00c6 02       		.byte	2
+ 592 00c7 03       		.byte	3
+ 593 00c8 02       		.byte	2
+ 594 00c9 00       		.byte	0
+ 595 00ca 04       		.byte	4
+ 596 00cb 02       		.byte	2
+ 597 00cc 00       		.byte	0
+ 598 00cd 04       		.byte	4
+ 599 00ce 03       		.byte	3
+ 600 00cf 01       		.byte	1
+ 601 00d0 02       		.byte	2
+ 602 00d1 03       		.byte	3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 20
+
+
+ 603 00d2 16       		.byte	22
+ 604 00d3 02       		.byte	2
+ 605 00d4 01       		.byte	1
+ 606 00d5 02       		.byte	2
+ 607 00d6 01       		.byte	1
+ 608 00d7 03       		.byte	3
+ 609 00d8 01       		.byte	1
+ 610 00d9 04       		.byte	4
+ 611 00da 04       		.byte	4
+ 612 00db 01       		.byte	1
+ 613 00dc 02       		.byte	2
+ 614 00dd 03       		.byte	3
+ 615 00de 04       		.byte	4
+ 616 00df 02       		.byte	2
+ 617 00e0 00       		.byte	0
+ 618 00e1 04       		.byte	4
+ 619 00e2 02       		.byte	2
+ 620 00e3 00       		.byte	0
+ 621 00e4 04       		.byte	4
+ 622 00e5 03       		.byte	3
+ 623 00e6 01       		.byte	1
+ 624 00e7 02       		.byte	2
+ 625 00e8 03       		.byte	3
+ 626 00e9 08       		.byte	8
+ 627 00ea 01       		.byte	1
+ 628 00eb 02       		.byte	2
+ 629 00ec 00       		.byte	0
+ 630 00ed 00       		.byte	0
+ 631 00ee 00       		.byte	0
+ 632 00ef 00       		.byte	0
+ 633 00f0 00       		.byte	0
+ 634 00f1 00       		.byte	0
+ 635 00f2 19       		.byte	25
+ 636 00f3 02       		.byte	2
+ 637 00f4 00       		.byte	0
+ 638 00f5 04       		.byte	4
+ 639 00f6 02       		.byte	2
+ 640 00f7 00       		.byte	0
+ 641 00f8 04       		.byte	4
+ 642 00f9 02       		.byte	2
+ 643 00fa 00       		.byte	0
+ 644 00fb 04       		.byte	4
+ 645 00fc 02       		.byte	2
+ 646 00fd 00       		.byte	0
+ 647 00fe 04       		.byte	4
+ 648 00ff 05       		.byte	5
+ 649 0100 00       		.byte	0
+ 650 0101 01       		.byte	1
+ 651 0102 02       		.byte	2
+ 652 0103 03       		.byte	3
+ 653 0104 04       		.byte	4
+ 654 0105 02       		.byte	2
+ 655 0106 00       		.byte	0
+ 656 0107 04       		.byte	4
+ 657 0108 03       		.byte	3
+ 658 0109 01       		.byte	1
+ 659 010a 02       		.byte	2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 21
+
+
+ 660 010b 03       		.byte	3
+ 661 010c 1B       		.byte	27
+ 662 010d 04       		.byte	4
+ 663 010e 00       		.byte	0
+ 664 010f 01       		.byte	1
+ 665 0110 02       		.byte	2
+ 666 0111 03       		.byte	3
+ 667 0112 02       		.byte	2
+ 668 0113 00       		.byte	0
+ 669 0114 04       		.byte	4
+ 670 0115 02       		.byte	2
+ 671 0116 00       		.byte	0
+ 672 0117 04       		.byte	4
+ 673 0118 02       		.byte	2
+ 674 0119 00       		.byte	0
+ 675 011a 04       		.byte	4
+ 676 011b 04       		.byte	4
+ 677 011c 00       		.byte	0
+ 678 011d 01       		.byte	1
+ 679 011e 02       		.byte	2
+ 680 011f 03       		.byte	3
+ 681 0120 02       		.byte	2
+ 682 0121 00       		.byte	0
+ 683 0122 04       		.byte	4
+ 684 0123 04       		.byte	4
+ 685 0124 00       		.byte	0
+ 686 0125 01       		.byte	1
+ 687 0126 02       		.byte	2
+ 688 0127 03       		.byte	3
+ 689 0128 14       		.byte	20
+ 690 0129 03       		.byte	3
+ 691 012a 01       		.byte	1
+ 692 012b 02       		.byte	2
+ 693 012c 03       		.byte	3
+ 694 012d 02       		.byte	2
+ 695 012e 00       		.byte	0
+ 696 012f 04       		.byte	4
+ 697 0130 01       		.byte	1
+ 698 0131 00       		.byte	0
+ 699 0132 01       		.byte	1
+ 700 0133 00       		.byte	0
+ 701 0134 01       		.byte	1
+ 702 0135 00       		.byte	0
+ 703 0136 02       		.byte	2
+ 704 0137 00       		.byte	0
+ 705 0138 04       		.byte	4
+ 706 0139 03       		.byte	3
+ 707 013a 01       		.byte	1
+ 708 013b 02       		.byte	2
+ 709 013c 03       		.byte	3
+ 710 013d 19       		.byte	25
+ 711 013e 04       		.byte	4
+ 712 013f 00       		.byte	0
+ 713 0140 01       		.byte	1
+ 714 0141 02       		.byte	2
+ 715 0142 03       		.byte	3
+ 716 0143 02       		.byte	2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 22
+
+
+ 717 0144 00       		.byte	0
+ 718 0145 04       		.byte	4
+ 719 0146 02       		.byte	2
+ 720 0147 00       		.byte	0
+ 721 0148 04       		.byte	4
+ 722 0149 02       		.byte	2
+ 723 014a 00       		.byte	0
+ 724 014b 04       		.byte	4
+ 725 014c 02       		.byte	2
+ 726 014d 00       		.byte	0
+ 727 014e 04       		.byte	4
+ 728 014f 02       		.byte	2
+ 729 0150 00       		.byte	0
+ 730 0151 04       		.byte	4
+ 731 0152 04       		.byte	4
+ 732 0153 00       		.byte	0
+ 733 0154 01       		.byte	1
+ 734 0155 02       		.byte	2
+ 735 0156 03       		.byte	3
+ 736 0157 19       		.byte	25
+ 737 0158 05       		.byte	5
+ 738 0159 00       		.byte	0
+ 739 015a 01       		.byte	1
+ 740 015b 02       		.byte	2
+ 741 015c 03       		.byte	3
+ 742 015d 04       		.byte	4
+ 743 015e 01       		.byte	1
+ 744 015f 00       		.byte	0
+ 745 0160 01       		.byte	1
+ 746 0161 00       		.byte	0
+ 747 0162 04       		.byte	4
+ 748 0163 00       		.byte	0
+ 749 0164 01       		.byte	1
+ 750 0165 02       		.byte	2
+ 751 0166 03       		.byte	3
+ 752 0167 01       		.byte	1
+ 753 0168 00       		.byte	0
+ 754 0169 01       		.byte	1
+ 755 016a 00       		.byte	0
+ 756 016b 05       		.byte	5
+ 757 016c 00       		.byte	0
+ 758 016d 01       		.byte	1
+ 759 016e 02       		.byte	2
+ 760 016f 03       		.byte	3
+ 761 0170 04       		.byte	4
+ 762 0171 14       		.byte	20
+ 763 0172 01       		.byte	1
+ 764 0173 00       		.byte	0
+ 765 0174 01       		.byte	1
+ 766 0175 00       		.byte	0
+ 767 0176 01       		.byte	1
+ 768 0177 00       		.byte	0
+ 769 0178 01       		.byte	1
+ 770 0179 00       		.byte	0
+ 771 017a 03       		.byte	3
+ 772 017b 00       		.byte	0
+ 773 017c 01       		.byte	1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 23
+
+
+ 774 017d 02       		.byte	2
+ 775 017e 01       		.byte	1
+ 776 017f 00       		.byte	0
+ 777 0180 05       		.byte	5
+ 778 0181 00       		.byte	0
+ 779 0182 01       		.byte	1
+ 780 0183 02       		.byte	2
+ 781 0184 03       		.byte	3
+ 782 0185 04       		.byte	4
+ 783 0186 18       		.byte	24
+ 784 0187 03       		.byte	3
+ 785 0188 01       		.byte	1
+ 786 0189 02       		.byte	2
+ 787 018a 03       		.byte	3
+ 788 018b 02       		.byte	2
+ 789 018c 00       		.byte	0
+ 790 018d 04       		.byte	4
+ 791 018e 02       		.byte	2
+ 792 018f 00       		.byte	0
+ 793 0190 04       		.byte	4
+ 794 0191 02       		.byte	2
+ 795 0192 00       		.byte	0
+ 796 0193 04       		.byte	4
+ 797 0194 03       		.byte	3
+ 798 0195 00       		.byte	0
+ 799 0196 03       		.byte	3
+ 800 0197 04       		.byte	4
+ 801 0198 01       		.byte	1
+ 802 0199 00       		.byte	0
+ 803 019a 04       		.byte	4
+ 804 019b 01       		.byte	1
+ 805 019c 02       		.byte	2
+ 806 019d 03       		.byte	3
+ 807 019e 04       		.byte	4
+ 808 019f 18       		.byte	24
+ 809 01a0 02       		.byte	2
+ 810 01a1 00       		.byte	0
+ 811 01a2 04       		.byte	4
+ 812 01a3 02       		.byte	2
+ 813 01a4 00       		.byte	0
+ 814 01a5 04       		.byte	4
+ 815 01a6 02       		.byte	2
+ 816 01a7 00       		.byte	0
+ 817 01a8 04       		.byte	4
+ 818 01a9 02       		.byte	2
+ 819 01aa 00       		.byte	0
+ 820 01ab 04       		.byte	4
+ 821 01ac 05       		.byte	5
+ 822 01ad 00       		.byte	0
+ 823 01ae 01       		.byte	1
+ 824 01af 02       		.byte	2
+ 825 01b0 03       		.byte	3
+ 826 01b1 04       		.byte	4
+ 827 01b2 02       		.byte	2
+ 828 01b3 00       		.byte	0
+ 829 01b4 04       		.byte	4
+ 830 01b5 02       		.byte	2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 24
+
+
+ 831 01b6 00       		.byte	0
+ 832 01b7 04       		.byte	4
+ 833 01b8 12       		.byte	18
+ 834 01b9 03       		.byte	3
+ 835 01ba 01       		.byte	1
+ 836 01bb 02       		.byte	2
+ 837 01bc 03       		.byte	3
+ 838 01bd 01       		.byte	1
+ 839 01be 02       		.byte	2
+ 840 01bf 01       		.byte	1
+ 841 01c0 02       		.byte	2
+ 842 01c1 01       		.byte	1
+ 843 01c2 02       		.byte	2
+ 844 01c3 01       		.byte	1
+ 845 01c4 02       		.byte	2
+ 846 01c5 01       		.byte	1
+ 847 01c6 02       		.byte	2
+ 848 01c7 03       		.byte	3
+ 849 01c8 01       		.byte	1
+ 850 01c9 02       		.byte	2
+ 851 01ca 03       		.byte	3
+ 852 01cb 11       		.byte	17
+ 853 01cc 03       		.byte	3
+ 854 01cd 01       		.byte	1
+ 855 01ce 02       		.byte	2
+ 856 01cf 03       		.byte	3
+ 857 01d0 02       		.byte	2
+ 858 01d1 00       		.byte	0
+ 859 01d2 04       		.byte	4
+ 860 01d3 01       		.byte	1
+ 861 01d4 04       		.byte	4
+ 862 01d5 01       		.byte	1
+ 863 01d6 04       		.byte	4
+ 864 01d7 01       		.byte	1
+ 865 01d8 04       		.byte	4
+ 866 01d9 01       		.byte	1
+ 867 01da 04       		.byte	4
+ 868 01db 01       		.byte	1
+ 869 01dc 04       		.byte	4
+ 870 01dd 16       		.byte	22
+ 871 01de 02       		.byte	2
+ 872 01df 00       		.byte	0
+ 873 01e0 04       		.byte	4
+ 874 01e1 02       		.byte	2
+ 875 01e2 00       		.byte	0
+ 876 01e3 04       		.byte	4
+ 877 01e4 02       		.byte	2
+ 878 01e5 00       		.byte	0
+ 879 01e6 04       		.byte	4
+ 880 01e7 02       		.byte	2
+ 881 01e8 00       		.byte	0
+ 882 01e9 03       		.byte	3
+ 883 01ea 03       		.byte	3
+ 884 01eb 00       		.byte	0
+ 885 01ec 01       		.byte	1
+ 886 01ed 02       		.byte	2
+ 887 01ee 02       		.byte	2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 25
+
+
+ 888 01ef 00       		.byte	0
+ 889 01f0 03       		.byte	3
+ 890 01f1 02       		.byte	2
+ 891 01f2 00       		.byte	0
+ 892 01f3 04       		.byte	4
+ 893              		.text
+ 894              	.Letext0:
+ 895              		.file 2 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
+ 896              		.file 3 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
+ 897              		.file 4 "font.h"
+ 898              		.file 5 "Generated_Source\\PSoC5/core_cm3.h"
+ 899              		.section	.debug_info,"",%progbits
+ 900              	.Ldebug_info0:
+ 901 0000 D3080000 		.4byte	0x8d3
+ 902 0004 0400     		.2byte	0x4
+ 903 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 904 000a 04       		.byte	0x4
+ 905 000b 01       		.uleb128 0x1
+ 906 000c DA020000 		.4byte	.LASF64
+ 907 0010 0C       		.byte	0xc
+ 908 0011 52020000 		.4byte	.LASF65
+ 909 0015 ED000000 		.4byte	.LASF66
+ 910 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
+ 911 001d 00000000 		.4byte	0
+ 912 0021 00000000 		.4byte	.Ldebug_line0
+ 913 0025 02       		.uleb128 0x2
+ 914 0026 01       		.byte	0x1
+ 915 0027 06       		.byte	0x6
+ 916 0028 B6000000 		.4byte	.LASF0
+ 917 002c 03       		.uleb128 0x3
+ 918 002d 73000000 		.4byte	.LASF2
+ 919 0031 02       		.byte	0x2
+ 920 0032 1D       		.byte	0x1d
+ 921 0033 37000000 		.4byte	0x37
+ 922 0037 02       		.uleb128 0x2
+ 923 0038 01       		.byte	0x1
+ 924 0039 08       		.byte	0x8
+ 925 003a 9C000000 		.4byte	.LASF1
+ 926 003e 03       		.uleb128 0x3
+ 927 003f 00000000 		.4byte	.LASF3
+ 928 0043 02       		.byte	0x2
+ 929 0044 29       		.byte	0x29
+ 930 0045 49000000 		.4byte	0x49
+ 931 0049 02       		.uleb128 0x2
+ 932 004a 02       		.byte	0x2
+ 933 004b 05       		.byte	0x5
+ 934 004c 16000000 		.4byte	.LASF4
+ 935 0050 03       		.uleb128 0x3
+ 936 0051 36000000 		.4byte	.LASF5
+ 937 0055 02       		.byte	0x2
+ 938 0056 2B       		.byte	0x2b
+ 939 0057 5B000000 		.4byte	0x5b
+ 940 005b 02       		.uleb128 0x2
+ 941 005c 02       		.byte	0x2
+ 942 005d 07       		.byte	0x7
+ 943 005e 7D010000 		.4byte	.LASF6
+ 944 0062 03       		.uleb128 0x3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 26
+
+
+ 945 0063 65020000 		.4byte	.LASF7
+ 946 0067 02       		.byte	0x2
+ 947 0068 3F       		.byte	0x3f
+ 948 0069 6D000000 		.4byte	0x6d
+ 949 006d 02       		.uleb128 0x2
+ 950 006e 04       		.byte	0x4
+ 951 006f 05       		.byte	0x5
+ 952 0070 65000000 		.4byte	.LASF8
+ 953 0074 02       		.uleb128 0x2
+ 954 0075 04       		.byte	0x4
+ 955 0076 07       		.byte	0x7
+ 956 0077 6B010000 		.4byte	.LASF9
+ 957 007b 02       		.uleb128 0x2
+ 958 007c 08       		.byte	0x8
+ 959 007d 05       		.byte	0x5
+ 960 007e 57000000 		.4byte	.LASF10
+ 961 0082 02       		.uleb128 0x2
+ 962 0083 08       		.byte	0x8
+ 963 0084 07       		.byte	0x7
+ 964 0085 C2000000 		.4byte	.LASF11
+ 965 0089 04       		.uleb128 0x4
+ 966 008a 04       		.byte	0x4
+ 967 008b 05       		.byte	0x5
+ 968 008c 696E7400 		.ascii	"int\000"
+ 969 0090 02       		.uleb128 0x2
+ 970 0091 04       		.byte	0x4
+ 971 0092 07       		.byte	0x7
+ 972 0093 E0000000 		.4byte	.LASF12
+ 973 0097 03       		.uleb128 0x3
+ 974 0098 6F020000 		.4byte	.LASF13
+ 975 009c 03       		.byte	0x3
+ 976 009d 18       		.byte	0x18
+ 977 009e 2C000000 		.4byte	0x2c
+ 978 00a2 03       		.uleb128 0x3
+ 979 00a3 A6010000 		.4byte	.LASF14
+ 980 00a7 03       		.byte	0x3
+ 981 00a8 20       		.byte	0x20
+ 982 00a9 3E000000 		.4byte	0x3e
+ 983 00ad 03       		.uleb128 0x3
+ 984 00ae 95010000 		.4byte	.LASF15
+ 985 00b2 03       		.byte	0x3
+ 986 00b3 24       		.byte	0x24
+ 987 00b4 50000000 		.4byte	0x50
+ 988 00b8 03       		.uleb128 0x3
+ 989 00b9 9E010000 		.4byte	.LASF16
+ 990 00bd 03       		.byte	0x3
+ 991 00be 2C       		.byte	0x2c
+ 992 00bf 62000000 		.4byte	0x62
+ 993 00c3 02       		.uleb128 0x2
+ 994 00c4 04       		.byte	0x4
+ 995 00c5 04       		.byte	0x4
+ 996 00c6 51000000 		.4byte	.LASF17
+ 997 00ca 02       		.uleb128 0x2
+ 998 00cb 08       		.byte	0x8
+ 999 00cc 04       		.byte	0x4
+ 1000 00cd 0A000000 		.4byte	.LASF18
+ 1001 00d1 02       		.uleb128 0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 27
+
+
+ 1002 00d2 01       		.byte	0x1
+ 1003 00d3 08       		.byte	0x8
+ 1004 00d4 90010000 		.4byte	.LASF19
+ 1005 00d8 02       		.uleb128 0x2
+ 1006 00d9 08       		.byte	0x8
+ 1007 00da 04       		.byte	0x4
+ 1008 00db 90000000 		.4byte	.LASF20
+ 1009 00df 02       		.uleb128 0x2
+ 1010 00e0 04       		.byte	0x4
+ 1011 00e1 07       		.byte	0x7
+ 1012 00e2 77020000 		.4byte	.LASF21
+ 1013 00e6 05       		.uleb128 0x5
+ 1014 00e7 FF010000 		.4byte	.LASF26
+ 1015 00eb 01       		.byte	0x1
+ 1016 00ec A401     		.2byte	0x1a4
+ 1017 00ee 00000000 		.4byte	.LFB63
+ 1018 00f2 70000000 		.4byte	.LFE63-.LFB63
+ 1019 00f6 01       		.uleb128 0x1
+ 1020 00f7 9C       		.byte	0x9c
+ 1021 00f8 E3010000 		.4byte	0x1e3
+ 1022 00fc 06       		.uleb128 0x6
+ 1023 00fd 7800     		.ascii	"x\000"
+ 1024 00ff 01       		.byte	0x1
+ 1025 0100 A401     		.2byte	0x1a4
+ 1026 0102 A2000000 		.4byte	0xa2
+ 1027 0106 00000000 		.4byte	.LLST0
+ 1028 010a 06       		.uleb128 0x6
+ 1029 010b 7900     		.ascii	"y\000"
+ 1030 010d 01       		.byte	0x1
+ 1031 010e A401     		.2byte	0x1a4
+ 1032 0110 A2000000 		.4byte	0xa2
+ 1033 0114 2C000000 		.4byte	.LLST1
+ 1034 0118 07       		.uleb128 0x7
+ 1035 0119 20000000 		.4byte	.LASF22
+ 1036 011d 01       		.byte	0x1
+ 1037 011e A401     		.2byte	0x1a4
+ 1038 0120 AD000000 		.4byte	0xad
+ 1039 0124 63000000 		.4byte	.LLST2
+ 1040 0128 07       		.uleb128 0x7
+ 1041 0129 7D000000 		.4byte	.LASF23
+ 1042 012d 01       		.byte	0x1
+ 1043 012e A401     		.2byte	0x1a4
+ 1044 0130 AD000000 		.4byte	0xad
+ 1045 0134 84000000 		.4byte	.LLST3
+ 1046 0138 08       		.uleb128 0x8
+ 1047 0139 4B000000 		.4byte	.LASF24
+ 1048 013d 01       		.byte	0x1
+ 1049 013e A601     		.2byte	0x1a6
+ 1050 0140 AD000000 		.4byte	0xad
+ 1051 0144 A5000000 		.4byte	.LLST4
+ 1052 0148 09       		.uleb128 0x9
+ 1053 0149 D9000000 		.4byte	.LASF25
+ 1054 014d 01       		.byte	0x1
+ 1055 014e B001     		.2byte	0x1b0
+ 1056 0150 97000000 		.4byte	0x97
+ 1057 0154 07       		.byte	0x7
+ 1058 0155 0A       		.uleb128 0xa
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 28
+
+
+ 1059 0156 00000000 		.4byte	.Ldebug_ranges0+0
+ 1060 015a 6D010000 		.4byte	0x16d
+ 1061 015e 0B       		.uleb128 0xb
+ 1062 015f 6900     		.ascii	"i\000"
+ 1063 0161 01       		.byte	0x1
+ 1064 0162 A801     		.2byte	0x1a8
+ 1065 0164 89000000 		.4byte	0x89
+ 1066 0168 E5000000 		.4byte	.LLST5
+ 1067 016c 00       		.byte	0
+ 1068 016d 0C       		.uleb128 0xc
+ 1069 016e 2A000000 		.4byte	.LBB4
+ 1070 0172 3C000000 		.4byte	.LBE4-.LBB4
+ 1071 0176 0B       		.uleb128 0xb
+ 1072 0177 6900     		.ascii	"i\000"
+ 1073 0179 01       		.byte	0x1
+ 1074 017a B201     		.2byte	0x1b2
+ 1075 017c 89000000 		.4byte	0x89
+ 1076 0180 04010000 		.4byte	.LLST6
+ 1077 0184 0D       		.uleb128 0xd
+ 1078 0185 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 1079 0189 0B       		.uleb128 0xb
+ 1080 018a 6A00     		.ascii	"j\000"
+ 1081 018c 01       		.byte	0x1
+ 1082 018d B401     		.2byte	0x1b4
+ 1083 018f 89000000 		.4byte	0x89
+ 1084 0193 23010000 		.4byte	.LLST7
+ 1085 0197 0C       		.uleb128 0xc
+ 1086 0198 30000000 		.4byte	.LBB6
+ 1087 019c 12000000 		.4byte	.LBE6-.LBB6
+ 1088 01a0 0E       		.uleb128 0xe
+ 1089 01a1 F4010000 		.4byte	.LASF67
+ 1090 01a5 01       		.byte	0x1
+ 1091 01a6 B601     		.2byte	0x1b6
+ 1092 01a8 89000000 		.4byte	0x89
+ 1093 01ac B2010000 		.4byte	0x1b2
+ 1094 01b0 0F       		.uleb128 0xf
+ 1095 01b1 00       		.byte	0
+ 1096 01b2 10       		.uleb128 0x10
+ 1097 01b3 42000000 		.4byte	.LVL14
+ 1098 01b7 CA080000 		.4byte	0x8ca
+ 1099 01bb 11       		.uleb128 0x11
+ 1100 01bc 01       		.uleb128 0x1
+ 1101 01bd 50       		.byte	0x50
+ 1102 01be 13       		.uleb128 0x13
+ 1103 01bf 74       		.byte	0x74
+ 1104 01c0 00       		.sleb128 0
+ 1105 01c1 75       		.byte	0x75
+ 1106 01c2 00       		.sleb128 0
+ 1107 01c3 22       		.byte	0x22
+ 1108 01c4 03       		.byte	0x3
+ 1109 01c5 01000000 		.4byte	.LANCHOR0+1
+ 1110 01c9 22       		.byte	0x22
+ 1111 01ca 94       		.byte	0x94
+ 1112 01cb 01       		.byte	0x1
+ 1113 01cc 08       		.byte	0x8
+ 1114 01cd FF       		.byte	0xff
+ 1115 01ce 1A       		.byte	0x1a
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 29
+
+
+ 1116 01cf 77       		.byte	0x77
+ 1117 01d0 00       		.sleb128 0
+ 1118 01d1 22       		.byte	0x22
+ 1119 01d2 11       		.uleb128 0x11
+ 1120 01d3 01       		.uleb128 0x1
+ 1121 01d4 51       		.byte	0x51
+ 1122 01d5 02       		.uleb128 0x2
+ 1123 01d6 76       		.byte	0x76
+ 1124 01d7 00       		.sleb128 0
+ 1125 01d8 11       		.uleb128 0x11
+ 1126 01d9 01       		.uleb128 0x1
+ 1127 01da 52       		.byte	0x52
+ 1128 01db 02       		.uleb128 0x2
+ 1129 01dc 78       		.byte	0x78
+ 1130 01dd 00       		.sleb128 0
+ 1131 01de 00       		.byte	0
+ 1132 01df 00       		.byte	0
+ 1133 01e0 00       		.byte	0
+ 1134 01e1 00       		.byte	0
+ 1135 01e2 00       		.byte	0
+ 1136 01e3 12       		.uleb128 0x12
+ 1137 01e4 46020000 		.4byte	.LASF27
+ 1138 01e8 01       		.byte	0x1
+ 1139 01e9 BD01     		.2byte	0x1bd
+ 1140 01eb 00000000 		.4byte	.LFB64
+ 1141 01ef 7C010000 		.4byte	.LFE64-.LFB64
+ 1142 01f3 01       		.uleb128 0x1
+ 1143 01f4 9C       		.byte	0x9c
+ 1144 01f5 77030000 		.4byte	0x377
+ 1145 01f9 06       		.uleb128 0x6
+ 1146 01fa 7800     		.ascii	"x\000"
+ 1147 01fc 01       		.byte	0x1
+ 1148 01fd BD01     		.2byte	0x1bd
+ 1149 01ff A2000000 		.4byte	0xa2
+ 1150 0203 41010000 		.4byte	.LLST8
+ 1151 0207 06       		.uleb128 0x6
+ 1152 0208 7900     		.ascii	"y\000"
+ 1153 020a 01       		.byte	0x1
+ 1154 020b BD01     		.2byte	0x1bd
+ 1155 020d A2000000 		.4byte	0xa2
+ 1156 0211 62010000 		.4byte	.LLST9
+ 1157 0215 07       		.uleb128 0x7
+ 1158 0216 20000000 		.4byte	.LASF22
+ 1159 021a 01       		.byte	0x1
+ 1160 021b BD01     		.2byte	0x1bd
+ 1161 021d AD000000 		.4byte	0xad
+ 1162 0221 83010000 		.4byte	.LLST10
+ 1163 0225 07       		.uleb128 0x7
+ 1164 0226 C6020000 		.4byte	.LASF28
+ 1165 022a 01       		.byte	0x1
+ 1166 022b BD01     		.2byte	0x1bd
+ 1167 022d CA000000 		.4byte	0xca
+ 1168 0231 A4010000 		.4byte	.LLST11
+ 1169 0235 08       		.uleb128 0x8
+ 1170 0236 6E000000 		.4byte	.LASF29
+ 1171 023a 01       		.byte	0x1
+ 1172 023b C101     		.2byte	0x1c1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 30
+
+
+ 1173 023d 89000000 		.4byte	0x89
+ 1174 0241 EC010000 		.4byte	.LLST12
+ 1175 0245 08       		.uleb128 0x8
+ 1176 0246 31000000 		.4byte	.LASF30
+ 1177 024a 01       		.byte	0x1
+ 1178 024b C201     		.2byte	0x1c2
+ 1179 024d 89000000 		.4byte	0x89
+ 1180 0251 0A020000 		.4byte	.LLST13
+ 1181 0255 08       		.uleb128 0x8
+ 1182 0256 0E020000 		.4byte	.LASF31
+ 1183 025a 01       		.byte	0x1
+ 1184 025b C301     		.2byte	0x1c3
+ 1185 025d 89000000 		.4byte	0x89
+ 1186 0261 28020000 		.4byte	.LLST14
+ 1187 0265 08       		.uleb128 0x8
+ 1188 0266 26000000 		.4byte	.LASF32
+ 1189 026a 01       		.byte	0x1
+ 1190 026b C401     		.2byte	0x1c4
+ 1191 026d 89000000 		.4byte	0x89
+ 1192 0271 53020000 		.4byte	.LLST15
+ 1193 0275 08       		.uleb128 0x8
+ 1194 0276 AA000000 		.4byte	.LASF33
+ 1195 027a 01       		.byte	0x1
+ 1196 027b C501     		.2byte	0x1c5
+ 1197 027d 89000000 		.4byte	0x89
+ 1198 0281 71020000 		.4byte	.LLST16
+ 1199 0285 08       		.uleb128 0x8
+ 1200 0286 87000000 		.4byte	.LASF34
+ 1201 028a 01       		.byte	0x1
+ 1202 028b C701     		.2byte	0x1c7
+ 1203 028d 89000000 		.4byte	0x89
+ 1204 0291 8F020000 		.4byte	.LLST17
+ 1205 0295 13       		.uleb128 0x13
+ 1206 0296 EE000000 		.4byte	.LVL59
+ 1207 029a E6000000 		.4byte	0xe6
+ 1208 029e BB020000 		.4byte	0x2bb
+ 1209 02a2 11       		.uleb128 0x11
+ 1210 02a3 01       		.uleb128 0x1
+ 1211 02a4 50       		.byte	0x50
+ 1212 02a5 02       		.uleb128 0x2
+ 1213 02a6 74       		.byte	0x74
+ 1214 02a7 00       		.sleb128 0
+ 1215 02a8 11       		.uleb128 0x11
+ 1216 02a9 01       		.uleb128 0x1
+ 1217 02aa 51       		.byte	0x51
+ 1218 02ab 02       		.uleb128 0x2
+ 1219 02ac 75       		.byte	0x75
+ 1220 02ad 00       		.sleb128 0
+ 1221 02ae 11       		.uleb128 0x11
+ 1222 02af 01       		.uleb128 0x1
+ 1223 02b0 52       		.byte	0x52
+ 1224 02b1 02       		.uleb128 0x2
+ 1225 02b2 76       		.byte	0x76
+ 1226 02b3 00       		.sleb128 0
+ 1227 02b4 11       		.uleb128 0x11
+ 1228 02b5 01       		.uleb128 0x1
+ 1229 02b6 53       		.byte	0x53
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 31
+
+
+ 1230 02b7 02       		.uleb128 0x2
+ 1231 02b8 77       		.byte	0x77
+ 1232 02b9 00       		.sleb128 0
+ 1233 02ba 00       		.byte	0
+ 1234 02bb 13       		.uleb128 0x13
+ 1235 02bc 08010000 		.4byte	.LVL62
+ 1236 02c0 E6000000 		.4byte	0xe6
+ 1237 02c4 E1020000 		.4byte	0x2e1
+ 1238 02c8 11       		.uleb128 0x11
+ 1239 02c9 01       		.uleb128 0x1
+ 1240 02ca 50       		.byte	0x50
+ 1241 02cb 02       		.uleb128 0x2
+ 1242 02cc 74       		.byte	0x74
+ 1243 02cd 00       		.sleb128 0
+ 1244 02ce 11       		.uleb128 0x11
+ 1245 02cf 01       		.uleb128 0x1
+ 1246 02d0 51       		.byte	0x51
+ 1247 02d1 02       		.uleb128 0x2
+ 1248 02d2 75       		.byte	0x75
+ 1249 02d3 00       		.sleb128 0
+ 1250 02d4 11       		.uleb128 0x11
+ 1251 02d5 01       		.uleb128 0x1
+ 1252 02d6 52       		.byte	0x52
+ 1253 02d7 02       		.uleb128 0x2
+ 1254 02d8 76       		.byte	0x76
+ 1255 02d9 00       		.sleb128 0
+ 1256 02da 11       		.uleb128 0x11
+ 1257 02db 01       		.uleb128 0x1
+ 1258 02dc 53       		.byte	0x53
+ 1259 02dd 02       		.uleb128 0x2
+ 1260 02de 7A       		.byte	0x7a
+ 1261 02df 00       		.sleb128 0
+ 1262 02e0 00       		.byte	0
+ 1263 02e1 13       		.uleb128 0x13
+ 1264 02e2 16010000 		.4byte	.LVL63
+ 1265 02e6 E6000000 		.4byte	0xe6
+ 1266 02ea 06030000 		.4byte	0x306
+ 1267 02ee 11       		.uleb128 0x11
+ 1268 02ef 01       		.uleb128 0x1
+ 1269 02f0 50       		.byte	0x50
+ 1270 02f1 02       		.uleb128 0x2
+ 1271 02f2 74       		.byte	0x74
+ 1272 02f3 07       		.sleb128 7
+ 1273 02f4 11       		.uleb128 0x11
+ 1274 02f5 01       		.uleb128 0x1
+ 1275 02f6 51       		.byte	0x51
+ 1276 02f7 02       		.uleb128 0x2
+ 1277 02f8 75       		.byte	0x75
+ 1278 02f9 00       		.sleb128 0
+ 1279 02fa 11       		.uleb128 0x11
+ 1280 02fb 01       		.uleb128 0x1
+ 1281 02fc 52       		.byte	0x52
+ 1282 02fd 02       		.uleb128 0x2
+ 1283 02fe 76       		.byte	0x76
+ 1284 02ff 00       		.sleb128 0
+ 1285 0300 11       		.uleb128 0x11
+ 1286 0301 01       		.uleb128 0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 32
+
+
+ 1287 0302 53       		.byte	0x53
+ 1288 0303 01       		.uleb128 0x1
+ 1289 0304 3A       		.byte	0x3a
+ 1290 0305 00       		.byte	0
+ 1291 0306 13       		.uleb128 0x13
+ 1292 0307 28010000 		.4byte	.LVL64
+ 1293 030b E6000000 		.4byte	0xe6
+ 1294 030f 2E030000 		.4byte	0x32e
+ 1295 0313 11       		.uleb128 0x11
+ 1296 0314 01       		.uleb128 0x1
+ 1297 0315 50       		.byte	0x50
+ 1298 0316 02       		.uleb128 0x2
+ 1299 0317 74       		.byte	0x74
+ 1300 0318 0E       		.sleb128 14
+ 1301 0319 11       		.uleb128 0x11
+ 1302 031a 01       		.uleb128 0x1
+ 1303 031b 51       		.byte	0x51
+ 1304 031c 02       		.uleb128 0x2
+ 1305 031d 75       		.byte	0x75
+ 1306 031e 00       		.sleb128 0
+ 1307 031f 11       		.uleb128 0x11
+ 1308 0320 01       		.uleb128 0x1
+ 1309 0321 52       		.byte	0x52
+ 1310 0322 02       		.uleb128 0x2
+ 1311 0323 76       		.byte	0x76
+ 1312 0324 00       		.sleb128 0
+ 1313 0325 11       		.uleb128 0x11
+ 1314 0326 01       		.uleb128 0x1
+ 1315 0327 53       		.byte	0x53
+ 1316 0328 04       		.uleb128 0x4
+ 1317 0329 91       		.byte	0x91
+ 1318 032a 54       		.sleb128 -44
+ 1319 032b 94       		.byte	0x94
+ 1320 032c 02       		.byte	0x2
+ 1321 032d 00       		.byte	0
+ 1322 032e 13       		.uleb128 0x13
+ 1323 032f 3A010000 		.4byte	.LVL65
+ 1324 0333 E6000000 		.4byte	0xe6
+ 1325 0337 54030000 		.4byte	0x354
+ 1326 033b 11       		.uleb128 0x11
+ 1327 033c 01       		.uleb128 0x1
+ 1328 033d 50       		.byte	0x50
+ 1329 033e 02       		.uleb128 0x2
+ 1330 033f 74       		.byte	0x74
+ 1331 0340 15       		.sleb128 21
+ 1332 0341 11       		.uleb128 0x11
+ 1333 0342 01       		.uleb128 0x1
+ 1334 0343 51       		.byte	0x51
+ 1335 0344 02       		.uleb128 0x2
+ 1336 0345 75       		.byte	0x75
+ 1337 0346 00       		.sleb128 0
+ 1338 0347 11       		.uleb128 0x11
+ 1339 0348 01       		.uleb128 0x1
+ 1340 0349 52       		.byte	0x52
+ 1341 034a 02       		.uleb128 0x2
+ 1342 034b 76       		.byte	0x76
+ 1343 034c 00       		.sleb128 0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 33
+
+
+ 1344 034d 11       		.uleb128 0x11
+ 1345 034e 01       		.uleb128 0x1
+ 1346 034f 53       		.byte	0x53
+ 1347 0350 02       		.uleb128 0x2
+ 1348 0351 7B       		.byte	0x7b
+ 1349 0352 00       		.sleb128 0
+ 1350 0353 00       		.byte	0
+ 1351 0354 10       		.uleb128 0x10
+ 1352 0355 4C010000 		.4byte	.LVL66
+ 1353 0359 E6000000 		.4byte	0xe6
+ 1354 035d 11       		.uleb128 0x11
+ 1355 035e 01       		.uleb128 0x1
+ 1356 035f 50       		.byte	0x50
+ 1357 0360 02       		.uleb128 0x2
+ 1358 0361 74       		.byte	0x74
+ 1359 0362 1C       		.sleb128 28
+ 1360 0363 11       		.uleb128 0x11
+ 1361 0364 01       		.uleb128 0x1
+ 1362 0365 51       		.byte	0x51
+ 1363 0366 02       		.uleb128 0x2
+ 1364 0367 75       		.byte	0x75
+ 1365 0368 00       		.sleb128 0
+ 1366 0369 11       		.uleb128 0x11
+ 1367 036a 01       		.uleb128 0x1
+ 1368 036b 52       		.byte	0x52
+ 1369 036c 02       		.uleb128 0x2
+ 1370 036d 76       		.byte	0x76
+ 1371 036e 00       		.sleb128 0
+ 1372 036f 11       		.uleb128 0x11
+ 1373 0370 01       		.uleb128 0x1
+ 1374 0371 53       		.byte	0x53
+ 1375 0372 02       		.uleb128 0x2
+ 1376 0373 78       		.byte	0x78
+ 1377 0374 00       		.sleb128 0
+ 1378 0375 00       		.byte	0
+ 1379 0376 00       		.byte	0
+ 1380 0377 14       		.uleb128 0x14
+ 1381 0378 87030000 		.4byte	0x387
+ 1382 037c 87030000 		.4byte	0x387
+ 1383 0380 15       		.uleb128 0x15
+ 1384 0381 DF000000 		.4byte	0xdf
+ 1385 0385 19       		.byte	0x19
+ 1386 0386 00       		.byte	0
+ 1387 0387 16       		.uleb128 0x16
+ 1388 0388 97000000 		.4byte	0x97
+ 1389 038c 17       		.uleb128 0x17
+ 1390 038d AE010000 		.4byte	.LASF35
+ 1391 0391 04       		.byte	0x4
+ 1392 0392 0F       		.byte	0xf
+ 1393 0393 B2030000 		.4byte	0x3b2
+ 1394 0397 1A       		.byte	0x1a
+ 1395 0398 03       		.byte	0x3
+ 1396 0399 01       		.byte	0x1
+ 1397 039a 02       		.byte	0x2
+ 1398 039b 03       		.byte	0x3
+ 1399 039c 02       		.byte	0x2
+ 1400 039d 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 34
+
+
+ 1401 039e 04       		.byte	0x4
+ 1402 039f 03       		.byte	0x3
+ 1403 03a0 00       		.byte	0
+ 1404 03a1 01       		.byte	0x1
+ 1405 03a2 04       		.byte	0x4
+ 1406 03a3 03       		.byte	0x3
+ 1407 03a4 00       		.byte	0
+ 1408 03a5 02       		.byte	0x2
+ 1409 03a6 04       		.byte	0x4
+ 1410 03a7 03       		.byte	0x3
+ 1411 03a8 00       		.byte	0
+ 1412 03a9 03       		.byte	0x3
+ 1413 03aa 04       		.byte	0x4
+ 1414 03ab 02       		.byte	0x2
+ 1415 03ac 00       		.byte	0
+ 1416 03ad 04       		.byte	0x4
+ 1417 03ae 03       		.byte	0x3
+ 1418 03af 01       		.byte	0x1
+ 1419 03b0 02       		.byte	0x2
+ 1420 03b1 03       		.byte	0x3
+ 1421 03b2 16       		.uleb128 0x16
+ 1422 03b3 77030000 		.4byte	0x377
+ 1423 03b7 14       		.uleb128 0x14
+ 1424 03b8 87030000 		.4byte	0x387
+ 1425 03bc C7030000 		.4byte	0x3c7
+ 1426 03c0 15       		.uleb128 0x15
+ 1427 03c1 DF000000 		.4byte	0xdf
+ 1428 03c5 12       		.byte	0x12
+ 1429 03c6 00       		.byte	0
+ 1430 03c7 17       		.uleb128 0x17
+ 1431 03c8 B5010000 		.4byte	.LASF36
+ 1432 03cc 04       		.byte	0x4
+ 1433 03cd 21       		.byte	0x21
+ 1434 03ce E6030000 		.4byte	0x3e6
+ 1435 03d2 13       		.byte	0x13
+ 1436 03d3 05       		.byte	0x5
+ 1437 03d4 00       		.byte	0
+ 1438 03d5 01       		.byte	0x1
+ 1439 03d6 02       		.byte	0x2
+ 1440 03d7 03       		.byte	0x3
+ 1441 03d8 04       		.byte	0x4
+ 1442 03d9 01       		.byte	0x1
+ 1443 03da 02       		.byte	0x2
+ 1444 03db 01       		.byte	0x1
+ 1445 03dc 02       		.byte	0x2
+ 1446 03dd 01       		.byte	0x1
+ 1447 03de 02       		.byte	0x2
+ 1448 03df 01       		.byte	0x1
+ 1449 03e0 02       		.byte	0x2
+ 1450 03e1 02       		.byte	0x2
+ 1451 03e2 01       		.byte	0x1
+ 1452 03e3 02       		.byte	0x2
+ 1453 03e4 01       		.byte	0x1
+ 1454 03e5 02       		.byte	0x2
+ 1455 03e6 16       		.uleb128 0x16
+ 1456 03e7 B7030000 		.4byte	0x3b7
+ 1457 03eb 14       		.uleb128 0x14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 35
+
+
+ 1458 03ec 87030000 		.4byte	0x387
+ 1459 03f0 FB030000 		.4byte	0x3fb
+ 1460 03f4 15       		.uleb128 0x15
+ 1461 03f5 DF000000 		.4byte	0xdf
+ 1462 03f9 16       		.byte	0x16
+ 1463 03fa 00       		.byte	0
+ 1464 03fb 17       		.uleb128 0x17
+ 1465 03fc BC010000 		.4byte	.LASF37
+ 1466 0400 04       		.byte	0x4
+ 1467 0401 33       		.byte	0x33
+ 1468 0402 1E040000 		.4byte	0x41e
+ 1469 0406 17       		.byte	0x17
+ 1470 0407 05       		.byte	0x5
+ 1471 0408 00       		.byte	0
+ 1472 0409 01       		.byte	0x1
+ 1473 040a 02       		.byte	0x2
+ 1474 040b 03       		.byte	0x3
+ 1475 040c 04       		.byte	0x4
+ 1476 040d 02       		.byte	0x2
+ 1477 040e 00       		.byte	0
+ 1478 040f 04       		.byte	0x4
+ 1479 0410 01       		.byte	0x1
+ 1480 0411 01       		.byte	0x1
+ 1481 0412 02       		.byte	0x2
+ 1482 0413 02       		.byte	0x2
+ 1483 0414 03       		.byte	0x3
+ 1484 0415 01       		.byte	0x1
+ 1485 0416 04       		.byte	0x4
+ 1486 0417 02       		.byte	0x2
+ 1487 0418 00       		.byte	0
+ 1488 0419 04       		.byte	0x4
+ 1489 041a 03       		.byte	0x3
+ 1490 041b 01       		.byte	0x1
+ 1491 041c 02       		.byte	0x2
+ 1492 041d 03       		.byte	0x3
+ 1493 041e 16       		.uleb128 0x16
+ 1494 041f EB030000 		.4byte	0x3eb
+ 1495 0423 14       		.uleb128 0x14
+ 1496 0424 87030000 		.4byte	0x387
+ 1497 0428 33040000 		.4byte	0x433
+ 1498 042c 15       		.uleb128 0x15
+ 1499 042d DF000000 		.4byte	0xdf
+ 1500 0431 14       		.byte	0x14
+ 1501 0432 00       		.byte	0
+ 1502 0433 17       		.uleb128 0x17
+ 1503 0434 C3010000 		.4byte	.LASF38
+ 1504 0438 04       		.byte	0x4
+ 1505 0439 45       		.byte	0x45
+ 1506 043a 54040000 		.4byte	0x454
+ 1507 043e 15       		.byte	0x15
+ 1508 043f 03       		.byte	0x3
+ 1509 0440 01       		.byte	0x1
+ 1510 0441 02       		.byte	0x2
+ 1511 0442 03       		.byte	0x3
+ 1512 0443 02       		.byte	0x2
+ 1513 0444 00       		.byte	0
+ 1514 0445 04       		.byte	0x4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 36
+
+
+ 1515 0446 01       		.byte	0x1
+ 1516 0447 04       		.byte	0x4
+ 1517 0448 02       		.byte	0x2
+ 1518 0449 02       		.byte	0x2
+ 1519 044a 03       		.byte	0x3
+ 1520 044b 01       		.byte	0x1
+ 1521 044c 04       		.byte	0x4
+ 1522 044d 02       		.byte	0x2
+ 1523 044e 00       		.byte	0
+ 1524 044f 04       		.byte	0x4
+ 1525 0450 03       		.byte	0x3
+ 1526 0451 01       		.byte	0x1
+ 1527 0452 02       		.byte	0x2
+ 1528 0453 03       		.byte	0x3
+ 1529 0454 16       		.uleb128 0x16
+ 1530 0455 23040000 		.4byte	0x423
+ 1531 0459 14       		.uleb128 0x14
+ 1532 045a 87030000 		.4byte	0x387
+ 1533 045e 69040000 		.4byte	0x469
+ 1534 0462 15       		.uleb128 0x15
+ 1535 0463 DF000000 		.4byte	0xdf
+ 1536 0467 15       		.byte	0x15
+ 1537 0468 00       		.byte	0
+ 1538 0469 17       		.uleb128 0x17
+ 1539 046a CA010000 		.4byte	.LASF39
+ 1540 046e 04       		.byte	0x4
+ 1541 046f 57       		.byte	0x57
+ 1542 0470 8B040000 		.4byte	0x48b
+ 1543 0474 16       		.byte	0x16
+ 1544 0475 01       		.byte	0x1
+ 1545 0476 04       		.byte	0x4
+ 1546 0477 01       		.byte	0x1
+ 1547 0478 04       		.byte	0x4
+ 1548 0479 05       		.byte	0x5
+ 1549 047a 00       		.byte	0
+ 1550 047b 01       		.byte	0x1
+ 1551 047c 02       		.byte	0x2
+ 1552 047d 03       		.byte	0x3
+ 1553 047e 04       		.byte	0x4
+ 1554 047f 02       		.byte	0x2
+ 1555 0480 00       		.byte	0
+ 1556 0481 04       		.byte	0x4
+ 1557 0482 02       		.byte	0x2
+ 1558 0483 01       		.byte	0x1
+ 1559 0484 04       		.byte	0x4
+ 1560 0485 02       		.byte	0x2
+ 1561 0486 02       		.byte	0x2
+ 1562 0487 04       		.byte	0x4
+ 1563 0488 02       		.byte	0x2
+ 1564 0489 03       		.byte	0x3
+ 1565 048a 04       		.byte	0x4
+ 1566 048b 16       		.uleb128 0x16
+ 1567 048c 59040000 		.4byte	0x459
+ 1568 0490 14       		.uleb128 0x14
+ 1569 0491 87030000 		.4byte	0x387
+ 1570 0495 A0040000 		.4byte	0x4a0
+ 1571 0499 15       		.uleb128 0x15
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 37
+
+
+ 1572 049a DF000000 		.4byte	0xdf
+ 1573 049e 17       		.byte	0x17
+ 1574 049f 00       		.byte	0
+ 1575 04a0 17       		.uleb128 0x17
+ 1576 04a1 D1010000 		.4byte	.LASF40
+ 1577 04a5 04       		.byte	0x4
+ 1578 04a6 69       		.byte	0x69
+ 1579 04a7 C4040000 		.4byte	0x4c4
+ 1580 04ab 18       		.byte	0x18
+ 1581 04ac 03       		.byte	0x3
+ 1582 04ad 01       		.byte	0x1
+ 1583 04ae 02       		.byte	0x2
+ 1584 04af 03       		.byte	0x3
+ 1585 04b0 02       		.byte	0x2
+ 1586 04b1 00       		.byte	0
+ 1587 04b2 04       		.byte	0x4
+ 1588 04b3 01       		.byte	0x1
+ 1589 04b4 04       		.byte	0x4
+ 1590 04b5 01       		.byte	0x1
+ 1591 04b6 04       		.byte	0x4
+ 1592 04b7 04       		.byte	0x4
+ 1593 04b8 00       		.byte	0
+ 1594 04b9 01       		.byte	0x1
+ 1595 04ba 02       		.byte	0x2
+ 1596 04bb 03       		.byte	0x3
+ 1597 04bc 01       		.byte	0x1
+ 1598 04bd 00       		.byte	0
+ 1599 04be 05       		.byte	0x5
+ 1600 04bf 00       		.byte	0
+ 1601 04c0 01       		.byte	0x1
+ 1602 04c1 02       		.byte	0x2
+ 1603 04c2 03       		.byte	0x3
+ 1604 04c3 04       		.byte	0x4
+ 1605 04c4 16       		.uleb128 0x16
+ 1606 04c5 90040000 		.4byte	0x490
+ 1607 04c9 17       		.uleb128 0x17
+ 1608 04ca D8010000 		.4byte	.LASF41
+ 1609 04ce 04       		.byte	0x4
+ 1610 04cf 7B       		.byte	0x7b
+ 1611 04d0 EB040000 		.4byte	0x4eb
+ 1612 04d4 16       		.byte	0x16
+ 1613 04d5 03       		.byte	0x3
+ 1614 04d6 01       		.byte	0x1
+ 1615 04d7 02       		.byte	0x2
+ 1616 04d8 03       		.byte	0x3
+ 1617 04d9 02       		.byte	0x2
+ 1618 04da 00       		.byte	0
+ 1619 04db 04       		.byte	0x4
+ 1620 04dc 02       		.byte	0x2
+ 1621 04dd 00       		.byte	0
+ 1622 04de 04       		.byte	0x4
+ 1623 04df 04       		.byte	0x4
+ 1624 04e0 00       		.byte	0
+ 1625 04e1 01       		.byte	0x1
+ 1626 04e2 02       		.byte	0x2
+ 1627 04e3 03       		.byte	0x3
+ 1628 04e4 01       		.byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 38
+
+
+ 1629 04e5 00       		.byte	0
+ 1630 04e6 01       		.byte	0x1
+ 1631 04e7 01       		.byte	0x1
+ 1632 04e8 02       		.byte	0x2
+ 1633 04e9 02       		.byte	0x2
+ 1634 04ea 03       		.byte	0x3
+ 1635 04eb 16       		.uleb128 0x16
+ 1636 04ec 59040000 		.4byte	0x459
+ 1637 04f0 17       		.uleb128 0x17
+ 1638 04f1 DF010000 		.4byte	.LASF42
+ 1639 04f5 04       		.byte	0x4
+ 1640 04f6 8D       		.byte	0x8d
+ 1641 04f7 0F050000 		.4byte	0x50f
+ 1642 04fb 13       		.byte	0x13
+ 1643 04fc 01       		.byte	0x1
+ 1644 04fd 02       		.byte	0x2
+ 1645 04fe 01       		.byte	0x1
+ 1646 04ff 02       		.byte	0x2
+ 1647 0500 01       		.byte	0x1
+ 1648 0501 02       		.byte	0x2
+ 1649 0502 01       		.byte	0x1
+ 1650 0503 03       		.byte	0x3
+ 1651 0504 01       		.byte	0x1
+ 1652 0505 04       		.byte	0x4
+ 1653 0506 02       		.byte	0x2
+ 1654 0507 00       		.byte	0
+ 1655 0508 04       		.byte	0x4
+ 1656 0509 05       		.byte	0x5
+ 1657 050a 00       		.byte	0
+ 1658 050b 01       		.byte	0x1
+ 1659 050c 02       		.byte	0x2
+ 1660 050d 03       		.byte	0x3
+ 1661 050e 04       		.byte	0x4
+ 1662 050f 16       		.uleb128 0x16
+ 1663 0510 B7030000 		.4byte	0x3b7
+ 1664 0514 17       		.uleb128 0x17
+ 1665 0515 E6010000 		.4byte	.LASF43
+ 1666 0519 04       		.byte	0x4
+ 1667 051a 9F       		.byte	0x9f
+ 1668 051b 38050000 		.4byte	0x538
+ 1669 051f 18       		.byte	0x18
+ 1670 0520 03       		.byte	0x3
+ 1671 0521 01       		.byte	0x1
+ 1672 0522 02       		.byte	0x2
+ 1673 0523 03       		.byte	0x3
+ 1674 0524 02       		.byte	0x2
+ 1675 0525 00       		.byte	0
+ 1676 0526 04       		.byte	0x4
+ 1677 0527 02       		.byte	0x2
+ 1678 0528 00       		.byte	0
+ 1679 0529 04       		.byte	0x4
+ 1680 052a 03       		.byte	0x3
+ 1681 052b 01       		.byte	0x1
+ 1682 052c 02       		.byte	0x2
+ 1683 052d 03       		.byte	0x3
+ 1684 052e 02       		.byte	0x2
+ 1685 052f 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 39
+
+
+ 1686 0530 04       		.byte	0x4
+ 1687 0531 02       		.byte	0x2
+ 1688 0532 00       		.byte	0
+ 1689 0533 04       		.byte	0x4
+ 1690 0534 03       		.byte	0x3
+ 1691 0535 01       		.byte	0x1
+ 1692 0536 02       		.byte	0x2
+ 1693 0537 03       		.byte	0x3
+ 1694 0538 16       		.uleb128 0x16
+ 1695 0539 90040000 		.4byte	0x490
+ 1696 053d 17       		.uleb128 0x17
+ 1697 053e ED010000 		.4byte	.LASF44
+ 1698 0542 04       		.byte	0x4
+ 1699 0543 B1       		.byte	0xb1
+ 1700 0544 5F050000 		.4byte	0x55f
+ 1701 0548 16       		.byte	0x16
+ 1702 0549 02       		.byte	0x2
+ 1703 054a 01       		.byte	0x1
+ 1704 054b 02       		.byte	0x2
+ 1705 054c 01       		.byte	0x1
+ 1706 054d 03       		.byte	0x3
+ 1707 054e 01       		.byte	0x1
+ 1708 054f 04       		.byte	0x4
+ 1709 0550 04       		.byte	0x4
+ 1710 0551 01       		.byte	0x1
+ 1711 0552 02       		.byte	0x2
+ 1712 0553 03       		.byte	0x3
+ 1713 0554 04       		.byte	0x4
+ 1714 0555 02       		.byte	0x2
+ 1715 0556 00       		.byte	0
+ 1716 0557 04       		.byte	0x4
+ 1717 0558 02       		.byte	0x2
+ 1718 0559 00       		.byte	0
+ 1719 055a 04       		.byte	0x4
+ 1720 055b 03       		.byte	0x3
+ 1721 055c 01       		.byte	0x1
+ 1722 055d 02       		.byte	0x2
+ 1723 055e 03       		.byte	0x3
+ 1724 055f 16       		.uleb128 0x16
+ 1725 0560 59040000 		.4byte	0x459
+ 1726 0564 14       		.uleb128 0x14
+ 1727 0565 87030000 		.4byte	0x387
+ 1728 0569 74050000 		.4byte	0x574
+ 1729 056d 15       		.uleb128 0x15
+ 1730 056e DF000000 		.4byte	0xdf
+ 1731 0572 07       		.byte	0x7
+ 1732 0573 00       		.byte	0
+ 1733 0574 17       		.uleb128 0x17
+ 1734 0575 59020000 		.4byte	.LASF45
+ 1735 0579 04       		.byte	0x4
+ 1736 057a C3       		.byte	0xc3
+ 1737 057b 88050000 		.4byte	0x588
+ 1738 057f 08       		.byte	0x8
+ 1739 0580 01       		.byte	0x1
+ 1740 0581 02       		.byte	0x2
+ 1741 0582 00       		.byte	0
+ 1742 0583 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 40
+
+
+ 1743 0584 00       		.byte	0
+ 1744 0585 00       		.byte	0
+ 1745 0586 00       		.byte	0
+ 1746 0587 00       		.byte	0
+ 1747 0588 16       		.uleb128 0x16
+ 1748 0589 64050000 		.4byte	0x564
+ 1749 058d 17       		.uleb128 0x17
+ 1750 058e 80020000 		.4byte	.LASF46
+ 1751 0592 04       		.byte	0x4
+ 1752 0593 D4       		.byte	0xd4
+ 1753 0594 AE050000 		.4byte	0x5ae
+ 1754 0598 15       		.byte	0x15
+ 1755 0599 04       		.byte	0x4
+ 1756 059a 01       		.byte	0x1
+ 1757 059b 02       		.byte	0x2
+ 1758 059c 03       		.byte	0x3
+ 1759 059d 04       		.byte	0x4
+ 1760 059e 01       		.byte	0x1
+ 1761 059f 00       		.byte	0
+ 1762 05a0 04       		.byte	0x4
+ 1763 05a1 04       		.byte	0x4
+ 1764 05a2 01       		.byte	0x1
+ 1765 05a3 02       		.byte	0x2
+ 1766 05a4 03       		.byte	0x3
+ 1767 05a5 04       		.byte	0x4
+ 1768 05a6 01       		.byte	0x1
+ 1769 05a7 04       		.byte	0x4
+ 1770 05a8 03       		.byte	0x3
+ 1771 05a9 02       		.byte	0x2
+ 1772 05aa 03       		.byte	0x3
+ 1773 05ab 04       		.byte	0x4
+ 1774 05ac 00       		.byte	0
+ 1775 05ad 00       		.byte	0
+ 1776 05ae 16       		.uleb128 0x16
+ 1777 05af 23040000 		.4byte	0x423
+ 1778 05b3 17       		.uleb128 0x17
+ 1779 05b4 87020000 		.4byte	.LASF47
+ 1780 05b8 04       		.byte	0x4
+ 1781 05b9 E5       		.byte	0xe5
+ 1782 05ba D6050000 		.4byte	0x5d6
+ 1783 05be 17       		.byte	0x17
+ 1784 05bf 04       		.byte	0x4
+ 1785 05c0 00       		.byte	0
+ 1786 05c1 01       		.byte	0x1
+ 1787 05c2 02       		.byte	0x2
+ 1788 05c3 03       		.byte	0x3
+ 1789 05c4 02       		.byte	0x2
+ 1790 05c5 00       		.byte	0
+ 1791 05c6 04       		.byte	0x4
+ 1792 05c7 02       		.byte	0x2
+ 1793 05c8 00       		.byte	0
+ 1794 05c9 04       		.byte	0x4
+ 1795 05ca 03       		.byte	0x3
+ 1796 05cb 00       		.byte	0
+ 1797 05cc 01       		.byte	0x1
+ 1798 05cd 04       		.byte	0x4
+ 1799 05ce 03       		.byte	0x3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 41
+
+
+ 1800 05cf 00       		.byte	0
+ 1801 05d0 02       		.byte	0x2
+ 1802 05d1 03       		.byte	0x3
+ 1803 05d2 01       		.byte	0x1
+ 1804 05d3 00       		.byte	0
+ 1805 05d4 01       		.byte	0x1
+ 1806 05d5 00       		.byte	0
+ 1807 05d6 16       		.uleb128 0x16
+ 1808 05d7 EB030000 		.4byte	0x3eb
+ 1809 05db 14       		.uleb128 0x14
+ 1810 05dc 87030000 		.4byte	0x387
+ 1811 05e0 EB050000 		.4byte	0x5eb
+ 1812 05e4 15       		.uleb128 0x15
+ 1813 05e5 DF000000 		.4byte	0xdf
+ 1814 05e9 11       		.byte	0x11
+ 1815 05ea 00       		.byte	0
+ 1816 05eb 17       		.uleb128 0x17
+ 1817 05ec 8E020000 		.4byte	.LASF48
+ 1818 05f0 04       		.byte	0x4
+ 1819 05f1 F7       		.byte	0xf7
+ 1820 05f2 09060000 		.4byte	0x609
+ 1821 05f6 12       		.byte	0x12
+ 1822 05f7 03       		.byte	0x3
+ 1823 05f8 01       		.byte	0x1
+ 1824 05f9 02       		.byte	0x2
+ 1825 05fa 03       		.byte	0x3
+ 1826 05fb 02       		.byte	0x2
+ 1827 05fc 00       		.byte	0
+ 1828 05fd 04       		.byte	0x4
+ 1829 05fe 01       		.byte	0x1
+ 1830 05ff 00       		.byte	0
+ 1831 0600 02       		.byte	0x2
+ 1832 0601 00       		.byte	0
+ 1833 0602 04       		.byte	0x4
+ 1834 0603 03       		.byte	0x3
+ 1835 0604 01       		.byte	0x1
+ 1836 0605 02       		.byte	0x2
+ 1837 0606 03       		.byte	0x3
+ 1838 0607 00       		.byte	0
+ 1839 0608 00       		.byte	0
+ 1840 0609 16       		.uleb128 0x16
+ 1841 060a DB050000 		.4byte	0x5db
+ 1842 060e 18       		.uleb128 0x18
+ 1843 060f 95020000 		.4byte	.LASF49
+ 1844 0613 04       		.byte	0x4
+ 1845 0614 0801     		.2byte	0x108
+ 1846 0616 32060000 		.4byte	0x632
+ 1847 061a 17       		.byte	0x17
+ 1848 061b 04       		.byte	0x4
+ 1849 061c 01       		.byte	0x1
+ 1850 061d 02       		.byte	0x2
+ 1851 061e 03       		.byte	0x3
+ 1852 061f 04       		.byte	0x4
+ 1853 0620 02       		.byte	0x2
+ 1854 0621 00       		.byte	0
+ 1855 0622 04       		.byte	0x4
+ 1856 0623 02       		.byte	0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 42
+
+
+ 1857 0624 00       		.byte	0
+ 1858 0625 04       		.byte	0x4
+ 1859 0626 03       		.byte	0x3
+ 1860 0627 00       		.byte	0
+ 1861 0628 03       		.byte	0x3
+ 1862 0629 04       		.byte	0x4
+ 1863 062a 03       		.byte	0x3
+ 1864 062b 01       		.byte	0x1
+ 1865 062c 02       		.byte	0x2
+ 1866 062d 04       		.byte	0x4
+ 1867 062e 01       		.byte	0x1
+ 1868 062f 04       		.byte	0x4
+ 1869 0630 01       		.byte	0x1
+ 1870 0631 04       		.byte	0x4
+ 1871 0632 16       		.uleb128 0x16
+ 1872 0633 EB030000 		.4byte	0x3eb
+ 1873 0637 18       		.uleb128 0x18
+ 1874 0638 9C020000 		.4byte	.LASF50
+ 1875 063c 04       		.byte	0x4
+ 1876 063d 1A01     		.2byte	0x11a
+ 1877 063f 5A060000 		.4byte	0x65a
+ 1878 0643 16       		.byte	0x16
+ 1879 0644 04       		.byte	0x4
+ 1880 0645 01       		.byte	0x1
+ 1881 0646 02       		.byte	0x2
+ 1882 0647 03       		.byte	0x3
+ 1883 0648 04       		.byte	0x4
+ 1884 0649 01       		.byte	0x1
+ 1885 064a 00       		.byte	0
+ 1886 064b 05       		.byte	0x5
+ 1887 064c 00       		.byte	0
+ 1888 064d 01       		.byte	0x1
+ 1889 064e 02       		.byte	0x2
+ 1890 064f 03       		.byte	0x3
+ 1891 0650 04       		.byte	0x4
+ 1892 0651 02       		.byte	0x2
+ 1893 0652 00       		.byte	0
+ 1894 0653 04       		.byte	0x4
+ 1895 0654 03       		.byte	0x3
+ 1896 0655 01       		.byte	0x1
+ 1897 0656 02       		.byte	0x2
+ 1898 0657 03       		.byte	0x3
+ 1899 0658 00       		.byte	0
+ 1900 0659 00       		.byte	0
+ 1901 065a 16       		.uleb128 0x16
+ 1902 065b 59040000 		.4byte	0x459
+ 1903 065f 18       		.uleb128 0x18
+ 1904 0660 A3020000 		.4byte	.LASF51
+ 1905 0664 04       		.byte	0x4
+ 1906 0665 2B01     		.2byte	0x12b
+ 1907 0667 7E060000 		.4byte	0x67e
+ 1908 066b 12       		.byte	0x12
+ 1909 066c 01       		.byte	0x1
+ 1910 066d 02       		.byte	0x2
+ 1911 066e 01       		.byte	0x1
+ 1912 066f 02       		.byte	0x2
+ 1913 0670 01       		.byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 43
+
+
+ 1914 0671 02       		.byte	0x2
+ 1915 0672 01       		.byte	0x1
+ 1916 0673 02       		.byte	0x2
+ 1917 0674 04       		.byte	0x4
+ 1918 0675 01       		.byte	0x1
+ 1919 0676 02       		.byte	0x2
+ 1920 0677 03       		.byte	0x3
+ 1921 0678 04       		.byte	0x4
+ 1922 0679 01       		.byte	0x1
+ 1923 067a 02       		.byte	0x2
+ 1924 067b 02       		.byte	0x2
+ 1925 067c 03       		.byte	0x3
+ 1926 067d 04       		.byte	0x4
+ 1927 067e 16       		.uleb128 0x16
+ 1928 067f DB050000 		.4byte	0x5db
+ 1929 0683 18       		.uleb128 0x18
+ 1930 0684 AA020000 		.4byte	.LASF52
+ 1931 0688 04       		.byte	0x4
+ 1932 0689 3F01     		.2byte	0x13f
+ 1933 068b A8060000 		.4byte	0x6a8
+ 1934 068f 18       		.byte	0x18
+ 1935 0690 04       		.byte	0x4
+ 1936 0691 00       		.byte	0
+ 1937 0692 01       		.byte	0x1
+ 1938 0693 02       		.byte	0x2
+ 1939 0694 03       		.byte	0x3
+ 1940 0695 01       		.byte	0x1
+ 1941 0696 04       		.byte	0x4
+ 1942 0697 04       		.byte	0x4
+ 1943 0698 01       		.byte	0x1
+ 1944 0699 02       		.byte	0x2
+ 1945 069a 03       		.byte	0x3
+ 1946 069b 04       		.byte	0x4
+ 1947 069c 02       		.byte	0x2
+ 1948 069d 00       		.byte	0
+ 1949 069e 04       		.byte	0x4
+ 1950 069f 02       		.byte	0x2
+ 1951 06a0 00       		.byte	0
+ 1952 06a1 04       		.byte	0x4
+ 1953 06a2 04       		.byte	0x4
+ 1954 06a3 01       		.byte	0x1
+ 1955 06a4 02       		.byte	0x2
+ 1956 06a5 03       		.byte	0x3
+ 1957 06a6 04       		.byte	0x4
+ 1958 06a7 00       		.byte	0
+ 1959 06a8 16       		.uleb128 0x16
+ 1960 06a9 90040000 		.4byte	0x490
+ 1961 06ad 18       		.uleb128 0x18
+ 1962 06ae B1020000 		.4byte	.LASF53
+ 1963 06b2 04       		.byte	0x4
+ 1964 06b3 5001     		.2byte	0x150
+ 1965 06b5 CF060000 		.4byte	0x6cf
+ 1966 06b9 15       		.byte	0x15
+ 1967 06ba 02       		.byte	0x2
+ 1968 06bb 00       		.byte	0
+ 1969 06bc 04       		.byte	0x4
+ 1970 06bd 02       		.byte	0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 44
+
+
+ 1971 06be 00       		.byte	0
+ 1972 06bf 04       		.byte	0x4
+ 1973 06c0 02       		.byte	0x2
+ 1974 06c1 00       		.byte	0
+ 1975 06c2 04       		.byte	0x4
+ 1976 06c3 03       		.byte	0x3
+ 1977 06c4 00       		.byte	0
+ 1978 06c5 01       		.byte	0x1
+ 1979 06c6 04       		.byte	0x4
+ 1980 06c7 03       		.byte	0x3
+ 1981 06c8 00       		.byte	0
+ 1982 06c9 02       		.byte	0x2
+ 1983 06ca 03       		.byte	0x3
+ 1984 06cb 01       		.byte	0x1
+ 1985 06cc 00       		.byte	0
+ 1986 06cd 01       		.byte	0x1
+ 1987 06ce 00       		.byte	0
+ 1988 06cf 16       		.uleb128 0x16
+ 1989 06d0 23040000 		.4byte	0x423
+ 1990 06d4 14       		.uleb128 0x14
+ 1991 06d5 87030000 		.4byte	0x387
+ 1992 06d9 E4060000 		.4byte	0x6e4
+ 1993 06dd 15       		.uleb128 0x15
+ 1994 06de DF000000 		.4byte	0xdf
+ 1995 06e2 0C       		.byte	0xc
+ 1996 06e3 00       		.byte	0
+ 1997 06e4 18       		.uleb128 0x18
+ 1998 06e5 B8020000 		.4byte	.LASF54
+ 1999 06e9 04       		.byte	0x4
+ 2000 06ea 6201     		.2byte	0x162
+ 2001 06ec FE060000 		.4byte	0x6fe
+ 2002 06f0 0D       		.byte	0xd
+ 2003 06f1 01       		.byte	0x1
+ 2004 06f2 02       		.byte	0x2
+ 2005 06f3 01       		.byte	0x1
+ 2006 06f4 02       		.byte	0x2
+ 2007 06f5 01       		.byte	0x1
+ 2008 06f6 02       		.byte	0x2
+ 2009 06f7 01       		.byte	0x1
+ 2010 06f8 02       		.byte	0x2
+ 2011 06f9 01       		.byte	0x1
+ 2012 06fa 02       		.byte	0x2
+ 2013 06fb 00       		.byte	0
+ 2014 06fc 01       		.byte	0x1
+ 2015 06fd 02       		.byte	0x2
+ 2016 06fe 16       		.uleb128 0x16
+ 2017 06ff D4060000 		.4byte	0x6d4
+ 2018 0703 14       		.uleb128 0x14
+ 2019 0704 87030000 		.4byte	0x387
+ 2020 0708 13070000 		.4byte	0x713
+ 2021 070c 19       		.uleb128 0x19
+ 2022 070d 13070000 		.4byte	0x713
+ 2023 0711 7F       		.sleb128 -1
+ 2024 0712 00       		.byte	0
+ 2025 0713 02       		.uleb128 0x2
+ 2026 0714 04       		.byte	0x4
+ 2027 0715 05       		.byte	0x5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 45
+
+
+ 2028 0716 41000000 		.4byte	.LASF55
+ 2029 071a 1A       		.uleb128 0x1a
+ 2030 071b BF020000 		.4byte	.LASF68
+ 2031 071f 04       		.byte	0x4
+ 2032 0720 7501     		.2byte	0x175
+ 2033 0722 26070000 		.4byte	0x726
+ 2034 0726 16       		.uleb128 0x16
+ 2035 0727 03070000 		.4byte	0x703
+ 2036 072b 14       		.uleb128 0x14
+ 2037 072c 87030000 		.4byte	0x387
+ 2038 0730 3B070000 		.4byte	0x73b
+ 2039 0734 15       		.uleb128 0x15
+ 2040 0735 DF000000 		.4byte	0xdf
+ 2041 0739 1B       		.byte	0x1b
+ 2042 073a 00       		.byte	0
+ 2043 073b 18       		.uleb128 0x18
+ 2044 073c 15020000 		.4byte	.LASF56
+ 2045 0740 04       		.byte	0x4
+ 2046 0741 7C01     		.2byte	0x17c
+ 2047 0743 64070000 		.4byte	0x764
+ 2048 0747 1C       		.byte	0x1c
+ 2049 0748 02       		.byte	0x2
+ 2050 0749 00       		.byte	0
+ 2051 074a 04       		.byte	0x4
+ 2052 074b 02       		.byte	0x2
+ 2053 074c 00       		.byte	0
+ 2054 074d 04       		.byte	0x4
+ 2055 074e 02       		.byte	0x2
+ 2056 074f 00       		.byte	0
+ 2057 0750 04       		.byte	0x4
+ 2058 0751 02       		.byte	0x2
+ 2059 0752 00       		.byte	0
+ 2060 0753 04       		.byte	0x4
+ 2061 0754 02       		.byte	0x2
+ 2062 0755 00       		.byte	0
+ 2063 0756 04       		.byte	0x4
+ 2064 0757 05       		.byte	0x5
+ 2065 0758 00       		.byte	0
+ 2066 0759 01       		.byte	0x1
+ 2067 075a 02       		.byte	0x2
+ 2068 075b 03       		.byte	0x3
+ 2069 075c 04       		.byte	0x4
+ 2070 075d 02       		.byte	0x2
+ 2071 075e 00       		.byte	0
+ 2072 075f 04       		.byte	0x4
+ 2073 0760 03       		.byte	0x3
+ 2074 0761 01       		.byte	0x1
+ 2075 0762 02       		.byte	0x2
+ 2076 0763 03       		.byte	0x3
+ 2077 0764 16       		.uleb128 0x16
+ 2078 0765 2B070000 		.4byte	0x72b
+ 2079 0769 14       		.uleb128 0x14
+ 2080 076a 87030000 		.4byte	0x387
+ 2081 076e 79070000 		.4byte	0x779
+ 2082 0772 15       		.uleb128 0x15
+ 2083 0773 DF000000 		.4byte	0xdf
+ 2084 0777 1A       		.byte	0x1a
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 46
+
+
+ 2085 0778 00       		.byte	0
+ 2086 0779 18       		.uleb128 0x18
+ 2087 077a 1C020000 		.4byte	.LASF57
+ 2088 077e 04       		.byte	0x4
+ 2089 077f 9001     		.2byte	0x190
+ 2090 0781 A1070000 		.4byte	0x7a1
+ 2091 0785 1B       		.byte	0x1b
+ 2092 0786 04       		.byte	0x4
+ 2093 0787 00       		.byte	0
+ 2094 0788 01       		.byte	0x1
+ 2095 0789 02       		.byte	0x2
+ 2096 078a 03       		.byte	0x3
+ 2097 078b 02       		.byte	0x2
+ 2098 078c 00       		.byte	0
+ 2099 078d 04       		.byte	0x4
+ 2100 078e 02       		.byte	0x2
+ 2101 078f 00       		.byte	0
+ 2102 0790 04       		.byte	0x4
+ 2103 0791 02       		.byte	0x2
+ 2104 0792 00       		.byte	0
+ 2105 0793 04       		.byte	0x4
+ 2106 0794 04       		.byte	0x4
+ 2107 0795 00       		.byte	0
+ 2108 0796 01       		.byte	0x1
+ 2109 0797 02       		.byte	0x2
+ 2110 0798 03       		.byte	0x3
+ 2111 0799 02       		.byte	0x2
+ 2112 079a 00       		.byte	0
+ 2113 079b 04       		.byte	0x4
+ 2114 079c 04       		.byte	0x4
+ 2115 079d 00       		.byte	0
+ 2116 079e 01       		.byte	0x1
+ 2117 079f 02       		.byte	0x2
+ 2118 07a0 03       		.byte	0x3
+ 2119 07a1 16       		.uleb128 0x16
+ 2120 07a2 69070000 		.4byte	0x769
+ 2121 07a6 14       		.uleb128 0x14
+ 2122 07a7 87030000 		.4byte	0x387
+ 2123 07ab B6070000 		.4byte	0x7b6
+ 2124 07af 15       		.uleb128 0x15
+ 2125 07b0 DF000000 		.4byte	0xdf
+ 2126 07b4 13       		.byte	0x13
+ 2127 07b5 00       		.byte	0
+ 2128 07b6 18       		.uleb128 0x18
+ 2129 07b7 23020000 		.4byte	.LASF58
+ 2130 07bb 04       		.byte	0x4
+ 2131 07bc A201     		.2byte	0x1a2
+ 2132 07be D7070000 		.4byte	0x7d7
+ 2133 07c2 14       		.byte	0x14
+ 2134 07c3 03       		.byte	0x3
+ 2135 07c4 01       		.byte	0x1
+ 2136 07c5 02       		.byte	0x2
+ 2137 07c6 03       		.byte	0x3
+ 2138 07c7 02       		.byte	0x2
+ 2139 07c8 00       		.byte	0
+ 2140 07c9 04       		.byte	0x4
+ 2141 07ca 01       		.byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 47
+
+
+ 2142 07cb 00       		.byte	0
+ 2143 07cc 01       		.byte	0x1
+ 2144 07cd 00       		.byte	0
+ 2145 07ce 01       		.byte	0x1
+ 2146 07cf 00       		.byte	0
+ 2147 07d0 02       		.byte	0x2
+ 2148 07d1 00       		.byte	0
+ 2149 07d2 04       		.byte	0x4
+ 2150 07d3 03       		.byte	0x3
+ 2151 07d4 01       		.byte	0x1
+ 2152 07d5 02       		.byte	0x2
+ 2153 07d6 03       		.byte	0x3
+ 2154 07d7 16       		.uleb128 0x16
+ 2155 07d8 A6070000 		.4byte	0x7a6
+ 2156 07dc 14       		.uleb128 0x14
+ 2157 07dd 87030000 		.4byte	0x387
+ 2158 07e1 EC070000 		.4byte	0x7ec
+ 2159 07e5 15       		.uleb128 0x15
+ 2160 07e6 DF000000 		.4byte	0xdf
+ 2161 07ea 18       		.byte	0x18
+ 2162 07eb 00       		.byte	0
+ 2163 07ec 18       		.uleb128 0x18
+ 2164 07ed 2A020000 		.4byte	.LASF59
+ 2165 07f1 04       		.byte	0x4
+ 2166 07f2 B401     		.2byte	0x1b4
+ 2167 07f4 12080000 		.4byte	0x812
+ 2168 07f8 19       		.byte	0x19
+ 2169 07f9 04       		.byte	0x4
+ 2170 07fa 00       		.byte	0
+ 2171 07fb 01       		.byte	0x1
+ 2172 07fc 02       		.byte	0x2
+ 2173 07fd 03       		.byte	0x3
+ 2174 07fe 02       		.byte	0x2
+ 2175 07ff 00       		.byte	0
+ 2176 0800 04       		.byte	0x4
+ 2177 0801 02       		.byte	0x2
+ 2178 0802 00       		.byte	0
+ 2179 0803 04       		.byte	0x4
+ 2180 0804 02       		.byte	0x2
+ 2181 0805 00       		.byte	0
+ 2182 0806 04       		.byte	0x4
+ 2183 0807 02       		.byte	0x2
+ 2184 0808 00       		.byte	0
+ 2185 0809 04       		.byte	0x4
+ 2186 080a 02       		.byte	0x2
+ 2187 080b 00       		.byte	0
+ 2188 080c 04       		.byte	0x4
+ 2189 080d 04       		.byte	0x4
+ 2190 080e 00       		.byte	0
+ 2191 080f 01       		.byte	0x1
+ 2192 0810 02       		.byte	0x2
+ 2193 0811 03       		.byte	0x3
+ 2194 0812 16       		.uleb128 0x16
+ 2195 0813 DC070000 		.4byte	0x7dc
+ 2196 0817 18       		.uleb128 0x18
+ 2197 0818 31020000 		.4byte	.LASF60
+ 2198 081c 04       		.byte	0x4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 48
+
+
+ 2199 081d C701     		.2byte	0x1c7
+ 2200 081f 3D080000 		.4byte	0x83d
+ 2201 0823 19       		.byte	0x19
+ 2202 0824 05       		.byte	0x5
+ 2203 0825 00       		.byte	0
+ 2204 0826 01       		.byte	0x1
+ 2205 0827 02       		.byte	0x2
+ 2206 0828 03       		.byte	0x3
+ 2207 0829 04       		.byte	0x4
+ 2208 082a 01       		.byte	0x1
+ 2209 082b 00       		.byte	0
+ 2210 082c 01       		.byte	0x1
+ 2211 082d 00       		.byte	0
+ 2212 082e 04       		.byte	0x4
+ 2213 082f 00       		.byte	0
+ 2214 0830 01       		.byte	0x1
+ 2215 0831 02       		.byte	0x2
+ 2216 0832 03       		.byte	0x3
+ 2217 0833 01       		.byte	0x1
+ 2218 0834 00       		.byte	0
+ 2219 0835 01       		.byte	0x1
+ 2220 0836 00       		.byte	0
+ 2221 0837 05       		.byte	0x5
+ 2222 0838 00       		.byte	0
+ 2223 0839 01       		.byte	0x1
+ 2224 083a 02       		.byte	0x2
+ 2225 083b 03       		.byte	0x3
+ 2226 083c 04       		.byte	0x4
+ 2227 083d 16       		.uleb128 0x16
+ 2228 083e DC070000 		.4byte	0x7dc
+ 2229 0842 18       		.uleb128 0x18
+ 2230 0843 38020000 		.4byte	.LASF61
+ 2231 0847 04       		.byte	0x4
+ 2232 0848 D901     		.2byte	0x1d9
+ 2233 084a 63080000 		.4byte	0x863
+ 2234 084e 14       		.byte	0x14
+ 2235 084f 01       		.byte	0x1
+ 2236 0850 00       		.byte	0
+ 2237 0851 01       		.byte	0x1
+ 2238 0852 00       		.byte	0
+ 2239 0853 01       		.byte	0x1
+ 2240 0854 00       		.byte	0
+ 2241 0855 01       		.byte	0x1
+ 2242 0856 00       		.byte	0
+ 2243 0857 03       		.byte	0x3
+ 2244 0858 00       		.byte	0
+ 2245 0859 01       		.byte	0x1
+ 2246 085a 02       		.byte	0x2
+ 2247 085b 01       		.byte	0x1
+ 2248 085c 00       		.byte	0
+ 2249 085d 05       		.byte	0x5
+ 2250 085e 00       		.byte	0
+ 2251 085f 01       		.byte	0x1
+ 2252 0860 02       		.byte	0x2
+ 2253 0861 03       		.byte	0x3
+ 2254 0862 04       		.byte	0x4
+ 2255 0863 16       		.uleb128 0x16
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 49
+
+
+ 2256 0864 A6070000 		.4byte	0x7a6
+ 2257 0868 18       		.uleb128 0x18
+ 2258 0869 3F020000 		.4byte	.LASF62
+ 2259 086d 04       		.byte	0x4
+ 2260 086e EB01     		.2byte	0x1eb
+ 2261 0870 8D080000 		.4byte	0x88d
+ 2262 0874 18       		.byte	0x18
+ 2263 0875 03       		.byte	0x3
+ 2264 0876 01       		.byte	0x1
+ 2265 0877 02       		.byte	0x2
+ 2266 0878 03       		.byte	0x3
+ 2267 0879 02       		.byte	0x2
+ 2268 087a 00       		.byte	0
+ 2269 087b 04       		.byte	0x4
+ 2270 087c 02       		.byte	0x2
+ 2271 087d 00       		.byte	0
+ 2272 087e 04       		.byte	0x4
+ 2273 087f 02       		.byte	0x2
+ 2274 0880 00       		.byte	0
+ 2275 0881 04       		.byte	0x4
+ 2276 0882 03       		.byte	0x3
+ 2277 0883 00       		.byte	0
+ 2278 0884 03       		.byte	0x3
+ 2279 0885 04       		.byte	0x4
+ 2280 0886 01       		.byte	0x1
+ 2281 0887 00       		.byte	0
+ 2282 0888 04       		.byte	0x4
+ 2283 0889 01       		.byte	0x1
+ 2284 088a 02       		.byte	0x2
+ 2285 088b 03       		.byte	0x3
+ 2286 088c 04       		.byte	0x4
+ 2287 088d 16       		.uleb128 0x16
+ 2288 088e 90040000 		.4byte	0x490
+ 2289 0892 14       		.uleb128 0x14
+ 2290 0893 87030000 		.4byte	0x387
+ 2291 0897 A3080000 		.4byte	0x8a3
+ 2292 089b 1B       		.uleb128 0x1b
+ 2293 089c DF000000 		.4byte	0xdf
+ 2294 08a0 F301     		.2byte	0x1f3
+ 2295 08a2 00       		.byte	0
+ 2296 08a3 1C       		.uleb128 0x1c
+ 2297 08a4 11000000 		.4byte	.LASF63
+ 2298 08a8 01       		.byte	0x1
+ 2299 08a9 12       		.byte	0x12
+ 2300 08aa B4080000 		.4byte	0x8b4
+ 2301 08ae 05       		.uleb128 0x5
+ 2302 08af 03       		.byte	0x3
+ 2303 08b0 00000000 		.4byte	font
+ 2304 08b4 16       		.uleb128 0x16
+ 2305 08b5 92080000 		.4byte	0x892
+ 2306 08b9 1D       		.uleb128 0x1d
+ 2307 08ba CD020000 		.4byte	.LASF69
+ 2308 08be 05       		.byte	0x5
+ 2309 08bf 1207     		.2byte	0x712
+ 2310 08c1 C5080000 		.4byte	0x8c5
+ 2311 08c5 1E       		.uleb128 0x1e
+ 2312 08c6 B8000000 		.4byte	0xb8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 50
+
+
+ 2313 08ca 1F       		.uleb128 0x1f
+ 2314 08cb F4010000 		.4byte	.LASF67
+ 2315 08cf F4010000 		.4byte	.LASF67
+ 2316 08d3 01       		.byte	0x1
+ 2317 08d4 B601     		.2byte	0x1b6
+ 2318 08d6 00       		.byte	0
+ 2319              		.section	.debug_abbrev,"",%progbits
+ 2320              	.Ldebug_abbrev0:
+ 2321 0000 01       		.uleb128 0x1
+ 2322 0001 11       		.uleb128 0x11
+ 2323 0002 01       		.byte	0x1
+ 2324 0003 25       		.uleb128 0x25
+ 2325 0004 0E       		.uleb128 0xe
+ 2326 0005 13       		.uleb128 0x13
+ 2327 0006 0B       		.uleb128 0xb
+ 2328 0007 03       		.uleb128 0x3
+ 2329 0008 0E       		.uleb128 0xe
+ 2330 0009 1B       		.uleb128 0x1b
+ 2331 000a 0E       		.uleb128 0xe
+ 2332 000b 55       		.uleb128 0x55
+ 2333 000c 17       		.uleb128 0x17
+ 2334 000d 11       		.uleb128 0x11
+ 2335 000e 01       		.uleb128 0x1
+ 2336 000f 10       		.uleb128 0x10
+ 2337 0010 17       		.uleb128 0x17
+ 2338 0011 00       		.byte	0
+ 2339 0012 00       		.byte	0
+ 2340 0013 02       		.uleb128 0x2
+ 2341 0014 24       		.uleb128 0x24
+ 2342 0015 00       		.byte	0
+ 2343 0016 0B       		.uleb128 0xb
+ 2344 0017 0B       		.uleb128 0xb
+ 2345 0018 3E       		.uleb128 0x3e
+ 2346 0019 0B       		.uleb128 0xb
+ 2347 001a 03       		.uleb128 0x3
+ 2348 001b 0E       		.uleb128 0xe
+ 2349 001c 00       		.byte	0
+ 2350 001d 00       		.byte	0
+ 2351 001e 03       		.uleb128 0x3
+ 2352 001f 16       		.uleb128 0x16
+ 2353 0020 00       		.byte	0
+ 2354 0021 03       		.uleb128 0x3
+ 2355 0022 0E       		.uleb128 0xe
+ 2356 0023 3A       		.uleb128 0x3a
+ 2357 0024 0B       		.uleb128 0xb
+ 2358 0025 3B       		.uleb128 0x3b
+ 2359 0026 0B       		.uleb128 0xb
+ 2360 0027 49       		.uleb128 0x49
+ 2361 0028 13       		.uleb128 0x13
+ 2362 0029 00       		.byte	0
+ 2363 002a 00       		.byte	0
+ 2364 002b 04       		.uleb128 0x4
+ 2365 002c 24       		.uleb128 0x24
+ 2366 002d 00       		.byte	0
+ 2367 002e 0B       		.uleb128 0xb
+ 2368 002f 0B       		.uleb128 0xb
+ 2369 0030 3E       		.uleb128 0x3e
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 51
+
+
+ 2370 0031 0B       		.uleb128 0xb
+ 2371 0032 03       		.uleb128 0x3
+ 2372 0033 08       		.uleb128 0x8
+ 2373 0034 00       		.byte	0
+ 2374 0035 00       		.byte	0
+ 2375 0036 05       		.uleb128 0x5
+ 2376 0037 2E       		.uleb128 0x2e
+ 2377 0038 01       		.byte	0x1
+ 2378 0039 3F       		.uleb128 0x3f
+ 2379 003a 19       		.uleb128 0x19
+ 2380 003b 03       		.uleb128 0x3
+ 2381 003c 0E       		.uleb128 0xe
+ 2382 003d 3A       		.uleb128 0x3a
+ 2383 003e 0B       		.uleb128 0xb
+ 2384 003f 3B       		.uleb128 0x3b
+ 2385 0040 05       		.uleb128 0x5
+ 2386 0041 27       		.uleb128 0x27
+ 2387 0042 19       		.uleb128 0x19
+ 2388 0043 11       		.uleb128 0x11
+ 2389 0044 01       		.uleb128 0x1
+ 2390 0045 12       		.uleb128 0x12
+ 2391 0046 06       		.uleb128 0x6
+ 2392 0047 40       		.uleb128 0x40
+ 2393 0048 18       		.uleb128 0x18
+ 2394 0049 9742     		.uleb128 0x2117
+ 2395 004b 19       		.uleb128 0x19
+ 2396 004c 01       		.uleb128 0x1
+ 2397 004d 13       		.uleb128 0x13
+ 2398 004e 00       		.byte	0
+ 2399 004f 00       		.byte	0
+ 2400 0050 06       		.uleb128 0x6
+ 2401 0051 05       		.uleb128 0x5
+ 2402 0052 00       		.byte	0
+ 2403 0053 03       		.uleb128 0x3
+ 2404 0054 08       		.uleb128 0x8
+ 2405 0055 3A       		.uleb128 0x3a
+ 2406 0056 0B       		.uleb128 0xb
+ 2407 0057 3B       		.uleb128 0x3b
+ 2408 0058 05       		.uleb128 0x5
+ 2409 0059 49       		.uleb128 0x49
+ 2410 005a 13       		.uleb128 0x13
+ 2411 005b 02       		.uleb128 0x2
+ 2412 005c 17       		.uleb128 0x17
+ 2413 005d 00       		.byte	0
+ 2414 005e 00       		.byte	0
+ 2415 005f 07       		.uleb128 0x7
+ 2416 0060 05       		.uleb128 0x5
+ 2417 0061 00       		.byte	0
+ 2418 0062 03       		.uleb128 0x3
+ 2419 0063 0E       		.uleb128 0xe
+ 2420 0064 3A       		.uleb128 0x3a
+ 2421 0065 0B       		.uleb128 0xb
+ 2422 0066 3B       		.uleb128 0x3b
+ 2423 0067 05       		.uleb128 0x5
+ 2424 0068 49       		.uleb128 0x49
+ 2425 0069 13       		.uleb128 0x13
+ 2426 006a 02       		.uleb128 0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 52
+
+
+ 2427 006b 17       		.uleb128 0x17
+ 2428 006c 00       		.byte	0
+ 2429 006d 00       		.byte	0
+ 2430 006e 08       		.uleb128 0x8
+ 2431 006f 34       		.uleb128 0x34
+ 2432 0070 00       		.byte	0
+ 2433 0071 03       		.uleb128 0x3
+ 2434 0072 0E       		.uleb128 0xe
+ 2435 0073 3A       		.uleb128 0x3a
+ 2436 0074 0B       		.uleb128 0xb
+ 2437 0075 3B       		.uleb128 0x3b
+ 2438 0076 05       		.uleb128 0x5
+ 2439 0077 49       		.uleb128 0x49
+ 2440 0078 13       		.uleb128 0x13
+ 2441 0079 02       		.uleb128 0x2
+ 2442 007a 17       		.uleb128 0x17
+ 2443 007b 00       		.byte	0
+ 2444 007c 00       		.byte	0
+ 2445 007d 09       		.uleb128 0x9
+ 2446 007e 34       		.uleb128 0x34
+ 2447 007f 00       		.byte	0
+ 2448 0080 03       		.uleb128 0x3
+ 2449 0081 0E       		.uleb128 0xe
+ 2450 0082 3A       		.uleb128 0x3a
+ 2451 0083 0B       		.uleb128 0xb
+ 2452 0084 3B       		.uleb128 0x3b
+ 2453 0085 05       		.uleb128 0x5
+ 2454 0086 49       		.uleb128 0x49
+ 2455 0087 13       		.uleb128 0x13
+ 2456 0088 1C       		.uleb128 0x1c
+ 2457 0089 0B       		.uleb128 0xb
+ 2458 008a 00       		.byte	0
+ 2459 008b 00       		.byte	0
+ 2460 008c 0A       		.uleb128 0xa
+ 2461 008d 0B       		.uleb128 0xb
+ 2462 008e 01       		.byte	0x1
+ 2463 008f 55       		.uleb128 0x55
+ 2464 0090 17       		.uleb128 0x17
+ 2465 0091 01       		.uleb128 0x1
+ 2466 0092 13       		.uleb128 0x13
+ 2467 0093 00       		.byte	0
+ 2468 0094 00       		.byte	0
+ 2469 0095 0B       		.uleb128 0xb
+ 2470 0096 34       		.uleb128 0x34
+ 2471 0097 00       		.byte	0
+ 2472 0098 03       		.uleb128 0x3
+ 2473 0099 08       		.uleb128 0x8
+ 2474 009a 3A       		.uleb128 0x3a
+ 2475 009b 0B       		.uleb128 0xb
+ 2476 009c 3B       		.uleb128 0x3b
+ 2477 009d 05       		.uleb128 0x5
+ 2478 009e 49       		.uleb128 0x49
+ 2479 009f 13       		.uleb128 0x13
+ 2480 00a0 02       		.uleb128 0x2
+ 2481 00a1 17       		.uleb128 0x17
+ 2482 00a2 00       		.byte	0
+ 2483 00a3 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 53
+
+
+ 2484 00a4 0C       		.uleb128 0xc
+ 2485 00a5 0B       		.uleb128 0xb
+ 2486 00a6 01       		.byte	0x1
+ 2487 00a7 11       		.uleb128 0x11
+ 2488 00a8 01       		.uleb128 0x1
+ 2489 00a9 12       		.uleb128 0x12
+ 2490 00aa 06       		.uleb128 0x6
+ 2491 00ab 00       		.byte	0
+ 2492 00ac 00       		.byte	0
+ 2493 00ad 0D       		.uleb128 0xd
+ 2494 00ae 0B       		.uleb128 0xb
+ 2495 00af 01       		.byte	0x1
+ 2496 00b0 55       		.uleb128 0x55
+ 2497 00b1 17       		.uleb128 0x17
+ 2498 00b2 00       		.byte	0
+ 2499 00b3 00       		.byte	0
+ 2500 00b4 0E       		.uleb128 0xe
+ 2501 00b5 2E       		.uleb128 0x2e
+ 2502 00b6 01       		.byte	0x1
+ 2503 00b7 3F       		.uleb128 0x3f
+ 2504 00b8 19       		.uleb128 0x19
+ 2505 00b9 03       		.uleb128 0x3
+ 2506 00ba 0E       		.uleb128 0xe
+ 2507 00bb 3A       		.uleb128 0x3a
+ 2508 00bc 0B       		.uleb128 0xb
+ 2509 00bd 3B       		.uleb128 0x3b
+ 2510 00be 05       		.uleb128 0x5
+ 2511 00bf 49       		.uleb128 0x49
+ 2512 00c0 13       		.uleb128 0x13
+ 2513 00c1 3C       		.uleb128 0x3c
+ 2514 00c2 19       		.uleb128 0x19
+ 2515 00c3 01       		.uleb128 0x1
+ 2516 00c4 13       		.uleb128 0x13
+ 2517 00c5 00       		.byte	0
+ 2518 00c6 00       		.byte	0
+ 2519 00c7 0F       		.uleb128 0xf
+ 2520 00c8 18       		.uleb128 0x18
+ 2521 00c9 00       		.byte	0
+ 2522 00ca 00       		.byte	0
+ 2523 00cb 00       		.byte	0
+ 2524 00cc 10       		.uleb128 0x10
+ 2525 00cd 898201   		.uleb128 0x4109
+ 2526 00d0 01       		.byte	0x1
+ 2527 00d1 11       		.uleb128 0x11
+ 2528 00d2 01       		.uleb128 0x1
+ 2529 00d3 31       		.uleb128 0x31
+ 2530 00d4 13       		.uleb128 0x13
+ 2531 00d5 00       		.byte	0
+ 2532 00d6 00       		.byte	0
+ 2533 00d7 11       		.uleb128 0x11
+ 2534 00d8 8A8201   		.uleb128 0x410a
+ 2535 00db 00       		.byte	0
+ 2536 00dc 02       		.uleb128 0x2
+ 2537 00dd 18       		.uleb128 0x18
+ 2538 00de 9142     		.uleb128 0x2111
+ 2539 00e0 18       		.uleb128 0x18
+ 2540 00e1 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 54
+
+
+ 2541 00e2 00       		.byte	0
+ 2542 00e3 12       		.uleb128 0x12
+ 2543 00e4 2E       		.uleb128 0x2e
+ 2544 00e5 01       		.byte	0x1
+ 2545 00e6 3F       		.uleb128 0x3f
+ 2546 00e7 19       		.uleb128 0x19
+ 2547 00e8 03       		.uleb128 0x3
+ 2548 00e9 0E       		.uleb128 0xe
+ 2549 00ea 3A       		.uleb128 0x3a
+ 2550 00eb 0B       		.uleb128 0xb
+ 2551 00ec 3B       		.uleb128 0x3b
+ 2552 00ed 05       		.uleb128 0x5
+ 2553 00ee 27       		.uleb128 0x27
+ 2554 00ef 19       		.uleb128 0x19
+ 2555 00f0 11       		.uleb128 0x11
+ 2556 00f1 01       		.uleb128 0x1
+ 2557 00f2 12       		.uleb128 0x12
+ 2558 00f3 06       		.uleb128 0x6
+ 2559 00f4 40       		.uleb128 0x40
+ 2560 00f5 18       		.uleb128 0x18
+ 2561 00f6 9642     		.uleb128 0x2116
+ 2562 00f8 19       		.uleb128 0x19
+ 2563 00f9 01       		.uleb128 0x1
+ 2564 00fa 13       		.uleb128 0x13
+ 2565 00fb 00       		.byte	0
+ 2566 00fc 00       		.byte	0
+ 2567 00fd 13       		.uleb128 0x13
+ 2568 00fe 898201   		.uleb128 0x4109
+ 2569 0101 01       		.byte	0x1
+ 2570 0102 11       		.uleb128 0x11
+ 2571 0103 01       		.uleb128 0x1
+ 2572 0104 31       		.uleb128 0x31
+ 2573 0105 13       		.uleb128 0x13
+ 2574 0106 01       		.uleb128 0x1
+ 2575 0107 13       		.uleb128 0x13
+ 2576 0108 00       		.byte	0
+ 2577 0109 00       		.byte	0
+ 2578 010a 14       		.uleb128 0x14
+ 2579 010b 01       		.uleb128 0x1
+ 2580 010c 01       		.byte	0x1
+ 2581 010d 49       		.uleb128 0x49
+ 2582 010e 13       		.uleb128 0x13
+ 2583 010f 01       		.uleb128 0x1
+ 2584 0110 13       		.uleb128 0x13
+ 2585 0111 00       		.byte	0
+ 2586 0112 00       		.byte	0
+ 2587 0113 15       		.uleb128 0x15
+ 2588 0114 21       		.uleb128 0x21
+ 2589 0115 00       		.byte	0
+ 2590 0116 49       		.uleb128 0x49
+ 2591 0117 13       		.uleb128 0x13
+ 2592 0118 2F       		.uleb128 0x2f
+ 2593 0119 0B       		.uleb128 0xb
+ 2594 011a 00       		.byte	0
+ 2595 011b 00       		.byte	0
+ 2596 011c 16       		.uleb128 0x16
+ 2597 011d 26       		.uleb128 0x26
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 55
+
+
+ 2598 011e 00       		.byte	0
+ 2599 011f 49       		.uleb128 0x49
+ 2600 0120 13       		.uleb128 0x13
+ 2601 0121 00       		.byte	0
+ 2602 0122 00       		.byte	0
+ 2603 0123 17       		.uleb128 0x17
+ 2604 0124 34       		.uleb128 0x34
+ 2605 0125 00       		.byte	0
+ 2606 0126 03       		.uleb128 0x3
+ 2607 0127 0E       		.uleb128 0xe
+ 2608 0128 3A       		.uleb128 0x3a
+ 2609 0129 0B       		.uleb128 0xb
+ 2610 012a 3B       		.uleb128 0x3b
+ 2611 012b 0B       		.uleb128 0xb
+ 2612 012c 49       		.uleb128 0x49
+ 2613 012d 13       		.uleb128 0x13
+ 2614 012e 1C       		.uleb128 0x1c
+ 2615 012f 0A       		.uleb128 0xa
+ 2616 0130 00       		.byte	0
+ 2617 0131 00       		.byte	0
+ 2618 0132 18       		.uleb128 0x18
+ 2619 0133 34       		.uleb128 0x34
+ 2620 0134 00       		.byte	0
+ 2621 0135 03       		.uleb128 0x3
+ 2622 0136 0E       		.uleb128 0xe
+ 2623 0137 3A       		.uleb128 0x3a
+ 2624 0138 0B       		.uleb128 0xb
+ 2625 0139 3B       		.uleb128 0x3b
+ 2626 013a 05       		.uleb128 0x5
+ 2627 013b 49       		.uleb128 0x49
+ 2628 013c 13       		.uleb128 0x13
+ 2629 013d 1C       		.uleb128 0x1c
+ 2630 013e 0A       		.uleb128 0xa
+ 2631 013f 00       		.byte	0
+ 2632 0140 00       		.byte	0
+ 2633 0141 19       		.uleb128 0x19
+ 2634 0142 21       		.uleb128 0x21
+ 2635 0143 00       		.byte	0
+ 2636 0144 49       		.uleb128 0x49
+ 2637 0145 13       		.uleb128 0x13
+ 2638 0146 2F       		.uleb128 0x2f
+ 2639 0147 0D       		.uleb128 0xd
+ 2640 0148 00       		.byte	0
+ 2641 0149 00       		.byte	0
+ 2642 014a 1A       		.uleb128 0x1a
+ 2643 014b 34       		.uleb128 0x34
+ 2644 014c 00       		.byte	0
+ 2645 014d 03       		.uleb128 0x3
+ 2646 014e 0E       		.uleb128 0xe
+ 2647 014f 3A       		.uleb128 0x3a
+ 2648 0150 0B       		.uleb128 0xb
+ 2649 0151 3B       		.uleb128 0x3b
+ 2650 0152 05       		.uleb128 0x5
+ 2651 0153 49       		.uleb128 0x49
+ 2652 0154 13       		.uleb128 0x13
+ 2653 0155 00       		.byte	0
+ 2654 0156 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 56
+
+
+ 2655 0157 1B       		.uleb128 0x1b
+ 2656 0158 21       		.uleb128 0x21
+ 2657 0159 00       		.byte	0
+ 2658 015a 49       		.uleb128 0x49
+ 2659 015b 13       		.uleb128 0x13
+ 2660 015c 2F       		.uleb128 0x2f
+ 2661 015d 05       		.uleb128 0x5
+ 2662 015e 00       		.byte	0
+ 2663 015f 00       		.byte	0
+ 2664 0160 1C       		.uleb128 0x1c
+ 2665 0161 34       		.uleb128 0x34
+ 2666 0162 00       		.byte	0
+ 2667 0163 03       		.uleb128 0x3
+ 2668 0164 0E       		.uleb128 0xe
+ 2669 0165 3A       		.uleb128 0x3a
+ 2670 0166 0B       		.uleb128 0xb
+ 2671 0167 3B       		.uleb128 0x3b
+ 2672 0168 0B       		.uleb128 0xb
+ 2673 0169 49       		.uleb128 0x49
+ 2674 016a 13       		.uleb128 0x13
+ 2675 016b 02       		.uleb128 0x2
+ 2676 016c 18       		.uleb128 0x18
+ 2677 016d 00       		.byte	0
+ 2678 016e 00       		.byte	0
+ 2679 016f 1D       		.uleb128 0x1d
+ 2680 0170 34       		.uleb128 0x34
+ 2681 0171 00       		.byte	0
+ 2682 0172 03       		.uleb128 0x3
+ 2683 0173 0E       		.uleb128 0xe
+ 2684 0174 3A       		.uleb128 0x3a
+ 2685 0175 0B       		.uleb128 0xb
+ 2686 0176 3B       		.uleb128 0x3b
+ 2687 0177 05       		.uleb128 0x5
+ 2688 0178 49       		.uleb128 0x49
+ 2689 0179 13       		.uleb128 0x13
+ 2690 017a 3F       		.uleb128 0x3f
+ 2691 017b 19       		.uleb128 0x19
+ 2692 017c 3C       		.uleb128 0x3c
+ 2693 017d 19       		.uleb128 0x19
+ 2694 017e 00       		.byte	0
+ 2695 017f 00       		.byte	0
+ 2696 0180 1E       		.uleb128 0x1e
+ 2697 0181 35       		.uleb128 0x35
+ 2698 0182 00       		.byte	0
+ 2699 0183 49       		.uleb128 0x49
+ 2700 0184 13       		.uleb128 0x13
+ 2701 0185 00       		.byte	0
+ 2702 0186 00       		.byte	0
+ 2703 0187 1F       		.uleb128 0x1f
+ 2704 0188 2E       		.uleb128 0x2e
+ 2705 0189 00       		.byte	0
+ 2706 018a 3F       		.uleb128 0x3f
+ 2707 018b 19       		.uleb128 0x19
+ 2708 018c 3C       		.uleb128 0x3c
+ 2709 018d 19       		.uleb128 0x19
+ 2710 018e 6E       		.uleb128 0x6e
+ 2711 018f 0E       		.uleb128 0xe
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 57
+
+
+ 2712 0190 03       		.uleb128 0x3
+ 2713 0191 0E       		.uleb128 0xe
+ 2714 0192 3A       		.uleb128 0x3a
+ 2715 0193 0B       		.uleb128 0xb
+ 2716 0194 3B       		.uleb128 0x3b
+ 2717 0195 05       		.uleb128 0x5
+ 2718 0196 00       		.byte	0
+ 2719 0197 00       		.byte	0
+ 2720 0198 00       		.byte	0
+ 2721              		.section	.debug_loc,"",%progbits
+ 2722              	.Ldebug_loc0:
+ 2723              	.LLST0:
+ 2724 0000 00000000 		.4byte	.LVL0
+ 2725 0004 28000000 		.4byte	.LVL11
+ 2726 0008 0100     		.2byte	0x1
+ 2727 000a 50       		.byte	0x50
+ 2728 000b 28000000 		.4byte	.LVL11
+ 2729 000f 2A000000 		.4byte	.LVL12
+ 2730 0013 0400     		.2byte	0x4
+ 2731 0015 F3       		.byte	0xf3
+ 2732 0016 01       		.uleb128 0x1
+ 2733 0017 50       		.byte	0x50
+ 2734 0018 9F       		.byte	0x9f
+ 2735 0019 2A000000 		.4byte	.LVL12
+ 2736 001d 6A000000 		.4byte	.LVL23
+ 2737 0021 0100     		.2byte	0x1
+ 2738 0023 57       		.byte	0x57
+ 2739 0024 00000000 		.4byte	0
+ 2740 0028 00000000 		.4byte	0
+ 2741              	.LLST1:
+ 2742 002c 00000000 		.4byte	.LVL0
+ 2743 0030 24000000 		.4byte	.LVL9
+ 2744 0034 0100     		.2byte	0x1
+ 2745 0036 51       		.byte	0x51
+ 2746 0037 24000000 		.4byte	.LVL9
+ 2747 003b 26000000 		.4byte	.LVL10
+ 2748 003f 0400     		.2byte	0x4
+ 2749 0041 F3       		.byte	0xf3
+ 2750 0042 01       		.uleb128 0x1
+ 2751 0043 51       		.byte	0x51
+ 2752 0044 9F       		.byte	0x9f
+ 2753 0045 26000000 		.4byte	.LVL10
+ 2754 0049 52000000 		.4byte	.LVL18
+ 2755 004d 0100     		.2byte	0x1
+ 2756 004f 56       		.byte	0x56
+ 2757 0050 54000000 		.4byte	.LVL19
+ 2758 0054 6A000000 		.4byte	.LVL23
+ 2759 0058 0100     		.2byte	0x1
+ 2760 005a 56       		.byte	0x56
+ 2761 005b 00000000 		.4byte	0
+ 2762 005f 00000000 		.4byte	0
+ 2763              	.LLST2:
+ 2764 0063 00000000 		.4byte	.LVL0
+ 2765 0067 0A000000 		.4byte	.LVL2
+ 2766 006b 0100     		.2byte	0x1
+ 2767 006d 52       		.byte	0x52
+ 2768 006e 0A000000 		.4byte	.LVL2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 58
+
+
+ 2769 0072 70000000 		.4byte	.LFE63
+ 2770 0076 0400     		.2byte	0x4
+ 2771 0078 F3       		.byte	0xf3
+ 2772 0079 01       		.uleb128 0x1
+ 2773 007a 52       		.byte	0x52
+ 2774 007b 9F       		.byte	0x9f
+ 2775 007c 00000000 		.4byte	0
+ 2776 0080 00000000 		.4byte	0
+ 2777              	.LLST3:
+ 2778 0084 00000000 		.4byte	.LVL0
+ 2779 0088 30000000 		.4byte	.LVL13
+ 2780 008c 0100     		.2byte	0x1
+ 2781 008e 53       		.byte	0x53
+ 2782 008f 30000000 		.4byte	.LVL13
+ 2783 0093 70000000 		.4byte	.LFE63
+ 2784 0097 0400     		.2byte	0x4
+ 2785 0099 F3       		.byte	0xf3
+ 2786 009a 01       		.uleb128 0x1
+ 2787 009b 53       		.byte	0x53
+ 2788 009c 9F       		.byte	0x9f
+ 2789 009d 00000000 		.4byte	0
+ 2790 00a1 00000000 		.4byte	0
+ 2791              	.LLST4:
+ 2792 00a5 06000000 		.4byte	.LVL1
+ 2793 00a9 0C000000 		.4byte	.LVL3
+ 2794 00ad 0200     		.2byte	0x2
+ 2795 00af 31       		.byte	0x31
+ 2796 00b0 9F       		.byte	0x9f
+ 2797 00b1 0C000000 		.4byte	.LVL3
+ 2798 00b5 12000000 		.4byte	.LVL4
+ 2799 00b9 0100     		.2byte	0x1
+ 2800 00bb 52       		.byte	0x52
+ 2801 00bc 18000000 		.4byte	.LVL5
+ 2802 00c0 20000000 		.4byte	.LVL7
+ 2803 00c4 0100     		.2byte	0x1
+ 2804 00c6 52       		.byte	0x52
+ 2805 00c7 22000000 		.4byte	.LVL8
+ 2806 00cb 56000000 		.4byte	.LVL20
+ 2807 00cf 0100     		.2byte	0x1
+ 2808 00d1 55       		.byte	0x55
+ 2809 00d2 5C000000 		.4byte	.LVL21
+ 2810 00d6 6A000000 		.4byte	.LVL23
+ 2811 00da 0100     		.2byte	0x1
+ 2812 00dc 55       		.byte	0x55
+ 2813 00dd 00000000 		.4byte	0
+ 2814 00e1 00000000 		.4byte	0
+ 2815              	.LLST5:
+ 2816 00e5 06000000 		.4byte	.LVL1
+ 2817 00e9 0C000000 		.4byte	.LVL3
+ 2818 00ed 0200     		.2byte	0x2
+ 2819 00ef 30       		.byte	0x30
+ 2820 00f0 9F       		.byte	0x9f
+ 2821 00f1 0C000000 		.4byte	.LVL3
+ 2822 00f5 22000000 		.4byte	.LVL8
+ 2823 00f9 0100     		.2byte	0x1
+ 2824 00fb 55       		.byte	0x55
+ 2825 00fc 00000000 		.4byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 59
+
+
+ 2826 0100 00000000 		.4byte	0
+ 2827              	.LLST6:
+ 2828 0104 2A000000 		.4byte	.LVL12
+ 2829 0108 30000000 		.4byte	.LVL13
+ 2830 010c 0200     		.2byte	0x2
+ 2831 010e 30       		.byte	0x30
+ 2832 010f 9F       		.byte	0x9f
+ 2833 0110 30000000 		.4byte	.LVL13
+ 2834 0114 6A000000 		.4byte	.LVL23
+ 2835 0118 0100     		.2byte	0x1
+ 2836 011a 59       		.byte	0x59
+ 2837 011b 00000000 		.4byte	0
+ 2838 011f 00000000 		.4byte	0
+ 2839              	.LLST7:
+ 2840 0123 30000000 		.4byte	.LVL13
+ 2841 0127 46000000 		.4byte	.LVL16
+ 2842 012b 0100     		.2byte	0x1
+ 2843 012d 54       		.byte	0x54
+ 2844 012e 48000000 		.4byte	.LVL17
+ 2845 0132 60000000 		.4byte	.LVL22
+ 2846 0136 0100     		.2byte	0x1
+ 2847 0138 54       		.byte	0x54
+ 2848 0139 00000000 		.4byte	0
+ 2849 013d 00000000 		.4byte	0
+ 2850              	.LLST8:
+ 2851 0141 00000000 		.4byte	.LVL24
+ 2852 0145 16000000 		.4byte	.LVL26
+ 2853 0149 0100     		.2byte	0x1
+ 2854 014b 50       		.byte	0x50
+ 2855 014c 16000000 		.4byte	.LVL26
+ 2856 0150 7C010000 		.4byte	.LFE64
+ 2857 0154 0400     		.2byte	0x4
+ 2858 0156 F3       		.byte	0xf3
+ 2859 0157 01       		.uleb128 0x1
+ 2860 0158 50       		.byte	0x50
+ 2861 0159 9F       		.byte	0x9f
+ 2862 015a 00000000 		.4byte	0
+ 2863 015e 00000000 		.4byte	0
+ 2864              	.LLST9:
+ 2865 0162 00000000 		.4byte	.LVL24
+ 2866 0166 19000000 		.4byte	.LVL27-1
+ 2867 016a 0100     		.2byte	0x1
+ 2868 016c 51       		.byte	0x51
+ 2869 016d 19000000 		.4byte	.LVL27-1
+ 2870 0171 7C010000 		.4byte	.LFE64
+ 2871 0175 0400     		.2byte	0x4
+ 2872 0177 F3       		.byte	0xf3
+ 2873 0178 01       		.uleb128 0x1
+ 2874 0179 51       		.byte	0x51
+ 2875 017a 9F       		.byte	0x9f
+ 2876 017b 00000000 		.4byte	0
+ 2877 017f 00000000 		.4byte	0
+ 2878              	.LLST10:
+ 2879 0183 00000000 		.4byte	.LVL24
+ 2880 0187 12000000 		.4byte	.LVL25
+ 2881 018b 0100     		.2byte	0x1
+ 2882 018d 52       		.byte	0x52
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 60
+
+
+ 2883 018e 12000000 		.4byte	.LVL25
+ 2884 0192 7C010000 		.4byte	.LFE64
+ 2885 0196 0400     		.2byte	0x4
+ 2886 0198 F3       		.byte	0xf3
+ 2887 0199 01       		.uleb128 0x1
+ 2888 019a 52       		.byte	0x52
+ 2889 019b 9F       		.byte	0x9f
+ 2890 019c 00000000 		.4byte	0
+ 2891 01a0 00000000 		.4byte	0
+ 2892              	.LLST11:
+ 2893 01a4 00000000 		.4byte	.LVL24
+ 2894 01a8 1E000000 		.4byte	.LVL28
+ 2895 01ac 0200     		.2byte	0x2
+ 2896 01ae 91       		.byte	0x91
+ 2897 01af 00       		.sleb128 0
+ 2898 01b0 1E000000 		.4byte	.LVL28
+ 2899 01b4 5A000000 		.4byte	.LVL39
+ 2900 01b8 0600     		.2byte	0x6
+ 2901 01ba 59       		.byte	0x59
+ 2902 01bb 93       		.byte	0x93
+ 2903 01bc 04       		.uleb128 0x4
+ 2904 01bd 5A       		.byte	0x5a
+ 2905 01be 93       		.byte	0x93
+ 2906 01bf 04       		.uleb128 0x4
+ 2907 01c0 5A000000 		.4byte	.LVL39
+ 2908 01c4 4E010000 		.4byte	.LVL67
+ 2909 01c8 0200     		.2byte	0x2
+ 2910 01ca 7D       		.byte	0x7d
+ 2911 01cb 00       		.sleb128 0
+ 2912 01cc 4E010000 		.4byte	.LVL67
+ 2913 01d0 52010000 		.4byte	.LVL68
+ 2914 01d4 0200     		.2byte	0x2
+ 2915 01d6 91       		.byte	0x91
+ 2916 01d7 48       		.sleb128 -56
+ 2917 01d8 52010000 		.4byte	.LVL68
+ 2918 01dc 7C010000 		.4byte	.LFE64
+ 2919 01e0 0200     		.2byte	0x2
+ 2920 01e2 7D       		.byte	0x7d
+ 2921 01e3 48       		.sleb128 -56
+ 2922 01e4 00000000 		.4byte	0
+ 2923 01e8 00000000 		.4byte	0
+ 2924              	.LLST12:
+ 2925 01ec 2C000000 		.4byte	.LVL31
+ 2926 01f0 36000000 		.4byte	.LVL32
+ 2927 01f4 0100     		.2byte	0x1
+ 2928 01f6 50       		.byte	0x50
+ 2929 01f7 36000000 		.4byte	.LVL32
+ 2930 01fb 52010000 		.4byte	.LVL68
+ 2931 01ff 0100     		.2byte	0x1
+ 2932 0201 57       		.byte	0x57
+ 2933 0202 00000000 		.4byte	0
+ 2934 0206 00000000 		.4byte	0
+ 2935              	.LLST13:
+ 2936 020a 50000000 		.4byte	.LVL36
+ 2937 020e 52000000 		.4byte	.LVL37
+ 2938 0212 0100     		.2byte	0x1
+ 2939 0214 50       		.byte	0x50
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 61
+
+
+ 2940 0215 52000000 		.4byte	.LVL37
+ 2941 0219 52010000 		.4byte	.LVL68
+ 2942 021d 0100     		.2byte	0x1
+ 2943 021f 5A       		.byte	0x5a
+ 2944 0220 00000000 		.4byte	0
+ 2945 0224 00000000 		.4byte	0
+ 2946              	.LLST14:
+ 2947 0228 74000000 		.4byte	.LVL43
+ 2948 022c 77000000 		.4byte	.LVL44-1
+ 2949 0230 0100     		.2byte	0x1
+ 2950 0232 50       		.byte	0x50
+ 2951 0233 77000000 		.4byte	.LVL44-1
+ 2952 0237 52010000 		.4byte	.LVL68
+ 2953 023b 0200     		.2byte	0x2
+ 2954 023d 91       		.byte	0x91
+ 2955 023e 54       		.sleb128 -44
+ 2956 023f 52010000 		.4byte	.LVL68
+ 2957 0243 7C010000 		.4byte	.LFE64
+ 2958 0247 0200     		.2byte	0x2
+ 2959 0249 7D       		.byte	0x7d
+ 2960 024a 54       		.sleb128 -44
+ 2961 024b 00000000 		.4byte	0
+ 2962 024f 00000000 		.4byte	0
+ 2963              	.LLST15:
+ 2964 0253 AC000000 		.4byte	.LVL50
+ 2965 0257 AF000000 		.4byte	.LVL51-1
+ 2966 025b 0100     		.2byte	0x1
+ 2967 025d 50       		.byte	0x50
+ 2968 025e AF000000 		.4byte	.LVL51-1
+ 2969 0262 52010000 		.4byte	.LVL68
+ 2970 0266 0100     		.2byte	0x1
+ 2971 0268 5B       		.byte	0x5b
+ 2972 0269 00000000 		.4byte	0
+ 2973 026d 00000000 		.4byte	0
+ 2974              	.LLST16:
+ 2975 0271 E0000000 		.4byte	.LVL57
+ 2976 0275 EA000000 		.4byte	.LVL58
+ 2977 0279 0100     		.2byte	0x1
+ 2978 027b 50       		.byte	0x50
+ 2979 027c EA000000 		.4byte	.LVL58
+ 2980 0280 52010000 		.4byte	.LVL68
+ 2981 0284 0100     		.2byte	0x1
+ 2982 0286 58       		.byte	0x58
+ 2983 0287 00000000 		.4byte	0
+ 2984 028b 00000000 		.4byte	0
+ 2985              	.LLST17:
+ 2986 028f EE000000 		.4byte	.LVL59
+ 2987 0293 F6000000 		.4byte	.LVL60
+ 2988 0297 0200     		.2byte	0x2
+ 2989 0299 37       		.byte	0x37
+ 2990 029a 9F       		.byte	0x9f
+ 2991 029b F6000000 		.4byte	.LVL60
+ 2992 029f 04010000 		.4byte	.LVL61
+ 2993 02a3 0100     		.2byte	0x1
+ 2994 02a5 50       		.byte	0x50
+ 2995 02a6 00000000 		.4byte	0
+ 2996 02aa 00000000 		.4byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 62
+
+
+ 2997              		.section	.debug_aranges,"",%progbits
+ 2998 0000 24000000 		.4byte	0x24
+ 2999 0004 0200     		.2byte	0x2
+ 3000 0006 00000000 		.4byte	.Ldebug_info0
+ 3001 000a 04       		.byte	0x4
+ 3002 000b 00       		.byte	0
+ 3003 000c 0000     		.2byte	0
+ 3004 000e 0000     		.2byte	0
+ 3005 0010 00000000 		.4byte	.LFB63
+ 3006 0014 70000000 		.4byte	.LFE63-.LFB63
+ 3007 0018 00000000 		.4byte	.LFB64
+ 3008 001c 7C010000 		.4byte	.LFE64-.LFB64
+ 3009 0020 00000000 		.4byte	0
+ 3010 0024 00000000 		.4byte	0
+ 3011              		.section	.debug_ranges,"",%progbits
+ 3012              	.Ldebug_ranges0:
+ 3013 0000 06000000 		.4byte	.LBB2
+ 3014 0004 08000000 		.4byte	.LBE2
+ 3015 0008 0A000000 		.4byte	.LBB3
+ 3016 000c 1E000000 		.4byte	.LBE3
+ 3017 0010 00000000 		.4byte	0
+ 3018 0014 00000000 		.4byte	0
+ 3019 0018 30000000 		.4byte	.LBB5
+ 3020 001c 46000000 		.4byte	.LBE5
+ 3021 0020 48000000 		.4byte	.LBB7
+ 3022 0024 50000000 		.4byte	.LBE7
+ 3023 0028 00000000 		.4byte	0
+ 3024 002c 00000000 		.4byte	0
+ 3025 0030 00000000 		.4byte	.LFB63
+ 3026 0034 70000000 		.4byte	.LFE63
+ 3027 0038 00000000 		.4byte	.LFB64
+ 3028 003c 7C010000 		.4byte	.LFE64
+ 3029 0040 00000000 		.4byte	0
+ 3030 0044 00000000 		.4byte	0
+ 3031              		.section	.debug_line,"",%progbits
+ 3032              	.Ldebug_line0:
+ 3033 0000 99010000 		.section	.debug_str,"MS",%progbits,1
+ 3033      02001B01 
+ 3033      00000201 
+ 3033      FB0E0D00 
+ 3033      01010101 
+ 3034              	.LASF3:
+ 3035 0000 5F5F696E 		.ascii	"__int16_t\000"
+ 3035      7431365F 
+ 3035      7400
+ 3036              	.LASF18:
+ 3037 000a 646F7562 		.ascii	"double\000"
+ 3037      6C6500
+ 3038              	.LASF63:
+ 3039 0011 666F6E74 		.ascii	"font\000"
+ 3039      00
+ 3040              	.LASF4:
+ 3041 0016 73686F72 		.ascii	"short int\000"
+ 3041      7420696E 
+ 3041      7400
+ 3042              	.LASF22:
+ 3043 0020 636F6C6F 		.ascii	"color\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 63
+
+
+ 3043      7200
+ 3044              	.LASF32:
+ 3045 0026 68756E64 		.ascii	"hundredths\000"
+ 3045      72656474 
+ 3045      687300
+ 3046              	.LASF30:
+ 3047 0031 6F6E6573 		.ascii	"ones\000"
+ 3047      00
+ 3048              	.LASF5:
+ 3049 0036 5F5F7569 		.ascii	"__uint16_t\000"
+ 3049      6E743136 
+ 3049      5F7400
+ 3050              	.LASF55:
+ 3051 0041 7373697A 		.ascii	"ssizetype\000"
+ 3051      65747970 
+ 3051      6500
+ 3052              	.LASF24:
+ 3053 004b 696E6465 		.ascii	"index\000"
+ 3053      7800
+ 3054              	.LASF17:
+ 3055 0051 666C6F61 		.ascii	"float\000"
+ 3055      7400
+ 3056              	.LASF10:
+ 3057 0057 6C6F6E67 		.ascii	"long long int\000"
+ 3057      206C6F6E 
+ 3057      6720696E 
+ 3057      7400
+ 3058              	.LASF8:
+ 3059 0065 6C6F6E67 		.ascii	"long int\000"
+ 3059      20696E74 
+ 3059      00
+ 3060              	.LASF29:
+ 3061 006e 74656E73 		.ascii	"tens\000"
+ 3061      00
+ 3062              	.LASF2:
+ 3063 0073 5F5F7569 		.ascii	"__uint8_t\000"
+ 3063      6E74385F 
+ 3063      7400
+ 3064              	.LASF23:
+ 3065 007d 63686172 		.ascii	"character\000"
+ 3065      61637465 
+ 3065      7200
+ 3066              	.LASF34:
+ 3067 0087 785F6F66 		.ascii	"x_offset\000"
+ 3067      66736574 
+ 3067      00
+ 3068              	.LASF20:
+ 3069 0090 6C6F6E67 		.ascii	"long double\000"
+ 3069      20646F75 
+ 3069      626C6500 
+ 3070              	.LASF1:
+ 3071 009c 756E7369 		.ascii	"unsigned char\000"
+ 3071      676E6564 
+ 3071      20636861 
+ 3071      7200
+ 3072              	.LASF33:
+ 3073 00aa 74686F75 		.ascii	"thousandths\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 64
+
+
+ 3073      73616E64 
+ 3073      74687300 
+ 3074              	.LASF0:
+ 3075 00b6 7369676E 		.ascii	"signed char\000"
+ 3075      65642063 
+ 3075      68617200 
+ 3076              	.LASF11:
+ 3077 00c2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 3077      206C6F6E 
+ 3077      6720756E 
+ 3077      7369676E 
+ 3077      65642069 
+ 3078              	.LASF25:
+ 3079 00d9 68656967 		.ascii	"height\000"
+ 3079      687400
+ 3080              	.LASF12:
+ 3081 00e0 756E7369 		.ascii	"unsigned int\000"
+ 3081      676E6564 
+ 3081      20696E74 
+ 3081      00
+ 3082              	.LASF66:
+ 3083 00ed 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 3083      73657273 
+ 3083      5C6C6567 
+ 3083      6F635C44 
+ 3083      6F63756D 
+ 3084 011a 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 3084      72205072 
+ 3084      6F6A6563 
+ 3084      745C5365 
+ 3084      6E696F72 
+ 3085 014b 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 3085      7420496E 
+ 3085      74656772 
+ 3085      61746564 
+ 3085      5C446573 
+ 3086              	.LASF9:
+ 3087 016b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3087      20756E73 
+ 3087      69676E65 
+ 3087      6420696E 
+ 3087      7400
+ 3088              	.LASF6:
+ 3089 017d 73686F72 		.ascii	"short unsigned int\000"
+ 3089      7420756E 
+ 3089      7369676E 
+ 3089      65642069 
+ 3089      6E7400
+ 3090              	.LASF19:
+ 3091 0190 63686172 		.ascii	"char\000"
+ 3091      00
+ 3092              	.LASF15:
+ 3093 0195 75696E74 		.ascii	"uint16_t\000"
+ 3093      31365F74 
+ 3093      00
+ 3094              	.LASF16:
+ 3095 019e 696E7433 		.ascii	"int32_t\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 65
+
+
+ 3095      325F7400 
+ 3096              	.LASF14:
+ 3097 01a6 696E7431 		.ascii	"int16_t\000"
+ 3097      365F7400 
+ 3098              	.LASF35:
+ 3099 01ae 666F6E74 		.ascii	"font_0\000"
+ 3099      5F3000
+ 3100              	.LASF36:
+ 3101 01b5 666F6E74 		.ascii	"font_1\000"
+ 3101      5F3100
+ 3102              	.LASF37:
+ 3103 01bc 666F6E74 		.ascii	"font_2\000"
+ 3103      5F3200
+ 3104              	.LASF38:
+ 3105 01c3 666F6E74 		.ascii	"font_3\000"
+ 3105      5F3300
+ 3106              	.LASF39:
+ 3107 01ca 666F6E74 		.ascii	"font_4\000"
+ 3107      5F3400
+ 3108              	.LASF40:
+ 3109 01d1 666F6E74 		.ascii	"font_5\000"
+ 3109      5F3500
+ 3110              	.LASF41:
+ 3111 01d8 666F6E74 		.ascii	"font_6\000"
+ 3111      5F3600
+ 3112              	.LASF42:
+ 3113 01df 666F6E74 		.ascii	"font_7\000"
+ 3113      5F3700
+ 3114              	.LASF43:
+ 3115 01e6 666F6E74 		.ascii	"font_8\000"
+ 3115      5F3800
+ 3116              	.LASF44:
+ 3117 01ed 666F6E74 		.ascii	"font_9\000"
+ 3117      5F3900
+ 3118              	.LASF67:
+ 3119 01f4 64726177 		.ascii	"draw_pixel\000"
+ 3119      5F706978 
+ 3119      656C00
+ 3120              	.LASF26:
+ 3121 01ff 64726177 		.ascii	"draw_character\000"
+ 3121      5F636861 
+ 3121      72616374 
+ 3121      657200
+ 3122              	.LASF31:
+ 3123 020e 74656E74 		.ascii	"tenths\000"
+ 3123      687300
+ 3124              	.LASF56:
+ 3125 0215 666F6E74 		.ascii	"font_A\000"
+ 3125      5F4100
+ 3126              	.LASF57:
+ 3127 021c 666F6E74 		.ascii	"font_B\000"
+ 3127      5F4200
+ 3128              	.LASF58:
+ 3129 0223 666F6E74 		.ascii	"font_C\000"
+ 3129      5F4300
+ 3130              	.LASF59:
+ 3131 022a 666F6E74 		.ascii	"font_D\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 66
+
+
+ 3131      5F4400
+ 3132              	.LASF60:
+ 3133 0231 666F6E74 		.ascii	"font_E\000"
+ 3133      5F4500
+ 3134              	.LASF61:
+ 3135 0238 666F6E74 		.ascii	"font_F\000"
+ 3135      5F4600
+ 3136              	.LASF62:
+ 3137 023f 666F6E74 		.ascii	"font_G\000"
+ 3137      5F4700
+ 3138              	.LASF27:
+ 3139 0246 64726177 		.ascii	"draw_number\000"
+ 3139      5F6E756D 
+ 3139      62657200 
+ 3140              	.LASF65:
+ 3141 0252 666F6E74 		.ascii	"font.c\000"
+ 3141      2E6300
+ 3142              	.LASF45:
+ 3143 0259 666F6E74 		.ascii	"font_period\000"
+ 3143      5F706572 
+ 3143      696F6400 
+ 3144              	.LASF7:
+ 3145 0265 5F5F696E 		.ascii	"__int32_t\000"
+ 3145      7433325F 
+ 3145      7400
+ 3146              	.LASF13:
+ 3147 026f 75696E74 		.ascii	"uint8_t\000"
+ 3147      385F7400 
+ 3148              	.LASF21:
+ 3149 0277 73697A65 		.ascii	"sizetype\000"
+ 3149      74797065 
+ 3149      00
+ 3150              	.LASF46:
+ 3151 0280 666F6E74 		.ascii	"font_a\000"
+ 3151      5F6100
+ 3152              	.LASF47:
+ 3153 0287 666F6E74 		.ascii	"font_b\000"
+ 3153      5F6200
+ 3154              	.LASF48:
+ 3155 028e 666F6E74 		.ascii	"font_c\000"
+ 3155      5F6300
+ 3156              	.LASF49:
+ 3157 0295 666F6E74 		.ascii	"font_d\000"
+ 3157      5F6400
+ 3158              	.LASF50:
+ 3159 029c 666F6E74 		.ascii	"font_e\000"
+ 3159      5F6500
+ 3160              	.LASF51:
+ 3161 02a3 666F6E74 		.ascii	"font_f\000"
+ 3161      5F6600
+ 3162              	.LASF52:
+ 3163 02aa 666F6E74 		.ascii	"font_g\000"
+ 3163      5F6700
+ 3164              	.LASF53:
+ 3165 02b1 666F6E74 		.ascii	"font_h\000"
+ 3165      5F6800
+ 3166              	.LASF54:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXQrwNy.s 			page 67
+
+
+ 3167 02b8 666F6E74 		.ascii	"font_i\000"
+ 3167      5F6900
+ 3168              	.LASF68:
+ 3169 02bf 666F6E74 		.ascii	"font_j\000"
+ 3169      5F6A00
+ 3170              	.LASF28:
+ 3171 02c6 6E756D62 		.ascii	"number\000"
+ 3171      657200
+ 3172              	.LASF69:
+ 3173 02cd 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3173      52784275 
+ 3173      66666572 
+ 3173      00
+ 3174              	.LASF64:
+ 3175 02da 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3175      43313120 
+ 3175      352E342E 
+ 3175      31203230 
+ 3175      31363036 
+ 3176 030d 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3176      20726576 
+ 3176      6973696F 
+ 3176      6E203233 
+ 3176      37373135 
+ 3177 0340 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3177      66756E63 
+ 3177      74696F6E 
+ 3177      2D736563 
+ 3177      74696F6E 
+ 3178              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

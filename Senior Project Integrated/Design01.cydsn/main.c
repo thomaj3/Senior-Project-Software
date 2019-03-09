@@ -1,5 +1,6 @@
 #include "project.h"
 #include "screen.h"
+#include "font.h"
 #include "stdio.h"
 #include "math.h"
 #include "string.h"
@@ -99,41 +100,9 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
 }
 
-// This is only for testing
-void draw_two(uint16_t x, uint16_t y, int16 color)
-{
-    draw_pixel(x, y, color);
-    draw_pixel(x, y+1, color);
-    draw_pixel(x, y+2, color);
-    draw_pixel(x, y+7, color);
-    draw_pixel(x, y+8, color);
-    draw_pixel(x+1, y, color);
-    draw_pixel(x+1, y+2, color);
-    draw_pixel(x+1, y+3, color);
-    draw_pixel(x+1, y+8, color);
-    draw_pixel(x+1, y+9, color);
-    draw_pixel(x+2, y, color);
-    draw_pixel(x+2, y+3, color);
-    draw_pixel(x+2, y+4, color);
-    draw_pixel(x+2, y+9, color);
-    draw_pixel(x+3, y, color);
-    draw_pixel(x+3, y+4, color);
-    draw_pixel(x+3, y+5, color);
-    draw_pixel(x+3, y+9, color);
-    draw_pixel(x+4, y, color);
-    draw_pixel(x+4, y+5, color);
-    draw_pixel(x+4, y+6, color);
-    draw_pixel(x+4, y+8, color);
-    draw_pixel(x+4, y+9, color);
-    draw_pixel(x+5, y, color);
-    draw_pixel(x+5, y+6, color);
-    draw_pixel(x+5, y+7, color);
-    draw_pixel(x+5, y+8, color);
-}
-
 //This function runs the main test, it intakes the y_max used to calculate the
 //pixels for line segments and the Vgs test points
-void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM])
+void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_double[CURVE_NUM])
 {
     int i,j,k;
     double Id;
@@ -160,20 +129,20 @@ void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM])
             {
                 //creating first point to plot lines using ratios
                 y_pixel_prev = (int) ((Id_avg*Y_RES)/y_max);;
-                x_pixel_prev = (int) ((j*X_RES)/200.0); 
+                x_pixel_prev = (int) (j); 
             }
             else
             {
                 //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
                 y_pixel = (int) ((Id_avg*Y_RES)/y_max);
-                x_pixel = (int) ((j*X_RES)/200.0);
+                x_pixel = (int) j;
                 draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
                 y_pixel_prev = y_pixel;
                 x_pixel_prev = x_pixel;
             }
         }
         ADC_SAR_1_Sleep(); //sleep to reset ADC between curves
-        draw_two(x_pixel_prev+3, y_pixel_prev-4, WHITE);//drawing a two placeholder
+        draw_number(x_pixel_prev+5,y_pixel_prev,WHITE,Vgs_double[i]);
     }
                
 }
@@ -199,6 +168,22 @@ int main(void)
     
     // Fills screen in black
     fillScreen(BLACK);  
+    
+//    // Test case for writing characters 0-9 and period
+//    uint16_t char_x = 5;
+//    for(int p=0;p<=21;p++)
+//    {
+//        draw_character(char_x,235,WHITE,p);
+//        char_x = char_x+7;
+//    }
+//    
+//    double temp_num = 87.926;
+//    
+//    draw_number(100,100,WHITE,temp_num);
+//    
+//    CyDelay(5000);
+//    
+//    fillScreen(BLACK);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();
@@ -261,7 +246,7 @@ int main(void)
                 }
                 y_max_mA = 1.05 * single_test(VDAC_D_C_MAX, Vgs_max);
                 ADC_SAR_1_Sleep(); //Reset SAR from previous tests
-                run_test(y_max_mA,Vgs_test_points);
+                run_test(y_max_mA,Vgs_test_points,Vgs_points_double);
                 break;
             case 1:
                 //NPN input
@@ -279,7 +264,7 @@ int main(void)
                 }
                 y_max_mA = 1.05 * single_test(VDAC_D_C_MAX, Vgs_max);
                 ADC_SAR_1_Sleep(); //Reset SAR from previous tests
-                run_test(y_max_mA,Vgs_test_points);
+                run_test(y_max_mA,Vgs_test_points,Vgs_points_double);
                 break;
         }
 ////            case 2:
