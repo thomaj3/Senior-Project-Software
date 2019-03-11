@@ -181,9 +181,12 @@ int main(void)
 //    
 //    draw_number(100,100,WHITE,temp_num);
 //    
-//    CyDelay(5000);
-//    
-//    fillScreen(BLACK);
+    char *string_test[] = {"0123456789ABCDEFG"};
+    draw_string(100,100,WHITE,string_test);
+    
+    CyDelay(5000);
+    
+    fillScreen(BLACK);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();

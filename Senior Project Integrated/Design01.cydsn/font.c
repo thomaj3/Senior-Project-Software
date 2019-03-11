@@ -200,23 +200,6 @@ static const uint8_t font[] =
     3,
     1,2,3,
     
-    // .
-    8,
-    
-    1,
-    2,
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-
-    0,
-    
     // A
     25,
     
@@ -413,7 +396,311 @@ static const uint8_t font[] =
     2,
     0,3,
     2,
-    0,4
+    0,4,
+    
+    // L
+    18,
+    
+    5,
+    0,1,2,3,4,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    
+    // M
+    24,
+    
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    3,
+    0,2,4,
+    4,
+    0,1,3,4,
+    2,
+    0,4,
+    
+    // N
+    24,
+    
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    3,
+    0,3,4,
+    3,
+    0,2,4,
+    3,
+    0,1,4,
+    2,
+    0,4,
+    
+    // O
+    23,
+    
+    3,
+    1,2,3,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    3,
+    1,2,3,
+    
+    // P
+    21,
+    
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    1,
+    0,
+    4,
+    0,1,2,3,
+    2,
+    0,4,
+    4,
+    0,1,2,3,
+    
+    // Q
+    23,
+    
+    3,
+    1,2,4,
+    2,
+    0,3,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    3,
+    1,2,3,
+    
+    // R
+    25,
+    
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    4,
+    0,1,2,3,
+    2,
+    0,4,
+    4,
+    0,1,2,3,
+    
+    // S
+    22,
+    
+    3,
+    1,2,3,
+    2,
+    0,4,
+    1,
+    4,
+    1,
+    4,
+    3,
+    1,2,3,
+    1,
+    0,
+    4,
+    1,2,3,4,
+    
+    // T
+    18,
+    
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    5,
+    0,1,2,3,4,
+    
+    // U
+    22,
+    
+    3,
+    1,2,3,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    
+    // V
+    20,
+    
+    1,
+    2,
+    2,
+    1,3,
+    2,
+    1,3,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    
+    // W
+    24,
+    
+    2,
+    0,4,
+    4,
+    0,1,3,4,
+    3,
+    0,2,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    
+    // X
+    20,
+    
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    0,4,
+    2,
+    1,3,
+    1,
+    2,
+    2,
+    1,3,
+    2,
+    0,4,
+    
+    // Y
+    16,
+    
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    1,
+    2,
+    2,
+    1,3,
+    2,
+    0,4,
+    
+    // Z
+    22,
+    
+    5,
+    0,1,2,3,4,
+    1,
+    0,
+    1,
+    1,
+    1,
+    2,
+    1,
+    3,
+    1,
+    4,
+    5,
+    0,1,2,3,4,
+    
+    // .
+    8,
+    
+    1,
+    2,
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+
+    0,
+    
+    // [space]
+    7,
+    
+    0,
+    
+    0,
+    
+    0,
+    
+    0,
+    
+    0,
+    
+    0,
+    
+    0
 };
 
 // Work in progress
@@ -439,6 +726,59 @@ void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character)
         }
         y = y+1;
         index = index+font[index]+1;
+    }
+}
+
+void draw_string(int16_t x, int16_t y, uint16_t color, char *string[])
+{
+    int16_t x_coor = x;
+    
+    for(int i=0; i<(sizeof(*string)/sizeof(*string[0])-1); i++)
+    {
+        switch(*string[i])
+        {
+            case 48 : 
+                draw_character(x_coor,y,color,0); // Draws 0
+            case 49 : 
+                draw_character(x_coor,y,color,1); // Draws 1
+            case 50 : 
+                draw_character(x_coor,y,color,2); // Draws 2
+            case 51 : 
+                draw_character(x_coor,y,color,3); // Draws 3
+            case 52 : 
+                draw_character(x_coor,y,color,4); // Draws 4
+            case 53 : 
+                draw_character(x_coor,y,color,5); // Draws 5
+            case 54 : 
+                draw_character(x_coor,y,color,6); // Draws 6
+            case 55 : 
+                draw_character(x_coor,y,color,7); // Draws 7
+            case 56 : 
+                draw_character(x_coor,y,color,8); // Draws 8
+            case 57 : 
+                draw_character(x_coor,y,color,9); // Draws 9
+            case 65 : 
+                draw_character(x_coor,y,color,10); // Draws A
+            case 66 : 
+                draw_character(x_coor,y,color,11); // Draws B
+            case 67 : 
+                draw_character(x_coor,y,color,12); // Draws C
+            case 68 : 
+                draw_character(x_coor,y,color,13); // Draws D
+            case 69 : 
+                draw_character(x_coor,y,color,14); // Draws E
+            case 70 : 
+                draw_character(x_coor,y,color,15); // Draws F
+            case 71 : 
+                draw_character(x_coor,y,color,16); // Draws G    
+        }
+        
+        x_coor = x_coor+7;
+        if (x_coor>319)
+        {
+            x_coor = x;
+            y = y+9;
+        }
     }
 }
 
