@@ -181,8 +181,8 @@ int main(void)
 //    
 //    draw_number(100,100,WHITE,temp_num);
 //    
-    char *string_test[] = {"0123456789ABCDEFG"};
-    draw_string(100,100,WHITE,string_test);
+    char *string_test[] = {"STRING TEST TSJKF SDFNKJ"};
+    draw_string(200,100,WHITE,string_test);
     
     CyDelay(5000);
     
