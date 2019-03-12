@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 1
 
 
    1              		.syntax unified
@@ -27,9 +27,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 1
   24              		.section	.cyconfigecc,"a",%progbits
   25              		.align	2
   26              		.type	cy_meta_configecc, %object
-  27              		.size	cy_meta_configecc, 644
+  27              		.size	cy_meta_configecc, 756
   28              	cy_meta_configecc:
-  29 0000 02       		.byte	2
+  29 0000 04       		.byte	4
   30 0001 52       		.byte	82
   31 0002 00       		.byte	0
   32 0003 40       		.byte	64
@@ -57,1115 +57,1233 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 1
   54 0019 05       		.byte	5
   55 001a 01       		.byte	1
   56 001b 40       		.byte	64
-  57 001c 01       		.byte	1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 2
+  57 001c 04       		.byte	4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 2
 
 
   58 001d 15       		.byte	21
   59 001e 01       		.byte	1
   60 001f 40       		.byte	64
   61 0020 01       		.byte	1
-  62 0021 1B       		.byte	27
+  62 0021 17       		.byte	23
   63 0022 01       		.byte	1
   64 0023 40       		.byte	64
-  65 0024 02       		.byte	2
-  66 0025 40       		.byte	64
+  65 0024 01       		.byte	1
+  66 0025 19       		.byte	25
   67 0026 01       		.byte	1
   68 0027 40       		.byte	64
-  69 0028 0B       		.byte	11
-  70 0029 41       		.byte	65
+  69 0028 04       		.byte	4
+  70 0029 1B       		.byte	27
   71 002a 01       		.byte	1
   72 002b 40       		.byte	64
-  73 002c 05       		.byte	5
-  74 002d 42       		.byte	66
+  73 002c 03       		.byte	3
+  74 002d 40       		.byte	64
   75 002e 01       		.byte	1
   76 002f 40       		.byte	64
-  77 0030 01       		.byte	1
-  78 0031 43       		.byte	67
+  77 0030 0C       		.byte	12
+  78 0031 41       		.byte	65
   79 0032 01       		.byte	1
   80 0033 40       		.byte	64
-  81 0034 01       		.byte	1
-  82 0035 48       		.byte	72
+  81 0034 08       		.byte	8
+  82 0035 42       		.byte	66
   83 0036 01       		.byte	1
   84 0037 40       		.byte	64
-  85 0038 02       		.byte	2
-  86 0039 49       		.byte	73
+  85 0038 03       		.byte	3
+  86 0039 43       		.byte	67
   87 003a 01       		.byte	1
   88 003b 40       		.byte	64
-  89 003c 02       		.byte	2
-  90 003d 4C       		.byte	76
+  89 003c 07       		.byte	7
+  90 003d 48       		.byte	72
   91 003e 01       		.byte	1
   92 003f 40       		.byte	64
-  93 0040 01       		.byte	1
-  94 0041 4D       		.byte	77
+  93 0040 11       		.byte	17
+  94 0041 49       		.byte	73
   95 0042 01       		.byte	1
   96 0043 40       		.byte	64
-  97 0044 02       		.byte	2
-  98 0045 50       		.byte	80
+  97 0044 09       		.byte	9
+  98 0045 4C       		.byte	76
   99 0046 01       		.byte	1
  100 0047 40       		.byte	64
- 101 0048 01       		.byte	1
- 102 0049 51       		.byte	81
+ 101 0048 07       		.byte	7
+ 102 0049 4D       		.byte	77
  103 004a 01       		.byte	1
  104 004b 40       		.byte	64
- 105 004c 00       		.byte	0
- 106 004d 20       		.byte	32
+ 105 004c 02       		.byte	2
+ 106 004d 50       		.byte	80
  107 004e 01       		.byte	1
- 108 004f 20       		.byte	32
- 109 0050 81       		.byte	-127
- 110 0051 0F       		.byte	15
+ 108 004f 40       		.byte	64
+ 109 0050 02       		.byte	2
+ 110 0051 51       		.byte	81
  111 0052 01       		.byte	1
- 112 0053 02       		.byte	2
- 113 0054 03       		.byte	3
- 114 0055 05       		.byte	5
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 3
+ 112 0053 40       		.byte	64
+ 113 0054 00       		.byte	0
+ 114 0055 20       		.byte	32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 3
 
 
- 115 0056 05       		.byte	5
- 116 0057 08       		.byte	8
- 117 0058 07       		.byte	7
- 118 0059 01       		.byte	1
- 119 005a 0D       		.byte	13
- 120 005b 08       		.byte	8
- 121 005c 19       		.byte	25
- 122 005d 0D       		.byte	13
- 123 005e 1B       		.byte	27
+ 115 0056 01       		.byte	1
+ 116 0057 20       		.byte	32
+ 117 0058 18       		.byte	24
+ 118 0059 C0       		.byte	-64
+ 119 005a 19       		.byte	25
+ 120 005b 40       		.byte	64
+ 121 005c 81       		.byte	-127
+ 122 005d 0F       		.byte	15
+ 123 005e 01       		.byte	1
  124 005f 02       		.byte	2
- 125 0060 35       		.byte	53
- 126 0061 0E       		.byte	14
- 127 0062 37       		.byte	55
- 128 0063 01       		.byte	1
- 129 0064 3B       		.byte	59
- 130 0065 20       		.byte	32
- 131 0066 3F       		.byte	63
- 132 0067 40       		.byte	64
- 133 0068 59       		.byte	89
- 134 0069 04       		.byte	4
- 135 006a 5F       		.byte	95
- 136 006b 01       		.byte	1
- 137 006c 04       		.byte	4
- 138 006d 02       		.byte	2
- 139 006e 06       		.byte	6
- 140 006f 02       		.byte	2
- 141 0070 07       		.byte	7
- 142 0071 08       		.byte	8
- 143 0072 0E       		.byte	14
- 144 0073 AA       		.byte	-86
- 145 0074 17       		.byte	23
- 146 0075 05       		.byte	5
- 147 0076 1D       		.byte	29
- 148 0077 80       		.byte	-128
- 149 0078 1E       		.byte	30
- 150 0079 81       		.byte	-127
- 151 007a 20       		.byte	32
- 152 007b 04       		.byte	4
- 153 007c 22       		.byte	34
- 154 007d 40       		.byte	64
- 155 007e 23       		.byte	35
- 156 007f 08       		.byte	8
- 157 0080 24       		.byte	36
- 158 0081 03       		.byte	3
- 159 0082 25       		.byte	37
- 160 0083 70       		.byte	112
- 161 0084 26       		.byte	38
- 162 0085 10       		.byte	16
- 163 0086 27       		.byte	39
- 164 0087 40       		.byte	64
- 165 0088 2E       		.byte	46
- 166 0089 80       		.byte	-128
- 167 008a 2F       		.byte	47
- 168 008b 88       		.byte	-120
- 169 008c 31       		.byte	49
- 170 008d 20       		.byte	32
- 171 008e 37       		.byte	55
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 4
+ 125 0060 03       		.byte	3
+ 126 0061 05       		.byte	5
+ 127 0062 05       		.byte	5
+ 128 0063 08       		.byte	8
+ 129 0064 07       		.byte	7
+ 130 0065 01       		.byte	1
+ 131 0066 0D       		.byte	13
+ 132 0067 08       		.byte	8
+ 133 0068 19       		.byte	25
+ 134 0069 0D       		.byte	13
+ 135 006a 1B       		.byte	27
+ 136 006b 02       		.byte	2
+ 137 006c 35       		.byte	53
+ 138 006d 0E       		.byte	14
+ 139 006e 37       		.byte	55
+ 140 006f 01       		.byte	1
+ 141 0070 3B       		.byte	59
+ 142 0071 20       		.byte	32
+ 143 0072 3F       		.byte	63
+ 144 0073 40       		.byte	64
+ 145 0074 59       		.byte	89
+ 146 0075 04       		.byte	4
+ 147 0076 5F       		.byte	95
+ 148 0077 01       		.byte	1
+ 149 0078 04       		.byte	4
+ 150 0079 02       		.byte	2
+ 151 007a 06       		.byte	6
+ 152 007b 02       		.byte	2
+ 153 007c 07       		.byte	7
+ 154 007d 08       		.byte	8
+ 155 007e 0E       		.byte	14
+ 156 007f AA       		.byte	-86
+ 157 0080 17       		.byte	23
+ 158 0081 05       		.byte	5
+ 159 0082 1D       		.byte	29
+ 160 0083 80       		.byte	-128
+ 161 0084 1E       		.byte	30
+ 162 0085 81       		.byte	-127
+ 163 0086 20       		.byte	32
+ 164 0087 04       		.byte	4
+ 165 0088 22       		.byte	34
+ 166 0089 40       		.byte	64
+ 167 008a 23       		.byte	35
+ 168 008b 08       		.byte	8
+ 169 008c 24       		.byte	36
+ 170 008d 03       		.byte	3
+ 171 008e 25       		.byte	37
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 4
 
 
- 172 008f 59       		.byte	89
- 173 0090 38       		.byte	56
- 174 0091 05       		.byte	5
- 175 0092 3A       		.byte	58
- 176 0093 80       		.byte	-128
- 177 0094 3D       		.byte	61
- 178 0095 A0       		.byte	-96
- 179 0096 3E       		.byte	62
- 180 0097 02       		.byte	2
- 181 0098 44       		.byte	68
- 182 0099 80       		.byte	-128
- 183 009a 45       		.byte	69
- 184 009b A0       		.byte	-96
- 185 009c 47       		.byte	71
- 186 009d 08       		.byte	8
- 187 009e 4C       		.byte	76
- 188 009f 01       		.byte	1
- 189 00a0 4D       		.byte	77
- 190 00a1 08       		.byte	8
- 191 00a2 55       		.byte	85
- 192 00a3 01       		.byte	1
- 193 00a4 56       		.byte	86
- 194 00a5 88       		.byte	-120
- 195 00a6 57       		.byte	87
- 196 00a7 10       		.byte	16
- 197 00a8 65       		.byte	101
- 198 00a9 40       		.byte	64
- 199 00aa 6E       		.byte	110
- 200 00ab 0A       		.byte	10
- 201 00ac 6F       		.byte	111
- 202 00ad 9D       		.byte	-99
- 203 00ae 76       		.byte	118
- 204 00af 02       		.byte	2
- 205 00b0 8D       		.byte	-115
- 206 00b1 21       		.byte	33
- 207 00b2 C0       		.byte	-64
- 208 00b3 D0       		.byte	-48
- 209 00b4 C2       		.byte	-62
- 210 00b5 F0       		.byte	-16
- 211 00b6 C4       		.byte	-60
- 212 00b7 30       		.byte	48
- 213 00b8 CA       		.byte	-54
- 214 00b9 B0       		.byte	-80
- 215 00ba CC       		.byte	-52
- 216 00bb F4       		.byte	-12
- 217 00bc CE       		.byte	-50
- 218 00bd BB       		.byte	-69
- 219 00be D0       		.byte	-48
- 220 00bf F0       		.byte	-16
- 221 00c0 D2       		.byte	-46
- 222 00c1 10       		.byte	16
- 223 00c2 D8       		.byte	-40
- 224 00c3 10       		.byte	16
- 225 00c4 00       		.byte	0
- 226 00c5 07       		.byte	7
- 227 00c6 02       		.byte	2
- 228 00c7 38       		.byte	56
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 5
+ 172 008f 70       		.byte	112
+ 173 0090 26       		.byte	38
+ 174 0091 10       		.byte	16
+ 175 0092 27       		.byte	39
+ 176 0093 40       		.byte	64
+ 177 0094 2E       		.byte	46
+ 178 0095 80       		.byte	-128
+ 179 0096 2F       		.byte	47
+ 180 0097 88       		.byte	-120
+ 181 0098 31       		.byte	49
+ 182 0099 20       		.byte	32
+ 183 009a 37       		.byte	55
+ 184 009b 59       		.byte	89
+ 185 009c 38       		.byte	56
+ 186 009d 05       		.byte	5
+ 187 009e 3A       		.byte	58
+ 188 009f 80       		.byte	-128
+ 189 00a0 3D       		.byte	61
+ 190 00a1 A0       		.byte	-96
+ 191 00a2 3E       		.byte	62
+ 192 00a3 02       		.byte	2
+ 193 00a4 44       		.byte	68
+ 194 00a5 80       		.byte	-128
+ 195 00a6 45       		.byte	69
+ 196 00a7 A0       		.byte	-96
+ 197 00a8 47       		.byte	71
+ 198 00a9 08       		.byte	8
+ 199 00aa 4C       		.byte	76
+ 200 00ab 01       		.byte	1
+ 201 00ac 4D       		.byte	77
+ 202 00ad 08       		.byte	8
+ 203 00ae 55       		.byte	85
+ 204 00af 01       		.byte	1
+ 205 00b0 56       		.byte	86
+ 206 00b1 88       		.byte	-120
+ 207 00b2 57       		.byte	87
+ 208 00b3 10       		.byte	16
+ 209 00b4 65       		.byte	101
+ 210 00b5 40       		.byte	64
+ 211 00b6 6E       		.byte	110
+ 212 00b7 0A       		.byte	10
+ 213 00b8 6F       		.byte	111
+ 214 00b9 9D       		.byte	-99
+ 215 00ba 76       		.byte	118
+ 216 00bb 02       		.byte	2
+ 217 00bc 8D       		.byte	-115
+ 218 00bd 21       		.byte	33
+ 219 00be C0       		.byte	-64
+ 220 00bf D0       		.byte	-48
+ 221 00c0 C2       		.byte	-62
+ 222 00c1 F0       		.byte	-16
+ 223 00c2 C4       		.byte	-60
+ 224 00c3 30       		.byte	48
+ 225 00c4 CA       		.byte	-54
+ 226 00c5 B0       		.byte	-80
+ 227 00c6 CC       		.byte	-52
+ 228 00c7 F4       		.byte	-12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 5
 
 
- 229 00c8 04       		.byte	4
- 230 00c9 56       		.byte	86
- 231 00ca 05       		.byte	5
- 232 00cb 09       		.byte	9
- 233 00cc 06       		.byte	6
- 234 00cd 09       		.byte	9
- 235 00ce 07       		.byte	7
- 236 00cf 36       		.byte	54
- 237 00d0 08       		.byte	8
- 238 00d1 60       		.byte	96
- 239 00d2 09       		.byte	9
- 240 00d3 05       		.byte	5
- 241 00d4 0B       		.byte	11
- 242 00d5 3A       		.byte	58
- 243 00d6 0C       		.byte	12
- 244 00d7 84       		.byte	-124
- 245 00d8 0D       		.byte	13
- 246 00d9 13       		.byte	19
- 247 00da 0F       		.byte	15
- 248 00db 0C       		.byte	12
- 249 00dc 10       		.byte	16
- 250 00dd 01       		.byte	1
- 251 00de 11       		.byte	17
- 252 00df 02       		.byte	2
- 253 00e0 13       		.byte	19
- 254 00e1 0D       		.byte	13
- 255 00e2 16       		.byte	22
- 256 00e3 80       		.byte	-128
- 257 00e4 18       		.byte	24
- 258 00e5 0A       		.byte	10
- 259 00e6 1A       		.byte	26
- 260 00e7 10       		.byte	16
- 261 00e8 1B       		.byte	27
- 262 00e9 20       		.byte	32
- 263 00ea 1C       		.byte	28
- 264 00eb 84       		.byte	-124
- 265 00ec 20       		.byte	32
- 266 00ed 04       		.byte	4
- 267 00ee 22       		.byte	34
+ 229 00c8 CE       		.byte	-50
+ 230 00c9 BB       		.byte	-69
+ 231 00ca D0       		.byte	-48
+ 232 00cb F0       		.byte	-16
+ 233 00cc D2       		.byte	-46
+ 234 00cd 10       		.byte	16
+ 235 00ce D8       		.byte	-40
+ 236 00cf 10       		.byte	16
+ 237 00d0 00       		.byte	0
+ 238 00d1 07       		.byte	7
+ 239 00d2 02       		.byte	2
+ 240 00d3 38       		.byte	56
+ 241 00d4 04       		.byte	4
+ 242 00d5 56       		.byte	86
+ 243 00d6 05       		.byte	5
+ 244 00d7 09       		.byte	9
+ 245 00d8 06       		.byte	6
+ 246 00d9 09       		.byte	9
+ 247 00da 07       		.byte	7
+ 248 00db 36       		.byte	54
+ 249 00dc 08       		.byte	8
+ 250 00dd 60       		.byte	96
+ 251 00de 09       		.byte	9
+ 252 00df 05       		.byte	5
+ 253 00e0 0B       		.byte	11
+ 254 00e1 3A       		.byte	58
+ 255 00e2 0C       		.byte	12
+ 256 00e3 84       		.byte	-124
+ 257 00e4 0D       		.byte	13
+ 258 00e5 13       		.byte	19
+ 259 00e6 0F       		.byte	15
+ 260 00e7 0C       		.byte	12
+ 261 00e8 10       		.byte	16
+ 262 00e9 01       		.byte	1
+ 263 00ea 11       		.byte	17
+ 264 00eb 02       		.byte	2
+ 265 00ec 13       		.byte	19
+ 266 00ed 0D       		.byte	13
+ 267 00ee 16       		.byte	22
  268 00ef 80       		.byte	-128
- 269 00f0 24       		.byte	36
- 270 00f1 80       		.byte	-128
- 271 00f2 26       		.byte	38
- 272 00f3 04       		.byte	4
- 273 00f4 28       		.byte	40
- 274 00f5 84       		.byte	-124
- 275 00f6 2C       		.byte	44
- 276 00f7 04       		.byte	4
- 277 00f8 30       		.byte	48
- 278 00f9 7F       		.byte	127
- 279 00fa 34       		.byte	52
+ 269 00f0 18       		.byte	24
+ 270 00f1 0A       		.byte	10
+ 271 00f2 1A       		.byte	26
+ 272 00f3 10       		.byte	16
+ 273 00f4 1B       		.byte	27
+ 274 00f5 20       		.byte	32
+ 275 00f6 1C       		.byte	28
+ 276 00f7 84       		.byte	-124
+ 277 00f8 20       		.byte	32
+ 278 00f9 04       		.byte	4
+ 279 00fa 22       		.byte	34
  280 00fb 80       		.byte	-128
- 281 00fc 35       		.byte	53
- 282 00fd 30       		.byte	48
- 283 00fe 37       		.byte	55
- 284 00ff 0F       		.byte	15
- 285 0100 38       		.byte	56
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 6
+ 281 00fc 24       		.byte	36
+ 282 00fd 80       		.byte	-128
+ 283 00fe 26       		.byte	38
+ 284 00ff 04       		.byte	4
+ 285 0100 28       		.byte	40
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 6
 
 
- 286 0101 02       		.byte	2
- 287 0102 3B       		.byte	59
- 288 0103 80       		.byte	-128
- 289 0104 3E       		.byte	62
- 290 0105 10       		.byte	16
- 291 0106 54       		.byte	84
- 292 0107 40       		.byte	64
- 293 0108 58       		.byte	88
- 294 0109 04       		.byte	4
- 295 010a 59       		.byte	89
- 296 010b 04       		.byte	4
- 297 010c 5B       		.byte	91
- 298 010d 04       		.byte	4
- 299 010e 5F       		.byte	95
- 300 010f 01       		.byte	1
- 301 0110 81       		.byte	-127
- 302 0111 01       		.byte	1
- 303 0112 84       		.byte	-124
- 304 0113 04       		.byte	4
- 305 0114 85       		.byte	-123
- 306 0115 01       		.byte	1
- 307 0116 86       		.byte	-122
- 308 0117 09       		.byte	9
- 309 0118 88       		.byte	-120
- 310 0119 0E       		.byte	14
- 311 011a 98       		.byte	-104
- 312 011b 05       		.byte	5
- 313 011c 99       		.byte	-103
+ 286 0101 84       		.byte	-124
+ 287 0102 2C       		.byte	44
+ 288 0103 04       		.byte	4
+ 289 0104 30       		.byte	48
+ 290 0105 7F       		.byte	127
+ 291 0106 34       		.byte	52
+ 292 0107 80       		.byte	-128
+ 293 0108 35       		.byte	53
+ 294 0109 30       		.byte	48
+ 295 010a 37       		.byte	55
+ 296 010b 0F       		.byte	15
+ 297 010c 38       		.byte	56
+ 298 010d 02       		.byte	2
+ 299 010e 3B       		.byte	59
+ 300 010f 80       		.byte	-128
+ 301 0110 3E       		.byte	62
+ 302 0111 10       		.byte	16
+ 303 0112 54       		.byte	84
+ 304 0113 40       		.byte	64
+ 305 0114 58       		.byte	88
+ 306 0115 04       		.byte	4
+ 307 0116 59       		.byte	89
+ 308 0117 04       		.byte	4
+ 309 0118 5B       		.byte	91
+ 310 0119 04       		.byte	4
+ 311 011a 5F       		.byte	95
+ 312 011b 01       		.byte	1
+ 313 011c 81       		.byte	-127
  314 011d 01       		.byte	1
- 315 011e 9A       		.byte	-102
- 316 011f 0A       		.byte	10
- 317 0120 9C       		.byte	-100
- 318 0121 03       		.byte	3
- 319 0122 9E       		.byte	-98
- 320 0123 04       		.byte	4
- 321 0124 B2       		.byte	-78
- 322 0125 0F       		.byte	15
- 323 0126 B6       		.byte	-74
- 324 0127 0F       		.byte	15
- 325 0128 B7       		.byte	-73
+ 315 011e 84       		.byte	-124
+ 316 011f 04       		.byte	4
+ 317 0120 85       		.byte	-123
+ 318 0121 01       		.byte	1
+ 319 0122 86       		.byte	-122
+ 320 0123 09       		.byte	9
+ 321 0124 88       		.byte	-120
+ 322 0125 0E       		.byte	14
+ 323 0126 98       		.byte	-104
+ 324 0127 05       		.byte	5
+ 325 0128 99       		.byte	-103
  326 0129 01       		.byte	1
- 327 012a B8       		.byte	-72
- 328 012b 88       		.byte	-120
- 329 012c BF       		.byte	-65
- 330 012d 40       		.byte	64
- 331 012e D4       		.byte	-44
- 332 012f 09       		.byte	9
- 333 0130 D8       		.byte	-40
- 334 0131 04       		.byte	4
- 335 0132 D9       		.byte	-39
- 336 0133 04       		.byte	4
- 337 0134 DB       		.byte	-37
- 338 0135 04       		.byte	4
- 339 0136 DF       		.byte	-33
- 340 0137 01       		.byte	1
- 341 0138 00       		.byte	0
- 342 0139 14       		.byte	20
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 7
+ 327 012a 9A       		.byte	-102
+ 328 012b 0A       		.byte	10
+ 329 012c 9C       		.byte	-100
+ 330 012d 03       		.byte	3
+ 331 012e 9E       		.byte	-98
+ 332 012f 04       		.byte	4
+ 333 0130 B2       		.byte	-78
+ 334 0131 0F       		.byte	15
+ 335 0132 B6       		.byte	-74
+ 336 0133 0F       		.byte	15
+ 337 0134 B7       		.byte	-73
+ 338 0135 01       		.byte	1
+ 339 0136 B8       		.byte	-72
+ 340 0137 88       		.byte	-120
+ 341 0138 BF       		.byte	-65
+ 342 0139 40       		.byte	64
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 7
 
 
- 343 013a 04       		.byte	4
- 344 013b 06       		.byte	6
- 345 013c 06       		.byte	6
- 346 013d 0A       		.byte	10
- 347 013e 09       		.byte	9
- 348 013f 60       		.byte	96
- 349 0140 0C       		.byte	12
+ 343 013a D4       		.byte	-44
+ 344 013b 09       		.byte	9
+ 345 013c D8       		.byte	-40
+ 346 013d 04       		.byte	4
+ 347 013e D9       		.byte	-39
+ 348 013f 04       		.byte	4
+ 349 0140 DB       		.byte	-37
  350 0141 04       		.byte	4
- 351 0142 0D       		.byte	13
- 352 0143 20       		.byte	32
- 353 0144 0E       		.byte	14
- 354 0145 82       		.byte	-126
- 355 0146 0F       		.byte	15
- 356 0147 20       		.byte	32
- 357 0148 17       		.byte	23
- 358 0149 55       		.byte	85
- 359 014a 18       		.byte	24
- 360 014b 10       		.byte	16
- 361 014c 1A       		.byte	26
- 362 014d 02       		.byte	2
- 363 014e 1E       		.byte	30
- 364 014f 80       		.byte	-128
- 365 0150 1F       		.byte	31
- 366 0151 10       		.byte	16
- 367 0152 21       		.byte	33
- 368 0153 80       		.byte	-128
- 369 0154 26       		.byte	38
- 370 0155 A0       		.byte	-96
- 371 0156 27       		.byte	39
- 372 0157 02       		.byte	2
- 373 0158 31       		.byte	49
- 374 0159 60       		.byte	96
- 375 015a 32       		.byte	50
+ 351 0142 DF       		.byte	-33
+ 352 0143 01       		.byte	1
+ 353 0144 00       		.byte	0
+ 354 0145 14       		.byte	20
+ 355 0146 04       		.byte	4
+ 356 0147 06       		.byte	6
+ 357 0148 06       		.byte	6
+ 358 0149 0A       		.byte	10
+ 359 014a 09       		.byte	9
+ 360 014b 60       		.byte	96
+ 361 014c 0C       		.byte	12
+ 362 014d 04       		.byte	4
+ 363 014e 0D       		.byte	13
+ 364 014f 20       		.byte	32
+ 365 0150 0E       		.byte	14
+ 366 0151 82       		.byte	-126
+ 367 0152 0F       		.byte	15
+ 368 0153 20       		.byte	32
+ 369 0154 17       		.byte	23
+ 370 0155 55       		.byte	85
+ 371 0156 18       		.byte	24
+ 372 0157 10       		.byte	16
+ 373 0158 1A       		.byte	26
+ 374 0159 02       		.byte	2
+ 375 015a 1E       		.byte	30
  376 015b 80       		.byte	-128
- 377 015c 36       		.byte	54
- 378 015d 20       		.byte	32
- 379 015e 37       		.byte	55
- 380 015f 02       		.byte	2
- 381 0160 38       		.byte	56
- 382 0161 06       		.byte	6
- 383 0162 3C       		.byte	60
- 384 0163 04       		.byte	4
- 385 0164 3D       		.byte	61
- 386 0165 A0       		.byte	-96
- 387 0166 59       		.byte	89
- 388 0167 08       		.byte	8
- 389 0168 5A       		.byte	90
- 390 0169 81       		.byte	-127
- 391 016a 5B       		.byte	91
- 392 016b 20       		.byte	32
- 393 016c 61       		.byte	97
- 394 016d 80       		.byte	-128
- 395 016e 65       		.byte	101
- 396 016f 20       		.byte	32
- 397 0170 66       		.byte	102
- 398 0171 40       		.byte	64
- 399 0172 67       		.byte	103
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 8
+ 377 015c 1F       		.byte	31
+ 378 015d 10       		.byte	16
+ 379 015e 21       		.byte	33
+ 380 015f 80       		.byte	-128
+ 381 0160 26       		.byte	38
+ 382 0161 A0       		.byte	-96
+ 383 0162 27       		.byte	39
+ 384 0163 02       		.byte	2
+ 385 0164 31       		.byte	49
+ 386 0165 60       		.byte	96
+ 387 0166 32       		.byte	50
+ 388 0167 80       		.byte	-128
+ 389 0168 36       		.byte	54
+ 390 0169 20       		.byte	32
+ 391 016a 37       		.byte	55
+ 392 016b 02       		.byte	2
+ 393 016c 38       		.byte	56
+ 394 016d 06       		.byte	6
+ 395 016e 3C       		.byte	60
+ 396 016f 04       		.byte	4
+ 397 0170 3D       		.byte	61
+ 398 0171 A0       		.byte	-96
+ 399 0172 59       		.byte	89
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 8
 
 
- 400 0173 20       		.byte	32
- 401 0174 84       		.byte	-124
- 402 0175 80       		.byte	-128
- 403 0176 90       		.byte	-112
- 404 0177 06       		.byte	6
- 405 0178 92       		.byte	-110
- 406 0179 81       		.byte	-127
- 407 017a 99       		.byte	-103
- 408 017b 28       		.byte	40
- 409 017c 9A       		.byte	-102
- 410 017d 8A       		.byte	-118
- 411 017e 9B       		.byte	-101
- 412 017f 55       		.byte	85
- 413 0180 9C       		.byte	-100
+ 400 0173 08       		.byte	8
+ 401 0174 5A       		.byte	90
+ 402 0175 81       		.byte	-127
+ 403 0176 5B       		.byte	91
+ 404 0177 20       		.byte	32
+ 405 0178 61       		.byte	97
+ 406 0179 80       		.byte	-128
+ 407 017a 65       		.byte	101
+ 408 017b 20       		.byte	32
+ 409 017c 66       		.byte	102
+ 410 017d 40       		.byte	64
+ 411 017e 67       		.byte	103
+ 412 017f 20       		.byte	32
+ 413 0180 84       		.byte	-124
  414 0181 80       		.byte	-128
- 415 0182 9D       		.byte	-99
- 416 0183 40       		.byte	64
- 417 0184 A1       		.byte	-95
- 418 0185 70       		.byte	112
- 419 0186 A2       		.byte	-94
- 420 0187 01       		.byte	1
- 421 0188 A3       		.byte	-93
- 422 0189 10       		.byte	16
- 423 018a C0       		.byte	-64
- 424 018b F6       		.byte	-10
- 425 018c C2       		.byte	-62
- 426 018d F3       		.byte	-13
- 427 018e C4       		.byte	-60
- 428 018f F0       		.byte	-16
- 429 0190 CC       		.byte	-52
- 430 0191 A4       		.byte	-92
- 431 0192 CE       		.byte	-50
- 432 0193 73       		.byte	115
- 433 0194 D6       		.byte	-42
- 434 0195 0F       		.byte	15
- 435 0196 D8       		.byte	-40
- 436 0197 78       		.byte	120
- 437 0198 AA       		.byte	-86
- 438 0199 20       		.byte	32
- 439 019a AC       		.byte	-84
- 440 019b 04       		.byte	4
- 441 019c AE       		.byte	-82
- 442 019d 41       		.byte	65
- 443 019e B2       		.byte	-78
- 444 019f C0       		.byte	-64
- 445 01a0 B3       		.byte	-77
- 446 01a1 20       		.byte	32
- 447 01a2 EA       		.byte	-22
- 448 01a3 20       		.byte	32
- 449 01a4 EE       		.byte	-18
- 450 01a5 08       		.byte	8
- 451 01a6 EE       		.byte	-18
- 452 01a7 08       		.byte	8
- 453 01a8 33       		.byte	51
- 454 01a9 20       		.byte	32
- 455 01aa CC       		.byte	-52
- 456 01ab 10       		.byte	16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 9
+ 415 0182 90       		.byte	-112
+ 416 0183 06       		.byte	6
+ 417 0184 92       		.byte	-110
+ 418 0185 81       		.byte	-127
+ 419 0186 99       		.byte	-103
+ 420 0187 28       		.byte	40
+ 421 0188 9A       		.byte	-102
+ 422 0189 8A       		.byte	-118
+ 423 018a 9B       		.byte	-101
+ 424 018b 55       		.byte	85
+ 425 018c 9C       		.byte	-100
+ 426 018d 80       		.byte	-128
+ 427 018e 9D       		.byte	-99
+ 428 018f 40       		.byte	64
+ 429 0190 A1       		.byte	-95
+ 430 0191 70       		.byte	112
+ 431 0192 A2       		.byte	-94
+ 432 0193 01       		.byte	1
+ 433 0194 A3       		.byte	-93
+ 434 0195 10       		.byte	16
+ 435 0196 C0       		.byte	-64
+ 436 0197 F6       		.byte	-10
+ 437 0198 C2       		.byte	-62
+ 438 0199 F3       		.byte	-13
+ 439 019a C4       		.byte	-60
+ 440 019b F0       		.byte	-16
+ 441 019c CC       		.byte	-52
+ 442 019d A4       		.byte	-92
+ 443 019e CE       		.byte	-50
+ 444 019f 73       		.byte	115
+ 445 01a0 D6       		.byte	-42
+ 446 01a1 0F       		.byte	15
+ 447 01a2 D8       		.byte	-40
+ 448 01a3 78       		.byte	120
+ 449 01a4 AA       		.byte	-86
+ 450 01a5 20       		.byte	32
+ 451 01a6 AC       		.byte	-84
+ 452 01a7 04       		.byte	4
+ 453 01a8 AE       		.byte	-82
+ 454 01a9 41       		.byte	65
+ 455 01aa B2       		.byte	-78
+ 456 01ab C0       		.byte	-64
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 9
 
 
- 457 01ac 0A       		.byte	10
- 458 01ad 02       		.byte	2
- 459 01ae 53       		.byte	83
- 460 01af 10       		.byte	16
- 461 01b0 5B       		.byte	91
- 462 01b1 02       		.byte	2
- 463 01b2 64       		.byte	100
- 464 01b3 10       		.byte	16
- 465 01b4 86       		.byte	-122
+ 457 01ac B3       		.byte	-77
+ 458 01ad 20       		.byte	32
+ 459 01ae EA       		.byte	-22
+ 460 01af 20       		.byte	32
+ 461 01b0 E2       		.byte	-30
+ 462 01b1 01       		.byte	1
+ 463 01b2 E4       		.byte	-28
+ 464 01b3 03       		.byte	3
+ 465 01b4 EA       		.byte	-22
  466 01b5 01       		.byte	1
- 467 01b6 A7       		.byte	-89
- 468 01b7 20       		.byte	32
- 469 01b8 C2       		.byte	-62
- 470 01b9 40       		.byte	64
- 471 01ba D4       		.byte	-44
- 472 01bb 20       		.byte	32
- 473 01bc D6       		.byte	-42
- 474 01bd 40       		.byte	64
- 475 01be D8       		.byte	-40
- 476 01bf 80       		.byte	-128
- 477 01c0 E4       		.byte	-28
- 478 01c1 40       		.byte	64
- 479 01c2 A7       		.byte	-89
- 480 01c3 20       		.byte	32
- 481 01c4 AB       		.byte	-85
- 482 01c5 02       		.byte	2
- 483 01c6 AF       		.byte	-81
- 484 01c7 10       		.byte	16
- 485 01c8 B0       		.byte	-80
- 486 01c9 10       		.byte	16
- 487 01ca EE       		.byte	-18
- 488 01cb C0       		.byte	-64
- 489 01cc A7       		.byte	-89
- 490 01cd 20       		.byte	32
- 491 01ce A7       		.byte	-89
- 492 01cf 20       		.byte	32
- 493 01d0 AF       		.byte	-81
- 494 01d1 20       		.byte	32
- 495 01d2 EE       		.byte	-18
- 496 01d3 10       		.byte	16
- 497 01d4 1F       		.byte	31
- 498 01d5 80       		.byte	-128
- 499 01d6 C6       		.byte	-58
- 500 01d7 01       		.byte	1
- 501 01d8 AF       		.byte	-81
- 502 01d9 80       		.byte	-128
- 503 01da 00       		.byte	0
- 504 01db 01       		.byte	1
- 505 01dc 08       		.byte	8
- 506 01dd 01       		.byte	1
- 507 01de 00       		.byte	0
- 508 01df 03       		.byte	3
- 509 01e0 01       		.byte	1
- 510 01e1 9A       		.byte	-102
- 511 01e2 02       		.byte	2
- 512 01e3 00       		.byte	0
- 513 01e4 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 10
+ 467 01b6 EE       		.byte	-18
+ 468 01b7 08       		.byte	8
+ 469 01b8 E6       		.byte	-26
+ 470 01b9 08       		.byte	8
+ 471 01ba E6       		.byte	-26
+ 472 01bb 08       		.byte	8
+ 473 01bc E2       		.byte	-30
+ 474 01bd 01       		.byte	1
+ 475 01be E4       		.byte	-28
+ 476 01bf 03       		.byte	3
+ 477 01c0 EA       		.byte	-22
+ 478 01c1 01       		.byte	1
+ 479 01c2 EE       		.byte	-18
+ 480 01c3 08       		.byte	8
+ 481 01c4 33       		.byte	51
+ 482 01c5 20       		.byte	32
+ 483 01c6 37       		.byte	55
+ 484 01c7 40       		.byte	64
+ 485 01c8 CC       		.byte	-52
+ 486 01c9 30       		.byte	48
+ 487 01ca 0A       		.byte	10
+ 488 01cb 02       		.byte	2
+ 489 01cc 53       		.byte	83
+ 490 01cd 10       		.byte	16
+ 491 01ce 5B       		.byte	91
+ 492 01cf 02       		.byte	2
+ 493 01d0 64       		.byte	100
+ 494 01d1 10       		.byte	16
+ 495 01d2 86       		.byte	-122
+ 496 01d3 01       		.byte	1
+ 497 01d4 9F       		.byte	-97
+ 498 01d5 40       		.byte	64
+ 499 01d6 A7       		.byte	-89
+ 500 01d7 20       		.byte	32
+ 501 01d8 C2       		.byte	-62
+ 502 01d9 40       		.byte	64
+ 503 01da D4       		.byte	-44
+ 504 01db 20       		.byte	32
+ 505 01dc D6       		.byte	-42
+ 506 01dd 40       		.byte	64
+ 507 01de D8       		.byte	-40
+ 508 01df 80       		.byte	-128
+ 509 01e0 E4       		.byte	-28
+ 510 01e1 40       		.byte	64
+ 511 01e2 3E       		.byte	62
+ 512 01e3 10       		.byte	16
+ 513 01e4 9F       		.byte	-97
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 10
 
 
- 514 01e5 00       		.byte	0
- 515 01e6 00       		.byte	0
- 516 01e7 00       		.byte	0
- 517 01e8 02       		.byte	2
- 518 01e9 21       		.byte	33
- 519 01ea 08       		.byte	8
- 520 01eb D8       		.byte	-40
- 521 01ec 1D       		.byte	29
- 522 01ed 13       		.byte	19
- 523 01ee 00       		.byte	0
- 524 01ef 64       		.byte	100
- 525 01f0 02       		.byte	2
- 526 01f1 98       		.byte	-104
- 527 01f2 0D       		.byte	13
- 528 01f3 02       		.byte	2
- 529 01f4 02       		.byte	2
- 530 01f5 FC       		.byte	-4
- 531 01f6 04       		.byte	4
- 532 01f7 03       		.byte	3
- 533 01f8 1D       		.byte	29
- 534 01f9 98       		.byte	-104
- 535 01fa 00       		.byte	0
- 536 01fb 02       		.byte	2
- 537 01fc 1D       		.byte	29
- 538 01fd 38       		.byte	56
- 539 01fe 00       		.byte	0
- 540 01ff C0       		.byte	-64
- 541 0200 0D       		.byte	13
- 542 0201 9A       		.byte	-102
- 543 0202 10       		.byte	16
- 544 0203 00       		.byte	0
- 545 0204 1D       		.byte	29
- 546 0205 00       		.byte	0
- 547 0206 00       		.byte	0
- 548 0207 00       		.byte	0
- 549 0208 00       		.byte	0
+ 514 01e5 40       		.byte	64
+ 515 01e6 A7       		.byte	-89
+ 516 01e7 20       		.byte	32
+ 517 01e8 AB       		.byte	-85
+ 518 01e9 02       		.byte	2
+ 519 01ea AF       		.byte	-81
+ 520 01eb 10       		.byte	16
+ 521 01ec B0       		.byte	-80
+ 522 01ed 10       		.byte	16
+ 523 01ee CE       		.byte	-50
+ 524 01ef 20       		.byte	32
+ 525 01f0 EE       		.byte	-18
+ 526 01f1 C0       		.byte	-64
+ 527 01f2 96       		.byte	-106
+ 528 01f3 10       		.byte	16
+ 529 01f4 9F       		.byte	-97
+ 530 01f5 40       		.byte	64
+ 531 01f6 A7       		.byte	-89
+ 532 01f7 20       		.byte	32
+ 533 01f8 03       		.byte	3
+ 534 01f9 40       		.byte	64
+ 535 01fa 87       		.byte	-121
+ 536 01fb 04       		.byte	4
+ 537 01fc 96       		.byte	-106
+ 538 01fd 10       		.byte	16
+ 539 01fe 9F       		.byte	-97
+ 540 01ff 40       		.byte	64
+ 541 0200 A7       		.byte	-89
+ 542 0201 20       		.byte	32
+ 543 0202 C0       		.byte	-64
+ 544 0203 10       		.byte	16
+ 545 0204 E6       		.byte	-26
+ 546 0205 10       		.byte	16
+ 547 0206 0A       		.byte	10
+ 548 0207 02       		.byte	2
+ 549 0208 0E       		.byte	14
  550 0209 02       		.byte	2
- 551 020a 00       		.byte	0
- 552 020b 98       		.byte	-104
- 553 020c 00       		.byte	0
- 554 020d 02       		.byte	2
- 555 020e 00       		.byte	0
- 556 020f 00       		.byte	0
- 557 0210 0F       		.byte	15
- 558 0211 E0       		.byte	-32
- 559 0212 00       		.byte	0
- 560 0213 00       		.byte	0
- 561 0214 00       		.byte	0
- 562 0215 0F       		.byte	15
- 563 0216 10       		.byte	16
- 564 0217 13       		.byte	19
- 565 0218 00       		.byte	0
- 566 0219 00       		.byte	0
- 567 021a 02       		.byte	2
- 568 021b 22       		.byte	34
- 569 021c 00       		.byte	0
- 570 021d 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 11
+ 551 020a 5C       		.byte	92
+ 552 020b 01       		.byte	1
+ 553 020c 67       		.byte	103
+ 554 020d 08       		.byte	8
+ 555 020e 80       		.byte	-128
+ 556 020f 01       		.byte	1
+ 557 0210 82       		.byte	-126
+ 558 0211 01       		.byte	1
+ 559 0212 86       		.byte	-122
+ 560 0213 01       		.byte	1
+ 561 0214 93       		.byte	-109
+ 562 0215 08       		.byte	8
+ 563 0216 AA       		.byte	-86
+ 564 0217 10       		.byte	16
+ 565 0218 AF       		.byte	-81
+ 566 0219 20       		.byte	32
+ 567 021a C2       		.byte	-62
+ 568 021b C0       		.byte	-64
+ 569 021c D6       		.byte	-42
+ 570 021d 80       		.byte	-128
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 11
 
 
- 571 021e 40       		.byte	64
- 572 021f 00       		.byte	0
- 573 0220 23       		.byte	35
- 574 0221 05       		.byte	5
- 575 0222 10       		.byte	16
- 576 0223 00       		.byte	0
- 577 0224 04       		.byte	4
- 578 0225 0E       		.byte	14
- 579 0226 DC       		.byte	-36
- 580 0227 FB       		.byte	-5
- 581 0228 3D       		.byte	61
- 582 0229 FF       		.byte	-1
- 583 022a FF       		.byte	-1
- 584 022b FF       		.byte	-1
- 585 022c 22       		.byte	34
- 586 022d 00       		.byte	0
- 587 022e F0       		.byte	-16
- 588 022f 08       		.byte	8
- 589 0230 04       		.byte	4
- 590 0231 00       		.byte	0
- 591 0232 00       		.byte	0
- 592 0233 00       		.byte	0
- 593 0234 00       		.byte	0
- 594 0235 00       		.byte	0
- 595 0236 02       		.byte	2
- 596 0237 20       		.byte	32
- 597 0238 04       		.byte	4
- 598 0239 04       		.byte	4
- 599 023a 04       		.byte	4
- 600 023b 04       		.byte	4
- 601 023c 00       		.byte	0
- 602 023d 00       		.byte	0
- 603 023e 00       		.byte	0
+ 571 021e D8       		.byte	-40
+ 572 021f 80       		.byte	-128
+ 573 0220 E2       		.byte	-30
+ 574 0221 80       		.byte	-128
+ 575 0222 E4       		.byte	-28
+ 576 0223 C0       		.byte	-64
+ 577 0224 EA       		.byte	-22
+ 578 0225 80       		.byte	-128
+ 579 0226 EE       		.byte	-18
+ 580 0227 10       		.byte	16
+ 581 0228 13       		.byte	19
+ 582 0229 21       		.byte	33
+ 583 022a 14       		.byte	20
+ 584 022b 40       		.byte	64
+ 585 022c 1F       		.byte	31
+ 586 022d 80       		.byte	-128
+ 587 022e 7B       		.byte	123
+ 588 022f 10       		.byte	16
+ 589 0230 7F       		.byte	127
+ 590 0231 10       		.byte	16
+ 591 0232 84       		.byte	-124
+ 592 0233 40       		.byte	64
+ 593 0234 C4       		.byte	-60
+ 594 0235 0E       		.byte	14
+ 595 0236 C6       		.byte	-58
+ 596 0237 01       		.byte	1
+ 597 0238 DE       		.byte	-34
+ 598 0239 03       		.byte	3
+ 599 023a 83       		.byte	-125
+ 600 023b 11       		.byte	17
+ 601 023c 87       		.byte	-121
+ 602 023d 10       		.byte	16
+ 603 023e 93       		.byte	-109
  604 023f 01       		.byte	1
- 605 0240 00       		.byte	0
- 606 0241 00       		.byte	0
- 607 0242 C0       		.byte	-64
- 608 0243 00       		.byte	0
- 609 0244 40       		.byte	64
- 610 0245 01       		.byte	1
- 611 0246 10       		.byte	16
- 612 0247 11       		.byte	17
- 613 0248 C0       		.byte	-64
+ 605 0240 97       		.byte	-105
+ 606 0241 20       		.byte	32
+ 607 0242 A7       		.byte	-89
+ 608 0243 10       		.byte	16
+ 609 0244 AB       		.byte	-85
+ 610 0245 20       		.byte	32
+ 611 0246 AF       		.byte	-81
+ 612 0247 80       		.byte	-128
+ 613 0248 00       		.byte	0
  614 0249 01       		.byte	1
- 615 024a 00       		.byte	0
- 616 024b 11       		.byte	17
- 617 024c 40       		.byte	64
- 618 024d 01       		.byte	1
- 619 024e 40       		.byte	64
- 620 024f 01       		.byte	1
- 621 0250 00       		.byte	0
- 622 0251 00       		.byte	0
- 623 0252 00       		.byte	0
+ 615 024a 08       		.byte	8
+ 616 024b 01       		.byte	1
+ 617 024c 00       		.byte	0
+ 618 024d 0F       		.byte	15
+ 619 024e 03       		.byte	3
+ 620 024f C0       		.byte	-64
+ 621 0250 01       		.byte	1
+ 622 0251 9A       		.byte	-102
+ 623 0252 02       		.byte	2
  624 0253 00       		.byte	0
  625 0254 00       		.byte	0
  626 0255 00       		.byte	0
  627 0256 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 12
 
 
  628 0257 00       		.byte	0
- 629 0258 00       		.byte	0
- 630 0259 00       		.byte	0
- 631 025a 00       		.byte	0
- 632 025b 00       		.byte	0
- 633 025c 00       		.byte	0
- 634 025d 00       		.byte	0
+ 629 0258 02       		.byte	2
+ 630 0259 21       		.byte	33
+ 631 025a 08       		.byte	8
+ 632 025b D8       		.byte	-40
+ 633 025c 1D       		.byte	29
+ 634 025d 13       		.byte	19
  635 025e 00       		.byte	0
- 636 025f 00       		.byte	0
- 637 0260 40       		.byte	64
- 638 0261 A3       		.byte	-93
- 639 0262 A3       		.byte	-93
- 640 0263 00       		.byte	0
- 641 0264 A2       		.byte	-94
- 642 0265 00       		.byte	0
- 643 0266 00       		.byte	0
- 644 0267 00       		.byte	0
- 645 0268 00       		.byte	0
- 646 0269 20       		.byte	32
- 647 026a 20       		.byte	32
- 648 026b 00       		.byte	0
- 649 026c 00       		.byte	0
- 650 026d 00       		.byte	0
+ 636 025f 64       		.byte	100
+ 637 0260 02       		.byte	2
+ 638 0261 98       		.byte	-104
+ 639 0262 0D       		.byte	13
+ 640 0263 02       		.byte	2
+ 641 0264 02       		.byte	2
+ 642 0265 FC       		.byte	-4
+ 643 0266 04       		.byte	4
+ 644 0267 03       		.byte	3
+ 645 0268 1D       		.byte	29
+ 646 0269 98       		.byte	-104
+ 647 026a 00       		.byte	0
+ 648 026b 02       		.byte	2
+ 649 026c 1D       		.byte	29
+ 650 026d 38       		.byte	56
  651 026e 00       		.byte	0
- 652 026f 00       		.byte	0
- 653 0270 00       		.byte	0
- 654 0271 0B       		.byte	11
- 655 0272 0B       		.byte	11
+ 652 026f C0       		.byte	-64
+ 653 0270 0D       		.byte	13
+ 654 0271 9A       		.byte	-102
+ 655 0272 10       		.byte	16
  656 0273 00       		.byte	0
- 657 0274 00       		.byte	0
+ 657 0274 1D       		.byte	29
  658 0275 00       		.byte	0
  659 0276 00       		.byte	0
  660 0277 00       		.byte	0
  661 0278 00       		.byte	0
- 662 0279 00       		.byte	0
+ 662 0279 02       		.byte	2
  663 027a 00       		.byte	0
- 664 027b 00       		.byte	0
+ 664 027b 98       		.byte	-104
  665 027c 00       		.byte	0
- 666 027d 00       		.byte	0
- 667 027e 38       		.byte	56
+ 666 027d 02       		.byte	2
+ 667 027e 00       		.byte	0
  668 027f 00       		.byte	0
- 669 0280 0E       		.byte	14
- 670 0281 00       		.byte	0
- 671 0282 18       		.byte	24
- 672 0283 01       		.byte	1
- 673              		.section	.cywolatch,"a",%progbits
- 674              		.align	2
- 675              		.type	cy_meta_wonvl, %object
- 676              		.size	cy_meta_wonvl, 4
- 677              	cy_meta_wonvl:
- 678 0000 BC       		.byte	-68
- 679 0001 90       		.byte	-112
- 680 0002 AC       		.byte	-84
- 681 0003 AF       		.byte	-81
- 682              		.section	.cycustnvl,"a",%progbits
- 683              		.align	2
- 684              		.type	cy_meta_custnvl, %object
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 13
+ 669 0280 0F       		.byte	15
+ 670 0281 E0       		.byte	-32
+ 671 0282 00       		.byte	0
+ 672 0283 00       		.byte	0
+ 673 0284 00       		.byte	0
+ 674 0285 0F       		.byte	15
+ 675 0286 10       		.byte	16
+ 676 0287 13       		.byte	19
+ 677 0288 00       		.byte	0
+ 678 0289 00       		.byte	0
+ 679 028a 02       		.byte	2
+ 680 028b 22       		.byte	34
+ 681 028c 00       		.byte	0
+ 682 028d 00       		.byte	0
+ 683 028e 40       		.byte	64
+ 684 028f 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 13
 
 
- 685              		.size	cy_meta_custnvl, 4
- 686              	cy_meta_custnvl:
- 687 0000 00       		.byte	0
- 688 0001 00       		.byte	0
- 689 0002 40       		.byte	64
- 690 0003 05       		.byte	5
- 691              		.section	.cymeta,"a",%progbits
- 692              		.align	2
- 693              		.type	cy_metadata, %object
- 694              		.size	cy_metadata, 12
- 695              	cy_metadata:
- 696 0000 00       		.byte	0
- 697 0001 01       		.byte	1
- 698 0002 2E       		.byte	46
- 699 0003 16       		.byte	22
- 700 0004 10       		.byte	16
- 701 0005 69       		.byte	105
- 702 0006 00       		.byte	0
- 703 0007 01       		.byte	1
- 704 0008 00       		.byte	0
- 705 0009 00       		.byte	0
- 706 000a 00       		.byte	0
- 707 000b 00       		.byte	0
- 708              		.section	.cyflashprotect,"a",%progbits
- 709              		.align	2
- 710              		.type	cy_meta_flashprotect, %object
- 711              		.size	cy_meta_flashprotect, 256
- 712              	cy_meta_flashprotect:
- 713 0000 00000000 		.space	256
- 713      00000000 
- 713      00000000 
- 713      00000000 
- 713      00000000 
- 714              		.text
- 715              	.Letext0:
- 716              		.file 1 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
- 717              		.file 2 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
- 718              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
- 719              		.section	.debug_info,"",%progbits
- 720              	.Ldebug_info0:
- 721 0000 31010000 		.4byte	0x131
- 722 0004 0400     		.2byte	0x4
- 723 0006 00000000 		.4byte	.Ldebug_abbrev0
- 724 000a 04       		.byte	0x4
- 725 000b 01       		.uleb128 0x1
- 726 000c 24000000 		.4byte	.LASF17
- 727 0010 0C       		.byte	0xc
- 728 0011 FC010000 		.4byte	.LASF18
- 729 0015 F9000000 		.4byte	.LASF19
- 730 0019 00000000 		.4byte	.Ldebug_line0
- 731 001d 02       		.uleb128 0x2
- 732 001e 01       		.byte	0x1
- 733 001f 06       		.byte	0x6
- 734 0020 F0010000 		.4byte	.LASF0
- 735 0024 03       		.uleb128 0x3
- 736 0025 00000000 		.4byte	.LASF9
- 737 0029 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 14
+ 685 0290 23       		.byte	35
+ 686 0291 05       		.byte	5
+ 687 0292 10       		.byte	16
+ 688 0293 00       		.byte	0
+ 689 0294 04       		.byte	4
+ 690 0295 0E       		.byte	14
+ 691 0296 DC       		.byte	-36
+ 692 0297 FB       		.byte	-5
+ 693 0298 3D       		.byte	61
+ 694 0299 FF       		.byte	-1
+ 695 029a FF       		.byte	-1
+ 696 029b FF       		.byte	-1
+ 697 029c 22       		.byte	34
+ 698 029d 00       		.byte	0
+ 699 029e F0       		.byte	-16
+ 700 029f 08       		.byte	8
+ 701 02a0 04       		.byte	4
+ 702 02a1 00       		.byte	0
+ 703 02a2 00       		.byte	0
+ 704 02a3 00       		.byte	0
+ 705 02a4 00       		.byte	0
+ 706 02a5 00       		.byte	0
+ 707 02a6 02       		.byte	2
+ 708 02a7 20       		.byte	32
+ 709 02a8 04       		.byte	4
+ 710 02a9 04       		.byte	4
+ 711 02aa 04       		.byte	4
+ 712 02ab 04       		.byte	4
+ 713 02ac 00       		.byte	0
+ 714 02ad 00       		.byte	0
+ 715 02ae 00       		.byte	0
+ 716 02af 01       		.byte	1
+ 717 02b0 00       		.byte	0
+ 718 02b1 00       		.byte	0
+ 719 02b2 C0       		.byte	-64
+ 720 02b3 00       		.byte	0
+ 721 02b4 40       		.byte	64
+ 722 02b5 01       		.byte	1
+ 723 02b6 10       		.byte	16
+ 724 02b7 11       		.byte	17
+ 725 02b8 C0       		.byte	-64
+ 726 02b9 01       		.byte	1
+ 727 02ba 00       		.byte	0
+ 728 02bb 11       		.byte	17
+ 729 02bc 40       		.byte	64
+ 730 02bd 01       		.byte	1
+ 731 02be 40       		.byte	64
+ 732 02bf 01       		.byte	1
+ 733 02c0 00       		.byte	0
+ 734 02c1 00       		.byte	0
+ 735 02c2 00       		.byte	0
+ 736 02c3 00       		.byte	0
+ 737 02c4 00       		.byte	0
+ 738 02c5 00       		.byte	0
+ 739 02c6 00       		.byte	0
+ 740 02c7 00       		.byte	0
+ 741 02c8 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 14
 
 
- 738 002a 1D       		.byte	0x1d
- 739 002b 2F000000 		.4byte	0x2f
- 740 002f 02       		.uleb128 0x2
- 741 0030 01       		.byte	0x1
- 742 0031 08       		.byte	0x8
- 743 0032 16000000 		.4byte	.LASF1
- 744 0036 02       		.uleb128 0x2
- 745 0037 02       		.byte	0x2
- 746 0038 05       		.byte	0x5
- 747 0039 DD010000 		.4byte	.LASF2
- 748 003d 02       		.uleb128 0x2
- 749 003e 02       		.byte	0x2
- 750 003f 07       		.byte	0x7
- 751 0040 C4000000 		.4byte	.LASF3
- 752 0044 02       		.uleb128 0x2
- 753 0045 04       		.byte	0x4
- 754 0046 05       		.byte	0x5
- 755 0047 E7010000 		.4byte	.LASF4
- 756 004b 02       		.uleb128 0x2
- 757 004c 04       		.byte	0x4
- 758 004d 07       		.byte	0x7
- 759 004e B2000000 		.4byte	.LASF5
- 760 0052 02       		.uleb128 0x2
- 761 0053 08       		.byte	0x8
- 762 0054 05       		.byte	0x5
- 763 0055 CF010000 		.4byte	.LASF6
- 764 0059 02       		.uleb128 0x2
- 765 005a 08       		.byte	0x8
- 766 005b 07       		.byte	0x7
- 767 005c 84010000 		.4byte	.LASF7
- 768 0060 04       		.uleb128 0x4
- 769 0061 04       		.byte	0x4
- 770 0062 05       		.byte	0x5
- 771 0063 696E7400 		.ascii	"int\000"
- 772 0067 02       		.uleb128 0x2
- 773 0068 04       		.byte	0x4
- 774 0069 07       		.byte	0x7
- 775 006a 77010000 		.4byte	.LASF8
- 776 006e 03       		.uleb128 0x3
- 777 006f 9B010000 		.4byte	.LASF10
- 778 0073 02       		.byte	0x2
- 779 0074 18       		.byte	0x18
- 780 0075 24000000 		.4byte	0x24
- 781 0079 05       		.uleb128 0x5
- 782 007a 91000000 		.4byte	0x91
- 783 007e 8A000000 		.4byte	0x8a
- 784 0082 06       		.uleb128 0x6
- 785 0083 8A000000 		.4byte	0x8a
- 786 0087 8302     		.2byte	0x283
- 787 0089 00       		.byte	0
- 788 008a 02       		.uleb128 0x2
- 789 008b 04       		.byte	0x4
- 790 008c 07       		.byte	0x7
- 791 008d C6010000 		.4byte	.LASF11
- 792 0091 07       		.uleb128 0x7
- 793 0092 6E000000 		.4byte	0x6e
- 794 0096 08       		.uleb128 0x8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 15
+ 742 02c9 00       		.byte	0
+ 743 02ca 00       		.byte	0
+ 744 02cb 00       		.byte	0
+ 745 02cc 00       		.byte	0
+ 746 02cd 00       		.byte	0
+ 747 02ce 00       		.byte	0
+ 748 02cf 00       		.byte	0
+ 749 02d0 40       		.byte	64
+ 750 02d1 A3       		.byte	-93
+ 751 02d2 A3       		.byte	-93
+ 752 02d3 00       		.byte	0
+ 753 02d4 A2       		.byte	-94
+ 754 02d5 00       		.byte	0
+ 755 02d6 00       		.byte	0
+ 756 02d7 00       		.byte	0
+ 757 02d8 01       		.byte	1
+ 758 02d9 20       		.byte	32
+ 759 02da 20       		.byte	32
+ 760 02db 00       		.byte	0
+ 761 02dc 00       		.byte	0
+ 762 02dd 00       		.byte	0
+ 763 02de 00       		.byte	0
+ 764 02df 00       		.byte	0
+ 765 02e0 00       		.byte	0
+ 766 02e1 0B       		.byte	11
+ 767 02e2 0B       		.byte	11
+ 768 02e3 00       		.byte	0
+ 769 02e4 00       		.byte	0
+ 770 02e5 00       		.byte	0
+ 771 02e6 00       		.byte	0
+ 772 02e7 00       		.byte	0
+ 773 02e8 00       		.byte	0
+ 774 02e9 00       		.byte	0
+ 775 02ea C0       		.byte	-64
+ 776 02eb 00       		.byte	0
+ 777 02ec C0       		.byte	-64
+ 778 02ed 00       		.byte	0
+ 779 02ee 38       		.byte	56
+ 780 02ef 00       		.byte	0
+ 781 02f0 0E       		.byte	14
+ 782 02f1 00       		.byte	0
+ 783 02f2 18       		.byte	24
+ 784 02f3 01       		.byte	1
+ 785              		.section	.cywolatch,"a",%progbits
+ 786              		.align	2
+ 787              		.type	cy_meta_wonvl, %object
+ 788              		.size	cy_meta_wonvl, 4
+ 789              	cy_meta_wonvl:
+ 790 0000 BC       		.byte	-68
+ 791 0001 90       		.byte	-112
+ 792 0002 AC       		.byte	-84
+ 793 0003 AF       		.byte	-81
+ 794              		.section	.cycustnvl,"a",%progbits
+ 795              		.align	2
+ 796              		.type	cy_meta_custnvl, %object
+ 797              		.size	cy_meta_custnvl, 4
+ 798              	cy_meta_custnvl:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 15
 
 
- 795 0097 E7000000 		.4byte	.LASF12
- 796 009b 03       		.byte	0x3
- 797 009c 1F       		.byte	0x1f
- 798 009d A7000000 		.4byte	0xa7
- 799 00a1 05       		.uleb128 0x5
- 800 00a2 03       		.byte	0x3
- 801 00a3 00000000 		.4byte	cy_meta_configecc
- 802 00a7 07       		.uleb128 0x7
- 803 00a8 79000000 		.4byte	0x79
- 804 00ac 05       		.uleb128 0x5
- 805 00ad 91000000 		.4byte	0x91
- 806 00b1 BC000000 		.4byte	0xbc
- 807 00b5 09       		.uleb128 0x9
- 808 00b6 8A000000 		.4byte	0x8a
- 809 00ba 03       		.byte	0x3
- 810 00bb 00       		.byte	0
- 811 00bc 08       		.uleb128 0x8
- 812 00bd D7000000 		.4byte	.LASF13
- 813 00c1 03       		.byte	0x3
- 814 00c2 7D       		.byte	0x7d
- 815 00c3 CD000000 		.4byte	0xcd
- 816 00c7 05       		.uleb128 0x5
- 817 00c8 03       		.byte	0x3
- 818 00c9 00000000 		.4byte	cy_meta_custnvl
- 819 00cd 07       		.uleb128 0x7
- 820 00ce AC000000 		.4byte	0xac
- 821 00d2 08       		.uleb128 0x8
- 822 00d3 B8010000 		.4byte	.LASF14
- 823 00d7 03       		.byte	0x3
- 824 00d8 8B       		.byte	0x8b
- 825 00d9 E3000000 		.4byte	0xe3
- 826 00dd 05       		.uleb128 0x5
- 827 00de 03       		.byte	0x3
- 828 00df 00000000 		.4byte	cy_meta_wonvl
- 829 00e3 07       		.uleb128 0x7
- 830 00e4 AC000000 		.4byte	0xac
- 831 00e8 05       		.uleb128 0x5
- 832 00e9 91000000 		.4byte	0x91
- 833 00ed F8000000 		.4byte	0xf8
- 834 00f1 09       		.uleb128 0x9
- 835 00f2 8A000000 		.4byte	0x8a
- 836 00f6 FF       		.byte	0xff
- 837 00f7 00       		.byte	0
- 838 00f8 08       		.uleb128 0x8
- 839 00f9 A3010000 		.4byte	.LASF15
- 840 00fd 03       		.byte	0x3
- 841 00fe 99       		.byte	0x99
- 842 00ff 09010000 		.4byte	0x109
- 843 0103 05       		.uleb128 0x5
- 844 0104 03       		.byte	0x3
- 845 0105 00000000 		.4byte	cy_meta_flashprotect
- 846 0109 07       		.uleb128 0x7
- 847 010a E8000000 		.4byte	0xe8
- 848 010e 05       		.uleb128 0x5
- 849 010f 91000000 		.4byte	0x91
- 850 0113 1E010000 		.4byte	0x11e
- 851 0117 09       		.uleb128 0x9
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 16
+ 799 0000 00       		.byte	0
+ 800 0001 00       		.byte	0
+ 801 0002 40       		.byte	64
+ 802 0003 05       		.byte	5
+ 803              		.section	.cymeta,"a",%progbits
+ 804              		.align	2
+ 805              		.type	cy_metadata, %object
+ 806              		.size	cy_metadata, 12
+ 807              	cy_metadata:
+ 808 0000 00       		.byte	0
+ 809 0001 01       		.byte	1
+ 810 0002 2E       		.byte	46
+ 811 0003 16       		.byte	22
+ 812 0004 10       		.byte	16
+ 813 0005 69       		.byte	105
+ 814 0006 00       		.byte	0
+ 815 0007 01       		.byte	1
+ 816 0008 00       		.byte	0
+ 817 0009 00       		.byte	0
+ 818 000a 00       		.byte	0
+ 819 000b 00       		.byte	0
+ 820              		.section	.cyflashprotect,"a",%progbits
+ 821              		.align	2
+ 822              		.type	cy_meta_flashprotect, %object
+ 823              		.size	cy_meta_flashprotect, 256
+ 824              	cy_meta_flashprotect:
+ 825 0000 00000000 		.space	256
+ 825      00000000 
+ 825      00000000 
+ 825      00000000 
+ 825      00000000 
+ 826              		.text
+ 827              	.Letext0:
+ 828              		.file 1 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
+ 829              		.file 2 "d:\\psoc\\psoc creator\\4.2\\psoc creator\\import\\gnu\\arm\\5.4.1\\arm-none-eabi\\includ
+ 830              		.file 3 "Generated_Source\\PSoC5\\cymetadata.c"
+ 831              		.section	.debug_info,"",%progbits
+ 832              	.Ldebug_info0:
+ 833 0000 31010000 		.4byte	0x131
+ 834 0004 0400     		.2byte	0x4
+ 835 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 836 000a 04       		.byte	0x4
+ 837 000b 01       		.uleb128 0x1
+ 838 000c 24000000 		.4byte	.LASF17
+ 839 0010 0C       		.byte	0xc
+ 840 0011 FC010000 		.4byte	.LASF18
+ 841 0015 F9000000 		.4byte	.LASF19
+ 842 0019 00000000 		.4byte	.Ldebug_line0
+ 843 001d 02       		.uleb128 0x2
+ 844 001e 01       		.byte	0x1
+ 845 001f 06       		.byte	0x6
+ 846 0020 F0010000 		.4byte	.LASF0
+ 847 0024 03       		.uleb128 0x3
+ 848 0025 00000000 		.4byte	.LASF9
+ 849 0029 01       		.byte	0x1
+ 850 002a 1D       		.byte	0x1d
+ 851 002b 2F000000 		.4byte	0x2f
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 16
 
 
- 852 0118 8A000000 		.4byte	0x8a
- 853 011c 0B       		.byte	0xb
- 854 011d 00       		.byte	0
- 855 011e 08       		.uleb128 0x8
- 856 011f 0A000000 		.4byte	.LASF16
- 857 0123 03       		.byte	0x3
- 858 0124 C6       		.byte	0xc6
- 859 0125 2F010000 		.4byte	0x12f
- 860 0129 05       		.uleb128 0x5
- 861 012a 03       		.byte	0x3
- 862 012b 00000000 		.4byte	cy_metadata
- 863 012f 07       		.uleb128 0x7
- 864 0130 0E010000 		.4byte	0x10e
- 865 0134 00       		.byte	0
- 866              		.section	.debug_abbrev,"",%progbits
- 867              	.Ldebug_abbrev0:
- 868 0000 01       		.uleb128 0x1
- 869 0001 11       		.uleb128 0x11
- 870 0002 01       		.byte	0x1
- 871 0003 25       		.uleb128 0x25
- 872 0004 0E       		.uleb128 0xe
- 873 0005 13       		.uleb128 0x13
- 874 0006 0B       		.uleb128 0xb
- 875 0007 03       		.uleb128 0x3
- 876 0008 0E       		.uleb128 0xe
- 877 0009 1B       		.uleb128 0x1b
- 878 000a 0E       		.uleb128 0xe
- 879 000b 10       		.uleb128 0x10
- 880 000c 17       		.uleb128 0x17
- 881 000d 00       		.byte	0
- 882 000e 00       		.byte	0
- 883 000f 02       		.uleb128 0x2
- 884 0010 24       		.uleb128 0x24
- 885 0011 00       		.byte	0
- 886 0012 0B       		.uleb128 0xb
- 887 0013 0B       		.uleb128 0xb
- 888 0014 3E       		.uleb128 0x3e
- 889 0015 0B       		.uleb128 0xb
- 890 0016 03       		.uleb128 0x3
- 891 0017 0E       		.uleb128 0xe
- 892 0018 00       		.byte	0
- 893 0019 00       		.byte	0
- 894 001a 03       		.uleb128 0x3
- 895 001b 16       		.uleb128 0x16
- 896 001c 00       		.byte	0
- 897 001d 03       		.uleb128 0x3
- 898 001e 0E       		.uleb128 0xe
- 899 001f 3A       		.uleb128 0x3a
- 900 0020 0B       		.uleb128 0xb
- 901 0021 3B       		.uleb128 0x3b
- 902 0022 0B       		.uleb128 0xb
- 903 0023 49       		.uleb128 0x49
- 904 0024 13       		.uleb128 0x13
- 905 0025 00       		.byte	0
- 906 0026 00       		.byte	0
- 907 0027 04       		.uleb128 0x4
- 908 0028 24       		.uleb128 0x24
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 17
+ 852 002f 02       		.uleb128 0x2
+ 853 0030 01       		.byte	0x1
+ 854 0031 08       		.byte	0x8
+ 855 0032 16000000 		.4byte	.LASF1
+ 856 0036 02       		.uleb128 0x2
+ 857 0037 02       		.byte	0x2
+ 858 0038 05       		.byte	0x5
+ 859 0039 DD010000 		.4byte	.LASF2
+ 860 003d 02       		.uleb128 0x2
+ 861 003e 02       		.byte	0x2
+ 862 003f 07       		.byte	0x7
+ 863 0040 C4000000 		.4byte	.LASF3
+ 864 0044 02       		.uleb128 0x2
+ 865 0045 04       		.byte	0x4
+ 866 0046 05       		.byte	0x5
+ 867 0047 E7010000 		.4byte	.LASF4
+ 868 004b 02       		.uleb128 0x2
+ 869 004c 04       		.byte	0x4
+ 870 004d 07       		.byte	0x7
+ 871 004e B2000000 		.4byte	.LASF5
+ 872 0052 02       		.uleb128 0x2
+ 873 0053 08       		.byte	0x8
+ 874 0054 05       		.byte	0x5
+ 875 0055 CF010000 		.4byte	.LASF6
+ 876 0059 02       		.uleb128 0x2
+ 877 005a 08       		.byte	0x8
+ 878 005b 07       		.byte	0x7
+ 879 005c 84010000 		.4byte	.LASF7
+ 880 0060 04       		.uleb128 0x4
+ 881 0061 04       		.byte	0x4
+ 882 0062 05       		.byte	0x5
+ 883 0063 696E7400 		.ascii	"int\000"
+ 884 0067 02       		.uleb128 0x2
+ 885 0068 04       		.byte	0x4
+ 886 0069 07       		.byte	0x7
+ 887 006a 77010000 		.4byte	.LASF8
+ 888 006e 03       		.uleb128 0x3
+ 889 006f 9B010000 		.4byte	.LASF10
+ 890 0073 02       		.byte	0x2
+ 891 0074 18       		.byte	0x18
+ 892 0075 24000000 		.4byte	0x24
+ 893 0079 05       		.uleb128 0x5
+ 894 007a 91000000 		.4byte	0x91
+ 895 007e 8A000000 		.4byte	0x8a
+ 896 0082 06       		.uleb128 0x6
+ 897 0083 8A000000 		.4byte	0x8a
+ 898 0087 F302     		.2byte	0x2f3
+ 899 0089 00       		.byte	0
+ 900 008a 02       		.uleb128 0x2
+ 901 008b 04       		.byte	0x4
+ 902 008c 07       		.byte	0x7
+ 903 008d C6010000 		.4byte	.LASF11
+ 904 0091 07       		.uleb128 0x7
+ 905 0092 6E000000 		.4byte	0x6e
+ 906 0096 08       		.uleb128 0x8
+ 907 0097 E7000000 		.4byte	.LASF12
+ 908 009b 03       		.byte	0x3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 17
 
 
- 909 0029 00       		.byte	0
- 910 002a 0B       		.uleb128 0xb
- 911 002b 0B       		.uleb128 0xb
- 912 002c 3E       		.uleb128 0x3e
- 913 002d 0B       		.uleb128 0xb
- 914 002e 03       		.uleb128 0x3
- 915 002f 08       		.uleb128 0x8
- 916 0030 00       		.byte	0
- 917 0031 00       		.byte	0
- 918 0032 05       		.uleb128 0x5
- 919 0033 01       		.uleb128 0x1
- 920 0034 01       		.byte	0x1
- 921 0035 49       		.uleb128 0x49
- 922 0036 13       		.uleb128 0x13
- 923 0037 01       		.uleb128 0x1
- 924 0038 13       		.uleb128 0x13
- 925 0039 00       		.byte	0
- 926 003a 00       		.byte	0
- 927 003b 06       		.uleb128 0x6
- 928 003c 21       		.uleb128 0x21
- 929 003d 00       		.byte	0
- 930 003e 49       		.uleb128 0x49
- 931 003f 13       		.uleb128 0x13
- 932 0040 2F       		.uleb128 0x2f
- 933 0041 05       		.uleb128 0x5
- 934 0042 00       		.byte	0
- 935 0043 00       		.byte	0
- 936 0044 07       		.uleb128 0x7
- 937 0045 26       		.uleb128 0x26
- 938 0046 00       		.byte	0
- 939 0047 49       		.uleb128 0x49
- 940 0048 13       		.uleb128 0x13
- 941 0049 00       		.byte	0
- 942 004a 00       		.byte	0
- 943 004b 08       		.uleb128 0x8
- 944 004c 34       		.uleb128 0x34
- 945 004d 00       		.byte	0
- 946 004e 03       		.uleb128 0x3
- 947 004f 0E       		.uleb128 0xe
- 948 0050 3A       		.uleb128 0x3a
- 949 0051 0B       		.uleb128 0xb
- 950 0052 3B       		.uleb128 0x3b
- 951 0053 0B       		.uleb128 0xb
- 952 0054 49       		.uleb128 0x49
- 953 0055 13       		.uleb128 0x13
- 954 0056 3F       		.uleb128 0x3f
- 955 0057 19       		.uleb128 0x19
- 956 0058 02       		.uleb128 0x2
- 957 0059 18       		.uleb128 0x18
- 958 005a 00       		.byte	0
- 959 005b 00       		.byte	0
- 960 005c 09       		.uleb128 0x9
- 961 005d 21       		.uleb128 0x21
- 962 005e 00       		.byte	0
- 963 005f 49       		.uleb128 0x49
- 964 0060 13       		.uleb128 0x13
- 965 0061 2F       		.uleb128 0x2f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 18
+ 909 009c 1F       		.byte	0x1f
+ 910 009d A7000000 		.4byte	0xa7
+ 911 00a1 05       		.uleb128 0x5
+ 912 00a2 03       		.byte	0x3
+ 913 00a3 00000000 		.4byte	cy_meta_configecc
+ 914 00a7 07       		.uleb128 0x7
+ 915 00a8 79000000 		.4byte	0x79
+ 916 00ac 05       		.uleb128 0x5
+ 917 00ad 91000000 		.4byte	0x91
+ 918 00b1 BC000000 		.4byte	0xbc
+ 919 00b5 09       		.uleb128 0x9
+ 920 00b6 8A000000 		.4byte	0x8a
+ 921 00ba 03       		.byte	0x3
+ 922 00bb 00       		.byte	0
+ 923 00bc 08       		.uleb128 0x8
+ 924 00bd D7000000 		.4byte	.LASF13
+ 925 00c1 03       		.byte	0x3
+ 926 00c2 8B       		.byte	0x8b
+ 927 00c3 CD000000 		.4byte	0xcd
+ 928 00c7 05       		.uleb128 0x5
+ 929 00c8 03       		.byte	0x3
+ 930 00c9 00000000 		.4byte	cy_meta_custnvl
+ 931 00cd 07       		.uleb128 0x7
+ 932 00ce AC000000 		.4byte	0xac
+ 933 00d2 08       		.uleb128 0x8
+ 934 00d3 B8010000 		.4byte	.LASF14
+ 935 00d7 03       		.byte	0x3
+ 936 00d8 99       		.byte	0x99
+ 937 00d9 E3000000 		.4byte	0xe3
+ 938 00dd 05       		.uleb128 0x5
+ 939 00de 03       		.byte	0x3
+ 940 00df 00000000 		.4byte	cy_meta_wonvl
+ 941 00e3 07       		.uleb128 0x7
+ 942 00e4 AC000000 		.4byte	0xac
+ 943 00e8 05       		.uleb128 0x5
+ 944 00e9 91000000 		.4byte	0x91
+ 945 00ed F8000000 		.4byte	0xf8
+ 946 00f1 09       		.uleb128 0x9
+ 947 00f2 8A000000 		.4byte	0x8a
+ 948 00f6 FF       		.byte	0xff
+ 949 00f7 00       		.byte	0
+ 950 00f8 08       		.uleb128 0x8
+ 951 00f9 A3010000 		.4byte	.LASF15
+ 952 00fd 03       		.byte	0x3
+ 953 00fe A7       		.byte	0xa7
+ 954 00ff 09010000 		.4byte	0x109
+ 955 0103 05       		.uleb128 0x5
+ 956 0104 03       		.byte	0x3
+ 957 0105 00000000 		.4byte	cy_meta_flashprotect
+ 958 0109 07       		.uleb128 0x7
+ 959 010a E8000000 		.4byte	0xe8
+ 960 010e 05       		.uleb128 0x5
+ 961 010f 91000000 		.4byte	0x91
+ 962 0113 1E010000 		.4byte	0x11e
+ 963 0117 09       		.uleb128 0x9
+ 964 0118 8A000000 		.4byte	0x8a
+ 965 011c 0B       		.byte	0xb
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 18
 
 
- 966 0062 0B       		.uleb128 0xb
- 967 0063 00       		.byte	0
- 968 0064 00       		.byte	0
- 969 0065 00       		.byte	0
- 970              		.section	.debug_aranges,"",%progbits
- 971 0000 14000000 		.4byte	0x14
- 972 0004 0200     		.2byte	0x2
- 973 0006 00000000 		.4byte	.Ldebug_info0
- 974 000a 04       		.byte	0x4
- 975 000b 00       		.byte	0
- 976 000c 0000     		.2byte	0
- 977 000e 0000     		.2byte	0
- 978 0010 00000000 		.4byte	0
- 979 0014 00000000 		.4byte	0
- 980              		.section	.debug_line,"",%progbits
- 981              	.Ldebug_line0:
- 982 0000 0F010000 		.section	.debug_str,"MS",%progbits,1
- 982      02000901 
- 982      00000201 
- 982      FB0E0D00 
- 982      01010101 
- 983              	.LASF9:
- 984 0000 5F5F7569 		.ascii	"__uint8_t\000"
- 984      6E74385F 
- 984      7400
- 985              	.LASF16:
- 986 000a 63795F6D 		.ascii	"cy_metadata\000"
- 986      65746164 
- 986      61746100 
- 987              	.LASF1:
- 988 0016 756E7369 		.ascii	"unsigned char\000"
- 988      676E6564 
- 988      20636861 
- 988      7200
- 989              	.LASF17:
- 990 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 990      43313120 
- 990      352E342E 
- 990      31203230 
- 990      31363036 
- 991 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 991      20726576 
- 991      6973696F 
- 991      6E203233 
- 991      37373135 
- 992 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 992      66756E63 
- 992      74696F6E 
- 992      2D736563 
- 992      74696F6E 
- 993              	.LASF5:
- 994 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
- 994      20756E73 
- 994      69676E65 
- 994      6420696E 
- 994      7400
- 995              	.LASF3:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 19
+ 966 011d 00       		.byte	0
+ 967 011e 08       		.uleb128 0x8
+ 968 011f 0A000000 		.4byte	.LASF16
+ 969 0123 03       		.byte	0x3
+ 970 0124 D4       		.byte	0xd4
+ 971 0125 2F010000 		.4byte	0x12f
+ 972 0129 05       		.uleb128 0x5
+ 973 012a 03       		.byte	0x3
+ 974 012b 00000000 		.4byte	cy_metadata
+ 975 012f 07       		.uleb128 0x7
+ 976 0130 0E010000 		.4byte	0x10e
+ 977 0134 00       		.byte	0
+ 978              		.section	.debug_abbrev,"",%progbits
+ 979              	.Ldebug_abbrev0:
+ 980 0000 01       		.uleb128 0x1
+ 981 0001 11       		.uleb128 0x11
+ 982 0002 01       		.byte	0x1
+ 983 0003 25       		.uleb128 0x25
+ 984 0004 0E       		.uleb128 0xe
+ 985 0005 13       		.uleb128 0x13
+ 986 0006 0B       		.uleb128 0xb
+ 987 0007 03       		.uleb128 0x3
+ 988 0008 0E       		.uleb128 0xe
+ 989 0009 1B       		.uleb128 0x1b
+ 990 000a 0E       		.uleb128 0xe
+ 991 000b 10       		.uleb128 0x10
+ 992 000c 17       		.uleb128 0x17
+ 993 000d 00       		.byte	0
+ 994 000e 00       		.byte	0
+ 995 000f 02       		.uleb128 0x2
+ 996 0010 24       		.uleb128 0x24
+ 997 0011 00       		.byte	0
+ 998 0012 0B       		.uleb128 0xb
+ 999 0013 0B       		.uleb128 0xb
+ 1000 0014 3E       		.uleb128 0x3e
+ 1001 0015 0B       		.uleb128 0xb
+ 1002 0016 03       		.uleb128 0x3
+ 1003 0017 0E       		.uleb128 0xe
+ 1004 0018 00       		.byte	0
+ 1005 0019 00       		.byte	0
+ 1006 001a 03       		.uleb128 0x3
+ 1007 001b 16       		.uleb128 0x16
+ 1008 001c 00       		.byte	0
+ 1009 001d 03       		.uleb128 0x3
+ 1010 001e 0E       		.uleb128 0xe
+ 1011 001f 3A       		.uleb128 0x3a
+ 1012 0020 0B       		.uleb128 0xb
+ 1013 0021 3B       		.uleb128 0x3b
+ 1014 0022 0B       		.uleb128 0xb
+ 1015 0023 49       		.uleb128 0x49
+ 1016 0024 13       		.uleb128 0x13
+ 1017 0025 00       		.byte	0
+ 1018 0026 00       		.byte	0
+ 1019 0027 04       		.uleb128 0x4
+ 1020 0028 24       		.uleb128 0x24
+ 1021 0029 00       		.byte	0
+ 1022 002a 0B       		.uleb128 0xb
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 19
 
 
- 996 00c4 73686F72 		.ascii	"short unsigned int\000"
- 996      7420756E 
- 996      7369676E 
- 996      65642069 
- 996      6E7400
- 997              	.LASF13:
- 998 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
- 998      6574615F 
- 998      63757374 
- 998      6E766C00 
- 999              	.LASF12:
- 1000 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
- 1000      6574615F 
- 1000      636F6E66 
- 1000      69676563 
- 1000      6300
- 1001              	.LASF19:
- 1002 00f9 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 1002      73657273 
- 1002      5C6C6567 
- 1002      6F635C44 
- 1002      6F63756D 
- 1003 0126 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 1003      72205072 
- 1003      6F6A6563 
- 1003      745C5365 
- 1003      6E696F72 
- 1004 0157 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 1004      7420496E 
- 1004      74656772 
- 1004      61746564 
- 1004      5C446573 
- 1005              	.LASF8:
- 1006 0177 756E7369 		.ascii	"unsigned int\000"
- 1006      676E6564 
- 1006      20696E74 
- 1006      00
- 1007              	.LASF7:
- 1008 0184 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1008      206C6F6E 
- 1008      6720756E 
- 1008      7369676E 
- 1008      65642069 
- 1009              	.LASF10:
- 1010 019b 75696E74 		.ascii	"uint8_t\000"
- 1010      385F7400 
- 1011              	.LASF15:
- 1012 01a3 63795F6D 		.ascii	"cy_meta_flashprotect\000"
- 1012      6574615F 
- 1012      666C6173 
- 1012      6870726F 
- 1012      74656374 
- 1013              	.LASF14:
- 1014 01b8 63795F6D 		.ascii	"cy_meta_wonvl\000"
- 1014      6574615F 
- 1014      776F6E76 
- 1014      6C00
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc0DUZfm.s 			page 20
+ 1023 002b 0B       		.uleb128 0xb
+ 1024 002c 3E       		.uleb128 0x3e
+ 1025 002d 0B       		.uleb128 0xb
+ 1026 002e 03       		.uleb128 0x3
+ 1027 002f 08       		.uleb128 0x8
+ 1028 0030 00       		.byte	0
+ 1029 0031 00       		.byte	0
+ 1030 0032 05       		.uleb128 0x5
+ 1031 0033 01       		.uleb128 0x1
+ 1032 0034 01       		.byte	0x1
+ 1033 0035 49       		.uleb128 0x49
+ 1034 0036 13       		.uleb128 0x13
+ 1035 0037 01       		.uleb128 0x1
+ 1036 0038 13       		.uleb128 0x13
+ 1037 0039 00       		.byte	0
+ 1038 003a 00       		.byte	0
+ 1039 003b 06       		.uleb128 0x6
+ 1040 003c 21       		.uleb128 0x21
+ 1041 003d 00       		.byte	0
+ 1042 003e 49       		.uleb128 0x49
+ 1043 003f 13       		.uleb128 0x13
+ 1044 0040 2F       		.uleb128 0x2f
+ 1045 0041 05       		.uleb128 0x5
+ 1046 0042 00       		.byte	0
+ 1047 0043 00       		.byte	0
+ 1048 0044 07       		.uleb128 0x7
+ 1049 0045 26       		.uleb128 0x26
+ 1050 0046 00       		.byte	0
+ 1051 0047 49       		.uleb128 0x49
+ 1052 0048 13       		.uleb128 0x13
+ 1053 0049 00       		.byte	0
+ 1054 004a 00       		.byte	0
+ 1055 004b 08       		.uleb128 0x8
+ 1056 004c 34       		.uleb128 0x34
+ 1057 004d 00       		.byte	0
+ 1058 004e 03       		.uleb128 0x3
+ 1059 004f 0E       		.uleb128 0xe
+ 1060 0050 3A       		.uleb128 0x3a
+ 1061 0051 0B       		.uleb128 0xb
+ 1062 0052 3B       		.uleb128 0x3b
+ 1063 0053 0B       		.uleb128 0xb
+ 1064 0054 49       		.uleb128 0x49
+ 1065 0055 13       		.uleb128 0x13
+ 1066 0056 3F       		.uleb128 0x3f
+ 1067 0057 19       		.uleb128 0x19
+ 1068 0058 02       		.uleb128 0x2
+ 1069 0059 18       		.uleb128 0x18
+ 1070 005a 00       		.byte	0
+ 1071 005b 00       		.byte	0
+ 1072 005c 09       		.uleb128 0x9
+ 1073 005d 21       		.uleb128 0x21
+ 1074 005e 00       		.byte	0
+ 1075 005f 49       		.uleb128 0x49
+ 1076 0060 13       		.uleb128 0x13
+ 1077 0061 2F       		.uleb128 0x2f
+ 1078 0062 0B       		.uleb128 0xb
+ 1079 0063 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 20
 
 
- 1015              	.LASF11:
- 1016 01c6 73697A65 		.ascii	"sizetype\000"
- 1016      74797065 
- 1016      00
- 1017              	.LASF6:
- 1018 01cf 6C6F6E67 		.ascii	"long long int\000"
- 1018      206C6F6E 
- 1018      6720696E 
- 1018      7400
- 1019              	.LASF2:
- 1020 01dd 73686F72 		.ascii	"short int\000"
- 1020      7420696E 
- 1020      7400
- 1021              	.LASF4:
- 1022 01e7 6C6F6E67 		.ascii	"long int\000"
- 1022      20696E74 
- 1022      00
- 1023              	.LASF0:
- 1024 01f0 7369676E 		.ascii	"signed char\000"
- 1024      65642063 
- 1024      68617200 
- 1025              	.LASF18:
- 1026 01fc 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
- 1026      72617465 
- 1026      645F536F 
- 1026      75726365 
- 1026      5C50536F 
- 1027              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1080 0064 00       		.byte	0
+ 1081 0065 00       		.byte	0
+ 1082              		.section	.debug_aranges,"",%progbits
+ 1083 0000 14000000 		.4byte	0x14
+ 1084 0004 0200     		.2byte	0x2
+ 1085 0006 00000000 		.4byte	.Ldebug_info0
+ 1086 000a 04       		.byte	0x4
+ 1087 000b 00       		.byte	0
+ 1088 000c 0000     		.2byte	0
+ 1089 000e 0000     		.2byte	0
+ 1090 0010 00000000 		.4byte	0
+ 1091 0014 00000000 		.4byte	0
+ 1092              		.section	.debug_line,"",%progbits
+ 1093              	.Ldebug_line0:
+ 1094 0000 0F010000 		.section	.debug_str,"MS",%progbits,1
+ 1094      02000901 
+ 1094      00000201 
+ 1094      FB0E0D00 
+ 1094      01010101 
+ 1095              	.LASF9:
+ 1096 0000 5F5F7569 		.ascii	"__uint8_t\000"
+ 1096      6E74385F 
+ 1096      7400
+ 1097              	.LASF16:
+ 1098 000a 63795F6D 		.ascii	"cy_metadata\000"
+ 1098      65746164 
+ 1098      61746100 
+ 1099              	.LASF1:
+ 1100 0016 756E7369 		.ascii	"unsigned char\000"
+ 1100      676E6564 
+ 1100      20636861 
+ 1100      7200
+ 1101              	.LASF17:
+ 1102 0024 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1102      43313120 
+ 1102      352E342E 
+ 1102      31203230 
+ 1102      31363036 
+ 1103 0057 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1103      20726576 
+ 1103      6973696F 
+ 1103      6E203233 
+ 1103      37373135 
+ 1104 008a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1104      66756E63 
+ 1104      74696F6E 
+ 1104      2D736563 
+ 1104      74696F6E 
+ 1105              	.LASF5:
+ 1106 00b2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1106      20756E73 
+ 1106      69676E65 
+ 1106      6420696E 
+ 1106      7400
+ 1107              	.LASF3:
+ 1108 00c4 73686F72 		.ascii	"short unsigned int\000"
+ 1108      7420756E 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 21
+
+
+ 1108      7369676E 
+ 1108      65642069 
+ 1108      6E7400
+ 1109              	.LASF13:
+ 1110 00d7 63795F6D 		.ascii	"cy_meta_custnvl\000"
+ 1110      6574615F 
+ 1110      63757374 
+ 1110      6E766C00 
+ 1111              	.LASF12:
+ 1112 00e7 63795F6D 		.ascii	"cy_meta_configecc\000"
+ 1112      6574615F 
+ 1112      636F6E66 
+ 1112      69676563 
+ 1112      6300
+ 1113              	.LASF19:
+ 1114 00f9 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 1114      73657273 
+ 1114      5C6C6567 
+ 1114      6F635C44 
+ 1114      6F63756D 
+ 1115 0126 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 1115      72205072 
+ 1115      6F6A6563 
+ 1115      745C5365 
+ 1115      6E696F72 
+ 1116 0157 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 1116      7420496E 
+ 1116      74656772 
+ 1116      61746564 
+ 1116      5C446573 
+ 1117              	.LASF8:
+ 1118 0177 756E7369 		.ascii	"unsigned int\000"
+ 1118      676E6564 
+ 1118      20696E74 
+ 1118      00
+ 1119              	.LASF7:
+ 1120 0184 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1120      206C6F6E 
+ 1120      6720756E 
+ 1120      7369676E 
+ 1120      65642069 
+ 1121              	.LASF10:
+ 1122 019b 75696E74 		.ascii	"uint8_t\000"
+ 1122      385F7400 
+ 1123              	.LASF15:
+ 1124 01a3 63795F6D 		.ascii	"cy_meta_flashprotect\000"
+ 1124      6574615F 
+ 1124      666C6173 
+ 1124      6870726F 
+ 1124      74656374 
+ 1125              	.LASF14:
+ 1126 01b8 63795F6D 		.ascii	"cy_meta_wonvl\000"
+ 1126      6574615F 
+ 1126      776F6E76 
+ 1126      6C00
+ 1127              	.LASF11:
+ 1128 01c6 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc5JhF53.s 			page 22
+
+
+ 1128      74797065 
+ 1128      00
+ 1129              	.LASF6:
+ 1130 01cf 6C6F6E67 		.ascii	"long long int\000"
+ 1130      206C6F6E 
+ 1130      6720696E 
+ 1130      7400
+ 1131              	.LASF2:
+ 1132 01dd 73686F72 		.ascii	"short int\000"
+ 1132      7420696E 
+ 1132      7400
+ 1133              	.LASF4:
+ 1134 01e7 6C6F6E67 		.ascii	"long int\000"
+ 1134      20696E74 
+ 1134      00
+ 1135              	.LASF0:
+ 1136 01f0 7369676E 		.ascii	"signed char\000"
+ 1136      65642063 
+ 1136      68617200 
+ 1137              	.LASF18:
+ 1138 01fc 47656E65 		.ascii	"Generated_Source\\PSoC5\\cymetadata.c\000"
+ 1138      72617465 
+ 1138      645F536F 
+ 1138      75726365 
+ 1138      5C50536F 
+ 1139              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

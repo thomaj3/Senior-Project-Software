@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
   28:screen.c      ****     0x4E, 0xF1, 0x37, 0x07, 0x10, 0x03, 0x0E, 0x09, 0x00,
   29:screen.c      ****   ILI9341_GMCTRN1 , 15, 0x00, 0x0E, 0x14, 0x03, 0x11, 0x07, // Set Gamma
   30:screen.c      ****     0x31, 0xC1, 0x48, 0x08, 0x0F, 0x0C, 0x31, 0x36, 0x0F,
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 2
 
 
   31:screen.c      ****   ILI9341_SLPOUT  , 0x80,                // Exit Sleep
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
   68              		.thumb_func
   69              		.type	writedata, %function
   70              	writedata:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 3
 
 
   71              	.LFB64:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  115              	.LFB65:
   55:screen.c      **** 
   56:screen.c      **** // Sets addresses in memory to write to
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 4
 
 
   57:screen.c      **** void setAddrWindow(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  158 002a FFF7FEFF 		bl	SS_Read
  159              	.LVL22:
  160 002e 0128     		cmp	r0, #1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 5
 
 
  161 0030 FBD1     		bne	.L10
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  202              	.LVL31:
   82:screen.c      ****     SS_Write(0);
  203              		.loc 1 82 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 6
 
 
  204 0070 0020     		movs	r0, #0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  249              	.LVL41:
   92:screen.c      ****     
   93:screen.c      ****     writecommand(ILI9341_RAMWR);
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 7
 
 
  250              		.loc 1 93 0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  294              		.loc 1 103 0 is_stmt 0 discriminator 1
  295 001e C0F1F008 		rsb	r8, r0, #240
  296 0022 0FFA88F8 		sxth	r8, r8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 8
 
 
  297              	.LVL45:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  122:screen.c      ****         {
  123:screen.c      ****             SPIM_WriteTxData(hi);
  333              		.loc 1 123 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 9
 
 
  334 0056 3046     		mov	r0, r6
@@ -538,20 +538,20 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  378 0088 FFF7FEFF 		bl	SS_Write
  379              	.LVL63:
  380              	.L19:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 10
 
 
  381 008c BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
  382              		.cfi_endproc
  383              	.LFE66:
  384              		.size	fillRect, .-fillRect
- 385              		.section	.text.fillScreen,"ax",%progbits
+ 385              		.section	.text.fill_screen,"ax",%progbits
  386              		.align	2
- 387              		.global	fillScreen
+ 387              		.global	fill_screen
  388              		.thumb
  389              		.thumb_func
- 390              		.type	fillScreen, %function
- 391              	fillScreen:
+ 390              		.type	fill_screen, %function
+ 391              	fill_screen:
  392              	.LFB67:
  130:screen.c      **** 
  131:screen.c      ****     #if defined (SPI_HAS_TRANSACTION)
@@ -560,7 +560,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  134:screen.c      **** }
  135:screen.c      **** 
  136:screen.c      **** // Fills screen a single color
- 137:screen.c      **** void fillScreen(uint16_t color) 
+ 137:screen.c      **** void fill_screen(uint16_t color) 
  138:screen.c      **** {
  393              		.loc 1 138 0
  394              		.cfi_startproc
@@ -590,7 +590,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  416 0016 5DF804FB 		ldr	pc, [sp], #4
  417              		.cfi_endproc
  418              	.LFE67:
- 419              		.size	fillScreen, .-fillScreen
+ 419              		.size	fill_screen, .-fill_screen
  420 001a 00BF     		.section	.text.StartScreen,"ax",%progbits
  421              		.align	2
  422              		.global	StartScreen
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  424              		.thumb_func
  425              		.type	StartScreen, %function
  426              	StartScreen:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 11
 
 
  427              	.LFB68:
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  464 0014 6E1C     		adds	r6, r5, #1
  465              	.LVL74:
  466 0016 2878     		ldrb	r0, [r5]	@ zero_extendqisi2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 12
 
 
  467 0018 FFF7FEFF 		bl	writedata
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  163:screen.c      **** {
  512              		.loc 1 163 0
  513              		.cfi_startproc
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 13
 
 
  514              		@ args = 0, pretend = 0, frame = 0
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  178:screen.c      ****     while(SS_Read() != 1){}
  553              		.loc 1 178 0 discriminator 1
  554 0030 FFF7FEFF 		bl	SS_Read
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 14
 
 
  555              	.LVL87:
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  597              		.cfi_offset 14, -4
  191:screen.c      ****     change_pixel(239-y, 319-x, color);
  598              		.loc 1 191 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 15
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 15
 
 
  599 0002 C0F59F73 		rsb	r3, r0, #318
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  645 0012 C1EB0308 		rsb	r8, r1, r3
  646 0016 B8F1000F 		cmp	r8, #0
  647 001a B8BF     		it	lt
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 16
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 16
 
 
  648 001c C8F10008 		rsblt	r8, r8, #0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  209:screen.c      ****     }
  210:screen.c      **** 
  211:screen.c      ****     int16_t dx, dy;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 17
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 17
 
 
  212:screen.c      ****     dx = x1 - x0;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  727              		.loc 1 229 0
  728 0082 009A     		ldr	r2, [sp]
  729 0084 2946     		mov	r1, r5
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 18
 
 
  730 0086 3046     		mov	r0, r6
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  240:screen.c      ****     }
  241:screen.c      **** }
  772              		.loc 1 241 0 is_stmt 1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 19
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 19
 
 
  773 00b8 03B0     		add	sp, sp, #12
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  819              		.thumb
  820              		.thumb_func
  821              		.type	drawFastVLine, %function
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 20
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 20
 
 
  822              	drawFastVLine:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  863              		@ frame_needed = 0, uses_anonymous_args = 0
  864              	.LVL131:
  865 0000 10B5     		push	{r4, lr}
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 21
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 21
 
 
  866              		.cfi_def_cfa_offset 8
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  910              	.LVL140:
  911              	.L71:
  912              	.LBE7:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 22
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 22
 
 
  273:screen.c      ****         drawFastHLine(x0, y0, x1 - x0 + 1, color);
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  960 0011 03       		.byte	3
  961 0012 85       		.byte	-123
  962 0013 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 23
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 23
 
 
  963 0014 78       		.byte	120
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1017 004a 0F       		.byte	15
  1018 004b 31       		.byte	49
  1019 004c 2B       		.byte	43
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 24
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 24
 
 
  1020 004d 0C       		.byte	12
@@ -1432,13 +1432,13 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1068 0006 00000000 		.4byte	.Ldebug_abbrev0
  1069 000a 04       		.byte	0x4
  1070 000b 01       		.uleb128 0x1
- 1071 000c 83020000 		.4byte	.LASF48
+ 1071 000c 84020000 		.4byte	.LASF48
  1072 0010 0C       		.byte	0xc
  1073 0011 48000000 		.4byte	.LASF49
  1074 0015 0E010000 		.4byte	.LASF50
  1075 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1076 001d 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 25
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 25
 
 
  1077 0021 00000000 		.4byte	.Ldebug_line0
@@ -1472,9 +1472,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1105 005b 02       		.uleb128 0x2
  1106 005c 02       		.byte	0x2
  1107 005d 07       		.byte	0x7
- 1108 005e E5010000 		.4byte	.LASF6
+ 1108 005e DA010000 		.4byte	.LASF6
  1109 0062 03       		.uleb128 0x3
- 1110 0063 4B020000 		.4byte	.LASF7
+ 1110 0063 4C020000 		.4byte	.LASF7
  1111 0067 02       		.byte	0x2
  1112 0068 3F       		.byte	0x3f
  1113 0069 6D000000 		.4byte	0x6d
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1131 008d 02       		.uleb128 0x2
  1132 008e 08       		.byte	0x8
  1133 008f 07       		.byte	0x7
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 26
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 26
 
 
  1134 0090 E1000000 		.4byte	.LASF12
@@ -1516,12 +1516,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1146 00a8 18       		.byte	0x18
  1147 00a9 2C000000 		.4byte	0x2c
  1148 00ad 03       		.uleb128 0x3
- 1149 00ae F8010000 		.4byte	.LASF15
+ 1149 00ae ED010000 		.4byte	.LASF15
  1150 00b2 03       		.byte	0x3
  1151 00b3 20       		.byte	0x20
  1152 00b4 3E000000 		.4byte	0x3e
  1153 00b8 03       		.uleb128 0x3
- 1154 00b9 C6010000 		.4byte	.LASF16
+ 1154 00b9 BB010000 		.4byte	.LASF16
  1155 00bd 03       		.byte	0x3
  1156 00be 24       		.byte	0x24
  1157 00bf 50000000 		.4byte	0x50
@@ -1542,11 +1542,11 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1172 00e0 02       		.uleb128 0x2
  1173 00e1 08       		.byte	0x8
  1174 00e2 04       		.byte	0x4
- 1175 00e3 3E020000 		.4byte	.LASF20
+ 1175 00e3 3F020000 		.4byte	.LASF20
  1176 00e7 02       		.uleb128 0x2
  1177 00e8 01       		.byte	0x1
  1178 00e9 08       		.byte	0x8
- 1179 00ea C1010000 		.4byte	.LASF21
+ 1179 00ea B6010000 		.4byte	.LASF21
  1180 00ee 02       		.uleb128 0x2
  1181 00ef 08       		.byte	0x8
  1182 00f0 04       		.byte	0x4
@@ -1554,11 +1554,11 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1184 00f5 02       		.uleb128 0x2
  1185 00f6 04       		.byte	0x4
  1186 00f7 07       		.byte	0x7
- 1187 00f8 6D020000 		.4byte	.LASF23
+ 1187 00f8 6E020000 		.4byte	.LASF23
  1188 00fc 05       		.uleb128 0x5
- 1189 00fd 55020000 		.4byte	.LASF24
+ 1189 00fd 56020000 		.4byte	.LASF24
  1190 0101 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 27
 
 
  1191 0102 25       		.byte	0x25
@@ -1568,7 +1568,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1195 010c 9C       		.byte	0x9c
  1196 010d 5A010000 		.4byte	0x15a
  1197 0111 06       		.uleb128 0x6
- 1198 0112 19030000 		.4byte	.LASF26
+ 1198 0112 1A030000 		.4byte	.LASF26
  1199 0116 01       		.byte	0x1
  1200 0117 25       		.byte	0x25
  1201 0118 A2000000 		.4byte	0xa2
@@ -1602,7 +1602,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1229 0155 B1090000 		.4byte	0x9b1
  1230 0159 00       		.byte	0
  1231 015a 05       		.uleb128 0x5
- 1232 015b 0A020000 		.4byte	.LASF25
+ 1232 015b 0B020000 		.4byte	.LASF25
  1233 015f 01       		.byte	0x1
  1234 0160 2F       		.byte	0x2f
  1235 0161 00000000 		.4byte	.LFB64
@@ -1611,14 +1611,14 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1238 016a 9C       		.byte	0x9c
  1239 016b B8010000 		.4byte	0x1b8
  1240 016f 06       		.uleb128 0x6
- 1241 0170 14020000 		.4byte	.LASF27
+ 1241 0170 15020000 		.4byte	.LASF27
  1242 0174 01       		.byte	0x1
  1243 0175 2F       		.byte	0x2f
  1244 0176 A2000000 		.4byte	0xa2
  1245 017a 21000000 		.4byte	.LLST1
  1246 017e 07       		.uleb128 0x7
  1247 017f 0A000000 		.4byte	.LVL8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 28
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 28
 
 
  1248 0183 9B090000 		.4byte	0x99b
@@ -1648,7 +1648,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1272 01b3 B1090000 		.4byte	0x9b1
  1273 01b7 00       		.byte	0
  1274 01b8 05       		.uleb128 0x5
- 1275 01b9 30020000 		.4byte	.LASF28
+ 1275 01b9 31020000 		.4byte	.LASF28
  1276 01bd 01       		.byte	0x1
  1277 01be 39       		.byte	0x39
  1278 01bf 00000000 		.4byte	.LFB65
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1302 01f5 6800     		.ascii	"h\000"
  1303 01f7 01       		.byte	0x1
  1304 01f8 39       		.byte	0x39
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 29
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 29
 
 
  1305 01f9 B8000000 		.4byte	0xb8
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1359 0263 04       		.uleb128 0x4
  1360 0264 75       		.byte	0x75
  1361 0265 00       		.sleb128 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 30
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 30
 
 
  1362 0266 48       		.byte	0x48
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1416 02c9 75       		.byte	0x75
  1417 02ca 00       		.sleb128 0
  1418 02cb 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 31
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 31
 
 
  1419 02cc 09       		.uleb128 0x9
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1473 0338 8C000000 		.4byte	.LVL35
  1474 033c A6090000 		.4byte	0x9a6
  1475 0340 51030000 		.4byte	0x351
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 32
 
 
  1476 0344 08       		.uleb128 0x8
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1530 03a4 BC000000 		.4byte	.LVL42
  1531 03a8 FC000000 		.4byte	0xfc
  1532 03ac 08       		.uleb128 0x8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 33
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 33
 
 
  1533 03ad 01       		.uleb128 0x1
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1587 0419 0E       		.uleb128 0xe
  1588 041a 6C6F00   		.ascii	"lo\000"
  1589 041d 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 34
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 34
 
 
  1590 041e 6E       		.byte	0x6e
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1644 0475 07       		.uleb128 0x7
  1645 0476 5C000000 		.4byte	.LVL53
  1646 047a A6090000 		.4byte	0x9a6
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 35
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 35
 
 
  1647 047e 89040000 		.4byte	0x489
@@ -2077,7 +2077,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1680 04bd 00       		.byte	0
  1681 04be 00       		.byte	0
  1682 04bf 05       		.uleb128 0x5
- 1683 04c0 AC010000 		.4byte	.LASF31
+ 1683 04c0 FF010000 		.4byte	.LASF31
  1684 04c4 01       		.byte	0x1
  1685 04c5 89       		.byte	0x89
  1686 04c6 00000000 		.4byte	.LFB67
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1701 04ed 01       		.uleb128 0x1
  1702 04ee 50       		.byte	0x50
  1703 04ef 01       		.uleb128 0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 36
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 36
 
 
  1704 04f0 30       		.byte	0x30
@@ -2122,7 +2122,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1722 0503 00       		.byte	0
  1723 0504 00       		.byte	0
  1724 0505 0F       		.uleb128 0xf
- 1725 0506 19020000 		.4byte	.LASF51
+ 1725 0506 1A020000 		.4byte	.LASF51
  1726 050a 01       		.byte	0x1
  1727 050b 8F       		.byte	0x8f
  1728 050c 00000000 		.4byte	.LFB68
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1758 0555 0A000000 		.4byte	.LVL69
  1759 0559 FC000000 		.4byte	0xfc
  1760 055d 09       		.uleb128 0x9
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 37
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 37
 
 
  1761 055e 1C000000 		.4byte	.LVL75
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1815 05d2 01       		.uleb128 0x1
  1816 05d3 50       		.byte	0x50
  1817 05d4 08       		.uleb128 0x8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 38
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 38
 
 
  1818 05d5 01       		.uleb128 0x1
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1872 062c 3E000000 		.4byte	.LVL88
  1873 0630 A6090000 		.4byte	0x9a6
  1874 0634 3F060000 		.4byte	0x63f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 39
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 39
 
 
  1875 0638 08       		.uleb128 0x8
@@ -2296,7 +2296,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1887 064d BC090000 		.4byte	0x9bc
  1888 0651 00       		.byte	0
  1889 0652 05       		.uleb128 0x5
- 1890 0653 25020000 		.4byte	.LASF35
+ 1890 0653 26020000 		.4byte	.LASF35
  1891 0657 01       		.byte	0x1
  1892 0658 BD       		.byte	0xbd
  1893 0659 00000000 		.4byte	.LFB70
@@ -2327,7 +2327,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1918 0695 82050000 		.4byte	0x582
  1919 0699 00       		.byte	0
  1920 069a 05       		.uleb128 0x5
- 1921 069b 62020000 		.4byte	.LASF36
+ 1921 069b 63020000 		.4byte	.LASF36
  1922 069f 01       		.byte	0x1
  1923 06a0 C4       		.byte	0xc4
  1924 06a1 00000000 		.4byte	.LFB71
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1929 06af 0A       		.uleb128 0xa
  1930 06b0 783000   		.ascii	"x0\000"
  1931 06b3 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 40
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 40
 
 
  1932 06b4 C4       		.byte	0xc4
@@ -2371,7 +2371,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1959 06f3 91       		.byte	0x91
  1960 06f4 00       		.sleb128 0
  1961 06f5 13       		.uleb128 0x13
- 1962 06f6 DF010000 		.4byte	.LASF37
+ 1962 06f6 D4010000 		.4byte	.LASF37
  1963 06fa 01       		.byte	0x1
  1964 06fb C7       		.byte	0xc7
  1965 06fc AD000000 		.4byte	0xad
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  1986 071f 01       		.byte	0x1
  1987 0720 D3       		.byte	0xd3
  1988 0721 AD000000 		.4byte	0xad
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 41
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 41
 
 
  1989 0725 47040000 		.4byte	.LLST27
@@ -2416,7 +2416,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2001 073c AD000000 		.4byte	0xad
  2002 0740 65040000 		.4byte	.LLST28
  2003 0744 13       		.uleb128 0x13
- 2004 0745 45020000 		.4byte	.LASF38
+ 2004 0745 46020000 		.4byte	.LASF38
  2005 0749 01       		.byte	0x1
  2006 074a D8       		.byte	0xd8
  2007 074b AD000000 		.4byte	0xad
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2043 079c 04000000 		.4byte	.LBE5-.LBB5
  2044 07a0 AE070000 		.4byte	0x7ae
  2045 07a4 17       		.uleb128 0x17
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 42
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 42
 
 
  2046 07a5 7400     		.ascii	"t\000"
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2100 07ee 00       		.byte	0
  2101 07ef 05       		.uleb128 0x5
  2102 07f0 2F000000 		.4byte	.LASF39
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 43
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 43
 
 
  2103 07f4 01       		.byte	0x1
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2157 086b AD000000 		.4byte	0xad
  2158 086f 3E050000 		.4byte	.LLST34
  2159 0873 0A       		.uleb128 0xa
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 44
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 44
 
 
  2160 0874 6800     		.ascii	"h\000"
@@ -2597,7 +2597,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2173 0894 9A060000 		.4byte	0x69a
  2174 0898 00       		.byte	0
  2175 0899 18       		.uleb128 0x18
- 2176 089a B7010000 		.4byte	.LASF41
+ 2176 089a AC010000 		.4byte	.LASF41
  2177 089e 01       		.byte	0x1
  2178 089f 0401     		.2byte	0x104
  2179 08a1 00000000 		.4byte	.LFB74
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2214 08f8 91       		.byte	0x91
  2215 08f9 00       		.sleb128 0
  2216 08fa 16       		.uleb128 0x16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 45
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 45
 
 
  2217 08fb 12000000 		.4byte	.LBB6
@@ -2698,14 +2698,14 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2271 0965 7D050000 		.4byte	0x57d
  2272 0969 74090000 		.4byte	0x974
  2273 096d 1D       		.uleb128 0x1d
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 46
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 46
 
 
  2274 096e F5000000 		.4byte	0xf5
  2275 0972 6E       		.byte	0x6e
  2276 0973 00       		.byte	0
  2277 0974 13       		.uleb128 0x13
- 2278 0975 CF010000 		.4byte	.LASF42
+ 2278 0975 C4010000 		.4byte	.LASF42
  2279 0979 01       		.byte	0x1
  2280 097a 08       		.byte	0x8
  2281 097b 85090000 		.4byte	0x985
@@ -2715,15 +2715,15 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2285 0985 12       		.uleb128 0x12
  2286 0986 64090000 		.4byte	0x964
  2287 098a 1E       		.uleb128 0x1e
- 2288 098b 76020000 		.4byte	.LASF52
+ 2288 098b 77020000 		.4byte	.LASF52
  2289 098f 09       		.byte	0x9
  2290 0990 1207     		.2byte	0x712
  2291 0992 96090000 		.4byte	0x996
  2292 0996 1F       		.uleb128 0x1f
  2293 0997 C3000000 		.4byte	0xc3
  2294 099b 20       		.uleb128 0x20
- 2295 099c 00020000 		.4byte	.LASF43
- 2296 09a0 00020000 		.4byte	.LASF43
+ 2295 099c F5010000 		.4byte	.LASF43
+ 2296 09a0 F5010000 		.4byte	.LASF43
  2297 09a4 04       		.byte	0x4
  2298 09a5 26       		.byte	0x26
  2299 09a6 20       		.uleb128 0x20
@@ -2732,8 +2732,8 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2302 09af 05       		.byte	0x5
  2303 09b0 5E       		.byte	0x5e
  2304 09b1 20       		.uleb128 0x20
- 2305 09b2 D7010000 		.4byte	.LASF45
- 2306 09b6 D7010000 		.4byte	.LASF45
+ 2305 09b2 CC010000 		.4byte	.LASF45
+ 2306 09b6 CC010000 		.4byte	.LASF45
  2307 09ba 06       		.byte	0x6
  2308 09bb 29       		.byte	0x29
  2309 09bc 20       		.uleb128 0x20
@@ -2742,8 +2742,8 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2312 09c5 06       		.byte	0x6
  2313 09c6 26       		.byte	0x26
  2314 09c7 20       		.uleb128 0x20
- 2315 09c8 11030000 		.4byte	.LASF47
- 2316 09cc 11030000 		.4byte	.LASF47
+ 2315 09c8 12030000 		.4byte	.LASF47
+ 2316 09cc 12030000 		.4byte	.LASF47
  2317 09d0 07       		.byte	0x7
  2318 09d1 76       		.byte	0x76
  2319 09d2 00       		.byte	0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2328 0006 0B       		.uleb128 0xb
  2329 0007 03       		.uleb128 0x3
  2330 0008 0E       		.uleb128 0xe
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 47
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 47
 
 
  2331 0009 1B       		.uleb128 0x1b
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2385 003f 3B       		.uleb128 0x3b
  2386 0040 0B       		.uleb128 0xb
  2387 0041 27       		.uleb128 0x27
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 48
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 48
 
 
  2388 0042 19       		.uleb128 0x19
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2442 0080 13       		.uleb128 0x13
  2443 0081 00       		.byte	0
  2444 0082 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 49
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 49
 
 
  2445 0083 0A       		.uleb128 0xa
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2499 00bb 0E       		.uleb128 0xe
  2500 00bc 34       		.uleb128 0x34
  2501 00bd 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 50
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 50
 
 
  2502 00be 03       		.uleb128 0x3
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2556 00f5 0B       		.uleb128 0xb
  2557 00f6 49       		.uleb128 0x49
  2558 00f7 13       		.uleb128 0x13
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 51
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 51
 
 
  2559 00f8 00       		.byte	0
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2613 012e 06       		.uleb128 0x6
  2614 012f 01       		.uleb128 0x1
  2615 0130 13       		.uleb128 0x13
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 52
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 52
 
 
  2616 0131 00       		.byte	0
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2670 0168 00       		.byte	0
  2671 0169 1A       		.uleb128 0x1a
  2672 016a 05       		.uleb128 0x5
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 53
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 53
 
 
  2673 016b 00       		.byte	0
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2727 01a1 13       		.uleb128 0x13
  2728 01a2 3F       		.uleb128 0x3f
  2729 01a3 19       		.uleb128 0x19
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 54
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 54
 
 
  2730 01a4 3C       		.uleb128 0x3c
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2784 0037 01       		.uleb128 0x1
  2785 0038 50       		.byte	0x50
  2786 0039 9F       		.byte	0x9f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 55
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 55
 
 
  2787 003a 00000000 		.4byte	0
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2841 00bc 53       		.byte	0x53
  2842 00bd 9F       		.byte	0x9f
  2843 00be 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 56
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 56
 
 
  2844 00c2 00000000 		.4byte	0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2898 014a 26000000 		.4byte	.LVL45
  2899 014e 8C000000 		.4byte	.LVL63
  2900 0152 0100     		.2byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 57
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 57
 
 
  2901 0154 58       		.byte	0x58
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  2955 01db 36000000 		.4byte	.LVL79
  2956 01df 40000000 		.4byte	.LFE68
  2957 01e3 0100     		.2byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 58
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 58
 
 
  2958 01e5 50       		.byte	0x50
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3012 0272 0100     		.2byte	0x1
  3013 0274 56       		.byte	0x56
  3014 0275 20000000 		.4byte	.LVL76
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 59
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 59
 
 
  3015 0279 34000000 		.4byte	.LVL78
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3069 02fa 9F       		.byte	0x9f
  3070 02fb 4C000000 		.4byte	.LVL91
  3071 02ff 4E000000 		.4byte	.LFE69
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 60
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 60
 
 
  3072 0303 0100     		.2byte	0x1
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3126 0386 55       		.byte	0x55
  3127 0387 4C000000 		.4byte	.LVL104
  3128 038b B2000000 		.4byte	.LVL121
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 61
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 61
 
 
  3129 038f 0100     		.2byte	0x1
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3183 041b 01       		.uleb128 0x1
  3184 041c 53       		.byte	0x53
  3185 041d 9F       		.byte	0x9f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 62
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 62
 
 
  3186 041e 3C000000 		.4byte	.LVL100
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3240 04b0 50       		.byte	0x50
  3241 04b1 9F       		.byte	0x9f
  3242 04b2 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 63
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 63
 
 
  3243 04b6 00000000 		.4byte	0
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3297 0535 9F       		.byte	0x9f
  3298 0536 00000000 		.4byte	0
  3299 053a 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 64
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 64
 
 
  3300              	.LLST34:
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3354 05ba 24000000 		.4byte	.LVL137
  3355 05be 30000000 		.4byte	.LVL139
  3356 05c2 0100     		.2byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 65
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 65
 
 
  3357 05c4 50       		.byte	0x50
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3411 0644 0100     		.2byte	0x1
  3412 0646 51       		.byte	0x51
  3413 0647 45000000 		.4byte	.LVL144-1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 66
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 66
 
 
  3414 064b 46000000 		.4byte	.LVL144
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3468 06ce 01       		.uleb128 0x1
  3469 06cf 53       		.byte	0x53
  3470 06d0 9F       		.byte	0x9f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 67
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 67
 
 
  3471 06d1 40000000 		.4byte	.LVL143
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3525 0014 BE000000 		.4byte	.LFE65
  3526 0018 00000000 		.4byte	.LFB66
  3527 001c 90000000 		.4byte	.LFE66
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 68
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 68
 
 
  3528 0020 00000000 		.4byte	.LFB67
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3564 0048 73637265 		.ascii	"screen.c\000"
  3564      656E2E63 
  3564      00
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 69
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 69
 
 
  3565              	.LASF5:
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3592 00d9 696E7433 		.ascii	"int32_t\000"
  3592      325F7400 
  3593              	.LASF12:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 70
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 70
 
 
  3594 00e1 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -4182,117 +4182,117 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 1
  3606      46617374 
  3606      564C696E 
  3606      6500
- 3607              	.LASF31:
- 3608 01ac 66696C6C 		.ascii	"fillScreen\000"
- 3608      53637265 
- 3608      656E00
- 3609              	.LASF41:
- 3610 01b7 64726177 		.ascii	"draw_line\000"
- 3610      5F6C696E 
- 3610      6500
- 3611              	.LASF21:
- 3612 01c1 63686172 		.ascii	"char\000"
+ 3607              	.LASF41:
+ 3608 01ac 64726177 		.ascii	"draw_line\000"
+ 3608      5F6C696E 
+ 3608      6500
+ 3609              	.LASF21:
+ 3610 01b6 63686172 		.ascii	"char\000"
+ 3610      00
+ 3611              	.LASF16:
+ 3612 01bb 75696E74 		.ascii	"uint16_t\000"
+ 3612      31365F74 
  3612      00
- 3613              	.LASF16:
- 3614 01c6 75696E74 		.ascii	"uint16_t\000"
- 3614      31365F74 
- 3614      00
- 3615              	.LASF42:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 71
+ 3613              	.LASF42:
+ 3614 01c4 696E6974 		.ascii	"initcmd\000"
+ 3614      636D6400 
+ 3615              	.LASF45:
+ 3616 01cc 53535F52 		.ascii	"SS_Read\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 71
 
 
- 3616 01cf 696E6974 		.ascii	"initcmd\000"
- 3616      636D6400 
- 3617              	.LASF45:
- 3618 01d7 53535F52 		.ascii	"SS_Read\000"
- 3618      65616400 
- 3619              	.LASF37:
- 3620 01df 73746565 		.ascii	"steep\000"
- 3620      7000
- 3621              	.LASF6:
- 3622 01e5 73686F72 		.ascii	"short unsigned int\000"
- 3622      7420756E 
- 3622      7369676E 
- 3622      65642069 
- 3622      6E7400
- 3623              	.LASF15:
- 3624 01f8 696E7431 		.ascii	"int16_t\000"
- 3624      365F7400 
- 3625              	.LASF43:
- 3626 0200 445F435F 		.ascii	"D_C_Write\000"
- 3626      57726974 
- 3626      6500
+ 3616      65616400 
+ 3617              	.LASF37:
+ 3618 01d4 73746565 		.ascii	"steep\000"
+ 3618      7000
+ 3619              	.LASF6:
+ 3620 01da 73686F72 		.ascii	"short unsigned int\000"
+ 3620      7420756E 
+ 3620      7369676E 
+ 3620      65642069 
+ 3620      6E7400
+ 3621              	.LASF15:
+ 3622 01ed 696E7431 		.ascii	"int16_t\000"
+ 3622      365F7400 
+ 3623              	.LASF43:
+ 3624 01f5 445F435F 		.ascii	"D_C_Write\000"
+ 3624      57726974 
+ 3624      6500
+ 3625              	.LASF31:
+ 3626 01ff 66696C6C 		.ascii	"fill_screen\000"
+ 3626      5F736372 
+ 3626      65656E00 
  3627              	.LASF25:
- 3628 020a 77726974 		.ascii	"writedata\000"
+ 3628 020b 77726974 		.ascii	"writedata\000"
  3628      65646174 
  3628      6100
  3629              	.LASF27:
- 3630 0214 64617461 		.ascii	"data\000"
+ 3630 0215 64617461 		.ascii	"data\000"
  3630      00
  3631              	.LASF51:
- 3632 0219 53746172 		.ascii	"StartScreen\000"
+ 3632 021a 53746172 		.ascii	"StartScreen\000"
  3632      74536372 
  3632      65656E00 
  3633              	.LASF35:
- 3634 0225 64726177 		.ascii	"draw_pixel\000"
+ 3634 0226 64726177 		.ascii	"draw_pixel\000"
  3634      5F706978 
  3634      656C00
  3635              	.LASF28:
- 3636 0230 73657441 		.ascii	"setAddrWindow\000"
+ 3636 0231 73657441 		.ascii	"setAddrWindow\000"
  3636      64647257 
  3636      696E646F 
  3636      7700
  3637              	.LASF20:
- 3638 023e 646F7562 		.ascii	"double\000"
+ 3638 023f 646F7562 		.ascii	"double\000"
  3638      6C6500
  3639              	.LASF38:
- 3640 0245 79737465 		.ascii	"ystep\000"
+ 3640 0246 79737465 		.ascii	"ystep\000"
  3640      7000
  3641              	.LASF7:
- 3642 024b 5F5F696E 		.ascii	"__int32_t\000"
+ 3642 024c 5F5F696E 		.ascii	"__int32_t\000"
  3642      7433325F 
  3642      7400
  3643              	.LASF24:
- 3644 0255 77726974 		.ascii	"writecommand\000"
+ 3644 0256 77726974 		.ascii	"writecommand\000"
  3644      65636F6D 
  3644      6D616E64 
  3644      00
  3645              	.LASF36:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccoTQeZj.s 			page 72
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccDvnz5x.s 			page 72
 
 
- 3646 0262 77726974 		.ascii	"write_line\000"
+ 3646 0263 77726974 		.ascii	"write_line\000"
  3646      655F6C69 
  3646      6E6500
  3647              	.LASF23:
- 3648 026d 73697A65 		.ascii	"sizetype\000"
+ 3648 026e 73697A65 		.ascii	"sizetype\000"
  3648      74797065 
  3648      00
  3649              	.LASF52:
- 3650 0276 49544D5F 		.ascii	"ITM_RxBuffer\000"
+ 3650 0277 49544D5F 		.ascii	"ITM_RxBuffer\000"
  3650      52784275 
  3650      66666572 
  3650      00
  3651              	.LASF48:
- 3652 0283 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 3652 0284 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  3652      43313120 
  3652      352E342E 
  3652      31203230 
  3652      31363036 
- 3653 02b6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 3653 02b7 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  3653      20726576 
  3653      6973696F 
  3653      6E203233 
  3653      37373135 
- 3654 02e9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3654 02ea 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  3654      66756E63 
  3654      74696F6E 
  3654      2D736563 
  3654      74696F6E 
  3655              	.LASF47:
- 3656 0311 43794465 		.ascii	"CyDelay\000"
+ 3656 0312 43794465 		.ascii	"CyDelay\000"
  3656      6C617900 
  3657              	.LASF26:
- 3658 0319 636F6D6D 		.ascii	"command\000"
+ 3658 031a 636F6D6D 		.ascii	"command\000"
  3658      616E6400 
  3659              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

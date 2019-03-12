@@ -167,7 +167,12 @@ int main(void)
     StartScreen();
     
     // Fills screen in black
-    fillScreen(BLACK);  
+    fill_screen(BLACK);  
+    
+    isr_ClearPending();
+    
+    isr_Start();
+    isr_Enable();
     
 //    // Test case for writing characters 0-9 and period
 //    uint16_t char_x = 5;
@@ -186,7 +191,7 @@ int main(void)
     
     CyDelay(5000);
     
-    fillScreen(BLACK);
+    fill_screen(BLACK);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();

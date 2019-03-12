@@ -1,5 +1,5 @@
 # Design01
-# 2019-03-07 13:40:44Z
+# 2019-03-12 19:08:04Z
 
 # IO_0@[IOP=(1)][IoId=(0)] is reserved: SWDDebugEnabled
 dont_use_io iocell 1 0
@@ -17,6 +17,9 @@ set_io "Reset(0)" iocell 15 5
 set_io "Pin_DS(0)" iocell 3 5
 set_io "Pin_GS(0)" iocell 3 4
 set_io "Pin_ID(0)" iocell 3 3
+set_io "scl(0)" iocell 3 7
+set_io "sda(0)" iocell 3 6
+set_io "IRQ(0)" iocell 15 0
 set_location "\SPIM:BSPIM:load_rx_data\" 3 5 0 1
 set_location "\SPIM:BSPIM:tx_status_0\" 2 5 1 0
 set_location "\SPIM:BSPIM:tx_status_4\" 2 4 1 2
@@ -29,6 +32,9 @@ set_location "\VDAC8_DS:viDAC8\" vidaccell -1 -1 3
 set_location "\VDAC8_GS:viDAC8\" vidaccell -1 -1 2
 set_location "\ADC_SAR_1:IRQ\" interrupt -1 -1 0
 set_location "\ADC_SAR_1:ADC_SAR\" sarcell -1 -1 1
+set_location "\I2C:I2C_IRQ\" interrupt -1 -1 15
+set_location "\I2C:I2C_FF\" i2ccell -1 -1 0
+set_location "isr" interrupt -1 -1 1
 set_location "Net_5" 3 4 0 0
 set_location "\SPIM:BSPIM:state_2\" 3 5 1 1
 set_location "\SPIM:BSPIM:state_1\" 3 5 1 0
