@@ -4,7 +4,10 @@
 #include "project.h"
 #include "font.h"
 #include "screen.h"
-
+#include "strings.h"
+#include "string.h"
+#include "stdio.h"
+#include "stdlib.h"
 // How to read
 //  // Character, integer code
 //  # of array indecies to next number
@@ -729,13 +732,13 @@ void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character)
     }
 }
 
-void draw_string(int16_t x, int16_t y, uint16_t color, char *string[])
+void draw_string(int16_t x, int16_t y, uint16_t color, char string[])
 {
     int16_t x_coor = x;
     
-    while(**string != 0)
+    while(*string != 0)
     {
-        char g = **string;
+        char g = *string;
         
         switch(g)
         {
@@ -862,7 +865,7 @@ void draw_string(int16_t x, int16_t y, uint16_t color, char *string[])
             y = y-9;
         }
         
-        *string = *string+1;
+        string = string+1;
     }
 }
 
@@ -894,4 +897,33 @@ void draw_number(int16_t x, int16_t y, uint16_t color, double number)
     draw_character(x+x_offset+14,y,color,tenths);
     draw_character(x+x_offset+21,y,color,hundredths);
     draw_character(x+x_offset+28,y,color,thousandths);
+}
+
+void draw_coordinates(double y_max)
+{
+    int y_max_int = (int) (y_max);
+    int y_max_pixel = (int) 240/(1.25);
+    double y_label;
+    int x_label;
+    char string_throwaway_y[10];
+    char string_throwaway_x[4]; //= NULL;
+    //string_print = malloc(sizeof(**string_print)*3);
+    int y_max_step = y_max_pixel/4;
+    int x_max_step = 169/4;
+    int i;
+    int k;
+    draw_line(0,0,190,0,WHITE);
+    draw_line(0,0,0,y_max_pixel,WHITE);
+    
+    for(i=1;i<5;i++)
+    {
+        y_label =  ((y_max/1.25))/4.0 * i;
+        sprintf(string_throwaway_y,"%.1f", y_label);
+        sprintf(string_throwaway_x,"%i", i*2);
+        draw_line(0,i*y_max_step,5,i*y_max_step,WHITE);
+        draw_string(12,i*y_max_step,WHITE,string_throwaway_y);
+        draw_line(i*x_max_step,0,i*x_max_step,3,WHITE);
+        draw_string(i*x_max_step,12,WHITE,string_throwaway_x);
+    }
+    
 }

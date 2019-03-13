@@ -15,8 +15,6 @@
 #define VDAC_N_1_VOLT 21
 #define VDAC_P_1_VOLT 13
 #define ADC_GAIN 51.7
-#define Y_RES 240.0
-#define X_RES 320.0
 #define CURVE_MAX 10
 
 //The lengths of Drain or Common testing points
@@ -62,7 +60,7 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
     double          Id=0;         
 	//The Drain Current | Id_real = Id/100
-    
+    ADC_SAR_1_Wakeup();
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     VDAC8_GS_SetValue(0);
     for(Vgs = 0; Vgs < Vgs_max; Vgs++)
@@ -71,9 +69,11 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
         if(Id > ID_TH)
         {
             //Once Id > 1 mV transistor is "on" and we can return Vgs as Vth
+            ADC_SAR_1_Sleep();
             return Vgs;
         }
     }
+    ADC_SAR_1_Sleep();
     return 0; //If a Vth cannot be found
 }
 
@@ -86,7 +86,7 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
     double          Id; 
 	//The Drain Current | Id_real = Id/100
-    
+    ADC_SAR_1_Wakeup();
     VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
     for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
@@ -94,9 +94,15 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
         Id = single_test_preset_vds(Vgs);
         if (Id >= ID_MAX)
         {
+            ADC_SAR_1_Sleep();
+            VDAC8_DS_SetValue(0);
+            VDAC8_GS_SetValue(0);
             return Vgs-1; //Stop stepping once max current is hit
         }
     }
+    ADC_SAR_1_Sleep();
+    VDAC8_DS_SetValue(0);
+    VDAC8_GS_SetValue(0);
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
 }
 
@@ -107,6 +113,7 @@ void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_
     int i,j,k;
     double Id;
     double Id_avg;
+    char print_string[5];
     
     int y_pixel_prev, x_pixel_prev;
     int y_pixel, x_pixel;
@@ -142,7 +149,8 @@ void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_
             }
         }
         ADC_SAR_1_Sleep(); //sleep to reset ADC between curves
-        draw_number(x_pixel_prev+5,y_pixel_prev,WHITE,Vgs_double[i]);
+        sprintf(print_string,"%5.3f",Vgs_double[i]);
+        draw_string(x_pixel_prev+5,y_pixel_prev,WHITE,print_string);
     }
                
 }
@@ -169,10 +177,10 @@ int main(void)
     // Fills screen in black
     fill_screen(BLACK);  
     
-    isr_ClearPending();
-    
-    isr_Start();
-    isr_Enable();
+//    isr_ClearPending();
+//    
+//    isr_Start();
+//    isr_Enable();
     
 //    // Test case for writing characters 0-9 and period
 //    uint16_t char_x = 5;
@@ -186,11 +194,11 @@ int main(void)
 //    
 //    draw_number(100,100,WHITE,temp_num);
 //    
-    char *string_test[] = {"STRING TEST TSJKF SDFNKJ"};
+    char string_test[] = {"STRING TEST TSJKF SDFNKJ"};
     draw_string(200,100,WHITE,string_test);
-    
-    CyDelay(5000);
-    
+//    
+//    CyDelay(5000);
+//    
     fill_screen(BLACK);
     
     //Enabling VDACs and ADCs
@@ -205,11 +213,11 @@ int main(void)
     int k;  //used for for loop iterations
     
     unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
-    int y_max_mA = 25;                      //The highest plottable Id in mA
-    int x_max_mV = 10000;                   //the highest plottable Vds in mV
+    double y_max_mA = 25;                      //The highest plottable Id in mA
+    double x_max_mV = 10000;                   //the highest plottable Vds in mV
     
-    int Vth;      //VDAC code for the threshold voltage
-    int Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA
+    unsigned int Vth;      //VDAC code for the threshold voltage
+    unsigned int Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA
     int x_pixel;
     int y_pixel;
     int x_pixel_prev;
@@ -234,10 +242,6 @@ int main(void)
             case 0:
                 //NMOS input
                 Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
-                if (Vth < 0)
-                {
-                    return 0;
-                }
                 Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
                 Vgs_step = (Vgs_max - Vth)/(CURVE_NUM-1); //Creating the step size for linearlly spaced 
                 Vgs_test_points[0] = Vth; //Setting the first point as Vth
@@ -252,9 +256,11 @@ int main(void)
                 {
                     Output_data_x[i] = i * 4.096 *3 / 256.0; //actual Vds
                 }
-                y_max_mA = 1.05 * single_test(VDAC_D_C_MAX, Vgs_max);
+                ADC_SAR_1_Wakeup();
+                y_max_mA = 1.25 * single_test(VDAC_D_C_MAX,Vgs_max);
                 ADC_SAR_1_Sleep(); //Reset SAR from previous tests
                 run_test(y_max_mA,Vgs_test_points,Vgs_points_double);
+                draw_coordinates(y_max_mA);
                 break;
             case 1:
                 //NPN input
@@ -270,7 +276,7 @@ int main(void)
                 {
                     Output_data_x[i] = i * 3.0 * 4.096 / 256.0; //Translates VDAC code to Ib in mA
                 }
-                y_max_mA = 1.05 * single_test(VDAC_D_C_MAX, Vgs_max);
+                y_max_mA = 1.25 * single_test(VDAC_D_C_MAX, Vgs_max);
                 ADC_SAR_1_Sleep(); //Reset SAR from previous tests
                 run_test(y_max_mA,Vgs_test_points,Vgs_points_double);
                 break;

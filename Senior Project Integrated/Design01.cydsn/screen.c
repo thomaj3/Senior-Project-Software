@@ -3,6 +3,8 @@
 
 #include "project.h"
 #include "screen.h"
+#include "strings.h"
+
 
 // Initialization command/data
 static const uint8_t initcmd[] = {

@@ -26,8 +26,6 @@
 /*******************************************************************************
 *  Place your includes, defines and code here 
 ********************************************************************************/
-#include "screen.h"
-#include "font.h"
 /* `#START isr_intc` */
 
 /* `#END` */
@@ -166,12 +164,6 @@ CY_ISR(isr_Interrupt)
     #endif /* isr_INTERRUPT_INTERRUPT_CALLBACK */ 
 
     /*  Place your Interrupt code here. */
-    fill_screen(BLACK);
-    char *message[] = {"SCREEN PRESSED"};
-    draw_string(100,100,WHITE,message);
-    CyDelay(1000);
-    fill_screen(BLACK);
-    isr_ClearPending(); 
     /* `#START isr_Interrupt` */
 
     /* `#END` */

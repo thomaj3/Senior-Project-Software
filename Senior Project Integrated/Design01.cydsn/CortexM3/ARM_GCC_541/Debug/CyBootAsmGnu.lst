@@ -12111,7 +12111,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  775              	.set CYDEV_DEBUGGING_XRES, 0
  776              	.set CYDEV_DMA_CHANNELS_AVAILABLE, 24
  777              	.set CYDEV_ECC_ENABLE, 0
- 778              	.set CYDEV_HEAP_SIZE, 0x80
+ 778              	.set CYDEV_HEAP_SIZE, 0x1000
  779              	.set CYDEV_INSTRUCT_CACHE_ENABLED, 1
  780              	.set CYDEV_INTR_RISING, 0x00008003
  781              	.set CYDEV_IS_EXPORTING_CODE, 0
