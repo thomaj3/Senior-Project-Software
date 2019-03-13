@@ -3,7 +3,11 @@
 
 #include "project.h"
 #include "screen.h"
+#include "font.h"
 #include "strings.h"
+#include "string.h"
+#include "stdio.h"
+#include "stdlib.h"
 
 
 // Initialization command/data
@@ -278,4 +282,33 @@ void draw_line(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
     {
         write_line(x0, y0, x1, y1, color);
     }
+}
+
+void draw_coordinates(double y_max)
+{
+    int y_max_int = (int) (y_max);
+    int y_max_pixel = (int) 240/(1.25);
+    double y_label;
+    int x_label;
+    char string_throwaway_y[10];
+    char string_throwaway_x[4]; //= NULL;
+    //string_print = malloc(sizeof(**string_print)*3);
+    int y_max_step = y_max_pixel/4;
+    int x_max_step = 169/4;
+    int i;
+    int k;
+    draw_line(30,10,220,10,WHITE);
+    draw_line(30,10,30,y_max_pixel+10,WHITE);
+    
+    for(i=1;i<5;i++)
+    {
+        y_label =  ((y_max/1.25))/4.0 * i;
+        sprintf(string_throwaway_y,"%.1f", y_label);
+        sprintf(string_throwaway_x,"%i", i*2);
+        draw_line(30,i*y_max_step+10,35,i*y_max_step+10,WHITE);
+        draw_string(3,i*y_max_step+10,WHITE,string_throwaway_y);
+        draw_line(i*x_max_step+30,10,i*x_max_step+30,13,WHITE);
+        draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);
+    }
+    
 }

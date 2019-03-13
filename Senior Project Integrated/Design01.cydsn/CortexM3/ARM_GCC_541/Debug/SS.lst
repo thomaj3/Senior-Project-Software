@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
   28:Generated_Source\PSoC5/SS.c **** *
   29:Generated_Source\PSoC5/SS.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/SS.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 2
 
 
   31:Generated_Source\PSoC5/SS.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
   51              	.L2:
   52 0014 00510040 		.word	1073762560
   53              		.cfi_endproc
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 3
 
 
   54              	.LFE0:
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
   76 000c 1843     		orrs	r0, r0, r3
   77 000e 1070     		strb	r0, [r2]
   78 0010 7047     		bx	lr
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 4
 
 
   79              	.L6:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  109              		.cfi_endproc
  110              	.LFE2:
  111              		.size	SS_Read, .-SS_Read
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 5
 
 
  112              		.section	.text.SS_ReadDataReg,"ax",%progbits
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  138              		.text
  139              	.Letext0:
  140              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 6
 
 
  141              		.section	.debug_info,"",%progbits
@@ -311,42 +311,42 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  148 000c 09000000 		.4byte	.LASF20
  149 0010 0C       		.byte	0xc
  150 0011 97000000 		.4byte	.LASF21
- 151 0015 D9000000 		.4byte	.LASF22
+ 151 0015 20010000 		.4byte	.LASF22
  152 0019 00000000 		.4byte	.Ldebug_ranges0+0
  153 001d 00000000 		.4byte	0
  154 0021 00000000 		.4byte	.Ldebug_line0
  155 0025 02       		.uleb128 0x2
  156 0026 01       		.byte	0x1
  157 0027 06       		.byte	0x6
- 158 0028 F7010000 		.4byte	.LASF0
+ 158 0028 03020000 		.4byte	.LASF0
  159 002c 02       		.uleb128 0x2
  160 002d 01       		.byte	0x1
  161 002e 08       		.byte	0x8
- 162 002f 4B010000 		.4byte	.LASF1
+ 162 002f D9000000 		.4byte	.LASF1
  163 0033 02       		.uleb128 0x2
  164 0034 02       		.byte	0x2
  165 0035 05       		.byte	0x5
- 166 0036 DE010000 		.4byte	.LASF2
+ 166 0036 EA010000 		.4byte	.LASF2
  167 003a 02       		.uleb128 0x2
  168 003b 02       		.byte	0x2
  169 003c 07       		.byte	0x7
- 170 003d 78010000 		.4byte	.LASF3
+ 170 003d 06010000 		.4byte	.LASF3
  171 0041 02       		.uleb128 0x2
  172 0042 04       		.byte	0x4
  173 0043 05       		.byte	0x5
- 174 0044 EE010000 		.4byte	.LASF4
+ 174 0044 FA010000 		.4byte	.LASF4
  175 0048 02       		.uleb128 0x2
  176 0049 04       		.byte	0x4
  177 004a 07       		.byte	0x7
- 178 004b 5E010000 		.4byte	.LASF5
+ 178 004b EC000000 		.4byte	.LASF5
  179 004f 02       		.uleb128 0x2
  180 0050 08       		.byte	0x8
  181 0051 05       		.byte	0x5
- 182 0052 CB010000 		.4byte	.LASF6
+ 182 0052 D7010000 		.4byte	.LASF6
  183 0056 02       		.uleb128 0x2
  184 0057 08       		.byte	0x8
  185 0058 07       		.byte	0x7
- 186 0059 9F010000 		.4byte	.LASF7
+ 186 0059 AB010000 		.4byte	.LASF7
  187 005d 03       		.uleb128 0x3
  188 005e 04       		.byte	0x4
  189 005f 05       		.byte	0x5
@@ -354,11 +354,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  191 0064 02       		.uleb128 0x2
  192 0065 04       		.byte	0x4
  193 0066 07       		.byte	0x7
- 194 0067 92010000 		.4byte	.LASF8
+ 194 0067 9E010000 		.4byte	.LASF8
  195 006b 04       		.uleb128 0x4
- 196 006c E8010000 		.4byte	.LASF12
+ 196 006c F4010000 		.4byte	.LASF12
  197 0070 02       		.byte	0x2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 7
 
 
  198 0071 E401     		.2byte	0x1e4
@@ -370,13 +370,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  204 007e 02       		.uleb128 0x2
  205 007f 08       		.byte	0x8
  206 0080 04       		.byte	0x4
- 207 0081 8B010000 		.4byte	.LASF10
+ 207 0081 19010000 		.4byte	.LASF10
  208 0085 02       		.uleb128 0x2
  209 0086 01       		.byte	0x1
  210 0087 08       		.byte	0x8
- 211 0088 D9010000 		.4byte	.LASF11
+ 211 0088 E5010000 		.4byte	.LASF11
  212 008c 04       		.uleb128 0x4
- 213 008d 59010000 		.4byte	.LASF13
+ 213 008d E7000000 		.4byte	.LASF13
  214 0091 02       		.byte	0x2
  215 0092 8E02     		.2byte	0x28e
  216 0094 98000000 		.4byte	0x98
@@ -405,7 +405,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  239 00cc 21000000 		.4byte	.LLST1
  240 00d0 00       		.byte	0
  241 00d1 06       		.uleb128 0x6
- 242 00d2 BB010000 		.4byte	.LASF15
+ 242 00d2 C7010000 		.4byte	.LASF15
  243 00d6 01       		.byte	0x1
  244 00d7 5A       		.byte	0x5a
  245 00d8 00000000 		.4byte	.LFB1
@@ -414,17 +414,17 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  248 00e1 9C       		.byte	0x9c
  249 00e2 F6000000 		.4byte	0xf6
  250 00e6 07       		.uleb128 0x7
- 251 00e7 B6010000 		.4byte	.LASF17
+ 251 00e7 C2010000 		.4byte	.LASF17
  252 00eb 01       		.byte	0x1
  253 00ec 5A       		.byte	0x5a
  254 00ed 6B000000 		.4byte	0x6b
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 8
 
 
  255 00f1 39000000 		.4byte	.LLST2
  256 00f5 00       		.byte	0
  257 00f6 09       		.uleb128 0x9
- 258 00f7 70010000 		.4byte	.LASF18
+ 258 00f7 FE000000 		.4byte	.LASF18
  259 00fb 01       		.byte	0x1
  260 00fc 71       		.byte	0x71
  261 00fd 6B000000 		.4byte	0x6b
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  309 001f 24       		.uleb128 0x24
  310 0020 00       		.byte	0
  311 0021 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 9
 
 
  312 0022 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  366 0059 00       		.byte	0
  367 005a 03       		.uleb128 0x3
  368 005b 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 10
 
 
  369 005c 3A       		.uleb128 0x3a
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  423 0000 00000000 		.4byte	.LVL0
  424 0004 04000000 		.4byte	.LVL1
  425 0008 0100     		.2byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 11
 
 
  426 000a 50       		.byte	0x50
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  480              		.section	.debug_ranges,"",%progbits
  481              	.Ldebug_ranges0:
  482 0000 00000000 		.4byte	.LFB0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 12
 
 
  483 0004 18000000 		.4byte	.LFE0
@@ -718,94 +718,94 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 1
  509              	.LASF9:
  510 00d3 666C6F61 		.ascii	"float\000"
  510      7400
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 13
 
 
- 511              	.LASF22:
- 512 00d9 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 512      73657273 
- 512      5C4A6163 
- 512      6F622D4C 
- 512      6170746F 
- 513 0107 656E696F 		.ascii	"enior Project Stuff Backup\\Senior Project Integrat"
- 513      72205072 
- 513      6F6A6563 
- 513      74205374 
- 513      75666620 
- 514 0139 65645C44 		.ascii	"ed\\Design01.cydsn\000"
- 514      65736967 
- 514      6E30312E 
- 514      63796473 
- 514      6E00
- 515              	.LASF1:
- 516 014b 756E7369 		.ascii	"unsigned char\000"
- 516      676E6564 
- 516      20636861 
- 516      7200
- 517              	.LASF13:
- 518 0159 72656738 		.ascii	"reg8\000"
- 518      00
- 519              	.LASF5:
- 520 015e 6C6F6E67 		.ascii	"long unsigned int\000"
- 520      20756E73 
- 520      69676E65 
- 520      6420696E 
- 520      7400
- 521              	.LASF18:
- 522 0170 53535F52 		.ascii	"SS_Read\000"
- 522      65616400 
- 523              	.LASF3:
- 524 0178 73686F72 		.ascii	"short unsigned int\000"
- 524      7420756E 
- 524      7369676E 
- 524      65642069 
- 524      6E7400
- 525              	.LASF10:
- 526 018b 646F7562 		.ascii	"double\000"
- 526      6C6500
+ 511              	.LASF1:
+ 512 00d9 756E7369 		.ascii	"unsigned char\000"
+ 512      676E6564 
+ 512      20636861 
+ 512      7200
+ 513              	.LASF13:
+ 514 00e7 72656738 		.ascii	"reg8\000"
+ 514      00
+ 515              	.LASF5:
+ 516 00ec 6C6F6E67 		.ascii	"long unsigned int\000"
+ 516      20756E73 
+ 516      69676E65 
+ 516      6420696E 
+ 516      7400
+ 517              	.LASF18:
+ 518 00fe 53535F52 		.ascii	"SS_Read\000"
+ 518      65616400 
+ 519              	.LASF3:
+ 520 0106 73686F72 		.ascii	"short unsigned int\000"
+ 520      7420756E 
+ 520      7369676E 
+ 520      65642069 
+ 520      6E7400
+ 521              	.LASF10:
+ 522 0119 646F7562 		.ascii	"double\000"
+ 522      6C6500
+ 523              	.LASF22:
+ 524 0120 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 524      73657273 
+ 524      5C6C6567 
+ 524      6F635C44 
+ 524      6F63756D 
+ 525 014d 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 525      72205072 
+ 525      6F6A6563 
+ 525      745C5365 
+ 525      6E696F72 
+ 526 017e 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 526      7420496E 
+ 526      74656772 
+ 526      61746564 
+ 526      5C446573 
  527              	.LASF8:
- 528 0192 756E7369 		.ascii	"unsigned int\000"
+ 528 019e 756E7369 		.ascii	"unsigned int\000"
  528      676E6564 
  528      20696E74 
  528      00
  529              	.LASF7:
- 530 019f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 530 01ab 6C6F6E67 		.ascii	"long long unsigned int\000"
  530      206C6F6E 
  530      6720756E 
  530      7369676E 
  530      65642069 
  531              	.LASF17:
- 532 01b6 6D6F6465 		.ascii	"mode\000"
+ 532 01c2 6D6F6465 		.ascii	"mode\000"
  532      00
  533              	.LASF15:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccKFyvjg.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnzsiCa.s 			page 14
 
 
- 534 01bb 53535F53 		.ascii	"SS_SetDriveMode\000"
+ 534 01c7 53535F53 		.ascii	"SS_SetDriveMode\000"
  534      65744472 
  534      6976654D 
  534      6F646500 
  535              	.LASF6:
- 536 01cb 6C6F6E67 		.ascii	"long long int\000"
+ 536 01d7 6C6F6E67 		.ascii	"long long int\000"
  536      206C6F6E 
  536      6720696E 
  536      7400
  537              	.LASF11:
- 538 01d9 63686172 		.ascii	"char\000"
+ 538 01e5 63686172 		.ascii	"char\000"
  538      00
  539              	.LASF2:
- 540 01de 73686F72 		.ascii	"short int\000"
+ 540 01ea 73686F72 		.ascii	"short int\000"
  540      7420696E 
  540      7400
  541              	.LASF12:
- 542 01e8 75696E74 		.ascii	"uint8\000"
+ 542 01f4 75696E74 		.ascii	"uint8\000"
  542      3800
  543              	.LASF4:
- 544 01ee 6C6F6E67 		.ascii	"long int\000"
+ 544 01fa 6C6F6E67 		.ascii	"long int\000"
  544      20696E74 
  544      00
  545              	.LASF0:
- 546 01f7 7369676E 		.ascii	"signed char\000"
+ 546 0203 7369676E 		.ascii	"signed char\000"
  546      65642063 
  546      68617200 
  547              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

@@ -143,14 +143,14 @@ void run_test(double y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_
                 //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
                 y_pixel = (int) ((Id_avg*Y_RES)/y_max);
                 x_pixel = (int) j;
-                draw_line(x_pixel_prev,y_pixel_prev,x_pixel,y_pixel,curve_color[i]);
+                draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
                 y_pixel_prev = y_pixel;
                 x_pixel_prev = x_pixel;
             }
         }
         ADC_SAR_1_Sleep(); //sleep to reset ADC between curves
         sprintf(print_string,"%5.3f",Vgs_double[i]);
-        draw_string(x_pixel_prev+5,y_pixel_prev,WHITE,print_string);
+        draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string);
     }
                
 }
@@ -194,12 +194,12 @@ int main(void)
 //    
 //    draw_number(100,100,WHITE,temp_num);
 //    
-    char string_test[] = {"STRING TEST TSJKF SDFNKJ"};
-    draw_string(200,100,WHITE,string_test);
+//    char string_test[] = {"STRING TEST TSJKF SDFNKJ"};
+//    draw_string(200,100,WHITE,string_test);
 //    
 //    CyDelay(5000);
 //    
-    fill_screen(BLACK);
+//    fill_screen(BLACK);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();

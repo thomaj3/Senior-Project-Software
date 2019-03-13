@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
   29:Generated_Source\PSoC5/cyPm.c **** 
   30:Generated_Source\PSoC5/cyPm.c **** 
   31:Generated_Source\PSoC5/cyPm.c **** static CY_PM_BACKUP_STRUCT          cyPmBackup;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 2
 
 
   32:Generated_Source\PSoC5/cyPm.c **** static CY_PM_CLOCK_BACKUP_STRUCT    cyPmClockBackup;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
   86:Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.imoFreq = CY_PM_FASTCLK_IMO_CR_REG & CY_PM_FASTCLK_IMO_CR_FREQ_MASK;
   87:Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.imoUsbClk = CY_PM_FASTCLK_IMO_CR_REG & CY_PM_FASTCLK_IMO_CR_USB;
   88:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 3
 
 
   89:Generated_Source\PSoC5/cyPm.c ****     /* IMO doubler - save enable state */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  143:Generated_Source\PSoC5/cyPm.c ****     /* IMO - save enable state and enable without wait to settle */
  144:Generated_Source\PSoC5/cyPm.c ****     if(0u != (CY_PM_ACT_CFG0_IMO & CY_PM_ACT_CFG0_REG))
  145:Generated_Source\PSoC5/cyPm.c ****     {
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 4
 
 
  146:Generated_Source\PSoC5/cyPm.c ****         /* IMO - save enabled state */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  200:Generated_Source\PSoC5/cyPm.c **** 
  201:Generated_Source\PSoC5/cyPm.c ****     /* Master clock source - set it to IMO if not yet. */
  202:Generated_Source\PSoC5/cyPm.c ****     if(CY_MASTER_SOURCE_IMO != cyPmClockBackup.masterClkSrc)
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 5
 
 
  203:Generated_Source\PSoC5/cyPm.c ****     {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  257:Generated_Source\PSoC5/cyPm.c **** *  CyPmSaveClocks()/CyPmRestoreClocks() functions.
  258:Generated_Source\PSoC5/cyPm.c **** *
  259:Generated_Source\PSoC5/cyPm.c **** *  PSoC 3 and PSoC 5LP:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 6
 
 
  260:Generated_Source\PSoC5/cyPm.c **** *  The merge region could be used to process state when the megahertz crystal is
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  314:Generated_Source\PSoC5/cyPm.c ****             {
  315:Generated_Source\PSoC5/cyPm.c ****                 status = CYRET_SUCCESS;
  316:Generated_Source\PSoC5/cyPm.c ****                 break;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 7
 
 
  317:Generated_Source\PSoC5/cyPm.c ****             }
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  371:Generated_Source\PSoC5/cyPm.c ****         else
  372:Generated_Source\PSoC5/cyPm.c ****         {
  373:Generated_Source\PSoC5/cyPm.c ****             CY_PM_FASTCLK_IMO_CR_REG &= ((uint8)(~CY_PM_FASTCLK_IMO_CR_USB));
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 8
 
 
  374:Generated_Source\PSoC5/cyPm.c ****         }
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  428:Generated_Source\PSoC5/cyPm.c ****             {
  429:Generated_Source\PSoC5/cyPm.c ****                 status = CYRET_SUCCESS;
  430:Generated_Source\PSoC5/cyPm.c ****                 break;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 9
 
 
  431:Generated_Source\PSoC5/cyPm.c ****             }
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  485:Generated_Source\PSoC5/cyPm.c ****     CY_PM_ACT_CFG2_REG = cyPmClockBackup.enClkD;
  486:Generated_Source\PSoC5/cyPm.c **** }
  487:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 10
 
 
  488:Generated_Source\PSoC5/cyPm.c **** 
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  542:Generated_Source\PSoC5/cyPm.c **** *  event occurs the device will return to Active mode.  Similarly when an
  543:Generated_Source\PSoC5/cyPm.c **** *  enabled interrupt occurs the CPU will be started. These two actions will
  544:Generated_Source\PSoC5/cyPm.c **** *  occur together provided that the event that occurs is an enabled wakeup
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 11
 
 
  545:Generated_Source\PSoC5/cyPm.c **** *  source and also generates an interrupt. If just the wakeup event occurs then
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  599:Generated_Source\PSoC5/cyPm.c **** *  PM_ALT_ACT_SRC_LCD               LCD
  600:Generated_Source\PSoC5/cyPm.c **** *
  601:Generated_Source\PSoC5/cyPm.c **** *  \param *Note : FTW and HVI/LVI wakeup signals are in the same mask bit.
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 12
 
 
  602:Generated_Source\PSoC5/cyPm.c **** *  \param **Note: CTW and One PPS wakeup signals are in the same mask bit.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  656:Generated_Source\PSoC5/cyPm.c **** 
  657:Generated_Source\PSoC5/cyPm.c ****             /* Include associated timer to wakeupSource */
  658:Generated_Source\PSoC5/cyPm.c ****             wakeupSource |= PM_ALT_ACT_SRC_CTW;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 13
 
 
  659:Generated_Source\PSoC5/cyPm.c ****         }
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  713:Generated_Source\PSoC5/cyPm.c **** ****************************************************************************//**
  714:Generated_Source\PSoC5/cyPm.c **** *
  715:Generated_Source\PSoC5/cyPm.c **** *  Puts the part into the Sleep state.
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 14
 
 
  716:Generated_Source\PSoC5/cyPm.c **** *
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  770:Generated_Source\PSoC5/cyPm.c **** *
  771:Generated_Source\PSoC5/cyPm.c **** *  \param wakeUpSource:    Specifies a bitwise mask of wakeup sources. In addition, if
  772:Generated_Source\PSoC5/cyPm.c **** *                   a wakeupTime has been specified the associated timer will be
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 15
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 15
 
 
  773:Generated_Source\PSoC5/cyPm.c **** *                   included as a wakeup source.
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  827:Generated_Source\PSoC5/cyPm.c **** 
  828:Generated_Source\PSoC5/cyPm.c ****     /* Save current global interrupt enable and disable it */
  829:Generated_Source\PSoC5/cyPm.c ****     interruptState = CyEnterCriticalSection();
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 16
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 16
 
 
  830:Generated_Source\PSoC5/cyPm.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  884:Generated_Source\PSoC5/cyPm.c ****             {
  885:Generated_Source\PSoC5/cyPm.c ****                 if (0u == (CY_PM_PWRSYS_WAKE_TR2_REG & CY_PM_PWRSYS_WAKE_TR2_EN_BUZZ))
  886:Generated_Source\PSoC5/cyPm.c ****                 {
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 17
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 17
 
 
  887:Generated_Source\PSoC5/cyPm.c ****                     cyPmBackup.hardwareBuzz = CY_PM_DISABLED;
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  941:Generated_Source\PSoC5/cyPm.c ****             /* Include associated timer to wakeupSource */
  942:Generated_Source\PSoC5/cyPm.c ****             wakeupSource |= PM_SLEEP_SRC_ONE_PPS;
  943:Generated_Source\PSoC5/cyPm.c ****         }
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 18
 
 
  944:Generated_Source\PSoC5/cyPm.c **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  998:Generated_Source\PSoC5/cyPm.c **** 
  999:Generated_Source\PSoC5/cyPm.c ****     /* Two recommended NOPs to get into mode. */
 1000:Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 19
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 19
 
 
 1001:Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1055:Generated_Source\PSoC5/cyPm.c ****     /* Restore global interrupt enable state */
 1056:Generated_Source\PSoC5/cyPm.c ****     CyExitCriticalSection(interruptState);
 1057:Generated_Source\PSoC5/cyPm.c **** }
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 20
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 20
 
 
 1058:Generated_Source\PSoC5/cyPm.c **** 
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1112:Generated_Source\PSoC5/cyPm.c **** *
 1113:Generated_Source\PSoC5/cyPm.c **** *  If using PICU as the wake up source, make sure you have at least one pin
 1114:Generated_Source\PSoC5/cyPm.c **** *  configured to generate a PICU interrupt. For pin Px.y, the register
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 21
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 21
 
 
 1115:Generated_Source\PSoC5/cyPm.c **** *  "PICU_INTTYPE_PICUx_INTTYPEy" controls  the PICU behavior. In the TRM, this
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1169:Generated_Source\PSoC5/cyPm.c ****         if(0u == (CY_PM_MODE_CSR_REG & CY_PM_MODE_CSR_PWRUP_PULSE_Q))
 1170:Generated_Source\PSoC5/cyPm.c ****         {
 1171:Generated_Source\PSoC5/cyPm.c ****             /* Disable hold off - no action on restore */
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 22
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 22
 
 
 1172:Generated_Source\PSoC5/cyPm.c ****             CY_PM_PWRSYS_SLP_TR_REG &= CY_PM_PWRSYS_SLP_TR_HIBSLP_HOLDOFF_MASK;
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1226:Generated_Source\PSoC5/cyPm.c ****     /* Two recommended NOPs to get into mode. */
 1227:Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
 1228:Generated_Source\PSoC5/cyPm.c ****     CY_NOP;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 23
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 23
 
 
 1229:Generated_Source\PSoC5/cyPm.c **** 
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1283:Generated_Source\PSoC5/cyPm.c **** *
 1284:Generated_Source\PSoC5/cyPm.c **** *******************************************************************************/
 1285:Generated_Source\PSoC5/cyPm.c **** uint8 CyPmReadStatus(uint8 mask) 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 24
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 24
 
 
 1286:Generated_Source\PSoC5/cyPm.c **** {
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1340:Generated_Source\PSoC5/cyPm.c ****     }
 1341:Generated_Source\PSoC5/cyPm.c **** 
 1342:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 25
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 25
 
 
 1343:Generated_Source\PSoC5/cyPm.c ****     /* Save current ILO power mode and ensure low power mode */
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1397:Generated_Source\PSoC5/cyPm.c ****     #endif  /* (CY_PSOC5) */    
 1398:Generated_Source\PSoC5/cyPm.c **** }
 1399:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 26
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 26
 
 
 1400:Generated_Source\PSoC5/cyPm.c **** 
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1454:Generated_Source\PSoC5/cyPm.c ****     #endif  /* (CY_PSOC5) */    
 1455:Generated_Source\PSoC5/cyPm.c **** }
 1456:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 27
 
 
 1457:Generated_Source\PSoC5/cyPm.c **** 
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1511:Generated_Source\PSoC5/cyPm.c **** *
 1512:Generated_Source\PSoC5/cyPm.c **** *  Performs 1PPS configuration:
 1513:Generated_Source\PSoC5/cyPm.c **** *  - Starts 32 KHz XTAL
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 28
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 28
 
 
 1514:Generated_Source\PSoC5/cyPm.c **** *  - Disables 1PPS interrupts
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1568:Generated_Source\PSoC5/cyPm.c ****         }   /* Required interval is already set */
 1569:Generated_Source\PSoC5/cyPm.c ****     }
 1570:Generated_Source\PSoC5/cyPm.c ****     else
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 29
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 29
 
 
 1571:Generated_Source\PSoC5/cyPm.c ****     {
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
   44              		.loc 1 1607 0
   45 0008 5A4A     		ldr	r2, .L7
 1604:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[1u]   = CY_GET_REG8(CYREG_SC0_SW2 );
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 30
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 30
 
 
   46              		.loc 1 1604 0
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1623:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[18u]  = CY_GET_REG8(CYREG_SC2_SW6 );
 1624:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[19u]  = CY_GET_REG8(CYREG_SC2_SW8 );
 1625:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[20u]  = CY_GET_REG8(CYREG_SC2_SW10);
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 31
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 31
 
 
 1626:Generated_Source\PSoC5/cyPm.c **** 
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  112              		.loc 1 1620 0
  113 006e 4A4B     		ldr	r3, .L7+36
  114 0070 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 32
 
 
 1612:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[9u]   = CY_GET_REG8(CYREG_SC1_SW3 );
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  151 009a 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
 1622:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[18u]  = CY_GET_REG8(CYREG_SC2_SW6 );
  152              		.loc 1 1622 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 33
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 33
 
 
  153 009c 364B     		ldr	r3, .L7+4
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1629:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[24u]  = CY_GET_REG8(CYREG_SC3_SW4 );
  190              		.loc 1 1629 0
  191 00d2 83F821B0 		strb	fp, [r3, #33]
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 34
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 34
 
 
 1631:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.scctData[26u]  = CY_GET_REG8(CYREG_SC3_SW8 );
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1659:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW0 , 0u);
 1660:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW2 , 0u);
 1661:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW3 , 0u);
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 35
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 35
 
 
 1662:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW4 , 0u);
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1640:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC0_SW10, 0u);
  224              		.loc 1 1640 0
  225 010e 1A70     		strb	r2, [r3]
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 36
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 36
 
 
 1641:Generated_Source\PSoC5/cyPm.c **** 
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1662:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW6 , 0u);
  262              		.loc 1 1662 0
  263 013a 2A70     		strb	r2, [r5]
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 37
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 37
 
 
 1663:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC3_SW8 , 0u);
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  304 019c 235A0040 		.word	1073764899
  305 01a0 325A0040 		.word	1073764914
  306 01a4 335A0040 		.word	1073764915
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 38
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 38
 
 
  307 01a8 265A0040 		.word	1073764902
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  342 0002 2E4B     		ldr	r3, .L12
  343 0004 2E4A     		ldr	r2, .L12+4
  344 0006 9F7A     		ldrb	r7, [r3, #10]	@ zero_extendqisi2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 39
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 39
 
 
 1728:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC0_SW2 , cyPmBackup.scctData[1u] );
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  380              		.loc 1 1738 0
  381 002c 1D7D     		ldrb	r5, [r3, #20]	@ zero_extendqisi2
 1735:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC1_SW2 , cyPmBackup.scctData[8u] );
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 40
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 40
 
 
  382              		.loc 1 1735 0
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  418              		.loc 1 1745 0
  419 0054 E773     		strb	r7, [r4, #15]
 1748:Generated_Source\PSoC5/cyPm.c ****     CY_SET_REG8(CYREG_SC2_SW8 , cyPmBackup.scctData[19u]);
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 41
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 41
 
 
  420              		.loc 1 1748 0
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1758:Generated_Source\PSoC5/cyPm.c **** 
 1759:Generated_Source\PSoC5/cyPm.c **** 
 1760:Generated_Source\PSoC5/cyPm.c ****     #if(CY_PSOC3)
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 42
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 42
 
 
 1761:Generated_Source\PSoC5/cyPm.c **** 
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  483 00b8 F0BC     		pop	{r4, r5, r6, r7}
  484              		.cfi_restore 7
  485              		.cfi_restore 6
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 43
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 43
 
 
  486              		.cfi_restore 5
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  533              		.loc 1 79 0
  534 000c 0025     		movs	r5, #0
   78:Generated_Source\PSoC5/cyPm.c ****     CY_PM_ACT_CFG2_REG &= ((uint8)(~CY_PM_ACT_EN_CLK_D_MASK));
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 44
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 44
 
 
  535              		.loc 1 78 0
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  573 0048 03F00303 		and	r3, r3, #3
   87:Generated_Source\PSoC5/cyPm.c **** 
  574              		.loc 1 87 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 45
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 45
 
 
  575 004c 01F04001 		and	r1, r1, #64
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  618 00a2 44D0     		beq	.L24
  166:Generated_Source\PSoC5/cyPm.c **** 
  619              		.loc 1 166 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 46
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 46
 
 
  620 00a4 4FF04023 		mov	r3, #1073758208
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  664              	.L30:
  208:Generated_Source\PSoC5/cyPm.c ****     cyPmClockBackup.clkBusDiv |= CY_PM_CLK_BUS_LSB_DIV_REG;
  665              		.loc 1 208 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 47
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 47
 
 
  666 00f2 374A     		ldr	r2, .L61+32
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  708              		.loc 1 131 0
  709 0134 0123     		movs	r3, #1
  710 0136 84F83E30 		strb	r3, [r4, #62]
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 48
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 48
 
 
  132:Generated_Source\PSoC5/cyPm.c ****     }
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  754              		.loc 1 158 0
  755 0174 0620     		movs	r0, #6
  756 0176 FFF7FEFF 		bl	CyDelayUs
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 49
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 49
 
 
  757              	.LVL11:
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  802 01bc 05400040 		.word	1073758213
  803 01c0 00420040 		.word	1073758720
  804 01c4 20420040 		.word	1073758752
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 50
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 50
 
 
  805 01c8 A0430040 		.word	1073759136
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  281:Generated_Source\PSoC5/cyPm.c ****     {
  852              		.loc 1 281 0
  853 0018 012A     		cmp	r2, #1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 51
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 51
 
 
  276:Generated_Source\PSoC5/cyPm.c ****         CY_IMO_FREQ_12MHZ, CY_IMO_FREQ_6MHZ,  CY_IMO_FREQ_24MHZ, CY_IMO_FREQ_3MHZ,
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  367:Generated_Source\PSoC5/cyPm.c ****         {
  896              		.loc 1 367 0
  897 0066 95F83430 		ldrb	r3, [r5, #52]	@ zero_extendqisi2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 52
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 52
 
 
  369:Generated_Source\PSoC5/cyPm.c ****         }
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  451:Generated_Source\PSoC5/cyPm.c ****        (CY_PM_MASTER_CLK_SRC_PLL == cyPmClockBackup.masterClkSrc))
  942              		.loc 1 451 0
  943 00bc 95F83200 		ldrb	r0, [r5, #50]	@ zero_extendqisi2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 53
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 53
 
 
  944 00c0 534C     		ldr	r4, .L106+4
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  986 00fa 4B48     		ldr	r0, .L106+28
  484:Generated_Source\PSoC5/cyPm.c ****     CY_PM_ACT_CFG2_REG = cyPmClockBackup.enClkD;
  987              		.loc 1 484 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 54
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 54
 
 
  988 00fc 4B4D     		ldr	r5, .L106+32
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1032              	.LVL26:
  1033 0140 C1E7     		b	.L80
  1034              	.L100:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 55
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 55
 
 
  345:Generated_Source\PSoC5/cyPm.c ****         {
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1080 0190 7FF44FAF 		bne	.L68
  1081              	.L65:
  301:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 56
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 56
 
 
  1082              		.loc 1 301 0
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1126 01dc 174B     		ldr	r3, .L106+48
  1127 01de AB24     		movs	r4, #171
  426:Generated_Source\PSoC5/cyPm.c ****                (0u != (CY_PM_FASTCLK_PLL_SR_REG & CY_PM_FASTCLK_PLL_LOCKED)))
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 57
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 57
 
 
  1128              		.loc 1 426 0
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1175 023c 25420040 		.word	1073758757
  1176              		.cfi_endproc
  1177              	.LFE1:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 58
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 58
 
 
  1178              		.size	CyPmRestoreClocks, .-CyPmRestoreClocks
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  685:Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG2_REG = ((uint8) ((wakeupSource >> 12u) & 0x01u));
  1222              		.loc 1 685 0
  1223 001e 1349     		ldr	r1, .L114+8
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 59
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 59
 
 
  681:Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = (((uint8) wakeupSource) & CY_PM_WAKEUP_SRC_CMPS_MASK);
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  700:Generated_Source\PSoC5/cyPm.c **** 
  1263              		.loc 1 700 0
  1264              	@ 700 "Generated_Source\PSoC5\cyPm.c" 1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 60
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 60
 
 
  1265 004e 30BF     		WFI 
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1312              		.cfi_offset 6, -12
  1313              		.cfi_offset 7, -8
  1314              		.cfi_offset 14, -4
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 61
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 61
 
 
  825:Generated_Source\PSoC5/cyPm.c ****     uint8 interruptState;
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  960:Generated_Source\PSoC5/cyPm.c **** 
  1356              		.loc 1 960 0
  1357 0040 C4F30034 		ubfx	r4, r4, #12, #1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 62
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 62
 
 
  956:Generated_Source\PSoC5/cyPm.c **** 
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1394 0070 1A70     		strb	r2, [r3]
  984:Generated_Source\PSoC5/cyPm.c **** 
  1395              		.loc 1 984 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 63
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 63
 
 
  1396 0072 84F82E00 		strb	r0, [r4, #46]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1441 00aa 2846     		mov	r0, r5
 1051:Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = cyPmBackup.wakeupCfg1;
  1442              		.loc 1 1051 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 64
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 64
 
 
  1443 00ac 94F804E0 		ldrb	lr, [r4, #4]	@ zero_extendqisi2
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1485 00d4 FFF7FEFF 		bl	CyHalt
  1486              	.LVL52:
  1487 00d8 A7E7     		b	.L119
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 65
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 65
 
 
  1488              	.L131:
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1537              	.LBB11:
 1325:Generated_Source\PSoC5/cyPm.c ****     {
  1538              		.loc 1 1325 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 66
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 66
 
 
  1539 0016 944A     		ldr	r2, .L172+8
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1580              		.loc 1 1356 0
  1581 004c 03F01003 		and	r3, r3, #16
 1351:Generated_Source\PSoC5/cyPm.c ****                                 CY_PM_DISABLED : CY_PM_ENABLED;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 67
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 67
 
 
  1582              		.loc 1 1351 0
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1811:Generated_Source\PSoC5/cyPm.c **** 
 1812:Generated_Source\PSoC5/cyPm.c ****     if(0u != (CY_VD_LVI_HVI_CONTROL_REG & CY_VD_LVIA_EN))
  1604              		.loc 1 1812 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 68
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 68
 
 
  1605 0072 804B     		ldr	r3, .L172+20
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1385:Generated_Source\PSoC5/cyPm.c ****     cyPmBackup.wakeupTrim1 = CY_PM_PWRSYS_WAKE_TR1_REG;
  1633              		.loc 1 1385 0
  1634 00a8 9EF800C0 		ldrb	ip, [lr]	@ zero_extendqisi2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 69
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 69
 
 
 1389:Generated_Source\PSoC5/cyPm.c ****     #endif  /* (CY_PSOC5) */    
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1676 00d2 0870     		strb	r0, [r1]
  1677              	.LBE22:
  1678              	.LBE32:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 70
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 70
 
 
 1194:Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG1_REG = (((uint8) wakeupSource) & CY_PM_WAKEUP_SRC_CMPS_MASK);
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1717              		.loc 1 1202 0
  1718 00fc 4507     		lsls	r5, r0, #29
 1190:Generated_Source\PSoC5/cyPm.c ****     CY_PM_WAKEUP_CFG0_REG = ((uint8) (wakeupSource >> 4u) & CY_PM_WAKEUP_PICU);
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 71
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 71
 
 
  1719              		.loc 1 1190 0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1763 0128 504A     		ldr	r2, .L172+12
  1764 012a 012B     		cmp	r3, #1
  1765 012c 07D0     		beq	.L146
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 72
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 72
 
 
 1240:Generated_Source\PSoC5/cyPm.c ****                                     cyPmBackup.imoActFreq;
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1791 0154 94F82A30 		ldrb	r3, [r4, #42]	@ zero_extendqisi2
  1792 0158 012B     		cmp	r3, #1
  1793 015a 6AD0     		beq	.L169
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 73
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 73
 
 
  1794              	.L149:
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1837              	.LBB47:
  1838              	.LBB44:
 1453:Generated_Source\PSoC5/cyPm.c ****     #endif  /* (CY_PSOC5) */    
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 74
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 74
 
 
  1839              		.loc 1 1453 0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1881              		.cfi_def_cfa_offset 0
 1254:Generated_Source\PSoC5/cyPm.c **** }
  1882              		.loc 1 1254 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 75
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 75
 
 
  1883 01b0 FFF7FEBF 		b	CyExitCriticalSection
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1923 01e4 84F82610 		strb	r1, [r4, #38]
 1805:Generated_Source\PSoC5/cyPm.c ****     }
  1924              		.loc 1 1805 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 76
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 76
 
 
  1925 01e8 FFF7FEFF 		bl	CyVdLvDigitDisable
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  1965              		.loc 1 1814 0
  1966 0212 0121     		movs	r1, #1
 1815:Generated_Source\PSoC5/cyPm.c **** 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 77
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 77
 
 
  1967              		.loc 1 1815 0
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2012              	.LBB41:
 1860:Generated_Source\PSoC5/cyPm.c ****     }
  2013              		.loc 1 1860 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 78
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 78
 
 
  2014 0244 92F82910 		ldrb	r1, [r2, #41]	@ zero_extendqisi2
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2065 0002 FFF7FEBF 		b	CyPmHibernateEx
  2066              	.LVL69:
  2067              		.cfi_endproc
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 79
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 79
 
 
  2068              	.LFE4:
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2115 002c 90430040 		.word	1073759120
  2116              		.cfi_endproc
  2117              	.LFE6:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 80
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 80
 
 
  2118              		.size	CyPmReadStatus, .-CyPmReadStatus
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2163 0028 1570     		strb	r5, [r2]
 1490:Generated_Source\PSoC5/cyPm.c ****         }   /* Required interval is already set */
  2164              		.loc 1 1490 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 81
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 81
 
 
  2165 002a 2378     		ldrb	r3, [r4]	@ zero_extendqisi2
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2213 0008 01D4     		bmi	.L187
 1524:Generated_Source\PSoC5/cyPm.c ****     }
  2214              		.loc 1 1524 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 82
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 82
 
 
  2215 000a FFF7FEFF 		bl	CyXTAL_32KHZ_Start
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
 1556:Generated_Source\PSoC5/cyPm.c **** 
  2263              		.loc 1 1556 0
  2264 000e FFF7FEFF 		bl	CyILO_Start100K
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 83
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 83
 
 
  2265              	.LVL79:
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2310              		.section	.rodata
  2311              		.align	2
  2312              		.set	.LANCHOR1,. + 0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 84
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 84
 
 
  2313              		.type	cyPmImoFreqReg2Mhz, %object
@@ -5036,13 +5036,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2357 0006 00000000 		.4byte	.Ldebug_abbrev0
  2358 000a 04       		.byte	0x4
  2359 000b 01       		.uleb128 0x1
- 2360 000c 47050000 		.4byte	.LASF117
+ 2360 000c 53050000 		.4byte	.LASF117
  2361 0010 0C       		.byte	0xc
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 85
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 85
 
 
- 2362 0011 68030000 		.4byte	.LASF118
- 2363 0015 E5010000 		.4byte	.LASF119
+ 2362 0011 F6020000 		.4byte	.LASF118
+ 2363 0015 80030000 		.4byte	.LASF119
  2364 0019 C8000000 		.4byte	.Ldebug_ranges0+0xc8
  2365 001d 00000000 		.4byte	0
  2366 0021 00000000 		.4byte	.Ldebug_line0
@@ -5053,15 +5053,15 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2371 002c 02       		.uleb128 0x2
  2372 002d 01       		.byte	0x1
  2373 002e 08       		.byte	0x8
- 2374 002f E4040000 		.4byte	.LASF1
+ 2374 002f F0040000 		.4byte	.LASF1
  2375 0033 02       		.uleb128 0x2
  2376 0034 02       		.byte	0x2
  2377 0035 05       		.byte	0x5
- 2378 0036 1D050000 		.4byte	.LASF2
+ 2378 0036 29050000 		.4byte	.LASF2
  2379 003a 02       		.uleb128 0x2
  2380 003b 02       		.byte	0x2
  2381 003c 07       		.byte	0x7
- 2382 003d 1F030000 		.4byte	.LASF3
+ 2382 003d AD020000 		.4byte	.LASF3
  2383 0041 02       		.uleb128 0x2
  2384 0042 04       		.byte	0x4
  2385 0043 05       		.byte	0x5
@@ -5069,7 +5069,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2387 0048 02       		.uleb128 0x2
  2388 0049 04       		.byte	0x4
  2389 004a 07       		.byte	0x7
- 2390 004b 90020000 		.4byte	.LASF5
+ 2390 004b 1E020000 		.4byte	.LASF5
  2391 004f 02       		.uleb128 0x2
  2392 0050 08       		.byte	0x8
  2393 0051 05       		.byte	0x5
@@ -5085,7 +5085,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2403 0064 02       		.uleb128 0x2
  2404 0065 04       		.byte	0x4
  2405 0066 07       		.byte	0x7
- 2406 0067 62020000 		.4byte	.LASF8
+ 2406 0067 F0010000 		.4byte	.LASF8
  2407 006b 04       		.uleb128 0x4
  2408 006c 93010000 		.4byte	.LASF9
  2409 0070 02       		.byte	0x2
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2416 007f 3A000000 		.4byte	0x3a
  2417 0083 04       		.uleb128 0x4
  2418 0084 BA010000 		.4byte	.LASF11
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 86
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 86
 
 
  2419 0088 02       		.byte	0x2
@@ -5107,7 +5107,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2422 008f 02       		.uleb128 0x2
  2423 0090 04       		.byte	0x4
  2424 0091 04       		.byte	0x4
- 2425 0092 85040000 		.4byte	.LASF12
+ 2425 0092 91040000 		.4byte	.LASF12
  2426 0096 02       		.uleb128 0x2
  2427 0097 08       		.byte	0x8
  2428 0098 04       		.byte	0x4
@@ -5115,14 +5115,14 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2430 009d 02       		.uleb128 0x2
  2431 009e 01       		.byte	0x1
  2432 009f 08       		.byte	0x8
- 2433 00a0 D5050000 		.4byte	.LASF14
+ 2433 00a0 E1050000 		.4byte	.LASF14
  2434 00a4 04       		.uleb128 0x4
- 2435 00a5 F5060000 		.4byte	.LASF15
+ 2435 00a5 01070000 		.4byte	.LASF15
  2436 00a9 02       		.byte	0x2
  2437 00aa 8602     		.2byte	0x286
  2438 00ac 48000000 		.4byte	0x48
  2439 00b0 04       		.uleb128 0x4
- 2440 00b1 CC040000 		.4byte	.LASF16
+ 2440 00b1 D8040000 		.4byte	.LASF16
  2441 00b5 02       		.byte	0x2
  2442 00b6 8E02     		.2byte	0x28e
  2443 00b8 BC000000 		.4byte	0xbc
@@ -5131,25 +5131,25 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2446 00c1 02       		.uleb128 0x2
  2447 00c2 08       		.byte	0x8
  2448 00c3 04       		.byte	0x4
- 2449 00c4 0B040000 		.4byte	.LASF17
+ 2449 00c4 17040000 		.4byte	.LASF17
  2450 00c8 02       		.uleb128 0x2
  2451 00c9 04       		.byte	0x4
  2452 00ca 07       		.byte	0x7
- 2453 00cb F2030000 		.4byte	.LASF18
+ 2453 00cb FE030000 		.4byte	.LASF18
  2454 00cf 06       		.uleb128 0x6
- 2455 00d0 A9020000 		.4byte	.LASF35
+ 2455 00d0 37020000 		.4byte	.LASF35
  2456 00d4 12       		.byte	0x12
  2457 00d5 03       		.byte	0x3
  2458 00d6 F8       		.byte	0xf8
  2459 00d7 9A010000 		.4byte	0x19a
  2460 00db 07       		.uleb128 0x7
- 2461 00dc 2A040000 		.4byte	.LASF19
+ 2461 00dc 36040000 		.4byte	.LASF19
  2462 00e0 03       		.byte	0x3
  2463 00e1 FB       		.byte	0xfb
  2464 00e2 6B000000 		.4byte	0x6b
  2465 00e6 00       		.byte	0
  2466 00e7 07       		.uleb128 0x7
- 2467 00e8 31040000 		.4byte	.LASF20
+ 2467 00e8 3D040000 		.4byte	.LASF20
  2468 00ec 03       		.byte	0x3
  2469 00ed FC       		.byte	0xfc
  2470 00ee 6B000000 		.4byte	0x6b
@@ -5158,13 +5158,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2473 00f4 5D000000 		.4byte	.LASF21
  2474 00f8 03       		.byte	0x3
  2475 00f9 FD       		.byte	0xfd
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 87
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 87
 
 
  2476 00fa 6B000000 		.4byte	0x6b
  2477 00fe 02       		.byte	0x2
  2478 00ff 07       		.uleb128 0x7
- 2479 0100 88020000 		.4byte	.LASF22
+ 2479 0100 16020000 		.4byte	.LASF22
  2480 0104 03       		.byte	0x3
  2481 0105 FE       		.byte	0xfe
  2482 0106 6B000000 		.4byte	0x6b
@@ -5176,25 +5176,25 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2488 0112 6B000000 		.4byte	0x6b
  2489 0116 04       		.byte	0x4
  2490 0117 08       		.uleb128 0x8
- 2491 0118 FE060000 		.4byte	.LASF24
+ 2491 0118 0A070000 		.4byte	.LASF24
  2492 011c 03       		.byte	0x3
  2493 011d 0001     		.2byte	0x100
  2494 011f 6B000000 		.4byte	0x6b
  2495 0123 05       		.byte	0x5
  2496 0124 08       		.uleb128 0x8
- 2497 0125 49070000 		.4byte	.LASF25
+ 2497 0125 55070000 		.4byte	.LASF25
  2498 0129 03       		.byte	0x3
  2499 012a 0101     		.2byte	0x101
  2500 012c 6B000000 		.4byte	0x6b
  2501 0130 06       		.byte	0x6
  2502 0131 08       		.uleb128 0x8
- 2503 0132 7B040000 		.4byte	.LASF26
+ 2503 0132 87040000 		.4byte	.LASF26
  2504 0136 03       		.byte	0x3
  2505 0137 0201     		.2byte	0x102
  2506 0139 6B000000 		.4byte	0x6b
  2507 013d 07       		.byte	0x7
  2508 013e 08       		.uleb128 0x8
- 2509 013f C0030000 		.4byte	.LASF27
+ 2509 013f 4E030000 		.4byte	.LASF27
  2510 0143 03       		.byte	0x3
  2511 0144 0301     		.2byte	0x103
  2512 0146 6B000000 		.4byte	0x6b
@@ -5218,10 +5218,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2530 016d 77000000 		.4byte	0x77
  2531 0171 0C       		.byte	0xc
  2532 0172 08       		.uleb128 0x8
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 88
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 88
 
 
- 2533 0173 02050000 		.4byte	.LASF31
+ 2533 0173 0E050000 		.4byte	.LASF31
  2534 0177 03       		.byte	0x3
  2535 0178 0701     		.2byte	0x107
  2536 017a 6B000000 		.4byte	0x6b
@@ -5233,19 +5233,19 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2542 0187 6B000000 		.4byte	0x6b
  2543 018b 0F       		.byte	0xf
  2544 018c 08       		.uleb128 0x8
- 2545 018d 78060000 		.4byte	.LASF33
+ 2545 018d 84060000 		.4byte	.LASF33
  2546 0191 03       		.byte	0x3
  2547 0192 0901     		.2byte	0x109
  2548 0194 6B000000 		.4byte	0x6b
  2549 0198 10       		.byte	0x10
  2550 0199 00       		.byte	0
  2551 019a 04       		.uleb128 0x4
- 2552 019b 05030000 		.4byte	.LASF34
+ 2552 019b 93020000 		.4byte	.LASF34
  2553 019f 03       		.byte	0x3
  2554 01a0 0B01     		.2byte	0x10b
  2555 01a2 CF000000 		.4byte	0xcf
  2556 01a6 09       		.uleb128 0x9
- 2557 01a7 D6020000 		.4byte	.LASF36
+ 2557 01a7 64020000 		.4byte	.LASF36
  2558 01ab 30       		.byte	0x30
  2559 01ac 03       		.byte	0x3
  2560 01ad 0E01     		.2byte	0x10e
@@ -5257,40 +5257,40 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2566 01bb 6B000000 		.4byte	0x6b
  2567 01bf 00       		.byte	0
  2568 01c0 08       		.uleb128 0x8
- 2569 01c1 11050000 		.4byte	.LASF38
+ 2569 01c1 1D050000 		.4byte	.LASF38
  2570 01c5 03       		.byte	0x3
  2571 01c6 1101     		.2byte	0x111
  2572 01c8 6B000000 		.4byte	0x6b
  2573 01cc 01       		.byte	0x1
  2574 01cd 08       		.uleb128 0x8
- 2575 01ce 39050000 		.4byte	.LASF39
+ 2575 01ce 45050000 		.4byte	.LASF39
  2576 01d2 03       		.byte	0x3
  2577 01d3 1201     		.2byte	0x112
  2578 01d5 6B000000 		.4byte	0x6b
  2579 01d9 02       		.byte	0x2
  2580 01da 08       		.uleb128 0x8
- 2581 01db E6030000 		.4byte	.LASF40
+ 2581 01db 74030000 		.4byte	.LASF40
  2582 01df 03       		.byte	0x3
  2583 01e0 1401     		.2byte	0x114
  2584 01e2 6B000000 		.4byte	0x6b
  2585 01e6 03       		.byte	0x3
  2586 01e7 08       		.uleb128 0x8
- 2587 01e8 86030000 		.4byte	.LASF41
+ 2587 01e8 14030000 		.4byte	.LASF41
  2588 01ec 03       		.byte	0x3
  2589 01ed 1E01     		.2byte	0x11e
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 89
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 89
 
 
  2590 01ef 6B000000 		.4byte	0x6b
  2591 01f3 04       		.byte	0x4
  2592 01f4 08       		.uleb128 0x8
- 2593 01f5 91030000 		.4byte	.LASF42
+ 2593 01f5 1F030000 		.4byte	.LASF42
  2594 01f9 03       		.byte	0x3
  2595 01fa 1F01     		.2byte	0x11f
  2596 01fc 6B000000 		.4byte	0x6b
  2597 0200 05       		.byte	0x5
  2598 0201 08       		.uleb128 0x8
- 2599 0202 9C030000 		.4byte	.LASF43
+ 2599 0202 2A030000 		.4byte	.LASF43
  2600 0206 03       		.byte	0x3
  2601 0207 2001     		.2byte	0x120
  2602 0209 6B000000 		.4byte	0x6b
@@ -5314,31 +5314,31 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2620 0230 6B000000 		.4byte	0x6b
  2621 0234 09       		.byte	0x9
  2622 0235 08       		.uleb128 0x8
- 2623 0236 6F020000 		.4byte	.LASF47
+ 2623 0236 FD010000 		.4byte	.LASF47
  2624 023a 03       		.byte	0x3
  2625 023b 2B01     		.2byte	0x12b
  2626 023d C5020000 		.4byte	0x2c5
  2627 0241 0A       		.byte	0xa
  2628 0242 08       		.uleb128 0x8
- 2629 0243 A2020000 		.4byte	.LASF48
+ 2629 0243 30020000 		.4byte	.LASF48
  2630 0247 03       		.byte	0x3
  2631 0248 2E01     		.2byte	0x12e
  2632 024a 6B000000 		.4byte	0x6b
  2633 024e 26       		.byte	0x26
  2634 024f 08       		.uleb128 0x8
- 2635 0250 40070000 		.4byte	.LASF49
+ 2635 0250 4C070000 		.4byte	.LASF49
  2636 0254 03       		.byte	0x3
  2637 0255 2F01     		.2byte	0x12f
  2638 0257 6B000000 		.4byte	0x6b
  2639 025b 27       		.byte	0x27
  2640 025c 08       		.uleb128 0x8
- 2641 025d 9F060000 		.4byte	.LASF50
+ 2641 025d AB060000 		.4byte	.LASF50
  2642 0261 03       		.byte	0x3
  2643 0262 3001     		.2byte	0x130
  2644 0264 6B000000 		.4byte	0x6b
  2645 0268 28       		.byte	0x28
  2646 0269 08       		.uleb128 0x8
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 90
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 90
 
 
  2647 026a E5000000 		.4byte	.LASF51
@@ -5353,31 +5353,31 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2656 027e 6B000000 		.4byte	0x6b
  2657 0282 2A       		.byte	0x2a
  2658 0283 08       		.uleb128 0x8
- 2659 0284 AB040000 		.4byte	.LASF53
+ 2659 0284 B7040000 		.4byte	.LASF53
  2660 0288 03       		.byte	0x3
  2661 0289 3301     		.2byte	0x133
  2662 028b 6B000000 		.4byte	0x6b
  2663 028f 2B       		.byte	0x2b
  2664 0290 08       		.uleb128 0x8
- 2665 0291 0E070000 		.4byte	.LASF54
+ 2665 0291 1A070000 		.4byte	.LASF54
  2666 0295 03       		.byte	0x3
  2667 0296 3401     		.2byte	0x134
  2668 0298 6B000000 		.4byte	0x6b
  2669 029c 2C       		.byte	0x2c
  2670 029d 08       		.uleb128 0x8
- 2671 029e 57020000 		.4byte	.LASF55
+ 2671 029e E5010000 		.4byte	.LASF55
  2672 02a2 03       		.byte	0x3
  2673 02a3 3601     		.2byte	0x136
  2674 02a5 6B000000 		.4byte	0x6b
  2675 02a9 2D       		.byte	0x2d
  2676 02aa 08       		.uleb128 0x8
- 2677 02ab 02060000 		.4byte	.LASF56
+ 2677 02ab 0E060000 		.4byte	.LASF56
  2678 02af 03       		.byte	0x3
  2679 02b0 3701     		.2byte	0x137
  2680 02b2 6B000000 		.4byte	0x6b
  2681 02b6 2E       		.byte	0x2e
  2682 02b7 08       		.uleb128 0x8
- 2683 02b8 B4030000 		.4byte	.LASF57
+ 2683 02b8 42030000 		.4byte	.LASF57
  2684 02bc 03       		.byte	0x3
  2685 02bd 3901     		.2byte	0x139
  2686 02bf 6B000000 		.4byte	0x6b
@@ -5396,9 +5396,9 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2699 02db 3B01     		.2byte	0x13b
  2700 02dd A6010000 		.4byte	0x1a6
  2701 02e1 0C       		.uleb128 0xc
- 2702 02e2 27050000 		.4byte	.LASF59
+ 2702 02e2 33050000 		.4byte	.LASF59
  2703 02e6 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 91
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 91
 
 
  2704 02e7 4006     		.2byte	0x640
@@ -5415,7 +5415,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2715 0303 01       		.uleb128 0x1
  2716 0304 9C       		.byte	0x9c
  2717 0305 0D       		.uleb128 0xd
- 2718 0306 CA030000 		.4byte	.LASF61
+ 2718 0306 58030000 		.4byte	.LASF61
  2719 030a 01       		.byte	0x1
  2720 030b 49       		.byte	0x49
  2721 030c 00000000 		.4byte	.LFB0
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2758 0355 10       		.uleb128 0x10
  2759 0356 12010000 		.4byte	.LVL3
  2760 035a A2080000 		.4byte	0x8a2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 92
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 92
 
 
  2761 035e 10       		.uleb128 0x10
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2815 03d0 00       		.byte	0
  2816 03d1 0E       		.uleb128 0xe
  2817 03d2 96010000 		.4byte	.LVL12
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 93
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 93
 
 
  2818 03d6 E4080000 		.4byte	0x8e4
@@ -5571,14 +5571,14 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2865 042d 9C       		.byte	0x9c
  2866 042e 49050000 		.4byte	0x549
  2867 0432 13       		.uleb128 0x13
- 2868 0433 98060000 		.4byte	.LASF63
+ 2868 0433 A4060000 		.4byte	.LASF63
  2869 0437 01       		.byte	0x1
  2870 0438 0E01     		.2byte	0x10e
  2871 043a A4000000 		.4byte	0xa4
  2872 043e 10       		.byte	0x10
  2873 043f 14       		.uleb128 0x14
  2874 0440 6900     		.ascii	"i\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 94
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 94
 
 
  2875 0442 01       		.byte	0x1
@@ -5586,13 +5586,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2877 0445 77000000 		.4byte	0x77
  2878 0449 00000000 		.4byte	.LLST0
  2879 044d 15       		.uleb128 0x15
- 2880 044e A7030000 		.4byte	.LASF64
+ 2880 044e 35030000 		.4byte	.LASF64
  2881 0452 01       		.byte	0x1
  2882 0453 1001     		.2byte	0x110
  2883 0455 77000000 		.4byte	0x77
  2884 0459 14000000 		.4byte	.LLST1
  2885 045d 16       		.uleb128 0x16
- 2886 045e 17040000 		.4byte	.LASF65
+ 2886 045e 23040000 		.4byte	.LASF65
  2887 0462 01       		.byte	0x1
  2888 0463 1401     		.2byte	0x114
  2889 0465 5E050000 		.4byte	0x55e
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2929 04c9 62010000 		.4byte	.LVL29
  2930 04cd 26090000 		.4byte	0x926
  2931 04d1 10       		.uleb128 0x10
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 95
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 95
 
 
  2932 04d2 68010000 		.4byte	.LVL30
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  2986 0544 50       		.byte	0x50
  2987 0545 01       		.uleb128 0x1
  2988 0546 38       		.byte	0x38
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 96
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 96
 
 
  2989 0547 00       		.byte	0
@@ -5715,7 +5715,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3000 055e 17       		.uleb128 0x17
  3001 055f 49050000 		.4byte	0x549
  3002 0563 12       		.uleb128 0x12
- 3003 0564 B3040000 		.4byte	.LASF66
+ 3003 0564 BF040000 		.4byte	.LASF66
  3004 0568 01       		.byte	0x1
  3005 0569 7102     		.2byte	0x271
  3006 056b 00000000 		.4byte	.LFB2
@@ -5724,13 +5724,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3009 0574 9C       		.byte	0x9c
  3010 0575 A9050000 		.4byte	0x5a9
  3011 0579 18       		.uleb128 0x18
- 3012 057a D7060000 		.4byte	.LASF67
+ 3012 057a E3060000 		.4byte	.LASF67
  3013 057e 01       		.byte	0x1
  3014 057f 7102     		.2byte	0x271
  3015 0581 77000000 		.4byte	0x77
  3016 0585 40000000 		.4byte	.LLST2
  3017 0589 18       		.uleb128 0x18
- 3018 058a 48040000 		.4byte	.LASF68
+ 3018 058a 54040000 		.4byte	.LASF68
  3019 058e 01       		.byte	0x1
  3020 058f 7102     		.2byte	0x271
  3021 0591 77000000 		.4byte	0x77
@@ -5746,7 +5746,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3031 05a7 00       		.byte	0
  3032 05a8 00       		.byte	0
  3033 05a9 12       		.uleb128 0x12
- 3034 05aa A1040000 		.4byte	.LASF69
+ 3034 05aa AD040000 		.4byte	.LASF69
  3035 05ae 01       		.byte	0x1
  3036 05af 3803     		.2byte	0x338
  3037 05b1 00000000 		.4byte	.LFB3
@@ -5755,16 +5755,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3040 05ba 9C       		.byte	0x9c
  3041 05bb 1D060000 		.4byte	0x61d
  3042 05bf 18       		.uleb128 0x18
- 3043 05c0 D7060000 		.4byte	.LASF67
+ 3043 05c0 E3060000 		.4byte	.LASF67
  3044 05c4 01       		.byte	0x1
  3045 05c5 3803     		.2byte	0x338
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 97
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 97
 
 
  3046 05c7 6B000000 		.4byte	0x6b
  3047 05cb 82000000 		.4byte	.LLST4
  3048 05cf 18       		.uleb128 0x18
- 3049 05d0 48040000 		.4byte	.LASF68
+ 3049 05d0 54040000 		.4byte	.LASF68
  3050 05d4 01       		.byte	0x1
  3051 05d5 3803     		.2byte	0x338
  3052 05d7 77000000 		.4byte	0x77
@@ -5792,7 +5792,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3074 0618 1B090000 		.4byte	0x91b
  3075 061c 00       		.byte	0
  3076 061d 1A       		.uleb128 0x1a
- 3077 061e C8060000 		.4byte	.LASF71
+ 3077 061e D4060000 		.4byte	.LASF71
  3078 0622 01       		.byte	0x1
  3079 0623 2A05     		.2byte	0x52a
  3080 0625 01       		.byte	0x1
@@ -5812,19 +5812,19 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3094 063e 3A07     		.2byte	0x73a
  3095 0640 01       		.byte	0x1
  3096 0641 12       		.uleb128 0x12
- 3097 0642 FB030000 		.4byte	.LASF75
+ 3097 0642 07040000 		.4byte	.LASF75
  3098 0646 01       		.byte	0x1
  3099 0647 8404     		.2byte	0x484
  3100 0649 00000000 		.4byte	.LFB5
  3101 064d 98020000 		.4byte	.LFE5-.LFB5
  3102 0651 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 98
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 98
 
 
  3103 0652 9C       		.byte	0x9c
  3104 0653 54070000 		.4byte	0x754
  3105 0657 18       		.uleb128 0x18
- 3106 0658 48040000 		.4byte	.LASF68
+ 3106 0658 54040000 		.4byte	.LASF68
  3107 065c 01       		.byte	0x1
  3108 065d 8404     		.2byte	0x484
  3109 065f 77000000 		.4byte	0x77
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3157 06dd 3E010000 		.4byte	.LBB36
  3158 06e1 80000000 		.4byte	.Ldebug_ranges0+0x80
  3159 06e5 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 99
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 99
 
 
  3160 06e6 DE04     		.2byte	0x4de
@@ -5921,7 +5921,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3197 074f 68090000 		.4byte	0x968
  3198 0753 00       		.byte	0
  3199 0754 12       		.uleb128 0x12
- 3200 0755 12060000 		.4byte	.LASF76
+ 3200 0755 1E060000 		.4byte	.LASF76
  3201 0759 01       		.byte	0x1
  3202 075a 4704     		.2byte	0x447
  3203 075c 00000000 		.4byte	.LFB4
@@ -5938,13 +5938,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3214 0776 02       		.uleb128 0x2
  3215 0777 08       		.byte	0x8
  3216 0778 40       		.byte	0x40
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 100
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 100
 
 
  3217 0779 00       		.byte	0
  3218 077a 00       		.byte	0
  3219 077b 1D       		.uleb128 0x1d
- 3220 077c 55060000 		.4byte	.LASF120
+ 3220 077c 61060000 		.4byte	.LASF120
  3221 0780 01       		.byte	0x1
  3222 0781 0505     		.2byte	0x505
  3223 0783 6B000000 		.4byte	0x6b
@@ -5960,7 +5960,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3233 079d 6B000000 		.4byte	0x6b
  3234 07a1 16010000 		.4byte	.LLST9
  3235 07a5 16       		.uleb128 0x16
- 3236 07a6 53070000 		.4byte	.LASF78
+ 3236 07a6 5F070000 		.4byte	.LASF78
  3237 07aa 01       		.byte	0x1
  3238 07ab 0705     		.2byte	0x507
  3239 07ad 6B000000 		.4byte	0x6b
@@ -5987,7 +5987,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3260 07e5 68090000 		.4byte	0x968
  3261 07e9 00       		.byte	0
  3262 07ea 12       		.uleb128 0x12
- 3263 07eb 85060000 		.4byte	.LASF80
+ 3263 07eb 91060000 		.4byte	.LASF80
  3264 07ef 01       		.byte	0x1
  3265 07f0 C105     		.2byte	0x5c1
  3266 07f2 00000000 		.4byte	.LFB9
@@ -5996,9 +5996,9 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3269 07fb 9C       		.byte	0x9c
  3270 07fc 1A080000 		.4byte	0x81a
  3271 0800 18       		.uleb128 0x18
- 3272 0801 32030000 		.4byte	.LASF81
+ 3272 0801 C0020000 		.4byte	.LASF81
  3273 0805 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 101
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 101
 
 
  3274 0806 C105     		.2byte	0x5c1
@@ -6009,7 +6009,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3279 0815 CB090000 		.4byte	0x9cb
  3280 0819 00       		.byte	0
  3281 081a 12       		.uleb128 0x12
- 3282 081b D8040000 		.4byte	.LASF82
+ 3282 081b E4040000 		.4byte	.LASF82
  3283 081f 01       		.byte	0x1
  3284 0820 EE05     		.2byte	0x5ee
  3285 0822 00000000 		.4byte	.LFB10
@@ -6031,7 +6031,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3301 084b 9C       		.byte	0x9c
  3302 084c 6A080000 		.4byte	0x86a
  3303 0850 18       		.uleb128 0x18
- 3304 0851 36060000 		.4byte	.LASF84
+ 3304 0851 42060000 		.4byte	.LASF84
  3305 0855 01       		.byte	0x1
  3306 0856 0E06     		.2byte	0x60e
  3307 0858 6B000000 		.4byte	0x6b
@@ -6041,7 +6041,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3311 0865 C0090000 		.4byte	0x9c0
  3312 0869 00       		.byte	0
  3313 086a 1E       		.uleb128 0x1e
- 3314 086b 35070000 		.4byte	.LASF85
+ 3314 086b 41070000 		.4byte	.LASF85
  3315 086f 01       		.byte	0x1
  3316 0870 1F       		.byte	0x1f
  3317 0871 D5020000 		.4byte	0x2d5
@@ -6049,7 +6049,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3319 0876 03       		.byte	0x3
  3320 0877 00000000 		.4byte	cyPmBackup
  3321 087b 1E       		.uleb128 0x1e
- 3322 087c F2040000 		.4byte	.LASF86
+ 3322 087c FE040000 		.4byte	.LASF86
  3323 0880 01       		.byte	0x1
  3324 0881 20       		.byte	0x20
  3325 0882 9A010000 		.4byte	0x19a
@@ -6057,8 +6057,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3327 0887 03       		.byte	0x3
  3328 0888 30000000 		.4byte	cyPmClockBackup
  3329 088c 1E       		.uleb128 0x1e
- 3330 088d 42060000 		.4byte	.LASF87
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 102
+ 3330 088d 4E060000 		.4byte	.LASF87
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 102
 
 
  3331 0891 01       		.byte	0x1
@@ -6070,55 +6070,55 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3337 089d 17       		.uleb128 0x17
  3338 089e 49050000 		.4byte	0x549
  3339 08a2 1F       		.uleb128 0x1f
- 3340 08a3 20060000 		.4byte	.LASF88
- 3341 08a7 20060000 		.4byte	.LASF88
+ 3340 08a3 2C060000 		.4byte	.LASF88
+ 3341 08a7 2C060000 		.4byte	.LASF88
  3342 08ab 04       		.byte	0x4
  3343 08ac 52       		.byte	0x52
  3344 08ad 1F       		.uleb128 0x1f
- 3345 08ae A6060000 		.4byte	.LASF89
- 3346 08b2 A6060000 		.4byte	.LASF89
+ 3345 08ae B2060000 		.4byte	.LASF89
+ 3346 08b2 B2060000 		.4byte	.LASF89
  3347 08b6 05       		.byte	0x5
  3348 08b7 48       		.byte	0x48
  3349 08b8 1F       		.uleb128 0x1f
- 3350 08b9 78020000 		.4byte	.LASF90
- 3351 08bd 78020000 		.4byte	.LASF90
+ 3350 08b9 06020000 		.4byte	.LASF90
+ 3351 08bd 06020000 		.4byte	.LASF90
  3352 08c1 05       		.byte	0x5
  3353 08c2 49       		.byte	0x49
  3354 08c3 1F       		.uleb128 0x1f
- 3355 08c4 55040000 		.4byte	.LASF91
- 3356 08c8 55040000 		.4byte	.LASF91
+ 3355 08c4 61040000 		.4byte	.LASF91
+ 3356 08c8 61040000 		.4byte	.LASF91
  3357 08cc 05       		.byte	0x5
  3358 08cd 42       		.byte	0x42
  3359 08ce 1F       		.uleb128 0x1f
- 3360 08cf 29070000 		.4byte	.LASF92
- 3361 08d3 29070000 		.4byte	.LASF92
+ 3360 08cf 35070000 		.4byte	.LASF92
+ 3361 08d3 35070000 		.4byte	.LASF92
  3362 08d7 05       		.byte	0x5
  3363 08d8 66       		.byte	0x66
  3364 08d9 1F       		.uleb128 0x1f
- 3365 08da 64060000 		.4byte	.LASF93
- 3366 08de 64060000 		.4byte	.LASF93
+ 3365 08da 70060000 		.4byte	.LASF93
+ 3366 08de 70060000 		.4byte	.LASF93
  3367 08e2 05       		.byte	0x5
  3368 08e3 4F       		.byte	0x4f
  3369 08e4 1F       		.uleb128 0x1f
- 3370 08e5 52030000 		.4byte	.LASF94
- 3371 08e9 52030000 		.4byte	.LASF94
+ 3370 08e5 E0020000 		.4byte	.LASF94
+ 3371 08e9 E0020000 		.4byte	.LASF94
  3372 08ed 05       		.byte	0x5
  3373 08ee 4D       		.byte	0x4d
  3374 08ef 1F       		.uleb128 0x1f
- 3375 08f0 64040000 		.4byte	.LASF95
- 3376 08f4 64040000 		.4byte	.LASF95
+ 3375 08f0 70040000 		.4byte	.LASF95
+ 3376 08f4 70040000 		.4byte	.LASF95
  3377 08f8 05       		.byte	0x5
  3378 08f9 4E       		.byte	0x4e
  3379 08fa 1F       		.uleb128 0x1f
- 3380 08fb DA050000 		.4byte	.LASF96
- 3381 08ff DA050000 		.4byte	.LASF96
+ 3380 08fb E6050000 		.4byte	.LASF96
+ 3381 08ff E6050000 		.4byte	.LASF96
  3382 0903 05       		.byte	0x5
  3383 0904 4B       		.byte	0x4b
  3384 0905 1F       		.uleb128 0x1f
  3385 0906 1B000000 		.4byte	.LASF97
  3386 090a 1B000000 		.4byte	.LASF97
  3387 090e 05       		.byte	0x5
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 103
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 103
 
 
  3388 090f 46       		.byte	0x46
@@ -6128,28 +6128,28 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3392 0919 05       		.byte	0x5
  3393 091a 77       		.byte	0x77
  3394 091b 1F       		.uleb128 0x1f
- 3395 091c D1040000 		.4byte	.LASF99
- 3396 0920 D1040000 		.4byte	.LASF99
+ 3395 091c DD040000 		.4byte	.LASF99
+ 3396 0920 DD040000 		.4byte	.LASF99
  3397 0924 05       		.byte	0x5
  3398 0925 7F       		.byte	0x7f
  3399 0926 1F       		.uleb128 0x1f
- 3400 0927 FA020000 		.4byte	.LASF100
- 3401 092b FA020000 		.4byte	.LASF100
+ 3400 0927 88020000 		.4byte	.LASF100
+ 3401 092b 88020000 		.4byte	.LASF100
  3402 092f 05       		.byte	0x5
  3403 0930 47       		.byte	0x47
  3404 0931 1F       		.uleb128 0x1f
- 3405 0932 B4060000 		.4byte	.LASF101
- 3406 0936 B4060000 		.4byte	.LASF101
+ 3405 0932 C0060000 		.4byte	.LASF101
+ 3406 0936 C0060000 		.4byte	.LASF101
  3407 093a 05       		.byte	0x5
  3408 093b 4A       		.byte	0x4a
  3409 093c 1F       		.uleb128 0x1f
- 3410 093d BE040000 		.4byte	.LASF102
- 3411 0941 BE040000 		.4byte	.LASF102
+ 3410 093d CA040000 		.4byte	.LASF102
+ 3411 0941 CA040000 		.4byte	.LASF102
  3412 0945 05       		.byte	0x5
  3413 0946 79       		.byte	0x79
  3414 0947 1F       		.uleb128 0x1f
- 3415 0948 D9030000 		.4byte	.LASF103
- 3416 094c D9030000 		.4byte	.LASF103
+ 3415 0948 67030000 		.4byte	.LASF103
+ 3416 094c 67030000 		.4byte	.LASF103
  3417 0950 05       		.byte	0x5
  3418 0951 65       		.byte	0x65
  3419 0952 1F       		.uleb128 0x1f
@@ -6158,18 +6158,18 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3422 095b 05       		.byte	0x5
  3423 095c 41       		.byte	0x41
  3424 095d 1F       		.uleb128 0x1f
- 3425 095e BF020000 		.4byte	.LASF105
- 3426 0962 BF020000 		.4byte	.LASF105
+ 3425 095e 4D020000 		.4byte	.LASF105
+ 3426 0962 4D020000 		.4byte	.LASF105
  3427 0966 05       		.byte	0x5
  3428 0967 7D       		.byte	0x7d
  3429 0968 1F       		.uleb128 0x1f
- 3430 0969 8B040000 		.4byte	.LASF106
- 3431 096d 8B040000 		.4byte	.LASF106
+ 3430 0969 97040000 		.4byte	.LASF106
+ 3431 096d 97040000 		.4byte	.LASF106
  3432 0971 05       		.byte	0x5
  3433 0972 7E       		.byte	0x7e
  3434 0973 1F       		.uleb128 0x1f
- 3435 0974 EF050000 		.4byte	.LASF107
- 3436 0978 EF050000 		.4byte	.LASF107
+ 3435 0974 FB050000 		.4byte	.LASF107
+ 3436 0978 FB050000 		.4byte	.LASF107
  3437 097c 05       		.byte	0x5
  3438 097d 9C       		.byte	0x9c
  3439 097e 1F       		.uleb128 0x1f
@@ -6178,26 +6178,26 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3442 0987 05       		.byte	0x5
  3443 0988 9D       		.byte	0x9d
  3444 0989 1F       		.uleb128 0x1f
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 104
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 104
 
 
- 3445 098a 3E030000 		.4byte	.LASF109
- 3446 098e 3E030000 		.4byte	.LASF109
+ 3445 098a CC020000 		.4byte	.LASF109
+ 3446 098e CC020000 		.4byte	.LASF109
  3447 0992 05       		.byte	0x5
  3448 0993 9F       		.byte	0x9f
  3449 0994 1F       		.uleb128 0x1f
- 3450 0995 E7020000 		.4byte	.LASF110
- 3451 0999 E7020000 		.4byte	.LASF110
+ 3450 0995 75020000 		.4byte	.LASF110
+ 3451 0999 75020000 		.4byte	.LASF110
  3452 099d 05       		.byte	0x5
  3453 099e 5E       		.byte	0x5e
  3454 099f 1F       		.uleb128 0x1f
- 3455 09a0 16070000 		.4byte	.LASF111
- 3456 09a4 16070000 		.4byte	.LASF111
+ 3455 09a0 22070000 		.4byte	.LASF111
+ 3456 09a4 22070000 		.4byte	.LASF111
  3457 09a8 05       		.byte	0x5
  3458 09a9 9E       		.byte	0x9e
  3459 09aa 1F       		.uleb128 0x1f
- 3460 09ab E2060000 		.4byte	.LASF112
- 3461 09af E2060000 		.4byte	.LASF112
+ 3460 09ab EE060000 		.4byte	.LASF112
+ 3461 09af EE060000 		.4byte	.LASF112
  3462 09b3 05       		.byte	0x5
  3463 09b4 9B       		.byte	0x9b
  3464 09b5 1F       		.uleb128 0x1f
@@ -6206,8 +6206,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3467 09be 05       		.byte	0x5
  3468 09bf 9A       		.byte	0x9a
  3469 09c0 1F       		.uleb128 0x1f
- 3470 09c1 38040000 		.4byte	.LASF114
- 3471 09c5 38040000 		.4byte	.LASF114
+ 3470 09c1 44040000 		.4byte	.LASF114
+ 3471 09c5 44040000 		.4byte	.LASF114
  3472 09c9 05       		.byte	0x5
  3473 09ca 59       		.byte	0x59
  3474 09cb 1F       		.uleb128 0x1f
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3499 000c 17       		.uleb128 0x17
  3500 000d 11       		.uleb128 0x11
  3501 000e 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 105
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 105
 
 
  3502 000f 10       		.uleb128 0x10
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3556 0045 0B       		.uleb128 0xb
  3557 0046 3B       		.uleb128 0x3b
  3558 0047 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 106
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 106
 
 
  3559 0048 01       		.uleb128 0x1
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3613 007e 01       		.uleb128 0x1
  3614 007f 13       		.uleb128 0x13
  3615 0080 00       		.byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 107
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 107
 
 
  3616 0081 00       		.byte	0
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3670 00b9 00       		.byte	0
  3671 00ba 00       		.byte	0
  3672 00bb 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 108
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 108
 
 
  3673 00bc 898201   		.uleb128 0x4109
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3727 00fb 40       		.uleb128 0x40
  3728 00fc 18       		.uleb128 0x18
  3729 00fd 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 109
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 109
 
 
  3730 00ff 19       		.uleb128 0x19
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3784 0135 0E       		.uleb128 0xe
  3785 0136 3A       		.uleb128 0x3a
  3786 0137 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 110
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 110
 
 
  3787 0138 3B       		.uleb128 0x3b
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3841 0171 00       		.byte	0
  3842 0172 00       		.byte	0
  3843 0173 1B       		.uleb128 0x1b
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 111
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 111
 
 
  3844 0174 1D       		.uleb128 0x1d
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3898 01ae 1E       		.uleb128 0x1e
  3899 01af 34       		.uleb128 0x34
  3900 01b0 00       		.byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 112
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 112
 
 
  3901 01b1 03       		.uleb128 0x3
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  3955 002f 38       		.byte	0x38
  3956 0030 24       		.byte	0x24
  3957 0031 73       		.byte	0x73
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 113
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 113
 
 
  3958 0032 00       		.sleb128 0
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4012 00ad 51       		.byte	0x51
  4013 00ae 09000000 		.4byte	.LVL45-1
  4014 00b2 F8000000 		.4byte	.LFE3
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 114
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 114
 
 
  4015 00b6 0400     		.2byte	0x4
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4069 0137 08000000 		.4byte	.LVL71
  4070 013b 1F000000 		.4byte	.LVL73-1
  4071 013f 0100     		.2byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 115
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 115
 
 
  4072 0141 50       		.byte	0x50
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4126 0020 00000000 		.4byte	.LFB0
  4127 0024 E4010000 		.4byte	.LFE0-.LFB0
  4128 0028 00000000 		.4byte	.LFB1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 116
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 116
 
 
  4129 002c 40020000 		.4byte	.LFE1-.LFB1
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4183 0084 8E010000 		.4byte	.LBE36
  4184 0088 90010000 		.4byte	.LBB47
  4185 008c 94010000 		.4byte	.LBE47
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 117
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 117
 
 
  4186 0090 9E010000 		.4byte	.LBB48
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4232 0014 75696E74 		.ascii	"uint16\000"
  4232      313600
  4233              	.LASF97:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 118
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 118
 
 
  4234 001b 4379494D 		.ascii	"CyIMO_Start\000"
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4255              	.LASF72:
  4256 00c5 4379506D 		.ascii	"CyPmHviLviSaveDisable\000"
  4256      4876694C 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 119
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 119
 
 
  4256      76695361 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4280 0164 4379494C 		.ascii	"CyILO_Start1K\000"
  4280      4F5F5374 
  4280      61727431 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 120
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 120
 
 
  4280      4B00
@@ -7186,443 +7186,443 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 1
  4301              	.LASF77:
  4302 01e0 6D61736B 		.ascii	"mask\000"
  4302      00
- 4303              	.LASF119:
- 4304 01e5 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 4304      73657273 
- 4304      5C4A6163 
- 4304      6F622D4C 
- 4304      6170746F 
- 4305 0213 656E696F 		.ascii	"enior Project Stuff Backup\\Senior Project Integrat"
- 4305      72205072 
- 4305      6F6A6563 
- 4305      74205374 
- 4305      75666620 
- 4306 0245 65645C44 		.ascii	"ed\\Design01.cydsn\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 121
+ 4303              	.LASF55:
+ 4304 01e5 696D6F41 		.ascii	"imoActFreq\000"
+ 4304      63744672 
+ 4304      657100
+ 4305              	.LASF8:
+ 4306 01f0 756E7369 		.ascii	"unsigned int\000"
+ 4306      676E6564 
+ 4306      20696E74 
+ 4306      00
+ 4307              	.LASF47:
+ 4308 01fd 73636374 		.ascii	"scctData\000"
+ 4308      44617461 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 121
 
 
- 4306      65736967 
- 4306      6E30312E 
- 4306      63796473 
- 4306      6E00
- 4307              	.LASF55:
- 4308 0257 696D6F41 		.ascii	"imoActFreq\000"
- 4308      63744672 
- 4308      657100
- 4309              	.LASF8:
- 4310 0262 756E7369 		.ascii	"unsigned int\000"
- 4310      676E6564 
- 4310      20696E74 
- 4310      00
- 4311              	.LASF47:
- 4312 026f 73636374 		.ascii	"scctData\000"
- 4312      44617461 
- 4312      00
- 4313              	.LASF90:
- 4314 0278 4379494D 		.ascii	"CyIMO_SetSource\000"
- 4314      4F5F5365 
- 4314      74536F75 
- 4314      72636500 
- 4315              	.LASF22:
- 4316 0288 696D6F46 		.ascii	"imoFreq\000"
- 4316      72657100 
- 4317              	.LASF5:
- 4318 0290 6C6F6E67 		.ascii	"long unsigned int\000"
- 4318      20756E73 
- 4318      69676E65 
- 4318      6420696E 
- 4318      7400
- 4319              	.LASF48:
- 4320 02a2 6C766964 		.ascii	"lvidEn\000"
- 4320      456E00
- 4321              	.LASF35:
- 4322 02a9 6379506D 		.ascii	"cyPmClockBackupStruct\000"
- 4322      436C6F63 
- 4322      6B426163 
- 4322      6B757053 
- 4322      74727563 
- 4323              	.LASF105:
- 4324 02bf 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 4324      74657243 
- 4324      72697469 
- 4324      63616C53 
- 4324      65637469 
- 4325              	.LASF36:
- 4326 02d6 6379506D 		.ascii	"cyPmBackupStruct\000"
- 4326      4261636B 
- 4326      75705374 
- 4326      72756374 
- 4326      00
- 4327              	.LASF110:
- 4328 02e7 4379494C 		.ascii	"CyILO_SetPowerMode\000"
- 4328      4F5F5365 
- 4328      74506F77 
- 4328      65724D6F 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 122
+ 4308      00
+ 4309              	.LASF90:
+ 4310 0206 4379494D 		.ascii	"CyIMO_SetSource\000"
+ 4310      4F5F5365 
+ 4310      74536F75 
+ 4310      72636500 
+ 4311              	.LASF22:
+ 4312 0216 696D6F46 		.ascii	"imoFreq\000"
+ 4312      72657100 
+ 4313              	.LASF5:
+ 4314 021e 6C6F6E67 		.ascii	"long unsigned int\000"
+ 4314      20756E73 
+ 4314      69676E65 
+ 4314      6420696E 
+ 4314      7400
+ 4315              	.LASF48:
+ 4316 0230 6C766964 		.ascii	"lvidEn\000"
+ 4316      456E00
+ 4317              	.LASF35:
+ 4318 0237 6379506D 		.ascii	"cyPmClockBackupStruct\000"
+ 4318      436C6F63 
+ 4318      6B426163 
+ 4318      6B757053 
+ 4318      74727563 
+ 4319              	.LASF105:
+ 4320 024d 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 4320      74657243 
+ 4320      72697469 
+ 4320      63616C53 
+ 4320      65637469 
+ 4321              	.LASF36:
+ 4322 0264 6379506D 		.ascii	"cyPmBackupStruct\000"
+ 4322      4261636B 
+ 4322      75705374 
+ 4322      72756374 
+ 4322      00
+ 4323              	.LASF110:
+ 4324 0275 4379494C 		.ascii	"CyILO_SetPowerMode\000"
+ 4324      4F5F5365 
+ 4324      74506F77 
+ 4324      65724D6F 
+ 4324      646500
+ 4325              	.LASF100:
+ 4326 0288 4379494D 		.ascii	"CyIMO_Stop\000"
+ 4326      4F5F5374 
+ 4326      6F7000
+ 4327              	.LASF34:
+ 4328 0293 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
+ 4328      4D5F434C 
+ 4328      4F434B5F 
+ 4328      4241434B 
+ 4328      55505F53 
+ 4329              	.LASF3:
+ 4330 02ad 73686F72 		.ascii	"short unsigned int\000"
+ 4330      7420756E 
+ 4330      7369676E 
+ 4330      65642069 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 122
 
 
- 4328      646500
- 4329              	.LASF100:
- 4330 02fa 4379494D 		.ascii	"CyIMO_Stop\000"
- 4330      4F5F5374 
- 4330      6F7000
- 4331              	.LASF34:
- 4332 0305 43595F50 		.ascii	"CY_PM_CLOCK_BACKUP_STRUCT\000"
- 4332      4D5F434C 
- 4332      4F434B5F 
- 4332      4241434B 
- 4332      55505F53 
- 4333              	.LASF3:
- 4334 031f 73686F72 		.ascii	"short unsigned int\000"
- 4334      7420756E 
- 4334      7369676E 
- 4334      65642069 
- 4334      6E7400
- 4335              	.LASF81:
- 4336 0332 63747749 		.ascii	"ctwInterval\000"
- 4336      6E746572 
- 4336      76616C00 
- 4337              	.LASF109:
- 4338 033e 43795664 		.ascii	"CyVdHvAnalogDisable\000"
- 4338      4876416E 
- 4338      616C6F67 
- 4338      44697361 
- 4338      626C6500 
- 4339              	.LASF94:
- 4340 0352 43794D61 		.ascii	"CyMasterClk_SetSource\000"
- 4340      73746572 
- 4340      436C6B5F 
- 4340      53657453 
- 4340      6F757263 
- 4341              	.LASF118:
- 4342 0368 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyPm.c\000"
- 4342      72617465 
- 4342      645F536F 
- 4342      75726365 
- 4342      5C50536F 
- 4343              	.LASF41:
- 4344 0386 77616B65 		.ascii	"wakeupCfg0\000"
+ 4330      6E7400
+ 4331              	.LASF81:
+ 4332 02c0 63747749 		.ascii	"ctwInterval\000"
+ 4332      6E746572 
+ 4332      76616C00 
+ 4333              	.LASF109:
+ 4334 02cc 43795664 		.ascii	"CyVdHvAnalogDisable\000"
+ 4334      4876416E 
+ 4334      616C6F67 
+ 4334      44697361 
+ 4334      626C6500 
+ 4335              	.LASF94:
+ 4336 02e0 43794D61 		.ascii	"CyMasterClk_SetSource\000"
+ 4336      73746572 
+ 4336      436C6B5F 
+ 4336      53657453 
+ 4336      6F757263 
+ 4337              	.LASF118:
+ 4338 02f6 47656E65 		.ascii	"Generated_Source\\PSoC5\\cyPm.c\000"
+ 4338      72617465 
+ 4338      645F536F 
+ 4338      75726365 
+ 4338      5C50536F 
+ 4339              	.LASF41:
+ 4340 0314 77616B65 		.ascii	"wakeupCfg0\000"
+ 4340      75704366 
+ 4340      673000
+ 4341              	.LASF42:
+ 4342 031f 77616B65 		.ascii	"wakeupCfg1\000"
+ 4342      75704366 
+ 4342      673100
+ 4343              	.LASF43:
+ 4344 032a 77616B65 		.ascii	"wakeupCfg2\000"
  4344      75704366 
- 4344      673000
- 4345              	.LASF42:
- 4346 0391 77616B65 		.ascii	"wakeupCfg1\000"
- 4346      75704366 
- 4346      673100
- 4347              	.LASF43:
- 4348 039c 77616B65 		.ascii	"wakeupCfg2\000"
- 4348      75704366 
- 4348      673200
- 4349              	.LASF64:
- 4350 03a7 636C6B42 		.ascii	"clkBusDivTmp\000"
- 4350      75734469 
- 4350      76546D70 
- 4350      00
- 4351              	.LASF57:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 123
+ 4344      673200
+ 4345              	.LASF64:
+ 4346 0335 636C6B42 		.ascii	"clkBusDivTmp\000"
+ 4346      75734469 
+ 4346      76546D70 
+ 4346      00
+ 4347              	.LASF57:
+ 4348 0342 626F6F73 		.ascii	"boostRefExt\000"
+ 4348      74526566 
+ 4348      45787400 
+ 4349              	.LASF27:
+ 4350 034e 636C6B49 		.ascii	"clkImoSrc\000"
+ 4350      6D6F5372 
+ 4350      6300
+ 4351              	.LASF61:
+ 4352 0358 4379506D 		.ascii	"CyPmSaveClocks\000"
+ 4352      53617665 
+ 4352      436C6F63 
+ 4352      6B7300
+ 4353              	.LASF103:
+ 4354 0367 43795854 		.ascii	"CyXTAL_Start\000"
+ 4354      414C5F53 
+ 4354      74617274 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 123
 
 
- 4352 03b4 626F6F73 		.ascii	"boostRefExt\000"
- 4352      74526566 
- 4352      45787400 
- 4353              	.LASF27:
- 4354 03c0 636C6B49 		.ascii	"clkImoSrc\000"
- 4354      6D6F5372 
- 4354      6300
- 4355              	.LASF61:
- 4356 03ca 4379506D 		.ascii	"CyPmSaveClocks\000"
- 4356      53617665 
- 4356      436C6F63 
- 4356      6B7300
- 4357              	.LASF103:
- 4358 03d9 43795854 		.ascii	"CyXTAL_Start\000"
- 4358      414C5F53 
- 4358      74617274 
- 4358      00
- 4359              	.LASF40:
- 4360 03e6 736C7054 		.ascii	"slpTrBypass\000"
- 4360      72427970 
- 4360      61737300 
+ 4354      00
+ 4355              	.LASF40:
+ 4356 0374 736C7054 		.ascii	"slpTrBypass\000"
+ 4356      72427970 
+ 4356      61737300 
+ 4357              	.LASF119:
+ 4358 0380 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 4358      73657273 
+ 4358      5C6C6567 
+ 4358      6F635C44 
+ 4358      6F63756D 
+ 4359 03ad 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 4359      72205072 
+ 4359      6F6A6563 
+ 4359      745C5365 
+ 4359      6E696F72 
+ 4360 03de 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 4360      7420496E 
+ 4360      74656772 
+ 4360      61746564 
+ 4360      5C446573 
  4361              	.LASF18:
- 4362 03f2 73697A65 		.ascii	"sizetype\000"
+ 4362 03fe 73697A65 		.ascii	"sizetype\000"
  4362      74797065 
  4362      00
  4363              	.LASF75:
- 4364 03fb 4379506D 		.ascii	"CyPmHibernateEx\000"
+ 4364 0407 4379506D 		.ascii	"CyPmHibernateEx\000"
  4364      48696265 
  4364      726E6174 
  4364      65457800 
  4365              	.LASF17:
- 4366 040b 6C6F6E67 		.ascii	"long double\000"
+ 4366 0417 6C6F6E67 		.ascii	"long double\000"
  4366      20646F75 
  4366      626C6500 
  4367              	.LASF65:
- 4368 0417 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
+ 4368 0423 6379506D 		.ascii	"cyPmImoFreqMhz2Reg\000"
  4368      496D6F46 
  4368      7265714D 
  4368      687A3252 
  4368      656700
  4369              	.LASF19:
- 4370 042a 656E436C 		.ascii	"enClkA\000"
+ 4370 0436 656E436C 		.ascii	"enClkA\000"
  4370      6B4100
  4371              	.LASF20:
- 4372 0431 656E436C 		.ascii	"enClkD\000"
+ 4372 043d 656E436C 		.ascii	"enClkD\000"
  4372      6B4400
  4373              	.LASF114:
- 4374 0438 4379494C 		.ascii	"CyILO_Start100K\000"
+ 4374 0444 4379494C 		.ascii	"CyILO_Start100K\000"
  4374      4F5F5374 
  4374      61727431 
  4374      30304B00 
  4375              	.LASF68:
- 4376 0448 77616B65 		.ascii	"wakeupSource\000"
+ 4376 0454 77616B65 		.ascii	"wakeupSource\000"
  4376      7570536F 
  4376      75726365 
  4376      00
  4377              	.LASF91:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 124
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 124
 
 
- 4378 0455 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
+ 4378 0461 4379504C 		.ascii	"CyPLL_OUT_Stop\000"
  4378      4C5F4F55 
  4378      545F5374 
  4378      6F7000
  4379              	.LASF95:
- 4380 0464 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
+ 4380 0470 43794D61 		.ascii	"CyMasterClk_SetDivider\000"
  4380      73746572 
  4380      436C6B5F 
  4380      53657444 
  4380      69766964 
  4381              	.LASF26:
- 4382 047b 696D6F43 		.ascii	"imoClkSrc\000"
+ 4382 0487 696D6F43 		.ascii	"imoClkSrc\000"
  4382      6C6B5372 
  4382      6300
  4383              	.LASF12:
- 4384 0485 666C6F61 		.ascii	"float\000"
+ 4384 0491 666C6F61 		.ascii	"float\000"
  4384      7400
  4385              	.LASF106:
- 4386 048b 43794578 		.ascii	"CyExitCriticalSection\000"
+ 4386 0497 43794578 		.ascii	"CyExitCriticalSection\000"
  4386      69744372 
  4386      69746963 
  4386      616C5365 
  4386      6374696F 
  4387              	.LASF69:
- 4388 04a1 4379506D 		.ascii	"CyPmSleep\000"
+ 4388 04ad 4379506D 		.ascii	"CyPmSleep\000"
  4388      536C6565 
  4388      7000
  4389              	.LASF53:
- 4390 04ab 6C766964 		.ascii	"lvidRst\000"
+ 4390 04b7 6C766964 		.ascii	"lvidRst\000"
  4390      52737400 
  4391              	.LASF66:
- 4392 04b3 4379506D 		.ascii	"CyPmAltAct\000"
+ 4392 04bf 4379506D 		.ascii	"CyPmAltAct\000"
  4392      416C7441 
  4392      637400
  4393              	.LASF102:
- 4394 04be 43794465 		.ascii	"CyDelayCycles\000"
+ 4394 04ca 43794465 		.ascii	"CyDelayCycles\000"
  4394      6C617943 
  4394      79636C65 
  4394      7300
  4395              	.LASF16:
- 4396 04cc 72656738 		.ascii	"reg8\000"
+ 4396 04d8 72656738 		.ascii	"reg8\000"
  4396      00
  4397              	.LASF99:
- 4398 04d1 43794861 		.ascii	"CyHalt\000"
+ 4398 04dd 43794861 		.ascii	"CyHalt\000"
  4398      6C7400
  4399              	.LASF82:
- 4400 04d8 4379506D 		.ascii	"CyPmOppsSet\000"
+ 4400 04e4 4379506D 		.ascii	"CyPmOppsSet\000"
  4400      4F707073 
  4400      53657400 
  4401              	.LASF1:
- 4402 04e4 756E7369 		.ascii	"unsigned char\000"
+ 4402 04f0 756E7369 		.ascii	"unsigned char\000"
  4402      676E6564 
  4402      20636861 
  4402      7200
  4403              	.LASF86:
- 4404 04f2 6379506D 		.ascii	"cyPmClockBackup\000"
+ 4404 04fe 6379506D 		.ascii	"cyPmClockBackup\000"
  4404      436C6F63 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 125
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 125
 
 
  4404      6B426163 
  4404      6B757000 
  4405              	.LASF31:
- 4406 0502 706C6C45 		.ascii	"pllEnableState\000"
+ 4406 050e 706C6C45 		.ascii	"pllEnableState\000"
  4406      6E61626C 
  4406      65537461 
  4406      746500
  4407              	.LASF38:
- 4408 0511 696C6F31 		.ascii	"ilo1kEnable\000"
+ 4408 051d 696C6F31 		.ascii	"ilo1kEnable\000"
  4408      6B456E61 
  4408      626C6500 
  4409              	.LASF2:
- 4410 051d 73686F72 		.ascii	"short int\000"
+ 4410 0529 73686F72 		.ascii	"short int\000"
  4410      7420696E 
  4410      7400
  4411              	.LASF59:
- 4412 0527 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
+ 4412 0533 4379506D 		.ascii	"CyPmHibSlpSaveSet\000"
  4412      48696253 
  4412      6C705361 
  4412      76655365 
  4412      7400
  4413              	.LASF39:
- 4414 0539 696C6F31 		.ascii	"ilo100kEnable\000"
+ 4414 0545 696C6F31 		.ascii	"ilo100kEnable\000"
  4414      30306B45 
  4414      6E61626C 
  4414      6500
  4415              	.LASF117:
- 4416 0547 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 4416 0553 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  4416      43313120 
  4416      352E342E 
  4416      31203230 
  4416      31363036 
- 4417 057a 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 4417 0586 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
  4417      20726576 
  4417      6973696F 
  4417      6E203233 
  4417      37373135 
- 4418 05ad 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
+ 4418 05b9 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
  4418      66756E63 
  4418      74696F6E 
  4418      2D736563 
  4418      74696F6E 
  4419              	.LASF14:
- 4420 05d5 63686172 		.ascii	"char\000"
+ 4420 05e1 63686172 		.ascii	"char\000"
  4420      00
  4421              	.LASF96:
- 4422 05da 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
+ 4422 05e6 4379494D 		.ascii	"CyIMO_DisableDoubler\000"
  4422      4F5F4469 
  4422      7361626C 
  4422      65446F75 
  4422      626C6572 
  4423              	.LASF107:
- 4424 05ef 43795664 		.ascii	"CyVdLvDigitDisable\000"
+ 4424 05fb 43795664 		.ascii	"CyVdLvDigitDisable\000"
  4424      4C764469 
  4424      67697444 
  4424      69736162 
  4424      6C6500
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 126
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 126
 
 
  4425              	.LASF56:
- 4426 0602 696D6F41 		.ascii	"imoActFreq12Mhz\000"
+ 4426 060e 696D6F41 		.ascii	"imoActFreq12Mhz\000"
  4426      63744672 
  4426      65713132 
  4426      4D687A00 
  4427              	.LASF76:
- 4428 0612 4379506D 		.ascii	"CyPmHibernate\000"
+ 4428 061e 4379506D 		.ascii	"CyPmHibernate\000"
  4428      48696265 
  4428      726E6174 
  4428      6500
  4429              	.LASF88:
- 4430 0620 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
+ 4430 062c 4379466C 		.ascii	"CyFlash_SetWaitCycles\000"
  4430      6173685F 
  4430      53657457 
  4430      61697443 
  4430      79636C65 
  4431              	.LASF84:
- 4432 0636 66747749 		.ascii	"ftwInterval\000"
+ 4432 0642 66747749 		.ascii	"ftwInterval\000"
  4432      6E746572 
  4432      76616C00 
  4433              	.LASF87:
- 4434 0642 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
+ 4434 064e 6379506D 		.ascii	"cyPmImoFreqReg2Mhz\000"
  4434      496D6F46 
  4434      72657152 
  4434      6567324D 
  4434      687A00
  4435              	.LASF120:
- 4436 0655 4379506D 		.ascii	"CyPmReadStatus\000"
+ 4436 0661 4379506D 		.ascii	"CyPmReadStatus\000"
  4436      52656164 
  4436      53746174 
  4436      757300
  4437              	.LASF93:
- 4438 0664 43794275 		.ascii	"CyBusClk_SetDivider\000"
+ 4438 0670 43794275 		.ascii	"CyBusClk_SetDivider\000"
  4438      73436C6B 
  4438      5F536574 
  4438      44697669 
  4438      64657200 
  4439              	.LASF33:
- 4440 0678 636C6B44 		.ascii	"clkDistDelay\000"
+ 4440 0684 636C6B44 		.ascii	"clkDistDelay\000"
  4440      69737444 
  4440      656C6179 
  4440      00
  4441              	.LASF80:
- 4442 0685 4379506D 		.ascii	"CyPmCtwSetInterval\000"
+ 4442 0691 4379506D 		.ascii	"CyPmCtwSetInterval\000"
  4442      43747753 
  4442      6574496E 
  4442      74657276 
  4442      616C00
  4443              	.LASF63:
- 4444 0698 73746174 		.ascii	"status\000"
+ 4444 06a4 73746174 		.ascii	"status\000"
  4444      757300
  4445              	.LASF50:
- 4446 069f 6C766961 		.ascii	"lviaEn\000"
+ 4446 06ab 6C766961 		.ascii	"lviaEn\000"
  4446      456E00
  4447              	.LASF89:
- 4448 06a6 4379494D 		.ascii	"CyIMO_SetFreq\000"
+ 4448 06b2 4379494D 		.ascii	"CyIMO_SetFreq\000"
  4448      4F5F5365 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 127
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 127
 
 
  4448      74467265 
  4448      7100
  4449              	.LASF101:
- 4450 06b4 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
+ 4450 06c0 4379494D 		.ascii	"CyIMO_EnableDoubler\000"
  4450      4F5F456E 
  4450      61626C65 
  4450      446F7562 
  4450      6C657200 
  4451              	.LASF71:
- 4452 06c8 4379506D 		.ascii	"CyPmHibSaveSet\000"
+ 4452 06d4 4379506D 		.ascii	"CyPmHibSaveSet\000"
  4452      48696253 
  4452      61766553 
  4452      657400
  4453              	.LASF67:
- 4454 06d7 77616B65 		.ascii	"wakeupTime\000"
+ 4454 06e3 77616B65 		.ascii	"wakeupTime\000"
  4454      75705469 
  4454      6D6500
  4455              	.LASF112:
- 4456 06e2 43795664 		.ascii	"CyVdLvAnalogEnable\000"
+ 4456 06ee 43795664 		.ascii	"CyVdLvAnalogEnable\000"
  4456      4C76416E 
  4456      616C6F67 
  4456      456E6162 
  4456      6C6500
  4457              	.LASF15:
- 4458 06f5 63797374 		.ascii	"cystatus\000"
+ 4458 0701 63797374 		.ascii	"cystatus\000"
  4458      61747573 
  4458      00
  4459              	.LASF24:
- 4460 06fe 666C6173 		.ascii	"flashWaitCycles\000"
+ 4460 070a 666C6173 		.ascii	"flashWaitCycles\000"
  4460      68576169 
  4460      74437963 
  4460      6C657300 
  4461              	.LASF54:
- 4462 070e 6C766961 		.ascii	"lviaRst\000"
+ 4462 071a 6C766961 		.ascii	"lviaRst\000"
  4462      52737400 
  4463              	.LASF111:
- 4464 0716 43795664 		.ascii	"CyVdHvAnalogEnable\000"
+ 4464 0722 43795664 		.ascii	"CyVdHvAnalogEnable\000"
  4464      4876416E 
  4464      616C6F67 
  4464      456E6162 
  4464      6C6500
  4465              	.LASF92:
- 4466 0729 43795854 		.ascii	"CyXTAL_Stop\000"
+ 4466 0735 43795854 		.ascii	"CyXTAL_Stop\000"
  4466      414C5F53 
  4466      746F7000 
  4467              	.LASF85:
- 4468 0735 6379506D 		.ascii	"cyPmBackup\000"
+ 4468 0741 6379506D 		.ascii	"cyPmBackup\000"
  4468      4261636B 
  4468      757000
  4469              	.LASF49:
- 4470 0740 6C766964 		.ascii	"lvidTrip\000"
+ 4470 074c 6C766964 		.ascii	"lvidTrip\000"
  4470      54726970 
  4470      00
  4471              	.LASF25:
- 4472 0749 696D6F45 		.ascii	"imoEnable\000"
+ 4472 0755 696D6F45 		.ascii	"imoEnable\000"
  4472      6E61626C 
  4472      6500
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFoFob3.s 			page 128
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccfjH41l.s 			page 128
 
 
  4473              	.LASF78:
- 4474 0753 696E7465 		.ascii	"interruptStatus\000"
+ 4474 075f 696E7465 		.ascii	"interruptStatus\000"
  4474      72727570 
  4474      74537461 
  4474      74757300 

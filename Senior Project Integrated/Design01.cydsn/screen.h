@@ -88,7 +88,7 @@
     #define ILI9341_TFTWIDTH   240      ///< ILI9341 max TFT width
     #define ILI9341_TFTHEIGHT  320      ///< ILI9341 max TFT height
     
-    #define Y_RES 240.0
+    #define Y_RES 230.0
     #define X_RES 320.0
 
     #define pgm_read_byte(addr) (*(const unsigned char *)(addr))
