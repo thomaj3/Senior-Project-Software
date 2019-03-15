@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\Design01\Source Files\font.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\Design01\Source Files\settings.h">
 <ExpandedNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\Design01</v>
@@ -39,6 +39,22 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>Workspace01</v>
+<v>Workspace01\Design01</v>
+<v>Workspace01\Design01\TopDesign</v>
+<v>Workspace01\Design01\Design01.cydwr</v>
+<v>Workspace01\Design01\Design01.cydwr\Pins</v>
+<v>Workspace01\Design01\Design01.cydwr\Analog</v>
+<v>Workspace01\Design01\Design01.cydwr\Clocks</v>
+<v>Workspace01\Design01\Design01.cydwr\Interrupts</v>
+<v>Workspace01\Design01\Design01.cydwr\DMA</v>
+<v>Workspace01\Design01\Design01.cydwr\System</v>
+<v>Workspace01\Design01\Design01.cydwr\Directives</v>
+<v>Workspace01\Design01\Design01.cydwr\Flash Security</v>
+<v>Workspace01\Design01\Design01.cydwr\EEPROM</v>
+<v>Workspace01\Design01\Header Files</v>
+<v>Workspace01\Design01\Header Files\cyapicallbacks.h</v>
+<v>Workspace01\Design01\Source Files</v>
 <v>Workspace01\Design01\Source Files\font.c</v>
 <v>Workspace01\Design01\Source Files\font.h</v>
 <v>Workspace01\Design01\Source Files\main.c</v>
@@ -74,22 +90,6 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.ld</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.scat</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\cydevice.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevice_trm.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydeviceiar.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydeviceiar_trm.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicerv.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicerv_trm.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydisabledsheets.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfitter.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfitter_cfg.c</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfitter_cfg.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfittergnu.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfitteriar.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cyfitterrv.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cymetadata.c</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\project.h</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -275,7 +275,8 @@
 <name v=".\Design01.cydsn\screen.h" />
 <name v=".\Design01.cydsn\font.c" />
 <name v=".\Design01.cydsn\Generated_Source\PSoC5\Cm3Start.c" />
-<name v="${CyRoot}\import\gnu\arm\5.4.1\arm-none-eabi\include\string.h" />
+<name v=".\Design01.cydsn\Design01.cydwr" />
+<name v=".\Design01.cydsn\settings.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -283,7 +284,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1236, 751" SelectedTabbedMdiWindow="c160a806-8516-4bb6-a671-19f301af2d8b"><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\main.c" Guid="c160a806-8516-4bb6-a671-19f301af2d8b" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="5fca95ee-8e16-46f8-a7a2-421f8c1405a9" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\screen.c" Guid="306d5d20-2fa9-4279-882f-04baccd30a07" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\screen.h" Guid="58fbb3bc-2e2d-4748-b789-e7249ed42f63" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\font.c" Guid="0a4da5ce-2cea-424f-ad0c-01e74fb620ca" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\Cm3Start.c" Guid="f7987a73-8cbb-44fc-85eb-34a723cd2c45" /><DocumentWindow Key="C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\import\gnu\arm\5.4.1\arm-none-eabi\include\string.h" Guid="abe96052-f221-4d8a-b014-0285f2b1f215" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1236, 751" SelectedTabbedMdiWindow="c160a806-8516-4bb6-a671-19f301af2d8b"><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\main.c" Guid="c160a806-8516-4bb6-a671-19f301af2d8b" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="5fca95ee-8e16-46f8-a7a2-421f8c1405a9" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\screen.c" Guid="306d5d20-2fa9-4279-882f-04baccd30a07" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\screen.h" Guid="58fbb3bc-2e2d-4748-b789-e7249ed42f63" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\font.c" Guid="0a4da5ce-2cea-424f-ad0c-01e74fb620ca" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\Cm3Start.c" Guid="f7987a73-8cbb-44fc-85eb-34a723cd2c45" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\Design01.cydwr" Guid="51023aec-bfc7-4939-bcc2-ab3b58ce3236" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\settings.h" Guid="33c33b3b-9475-4c78-b7a8-4bdc10f76a3a" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

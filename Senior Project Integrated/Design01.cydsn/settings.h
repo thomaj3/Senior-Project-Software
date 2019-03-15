@@ -19,6 +19,6 @@
 #define ID_MAX              20      //Max allowable current. Enter the desired current in mA
 #define ID_TH               1       //Current to define on state at 1 V Vds. Enter the desired current in mA
 #define SETTLING_WAIT_TIME  1       //How many milliseconds to wait for the DUT to settle under DAC levels before starting ADC conversion
-#define AVG                 10
+#define AVG                 50
 
 /* [] END OF FILE */

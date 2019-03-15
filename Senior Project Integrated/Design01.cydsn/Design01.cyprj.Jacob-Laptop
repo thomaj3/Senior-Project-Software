@@ -570,6 +570,66 @@
 <file name=".\main.c" />
 <file name=".\screen.h" />
 <file name=".\settings.h" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\screen.o">
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Clock.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\D_C.h" />
+<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\I2C.h" />
+<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Reset.h" />
+<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS.h" />
+<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
+<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
+<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\isr.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\scl.h" />
+<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\sda.h" />
+<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
+<dep name=".\font.h" />
+<dep name=".\screen.c" />
+<dep name=".\screen.h" />
+</file>
+<file name=".\screen.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\font.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
@@ -1126,65 +1186,6 @@
 <dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\sda.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\screen.o">
-<dep name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
-<dep name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3.h" />
-<dep name=".\Generated_Source\PSoC5\core_cm3_psoc5.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
-<dep name=".\Generated_Source\PSoC5\CLK.h" />
-<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Clock.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\D_C.h" />
-<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\I2C.h" />
-<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MISO.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Reset.h" />
-<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\SS.h" />
-<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\isr.h" />
-<dep name=".\Generated_Source\PSoC5\scl.h" />
-<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\sda.h" />
-<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
-<dep name=".\screen.c" />
-<dep name=".\screen.h" />
-</file>
-<file name=".\screen.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o">
 <dep name=".\Generated_Source\PSoC5\CyBootAsmGnu.s" />
 <dep name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
@@ -1303,7 +1304,7 @@
 <name_val_pair name="Generated_Source\PSoC5\ADC_SAR_1_IRQ.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
 <name_val_pair name="Generated_Source\PSoC5\ADC_SAR_1_theACLK.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
 <name_val_pair name="C:\Users\Jacob-Laptop\Desktop\Workspace01\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects" />
-<name_val_pair name="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects" />
+<name_val_pair name="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.hex" v="-mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects" />
 <name_val_pair name="font.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
 <name_val_pair name="Generated_Source\PSoC5\I2C.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
 <name_val_pair name="Generated_Source\PSoC5\I2C_BOOT.c" v="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
@@ -1323,14 +1324,16 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="131969186167390124" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="131970898548871798" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
 <CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
 <debugger_breakpoint_list>
-<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="263" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\screen.c" linenumber="301" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\screen.c" linenumber="323" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="291" />
 </debugger_breakpoint_list>
 </CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>

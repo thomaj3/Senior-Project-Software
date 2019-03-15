@@ -8,7 +8,7 @@
 #include "string.h"
 #include "stdio.h"
 #include "stdlib.h"
-
+#include "math.h"
 
 // Initialization command/data
 static const uint8_t initcmd[] = {
@@ -284,31 +284,58 @@ void draw_line(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
     }
 }
 
-void draw_coordinates(double y_max)
+void draw_coordinates(int y_max, unsigned int device_selection)
 {
-    int y_max_int = (int) (y_max);
+    
     int y_max_pixel = (int) 240/(1.25);
-    double y_label;
+    int five_mA_pixel = (int) (y_max_pixel*5.0/y_max);
+    int y_label;
     int x_label;
     char string_throwaway_y[10];
     char string_throwaway_x[4]; //= NULL;
     //string_print = malloc(sizeof(**string_print)*3);
-    int y_max_step = y_max_pixel/4;
-    int x_max_step = 169/4;
+    int x_max_step;
     int i;
     int k;
-    draw_line(30,10,220,10,WHITE);
-    draw_line(30,10,30,y_max_pixel+10,WHITE);
+    draw_line(30,10,220,10,WHITE); //draw x axis line
+    draw_line(30,10,30,y_max_pixel+9,WHITE);//draw y axis line
     
-    for(i=1;i<5;i++)
+    if(device_selection < 2)
     {
-        y_label =  ((y_max/1.25))/4.0 * i;
-        sprintf(string_throwaway_y,"%.1f", y_label);
-        sprintf(string_throwaway_x,"%i", i*2);
-        draw_line(30,i*y_max_step+10,35,i*y_max_step+10,WHITE);
-        draw_string(3,i*y_max_step+10,WHITE,string_throwaway_y);
-        draw_line(i*x_max_step+30,10,i*x_max_step+30,13,WHITE);
-        draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);
+        x_max_step = 189/9;
     }
+    else
+    {
+        x_max_step = 189/15;
+    }
+    
+    if((device_selection)%2 == 0)
+    {
+        draw_string(230,4,WHITE,"VDS V");
+        draw_string(3,y_max_pixel + 25,WHITE,"ID MIL A");
+    }
+    else
+    {
+        draw_string(230,4,WHITE,"VCE V");
+        draw_string(3,y_max_pixel+ 25,WHITE,"IC MIL A");
+    }
+    
+    for(i=1; 5*i <= y_max ;i++)
+    {
+        y_label =  5 * i;
+        sprintf(string_throwaway_y,"%d", y_label);
+        
+        draw_line(30,i*five_mA_pixel+10,220,i*five_mA_pixel+10,WHITE);//draw y major 
+        draw_string(3,i*five_mA_pixel+10,WHITE,string_throwaway_y);//draw y major label
+        
+    }
+    
+    for(i = 1; i <= 189/x_max_step; i++)
+    {
+        sprintf(string_throwaway_x,"%i", i);
+        draw_line(i*x_max_step+30,10,i*x_max_step+30,y_max_pixel+10,WHITE);//draw x major
+        draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);//draw x major label
+    }
+        
     
 }

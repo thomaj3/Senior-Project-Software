@@ -1,4 +1,4 @@
---------------- Build Started: 03/13/2019 11:05:06 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Build Started: 03/14/2019 22:17:33 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'single_test':
@@ -9,71 +9,82 @@ main.c:26:12: warning: unused variable 'Output_avg' [-Wunused-variable]
      double Output_avg;
             ^
 main.c: In function 'run_test':
-main.c:146:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
+main.c:147:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
                  draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
                  ^
-main.c:153:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+main.c:168:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
          draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string);
          ^
 main.c: In function 'main':
-main.c:175:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
+main.c:190:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
      StartScreen();
      ^
-main.c:178:5: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
+main.c:193:5: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
      fill_screen(BLACK);  
      ^
-main.c:263:17: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
-                 draw_coordinates(y_max_mA);
-                 ^
-main.c:234:12: warning: unused variable 'Id_avg' [-Wunused-variable]
+main.c:296:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
+         draw_coordinates(y_max_calc,device_selection);
+         ^
+main.c:250:12: warning: unused variable 'Id_avg' [-Wunused-variable]
      double Id_avg;
             ^
-main.c:233:12: warning: unused variable 'Id' [-Wunused-variable]
+main.c:249:12: warning: unused variable 'Id' [-Wunused-variable]
      double Id;
             ^
-main.c:231:12: warning: variable 'Output_data_x' set but not used [-Wunused-but-set-variable]
+main.c:247:12: warning: variable 'Output_data_x' set but not used [-Wunused-but-set-variable]
      double Output_data_x[VDS_NMOS_LENGTH];                      //The Vds points used. Used for plottings
             ^
-main.c:230:12: warning: unused variable 'Output_data_y' [-Wunused-variable]
+main.c:246:12: warning: unused variable 'Output_data_y' [-Wunused-variable]
      double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};     //The output data of Id NMOS trace in mA
             ^
-main.c:224:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
+main.c:239:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
      int y_pixel_prev;
          ^
-main.c:223:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
+main.c:238:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
      int x_pixel_prev;
          ^
-main.c:222:9: warning: unused variable 'y_pixel' [-Wunused-variable]
+main.c:237:9: warning: unused variable 'y_pixel' [-Wunused-variable]
      int y_pixel;
          ^
-main.c:221:9: warning: unused variable 'x_pixel' [-Wunused-variable]
+main.c:236:9: warning: unused variable 'x_pixel' [-Wunused-variable]
      int x_pixel;
          ^
-main.c:217:12: warning: unused variable 'x_max_mV' [-Wunused-variable]
+main.c:232:12: warning: unused variable 'x_max_mV' [-Wunused-variable]
      double x_max_mV = 10000;                   //the highest plottable Vds in mV
             ^
-main.c:213:9: warning: unused variable 'k' [-Wunused-variable]
+main.c:228:9: warning: unused variable 'k' [-Wunused-variable]
      int k;  //used for for loop iterations
          ^
-main.c:212:9: warning: unused variable 'j' [-Wunused-variable]
+main.c:227:9: warning: unused variable 'j' [-Wunused-variable]
      int j;  //used for for loop iterations
          ^
-main.c:209:9: warning: unused variable 'return_code' [-Wunused-variable]
+main.c:224:9: warning: unused variable 'return_code' [-Wunused-variable]
      int return_code;    //Going to be used for error displays
          ^
 main.c: In function 'run_test':
-main.c:146:17: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:147:17: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
                  draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
                  ^
-main.c:146:17: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:147:17: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/screen.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3 -c screen.c -o .\CortexM3\ARM_GCC_541\Debug\screen.o
+screen.c: In function 'draw_coordinates':
+screen.c:314:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+         draw_string(230,4,WHITE,"VDS V");
+         ^
+screen.c:299:9: warning: unused variable 'k' [-Wunused-variable]
+     int k;
+         ^
+screen.c:293:9: warning: unused variable 'x_label' [-Wunused-variable]
+     int x_label;
+         ^
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Design01.a .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\MOSI.o .\CortexM3\ARM_GCC_541\Debug\CLK.o .\CortexM3\ARM_GCC_541\Debug\SS.o .\CortexM3\ARM_GCC_541\Debug\MISO.o .\CortexM3\ARM_GCC_541\Debug\D_C.o .\CortexM3\ARM_GCC_541\Debug\Reset.o .\CortexM3\ARM_GCC_541\Debug\Clock.o .\CortexM3\ARM_GCC_541\Debug\SPIM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_PM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_INT.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_GS.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_ID.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_theACLK.o .\CortexM3\ARM_GCC_541\Debug\I2C.o .\CortexM3\ARM_GCC_541\Debug\I2C_BOOT.o .\CortexM3\ARM_GCC_541\Debug\I2C_INT.o .\CortexM3\ARM_GCC_541\Debug\I2C_PM.o .\CortexM3\ARM_GCC_541\Debug\I2C_SLAVE.o .\CortexM3\ARM_GCC_541\Debug\I2C_MASTER.o .\CortexM3\ARM_GCC_541\Debug\scl.o .\CortexM3\ARM_GCC_541\Debug\sda.o .\CortexM3\ARM_GCC_541\Debug\isr.o .\CortexM3\ARM_GCC_541\Debug\IRQ.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Design01.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\font.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "D:\PSoC\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\font.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-cyelftool.exe -S "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
-Flash used: 21496 of 262144 bytes (8.2%).
+cyelftool.exe -S "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
+Flash used: 21960 of 262144 bytes (8.4%).
 SRAM used: 6585 of 65536 bytes (10.0%). Stack: 2048 bytes. Heap: 4096 bytes.
---------------- Build Succeeded: 03/13/2019 11:05:09 ---------------
+--------------- Build Succeeded: 03/14/2019 22:17:35 ---------------
