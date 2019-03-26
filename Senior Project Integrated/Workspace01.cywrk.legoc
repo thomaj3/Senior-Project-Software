@@ -171,6 +171,53 @@
 <VisibleNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\Design01</v>
+<v>Workspace01\Design01\CortexM3</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\D_C.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\font.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_INT.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_MASTER.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_SLAVE.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IRQ.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\MISO.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\MOSI.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_DS.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_GS.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Pin_ID.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Reset.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\scl.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\screen.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\sda.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIM.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIM_INT.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SPIM_PM.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\SS.lst</v>
+<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\VDAC8_DS.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -237,7 +284,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1527, 737" SelectedTabbedMdiWindow="1bc639a5-853f-40c5-b6dd-b43f6bc1dba5"><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Design01.cydwr" Guid="01a9ec22-4941-4b33-812b-373021ba7c7f" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="f86df83e-0ea1-4907-a239-b149361a20d1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\font.h" Guid="64c3a859-1c2c-42f3-8404-01aef636add4" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\font.c" Guid="1c9ceb5a-5534-4b2e-9a5b-eca020b816c1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.h" Guid="239588b6-3e8f-4c21-881f-c53adf271765" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.c" Guid="db9b6f96-8e0c-41f0-a746-d1f5d4d8f4d1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\main.c" Guid="1bc639a5-853f-40c5-b6dd-b43f6bc1dba5" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\settings.h" Guid="361d116d-77dc-4827-8036-b682e58e7247" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0518775a-cf7f-4c3e-8171-67a3c353b577" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\isr.c" Guid="5f99787b-79a2-43e0-b96c-dfe6bdbbe434" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1608, 737" SelectedTabbedMdiWindow="01a9ec22-4941-4b33-812b-373021ba7c7f"><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Design01.cydwr" Guid="01a9ec22-4941-4b33-812b-373021ba7c7f" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="f86df83e-0ea1-4907-a239-b149361a20d1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\font.h" Guid="64c3a859-1c2c-42f3-8404-01aef636add4" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\font.c" Guid="1c9ceb5a-5534-4b2e-9a5b-eca020b816c1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.h" Guid="239588b6-3e8f-4c21-881f-c53adf271765" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.c" Guid="db9b6f96-8e0c-41f0-a746-d1f5d4d8f4d1" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\main.c" Guid="1bc639a5-853f-40c5-b6dd-b43f6bc1dba5" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\settings.h" Guid="361d116d-77dc-4827-8036-b682e58e7247" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0518775a-cf7f-4c3e-8171-67a3c353b577" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\isr.c" Guid="5f99787b-79a2-43e0-b96c-dfe6bdbbe434" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>
