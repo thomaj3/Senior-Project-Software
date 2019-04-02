@@ -1,6 +1,6 @@
 // ======================================================================
 // Design01.v generated from TopDesign.cysch
-// 03/13/2019 at 11:00
+// 04/02/2019 at 15:59
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1201,7 +1201,7 @@ module top ;
 		#(.id("16b8c119-d196-4404-a3fb-c4d9d8fb1e05"),
 		  .source_clock_id(""),
 		  .divisor(0),
-		  .period("25000000"),
+		  .period("100000000"),
 		  .is_direct(0),
 		  .is_digital(1))
 		Clock

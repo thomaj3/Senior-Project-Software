@@ -209,10 +209,11 @@ int main(void)
 //    
 //    draw_number(100,100,WHITE,temp_num);
 //    
-//    char string_test[] = {"STRING TEST TSJKF SDFNKJ"};
+//    char string_test[] = {"abcdefghijklmnopqrstuvwxyz"};
 //    draw_string(200,100,WHITE,string_test);
+//    draw_string(120, 160, WHITE, "abc");
 //    
-//    CyDelay(5000);
+//    CyDelay(10000);
 //    
 //    fill_screen(BLACK);
     

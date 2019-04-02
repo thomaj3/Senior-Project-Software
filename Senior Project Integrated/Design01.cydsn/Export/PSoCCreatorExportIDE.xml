@@ -66,8 +66,6 @@
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC5\cm3gcc.ld</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC5\Cm3RealView.scat</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Cm3Start.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\core_cm3.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\core_cm3_psoc5.h</File>
           <File BuildType="BUILD" Toolchain="ARM GCC Generic">Generated_Source\PSoC5\CyBootAsmGnu.s</File>
           <File BuildType="BUILD" Toolchain="ARM MDK Generic">Generated_Source\PSoC5\CyBootAsmRv.s</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CyDmac.c</File>
@@ -83,13 +81,8 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\CySpc.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cytypes.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cyutils.c</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\core_cmFunc.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\core_cmInstr.h</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC5\Cm3Iar.icf</File>
           <File BuildType="BUILD" Toolchain="ARM IAR Generic">Generated_Source\PSoC5\CyBootAsmIar.s</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cmsis_armcc.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cmsis_gcc.h</File>
-          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cmsis_compiler.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cy_em_eeprom.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\cy_em_eeprom.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\project.h</File>

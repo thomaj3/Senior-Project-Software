@@ -12128,7 +12128,7 @@ ARM GAS  Generated_Source\PSoC5\CyBootAsmGnu.s 			page 1
  789              	.set CYDEV_PROJ_TYPE_STANDARD, 0
  790              	.set CYDEV_PROTECTION_ENABLE, 0
  791              	.set CYDEV_STACK_SIZE, 0x0800
- 792              	.set CYDEV_USE_BUNDLED_CMSIS, 1
+ 792              	.set CYDEV_USE_BUNDLED_CMSIS, 0
  793              	.set CYDEV_VARIABLE_VDDA, 0
  794              	.set CYDEV_VDDA_MV, 5000
  795              	.set CYDEV_VDDD_MV, 5000

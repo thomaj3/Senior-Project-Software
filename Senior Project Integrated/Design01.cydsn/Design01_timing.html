@@ -539,7 +539,7 @@ function getElementsByClass(rootNode, elemName, className)
 <tr> <td class="prop"> Project :</td>
 <td class="proptext"> Design01</td></tr>
 <tr> <td class="prop"> Build Time :</td>
-<td class="proptext"> 03/13/19 11:00:45</td></tr>
+<td class="proptext"> 04/02/19 15:59:06</td></tr>
 <tr> <td class="prop"> Device :</td>
 <td class="proptext"> CY8C5888LTI-LP097</td></tr>
 <tr> <td class="prop"> Temperature :</td>
@@ -645,20 +645,20 @@ Clock Summary Section</span>
  <td class = "text_info"> </td>
 </tr>
 <tr> 
- <td class = "text_info">Clock</td>
- <td class = "text_info">CyMASTER_CLK</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">24.000&nbsp;MHz</td>
- <td class = "number">64.479&nbsp;MHz</td>
- <td class = "text_info"></td>
-</tr>
-<tr> 
  <td class = "text_info">ADC_SAR_1_theACLK</td>
  <td class = "text_info">CyMASTER_CLK</td>
  <td class = "number">1.600&nbsp;MHz</td>
  <td class = "number">1.600&nbsp;MHz</td>
  <td class = "number"> N/A </td>
  <td class = "text_info"> </td>
+</tr>
+<tr> 
+ <td class = "text_info">Clock</td>
+ <td class = "text_info">CyMASTER_CLK</td>
+ <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">12.000&nbsp;MHz</td>
+ <td class = "number">64.479&nbsp;MHz</td>
+ <td class = "text_info"></td>
 </tr>
 <tr> 
  <td class = "text_info">CyPLL_OUT</td>
@@ -688,15 +688,15 @@ Setup Subsection</span>
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Source Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
+Source Clock : Clock : Positive edge(Required Frequency 12&nbsp;MHz)</span>
 </a>
 </div><div class="sta_secbody"><div class="sta_sec" >
 <div>
 <a href="#" style="text-decoration: none; color: inherit;">
 <span class="sec_head"><span style="font-family: monospace;">+</span>
-Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
+Destination Clock : Clock : Positive edge(Required Frequency 12&nbsp;MHz)</span>
 </a>
-</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 41.6667ns(24&nbsp;MHz)</div>
+</div><div class="sta_secbody"><div class="sta_sec_desc">Path Delay Requirement : 83.3333ns(12&nbsp;MHz)</div>
 <table class="sta_tscs">
  <thead> 
 <tr> 
@@ -714,7 +714,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:RxStsReg\/status_6</td>
  <td class = "number">64.479&nbsp;MHz</td>
  <td class = "number">15.509</td>
- <td class = "number">26.158</td>
+ <td class = "number">67.824</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -795,7 +795,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:sR8:Dp:u0\/f1_load</td>
  <td class = "number">73.632&nbsp;MHz</td>
  <td class = "number">13.581</td>
- <td class = "number">28.086</td>
+ <td class = "number">69.752</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -876,7 +876,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:sR8:Dp:u0\/f1_load</td>
  <td class = "number">73.632&nbsp;MHz</td>
  <td class = "number">13.581</td>
- <td class = "number">28.086</td>
+ <td class = "number">69.752</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -957,7 +957,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:sR8:Dp:u0\/f1_load</td>
  <td class = "number">73.687&nbsp;MHz</td>
  <td class = "number">13.571</td>
- <td class = "number">28.096</td>
+ <td class = "number">69.762</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1038,7 +1038,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:sR8:Dp:u0\/f1_load</td>
  <td class = "number">74.566&nbsp;MHz</td>
  <td class = "number">13.411</td>
- <td class = "number">28.256</td>
+ <td class = "number">69.922</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1119,7 +1119,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:sR8:Dp:u0\/f1_load</td>
  <td class = "number">74.649&nbsp;MHz</td>
  <td class = "number">13.396</td>
- <td class = "number">28.271</td>
+ <td class = "number">69.937</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1200,7 +1200,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:TxStsReg\/status_3</td>
  <td class = "number">83.438&nbsp;MHz</td>
  <td class = "number">11.985</td>
- <td class = "number">29.682</td>
+ <td class = "number">71.348</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1281,7 +1281,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:TxStsReg\/status_3</td>
  <td class = "number">83.438&nbsp;MHz</td>
  <td class = "number">11.985</td>
- <td class = "number">29.682</td>
+ <td class = "number">71.348</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1362,7 +1362,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:TxStsReg\/status_3</td>
  <td class = "number">83.507&nbsp;MHz</td>
  <td class = "number">11.975</td>
- <td class = "number">29.692</td>
+ <td class = "number">71.358</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">
@@ -1443,7 +1443,7 @@ Destination Clock : Clock : Positive edge(Required Frequency 24&nbsp;MHz)</span>
  <td class = "text_info">\SPIM:BSPIM:RxStsReg\/status_6</td>
  <td class = "number">84.567&nbsp;MHz</td>
  <td class = "number">11.825</td>
- <td class = "number">29.842</td>
+ <td class = "number">71.508</td>
  <td class = "text_info"></td>
 </tr>
 <tr class="sta_path">

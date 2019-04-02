@@ -55,7 +55,6 @@
 #include "ADC_SAR_1_IRQ.h"
 #include "ADC_SAR_1_theACLK.h"
 #include "cy_em_eeprom.h"
-#include "core_cm3_psoc5.h"
 #include "CyDmac.h"
 #include "CyFlash.h"
 #include "CyLib.h"
