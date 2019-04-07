@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
   28:Generated_Source\PSoC5/CLK.c **** *
   29:Generated_Source\PSoC5/CLK.c **** * \brief Writes the value to the physical port (data output register), masking
   30:Generated_Source\PSoC5/CLK.c **** *  and shifting the bits appropriately. 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 2
 
 
   31:Generated_Source\PSoC5/CLK.c **** *
@@ -98,35 +98,39 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
   59:Generated_Source\PSoC5/CLK.c ****     uint8 staticBits = (CLK_DR & (uint8)(~CLK_MASK));
   34              		.loc 1 59 0
   35 0000 044A     		ldr	r2, .L2
-  36 0002 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  37              	.LVL1:
   60:Generated_Source\PSoC5/CLK.c ****     CLK_DR = staticBits | ((uint8)(value << CLK_SHIFT) & CLK_MASK);
-  38              		.loc 1 60 0
-  39 0004 03F07F03 		and	r3, r3, #127
-  40              	.LVL2:
-  41 0008 43EAC010 		orr	r0, r3, r0, lsl #7
-  42              	.LVL3:
-  43 000c C0B2     		uxtb	r0, r0
-  44 000e 1070     		strb	r0, [r2]
-  45 0010 7047     		bx	lr
-  46              	.L3:
-  47 0012 00BF     		.align	2
-  48              	.L2:
-  49 0014 00510040 		.word	1073762560
-  50              		.cfi_endproc
-  51              	.LFE0:
-  52              		.size	CLK_Write, .-CLK_Write
-  53              		.section	.text.CLK_SetDriveMode,"ax",%progbits
-  54              		.align	2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 3
+  36              		.loc 1 60 0
+  37 0002 0001     		lsls	r0, r0, #4
+  38              	.LVL1:
+  59:Generated_Source\PSoC5/CLK.c ****     uint8 staticBits = (CLK_DR & (uint8)(~CLK_MASK));
+  39              		.loc 1 59 0
+  40 0004 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  41              	.LVL2:
+  42              		.loc 1 60 0
+  43 0006 00F01000 		and	r0, r0, #16
+  44 000a 03F0EF03 		and	r3, r3, #239
+  45              	.LVL3:
+  46 000e 1843     		orrs	r0, r0, r3
+  47 0010 1070     		strb	r0, [r2]
+  48 0012 7047     		bx	lr
+  49              	.L3:
+  50              		.align	2
+  51              	.L2:
+  52 0014 00510040 		.word	1073762560
+  53              		.cfi_endproc
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 3
 
 
-  55              		.global	CLK_SetDriveMode
-  56              		.thumb
-  57              		.thumb_func
-  58              		.type	CLK_SetDriveMode, %function
-  59              	CLK_SetDriveMode:
-  60              	.LFB1:
+  54              	.LFE0:
+  55              		.size	CLK_Write, .-CLK_Write
+  56              		.section	.text.CLK_SetDriveMode,"ax",%progbits
+  57              		.align	2
+  58              		.global	CLK_SetDriveMode
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	CLK_SetDriveMode, %function
+  62              	CLK_SetDriveMode:
+  63              	.LFB1:
   61:Generated_Source\PSoC5/CLK.c **** }
   62:Generated_Source\PSoC5/CLK.c **** 
   63:Generated_Source\PSoC5/CLK.c **** 
@@ -158,40 +162,40 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
   89:Generated_Source\PSoC5/CLK.c **** *******************************************************************************/
   90:Generated_Source\PSoC5/CLK.c **** void CLK_SetDriveMode(uint8 mode)
   91:Generated_Source\PSoC5/CLK.c **** {
-  61              		.loc 1 91 0
-  62              		.cfi_startproc
-  63              		@ args = 0, pretend = 0, frame = 0
-  64              		@ frame_needed = 0, uses_anonymous_args = 0
-  65              		@ link register save eliminated.
-  66              	.LVL4:
+  64              		.loc 1 91 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              		@ link register save eliminated.
+  69              	.LVL4:
   92:Generated_Source\PSoC5/CLK.c **** 	CyPins_SetPinDriveMode(CLK_0, mode);
-  67              		.loc 1 92 0
-  68 0000 044A     		ldr	r2, .L5
-  69 0002 00F00E00 		and	r0, r0, #14
-  70              	.LVL5:
-  71 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
-  72 0008 03F0F103 		and	r3, r3, #241
-  73 000c 1843     		orrs	r0, r0, r3
-  74 000e 1070     		strb	r0, [r2]
-  75 0010 7047     		bx	lr
-  76              	.L6:
-  77 0012 00BF     		.align	2
-  78              	.L5:
-  79 0014 07500040 		.word	1073762311
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 4
+  70              		.loc 1 92 0
+  71 0000 044A     		ldr	r2, .L5
+  72 0002 00F00E00 		and	r0, r0, #14
+  73              	.LVL5:
+  74 0006 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
+  75 0008 03F0F103 		and	r3, r3, #241
+  76 000c 1843     		orrs	r0, r0, r3
+  77 000e 1070     		strb	r0, [r2]
+  78 0010 7047     		bx	lr
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 4
 
 
-  80              		.cfi_endproc
-  81              	.LFE1:
-  82              		.size	CLK_SetDriveMode, .-CLK_SetDriveMode
-  83              		.section	.text.CLK_Read,"ax",%progbits
-  84              		.align	2
-  85              		.global	CLK_Read
-  86              		.thumb
-  87              		.thumb_func
-  88              		.type	CLK_Read, %function
-  89              	CLK_Read:
-  90              	.LFB2:
+  79              	.L6:
+  80 0012 00BF     		.align	2
+  81              	.L5:
+  82 0014 04500040 		.word	1073762308
+  83              		.cfi_endproc
+  84              	.LFE1:
+  85              		.size	CLK_SetDriveMode, .-CLK_SetDriveMode
+  86              		.section	.text.CLK_Read,"ax",%progbits
+  87              		.align	2
+  88              		.global	CLK_Read
+  89              		.thumb
+  90              		.thumb_func
+  91              		.type	CLK_Read, %function
+  92              	CLK_Read:
+  93              	.LFB2:
   93:Generated_Source\PSoC5/CLK.c **** }
   94:Generated_Source\PSoC5/CLK.c **** 
   95:Generated_Source\PSoC5/CLK.c **** 
@@ -214,37 +218,37 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
  112:Generated_Source\PSoC5/CLK.c **** *******************************************************************************/
  113:Generated_Source\PSoC5/CLK.c **** uint8 CLK_Read(void)
  114:Generated_Source\PSoC5/CLK.c **** {
-  91              		.loc 1 114 0
-  92              		.cfi_startproc
-  93              		@ args = 0, pretend = 0, frame = 0
-  94              		@ frame_needed = 0, uses_anonymous_args = 0
-  95              		@ link register save eliminated.
+  94              		.loc 1 114 0
+  95              		.cfi_startproc
+  96              		@ args = 0, pretend = 0, frame = 0
+  97              		@ frame_needed = 0, uses_anonymous_args = 0
+  98              		@ link register save eliminated.
  115:Generated_Source\PSoC5/CLK.c ****     return (CLK_PS & CLK_MASK) >> CLK_SHIFT;
-  96              		.loc 1 115 0
-  97 0000 014B     		ldr	r3, .L8
-  98 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+  99              		.loc 1 115 0
+ 100 0000 024B     		ldr	r3, .L8
+ 101 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  116:Generated_Source\PSoC5/CLK.c **** }
-  99              		.loc 1 116 0
- 100 0004 C009     		lsrs	r0, r0, #7
- 101 0006 7047     		bx	lr
- 102              	.L9:
- 103              		.align	2
- 104              	.L8:
- 105 0008 01510040 		.word	1073762561
- 106              		.cfi_endproc
- 107              	.LFE2:
- 108              		.size	CLK_Read, .-CLK_Read
- 109              		.section	.text.CLK_ReadDataReg,"ax",%progbits
- 110              		.align	2
- 111              		.global	CLK_ReadDataReg
- 112              		.thumb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 5
+ 102              		.loc 1 116 0
+ 103 0004 C0F30010 		ubfx	r0, r0, #4, #1
+ 104 0008 7047     		bx	lr
+ 105              	.L9:
+ 106 000a 00BF     		.align	2
+ 107              	.L8:
+ 108 000c 01510040 		.word	1073762561
+ 109              		.cfi_endproc
+ 110              	.LFE2:
+ 111              		.size	CLK_Read, .-CLK_Read
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 5
 
 
- 113              		.thumb_func
- 114              		.type	CLK_ReadDataReg, %function
- 115              	CLK_ReadDataReg:
- 116              	.LFB3:
+ 112              		.section	.text.CLK_ReadDataReg,"ax",%progbits
+ 113              		.align	2
+ 114              		.global	CLK_ReadDataReg
+ 115              		.thumb
+ 116              		.thumb_func
+ 117              		.type	CLK_ReadDataReg, %function
+ 118              	CLK_ReadDataReg:
+ 119              	.LFB3:
  117:Generated_Source\PSoC5/CLK.c **** 
  118:Generated_Source\PSoC5/CLK.c **** 
  119:Generated_Source\PSoC5/CLK.c **** /*******************************************************************************
@@ -271,539 +275,539 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 1
  140:Generated_Source\PSoC5/CLK.c **** *******************************************************************************/
  141:Generated_Source\PSoC5/CLK.c **** uint8 CLK_ReadDataReg(void)
  142:Generated_Source\PSoC5/CLK.c **** {
- 117              		.loc 1 142 0
- 118              		.cfi_startproc
- 119              		@ args = 0, pretend = 0, frame = 0
- 120              		@ frame_needed = 0, uses_anonymous_args = 0
- 121              		@ link register save eliminated.
+ 120              		.loc 1 142 0
+ 121              		.cfi_startproc
+ 122              		@ args = 0, pretend = 0, frame = 0
+ 123              		@ frame_needed = 0, uses_anonymous_args = 0
+ 124              		@ link register save eliminated.
  143:Generated_Source\PSoC5/CLK.c ****     return (CLK_DR & CLK_MASK) >> CLK_SHIFT;
- 122              		.loc 1 143 0
- 123 0000 014B     		ldr	r3, .L11
- 124 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
+ 125              		.loc 1 143 0
+ 126 0000 024B     		ldr	r3, .L11
+ 127 0002 1878     		ldrb	r0, [r3]	@ zero_extendqisi2
  144:Generated_Source\PSoC5/CLK.c **** }
- 125              		.loc 1 144 0
- 126 0004 C009     		lsrs	r0, r0, #7
- 127 0006 7047     		bx	lr
- 128              	.L12:
- 129              		.align	2
- 130              	.L11:
- 131 0008 00510040 		.word	1073762560
- 132              		.cfi_endproc
- 133              	.LFE3:
- 134              		.size	CLK_ReadDataReg, .-CLK_ReadDataReg
- 135              		.text
- 136              	.Letext0:
- 137              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
- 138              		.section	.debug_info,"",%progbits
- 139              	.Ldebug_info0:
- 140 0000 1D010000 		.4byte	0x11d
- 141 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 6
+ 128              		.loc 1 144 0
+ 129 0004 C0F30010 		ubfx	r0, r0, #4, #1
+ 130 0008 7047     		bx	lr
+ 131              	.L12:
+ 132 000a 00BF     		.align	2
+ 133              	.L11:
+ 134 000c 00510040 		.word	1073762560
+ 135              		.cfi_endproc
+ 136              	.LFE3:
+ 137              		.size	CLK_ReadDataReg, .-CLK_ReadDataReg
+ 138              		.text
+ 139              	.Letext0:
+ 140              		.file 2 "Generated_Source\\PSoC5\\cytypes.h"
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 6
 
 
- 142 0006 00000000 		.4byte	.Ldebug_abbrev0
- 143 000a 04       		.byte	0x4
- 144 000b 01       		.uleb128 0x1
- 145 000c 00000000 		.4byte	.LASF20
- 146 0010 0C       		.byte	0xc
- 147 0011 B9010000 		.4byte	.LASF21
- 148 0015 FF000000 		.4byte	.LASF22
- 149 0019 00000000 		.4byte	.Ldebug_ranges0+0
- 150 001d 00000000 		.4byte	0
- 151 0021 00000000 		.4byte	.Ldebug_line0
- 152 0025 02       		.uleb128 0x2
- 153 0026 01       		.byte	0x1
- 154 0027 06       		.byte	0x6
- 155 0028 F8010000 		.4byte	.LASF0
- 156 002c 02       		.uleb128 0x2
- 157 002d 01       		.byte	0x1
- 158 002e 08       		.byte	0x8
- 159 002f C0000000 		.4byte	.LASF1
- 160 0033 02       		.uleb128 0x2
- 161 0034 02       		.byte	0x2
- 162 0035 05       		.byte	0x5
- 163 0036 D6010000 		.4byte	.LASF2
- 164 003a 02       		.uleb128 0x2
- 165 003b 02       		.byte	0x2
- 166 003c 07       		.byte	0x7
- 167 003d E5000000 		.4byte	.LASF3
- 168 0041 02       		.uleb128 0x2
- 169 0042 04       		.byte	0x4
- 170 0043 05       		.byte	0x5
- 171 0044 EF010000 		.4byte	.LASF4
- 172 0048 02       		.uleb128 0x2
- 173 0049 04       		.byte	0x4
- 174 004a 07       		.byte	0x7
- 175 004b D3000000 		.4byte	.LASF5
- 176 004f 02       		.uleb128 0x2
- 177 0050 08       		.byte	0x8
- 178 0051 05       		.byte	0x5
- 179 0052 A6010000 		.4byte	.LASF6
- 180 0056 02       		.uleb128 0x2
- 181 0057 08       		.byte	0x8
- 182 0058 07       		.byte	0x7
- 183 0059 8A010000 		.4byte	.LASF7
- 184 005d 03       		.uleb128 0x3
- 185 005e 04       		.byte	0x4
- 186 005f 05       		.byte	0x5
- 187 0060 696E7400 		.ascii	"int\000"
- 188 0064 02       		.uleb128 0x2
- 189 0065 04       		.byte	0x4
- 190 0066 07       		.byte	0x7
- 191 0067 7D010000 		.4byte	.LASF8
- 192 006b 04       		.uleb128 0x4
- 193 006c E0010000 		.4byte	.LASF12
- 194 0070 02       		.byte	0x2
- 195 0071 E401     		.2byte	0x1e4
- 196 0073 2C000000 		.4byte	0x2c
- 197 0077 02       		.uleb128 0x2
- 198 0078 04       		.byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 7
+ 141              		.section	.debug_info,"",%progbits
+ 142              	.Ldebug_info0:
+ 143 0000 1D010000 		.4byte	0x11d
+ 144 0004 0400     		.2byte	0x4
+ 145 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 146 000a 04       		.byte	0x4
+ 147 000b 01       		.uleb128 0x1
+ 148 000c 00000000 		.4byte	.LASF20
+ 149 0010 0C       		.byte	0xc
+ 150 0011 B4010000 		.4byte	.LASF21
+ 151 0015 CE000000 		.4byte	.LASF22
+ 152 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 153 001d 00000000 		.4byte	0
+ 154 0021 00000000 		.4byte	.Ldebug_line0
+ 155 0025 02       		.uleb128 0x2
+ 156 0026 01       		.byte	0x1
+ 157 0027 06       		.byte	0x6
+ 158 0028 F3010000 		.4byte	.LASF0
+ 159 002c 02       		.uleb128 0x2
+ 160 002d 01       		.byte	0x1
+ 161 002e 08       		.byte	0x8
+ 162 002f C0000000 		.4byte	.LASF1
+ 163 0033 02       		.uleb128 0x2
+ 164 0034 02       		.byte	0x2
+ 165 0035 05       		.byte	0x5
+ 166 0036 D1010000 		.4byte	.LASF2
+ 167 003a 02       		.uleb128 0x2
+ 168 003b 02       		.byte	0x2
+ 169 003c 07       		.byte	0x7
+ 170 003d 59010000 		.4byte	.LASF3
+ 171 0041 02       		.uleb128 0x2
+ 172 0042 04       		.byte	0x4
+ 173 0043 05       		.byte	0x5
+ 174 0044 EA010000 		.4byte	.LASF4
+ 175 0048 02       		.uleb128 0x2
+ 176 0049 04       		.byte	0x4
+ 177 004a 07       		.byte	0x7
+ 178 004b 47010000 		.4byte	.LASF5
+ 179 004f 02       		.uleb128 0x2
+ 180 0050 08       		.byte	0x8
+ 181 0051 05       		.byte	0x5
+ 182 0052 A1010000 		.4byte	.LASF6
+ 183 0056 02       		.uleb128 0x2
+ 184 0057 08       		.byte	0x8
+ 185 0058 07       		.byte	0x7
+ 186 0059 80010000 		.4byte	.LASF7
+ 187 005d 03       		.uleb128 0x3
+ 188 005e 04       		.byte	0x4
+ 189 005f 05       		.byte	0x5
+ 190 0060 696E7400 		.ascii	"int\000"
+ 191 0064 02       		.uleb128 0x2
+ 192 0065 04       		.byte	0x4
+ 193 0066 07       		.byte	0x7
+ 194 0067 73010000 		.4byte	.LASF8
+ 195 006b 04       		.uleb128 0x4
+ 196 006c DB010000 		.4byte	.LASF12
+ 197 0070 02       		.byte	0x2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 7
 
 
- 199 0079 04       		.byte	0x4
- 200 007a BA000000 		.4byte	.LASF9
- 201 007e 02       		.uleb128 0x2
- 202 007f 08       		.byte	0x8
- 203 0080 04       		.byte	0x4
- 204 0081 F8000000 		.4byte	.LASF10
- 205 0085 02       		.uleb128 0x2
- 206 0086 01       		.byte	0x1
- 207 0087 08       		.byte	0x8
- 208 0088 B4010000 		.4byte	.LASF11
- 209 008c 04       		.uleb128 0x4
- 210 008d CE000000 		.4byte	.LASF13
- 211 0091 02       		.byte	0x2
- 212 0092 8E02     		.2byte	0x28e
- 213 0094 98000000 		.4byte	0x98
- 214 0098 05       		.uleb128 0x5
- 215 0099 6B000000 		.4byte	0x6b
- 216 009d 06       		.uleb128 0x6
- 217 009e B0000000 		.4byte	.LASF14
- 218 00a2 01       		.byte	0x1
- 219 00a3 39       		.byte	0x39
- 220 00a4 00000000 		.4byte	.LFB0
- 221 00a8 18000000 		.4byte	.LFE0-.LFB0
- 222 00ac 01       		.uleb128 0x1
- 223 00ad 9C       		.byte	0x9c
- 224 00ae D1000000 		.4byte	0xd1
- 225 00b2 07       		.uleb128 0x7
- 226 00b3 8E000000 		.4byte	.LASF16
- 227 00b7 01       		.byte	0x1
- 228 00b8 39       		.byte	0x39
- 229 00b9 6B000000 		.4byte	0x6b
- 230 00bd 00000000 		.4byte	.LLST0
- 231 00c1 08       		.uleb128 0x8
- 232 00c2 A5000000 		.4byte	.LASF23
- 233 00c6 01       		.byte	0x1
- 234 00c7 3B       		.byte	0x3b
- 235 00c8 6B000000 		.4byte	0x6b
- 236 00cc 21000000 		.4byte	.LLST1
- 237 00d0 00       		.byte	0
- 238 00d1 06       		.uleb128 0x6
- 239 00d2 94000000 		.4byte	.LASF15
- 240 00d6 01       		.byte	0x1
- 241 00d7 5A       		.byte	0x5a
- 242 00d8 00000000 		.4byte	.LFB1
- 243 00dc 18000000 		.4byte	.LFE1-.LFB1
- 244 00e0 01       		.uleb128 0x1
- 245 00e1 9C       		.byte	0x9c
- 246 00e2 F6000000 		.4byte	0xf6
- 247 00e6 07       		.uleb128 0x7
- 248 00e7 A1010000 		.4byte	.LASF17
- 249 00eb 01       		.byte	0x1
- 250 00ec 5A       		.byte	0x5a
- 251 00ed 6B000000 		.4byte	0x6b
- 252 00f1 39000000 		.4byte	.LLST2
- 253 00f5 00       		.byte	0
- 254 00f6 09       		.uleb128 0x9
- 255 00f7 E6010000 		.4byte	.LASF18
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 8
+ 198 0071 E401     		.2byte	0x1e4
+ 199 0073 2C000000 		.4byte	0x2c
+ 200 0077 02       		.uleb128 0x2
+ 201 0078 04       		.byte	0x4
+ 202 0079 04       		.byte	0x4
+ 203 007a BA000000 		.4byte	.LASF9
+ 204 007e 02       		.uleb128 0x2
+ 205 007f 08       		.byte	0x8
+ 206 0080 04       		.byte	0x4
+ 207 0081 6C010000 		.4byte	.LASF10
+ 208 0085 02       		.uleb128 0x2
+ 209 0086 01       		.byte	0x1
+ 210 0087 08       		.byte	0x8
+ 211 0088 AF010000 		.4byte	.LASF11
+ 212 008c 04       		.uleb128 0x4
+ 213 008d 9C010000 		.4byte	.LASF13
+ 214 0091 02       		.byte	0x2
+ 215 0092 8E02     		.2byte	0x28e
+ 216 0094 98000000 		.4byte	0x98
+ 217 0098 05       		.uleb128 0x5
+ 218 0099 6B000000 		.4byte	0x6b
+ 219 009d 06       		.uleb128 0x6
+ 220 009e B0000000 		.4byte	.LASF14
+ 221 00a2 01       		.byte	0x1
+ 222 00a3 39       		.byte	0x39
+ 223 00a4 00000000 		.4byte	.LFB0
+ 224 00a8 18000000 		.4byte	.LFE0-.LFB0
+ 225 00ac 01       		.uleb128 0x1
+ 226 00ad 9C       		.byte	0x9c
+ 227 00ae D1000000 		.4byte	0xd1
+ 228 00b2 07       		.uleb128 0x7
+ 229 00b3 8E000000 		.4byte	.LASF16
+ 230 00b7 01       		.byte	0x1
+ 231 00b8 39       		.byte	0x39
+ 232 00b9 6B000000 		.4byte	0x6b
+ 233 00bd 00000000 		.4byte	.LLST0
+ 234 00c1 08       		.uleb128 0x8
+ 235 00c2 A5000000 		.4byte	.LASF23
+ 236 00c6 01       		.byte	0x1
+ 237 00c7 3B       		.byte	0x3b
+ 238 00c8 6B000000 		.4byte	0x6b
+ 239 00cc 21000000 		.4byte	.LLST1
+ 240 00d0 00       		.byte	0
+ 241 00d1 06       		.uleb128 0x6
+ 242 00d2 94000000 		.4byte	.LASF15
+ 243 00d6 01       		.byte	0x1
+ 244 00d7 5A       		.byte	0x5a
+ 245 00d8 00000000 		.4byte	.LFB1
+ 246 00dc 18000000 		.4byte	.LFE1-.LFB1
+ 247 00e0 01       		.uleb128 0x1
+ 248 00e1 9C       		.byte	0x9c
+ 249 00e2 F6000000 		.4byte	0xf6
+ 250 00e6 07       		.uleb128 0x7
+ 251 00e7 97010000 		.4byte	.LASF17
+ 252 00eb 01       		.byte	0x1
+ 253 00ec 5A       		.byte	0x5a
+ 254 00ed 6B000000 		.4byte	0x6b
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 8
 
 
- 256 00fb 01       		.byte	0x1
- 257 00fc 71       		.byte	0x71
- 258 00fd 6B000000 		.4byte	0x6b
- 259 0101 00000000 		.4byte	.LFB2
- 260 0105 0C000000 		.4byte	.LFE2-.LFB2
- 261 0109 01       		.uleb128 0x1
- 262 010a 9C       		.byte	0x9c
- 263 010b 09       		.uleb128 0x9
- 264 010c 04020000 		.4byte	.LASF19
- 265 0110 01       		.byte	0x1
- 266 0111 8D       		.byte	0x8d
- 267 0112 6B000000 		.4byte	0x6b
- 268 0116 00000000 		.4byte	.LFB3
- 269 011a 0C000000 		.4byte	.LFE3-.LFB3
- 270 011e 01       		.uleb128 0x1
- 271 011f 9C       		.byte	0x9c
- 272 0120 00       		.byte	0
- 273              		.section	.debug_abbrev,"",%progbits
- 274              	.Ldebug_abbrev0:
- 275 0000 01       		.uleb128 0x1
- 276 0001 11       		.uleb128 0x11
- 277 0002 01       		.byte	0x1
- 278 0003 25       		.uleb128 0x25
- 279 0004 0E       		.uleb128 0xe
- 280 0005 13       		.uleb128 0x13
- 281 0006 0B       		.uleb128 0xb
- 282 0007 03       		.uleb128 0x3
- 283 0008 0E       		.uleb128 0xe
- 284 0009 1B       		.uleb128 0x1b
- 285 000a 0E       		.uleb128 0xe
- 286 000b 55       		.uleb128 0x55
- 287 000c 17       		.uleb128 0x17
- 288 000d 11       		.uleb128 0x11
- 289 000e 01       		.uleb128 0x1
- 290 000f 10       		.uleb128 0x10
- 291 0010 17       		.uleb128 0x17
- 292 0011 00       		.byte	0
- 293 0012 00       		.byte	0
- 294 0013 02       		.uleb128 0x2
- 295 0014 24       		.uleb128 0x24
- 296 0015 00       		.byte	0
- 297 0016 0B       		.uleb128 0xb
- 298 0017 0B       		.uleb128 0xb
- 299 0018 3E       		.uleb128 0x3e
- 300 0019 0B       		.uleb128 0xb
- 301 001a 03       		.uleb128 0x3
- 302 001b 0E       		.uleb128 0xe
- 303 001c 00       		.byte	0
- 304 001d 00       		.byte	0
- 305 001e 03       		.uleb128 0x3
- 306 001f 24       		.uleb128 0x24
- 307 0020 00       		.byte	0
- 308 0021 0B       		.uleb128 0xb
- 309 0022 0B       		.uleb128 0xb
- 310 0023 3E       		.uleb128 0x3e
- 311 0024 0B       		.uleb128 0xb
- 312 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 9
+ 255 00f1 39000000 		.4byte	.LLST2
+ 256 00f5 00       		.byte	0
+ 257 00f6 09       		.uleb128 0x9
+ 258 00f7 E1010000 		.4byte	.LASF18
+ 259 00fb 01       		.byte	0x1
+ 260 00fc 71       		.byte	0x71
+ 261 00fd 6B000000 		.4byte	0x6b
+ 262 0101 00000000 		.4byte	.LFB2
+ 263 0105 10000000 		.4byte	.LFE2-.LFB2
+ 264 0109 01       		.uleb128 0x1
+ 265 010a 9C       		.byte	0x9c
+ 266 010b 09       		.uleb128 0x9
+ 267 010c FF010000 		.4byte	.LASF19
+ 268 0110 01       		.byte	0x1
+ 269 0111 8D       		.byte	0x8d
+ 270 0112 6B000000 		.4byte	0x6b
+ 271 0116 00000000 		.4byte	.LFB3
+ 272 011a 10000000 		.4byte	.LFE3-.LFB3
+ 273 011e 01       		.uleb128 0x1
+ 274 011f 9C       		.byte	0x9c
+ 275 0120 00       		.byte	0
+ 276              		.section	.debug_abbrev,"",%progbits
+ 277              	.Ldebug_abbrev0:
+ 278 0000 01       		.uleb128 0x1
+ 279 0001 11       		.uleb128 0x11
+ 280 0002 01       		.byte	0x1
+ 281 0003 25       		.uleb128 0x25
+ 282 0004 0E       		.uleb128 0xe
+ 283 0005 13       		.uleb128 0x13
+ 284 0006 0B       		.uleb128 0xb
+ 285 0007 03       		.uleb128 0x3
+ 286 0008 0E       		.uleb128 0xe
+ 287 0009 1B       		.uleb128 0x1b
+ 288 000a 0E       		.uleb128 0xe
+ 289 000b 55       		.uleb128 0x55
+ 290 000c 17       		.uleb128 0x17
+ 291 000d 11       		.uleb128 0x11
+ 292 000e 01       		.uleb128 0x1
+ 293 000f 10       		.uleb128 0x10
+ 294 0010 17       		.uleb128 0x17
+ 295 0011 00       		.byte	0
+ 296 0012 00       		.byte	0
+ 297 0013 02       		.uleb128 0x2
+ 298 0014 24       		.uleb128 0x24
+ 299 0015 00       		.byte	0
+ 300 0016 0B       		.uleb128 0xb
+ 301 0017 0B       		.uleb128 0xb
+ 302 0018 3E       		.uleb128 0x3e
+ 303 0019 0B       		.uleb128 0xb
+ 304 001a 03       		.uleb128 0x3
+ 305 001b 0E       		.uleb128 0xe
+ 306 001c 00       		.byte	0
+ 307 001d 00       		.byte	0
+ 308 001e 03       		.uleb128 0x3
+ 309 001f 24       		.uleb128 0x24
+ 310 0020 00       		.byte	0
+ 311 0021 0B       		.uleb128 0xb
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 9
 
 
- 313 0026 08       		.uleb128 0x8
- 314 0027 00       		.byte	0
- 315 0028 00       		.byte	0
- 316 0029 04       		.uleb128 0x4
- 317 002a 16       		.uleb128 0x16
- 318 002b 00       		.byte	0
- 319 002c 03       		.uleb128 0x3
- 320 002d 0E       		.uleb128 0xe
- 321 002e 3A       		.uleb128 0x3a
- 322 002f 0B       		.uleb128 0xb
- 323 0030 3B       		.uleb128 0x3b
- 324 0031 05       		.uleb128 0x5
- 325 0032 49       		.uleb128 0x49
- 326 0033 13       		.uleb128 0x13
- 327 0034 00       		.byte	0
- 328 0035 00       		.byte	0
- 329 0036 05       		.uleb128 0x5
- 330 0037 35       		.uleb128 0x35
- 331 0038 00       		.byte	0
- 332 0039 49       		.uleb128 0x49
- 333 003a 13       		.uleb128 0x13
- 334 003b 00       		.byte	0
- 335 003c 00       		.byte	0
- 336 003d 06       		.uleb128 0x6
- 337 003e 2E       		.uleb128 0x2e
- 338 003f 01       		.byte	0x1
- 339 0040 3F       		.uleb128 0x3f
- 340 0041 19       		.uleb128 0x19
- 341 0042 03       		.uleb128 0x3
- 342 0043 0E       		.uleb128 0xe
- 343 0044 3A       		.uleb128 0x3a
- 344 0045 0B       		.uleb128 0xb
- 345 0046 3B       		.uleb128 0x3b
- 346 0047 0B       		.uleb128 0xb
- 347 0048 27       		.uleb128 0x27
- 348 0049 19       		.uleb128 0x19
- 349 004a 11       		.uleb128 0x11
- 350 004b 01       		.uleb128 0x1
- 351 004c 12       		.uleb128 0x12
- 352 004d 06       		.uleb128 0x6
- 353 004e 40       		.uleb128 0x40
- 354 004f 18       		.uleb128 0x18
- 355 0050 9742     		.uleb128 0x2117
- 356 0052 19       		.uleb128 0x19
- 357 0053 01       		.uleb128 0x1
- 358 0054 13       		.uleb128 0x13
- 359 0055 00       		.byte	0
- 360 0056 00       		.byte	0
- 361 0057 07       		.uleb128 0x7
- 362 0058 05       		.uleb128 0x5
- 363 0059 00       		.byte	0
- 364 005a 03       		.uleb128 0x3
- 365 005b 0E       		.uleb128 0xe
- 366 005c 3A       		.uleb128 0x3a
- 367 005d 0B       		.uleb128 0xb
- 368 005e 3B       		.uleb128 0x3b
- 369 005f 0B       		.uleb128 0xb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 10
+ 312 0022 0B       		.uleb128 0xb
+ 313 0023 3E       		.uleb128 0x3e
+ 314 0024 0B       		.uleb128 0xb
+ 315 0025 03       		.uleb128 0x3
+ 316 0026 08       		.uleb128 0x8
+ 317 0027 00       		.byte	0
+ 318 0028 00       		.byte	0
+ 319 0029 04       		.uleb128 0x4
+ 320 002a 16       		.uleb128 0x16
+ 321 002b 00       		.byte	0
+ 322 002c 03       		.uleb128 0x3
+ 323 002d 0E       		.uleb128 0xe
+ 324 002e 3A       		.uleb128 0x3a
+ 325 002f 0B       		.uleb128 0xb
+ 326 0030 3B       		.uleb128 0x3b
+ 327 0031 05       		.uleb128 0x5
+ 328 0032 49       		.uleb128 0x49
+ 329 0033 13       		.uleb128 0x13
+ 330 0034 00       		.byte	0
+ 331 0035 00       		.byte	0
+ 332 0036 05       		.uleb128 0x5
+ 333 0037 35       		.uleb128 0x35
+ 334 0038 00       		.byte	0
+ 335 0039 49       		.uleb128 0x49
+ 336 003a 13       		.uleb128 0x13
+ 337 003b 00       		.byte	0
+ 338 003c 00       		.byte	0
+ 339 003d 06       		.uleb128 0x6
+ 340 003e 2E       		.uleb128 0x2e
+ 341 003f 01       		.byte	0x1
+ 342 0040 3F       		.uleb128 0x3f
+ 343 0041 19       		.uleb128 0x19
+ 344 0042 03       		.uleb128 0x3
+ 345 0043 0E       		.uleb128 0xe
+ 346 0044 3A       		.uleb128 0x3a
+ 347 0045 0B       		.uleb128 0xb
+ 348 0046 3B       		.uleb128 0x3b
+ 349 0047 0B       		.uleb128 0xb
+ 350 0048 27       		.uleb128 0x27
+ 351 0049 19       		.uleb128 0x19
+ 352 004a 11       		.uleb128 0x11
+ 353 004b 01       		.uleb128 0x1
+ 354 004c 12       		.uleb128 0x12
+ 355 004d 06       		.uleb128 0x6
+ 356 004e 40       		.uleb128 0x40
+ 357 004f 18       		.uleb128 0x18
+ 358 0050 9742     		.uleb128 0x2117
+ 359 0052 19       		.uleb128 0x19
+ 360 0053 01       		.uleb128 0x1
+ 361 0054 13       		.uleb128 0x13
+ 362 0055 00       		.byte	0
+ 363 0056 00       		.byte	0
+ 364 0057 07       		.uleb128 0x7
+ 365 0058 05       		.uleb128 0x5
+ 366 0059 00       		.byte	0
+ 367 005a 03       		.uleb128 0x3
+ 368 005b 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 10
 
 
- 370 0060 49       		.uleb128 0x49
- 371 0061 13       		.uleb128 0x13
- 372 0062 02       		.uleb128 0x2
- 373 0063 17       		.uleb128 0x17
- 374 0064 00       		.byte	0
- 375 0065 00       		.byte	0
- 376 0066 08       		.uleb128 0x8
- 377 0067 34       		.uleb128 0x34
- 378 0068 00       		.byte	0
- 379 0069 03       		.uleb128 0x3
- 380 006a 0E       		.uleb128 0xe
- 381 006b 3A       		.uleb128 0x3a
- 382 006c 0B       		.uleb128 0xb
- 383 006d 3B       		.uleb128 0x3b
- 384 006e 0B       		.uleb128 0xb
- 385 006f 49       		.uleb128 0x49
- 386 0070 13       		.uleb128 0x13
- 387 0071 02       		.uleb128 0x2
- 388 0072 17       		.uleb128 0x17
- 389 0073 00       		.byte	0
- 390 0074 00       		.byte	0
- 391 0075 09       		.uleb128 0x9
- 392 0076 2E       		.uleb128 0x2e
- 393 0077 00       		.byte	0
- 394 0078 3F       		.uleb128 0x3f
- 395 0079 19       		.uleb128 0x19
- 396 007a 03       		.uleb128 0x3
- 397 007b 0E       		.uleb128 0xe
- 398 007c 3A       		.uleb128 0x3a
- 399 007d 0B       		.uleb128 0xb
- 400 007e 3B       		.uleb128 0x3b
- 401 007f 0B       		.uleb128 0xb
- 402 0080 27       		.uleb128 0x27
- 403 0081 19       		.uleb128 0x19
- 404 0082 49       		.uleb128 0x49
- 405 0083 13       		.uleb128 0x13
- 406 0084 11       		.uleb128 0x11
- 407 0085 01       		.uleb128 0x1
- 408 0086 12       		.uleb128 0x12
- 409 0087 06       		.uleb128 0x6
- 410 0088 40       		.uleb128 0x40
- 411 0089 18       		.uleb128 0x18
- 412 008a 9742     		.uleb128 0x2117
- 413 008c 19       		.uleb128 0x19
- 414 008d 00       		.byte	0
- 415 008e 00       		.byte	0
- 416 008f 00       		.byte	0
- 417              		.section	.debug_loc,"",%progbits
- 418              	.Ldebug_loc0:
- 419              	.LLST0:
- 420 0000 00000000 		.4byte	.LVL0
- 421 0004 0C000000 		.4byte	.LVL3
- 422 0008 0100     		.2byte	0x1
- 423 000a 50       		.byte	0x50
- 424 000b 0C000000 		.4byte	.LVL3
- 425 000f 18000000 		.4byte	.LFE0
- 426 0013 0400     		.2byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 11
+ 369 005c 3A       		.uleb128 0x3a
+ 370 005d 0B       		.uleb128 0xb
+ 371 005e 3B       		.uleb128 0x3b
+ 372 005f 0B       		.uleb128 0xb
+ 373 0060 49       		.uleb128 0x49
+ 374 0061 13       		.uleb128 0x13
+ 375 0062 02       		.uleb128 0x2
+ 376 0063 17       		.uleb128 0x17
+ 377 0064 00       		.byte	0
+ 378 0065 00       		.byte	0
+ 379 0066 08       		.uleb128 0x8
+ 380 0067 34       		.uleb128 0x34
+ 381 0068 00       		.byte	0
+ 382 0069 03       		.uleb128 0x3
+ 383 006a 0E       		.uleb128 0xe
+ 384 006b 3A       		.uleb128 0x3a
+ 385 006c 0B       		.uleb128 0xb
+ 386 006d 3B       		.uleb128 0x3b
+ 387 006e 0B       		.uleb128 0xb
+ 388 006f 49       		.uleb128 0x49
+ 389 0070 13       		.uleb128 0x13
+ 390 0071 02       		.uleb128 0x2
+ 391 0072 17       		.uleb128 0x17
+ 392 0073 00       		.byte	0
+ 393 0074 00       		.byte	0
+ 394 0075 09       		.uleb128 0x9
+ 395 0076 2E       		.uleb128 0x2e
+ 396 0077 00       		.byte	0
+ 397 0078 3F       		.uleb128 0x3f
+ 398 0079 19       		.uleb128 0x19
+ 399 007a 03       		.uleb128 0x3
+ 400 007b 0E       		.uleb128 0xe
+ 401 007c 3A       		.uleb128 0x3a
+ 402 007d 0B       		.uleb128 0xb
+ 403 007e 3B       		.uleb128 0x3b
+ 404 007f 0B       		.uleb128 0xb
+ 405 0080 27       		.uleb128 0x27
+ 406 0081 19       		.uleb128 0x19
+ 407 0082 49       		.uleb128 0x49
+ 408 0083 13       		.uleb128 0x13
+ 409 0084 11       		.uleb128 0x11
+ 410 0085 01       		.uleb128 0x1
+ 411 0086 12       		.uleb128 0x12
+ 412 0087 06       		.uleb128 0x6
+ 413 0088 40       		.uleb128 0x40
+ 414 0089 18       		.uleb128 0x18
+ 415 008a 9742     		.uleb128 0x2117
+ 416 008c 19       		.uleb128 0x19
+ 417 008d 00       		.byte	0
+ 418 008e 00       		.byte	0
+ 419 008f 00       		.byte	0
+ 420              		.section	.debug_loc,"",%progbits
+ 421              	.Ldebug_loc0:
+ 422              	.LLST0:
+ 423 0000 00000000 		.4byte	.LVL0
+ 424 0004 04000000 		.4byte	.LVL1
+ 425 0008 0100     		.2byte	0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 11
 
 
- 427 0015 F3       		.byte	0xf3
- 428 0016 01       		.uleb128 0x1
- 429 0017 50       		.byte	0x50
- 430 0018 9F       		.byte	0x9f
- 431 0019 00000000 		.4byte	0
- 432 001d 00000000 		.4byte	0
- 433              	.LLST1:
- 434 0021 04000000 		.4byte	.LVL1
- 435 0025 08000000 		.4byte	.LVL2
- 436 0029 0600     		.2byte	0x6
- 437 002b 73       		.byte	0x73
- 438 002c 00       		.sleb128 0
- 439 002d 08       		.byte	0x8
- 440 002e 7F       		.byte	0x7f
- 441 002f 1A       		.byte	0x1a
- 442 0030 9F       		.byte	0x9f
- 443 0031 00000000 		.4byte	0
- 444 0035 00000000 		.4byte	0
- 445              	.LLST2:
- 446 0039 00000000 		.4byte	.LVL4
- 447 003d 06000000 		.4byte	.LVL5
- 448 0041 0100     		.2byte	0x1
- 449 0043 50       		.byte	0x50
- 450 0044 06000000 		.4byte	.LVL5
- 451 0048 18000000 		.4byte	.LFE1
- 452 004c 0400     		.2byte	0x4
- 453 004e F3       		.byte	0xf3
- 454 004f 01       		.uleb128 0x1
- 455 0050 50       		.byte	0x50
- 456 0051 9F       		.byte	0x9f
- 457 0052 00000000 		.4byte	0
- 458 0056 00000000 		.4byte	0
- 459              		.section	.debug_aranges,"",%progbits
- 460 0000 34000000 		.4byte	0x34
- 461 0004 0200     		.2byte	0x2
- 462 0006 00000000 		.4byte	.Ldebug_info0
- 463 000a 04       		.byte	0x4
- 464 000b 00       		.byte	0
- 465 000c 0000     		.2byte	0
- 466 000e 0000     		.2byte	0
- 467 0010 00000000 		.4byte	.LFB0
- 468 0014 18000000 		.4byte	.LFE0-.LFB0
- 469 0018 00000000 		.4byte	.LFB1
- 470 001c 18000000 		.4byte	.LFE1-.LFB1
- 471 0020 00000000 		.4byte	.LFB2
- 472 0024 0C000000 		.4byte	.LFE2-.LFB2
- 473 0028 00000000 		.4byte	.LFB3
- 474 002c 0C000000 		.4byte	.LFE3-.LFB3
- 475 0030 00000000 		.4byte	0
- 476 0034 00000000 		.4byte	0
- 477              		.section	.debug_ranges,"",%progbits
- 478              	.Ldebug_ranges0:
- 479 0000 00000000 		.4byte	.LFB0
- 480 0004 18000000 		.4byte	.LFE0
- 481 0008 00000000 		.4byte	.LFB1
- 482 000c 18000000 		.4byte	.LFE1
- 483 0010 00000000 		.4byte	.LFB2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 12
+ 426 000a 50       		.byte	0x50
+ 427 000b 04000000 		.4byte	.LVL1
+ 428 000f 18000000 		.4byte	.LFE0
+ 429 0013 0400     		.2byte	0x4
+ 430 0015 F3       		.byte	0xf3
+ 431 0016 01       		.uleb128 0x1
+ 432 0017 50       		.byte	0x50
+ 433 0018 9F       		.byte	0x9f
+ 434 0019 00000000 		.4byte	0
+ 435 001d 00000000 		.4byte	0
+ 436              	.LLST1:
+ 437 0021 06000000 		.4byte	.LVL2
+ 438 0025 0E000000 		.4byte	.LVL3
+ 439 0029 0600     		.2byte	0x6
+ 440 002b 73       		.byte	0x73
+ 441 002c 00       		.sleb128 0
+ 442 002d 09       		.byte	0x9
+ 443 002e EF       		.byte	0xef
+ 444 002f 1A       		.byte	0x1a
+ 445 0030 9F       		.byte	0x9f
+ 446 0031 00000000 		.4byte	0
+ 447 0035 00000000 		.4byte	0
+ 448              	.LLST2:
+ 449 0039 00000000 		.4byte	.LVL4
+ 450 003d 06000000 		.4byte	.LVL5
+ 451 0041 0100     		.2byte	0x1
+ 452 0043 50       		.byte	0x50
+ 453 0044 06000000 		.4byte	.LVL5
+ 454 0048 18000000 		.4byte	.LFE1
+ 455 004c 0400     		.2byte	0x4
+ 456 004e F3       		.byte	0xf3
+ 457 004f 01       		.uleb128 0x1
+ 458 0050 50       		.byte	0x50
+ 459 0051 9F       		.byte	0x9f
+ 460 0052 00000000 		.4byte	0
+ 461 0056 00000000 		.4byte	0
+ 462              		.section	.debug_aranges,"",%progbits
+ 463 0000 34000000 		.4byte	0x34
+ 464 0004 0200     		.2byte	0x2
+ 465 0006 00000000 		.4byte	.Ldebug_info0
+ 466 000a 04       		.byte	0x4
+ 467 000b 00       		.byte	0
+ 468 000c 0000     		.2byte	0
+ 469 000e 0000     		.2byte	0
+ 470 0010 00000000 		.4byte	.LFB0
+ 471 0014 18000000 		.4byte	.LFE0-.LFB0
+ 472 0018 00000000 		.4byte	.LFB1
+ 473 001c 18000000 		.4byte	.LFE1-.LFB1
+ 474 0020 00000000 		.4byte	.LFB2
+ 475 0024 10000000 		.4byte	.LFE2-.LFB2
+ 476 0028 00000000 		.4byte	.LFB3
+ 477 002c 10000000 		.4byte	.LFE3-.LFB3
+ 478 0030 00000000 		.4byte	0
+ 479 0034 00000000 		.4byte	0
+ 480              		.section	.debug_ranges,"",%progbits
+ 481              	.Ldebug_ranges0:
+ 482 0000 00000000 		.4byte	.LFB0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 12
 
 
- 484 0014 0C000000 		.4byte	.LFE2
- 485 0018 00000000 		.4byte	.LFB3
- 486 001c 0C000000 		.4byte	.LFE3
- 487 0020 00000000 		.4byte	0
- 488 0024 00000000 		.4byte	0
- 489              		.section	.debug_line,"",%progbits
- 490              	.Ldebug_line0:
- 491 0000 8C000000 		.section	.debug_str,"MS",%progbits,1
- 491      02004000 
- 491      00000201 
- 491      FB0E0D00 
- 491      01010101 
- 492              	.LASF20:
- 493 0000 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 493      43313120 
- 493      352E342E 
- 493      31203230 
- 493      31363036 
- 494 0033 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 494      20726576 
- 494      6973696F 
- 494      6E203233 
- 494      37373135 
- 495 0066 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
- 495      66756E63 
- 495      74696F6E 
- 495      2D736563 
- 495      74696F6E 
- 496              	.LASF16:
- 497 008e 76616C75 		.ascii	"value\000"
- 497      6500
- 498              	.LASF15:
- 499 0094 434C4B5F 		.ascii	"CLK_SetDriveMode\000"
- 499      53657444 
- 499      72697665 
- 499      4D6F6465 
- 499      00
- 500              	.LASF23:
- 501 00a5 73746174 		.ascii	"staticBits\000"
- 501      69634269 
- 501      747300
- 502              	.LASF14:
- 503 00b0 434C4B5F 		.ascii	"CLK_Write\000"
- 503      57726974 
- 503      6500
- 504              	.LASF9:
- 505 00ba 666C6F61 		.ascii	"float\000"
- 505      7400
- 506              	.LASF1:
- 507 00c0 756E7369 		.ascii	"unsigned char\000"
- 507      676E6564 
- 507      20636861 
- 507      7200
- 508              	.LASF13:
- 509 00ce 72656738 		.ascii	"reg8\000"
- 509      00
- 510              	.LASF5:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 13
+ 483 0004 18000000 		.4byte	.LFE0
+ 484 0008 00000000 		.4byte	.LFB1
+ 485 000c 18000000 		.4byte	.LFE1
+ 486 0010 00000000 		.4byte	.LFB2
+ 487 0014 10000000 		.4byte	.LFE2
+ 488 0018 00000000 		.4byte	.LFB3
+ 489 001c 10000000 		.4byte	.LFE3
+ 490 0020 00000000 		.4byte	0
+ 491 0024 00000000 		.4byte	0
+ 492              		.section	.debug_line,"",%progbits
+ 493              	.Ldebug_line0:
+ 494 0000 8E000000 		.section	.debug_str,"MS",%progbits,1
+ 494      02004000 
+ 494      00000201 
+ 494      FB0E0D00 
+ 494      01010101 
+ 495              	.LASF20:
+ 496 0000 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 496      43313120 
+ 496      352E342E 
+ 496      31203230 
+ 496      31363036 
+ 497 0033 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 497      20726576 
+ 497      6973696F 
+ 497      6E203233 
+ 497      37373135 
+ 498 0066 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
+ 498      66756E63 
+ 498      74696F6E 
+ 498      2D736563 
+ 498      74696F6E 
+ 499              	.LASF16:
+ 500 008e 76616C75 		.ascii	"value\000"
+ 500      6500
+ 501              	.LASF15:
+ 502 0094 434C4B5F 		.ascii	"CLK_SetDriveMode\000"
+ 502      53657444 
+ 502      72697665 
+ 502      4D6F6465 
+ 502      00
+ 503              	.LASF23:
+ 504 00a5 73746174 		.ascii	"staticBits\000"
+ 504      69634269 
+ 504      747300
+ 505              	.LASF14:
+ 506 00b0 434C4B5F 		.ascii	"CLK_Write\000"
+ 506      57726974 
+ 506      6500
+ 507              	.LASF9:
+ 508 00ba 666C6F61 		.ascii	"float\000"
+ 508      7400
+ 509              	.LASF1:
+ 510 00c0 756E7369 		.ascii	"unsigned char\000"
+ 510      676E6564 
+ 510      20636861 
+ 510      7200
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 13
 
 
- 511 00d3 6C6F6E67 		.ascii	"long unsigned int\000"
- 511      20756E73 
- 511      69676E65 
- 511      6420696E 
- 511      7400
- 512              	.LASF3:
- 513 00e5 73686F72 		.ascii	"short unsigned int\000"
- 513      7420756E 
- 513      7369676E 
- 513      65642069 
- 513      6E7400
- 514              	.LASF10:
- 515 00f8 646F7562 		.ascii	"double\000"
- 515      6C6500
- 516              	.LASF22:
- 517 00ff 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 517      73657273 
- 517      5C6C6567 
- 517      6F635C44 
- 517      6F63756D 
- 518 012c 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 518      72205072 
- 518      6F6A6563 
- 518      745C5365 
- 518      6E696F72 
- 519 015d 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 519      7420496E 
- 519      74656772 
- 519      61746564 
- 519      5C446573 
- 520              	.LASF8:
- 521 017d 756E7369 		.ascii	"unsigned int\000"
- 521      676E6564 
- 521      20696E74 
- 521      00
- 522              	.LASF7:
- 523 018a 6C6F6E67 		.ascii	"long long unsigned int\000"
- 523      206C6F6E 
- 523      6720756E 
- 523      7369676E 
- 523      65642069 
- 524              	.LASF17:
- 525 01a1 6D6F6465 		.ascii	"mode\000"
- 525      00
- 526              	.LASF6:
- 527 01a6 6C6F6E67 		.ascii	"long long int\000"
- 527      206C6F6E 
- 527      6720696E 
- 527      7400
- 528              	.LASF11:
- 529 01b4 63686172 		.ascii	"char\000"
- 529      00
- 530              	.LASF21:
- 531 01b9 47656E65 		.ascii	"Generated_Source\\PSoC5\\CLK.c\000"
- 531      72617465 
- 531      645F536F 
- 531      75726365 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccqvY7P4.s 			page 14
+ 511              	.LASF22:
+ 512 00ce 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
+ 512      73657273 
+ 512      5C4A6163 
+ 512      6F622D4C 
+ 512      6170746F 
+ 513 00fc 656E696F 		.ascii	"enior Project Stuff Backup - Copy\\Senior Project I"
+ 513      72205072 
+ 513      6F6A6563 
+ 513      74205374 
+ 513      75666620 
+ 514 012e 6E746567 		.ascii	"ntegrated\\Design01.cydsn\000"
+ 514      72617465 
+ 514      645C4465 
+ 514      7369676E 
+ 514      30312E63 
+ 515              	.LASF5:
+ 516 0147 6C6F6E67 		.ascii	"long unsigned int\000"
+ 516      20756E73 
+ 516      69676E65 
+ 516      6420696E 
+ 516      7400
+ 517              	.LASF3:
+ 518 0159 73686F72 		.ascii	"short unsigned int\000"
+ 518      7420756E 
+ 518      7369676E 
+ 518      65642069 
+ 518      6E7400
+ 519              	.LASF10:
+ 520 016c 646F7562 		.ascii	"double\000"
+ 520      6C6500
+ 521              	.LASF8:
+ 522 0173 756E7369 		.ascii	"unsigned int\000"
+ 522      676E6564 
+ 522      20696E74 
+ 522      00
+ 523              	.LASF7:
+ 524 0180 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 524      206C6F6E 
+ 524      6720756E 
+ 524      7369676E 
+ 524      65642069 
+ 525              	.LASF17:
+ 526 0197 6D6F6465 		.ascii	"mode\000"
+ 526      00
+ 527              	.LASF13:
+ 528 019c 72656738 		.ascii	"reg8\000"
+ 528      00
+ 529              	.LASF6:
+ 530 01a1 6C6F6E67 		.ascii	"long long int\000"
+ 530      206C6F6E 
+ 530      6720696E 
+ 530      7400
+ 531              	.LASF11:
+ 532 01af 63686172 		.ascii	"char\000"
+ 532      00
+ 533              	.LASF21:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2dXCDA.s 			page 14
 
 
- 531      5C50536F 
- 532              	.LASF2:
- 533 01d6 73686F72 		.ascii	"short int\000"
- 533      7420696E 
- 533      7400
- 534              	.LASF12:
- 535 01e0 75696E74 		.ascii	"uint8\000"
- 535      3800
- 536              	.LASF18:
- 537 01e6 434C4B5F 		.ascii	"CLK_Read\000"
- 537      52656164 
- 537      00
- 538              	.LASF4:
- 539 01ef 6C6F6E67 		.ascii	"long int\000"
- 539      20696E74 
- 539      00
- 540              	.LASF0:
- 541 01f8 7369676E 		.ascii	"signed char\000"
- 541      65642063 
- 541      68617200 
- 542              	.LASF19:
- 543 0204 434C4B5F 		.ascii	"CLK_ReadDataReg\000"
- 543      52656164 
- 543      44617461 
- 543      52656700 
- 544              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 534 01b4 47656E65 		.ascii	"Generated_Source\\PSoC5\\CLK.c\000"
+ 534      72617465 
+ 534      645F536F 
+ 534      75726365 
+ 534      5C50536F 
+ 535              	.LASF2:
+ 536 01d1 73686F72 		.ascii	"short int\000"
+ 536      7420696E 
+ 536      7400
+ 537              	.LASF12:
+ 538 01db 75696E74 		.ascii	"uint8\000"
+ 538      3800
+ 539              	.LASF18:
+ 540 01e1 434C4B5F 		.ascii	"CLK_Read\000"
+ 540      52656164 
+ 540      00
+ 541              	.LASF4:
+ 542 01ea 6C6F6E67 		.ascii	"long int\000"
+ 542      20696E74 
+ 542      00
+ 543              	.LASF0:
+ 544 01f3 7369676E 		.ascii	"signed char\000"
+ 544      65642063 
+ 544      68617200 
+ 545              	.LASF19:
+ 546 01ff 434C4B5F 		.ascii	"CLK_ReadDataReg\000"
+ 546      52656164 
+ 546      44617461 
+ 546      52656700 
+ 547              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

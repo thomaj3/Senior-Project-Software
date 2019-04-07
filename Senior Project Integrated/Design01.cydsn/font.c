@@ -671,443 +671,443 @@ static const uint8_t font[] =
     5,
     0,1,2,3,4,
     
-    // a, 36
-    21,
-    
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    4,
-    1,2,3,4,
-    1,
-    4,
-    3,
-    1,2,3,
-    0,
-    
-    0,
-    
-    // b, 37
-    24,
-    
-    4,
-    0,1,2,3,
-    2,
-    0,4,
-    2,
-    0,4,
-    3,
-    0,1,4,
-    3,
-    0,2,3,
-    1,
-    0,
-    1,
-    0,   
-
-    // c, 38
-    21,
-    
-    3,
-    1,2,3,
-    2,
-    0,4,
-    1,
-    0,
-    2,
-    0,4,
-    3,
-    1,2,3,
-    0,
-    
-    0,
-    
-    // d, 39
-    23,
-    
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    3,
-    0,3,4,
-    3,
-    1,2,4,
-    1,
-    4,
-    1,
-    4,
-    
-    // e, 40
-    22,
-    
-    4,
-    1,2,3,4,
-    1,
-    0,
-    5,
-    0,1,2,3,4,
-    2,
-    0,4,
-    3,
-    1,2,3,
-    0,
-    
-    0,
-    
-    // f, 41
-    18,
-    
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    4,
-    1,2,3,4,
-    1,
-    2,
-    2,
-    3,4,
-    
-    // g, 42 (not going under the line)
-    24,
-    
-    4,
-    0,1,2,3,
-    1,
-    4,
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    4,
-    1,2,3,4,
-    0,
-    
-    // h, 43
-    21,
-    
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    3,
-    0,1,4,
-    3,
-    0,2,3,
-    1,
-    0,
-    1,
-    0,
-    
-    // i, 44
-    13,
-    
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    0,
-    
-    1,
-    2,
-    
-    // j, 45 (don't use j)
-    0,
-    
-    // k, 46
-    19,
-    
-    2,
-    0,3,
-    2,
-    0,2,
-    2,
-    0,1,
-    2,
-    0,2,
-    2,
-    0,3,
-    1,
-    0,
-    1,
-    0,
-    
-    // l, 47
-    14,
-    
-    1,
-    3,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    
-    // m, 48
-    20,
-    
-    2,
-    0,4,
-    2,
-    0,4,
-    3,
-    0,2,4,
-    3,
-    0,2,4,
-    3,
-    0,1,3,
-    0,
-    
-    0,
-    
-    // n, 49
-    19,
-    
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    4,
-    0,1,2,3,
-    0,
-    
-    0,
-    
-    // o, 50
-    19,
-    
-    3,
-    1,2,3,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    3,
-    1,2,3,
-    0,
-    
-    0,
-    
-    // p, 51 (not going under the line)
-    21,
-     
-    1,
-    0,
-    1,
-    0,
-    4,
-    0,1,2,3,
-    2,
-    0,4,
-    3,
-    0,1,4,
-    3,
-    0,2,3,
-    0,
-    
-    // q, 52 (not going under the line)
-    21,
-    
-    1,
-    4,
-    1,
-    4,
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    3,
-    0,3,4,
-    3,
-    1,2,4,
-    0,
-    
-    // r, 53
-    16,
-    
-    1,
-    0,
-    1,
-    0,
-    1,
-    0,
-    3,
-    0,1,4,
-    3,
-    0,2,3,
-    0,
-    
-    0,
-    
-    // s, 54
-    20,
-    
-    4,
-    0,1,2,3,
-    1,
-    4,
-    3,
-    1,2,3,
-    1,
-    0,
-    4,
-    1,2,3,4,
-    0,
-    
-    0,
-    
-    // t, 55
-    16,
-    
-    1,
-    3,
-    1,
-    2,
-    1,
-    2,
-    1,
-    2,
-    3,
-    1,2,3,
-    1,
-    2,
-    1,
-    2,
-    
-    // u, 56
-    19,
-
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    0,
-    
-    0,
-    
-    // v, 57
-    16,
-    
-    1,
-    2,
-    2,
-    1,3,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    0,
-    
-    0,
-    
-    // w, 58
-    21,
-    
-    4,
-    1,2,3,4,
-    3,
-    0,2,4,
-    3,
-    0,2,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    0,
-    
-    0,
-    
-    // x, 59
-    16,
-    
-    2,
-    0,4,
-    2,
-    1,3,
-    1,
-    2,
-    2,
-    1,3,
-    2,
-    0,4,
-    0,
-    
-    0,
-    
-    // y, 60 (not going under the line)
-    22,
-    
-    4,
-    0,1,2,3,
-    1,
-    4,
-    4,
-    1,2,3,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    2,
-    0,4,
-    0,
-    
-    // z, 61
-    20,
-    
-    5,
-    0,1,2,3,4,
-    1,
-    1,
-    1,
-    2,
-    1,
-    3,
-    5,
-    0,1,2,3,4,
-    0,
-    
-    0,
-    
-    // ., 62
+//    // a, 36
+//    21,
+//    
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    4,
+//    1,2,3,4,
+//    1,
+//    4,
+//    3,
+//    1,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // b, 37
+//    24,
+//    
+//    4,
+//    0,1,2,3,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    3,
+//    0,1,4,
+//    3,
+//    0,2,3,
+//    1,
+//    0,
+//    1,
+//    0,   
+//
+//    // c, 38
+//    21,
+//    
+//    3,
+//    1,2,3,
+//    2,
+//    0,4,
+//    1,
+//    0,
+//    2,
+//    0,4,
+//    3,
+//    1,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // d, 39
+//    23,
+//    
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    3,
+//    0,3,4,
+//    3,
+//    1,2,4,
+//    1,
+//    4,
+//    1,
+//    4,
+//    
+//    // e, 40
+//    22,
+//    
+//    4,
+//    1,2,3,4,
+//    1,
+//    0,
+//    5,
+//    0,1,2,3,4,
+//    2,
+//    0,4,
+//    3,
+//    1,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // f, 41
+//    18,
+//    
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    4,
+//    1,2,3,4,
+//    1,
+//    2,
+//    2,
+//    3,4,
+//    
+//    // g, 42 (not going under the line)
+//    24,
+//    
+//    4,
+//    0,1,2,3,
+//    1,
+//    4,
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    4,
+//    1,2,3,4,
+//    0,
+//    
+//    // h, 43
+//    21,
+//    
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    3,
+//    0,1,4,
+//    3,
+//    0,2,3,
+//    1,
+//    0,
+//    1,
+//    0,
+//    
+//    // i, 44
+//    13,
+//    
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    0,
+//    
+//    1,
+//    2,
+//    
+//    // j, 45 (don't use j)
+//    0,
+//    
+//    // k, 46
+//    19,
+//    
+//    2,
+//    0,3,
+//    2,
+//    0,2,
+//    2,
+//    0,1,
+//    2,
+//    0,2,
+//    2,
+//    0,3,
+//    1,
+//    0,
+//    1,
+//    0,
+//    
+//    // l, 47
+//    14,
+//    
+//    1,
+//    3,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    
+//    // m, 48
+//    20,
+//    
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    3,
+//    0,2,4,
+//    3,
+//    0,2,4,
+//    3,
+//    0,1,3,
+//    0,
+//    
+//    0,
+//    
+//    // n, 49
+//    19,
+//    
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    4,
+//    0,1,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // o, 50
+//    19,
+//    
+//    3,
+//    1,2,3,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    3,
+//    1,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // p, 51 (not going under the line)
+//    21,
+//     
+//    1,
+//    0,
+//    1,
+//    0,
+//    4,
+//    0,1,2,3,
+//    2,
+//    0,4,
+//    3,
+//    0,1,4,
+//    3,
+//    0,2,3,
+//    0,
+//    
+//    // q, 52 (not going under the line)
+//    21,
+//    
+//    1,
+//    4,
+//    1,
+//    4,
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    3,
+//    0,3,4,
+//    3,
+//    1,2,4,
+//    0,
+//    
+//    // r, 53
+//    16,
+//    
+//    1,
+//    0,
+//    1,
+//    0,
+//    1,
+//    0,
+//    3,
+//    0,1,4,
+//    3,
+//    0,2,3,
+//    0,
+//    
+//    0,
+//    
+//    // s, 54
+//    20,
+//    
+//    4,
+//    0,1,2,3,
+//    1,
+//    4,
+//    3,
+//    1,2,3,
+//    1,
+//    0,
+//    4,
+//    1,2,3,4,
+//    0,
+//    
+//    0,
+//    
+//    // t, 55
+//    16,
+//    
+//    1,
+//    3,
+//    1,
+//    2,
+//    1,
+//    2,
+//    1,
+//    2,
+//    3,
+//    1,2,3,
+//    1,
+//    2,
+//    1,
+//    2,
+//    
+//    // u, 56
+//    19,
+//
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    0,
+//    
+//    0,
+//    
+//    // v, 57
+//    16,
+//    
+//    1,
+//    2,
+//    2,
+//    1,3,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    0,
+//    
+//    0,
+//    
+//    // w, 58
+//    21,
+//    
+//    4,
+//    1,2,3,4,
+//    3,
+//    0,2,4,
+//    3,
+//    0,2,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    0,
+//    
+//    0,
+//    
+//    // x, 59
+//    16,
+//    
+//    2,
+//    0,4,
+//    2,
+//    1,3,
+//    1,
+//    2,
+//    2,
+//    1,3,
+//    2,
+//    0,4,
+//    0,
+//    
+//    0,
+//    
+//    // y, 60 (not going under the line)
+//    22,
+//    
+//    4,
+//    0,1,2,3,
+//    1,
+//    4,
+//    4,
+//    1,2,3,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    2,
+//    0,4,
+//    0,
+//    
+//    // z, 61
+//    20,
+//    
+//    5,
+//    0,1,2,3,4,
+//    1,
+//    1,
+//    1,
+//    2,
+//    1,
+//    3,
+//    5,
+//    0,1,2,3,4,
+//    0,
+//    
+//    0,
+//    
+    // ., 36
     8,
     
     1,
@@ -1124,7 +1124,7 @@ static const uint8_t font[] =
 
     0,
     
-    // [space], 63
+    // [space], 37
     7,
     
     0,
@@ -1286,89 +1286,89 @@ void draw_string(int16_t x, int16_t y, uint16_t color, char string[])
             case 90 :
                 draw_character(x_coor,y,color,35); // Draws Z
                 break;
-            case 97 :
-                draw_character(x_coor,y,color,36); // Draws a
-                break;
-            case 98 :
-                draw_character(x_coor,y,color,37); // Draws b
-                break;
-            case 99 :
-                draw_character(x_coor,y,color,38); // Draws c
-                break;
-            case 100 :
-                draw_character(x_coor,y,color,39); // Draws d
-                break;
-            case 101 :
-                draw_character(x_coor,y,color,40); // Draws e
-                break;
-            case 102 :
-                draw_character(x_coor,y,color,41); // Draws f
-                break;
-            case 103 :
-                draw_character(x_coor,y,color,42); // Draws g
-                break;
-            case 104 :
-                draw_character(x_coor,y,color,43); // Draws h
-                break;
-            case 105 :
-                draw_character(x_coor,y,color,44); // Draws i
-                break;
-            case 106 :
-                draw_character(x_coor,y,color,63); // Draws j
-                break;
-            case 107 :
-                draw_character(x_coor,y,color,46); // Draws k
-                break;
-            case 108 :
-                draw_character(x_coor,y,color,47); // Draws l
-                break;
-            case 109 :
-                draw_character(x_coor,y,color,48); // Draws m
-                break;
-            case 110 :
-                draw_character(x_coor,y,color,49); // Draws n
-                break;
-            case 111 :
-                draw_character(x_coor,y,color,50); // Draws o
-                break;
-            case 112 :
-                draw_character(x_coor,y,color,51); // Draws p
-                break;
-            case 113 :
-                draw_character(x_coor,y,color,52); // Draws q
-                break;
-            case 114 :
-                draw_character(x_coor,y,color,53); // Draws r
-                break;
-            case 115 :
-                draw_character(x_coor,y,color,54); // Draws s
-                break;
-            case 116 :
-                draw_character(x_coor,y,color,55); // Draws t
-                break;
-            case 117 :
-                draw_character(x_coor,y,color,56); // Draws u
-                break;
-            case 118 :
-                draw_character(x_coor,y,color,57); // Draws v
-                break;
-            case 119 :
-                draw_character(x_coor,y,color,58); // Draws w
-                break;
-            case 120 :
-                draw_character(x_coor,y,color,59); // Draws x
-                break;
-            case 121 :
-                draw_character(x_coor,y,color,60); // Draws y
-                break;
-            case 122 :
-                draw_character(x_coor,y,color,61); // Draws z
-                break;
+//            case 97 :
+//                draw_character(x_coor,y,color,36); // Draws a
+//                break;
+//            case 98 :
+//                draw_character(x_coor,y,color,37); // Draws b
+//                break;
+//            case 99 :
+//                draw_character(x_coor,y,color,38); // Draws c
+//                break;
+//            case 100 :
+//                draw_character(x_coor,y,color,39); // Draws d
+//                break;
+//            case 101 :
+//                draw_character(x_coor,y,color,40); // Draws e
+//                break;
+//            case 102 :
+//                draw_character(x_coor,y,color,41); // Draws f
+//                break;
+//            case 103 :
+//                draw_character(x_coor,y,color,42); // Draws g
+//                break;
+//            case 104 :
+//                draw_character(x_coor,y,color,43); // Draws h
+//                break;
+//            case 105 :
+//                draw_character(x_coor,y,color,44); // Draws i
+//                break;
+//            case 106 :
+//                draw_character(x_coor,y,color,63); // Draws j
+//                break;
+//            case 107 :
+//                draw_character(x_coor,y,color,46); // Draws k
+//                break;
+//            case 108 :
+//                draw_character(x_coor,y,color,47); // Draws l
+//                break;
+//            case 109 :
+//                draw_character(x_coor,y,color,48); // Draws m
+//                break;
+//            case 110 :
+//                draw_character(x_coor,y,color,49); // Draws n
+//                break;
+//            case 111 :
+//                draw_character(x_coor,y,color,50); // Draws o
+//                break;
+//            case 112 :
+//                draw_character(x_coor,y,color,51); // Draws p
+//                break;
+//            case 113 :
+//                draw_character(x_coor,y,color,52); // Draws q
+//                break;
+//            case 114 :
+//                draw_character(x_coor,y,color,53); // Draws r
+//                break;
+//            case 115 :
+//                draw_character(x_coor,y,color,54); // Draws s
+//                break;
+//            case 116 :
+//                draw_character(x_coor,y,color,55); // Draws t
+//                break;
+//            case 117 :
+//                draw_character(x_coor,y,color,56); // Draws u
+//                break;
+//            case 118 :
+//                draw_character(x_coor,y,color,57); // Draws v
+//                break;
+//            case 119 :
+//                draw_character(x_coor,y,color,58); // Draws w
+//                break;
+//            case 120 :
+//                draw_character(x_coor,y,color,59); // Draws x
+//                break;
+//            case 121 :
+//                draw_character(x_coor,y,color,60); // Draws y
+//                break;
+//            case 122 :
+//                draw_character(x_coor,y,color,61); // Draws z
+//                break;
             case 46 :
-                draw_character(x_coor,y,color,62); // Draws .
+                draw_character(x_coor,y,color,36); // Draws .
                 break;
             case 32 :
-                draw_character(x_coor,y,color,63); // Draws [space]
+                draw_character(x_coor,y,color,37); // Draws [space]
                 break;
         }
         
