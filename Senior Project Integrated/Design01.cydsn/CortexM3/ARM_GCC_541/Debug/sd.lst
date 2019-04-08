@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   28:sd.c          **** //    //determine if file exists
   29:sd.c          **** //    strcat(new_file_name
   30:sd.c          **** //    FS_Rename(file_name,
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 2
 
 
   31:sd.c          **** //}
@@ -81,17 +81,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   40 0002 0D46     		mov	r5, r1
   36:sd.c          ****     FS_FILE * pFile;
   37:sd.c          ****     
-  38:sd.c          ****     //FS_Remove(file_name);
-  39:sd.c          ****     pFile = FS_FOpen(file_name, "w");
-  41              		.loc 1 39 0
+  38:sd.c          ****     pFile = FS_FOpen(file_name, "w+");
+  41              		.loc 1 38 0
   42 0004 0849     		ldr	r1, .L3
   43              	.LVL1:
   44 0006 FFF7FEFF 		bl	FS_FOpen
   45              	.LVL2:
   46 000a 0446     		mov	r4, r0
   47              	.LVL3:
-  40:sd.c          ****     FS_Write(pFile,text,strlen(text));
-  48              		.loc 1 40 0
+  39:sd.c          ****     FS_Write(pFile,text,strlen(text));
+  48              		.loc 1 39 0
   49 000c 2846     		mov	r0, r5
   50              	.LVL4:
   51 000e FFF7FEFF 		bl	strlen
@@ -101,11 +100,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   55 0016 2046     		mov	r0, r4
   56 0018 FFF7FEFF 		bl	FS_Write
   57              	.LVL6:
-  41:sd.c          ****     FS_FClose(pFile);
-  58              		.loc 1 41 0
+  40:sd.c          ****     FS_FClose(pFile);
+  58              		.loc 1 40 0
   59 001c 2046     		mov	r0, r4
-  42:sd.c          **** }
-  60              		.loc 1 42 0
+  41:sd.c          **** }
+  60              		.loc 1 41 0
   61 001e BDE83840 		pop	{r3, r4, r5, lr}
   62              		.cfi_restore 14
   63              		.cfi_restore 5
@@ -113,15 +112,15 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   65              		.cfi_restore 3
   66              		.cfi_def_cfa_offset 0
   67              	.LVL7:
-  41:sd.c          ****     FS_FClose(pFile);
-  68              		.loc 1 41 0
+  40:sd.c          ****     FS_FClose(pFile);
+  68              		.loc 1 40 0
   69 0022 FFF7FEBF 		b	FS_FClose
   70              	.LVL8:
   71              	.L4:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 3
-
-
   72 0026 00BF     		.align	2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 3
+
+
   73              	.L3:
   74 0028 00000000 		.word	.LC0
   75              		.cfi_endproc
@@ -135,11 +134,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   83              		.type	append_file, %function
   84              	append_file:
   85              	.LFB2:
-  43:sd.c          **** 
-  44:sd.c          **** //used to append a file
-  45:sd.c          **** void append_file(char * file_name, char * text)
-  46:sd.c          **** {
-  86              		.loc 1 46 0
+  42:sd.c          **** 
+  43:sd.c          **** //used to append a file
+  44:sd.c          **** void append_file(char * file_name, char * text)
+  45:sd.c          **** {
+  86              		.loc 1 45 0
   87              		.cfi_startproc
   88              		@ args = 0, pretend = 0, frame = 0
   89              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -150,19 +149,19 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
   94              		.cfi_offset 4, -12
   95              		.cfi_offset 5, -8
   96              		.cfi_offset 14, -4
-  97              		.loc 1 46 0
+  97              		.loc 1 45 0
   98 0002 0D46     		mov	r5, r1
-  47:sd.c          ****     FS_FILE * pFile;
-  48:sd.c          ****     pFile = FS_FOpen(file_name, "a");
-  99              		.loc 1 48 0
+  46:sd.c          ****     FS_FILE * pFile;
+  47:sd.c          ****     pFile = FS_FOpen(file_name, "a");
+  99              		.loc 1 47 0
  100 0004 0849     		ldr	r1, .L7
  101              	.LVL10:
  102 0006 FFF7FEFF 		bl	FS_FOpen
  103              	.LVL11:
  104 000a 0446     		mov	r4, r0
  105              	.LVL12:
-  49:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 106              		.loc 1 49 0
+  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 106              		.loc 1 48 0
  107 000c 2846     		mov	r0, r5
  108              	.LVL13:
  109 000e FFF7FEFF 		bl	strlen
@@ -172,23 +171,23 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  113 0016 2046     		mov	r0, r4
  114 0018 FFF7FEFF 		bl	FS_Write
  115              	.LVL15:
-  50:sd.c          ****     FS_FClose(pFile);
- 116              		.loc 1 50 0
+  49:sd.c          ****     FS_FClose(pFile);
+ 116              		.loc 1 49 0
  117 001c 2046     		mov	r0, r4
-  51:sd.c          **** }
- 118              		.loc 1 51 0
+  50:sd.c          **** }
+ 118              		.loc 1 50 0
  119 001e BDE83840 		pop	{r3, r4, r5, lr}
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 4
-
-
  120              		.cfi_restore 14
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 4
+
+
  121              		.cfi_restore 5
  122              		.cfi_restore 4
  123              		.cfi_restore 3
  124              		.cfi_def_cfa_offset 0
  125              	.LVL16:
-  50:sd.c          ****     FS_FClose(pFile);
- 126              		.loc 1 50 0
+  49:sd.c          ****     FS_FClose(pFile);
+ 126              		.loc 1 49 0
  127 0022 FFF7FEBF 		b	FS_FClose
  128              	.LVL17:
  129              	.L8:
@@ -206,10 +205,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  141              		.type	write_header_info, %function
  142              	write_header_info:
  143              	.LFB3:
-  52:sd.c          **** 
-  53:sd.c          **** void write_header_info(char * file_name, unsigned char device_selection, unsigned char curve_num, d
-  54:sd.c          **** {
- 144              		.loc 1 54 0
+  51:sd.c          **** 
+  52:sd.c          **** void write_header_info(char * file_name, unsigned char device_selection, unsigned char curve_num, d
+  53:sd.c          **** {
+ 144              		.loc 1 53 0
  145              		.cfi_startproc
  146              		@ args = 0, pretend = 0, frame = 88
  147              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -227,97 +226,97 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  159 0004 9146     		mov	r9, r2
  160 0006 96B0     		sub	sp, sp, #88
  161              		.cfi_def_cfa_offset 120
-  55:sd.c          ****     char y_label[2][3];
-  56:sd.c          ****     strcpy(y_label[0], "Id");
-  57:sd.c          ****     strcpy(y_label[1], "Ic");
-  58:sd.c          ****     char x_label[2][4];
-  59:sd.c          ****     strcpy(x_label[0],"Vds");
-  60:sd.c          ****     strcpy(x_label[1],"Vce");
-  61:sd.c          ****     char legend_label[2][4];
-  62:sd.c          ****     strcpy(legend_label[0], "Vgs");
-  63:sd.c          ****     strcpy(legend_label[1], "Ib");
-  64:sd.c          ****     char temp_str[5];
-  65:sd.c          ****     char beginning_message[] = "*Note all currents are in mA, all other units are SI*\n";
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 5
+  54:sd.c          ****     char y_label[2][3];
+  55:sd.c          ****     strcpy(y_label[0], "Id");
+  56:sd.c          ****     strcpy(y_label[1], "Ic");
+  57:sd.c          ****     char x_label[2][4];
+  58:sd.c          ****     strcpy(x_label[0],"Vds");
+  59:sd.c          ****     strcpy(x_label[1],"Vce");
+  60:sd.c          ****     char legend_label[2][4];
+  61:sd.c          ****     strcpy(legend_label[0], "Vgs");
+  62:sd.c          ****     strcpy(legend_label[1], "Ib");
+  63:sd.c          ****     char temp_str[5];
+  64:sd.c          ****     char beginning_message[] = "*Note all currents are in mA, all other units are SI*\n";
+ 162              		.loc 1 64 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 5
 
 
- 162              		.loc 1 65 0
  163 0008 634D     		ldr	r5, .L13
  164 000a 08AC     		add	r4, sp, #32
-  54:sd.c          ****     char y_label[2][3];
- 165              		.loc 1 54 0
+  53:sd.c          ****     char y_label[2][3];
+ 165              		.loc 1 53 0
  166 000c 0746     		mov	r7, r0
  167 000e 0E46     		mov	r6, r1
  168 0010 9846     		mov	r8, r3
- 169              		.loc 1 65 0
+ 169              		.loc 1 64 0
  170 0012 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  171              	.LVL19:
  172 0014 0FC4     		stmia	r4!, {r0, r1, r2, r3}
  173 0016 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  174 0018 0FC4     		stmia	r4!, {r0, r1, r2, r3}
-  56:sd.c          ****     strcpy(y_label[1], "Ic");
- 175              		.loc 1 56 0
+  55:sd.c          ****     strcpy(y_label[1], "Ic");
+ 175              		.loc 1 55 0
  176 001a 604A     		ldr	r2, .L13+4
-  63:sd.c          ****     char temp_str[5];
- 177              		.loc 1 63 0
+  62:sd.c          ****     char temp_str[5];
+ 177              		.loc 1 62 0
  178 001c 604B     		ldr	r3, .L13+8
-  56:sd.c          ****     strcpy(y_label[1], "Ic");
- 179              		.loc 1 56 0
+  55:sd.c          ****     strcpy(y_label[1], "Ic");
+ 179              		.loc 1 55 0
  180 001e 1268     		ldr	r2, [r2]
-  63:sd.c          ****     char temp_str[5];
- 181              		.loc 1 63 0
+  62:sd.c          ****     char temp_str[5];
+ 181              		.loc 1 62 0
  182 0020 1B68     		ldr	r3, [r3]
-  57:sd.c          ****     char x_label[2][4];
- 183              		.loc 1 57 0
+  56:sd.c          ****     char x_label[2][4];
+ 183              		.loc 1 56 0
  184 0022 6049     		ldr	r1, .L13+12
-  56:sd.c          ****     strcpy(y_label[1], "Ic");
- 185              		.loc 1 56 0
+  55:sd.c          ****     strcpy(y_label[1], "Ic");
+ 185              		.loc 1 55 0
  186 0024 ADF80820 		strh	r2, [sp, #8]	@ movhi
-  63:sd.c          ****     char temp_str[5];
- 187              		.loc 1 63 0
+  62:sd.c          ****     char temp_str[5];
+ 187              		.loc 1 62 0
  188 0028 ADF81C30 		strh	r3, [sp, #28]	@ movhi
-  56:sd.c          ****     strcpy(y_label[1], "Ic");
- 189              		.loc 1 56 0
+  55:sd.c          ****     strcpy(y_label[1], "Ic");
+ 189              		.loc 1 55 0
  190 002c 120C     		lsrs	r2, r2, #16
-  63:sd.c          ****     char temp_str[5];
- 191              		.loc 1 63 0
+  62:sd.c          ****     char temp_str[5];
+ 191              		.loc 1 62 0
  192 002e 1B0C     		lsrs	r3, r3, #16
-  57:sd.c          ****     char x_label[2][4];
- 193              		.loc 1 57 0
+  56:sd.c          ****     char x_label[2][4];
+ 193              		.loc 1 56 0
  194 0030 0888     		ldrh	r0, [r1]	@ unaligned
  195 0032 91F802E0 		ldrb	lr, [r1, #2]	@ zero_extendqisi2
-  56:sd.c          ****     strcpy(y_label[1], "Ic");
- 196              		.loc 1 56 0
+  55:sd.c          ****     strcpy(y_label[1], "Ic");
+ 196              		.loc 1 55 0
  197 0036 8DF80A20 		strb	r2, [sp, #10]
-  59:sd.c          ****     strcpy(x_label[1],"Vce");
- 198              		.loc 1 59 0
+  58:sd.c          ****     strcpy(x_label[1],"Vce");
+ 198              		.loc 1 58 0
  199 003a 5B49     		ldr	r1, .L13+16
-  60:sd.c          ****     char legend_label[2][4];
- 200              		.loc 1 60 0
+  59:sd.c          ****     char legend_label[2][4];
+ 200              		.loc 1 59 0
  201 003c 5B4A     		ldr	r2, .L13+20
-  63:sd.c          ****     char temp_str[5];
- 202              		.loc 1 63 0
+  62:sd.c          ****     char temp_str[5];
+ 202              		.loc 1 62 0
  203 003e 8DF81E30 		strb	r3, [sp, #30]
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 6
+  61:sd.c          ****     strcpy(legend_label[1], "Ib");
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 6
 
 
-  62:sd.c          ****     strcpy(legend_label[1], "Ib");
- 204              		.loc 1 62 0
+ 204              		.loc 1 61 0
  205 0042 5B4B     		ldr	r3, .L13+24
-  57:sd.c          ****     char x_label[2][4];
- 206              		.loc 1 57 0
+  56:sd.c          ****     char x_label[2][4];
+ 206              		.loc 1 56 0
  207 0044 ADF80B00 		strh	r0, [sp, #11]	@ unaligned
  208 0048 8DF80DE0 		strb	lr, [sp, #13]
-  59:sd.c          ****     strcpy(x_label[1],"Vce");
- 209              		.loc 1 59 0
+  58:sd.c          ****     strcpy(x_label[1],"Vce");
+ 209              		.loc 1 58 0
  210 004c 0491     		str	r1, [sp, #16]
-  60:sd.c          ****     char legend_label[2][4];
- 211              		.loc 1 60 0
+  59:sd.c          ****     char legend_label[2][4];
+ 211              		.loc 1 59 0
  212 004e 0592     		str	r2, [sp, #20]
-  62:sd.c          ****     strcpy(legend_label[1], "Ib");
- 213              		.loc 1 62 0
+  61:sd.c          ****     strcpy(legend_label[1], "Ib");
+ 213              		.loc 1 61 0
  214 0050 0693     		str	r3, [sp, #24]
- 215              		.loc 1 65 0
+ 215              		.loc 1 64 0
  216 0052 0FCD     		ldmia	r5!, {r0, r1, r2, r3}
  217 0054 0FC4     		stmia	r4!, {r0, r1, r2, r3}
  218 0056 95E80300 		ldmia	r5, {r0, r1}
@@ -325,23 +324,23 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  220 005e 24F8021B 		strh	r1, [r4], #2	@ movhi
  221 0062 090C     		lsrs	r1, r1, #16
  222 0064 2170     		strb	r1, [r4]
-  66:sd.c          ****     if(!curve_num)
- 223              		.loc 1 66 0
+  65:sd.c          ****     if(!curve_num)
+ 223              		.loc 1 65 0
  224 0066 B9F1000F 		cmp	r9, #0
  225 006a 0FD1     		bne	.L10
  226              	.LVL20:
  227              	.LBB20:
  228              	.LBB21:
-  39:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 229              		.loc 1 39 0
+  38:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 229              		.loc 1 38 0
  230 006c 5149     		ldr	r1, .L13+28
  231 006e 3846     		mov	r0, r7
  232 0070 FFF7FEFF 		bl	FS_FOpen
  233              	.LVL21:
  234 0074 0446     		mov	r4, r0
  235              	.LVL22:
-  40:sd.c          ****     FS_FClose(pFile);
- 236              		.loc 1 40 0
+  39:sd.c          ****     FS_FClose(pFile);
+ 236              		.loc 1 39 0
  237 0076 08A8     		add	r0, sp, #32
  238              	.LVL23:
  239 0078 FFF7FEFF 		bl	strlen
@@ -352,47 +351,47 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  244 0080 2046     		mov	r0, r4
  245 0082 FFF7FEFF 		bl	FS_Write
  246              	.LVL26:
-  41:sd.c          **** }
- 247              		.loc 1 41 0
+  40:sd.c          **** }
+ 247              		.loc 1 40 0
  248 0086 2046     		mov	r0, r4
  249 0088 FFF7FEFF 		bl	FS_FClose
  250              	.LVL27:
  251              	.L10:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 7
-
-
  252              	.LBE21:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 7
+
+
  253              	.LBE20:
-  67:sd.c          ****     {
-  68:sd.c          ****         create_file_with_text(file_name, beginning_message);
-  69:sd.c          ****     }
-  70:sd.c          ****     //Vgs = x.xxx OR Ib = x.xxx
-  71:sd.c          ****     append_file(file_name,legend_label[device_selection/2]);
- 254              		.loc 1 71 0
+  66:sd.c          ****     {
+  67:sd.c          ****         create_file_with_text(file_name, beginning_message);
+  68:sd.c          ****     }
+  69:sd.c          ****     //Vgs = x.xxx OR Ib = x.xxx
+  70:sd.c          ****     append_file(file_name,legend_label[device_selection/2]);
+ 254              		.loc 1 70 0
  255 008c 7408     		lsrs	r4, r6, #1
  256 008e 06AB     		add	r3, sp, #24
  257 0090 A500     		lsls	r5, r4, #2
  258              	.LBB22:
  259              	.LBB23:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 260              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 260              		.loc 1 47 0
  261 0092 4949     		ldr	r1, .L13+32
  262 0094 3846     		mov	r0, r7
  263              	.LBE23:
  264              	.LBE22:
- 265              		.loc 1 71 0
+ 265              		.loc 1 70 0
  266 0096 5E19     		adds	r6, r3, r5
  267              	.LVL28:
  268              	.LBB25:
  269              	.LBB24:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 270              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 270              		.loc 1 47 0
  271 0098 FFF7FEFF 		bl	FS_FOpen
  272              	.LVL29:
  273 009c 8246     		mov	r10, r0
  274              	.LVL30:
-  49:sd.c          ****     FS_FClose(pFile);
- 275              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 275              		.loc 1 48 0
  276 009e 3046     		mov	r0, r6
  277              	.LVL31:
  278 00a0 FFF7FEFF 		bl	strlen
@@ -402,8 +401,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  282 00a8 5046     		mov	r0, r10
  283 00aa FFF7FEFF 		bl	FS_Write
  284              	.LVL33:
-  50:sd.c          **** }
- 285              		.loc 1 50 0
+  49:sd.c          **** }
+ 285              		.loc 1 49 0
  286 00ae 5046     		mov	r0, r10
  287 00b0 FFF7FEFF 		bl	FS_FClose
  288              	.LVL34:
@@ -411,40 +410,40 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  290              	.LBE25:
  291              	.LBB26:
  292              	.LBB27:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 293              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 293              		.loc 1 47 0
  294 00b4 4049     		ldr	r1, .L13+32
  295 00b6 3846     		mov	r0, r7
  296 00b8 FFF7FEFF 		bl	FS_FOpen
  297              	.LVL35:
  298 00bc 0646     		mov	r6, r0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 8
-
-
  299              	.LVL36:
-  49:sd.c          ****     FS_FClose(pFile);
- 300              		.loc 1 49 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 8
+
+
+  48:sd.c          ****     FS_FClose(pFile);
+ 300              		.loc 1 48 0
  301 00be 0122     		movs	r2, #1
  302 00c0 3E49     		ldr	r1, .L13+36
  303 00c2 FFF7FEFF 		bl	FS_Write
  304              	.LVL37:
  305              	.LBE27:
  306              	.LBE26:
-  72:sd.c          ****     append_file(file_name,"=");
-  73:sd.c          ****     sprintf(temp_str,"%.3f",Vgs_double[curve_num]);
- 307              		.loc 1 73 0
+  71:sd.c          ****     append_file(file_name,"=");
+  72:sd.c          ****     sprintf(temp_str,"%.3f",Vgs_double[curve_num]);
+ 307              		.loc 1 72 0
  308 00c6 08EBC908 		add	r8, r8, r9, lsl #3
  309              	.LVL38:
  310              	.LBB29:
  311              	.LBB28:
-  50:sd.c          **** }
- 312              		.loc 1 50 0
+  49:sd.c          **** }
+ 312              		.loc 1 49 0
  313 00ca 3046     		mov	r0, r6
  314 00cc FFF7FEFF 		bl	FS_FClose
  315              	.LVL39:
  316              	.LBE28:
  317              	.LBE29:
- 318              		.loc 1 73 0
+ 318              		.loc 1 72 0
  319 00d0 D8E90023 		ldrd	r2, [r8]
  320 00d4 6846     		mov	r0, sp
  321 00d6 3A49     		ldr	r1, .L13+40
@@ -452,16 +451,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  323              	.LVL40:
  324              	.LBB30:
  325              	.LBB31:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 326              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 326              		.loc 1 47 0
  327 00dc 3649     		ldr	r1, .L13+32
  328 00de 3846     		mov	r0, r7
  329 00e0 FFF7FEFF 		bl	FS_FOpen
  330              	.LVL41:
  331 00e4 0646     		mov	r6, r0
  332              	.LVL42:
-  49:sd.c          ****     FS_FClose(pFile);
- 333              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 333              		.loc 1 48 0
  334 00e6 6846     		mov	r0, sp
  335              	.LVL43:
  336 00e8 FFF7FEFF 		bl	strlen
@@ -471,81 +470,81 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  340 00f0 3046     		mov	r0, r6
  341 00f2 FFF7FEFF 		bl	FS_Write
  342              	.LVL45:
-  50:sd.c          **** }
- 343              		.loc 1 50 0
+  49:sd.c          **** }
+ 343              		.loc 1 49 0
  344 00f6 3046     		mov	r0, r6
  345 00f8 FFF7FEFF 		bl	FS_FClose
  346              	.LVL46:
  347              	.LBE31:
  348              	.LBE30:
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 9
-
-
  349              	.LBB32:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 9
+
+
  350              	.LBB33:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 351              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 351              		.loc 1 47 0
  352 00fc 2E49     		ldr	r1, .L13+32
  353 00fe 3846     		mov	r0, r7
  354 0100 FFF7FEFF 		bl	FS_FOpen
  355              	.LVL47:
  356 0104 0646     		mov	r6, r0
  357              	.LVL48:
-  49:sd.c          ****     FS_FClose(pFile);
- 358              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 358              		.loc 1 48 0
  359 0106 0122     		movs	r2, #1
  360 0108 2E49     		ldr	r1, .L13+44
  361 010a FFF7FEFF 		bl	FS_Write
  362              	.LVL49:
-  50:sd.c          **** }
- 363              		.loc 1 50 0
+  49:sd.c          **** }
+ 363              		.loc 1 49 0
  364 010e 3046     		mov	r0, r6
  365 0110 FFF7FEFF 		bl	FS_FClose
  366              	.LVL50:
  367              	.LBE33:
  368              	.LBE32:
-  74:sd.c          ****     //Id;Vds OR Ic;Vce
-  75:sd.c          ****     append_file(file_name,temp_str);
-  76:sd.c          ****     append_file(file_name,"\n");
-  77:sd.c          ****     append_file(file_name,y_label[device_selection/2]);
- 369              		.loc 1 77 0
+  73:sd.c          ****     //Id;Vds OR Ic;Vce
+  74:sd.c          ****     append_file(file_name,temp_str);
+  75:sd.c          ****     append_file(file_name,"\n");
+  76:sd.c          ****     append_file(file_name,y_label[device_selection/2]);
+ 369              		.loc 1 76 0
  370 0114 04EB4404 		add	r4, r4, r4, lsl #1
  371 0118 02AB     		add	r3, sp, #8
  372              	.LBB34:
  373              	.LBB35:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 374              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 374              		.loc 1 47 0
  375 011a 2749     		ldr	r1, .L13+32
  376 011c 3846     		mov	r0, r7
  377              	.LBE35:
  378              	.LBE34:
- 379              		.loc 1 77 0
+ 379              		.loc 1 76 0
  380 011e 1C44     		add	r4, r4, r3
  381              	.LVL51:
  382              	.LBB37:
  383              	.LBB36:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 384              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 384              		.loc 1 47 0
  385 0120 FFF7FEFF 		bl	FS_FOpen
  386              	.LVL52:
  387 0124 0646     		mov	r6, r0
  388              	.LVL53:
-  49:sd.c          ****     FS_FClose(pFile);
- 389              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 389              		.loc 1 48 0
  390 0126 2046     		mov	r0, r4
  391              	.LVL54:
  392 0128 FFF7FEFF 		bl	strlen
  393              	.LVL55:
  394 012c 2146     		mov	r1, r4
  395 012e 0246     		mov	r2, r0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 10
-
-
  396 0130 3046     		mov	r0, r6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 10
+
+
  397 0132 FFF7FEFF 		bl	FS_Write
  398              	.LVL56:
-  50:sd.c          **** }
- 399              		.loc 1 50 0
+  49:sd.c          **** }
+ 399              		.loc 1 49 0
  400 0136 3046     		mov	r0, r6
  401 0138 FFF7FEFF 		bl	FS_FClose
  402              	.LVL57:
@@ -553,55 +552,55 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  404              	.LBE37:
  405              	.LBB38:
  406              	.LBB39:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 407              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 407              		.loc 1 47 0
  408 013c 1E49     		ldr	r1, .L13+32
  409 013e 3846     		mov	r0, r7
  410 0140 FFF7FEFF 		bl	FS_FOpen
  411              	.LVL58:
  412 0144 0446     		mov	r4, r0
  413              	.LVL59:
-  49:sd.c          ****     FS_FClose(pFile);
- 414              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 414              		.loc 1 48 0
  415 0146 0122     		movs	r2, #1
  416 0148 1F49     		ldr	r1, .L13+48
  417 014a FFF7FEFF 		bl	FS_Write
  418              	.LVL60:
-  50:sd.c          **** }
- 419              		.loc 1 50 0
+  49:sd.c          **** }
+ 419              		.loc 1 49 0
  420 014e 2046     		mov	r0, r4
  421 0150 FFF7FEFF 		bl	FS_FClose
  422              	.LVL61:
  423              	.LBE39:
  424              	.LBE38:
-  78:sd.c          ****     append_file(file_name,",");
-  79:sd.c          ****     append_file(file_name,x_label[device_selection/2]);
- 425              		.loc 1 79 0
+  77:sd.c          ****     append_file(file_name,",");
+  78:sd.c          ****     append_file(file_name,x_label[device_selection/2]);
+ 425              		.loc 1 78 0
  426 0154 04AB     		add	r3, sp, #16
  427              	.LBB40:
  428              	.LBB41:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 429              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 429              		.loc 1 47 0
  430 0156 1849     		ldr	r1, .L13+32
  431 0158 3846     		mov	r0, r7
  432              	.LBE41:
  433              	.LBE40:
- 434              		.loc 1 79 0
+ 434              		.loc 1 78 0
  435 015a 5C19     		adds	r4, r3, r5
  436              	.LVL62:
  437              	.LBB43:
  438              	.LBB42:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 439              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 439              		.loc 1 47 0
  440 015c FFF7FEFF 		bl	FS_FOpen
  441              	.LVL63:
  442 0160 0546     		mov	r5, r0
  443              	.LVL64:
-  49:sd.c          ****     FS_FClose(pFile);
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 11
+  48:sd.c          ****     FS_FClose(pFile);
+ 444              		.loc 1 48 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 11
 
 
- 444              		.loc 1 49 0
  445 0162 2046     		mov	r0, r4
  446              	.LVL65:
  447 0164 FFF7FEFF 		bl	strlen
@@ -611,8 +610,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  451 016c 2846     		mov	r0, r5
  452 016e FFF7FEFF 		bl	FS_Write
  453              	.LVL67:
-  50:sd.c          **** }
- 454              		.loc 1 50 0
+  49:sd.c          **** }
+ 454              		.loc 1 49 0
  455 0172 2846     		mov	r0, r5
  456 0174 FFF7FEFF 		bl	FS_FClose
  457              	.LVL68:
@@ -620,30 +619,30 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  459              	.LBE43:
  460              	.LBB44:
  461              	.LBB45:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 462              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 462              		.loc 1 47 0
  463 0178 3846     		mov	r0, r7
  464 017a 0F49     		ldr	r1, .L13+32
  465 017c FFF7FEFF 		bl	FS_FOpen
  466              	.LVL69:
  467 0180 0446     		mov	r4, r0
  468              	.LVL70:
-  49:sd.c          ****     FS_FClose(pFile);
- 469              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 469              		.loc 1 48 0
  470 0182 0122     		movs	r2, #1
  471 0184 0F49     		ldr	r1, .L13+44
  472 0186 FFF7FEFF 		bl	FS_Write
  473              	.LVL71:
-  50:sd.c          **** }
- 474              		.loc 1 50 0
+  49:sd.c          **** }
+ 474              		.loc 1 49 0
  475 018a 2046     		mov	r0, r4
  476 018c FFF7FEFF 		bl	FS_FClose
  477              	.LVL72:
  478              	.LBE45:
  479              	.LBE44:
-  80:sd.c          ****     append_file(file_name,"\n");
-  81:sd.c          **** }
- 480              		.loc 1 81 0
+  79:sd.c          ****     append_file(file_name,"\n");
+  80:sd.c          **** }
+ 480              		.loc 1 80 0
  481 0190 16B0     		add	sp, sp, #88
  482              		.cfi_def_cfa_offset 32
  483              		@ sp needed
@@ -658,10 +657,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  492 01a4 5C000000 		.word	.LC3
  493 01a8 56647300 		.word	7562326
  494 01ac 56636500 		.word	6644566
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 12
-
-
  495 01b0 56677300 		.word	7563094
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 12
+
+
  496 01b4 00000000 		.word	.LC0
  497 01b8 04000000 		.word	.LC1
  498 01bc 0C000000 		.word	.LC6
@@ -681,10 +680,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  512              		.type	write_data, %function
  513              	write_data:
  514              	.LFB4:
-  82:sd.c          **** 
-  83:sd.c          **** void write_data(char * file_name, double Id, unsigned char Vds_code, unsigned char device_selection
-  84:sd.c          **** {
- 515              		.loc 1 84 0
+  81:sd.c          **** 
+  82:sd.c          **** void write_data(char * file_name, double Id, unsigned char Vds_code, unsigned char device_selection
+  83:sd.c          **** {
+ 515              		.loc 1 83 0
  516              		.cfi_startproc
  517              		@ args = 8, pretend = 0, frame = 16
  518              		@ frame_needed = 0, uses_anonymous_args = 0
@@ -700,32 +699,32 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  528              		.cfi_offset 14, -4
  529 0004 85B0     		sub	sp, sp, #20
  530              		.cfi_def_cfa_offset 48
- 531              		.loc 1 84 0
+ 531              		.loc 1 83 0
  532 0006 9DF83410 		ldrb	r1, [sp, #52]	@ zero_extendqisi2
  533 000a 0446     		mov	r4, r0
-  85:sd.c          ****     char temp_str[10];
-  86:sd.c          ****     double Vds;
-  87:sd.c          ****     if(device_selection < 2)
- 534              		.loc 1 87 0
- 535 000c 0129     		cmp	r1, #1
   84:sd.c          ****     char temp_str[10];
- 536              		.loc 1 84 0
+  85:sd.c          ****     double Vds;
+  86:sd.c          ****     if(device_selection < 2)
+ 534              		.loc 1 86 0
+ 535 000c 0129     		cmp	r1, #1
+  83:sd.c          ****     char temp_str[10];
+ 536              		.loc 1 83 0
  537 000e 9046     		mov	r8, r2
  538 0010 9946     		mov	r9, r3
  539 0012 9DF83000 		ldrb	r0, [sp, #48]	@ zero_extendqisi2
  540              	.LVL75:
- 541              		.loc 1 87 0
+ 541              		.loc 1 86 0
  542 0016 57D9     		bls	.L19
-  88:sd.c          ****     {
-  89:sd.c          ****         Vds = Vds_code/256.0*4.096*3;
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 13
+  87:sd.c          ****     {
+  88:sd.c          ****         Vds = Vds_code/256.0*4.096*3;
+  89:sd.c          ****     }
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 13
 
 
-  90:sd.c          ****     }
-  91:sd.c          ****     else
-  92:sd.c          ****     {
-  93:sd.c          ****         Vds = Vds_code/256.0*4.096*4;
- 543              		.loc 1 93 0
+  90:sd.c          ****     else
+  91:sd.c          ****     {
+  92:sd.c          ****         Vds = Vds_code/256.0*4.096*4;
+ 543              		.loc 1 92 0
  544 0018 FFF7FEFF 		bl	__aeabi_i2d
  545              	.LVL76:
  546 001c 0022     		movs	r2, #0
@@ -744,9 +743,9 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  559 0038 0F46     		mov	r7, r1
  560              	.LVL80:
  561              	.L17:
-  94:sd.c          ****     }
-  95:sd.c          ****     sprintf(temp_str,"%9f",Id);
- 562              		.loc 1 95 0
+  93:sd.c          ****     }
+  94:sd.c          ****     sprintf(temp_str,"%9f",Id);
+ 562              		.loc 1 94 0
  563 003a 4B46     		mov	r3, r9
  564 003c 4246     		mov	r2, r8
  565 003e 01A8     		add	r0, sp, #4
@@ -755,16 +754,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  568              	.LVL81:
  569              	.LBB54:
  570              	.LBB55:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 571              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 571              		.loc 1 47 0
  572 0046 2F49     		ldr	r1, .L20+20
  573 0048 2046     		mov	r0, r4
  574 004a FFF7FEFF 		bl	FS_FOpen
  575              	.LVL82:
  576 004e 0546     		mov	r5, r0
  577              	.LVL83:
-  49:sd.c          ****     FS_FClose(pFile);
- 578              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 578              		.loc 1 48 0
  579 0050 01A8     		add	r0, sp, #4
  580              	.LVL84:
  581 0052 FFF7FEFF 		bl	strlen
@@ -775,43 +774,43 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  586 005a 2846     		mov	r0, r5
  587 005c FFF7FEFF 		bl	FS_Write
  588              	.LVL87:
-  50:sd.c          **** }
- 589              		.loc 1 50 0
+  49:sd.c          **** }
+ 589              		.loc 1 49 0
  590 0060 2846     		mov	r0, r5
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 14
-
-
  591 0062 FFF7FEFF 		bl	FS_FClose
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 14
+
+
  592              	.LVL88:
  593              	.LBE55:
  594              	.LBE54:
  595              	.LBB56:
  596              	.LBB57:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 597              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 597              		.loc 1 47 0
  598 0066 2749     		ldr	r1, .L20+20
  599 0068 2046     		mov	r0, r4
  600 006a FFF7FEFF 		bl	FS_FOpen
  601              	.LVL89:
  602 006e 0546     		mov	r5, r0
  603              	.LVL90:
-  49:sd.c          ****     FS_FClose(pFile);
- 604              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 604              		.loc 1 48 0
  605 0070 0122     		movs	r2, #1
  606 0072 2549     		ldr	r1, .L20+24
  607 0074 FFF7FEFF 		bl	FS_Write
  608              	.LVL91:
-  50:sd.c          **** }
- 609              		.loc 1 50 0
+  49:sd.c          **** }
+ 609              		.loc 1 49 0
  610 0078 2846     		mov	r0, r5
  611 007a FFF7FEFF 		bl	FS_FClose
  612              	.LVL92:
  613              	.LBE57:
  614              	.LBE56:
-  96:sd.c          ****     append_file(file_name,temp_str);//print Id Value
-  97:sd.c          ****     append_file(file_name,",");
-  98:sd.c          ****     sprintf(temp_str,"%5f",Vds);
- 615              		.loc 1 98 0
+  95:sd.c          ****     append_file(file_name,temp_str);//print Id Value
+  96:sd.c          ****     append_file(file_name,",");
+  97:sd.c          ****     sprintf(temp_str,"%5f",Vds);
+ 615              		.loc 1 97 0
  616 007e 3B46     		mov	r3, r7
  617 0080 3246     		mov	r2, r6
  618 0082 01A8     		add	r0, sp, #4
@@ -820,16 +819,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  621              	.LVL93:
  622              	.LBB58:
  623              	.LBB59:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 624              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 624              		.loc 1 47 0
  625 008a 1E49     		ldr	r1, .L20+20
  626 008c 2046     		mov	r0, r4
  627 008e FFF7FEFF 		bl	FS_FOpen
  628              	.LVL94:
  629 0092 0546     		mov	r5, r0
  630              	.LVL95:
-  49:sd.c          ****     FS_FClose(pFile);
- 631              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 631              		.loc 1 48 0
  632 0094 01A8     		add	r0, sp, #4
  633              	.LVL96:
  634 0096 FFF7FEFF 		bl	strlen
@@ -838,13 +837,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  637              	.LVL98:
  638 009c 0246     		mov	r2, r0
  639 009e 2846     		mov	r0, r5
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 15
-
-
  640 00a0 FFF7FEFF 		bl	FS_Write
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 15
+
+
  641              	.LVL99:
-  50:sd.c          **** }
- 642              		.loc 1 50 0
+  49:sd.c          **** }
+ 642              		.loc 1 49 0
  643 00a4 2846     		mov	r0, r5
  644 00a6 FFF7FEFF 		bl	FS_FClose
  645              	.LVL100:
@@ -852,31 +851,31 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  647              	.LBE58:
  648              	.LBB60:
  649              	.LBB61:
-  48:sd.c          ****     FS_Write(pFile,text,strlen(text));
- 650              		.loc 1 48 0
+  47:sd.c          ****     FS_Write(pFile,text,strlen(text));
+ 650              		.loc 1 47 0
  651 00aa 2046     		mov	r0, r4
  652 00ac 1549     		ldr	r1, .L20+20
  653 00ae FFF7FEFF 		bl	FS_FOpen
  654              	.LVL101:
  655 00b2 0446     		mov	r4, r0
  656              	.LVL102:
-  49:sd.c          ****     FS_FClose(pFile);
- 657              		.loc 1 49 0
+  48:sd.c          ****     FS_FClose(pFile);
+ 657              		.loc 1 48 0
  658 00b4 0122     		movs	r2, #1
  659 00b6 1649     		ldr	r1, .L20+32
  660 00b8 FFF7FEFF 		bl	FS_Write
  661              	.LVL103:
-  50:sd.c          **** }
- 662              		.loc 1 50 0
+  49:sd.c          **** }
+ 662              		.loc 1 49 0
  663 00bc 2046     		mov	r0, r4
  664 00be FFF7FEFF 		bl	FS_FClose
  665              	.LVL104:
  666              	.LBE61:
  667              	.LBE60:
-  99:sd.c          ****     append_file(file_name,temp_str); //print Vds value
- 100:sd.c          ****     append_file(file_name,"\n");
- 101:sd.c          **** }...
- 668              		.loc 1 101 0
+  98:sd.c          ****     append_file(file_name,temp_str); //print Vds value
+  99:sd.c          ****     append_file(file_name,"\n");
+ 100:sd.c          **** }...
+ 668              		.loc 1 100 0
  669 00c2 05B0     		add	sp, sp, #20
  670              		.cfi_remember_state
  671              		.cfi_def_cfa_offset 28
@@ -885,8 +884,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  674              	.LVL105:
  675              	.L19:
  676              		.cfi_restore_state
-  89:sd.c          ****         Vds = Vds_code/256.0*4.096*3;
- 677              		.loc 1 89 0
+  88:sd.c          ****         Vds = Vds_code/256.0*4.096*3;
+ 677              		.loc 1 88 0
  678 00c8 FFF7FEFF 		bl	__aeabi_i2d
  679              	.LVL106:
  680 00cc 0022     		movs	r2, #0
@@ -898,10 +897,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  686 00da FFF7FEFF 		bl	__aeabi_dmul
  687              	.LVL108:
  688 00de 0022     		movs	r2, #0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 16
-
-
  689 00e0 0C4B     		ldr	r3, .L20+36
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 16
+
+
  690 00e2 FFF7FEFF 		bl	__aeabi_dmul
  691              	.LVL109:
  692 00e6 0646     		mov	r6, r0
@@ -927,8 +926,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  712              		.section	.rodata.str1.4,"aMS",%progbits,1
  713              		.align	2
  714              	.LC0:
- 715 0000 7700     		.ascii	"w\000"
- 716 0002 0000     		.space	2
+ 715 0000 772B00   		.ascii	"w+\000"
+ 716 0003 00       		.space	1
  717              	.LC1:
  718 0004 6100     		.ascii	"a\000"
  719 0006 0000     		.space	2
@@ -958,10 +957,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  738 0057 00       		.space	1
  739              	.LC2:
  740 0058 496400   		.ascii	"Id\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 17
-
-
  741 005b 00       		.space	1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 17
+
+
  742              	.LC3:
  743 005c 496300   		.ascii	"Ic\000"
  744 005f 00       		.space	1
@@ -1018,10 +1017,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  795 0054 696E7400 		.ascii	"int\000"
  796 0058 02       		.uleb128 0x2
  797 0059 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 18
-
-
  798 005a 08       		.byte	0x8
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 18
+
+
  799 005b C1000000 		.4byte	.LASF4
  800 005f 02       		.uleb128 0x2
  801 0060 04       		.byte	0x4
@@ -1078,10 +1077,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  852 00c0 22       		.byte	0x22
  853 00c1 74000000 		.4byte	0x74
  854 00c5 09       		.uleb128 0x9
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 19
-
-
  855 00c6 B1000000 		.4byte	.LASF17
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 19
+
+
  856 00ca 01       		.byte	0x1
  857 00cb 24       		.byte	0x24
  858 00cc 7A000000 		.4byte	0x7a
@@ -1138,10 +1137,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  909 013e 0E       		.uleb128 0xe
  910 013f 01       		.uleb128 0x1
  911 0140 50       		.byte	0x50
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 20
-
-
  912 0141 02       		.uleb128 0x2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 20
+
+
  913 0142 74       		.byte	0x74
  914 0143 00       		.sleb128 0
  915 0144 0E       		.uleb128 0xe
@@ -1158,23 +1157,23 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  926 0155 07       		.uleb128 0x7
  927 0156 80010000 		.4byte	.LASF16
  928 015a 01       		.byte	0x1
- 929 015b 2D       		.byte	0x2d
+ 929 015b 2C       		.byte	0x2c
  930 015c 01       		.byte	0x1
  931 015d 83010000 		.4byte	0x183
  932 0161 08       		.uleb128 0x8
  933 0162 8C010000 		.4byte	.LASF13
  934 0166 01       		.byte	0x1
- 935 0167 2D       		.byte	0x2d
+ 935 0167 2C       		.byte	0x2c
  936 0168 74000000 		.4byte	0x74
  937 016c 08       		.uleb128 0x8
  938 016d AC000000 		.4byte	.LASF14
  939 0171 01       		.byte	0x1
- 940 0172 2D       		.byte	0x2d
+ 940 0172 2C       		.byte	0x2c
  941 0173 74000000 		.4byte	0x74
  942 0177 09       		.uleb128 0x9
  943 0178 B1000000 		.4byte	.LASF17
  944 017c 01       		.byte	0x1
- 945 017d 2F       		.byte	0x2f
+ 945 017d 2E       		.byte	0x2e
  946 017e 7A000000 		.4byte	0x7a
  947 0182 00       		.byte	0
  948 0183 0A       		.uleb128 0xa
@@ -1198,10 +1197,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  966 01b6 F10A0000 		.4byte	0xaf1
  967 01ba CF010000 		.4byte	0x1cf
  968 01be 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 21
-
-
  969 01bf 01       		.uleb128 0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 21
+
+
  970 01c0 50       		.byte	0x50
  971 01c1 03       		.uleb128 0x3
  972 01c2 F3       		.byte	0xf3
@@ -1249,7 +1248,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1014 0207 10       		.uleb128 0x10
  1015 0208 34020000 		.4byte	.LASF26
  1016 020c 01       		.byte	0x1
- 1017 020d 35       		.byte	0x35
+ 1017 020d 34       		.byte	0x34
  1018 020e 00000000 		.4byte	.LFB3
  1019 0212 CC010000 		.4byte	.LFE3-.LFB3
  1020 0216 01       		.uleb128 0x1
@@ -1258,34 +1257,34 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1023 021c 11       		.uleb128 0x11
  1024 021d 8C010000 		.4byte	.LASF13
  1025 0221 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 22
+ 1026 0222 34       		.byte	0x34
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 22
 
 
- 1026 0222 35       		.byte	0x35
  1027 0223 74000000 		.4byte	0x74
  1028 0227 EC000000 		.4byte	.LLST6
  1029 022b 11       		.uleb128 0x11
  1030 022c 96010000 		.4byte	.LASF18
  1031 0230 01       		.byte	0x1
- 1032 0231 35       		.byte	0x35
+ 1032 0231 34       		.byte	0x34
  1033 0232 58000000 		.4byte	0x58
  1034 0236 18010000 		.4byte	.LLST7
  1035 023a 11       		.uleb128 0x11
  1036 023b B7000000 		.4byte	.LASF19
  1037 023f 01       		.byte	0x1
- 1038 0240 35       		.byte	0x35
+ 1038 0240 34       		.byte	0x34
  1039 0241 58000000 		.4byte	0x58
  1040 0245 39010000 		.4byte	.LLST8
  1041 0249 11       		.uleb128 0x11
  1042 024a 48010000 		.4byte	.LASF20
  1043 024e 01       		.byte	0x1
- 1044 024f 35       		.byte	0x35
+ 1044 024f 34       		.byte	0x34
  1045 0250 B3070000 		.4byte	0x7b3
  1046 0254 5A010000 		.4byte	.LLST9
  1047 0258 12       		.uleb128 0x12
  1048 0259 7D020000 		.4byte	.LASF21
  1049 025d 01       		.byte	0x1
- 1050 025e 37       		.byte	0x37
+ 1050 025e 36       		.byte	0x36
  1051 025f B9070000 		.4byte	0x7b9
  1052 0263 03       		.uleb128 0x3
  1053 0264 91       		.byte	0x91
@@ -1293,7 +1292,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1055 0267 12       		.uleb128 0x12
  1056 0268 65010000 		.4byte	.LASF22
  1057 026c 01       		.byte	0x1
- 1058 026d 3A       		.byte	0x3a
+ 1058 026d 39       		.byte	0x39
  1059 026e CF070000 		.4byte	0x7cf
  1060 0272 03       		.uleb128 0x3
  1061 0273 91       		.byte	0x91
@@ -1301,7 +1300,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1063 0276 12       		.uleb128 0x12
  1064 0277 4F020000 		.4byte	.LASF23
  1065 027b 01       		.byte	0x1
- 1066 027c 3D       		.byte	0x3d
+ 1066 027c 3C       		.byte	0x3c
  1067 027d CF070000 		.4byte	0x7cf
  1068 0281 03       		.uleb128 0x3
  1069 0282 91       		.byte	0x91
@@ -1309,7 +1308,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1071 0285 12       		.uleb128 0x12
  1072 0286 46020000 		.4byte	.LASF24
  1073 028a 01       		.byte	0x1
- 1074 028b 40       		.byte	0x40
+ 1074 028b 3F       		.byte	0x3f
  1075 028c E5070000 		.4byte	0x7e5
  1076 0290 03       		.uleb128 0x3
  1077 0291 91       		.byte	0x91
@@ -1317,11 +1316,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1079 0294 12       		.uleb128 0x12
  1080 0295 85020000 		.4byte	.LASF25
  1081 0299 01       		.byte	0x1
- 1082 029a 41       		.byte	0x41
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 23
-
-
+ 1082 029a 40       		.byte	0x40
  1083 029b F5070000 		.4byte	0x7f5
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 23
+
+
  1084 029f 03       		.uleb128 0x3
  1085 02a0 91       		.byte	0x91
  1086 02a1 A87F     		.sleb128 -88
@@ -1330,7 +1329,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1089 02a8 6C000000 		.4byte	.LBB20
  1090 02ac 20000000 		.4byte	.LBE20-.LBB20
  1091 02b0 01       		.byte	0x1
- 1092 02b1 44       		.byte	0x44
+ 1092 02b1 43       		.byte	0x43
  1093 02b2 39030000 		.4byte	0x339
  1094 02b6 0B       		.uleb128 0xb
  1095 02b7 BA000000 		.4byte	0xba
@@ -1378,10 +1377,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1137 0315 27030000 		.4byte	0x327
  1138 0319 0E       		.uleb128 0xe
  1139 031a 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 24
-
-
  1140 031b 50       		.byte	0x50
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 24
+
+
  1141 031c 02       		.uleb128 0x2
  1142 031d 74       		.byte	0x74
  1143 031e 00       		.sleb128 0
@@ -1409,7 +1408,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1165 033e 92000000 		.4byte	.LBB22
  1166 0342 00000000 		.4byte	.Ldebug_ranges0+0
  1167 0346 01       		.byte	0x1
- 1168 0347 47       		.byte	0x47
+ 1168 0347 46       		.byte	0x46
  1169 0348 C9030000 		.4byte	0x3c9
  1170 034c 0B       		.uleb128 0xb
  1171 034d 6C010000 		.4byte	0x16c
@@ -1438,10 +1437,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1194 0382 05       		.uleb128 0x5
  1195 0383 03       		.byte	0x3
  1196 0384 04000000 		.4byte	.LC1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 25
-
-
  1197 0388 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 25
+
+
  1198 0389 0D       		.uleb128 0xd
  1199 038a A4000000 		.4byte	.LVL32
  1200 038e FD0A0000 		.4byte	0xafd
@@ -1487,7 +1486,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1240 03ce B4000000 		.4byte	.LBB26
  1241 03d2 18000000 		.4byte	.Ldebug_ranges0+0x18
  1242 03d6 01       		.byte	0x1
- 1243 03d7 48       		.byte	0x48
+ 1243 03d7 47       		.byte	0x47
  1244 03d8 4D040000 		.4byte	0x44d
  1245 03dc 0B       		.uleb128 0xb
  1246 03dd 6C010000 		.4byte	0x16c
@@ -1498,10 +1497,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1251 03ee 17       		.uleb128 0x17
  1252 03ef 18000000 		.4byte	.Ldebug_ranges0+0x18
  1253 03f3 0C       		.uleb128 0xc
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 26
-
-
  1254 03f4 77010000 		.4byte	0x177
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 26
+
+
  1255 03f8 86020000 		.4byte	.LLST18
  1256 03fc 0D       		.uleb128 0xd
  1257 03fd BC000000 		.4byte	.LVL35
@@ -1558,11 +1557,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1308 044e 55010000 		.4byte	0x155
  1309 0452 DC000000 		.4byte	.LBB30
  1310 0456 20000000 		.4byte	.LBE30-.LBB30
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 27
-
-
  1311 045a 01       		.byte	0x1
- 1312 045b 4B       		.byte	0x4b
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 27
+
+
+ 1312 045b 4A       		.byte	0x4a
  1313 045c E1040000 		.4byte	0x4e1
  1314 0460 0B       		.uleb128 0xb
  1315 0461 6C010000 		.4byte	0x16c
@@ -1618,10 +1617,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1365 04c9 01       		.uleb128 0x1
  1366 04ca 51       		.byte	0x51
  1367 04cb 02       		.uleb128 0x2
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 28
-
-
  1368 04cc 7D       		.byte	0x7d
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 28
+
+
  1369 04cd 00       		.sleb128 0
  1370 04ce 00       		.byte	0
  1371 04cf 15       		.uleb128 0x15
@@ -1641,7 +1640,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1385 04e6 FC000000 		.4byte	.LBB32
  1386 04ea 18000000 		.4byte	.LBE32-.LBB32
  1387 04ee 01       		.byte	0x1
- 1388 04ef 4C       		.byte	0x4c
+ 1388 04ef 4B       		.byte	0x4b
  1389 04f0 69050000 		.4byte	0x569
  1390 04f4 0B       		.uleb128 0xb
  1391 04f5 6C010000 		.4byte	0x16c
@@ -1678,10 +1677,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1422 053e 57050000 		.4byte	0x557
  1423 0542 0E       		.uleb128 0xe
  1424 0543 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 29
-
-
  1425 0544 50       		.byte	0x50
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 29
+
+
  1426 0545 02       		.uleb128 0x2
  1427 0546 76       		.byte	0x76
  1428 0547 00       		.sleb128 0
@@ -1714,7 +1713,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1455 056e 1A010000 		.4byte	.LBB34
  1456 0572 30000000 		.4byte	.Ldebug_ranges0+0x30
  1457 0576 01       		.byte	0x1
- 1458 0577 4D       		.byte	0x4d
+ 1458 0577 4C       		.byte	0x4c
  1459 0578 F9050000 		.4byte	0x5f9
  1460 057c 0B       		.uleb128 0xb
  1461 057d 6C010000 		.4byte	0x16c
@@ -1738,10 +1737,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1479 05ad 77       		.byte	0x77
  1480 05ae 00       		.sleb128 0
  1481 05af 0E       		.uleb128 0xe
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 30
-
-
  1482 05b0 01       		.uleb128 0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 30
+
+
  1483 05b1 51       		.byte	0x51
  1484 05b2 05       		.uleb128 0x5
  1485 05b3 03       		.byte	0x3
@@ -1792,16 +1791,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1530 05fe 3C010000 		.4byte	.LBB38
  1531 0602 18000000 		.4byte	.LBE38-.LBB38
  1532 0606 01       		.byte	0x1
- 1533 0607 4E       		.byte	0x4e
+ 1533 0607 4D       		.byte	0x4d
  1534 0608 81060000 		.4byte	0x681
  1535 060c 0B       		.uleb128 0xb
  1536 060d 6C010000 		.4byte	0x16c
  1537 0611 75030000 		.4byte	.LLST28
  1538 0615 0B       		.uleb128 0xb
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 31
-
-
  1539 0616 61010000 		.4byte	0x161
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 31
+
+
  1540 061a 8D030000 		.4byte	.LLST29
  1541 061e 14       		.uleb128 0x14
  1542 061f 3C010000 		.4byte	.LBB39
@@ -1858,17 +1857,17 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1593 067c 74       		.byte	0x74
  1594 067d 00       		.sleb128 0
  1595 067e 00       		.byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 32
-
-
  1596 067f 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 32
+
+
  1597 0680 00       		.byte	0
  1598 0681 16       		.uleb128 0x16
  1599 0682 55010000 		.4byte	0x155
  1600 0686 56010000 		.4byte	.LBB40
  1601 068a 48000000 		.4byte	.Ldebug_ranges0+0x48
  1602 068e 01       		.byte	0x1
- 1603 068f 4F       		.byte	0x4f
+ 1603 068f 4E       		.byte	0x4e
  1604 0690 11070000 		.4byte	0x711
  1605 0694 0B       		.uleb128 0xb
  1606 0695 6C010000 		.4byte	0x16c
@@ -1918,10 +1917,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1650 06f4 50       		.byte	0x50
  1651 06f5 02       		.uleb128 0x2
  1652 06f6 75       		.byte	0x75
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 33
-
-
  1653 06f7 00       		.sleb128 0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 33
+
+
  1654 06f8 0E       		.uleb128 0xe
  1655 06f9 01       		.uleb128 0x1
  1656 06fa 51       		.byte	0x51
@@ -1946,7 +1945,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1675 0716 78010000 		.4byte	.LBB44
  1676 071a 18000000 		.4byte	.LBE44-.LBB44
  1677 071e 01       		.byte	0x1
- 1678 071f 50       		.byte	0x50
+ 1678 071f 4F       		.byte	0x4f
  1679 0720 99070000 		.4byte	0x799
  1680 0724 0B       		.uleb128 0xb
  1681 0725 6C010000 		.4byte	0x16c
@@ -1978,10 +1977,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1707 0760 04000000 		.4byte	.LC1
  1708 0764 00       		.byte	0
  1709 0765 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 34
-
-
  1710 0766 8A010000 		.4byte	.LVL71
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 34
+
+
  1711 076a 080B0000 		.4byte	0xb08
  1712 076e 87070000 		.4byte	0x787
  1713 0772 0E       		.uleb128 0xe
@@ -2038,10 +2037,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1764 07ba 66000000 		.4byte	0x66
  1765 07be CF070000 		.4byte	0x7cf
  1766 07c2 19       		.uleb128 0x19
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 35
-
-
  1767 07c3 5F000000 		.4byte	0x5f
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 35
+
+
  1768 07c7 01       		.byte	0x1
  1769 07c8 19       		.uleb128 0x19
  1770 07c9 5F000000 		.4byte	0x5f
@@ -2074,7 +2073,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1797 0805 1A       		.uleb128 0x1a
  1798 0806 A7010000 		.4byte	.LASF27
  1799 080a 01       		.byte	0x1
- 1800 080b 53       		.byte	0x53
+ 1800 080b 52       		.byte	0x52
  1801 080c 00000000 		.4byte	.LFB4
  1802 0810 18010000 		.4byte	.LFE4-.LFB4
  1803 0814 01       		.uleb128 0x1
@@ -2083,34 +2082,34 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1806 081a 11       		.uleb128 0x11
  1807 081b 8C010000 		.4byte	.LASF13
  1808 081f 01       		.byte	0x1
- 1809 0820 53       		.byte	0x53
+ 1809 0820 52       		.byte	0x52
  1810 0821 74000000 		.4byte	0x74
  1811 0825 4B040000 		.4byte	.LLST37
  1812 0829 1B       		.uleb128 0x1b
  1813 082a 496400   		.ascii	"Id\000"
  1814 082d 01       		.byte	0x1
- 1815 082e 53       		.byte	0x53
+ 1815 082e 52       		.byte	0x52
  1816 082f 25000000 		.4byte	0x25
  1817 0833 82040000 		.4byte	.LLST38
  1818 0837 11       		.uleb128 0x11
  1819 0838 07020000 		.4byte	.LASF28
  1820 083c 01       		.byte	0x1
- 1821 083d 53       		.byte	0x53
+ 1821 083d 52       		.byte	0x52
  1822 083e 58000000 		.4byte	0x58
  1823 0842 CA040000 		.4byte	.LLST39
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 36
-
-
  1824 0846 11       		.uleb128 0x11
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 36
+
+
  1825 0847 96010000 		.4byte	.LASF18
  1826 084b 01       		.byte	0x1
- 1827 084c 53       		.byte	0x53
+ 1827 084c 52       		.byte	0x52
  1828 084d 58000000 		.4byte	0x58
  1829 0851 EA040000 		.4byte	.LLST40
  1830 0855 12       		.uleb128 0x12
  1831 0856 46020000 		.4byte	.LASF24
  1832 085a 01       		.byte	0x1
- 1833 085b 55       		.byte	0x55
+ 1833 085b 54       		.byte	0x54
  1834 085c E10A0000 		.4byte	0xae1
  1835 0860 02       		.uleb128 0x2
  1836 0861 91       		.byte	0x91
@@ -2118,7 +2117,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1838 0863 1C       		.uleb128 0x1c
  1839 0864 56647300 		.ascii	"Vds\000"
  1840 0868 01       		.byte	0x1
- 1841 0869 56       		.byte	0x56
+ 1841 0869 55       		.byte	0x55
  1842 086a 25000000 		.4byte	0x25
  1843 086e 0A050000 		.4byte	.LLST41
  1844 0872 13       		.uleb128 0x13
@@ -2126,7 +2125,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1846 0877 46000000 		.4byte	.LBB54
  1847 087b 20000000 		.4byte	.LBE54-.LBB54
  1848 087f 01       		.byte	0x1
- 1849 0880 60       		.byte	0x60
+ 1849 0880 5F       		.byte	0x5f
  1850 0881 06090000 		.4byte	0x906
  1851 0885 0B       		.uleb128 0xb
  1852 0886 6C010000 		.4byte	0x16c
@@ -2158,10 +2157,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1878 08c1 04000000 		.4byte	.LC1
  1879 08c5 00       		.byte	0
  1880 08c6 0D       		.uleb128 0xd
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 37
-
-
  1881 08c7 56000000 		.4byte	.LVL85
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 37
+
+
  1882 08cb FD0A0000 		.4byte	0xafd
  1883 08cf DA080000 		.4byte	0x8da
  1884 08d3 0E       		.uleb128 0xe
@@ -2205,7 +2204,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1922 090b 66000000 		.4byte	.LBB56
  1923 090f 18000000 		.4byte	.LBE56-.LBB56
  1924 0913 01       		.byte	0x1
- 1925 0914 61       		.byte	0x61
+ 1925 0914 60       		.byte	0x60
  1926 0915 8E090000 		.4byte	0x98e
  1927 0919 0B       		.uleb128 0xb
  1928 091a 6C010000 		.4byte	0x16c
@@ -2218,10 +2217,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1935 0930 18000000 		.4byte	.LBE57-.LBB57
  1936 0934 0C       		.uleb128 0xc
  1937 0935 77010000 		.4byte	0x177
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 38
-
-
  1938 0939 D3050000 		.4byte	.LLST47
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 38
+
+
  1939 093d 0D       		.uleb128 0xd
  1940 093e 6E000000 		.4byte	.LVL89
  1941 0942 F10A0000 		.4byte	0xaf1
@@ -2278,10 +2277,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  1992 0993 8A000000 		.4byte	.LBB58
  1993 0997 20000000 		.4byte	.LBE58-.LBB58
  1994 099b 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 39
+ 1995 099c 62       		.byte	0x62
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 39
 
 
- 1995 099c 63       		.byte	0x63
  1996 099d 220A0000 		.4byte	0xa22
  1997 09a1 0B       		.uleb128 0xb
  1998 09a2 6C010000 		.4byte	0x16c
@@ -2338,10 +2337,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2049 0a0b 51       		.byte	0x51
  2050 0a0c 02       		.uleb128 0x2
  2051 0a0d 91       		.byte	0x91
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 40
-
-
  2052 0a0e 54       		.sleb128 -44
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 40
+
+
  2053 0a0f 00       		.byte	0
  2054 0a10 15       		.uleb128 0x15
  2055 0a11 AA000000 		.4byte	.LVL100
@@ -2360,7 +2359,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2068 0a27 AA000000 		.4byte	.LBB60
  2069 0a2b 18000000 		.4byte	.LBE60-.LBB60
  2070 0a2f 01       		.byte	0x1
- 2071 0a30 64       		.byte	0x64
+ 2071 0a30 63       		.byte	0x63
  2072 0a31 AA0A0000 		.4byte	0xaaa
  2073 0a35 0B       		.uleb128 0xb
  2074 0a36 6C010000 		.4byte	0x16c
@@ -2398,10 +2397,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2106 0a83 0E       		.uleb128 0xe
  2107 0a84 01       		.uleb128 0x1
  2108 0a85 50       		.byte	0x50
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 41
-
-
  2109 0a86 02       		.uleb128 0x2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 41
+
+
  2110 0a87 74       		.byte	0x74
  2111 0a88 00       		.sleb128 0
  2112 0a89 0E       		.uleb128 0xe
@@ -2458,10 +2457,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2163 0ad7 01       		.uleb128 0x1
  2164 0ad8 51       		.byte	0x51
  2165 0ad9 05       		.uleb128 0x5
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 42
-
-
  2166 0ada 03       		.byte	0x3
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 42
+
+
  2167 0adb 64000000 		.4byte	.LC11
  2168 0adf 00       		.byte	0
  2169 0ae0 00       		.byte	0
@@ -2518,10 +2517,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2220 000f 10       		.uleb128 0x10
  2221 0010 17       		.uleb128 0x17
  2222 0011 00       		.byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 43
-
-
  2223 0012 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 43
+
+
  2224 0013 02       		.uleb128 0x2
  2225 0014 24       		.uleb128 0x24
  2226 0015 00       		.byte	0
@@ -2578,10 +2577,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2277 0048 07       		.uleb128 0x7
  2278 0049 2E       		.uleb128 0x2e
  2279 004a 01       		.byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 44
-
-
  2280 004b 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 44
+
+
  2281 004c 19       		.uleb128 0x19
  2282 004d 03       		.uleb128 0x3
  2283 004e 0E       		.uleb128 0xe
@@ -2638,10 +2637,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2334 0082 19       		.uleb128 0x19
  2335 0083 01       		.uleb128 0x1
  2336 0084 13       		.uleb128 0x13
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 45
-
-
  2337 0085 00       		.byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 45
+
+
  2338 0086 00       		.byte	0
  2339 0087 0B       		.uleb128 0xb
  2340 0088 05       		.uleb128 0x5
@@ -2698,10 +2697,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2391 00c3 3F       		.uleb128 0x3f
  2392 00c4 19       		.uleb128 0x19
  2393 00c5 03       		.uleb128 0x3
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 46
-
-
  2394 00c6 0E       		.uleb128 0xe
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 46
+
+
  2395 00c7 3A       		.uleb128 0x3a
  2396 00c8 0B       		.uleb128 0xb
  2397 00c9 3B       		.uleb128 0x3b
@@ -2758,10 +2757,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2448 00fd 11       		.uleb128 0x11
  2449 00fe 01       		.uleb128 0x1
  2450 00ff 12       		.uleb128 0x12
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 47
-
-
  2451 0100 06       		.uleb128 0x6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 47
+
+
  2452 0101 58       		.uleb128 0x58
  2453 0102 0B       		.uleb128 0xb
  2454 0103 59       		.uleb128 0x59
@@ -2818,10 +2817,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2505 0138 49       		.uleb128 0x49
  2506 0139 13       		.uleb128 0x13
  2507 013a 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 48
-
-
  2508 013b 13       		.uleb128 0x13
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 48
+
+
  2509 013c 00       		.byte	0
  2510 013d 00       		.byte	0
  2511 013e 19       		.uleb128 0x19
@@ -2878,10 +2877,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2562 0172 00       		.byte	0
  2563 0173 03       		.uleb128 0x3
  2564 0174 08       		.uleb128 0x8
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 49
-
-
  2565 0175 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 49
+
+
  2566 0176 0B       		.uleb128 0xb
  2567 0177 3B       		.uleb128 0x3b
  2568 0178 0B       		.uleb128 0xb
@@ -2938,10 +2937,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2619 0013 0400     		.2byte	0x4
  2620 0015 F3       		.byte	0xf3
  2621 0016 01       		.uleb128 0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 50
-
-
  2622 0017 50       		.byte	0x50
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 50
+
+
  2623 0018 9F       		.byte	0x9f
  2624 0019 00000000 		.4byte	0
  2625 001d 00000000 		.4byte	0
@@ -2998,10 +2997,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2676 009f 0100     		.2byte	0x1
  2677 00a1 51       		.byte	0x51
  2678 00a2 06000000 		.4byte	.LVL10
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 51
-
-
  2679 00a6 22000000 		.4byte	.LVL16
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 51
+
+
  2680 00aa 0100     		.2byte	0x1
  2681 00ac 55       		.byte	0x55
  2682 00ad 22000000 		.4byte	.LVL16
@@ -3058,10 +3057,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2733 012e 01       		.uleb128 0x1
  2734 012f 51       		.byte	0x51
  2735 0130 9F       		.byte	0x9f
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 52
-
-
  2736 0131 00000000 		.4byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 52
+
+
  2737 0135 00000000 		.4byte	0
  2738              	.LLST8:
  2739 0139 00000000 		.4byte	.LVL18
@@ -3118,10 +3117,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2790 01b6 91       		.byte	0x91
  2791 01b7 A87F     		.sleb128 -88
  2792 01b9 9F       		.byte	0x9f
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 53
-
-
  2793 01ba 7E000000 		.4byte	.LVL25
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 53
+
+
  2794 01be 85000000 		.4byte	.LVL26-1
  2795 01c2 0100     		.2byte	0x1
  2796 01c4 51       		.byte	0x51
@@ -3178,10 +3177,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2847 024c B4000000 		.4byte	.LVL34
  2848 0250 0100     		.2byte	0x1
  2849 0252 5A       		.byte	0x5a
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 54
-
-
  2850 0253 00000000 		.4byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 54
+
+
  2851 0257 00000000 		.4byte	0
  2852              	.LLST16:
  2853 025b B4000000 		.4byte	.LVL34
@@ -3238,10 +3237,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2904              	.LLST22:
  2905 02e8 FC000000 		.4byte	.LVL46
  2906 02ec 14010000 		.4byte	.LVL50
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 55
-
-
  2907 02f0 0600     		.2byte	0x6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 55
+
+
  2908 02f2 03       		.byte	0x3
  2909 02f3 18000000 		.4byte	.LC8
  2910 02f7 9F       		.byte	0x9f
@@ -3298,10 +3297,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  2961 0380 1C000000 		.4byte	.LC9
  2962 0384 9F       		.byte	0x9f
  2963 0385 00000000 		.4byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 56
-
-
  2964 0389 00000000 		.4byte	0
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 56
+
+
  2965              	.LLST29:
  2966 038d 3C010000 		.4byte	.LVL57
  2967 0391 54010000 		.4byte	.LVL61
@@ -3358,10 +3357,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3018 041a 78010000 		.4byte	.LVL68
  3019 041e 90010000 		.4byte	.LVL72
  3020 0422 0100     		.2byte	0x1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 57
-
-
  3021 0424 57       		.byte	0x57
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 57
+
+
  3022 0425 00000000 		.4byte	0
  3023 0429 00000000 		.4byte	0
  3024              	.LLST36:
@@ -3418,10 +3417,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3075 04a1 9F       		.byte	0x9f
  3076 04a2 C8000000 		.4byte	.LVL105
  3077 04a6 CB000000 		.4byte	.LVL106-1
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 58
-
-
  3078 04aa 0600     		.2byte	0x6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 58
+
+
  3079 04ac 52       		.byte	0x52
  3080 04ad 93       		.byte	0x93
  3081 04ae 04       		.uleb128 0x4
@@ -3478,10 +3477,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3132 051a EA000000 		.4byte	.LVL110
  3133 051e 18010000 		.4byte	.LFE4
  3134 0522 0600     		.2byte	0x6
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 59
-
-
  3135 0524 56       		.byte	0x56
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 59
+
+
  3136 0525 93       		.byte	0x93
  3137 0526 04       		.uleb128 0x4
  3138 0527 57       		.byte	0x57
@@ -3538,10 +3537,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3189 05a4 00000000 		.4byte	0
  3190              	.LLST45:
  3191 05a8 66000000 		.4byte	.LVL88
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 60
-
-
  3192 05ac 7E000000 		.4byte	.LVL92
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 60
+
+
  3193 05b0 0600     		.2byte	0x6
  3194 05b2 03       		.byte	0x3
  3195 05b3 1C000000 		.4byte	.LC9
@@ -3598,10 +3597,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3246              	.LLST49:
  3247 0636 8A000000 		.4byte	.LVL93
  3248 063a AA000000 		.4byte	.LVL100
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 61
-
-
  3249 063e 0100     		.2byte	0x1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 61
+
+
  3250 0640 54       		.byte	0x54
  3251 0641 00000000 		.4byte	0
  3252 0645 00000000 		.4byte	0
@@ -3658,10 +3657,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3303 000b 00       		.byte	0
  3304 000c 0000     		.2byte	0
  3305 000e 0000     		.2byte	0
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 62
-
-
  3306 0010 00000000 		.4byte	.LFB1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 62
+
+
  3307 0014 2C000000 		.4byte	.LFE1-.LFB1
  3308 0018 00000000 		.4byte	.LFB2
  3309 001c 2C000000 		.4byte	.LFE2-.LFB2
@@ -3718,10 +3717,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3356 0000 46535F46 		.ascii	"FS_FClose\000"
  3356      436C6F73 
  3356      6500
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 63
-
-
  3357              	.LASF34:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 63
+
+
  3358 000a 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
  3358      43313120 
  3358      352E342E 
@@ -3778,10 +3777,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3376      30312E63 
  3377              	.LASF20:
  3378 0148 5667735F 		.ascii	"Vgs_double\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 64
-
-
  3378      646F7562 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 64
+
+
  3378      6C6500
  3379              	.LASF2:
  3380 0153 6C6F6E67 		.ascii	"long unsigned int\000"
@@ -3838,10 +3837,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3404 01da 63726561 		.ascii	"create_file_with_text\000"
  3404      74655F66 
  3404      696C655F 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 65
-
-
  3404      77697468 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 65
+
+
  3404      5F746578 
  3405              	.LASF12:
  3406 01f0 6C6F6E67 		.ascii	"long long unsigned int\000"
@@ -3898,10 +3897,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 1
  3429              	.LASF21:
  3430 027d 795F6C61 		.ascii	"y_label\000"
  3430      62656C00 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccVTaPsm.s 			page 66
-
-
  3431              	.LASF25:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccfyeMLz.s 			page 66
+
+
  3432 0285 62656769 		.ascii	"beginning_message\000"
  3432      6E6E696E 
  3432      675F6D65 

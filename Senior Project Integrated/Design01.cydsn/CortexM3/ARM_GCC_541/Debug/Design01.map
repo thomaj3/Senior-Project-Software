@@ -2153,40 +2153,39 @@ END GROUP
  .rodata        0x00007e84      0x34d .\CortexM3\ARM_GCC_541\Debug\font.o
  *fill*         0x000081d1        0x3 
  .rodata.str1.4
-                0x000081d4       0x64 .\CortexM3\ARM_GCC_541\Debug\sd.o
-                                 0x68 (size before relaxing)
- .rodata        0x00008238       0x68 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
-                0x00008238                AMux_1__addrTable
-                0x00008240                AMux_1__maskTable
-                0x00008244                AMux_2__addrTable
-                0x0000824c                AMux_2__maskTable
-                0x00008250                AMux_3__addrTable
-                0x00008260                AMux_3__maskTable
- .rodata        0x000082a0       0x78 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FS_Misc.o)
+                0x000081d4       0x68 .\CortexM3\ARM_GCC_541\Debug\sd.o
+ .rodata        0x0000823c       0x68 .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+                0x0000823c                AMux_1__addrTable
+                0x00008244                AMux_1__maskTable
+                0x00008248                AMux_2__addrTable
+                0x00008250                AMux_2__maskTable
+                0x00008254                AMux_3__addrTable
+                0x00008264                AMux_3__maskTable
+ .rodata        0x000082a4       0x78 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FS_Misc.o)
  .rodata.str1.1
-                0x00008318       0x30 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FS_Misc.o)
- .rodata        0x00008348       0x10 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FAT_Misc.o)
-                0x00008348                FAT_SFN_API
+                0x0000831c       0x30 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FS_Misc.o)
+ .rodata        0x0000834c       0x10 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FAT_Misc.o)
+                0x0000834c                FAT_SFN_API
  .rodata.str1.1
-                0x00008358        0x3 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FAT_Open.o)
- *fill*         0x0000835b        0x1 
- .rodata        0x0000835c       0x68 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(MMC_Drv.o)
-                0x000083a4                FS_MMC_SPI_Driver
+                0x0000835c        0x3 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(FAT_Open.o)
+ *fill*         0x0000835f        0x1 
+ .rodata        0x00008360       0x68 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(MMC_Drv.o)
+                0x000083a8                FS_MMC_SPI_Driver
  .rodata.str1.1
-                0x000083c4        0x4 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(MMC_Drv.o)
+                0x000083c8        0x4 .\emFile_V322c\LinkLibrary\PSoC5\GCC\libemf16nosnlfn.a(MMC_Drv.o)
  .rodata.str1.1
-                0x000083c8        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
+                0x000083cc        0x2 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-impure.o)
  .rodata.str1.1
-                0x000083ca       0x12 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
+                0x000083ce       0x12 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_float.o)
  .rodata.str1.1
-                0x000083dc       0x22 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
+                0x000083e0       0x22 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata.str1.1
-                0x000083fe        0xd c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
+                0x00008402        0xd c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-dtoa.o)
                                   0xf (size before relaxing)
  .rodata.str1.1
-                0x0000840b        0x6 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
+                0x0000840f        0x6 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-locale.o)
                                   0xb (size before relaxing)
- *fill*         0x00008411        0x7 
+ *fill*         0x00008415        0x3 
  .rodata.__mprec_tens
                 0x00008418       0xc8 c:/program files (x86)/cypress/psoc creator/4.2/psoc creator/import/gnu/arm/5.4.1/bin/../lib/gcc/arm-none-eabi/5.4.1/../../../../arm-none-eabi/lib/armv7-m\libg_nano.a(lib_a-mprec.o)
                 0x00008418                __mprec_tens

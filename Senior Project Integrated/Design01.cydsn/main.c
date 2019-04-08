@@ -139,11 +139,11 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
     for(i = 0; i < CURVE_NUM; i++)
     {
        write_header_info("data.txt",device_selection,i,Vgs_double); 
-        ADC_SAR_1_Wakeup();
+        ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j <VDS_NMOS_LENGTH; j++)
         {
             
-            Id_avg = 0.0;
+            Id_avg = 0.0;//reset Id Value
             //Averaging multiple tests to elminate noise
             for(k=0; k<AVG; k++)
             {
@@ -158,7 +158,7 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
                 Id_avg += Id;
             }
             Id_avg /= AVG;
-            write_data("data.txt",Id_avg,j,device_selection);
+            write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
 //            y_pixel = (int) ((Id_avg*Y_RES)/(1.25*y_max));
 //            x_pixel = (int) j;
@@ -282,12 +282,12 @@ int main(void)
 //    {
 //        draw_string(100,80,WHITE,"NO MOUNT");
 //    }
-    pFile = FS_FOpen("test.txt", "w");
+    pFile = FS_FOpen("test.txt", "+w");
 //    if (pFile == 0)
 //    {
 //        draw_string(100,100,WHITE,"NO OPEN");
 //    }
-    const char text[] = "Dick Butt";
+    const char text[] = "Can Write";
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
     
@@ -306,6 +306,7 @@ int main(void)
         if (Vth == 0)
         {
             draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND");
+            create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
             return 0;
         }
         Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
