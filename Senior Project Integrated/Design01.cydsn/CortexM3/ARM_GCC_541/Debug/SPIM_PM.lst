@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
   12:Generated_Source\PSoC5/SPIM_PM.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
   13:Generated_Source\PSoC5/SPIM_PM.c **** * You may use this file only in accordance with the license, terms, conditions,
   14:Generated_Source\PSoC5/SPIM_PM.c **** * disclaimers, and limitations in the end user license agreement accompanying
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 2
 
 
   15:Generated_Source\PSoC5/SPIM_PM.c **** * the software package with which this file was provided.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
   50              		.cfi_endproc
   51              	.LFE1:
   52              		.size	SPIM_RestoreConfig, .-SPIM_RestoreConfig
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 3
 
 
   53 0002 00BF     		.section	.text.SPIM_Sleep,"ax",%progbits
@@ -176,9 +176,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
   75              	.L5:
   76              		.align	2
   77              	.L4:
-  78 0010 93640040 		.word	1073767571
+  78 0010 92640040 		.word	1073767570
   79 0014 00000000 		.word	.LANCHOR0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 4
 
 
   80              		.cfi_endproc
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  128:Generated_Source\PSoC5/SPIM_PM.c ****         SPIM_rxBufferRead  = 0u;
  129:Generated_Source\PSoC5/SPIM_PM.c ****         SPIM_rxBufferWrite = 0u;
  130:Generated_Source\PSoC5/SPIM_PM.c ****     #endif /* (SPIM_RX_SOFTWARE_BUF_ENABLED) */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 5
 
 
  131:Generated_Source\PSoC5/SPIM_PM.c **** 
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  136              	.Ldebug_info0:
  137 0000 64010000 		.4byte	0x164
  138 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 6
 
 
  139 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  193 0073 2C000000 		.4byte	0x2c
  194 0077 02       		.uleb128 0x2
  195 0078 04       		.byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 7
 
 
  196 0079 04       		.byte	0x4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  250 00e0 D7000000 		.4byte	0xd7
  251 00e4 00000000 		.4byte	.LFB1
  252 00e8 02000000 		.4byte	.LFE1-.LFB1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 8
 
 
  253 00ec 01       		.uleb128 0x1
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  307 0167 00       		.byte	0
  308              		.section	.debug_abbrev,"",%progbits
  309              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 9
 
 
  310 0000 01       		.uleb128 0x1
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  364 0036 05       		.uleb128 0x5
  365 0037 35       		.uleb128 0x35
  366 0038 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 10
 
 
  367 0039 49       		.uleb128 0x49
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  421 006f 3B       		.uleb128 0x3b
  422 0070 0B       		.uleb128 0xb
  423 0071 27       		.uleb128 0x27
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 11
 
 
  424 0072 19       		.uleb128 0x19
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  478 00ad 00       		.byte	0
  479 00ae 00       		.byte	0
  480 00af 0D       		.uleb128 0xd
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 12
 
 
  481 00b0 898201   		.uleb128 0x4109
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  535 0024 1C000000 		.4byte	.LFE3-.LFB3
  536 0028 00000000 		.4byte	0
  537 002c 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 13
 
 
  538              		.section	.debug_ranges,"",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  566      6420696E 
  566      7400
  567              	.LASF18:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 14
 
 
  568 0071 5350494D 		.ascii	"SPIM_BACKUP_STRUCT\000"
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 1
  584      74696F6E 
  585              	.LASF11:
  586 01c7 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc1yxaLX.s 			page 15
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccY44xZS.s 			page 15
 
 
  586      00

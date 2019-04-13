@@ -5,6 +5,9 @@
 #include "math.h"
 #include "string.h"
 #include "settings.h"
+#include <FS.h>
+#include <Global.h>
+#include "sd.h"
 
 #define VDAC_G_B_MAX 255 //Max VDAC code for the Gate/Base 
 #define VDAC_D_C_MAX 188 //Max VDAC for the Drain/Common
@@ -14,11 +17,26 @@
 #define VCE_PNP_LENGTH  ((VDAC_D_C_MAX/VC_STEP_PNP) + 1)
 #define VDAC_N_1_VOLT 21
 #define VDAC_P_1_VOLT 13
-#define ADC_GAIN 50
+#define ADC_GAIN 52.0
 #define CURVE_MAX 10
 
 //The lengths of Drain or Common testing points
 
+void set_transistor_test_type(unsigned char device_selection)
+{
+    if(device_selection < 2)
+    {
+        AMux_1_Select(0);
+        AMux_2_Select(0);
+        AMux_3_Select(0);
+    }
+    else
+    {
+        AMux_1_Select(1);
+        AMux_2_Select(1);
+        AMux_3_Select(1);
+    }
+}
 //Conducts a test for a singular Vds and Vgs
 double single_test(unsigned char Vds, unsigned char Vgs)
 {
@@ -114,17 +132,18 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
     double Id;
     double Id_avg;
     char print_string[20];
-    
     int y_pixel_prev, x_pixel_prev;
     int y_pixel, x_pixel;
     int curve_color[CURVE_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
     
     for(i = 0; i < CURVE_NUM; i++)
     {
-        ADC_SAR_1_Wakeup();
+       write_header_info("data.txt",device_selection,i,Vgs_double); 
+        ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j <VDS_NMOS_LENGTH; j++)
         {
-            Id_avg = 0.0;
+            
+            Id_avg = 0.0;//reset Id Value
             //Averaging multiple tests to elminate noise
             for(k=0; k<AVG; k++)
             {
@@ -139,6 +158,7 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
                 Id_avg += Id;
             }
             Id_avg /= AVG;
+            write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES)/(1.25*y_max));
             x_pixel = (int) j;
@@ -166,9 +186,10 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
                 break;
         }
         draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string);
-        }
-        
     }
+    
+}
+
 
 int main(void)
 {
@@ -178,24 +199,29 @@ int main(void)
     SPIM_Start();
     Clock_Start();
     
+    
     // Resets screen
     Reset_Write(1);
-    CyDelay(500);
+    CyDelay(1000);
     Reset_Write(0);
-    CyDelay(500);
+    CyDelay(1000);
     Reset_Write(1);
-    CyDelay(500);
+    CyDelay(1000);
+    
+    
     
     // Calls start screen
     StartScreen();
     
     // Fills screen in black
-    fill_screen(BLACK);  
+    fill_screen(BLACK);
     
-//    isr_ClearPending();
-//    
-//    isr_Start();
-//    isr_Enable();
+    draw_choose_screen();   
+    
+    isr_ClearPending();
+    
+    isr_Start();
+    isr_Enable();
     
 //    // Test case for writing characters 0-9 and period
 //    uint16_t char_x = 5;
@@ -228,7 +254,7 @@ int main(void)
     int j;  //used for for loop iterations
     int k;  //used for for loop iterations
     
-    unsigned char device_selection = 1;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
+    unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
     double y_max_mA;                        //The highest plottable Id in mA    
     double x_max_mV = 10000;                   //the highest plottable Vds in mV
     
@@ -247,11 +273,30 @@ int main(void)
     double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};     //The output data of Id NMOS trace in mA
     double Output_data_x[VDS_NMOS_LENGTH];                      //The Vds points used. Used for plottings
     double Vgs_points_double[CURVE_NUM];                        //The actual Vgs output by DAC
+    FS_FILE * pFile;
+    int debug;
+    
+    FS_Init();
+    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
+//    if (debug <= 0)
+//    {
+//        draw_string(100,80,WHITE,"NO MOUNT");
+//    }
+    pFile = FS_FOpen("test.txt", "+w");
+//    if (pFile == 0)
+//    {
+//        draw_string(100,100,WHITE,"NO OPEN");
+//    }
+    const char text[] = "Can Write";
+    FS_Write(pFile,text,strlen(text));
+    FS_FClose(pFile);
     
     //for(;;)
     //{ 
+        set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {
+            
             Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
         }
         else
@@ -261,6 +306,7 @@ int main(void)
         if (Vth == 0)
         {
             draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND");
+            create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
             return 0;
         }
         Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
@@ -272,13 +318,13 @@ int main(void)
                 Vgs_points_double[0] = Vth*4.096/256.0;
                 break;
             case 1:
-                Vgs_points_double[0] = Vth*4.096/256.0/10;
+                Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/10;
                 break;
             case 2:
                 Vgs_points_double[0] = -15 + Vth*4.096/256.0;
                 break;
             case 3:
-                Vgs_points_double[0] = (-15 + Vth*4.096/256.0)/10;
+                Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/10;
                 break;
         }
         //Creating Vgs test point 
@@ -291,7 +337,7 @@ int main(void)
                     Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0;
                     break;
                 case 1:
-                    Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0/10;
+                    Vgs_points_double[i] = (Vgs_test_points[i]*4.096/256.0 - 0.7)/10;
                     break;
                 case 2:
                     Vgs_points_double[i] = -15 + Vgs_test_points[i]*4.096/256.0;

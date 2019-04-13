@@ -6,8 +6,8 @@
     <Toolchain Name="ARM GCC Generic" Selected="True">
       <Tool Name="prebuild" Command="" Options="" />
       <Tool Name="assembler" Command="arm-none-eabi-as.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
-      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
-      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -l m -L Generated_Source\PSoC5 -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects" />
+      <Tool Name="compiler" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -O3" />
+      <Tool Name="linker" Command="arm-none-eabi-gcc.exe" Options="-mcpu=cortex-m3 -mthumb -l emf16nosnlfn -L Generated_Source\PSoC5 -L .\emFile_V322c\LinkLibrary\PSoC5\GCC -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -O3 -ffat-lto-objects" />
       <Tool Name="postbuild" Command="" Options="" />
     </Toolchain>
     <Toolchain Name="ARM MDK Generic" Selected="False">
@@ -42,6 +42,8 @@
           <File BuildType="BUILD" Toolchain="">settings.h</File>
           <File BuildType="BUILD" Toolchain="">..\..\font.h</File>
           <File BuildType="BUILD" Toolchain="">font.c</File>
+          <File BuildType="BUILD" Toolchain="">sd.c</File>
+          <File BuildType="BUILD" Toolchain="">sd.h</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
         </Files>
       </Folder>
@@ -156,6 +158,44 @@
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRQ_aliases.h</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRQ.c</File>
           <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\IRQ.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_GS_P_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_GS_P.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_GS_P.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_DS_P_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_DS_P.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_DS_P.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_2.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_2.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_3.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\AMux_3.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_ID_P_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_ID_P.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\Pin_ID_P.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_ConfigMMC_SPI.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_MMC_HW_SPI.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_PM.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_INT.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_PVT.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_mosi0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_mosi0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_mosi0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_Clock_1.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_Clock_1.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_miso0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_miso0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_miso0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_sclk0_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_sclk0.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_sclk0.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_CS.c</File>
+          <File BuildType="BUILD" Toolchain="">Generated_Source\PSoC5\emFile_1_SPI0_CS.h</File>
         </Files>
       </Folder>
       <Folder BuildType="STRICT" Path="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Export\ARM_GCC_Generic">

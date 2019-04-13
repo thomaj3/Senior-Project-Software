@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   28:Generated_Source\PSoC5/VDAC8_GS.c **** 
   29:Generated_Source\PSoC5/VDAC8_GS.c **** #if (CY_PSOC5A)
   30:Generated_Source\PSoC5/VDAC8_GS.c ****     static uint8 VDAC8_GS_restoreVal = 0u;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 2
 
 
   31:Generated_Source\PSoC5/VDAC8_GS.c **** #endif /* CY_PSOC5A */
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   67:Generated_Source\PSoC5/VDAC8_GS.c ****     #if(VDAC8_GS_DEFAULT_STRB != 0)
   68:Generated_Source\PSoC5/VDAC8_GS.c ****         VDAC8_GS_Strobe |= VDAC8_GS_STRB_EN ;
   69:Generated_Source\PSoC5/VDAC8_GS.c ****     #endif/* (VDAC8_GS_DEFAULT_STRB != 0) */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 3
 
 
   70:Generated_Source\PSoC5/VDAC8_GS.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  124:Generated_Source\PSoC5/VDAC8_GS.c **** *
  125:Generated_Source\PSoC5/VDAC8_GS.c **** * Return:
  126:Generated_Source\PSoC5/VDAC8_GS.c **** *  void 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 4
 
 
  127:Generated_Source\PSoC5/VDAC8_GS.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  181:Generated_Source\PSoC5/VDAC8_GS.c **** }
  182:Generated_Source\PSoC5/VDAC8_GS.c **** 
  183:Generated_Source\PSoC5/VDAC8_GS.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 5
 
 
  184:Generated_Source\PSoC5/VDAC8_GS.c **** /*******************************************************************************
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  234:Generated_Source\PSoC5/VDAC8_GS.c **** 
  235:Generated_Source\PSoC5/VDAC8_GS.c **** 
  236:Generated_Source\PSoC5/VDAC8_GS.c **** /*******************************************************************************
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 6
 
 
  237:Generated_Source\PSoC5/VDAC8_GS.c **** * Function Name: VDAC8_GS_SetValue
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  291:Generated_Source\PSoC5/VDAC8_GS.c ****     uint8 mode;
  292:Generated_Source\PSoC5/VDAC8_GS.c **** 
  293:Generated_Source\PSoC5/VDAC8_GS.c ****     mode = (uint8)((VDAC8_GS_CR0 & VDAC8_GS_RANGE_MASK) >> 2) + VDAC8_GS_TRIM_M7_1V_RNG_OFFSET;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 7
 
 
  294:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_TR = CY_GET_XTND_REG8((uint8 *)(VDAC8_GS_DAC_TRIM_BASE + mode));
@@ -376,7 +376,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   58              	.LBB26:
   59              	.LBB24:
   60              		.loc 1 294 0
-  61 0018 1F39     		subs	r1, r1, #31
+  61 0018 1C39     		subs	r1, r1, #28
   62              	.LBE24:
   63              	.LBE26:
  231:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_CR0 |= (range & VDAC8_GS_RANGE_MASK);      /*  Set Range  */
@@ -394,7 +394,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   74              	.LVL2:
   75 0026 02F19242 		add	r2, r2, #1224736768
   76 002a 0632     		adds	r2, r2, #6
-  77 002c 92F82821 		ldrb	r2, [r2, #296]	@ zero_extendqisi2
+  77 002c 92F83021 		ldrb	r2, [r2, #304]	@ zero_extendqisi2
   78 0030 D2B2     		uxtb	r2, r2
   79 0032 0A70     		strb	r2, [r1]
   80              	.LVL3:
@@ -418,12 +418,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   96 0042 7047     		bx	lr
   97              	.L3:
   98              		.align	2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 8
 
 
   99              	.L2:
- 100 0044 28580040 		.word	1073764392
- 101 0048 29580040 		.word	1073764393
+ 100 0044 24580040 		.word	1073764388
+ 101 0048 25580040 		.word	1073764389
  102              	.LBE29:
  103              	.LBE28:
  104              		.cfi_endproc
@@ -452,12 +452,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
   98:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_STBY_PWRMGR |= VDAC8_GS_STBY_PWR_EN;
  124              		.loc 1 98 0
  125 0004 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
- 126 0006 43F00403 		orr	r3, r3, #4
+ 126 0006 43F00203 		orr	r3, r3, #2
  127 000a 0B70     		strb	r3, [r1]
   99:Generated_Source\PSoC5/VDAC8_GS.c **** 
  128              		.loc 1 99 0
  129 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 130 000e 43F00403 		orr	r3, r3, #4
+ 130 000e 43F00203 		orr	r3, r3, #2
  131 0012 1370     		strb	r3, [r2]
  132 0014 7047     		bx	lr
  133              	.L6:
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  148              	.LFB2:
  134:Generated_Source\PSoC5/VDAC8_GS.c ****     /* Hardware initiazation only needs to occure the first time */
  149              		.loc 1 134 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 9
 
 
  150              		.cfi_startproc
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  195              	.LBB51:
  196              	.LBB50:
  231:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_DacTrim();
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 10
 
 
  197              		.loc 1 231 0
@@ -555,7 +555,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  207              	.LVL7:
  208 002a 02F19242 		add	r2, r2, #1224736768
  209 002e 0632     		adds	r2, r2, #6
- 210 0030 92F82821 		ldrb	r2, [r2, #296]	@ zero_extendqisi2
+ 210 0030 92F83021 		ldrb	r2, [r2, #304]	@ zero_extendqisi2
  211 0034 D2B2     		uxtb	r2, r2
  212 0036 2270     		strb	r2, [r4]
  213              	.LVL8:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  244              	.LBE57:
  245              	.LBE56:
  246              	.LBB60:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 11
 
 
  247              	.LBB61:
@@ -611,7 +611,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  253              	.LBB58:
   98:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_STBY_PWRMGR |= VDAC8_GS_STBY_PWR_EN;
  254              		.loc 1 98 0
- 255 0050 43F00403 		orr	r3, r3, #4
+ 255 0050 43F00203 		orr	r3, r3, #2
  256 0054 0B70     		strb	r3, [r1]
   99:Generated_Source\PSoC5/VDAC8_GS.c **** 
  257              		.loc 1 99 0
@@ -629,7 +629,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  268              	.LBB59:
   99:Generated_Source\PSoC5/VDAC8_GS.c **** 
  269              		.loc 1 99 0
- 270 005a 43F00403 		orr	r3, r3, #4
+ 270 005a 43F00203 		orr	r3, r3, #2
  271 005e 1370     		strb	r3, [r2]
  272              	.LVL10:
  273              	.LBE59:
@@ -652,13 +652,13 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  288 0066 00BF     		.align	2
  289              	.L11:
  290 0068 00000000 		.word	.LANCHOR0
- 291 006c 28580040 		.word	1073764392
- 292 0070 29580040 		.word	1073764393
- 293 0074 0A460040 		.word	1073759754
+ 291 006c 24580040 		.word	1073764388
+ 292 0070 25580040 		.word	1073764389
+ 293 0074 09460040 		.word	1073759753
  294 0078 A8430040 		.word	1073759144
  295 007c B8430040 		.word	1073759160
- 296 0080 825B0040 		.word	1073765250
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 12
+ 296 0080 815B0040 		.word	1073765249
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 12
 
 
  297              		.cfi_endproc
@@ -687,12 +687,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  171:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_STBY_PWRMGR &= (uint8)(~VDAC8_GS_STBY_PWR_EN);
  317              		.loc 1 171 0
  318 0004 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
- 319 0006 03F0FB03 		and	r3, r3, #251
+ 319 0006 03F0FD03 		and	r3, r3, #253
  320 000a 0B70     		strb	r3, [r1]
  172:Generated_Source\PSoC5/VDAC8_GS.c **** 
  321              		.loc 1 172 0
  322 000c 1378     		ldrb	r3, [r2]	@ zero_extendqisi2
- 323 000e 03F0FB03 		and	r3, r3, #251
+ 323 000e 03F0FD03 		and	r3, r3, #253
  324 0012 1370     		strb	r3, [r2]
  325 0014 7047     		bx	lr
  326              	.L15:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  345              		@ frame_needed = 0, uses_anonymous_args = 0
  346              		@ link register save eliminated.
  347              	.LVL12:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 13
 
 
  205:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_CR0 |=  (speed & VDAC8_GS_HS_MASK);
@@ -742,7 +742,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  362              	.L18:
  363 0016 00BF     		.align	2
  364              	.L17:
- 365 0018 28580040 		.word	1073764392
+ 365 0018 24580040 		.word	1073764388
  366              		.cfi_endproc
  367              	.LFE4:
  368              		.size	VDAC8_GS_SetSpeed, .-VDAC8_GS_SetSpeed
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  394              	.LBE69:
  395              	.LBE68:
  230:Generated_Source\PSoC5/VDAC8_GS.c ****     VDAC8_GS_CR0 |= (range & VDAC8_GS_RANGE_MASK);      /*  Set Range  */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 14
 
 
  396              		.loc 1 230 0
@@ -800,15 +800,15 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  410              	.LVL17:
  411 001c 03F19243 		add	r3, r3, #1224736768
  412 0020 0633     		adds	r3, r3, #6
- 413 0022 93F82831 		ldrb	r3, [r3, #296]	@ zero_extendqisi2
+ 413 0022 93F83031 		ldrb	r3, [r3, #304]	@ zero_extendqisi2
  414 0026 DBB2     		uxtb	r3, r3
  415 0028 0B70     		strb	r3, [r1]
  416 002a 7047     		bx	lr
  417              	.L21:
  418              		.align	2
  419              	.L20:
- 420 002c 28580040 		.word	1073764392
- 421 0030 0A460040 		.word	1073759754
+ 420 002c 24580040 		.word	1073764388
+ 421 0030 09460040 		.word	1073759753
  422              	.LBE70:
  423              	.LBE71:
  424              		.cfi_endproc
@@ -837,8 +837,8 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  445              	.L24:
  446 0006 00BF     		.align	2
  447              	.L23:
- 448 0008 825B0040 		.word	1073765250
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 15
+ 448 0008 815B0040 		.word	1073765249
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 15
 
 
  449              		.cfi_endproc
@@ -872,15 +872,15 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  474              	.LVL20:
  475 000a 03F19243 		add	r3, r3, #1224736768
  476 000e 0633     		adds	r3, r3, #6
- 477 0010 93F82831 		ldrb	r3, [r3, #296]	@ zero_extendqisi2
+ 477 0010 93F83031 		ldrb	r3, [r3, #304]	@ zero_extendqisi2
  478 0014 DBB2     		uxtb	r3, r3
  479 0016 1370     		strb	r3, [r2]
  480 0018 7047     		bx	lr
  481              	.L27:
  482 001a 00BF     		.align	2
  483              	.L26:
- 484 001c 28580040 		.word	1073764392
- 485 0020 0A460040 		.word	1073759754
+ 484 001c 24580040 		.word	1073764388
+ 485 0020 09460040 		.word	1073759753
  486              		.cfi_endproc
  487              	.LFE7:
  488              		.size	VDAC8_GS_DacTrim, .-VDAC8_GS_DacTrim
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  500              	.Ldebug_info0:
  501 0000 DE020000 		.4byte	0x2de
  502 0004 0400     		.2byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 16
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 16
 
 
  503 0006 00000000 		.4byte	.Ldebug_abbrev0
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  557 0073 2C000000 		.4byte	0x2c
  558 0077 02       		.uleb128 0x2
  559 0078 04       		.byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 17
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 17
 
 
  560 0079 04       		.byte	0x4
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  614 00e8 41000000 		.4byte	.LASF19
  615 00ec 01       		.byte	0x1
  616 00ed FE       		.byte	0xfe
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 18
 
 
  617 00ee 01       		.byte	0x1
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  671 016c 4B       		.byte	0x4b
  672 016d 0D       		.uleb128 0xd
  673 016e C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 19
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 19
 
 
  674 0172 2F000000 		.4byte	.LLST2
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  728 01f9 4B       		.byte	0x4b
  729 01fa 0D       		.uleb128 0xd
  730 01fb C3000000 		.4byte	0xc3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 20
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 20
 
 
  731 01ff 72000000 		.4byte	.LLST5
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  785 0286 E8       		.byte	0xe8
  786 0287 0F       		.uleb128 0xf
  787 0288 A8000000 		.4byte	.Ldebug_ranges0+0xa8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 21
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 21
 
 
  788 028c 10       		.uleb128 0x10
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  842 000e 01       		.uleb128 0x1
  843 000f 10       		.uleb128 0x10
  844 0010 17       		.uleb128 0x17
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 22
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 22
 
 
  845 0011 00       		.byte	0
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  899 0047 05       		.uleb128 0x5
  900 0048 27       		.uleb128 0x27
  901 0049 19       		.uleb128 0x19
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 23
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 23
 
 
  902 004a 20       		.uleb128 0x20
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  956 0080 3F       		.uleb128 0x3f
  957 0081 19       		.uleb128 0x19
  958 0082 03       		.uleb128 0x3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 24
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 24
 
 
  959 0083 0E       		.uleb128 0xe
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1013 00ba 0E       		.uleb128 0xe
  1014 00bb 1D       		.uleb128 0x1d
  1015 00bc 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 25
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 25
 
 
  1016 00bd 31       		.uleb128 0x31
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1070 00f3 9742     		.uleb128 0x2117
  1071 00f5 19       		.uleb128 0x19
  1072 00f6 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 26
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 26
 
 
  1073 00f7 00       		.byte	0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1127 012e 59       		.uleb128 0x59
  1128 012f 0B       		.uleb128 0xb
  1129 0130 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 27
 
 
  1130 0131 00       		.byte	0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1184 0000 0A000000 		.4byte	.LVL0
  1185 0004 34000000 		.4byte	.LVL3
  1186 0008 0200     		.2byte	0x2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 28
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 28
 
 
  1187 000a 34       		.byte	0x34
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1241 007c 30       		.byte	0x30
  1242 007d 9F       		.byte	0x9f
  1243 007e 00000000 		.4byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 29
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 29
 
 
  1244 0082 00000000 		.4byte	0
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1298 00f8 06000000 		.4byte	.LVL19
  1299 00fc 0A000000 		.4byte	.LVL20
  1300 0100 0900     		.2byte	0x9
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 30
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 30
 
 
  1301 0102 73       		.byte	0x73
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1355 003c 1C000000 		.4byte	.LBE44
  1356 0040 1E000000 		.4byte	.LBB51
  1357 0044 38000000 		.4byte	.LBE51
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 31
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 31
 
 
  1358 0048 00000000 		.4byte	0
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1408      01010101 
  1409              	.LASF14:
  1410 0000 56444143 		.ascii	"VDAC8_GS_DacTrim\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 32
 
 
  1410      385F4753 
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1430      5F696E69 
  1430      74566172 
  1430      00
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 33
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 33
 
 
  1431              	.LASF5:
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 1
  1450      7369676E 
  1450      65642069 
  1451              	.LASF26:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccMUtHSk.s 			page 34
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccL3RfGh.s 			page 34
 
 
  1452 0205 6D6F6465 		.ascii	"mode\000"

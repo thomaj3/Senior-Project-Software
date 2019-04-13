@@ -78,6 +78,8 @@
     #define ORANGE              0xFD20  ///< 255, 165,   0
     #define GREENYELLOW         0xAFE5  ///< 173, 255,  41
     #define PINK                0xFC18  ///< 255, 130, 198
+    #define LIGHTBLUE           0x9E9F
+    #define LIGHTRED            0xFCF3
 
     // Other definitions
     #define xstart              0
@@ -103,5 +105,7 @@
 
     #define NUMSAMPLES 2
     #define _swap_int16_t(a, b) { int16_t t = a; a = b; b = t; }
+    
+    extern int screen_state;
     
 #endif /* (SCREEN_H) */

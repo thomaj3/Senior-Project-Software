@@ -9,6 +9,9 @@
 #include "stdio.h"
 #include "stdlib.h"
 #include "math.h"
+#include "font.h"
+
+int screen_state;
 
 // Initialization command/data
 static const uint8_t initcmd[] = {
@@ -100,7 +103,7 @@ void setAddrWindow(uint16_t x, uint16_t y, uint16_t w, uint16_t h) {
 }
 
 // Fills in a rectangle of color on the screen
-void fillRect(int16_t x, int16_t y, int16_t w, int16_t h,
+void draw_rect(int16_t x, int16_t y, int16_t w, int16_t h,
   uint16_t color) 
 {
 
@@ -139,10 +142,18 @@ void fillRect(int16_t x, int16_t y, int16_t w, int16_t h,
     #endif
 }
 
+
+
+void fill_rect(int16_t x, int16_t y, int16_t w, int16_t h,
+  uint16_t color)
+{
+    draw_rect((240-y-h), (320-x-w), h, w, color);
+}
+
 // Fills screen a single color
 void fill_screen(uint16_t color) 
 {
-  fillRect(0, 0,  _width, _height, color);
+  fill_rect(0, 0,  _height, _width, color);
 }
 
 // Sends commands and data to configure screen for display
@@ -338,4 +349,28 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     }
         
     
+}
+
+void draw_choose_screen()
+{
+    fill_rect(0,0,160,240,BLUE);
+    fill_rect(160,0,160,240,RED);
+    fill_rect(10,10,139,99,LIGHTBLUE);
+    fill_rect(10,131,139,99,LIGHTBLUE);
+    fill_rect(171,10,139,99,LIGHTRED);
+    fill_rect(171,131,139,99,LIGHTRED);
+    
+    fill_rect(159,0,2,240,BLACK);
+    fill_rect(0,119,320,2,BLACK);
+    
+    fill_rect(33,109,252,22,BLACK);
+    fill_rect(35,111,248,18,WHITE); 
+    
+    draw_string(66,118,BLACK,"CHOOSE A SEMICONDUCTOR TYPE");
+    draw_string(58,177,BLACK,"NPN BJT");
+    draw_string(48,57,BLACK,"N TYPE FET");
+    draw_string(218,177,BLACK,"PNP BJT");
+    draw_string(208,57,BLACK,"P TYPE FET");
+    
+    screen_state = 0;
 }

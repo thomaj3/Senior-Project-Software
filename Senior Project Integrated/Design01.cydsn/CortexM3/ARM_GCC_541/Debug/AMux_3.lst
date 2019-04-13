@@ -1,0 +1,1049 @@
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 1
+
+
+   1              		.syntax unified
+   2              		.cpu cortex-m3
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 2
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.thumb
+  14              		.syntax unified
+  15              		.file	"AMux_3.c"
+  16              		.text
+  17              	.Ltext0:
+  18              		.cfi_sections	.debug_frame
+  19              		.section	.text.AMux_3_Start,"ax",%progbits
+  20              		.align	2
+  21              		.global	AMux_3_Start
+  22              		.thumb
+  23              		.thumb_func
+  24              		.type	AMux_3_Start, %function
+  25              	AMux_3_Start:
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\AMux_3.c"
+   1:Generated_Source\PSoC5/AMux_3.c **** /*******************************************************************************
+   2:Generated_Source\PSoC5/AMux_3.c **** * File Name: AMux_3.c
+   3:Generated_Source\PSoC5/AMux_3.c **** * Version 1.80
+   4:Generated_Source\PSoC5/AMux_3.c **** *
+   5:Generated_Source\PSoC5/AMux_3.c **** *  Description:
+   6:Generated_Source\PSoC5/AMux_3.c **** *    This file contains all functions required for the analog multiplexer
+   7:Generated_Source\PSoC5/AMux_3.c **** *    AMux User Module.
+   8:Generated_Source\PSoC5/AMux_3.c **** *
+   9:Generated_Source\PSoC5/AMux_3.c **** *   Note:
+  10:Generated_Source\PSoC5/AMux_3.c **** *
+  11:Generated_Source\PSoC5/AMux_3.c **** *******************************************************************************
+  12:Generated_Source\PSoC5/AMux_3.c **** * Copyright 2008-2010, Cypress Semiconductor Corporation.  All rights reserved.
+  13:Generated_Source\PSoC5/AMux_3.c **** * You may use this file only in accordance with the license, terms, conditions, 
+  14:Generated_Source\PSoC5/AMux_3.c **** * disclaimers, and limitations in the end user license agreement accompanying 
+  15:Generated_Source\PSoC5/AMux_3.c **** * the software package with which this file was provided.
+  16:Generated_Source\PSoC5/AMux_3.c **** ********************************************************************************/
+  17:Generated_Source\PSoC5/AMux_3.c **** 
+  18:Generated_Source\PSoC5/AMux_3.c **** #include "AMux_3.h"
+  19:Generated_Source\PSoC5/AMux_3.c **** 
+  20:Generated_Source\PSoC5/AMux_3.c **** static uint8 AMux_3_lastChannel = AMux_3_NULL_CHANNEL;
+  21:Generated_Source\PSoC5/AMux_3.c **** 
+  22:Generated_Source\PSoC5/AMux_3.c **** 
+  23:Generated_Source\PSoC5/AMux_3.c **** /*******************************************************************************
+  24:Generated_Source\PSoC5/AMux_3.c **** * Function Name: AMux_3_Start
+  25:Generated_Source\PSoC5/AMux_3.c **** ********************************************************************************
+  26:Generated_Source\PSoC5/AMux_3.c **** * Summary:
+  27:Generated_Source\PSoC5/AMux_3.c **** *  Disconnect all channels.
+  28:Generated_Source\PSoC5/AMux_3.c **** *
+  29:Generated_Source\PSoC5/AMux_3.c **** * Parameters:
+  30:Generated_Source\PSoC5/AMux_3.c **** *  void
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 2
+
+
+  31:Generated_Source\PSoC5/AMux_3.c **** *
+  32:Generated_Source\PSoC5/AMux_3.c **** * Return:
+  33:Generated_Source\PSoC5/AMux_3.c **** *  void
+  34:Generated_Source\PSoC5/AMux_3.c **** *
+  35:Generated_Source\PSoC5/AMux_3.c **** *******************************************************************************/
+  36:Generated_Source\PSoC5/AMux_3.c **** void AMux_3_Start(void) 
+  37:Generated_Source\PSoC5/AMux_3.c **** {
+  28              		.loc 1 37 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              	.LVL0:
+  33 0000 08B5     		push	{r3, lr}
+  34              		.cfi_def_cfa_offset 8
+  35              		.cfi_offset 3, -8
+  36              		.cfi_offset 14, -4
+  38:Generated_Source\PSoC5/AMux_3.c ****     uint8 chan;
+  39:Generated_Source\PSoC5/AMux_3.c **** 
+  40:Generated_Source\PSoC5/AMux_3.c ****     for(chan = 0u; chan < AMux_3_CHANNELS ; chan++)
+  41:Generated_Source\PSoC5/AMux_3.c ****     {
+  42:Generated_Source\PSoC5/AMux_3.c **** #if (AMux_3_MUXTYPE == AMux_3_MUX_SINGLE)
+  43:Generated_Source\PSoC5/AMux_3.c ****         AMux_3_Unset(chan);
+  37              		.loc 1 43 0
+  38 0002 0020     		movs	r0, #0
+  39 0004 FFF7FEFF 		bl	AMux_3_Unset
+  40              	.LVL1:
+  41 0008 0120     		movs	r0, #1
+  42 000a FFF7FEFF 		bl	AMux_3_Unset
+  43              	.LVL2:
+  44:Generated_Source\PSoC5/AMux_3.c **** #else
+  45:Generated_Source\PSoC5/AMux_3.c ****         AMux_3_CYAMUXSIDE_A_Unset(chan);
+  46:Generated_Source\PSoC5/AMux_3.c ****         AMux_3_CYAMUXSIDE_B_Unset(chan);
+  47:Generated_Source\PSoC5/AMux_3.c **** #endif
+  48:Generated_Source\PSoC5/AMux_3.c ****     }
+  49:Generated_Source\PSoC5/AMux_3.c **** 
+  50:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_lastChannel = AMux_3_NULL_CHANNEL;
+  44              		.loc 1 50 0
+  45 000e 024B     		ldr	r3, .L3
+  46 0010 FF22     		movs	r2, #255
+  47 0012 1A70     		strb	r2, [r3]
+  48 0014 08BD     		pop	{r3, pc}
+  49              	.L4:
+  50 0016 00BF     		.align	2
+  51              	.L3:
+  52 0018 00000000 		.word	.LANCHOR0
+  53              		.cfi_endproc
+  54              	.LFE0:
+  55              		.size	AMux_3_Start, .-AMux_3_Start
+  56              		.section	.text.AMux_3_Select,"ax",%progbits
+  57              		.align	2
+  58              		.global	AMux_3_Select
+  59              		.thumb
+  60              		.thumb_func
+  61              		.type	AMux_3_Select, %function
+  62              	AMux_3_Select:
+  63              	.LFB1:
+  51:Generated_Source\PSoC5/AMux_3.c **** }
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 3
+
+
+  52:Generated_Source\PSoC5/AMux_3.c **** 
+  53:Generated_Source\PSoC5/AMux_3.c **** 
+  54:Generated_Source\PSoC5/AMux_3.c **** #if (!AMux_3_ATMOSTONE)
+  55:Generated_Source\PSoC5/AMux_3.c **** /*******************************************************************************
+  56:Generated_Source\PSoC5/AMux_3.c **** * Function Name: AMux_3_Select
+  57:Generated_Source\PSoC5/AMux_3.c **** ********************************************************************************
+  58:Generated_Source\PSoC5/AMux_3.c **** * Summary:
+  59:Generated_Source\PSoC5/AMux_3.c **** *  This functions first disconnects all channels then connects the given
+  60:Generated_Source\PSoC5/AMux_3.c **** *  channel.
+  61:Generated_Source\PSoC5/AMux_3.c **** *
+  62:Generated_Source\PSoC5/AMux_3.c **** * Parameters:
+  63:Generated_Source\PSoC5/AMux_3.c **** *  channel:  The channel to connect to the common terminal.
+  64:Generated_Source\PSoC5/AMux_3.c **** *
+  65:Generated_Source\PSoC5/AMux_3.c **** * Return:
+  66:Generated_Source\PSoC5/AMux_3.c **** *  void
+  67:Generated_Source\PSoC5/AMux_3.c **** *
+  68:Generated_Source\PSoC5/AMux_3.c **** *******************************************************************************/
+  69:Generated_Source\PSoC5/AMux_3.c **** void AMux_3_Select(uint8 channel) 
+  70:Generated_Source\PSoC5/AMux_3.c **** {
+  64              		.loc 1 70 0
+  65              		.cfi_startproc
+  66              		@ args = 0, pretend = 0, frame = 0
+  67              		@ frame_needed = 0, uses_anonymous_args = 0
+  68              	.LVL3:
+  69 0000 38B5     		push	{r3, r4, r5, lr}
+  70              		.cfi_def_cfa_offset 16
+  71              		.cfi_offset 3, -16
+  72              		.cfi_offset 4, -12
+  73              		.cfi_offset 5, -8
+  74              		.cfi_offset 14, -4
+  75              		.loc 1 70 0
+  76 0002 0546     		mov	r5, r0
+  77              	.LBB4:
+  78              	.LBB5:
+  43:Generated_Source\PSoC5/AMux_3.c **** #else
+  79              		.loc 1 43 0
+  80 0004 0020     		movs	r0, #0
+  81              	.LVL4:
+  82 0006 FFF7FEFF 		bl	AMux_3_Unset
+  83              	.LVL5:
+  50:Generated_Source\PSoC5/AMux_3.c **** }
+  84              		.loc 1 50 0
+  85 000a 054C     		ldr	r4, .L7
+  43:Generated_Source\PSoC5/AMux_3.c **** #else
+  86              		.loc 1 43 0
+  87 000c 0120     		movs	r0, #1
+  88 000e FFF7FEFF 		bl	AMux_3_Unset
+  89              	.LVL6:
+  50:Generated_Source\PSoC5/AMux_3.c **** }
+  90              		.loc 1 50 0
+  91 0012 FF23     		movs	r3, #255
+  92              	.LBE5:
+  93              	.LBE4:
+  71:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_DisconnectAll();        /* Disconnect all previous connections */
+  72:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_Connect(channel);       /* Make the given selection */
+  94              		.loc 1 72 0
+  95 0014 2846     		mov	r0, r5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 4
+
+
+  96              	.LBB7:
+  97              	.LBB6:
+  50:Generated_Source\PSoC5/AMux_3.c **** }
+  98              		.loc 1 50 0
+  99 0016 2370     		strb	r3, [r4]
+ 100              	.LVL7:
+ 101              	.LBE6:
+ 102              	.LBE7:
+ 103              		.loc 1 72 0
+ 104 0018 FFF7FEFF 		bl	AMux_3_Set
+ 105              	.LVL8:
+  73:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_lastChannel = channel;  /* Update last channel */
+ 106              		.loc 1 73 0
+ 107 001c 2570     		strb	r5, [r4]
+ 108 001e 38BD     		pop	{r3, r4, r5, pc}
+ 109              	.L8:
+ 110              		.align	2
+ 111              	.L7:
+ 112 0020 00000000 		.word	.LANCHOR0
+ 113              		.cfi_endproc
+ 114              	.LFE1:
+ 115              		.size	AMux_3_Select, .-AMux_3_Select
+ 116              		.section	.text.AMux_3_FastSelect,"ax",%progbits
+ 117              		.align	2
+ 118              		.global	AMux_3_FastSelect
+ 119              		.thumb
+ 120              		.thumb_func
+ 121              		.type	AMux_3_FastSelect, %function
+ 122              	AMux_3_FastSelect:
+ 123              	.LFB2:
+  74:Generated_Source\PSoC5/AMux_3.c **** }
+  75:Generated_Source\PSoC5/AMux_3.c **** #endif
+  76:Generated_Source\PSoC5/AMux_3.c **** 
+  77:Generated_Source\PSoC5/AMux_3.c **** 
+  78:Generated_Source\PSoC5/AMux_3.c **** /*******************************************************************************
+  79:Generated_Source\PSoC5/AMux_3.c **** * Function Name: AMux_3_FastSelect
+  80:Generated_Source\PSoC5/AMux_3.c **** ********************************************************************************
+  81:Generated_Source\PSoC5/AMux_3.c **** * Summary:
+  82:Generated_Source\PSoC5/AMux_3.c **** *  This function first disconnects the last connection made with FastSelect or
+  83:Generated_Source\PSoC5/AMux_3.c **** *  Select, then connects the given channel. The FastSelect function is similar
+  84:Generated_Source\PSoC5/AMux_3.c **** *  to the Select function, except it is faster since it only disconnects the
+  85:Generated_Source\PSoC5/AMux_3.c **** *  last channel selected rather than all channels.
+  86:Generated_Source\PSoC5/AMux_3.c **** *
+  87:Generated_Source\PSoC5/AMux_3.c **** * Parameters:
+  88:Generated_Source\PSoC5/AMux_3.c **** *  channel:  The channel to connect to the common terminal.
+  89:Generated_Source\PSoC5/AMux_3.c **** *
+  90:Generated_Source\PSoC5/AMux_3.c **** * Return:
+  91:Generated_Source\PSoC5/AMux_3.c **** *  void
+  92:Generated_Source\PSoC5/AMux_3.c **** *
+  93:Generated_Source\PSoC5/AMux_3.c **** *******************************************************************************/
+  94:Generated_Source\PSoC5/AMux_3.c **** void AMux_3_FastSelect(uint8 channel) 
+  95:Generated_Source\PSoC5/AMux_3.c **** {
+ 124              		.loc 1 95 0
+ 125              		.cfi_startproc
+ 126              		@ args = 0, pretend = 0, frame = 0
+ 127              		@ frame_needed = 0, uses_anonymous_args = 0
+ 128              	.LVL9:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 5
+
+
+ 129 0000 38B5     		push	{r3, r4, r5, lr}
+ 130              		.cfi_def_cfa_offset 16
+ 131              		.cfi_offset 3, -16
+ 132              		.cfi_offset 4, -12
+ 133              		.cfi_offset 5, -8
+ 134              		.cfi_offset 14, -4
+  96:Generated_Source\PSoC5/AMux_3.c ****     /* Disconnect the last valid channel */
+  97:Generated_Source\PSoC5/AMux_3.c ****     if( AMux_3_lastChannel != AMux_3_NULL_CHANNEL)
+ 135              		.loc 1 97 0
+ 136 0002 064C     		ldr	r4, .L16
+  95:Generated_Source\PSoC5/AMux_3.c ****     /* Disconnect the last valid channel */
+ 137              		.loc 1 95 0
+ 138 0004 0546     		mov	r5, r0
+ 139              		.loc 1 97 0
+ 140 0006 2078     		ldrb	r0, [r4]	@ zero_extendqisi2
+ 141              	.LVL10:
+ 142 0008 FF28     		cmp	r0, #255
+ 143 000a 01D0     		beq	.L10
+  98:Generated_Source\PSoC5/AMux_3.c ****     {
+  99:Generated_Source\PSoC5/AMux_3.c ****         AMux_3_Disconnect(AMux_3_lastChannel);
+ 144              		.loc 1 99 0
+ 145 000c FFF7FEFF 		bl	AMux_3_Unset
+ 146              	.LVL11:
+ 147              	.L10:
+ 100:Generated_Source\PSoC5/AMux_3.c ****     }
+ 101:Generated_Source\PSoC5/AMux_3.c **** 
+ 102:Generated_Source\PSoC5/AMux_3.c ****     /* Make the new channel connection */
+ 103:Generated_Source\PSoC5/AMux_3.c **** #if (AMux_3_MUXTYPE == AMux_3_MUX_SINGLE)
+ 104:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_Set(channel);
+ 148              		.loc 1 104 0
+ 149 0010 2846     		mov	r0, r5
+ 150 0012 FFF7FEFF 		bl	AMux_3_Set
+ 151              	.LVL12:
+ 105:Generated_Source\PSoC5/AMux_3.c **** #else
+ 106:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_CYAMUXSIDE_A_Set(channel);
+ 107:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_CYAMUXSIDE_B_Set(channel);
+ 108:Generated_Source\PSoC5/AMux_3.c **** #endif
+ 109:Generated_Source\PSoC5/AMux_3.c **** 
+ 110:Generated_Source\PSoC5/AMux_3.c **** 
+ 111:Generated_Source\PSoC5/AMux_3.c ****     AMux_3_lastChannel = channel;   /* Update last channel */
+ 152              		.loc 1 111 0
+ 153 0016 2570     		strb	r5, [r4]
+ 154 0018 38BD     		pop	{r3, r4, r5, pc}
+ 155              	.L17:
+ 156 001a 00BF     		.align	2
+ 157              	.L16:
+ 158 001c 00000000 		.word	.LANCHOR0
+ 159              		.cfi_endproc
+ 160              	.LFE2:
+ 161              		.size	AMux_3_FastSelect, .-AMux_3_FastSelect
+ 162              		.data
+ 163              		.set	.LANCHOR0,. + 0
+ 164              		.type	AMux_3_lastChannel, %object
+ 165              		.size	AMux_3_lastChannel, 1
+ 166              	AMux_3_lastChannel:
+ 167 0000 FF       		.byte	-1
+ 168              		.text
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 6
+
+
+ 169              	.Letext0:
+ 170              		.file 2 "Generated_Source\\PSoC5\\cyfitter_cfg.h"
+ 171              		.file 3 "Generated_Source\\PSoC5\\cytypes.h"
+ 172              		.section	.debug_info,"",%progbits
+ 173              	.Ldebug_info0:
+ 174 0000 BF010000 		.4byte	0x1bf
+ 175 0004 0400     		.2byte	0x4
+ 176 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 177 000a 04       		.byte	0x4
+ 178 000b 01       		.uleb128 0x1
+ 179 000c 08000000 		.4byte	.LASF17
+ 180 0010 0C       		.byte	0xc
+ 181 0011 E3010000 		.4byte	.LASF18
+ 182 0015 21010000 		.4byte	.LASF19
+ 183 0019 18000000 		.4byte	.Ldebug_ranges0+0x18
+ 184 001d 00000000 		.4byte	0
+ 185 0021 00000000 		.4byte	.Ldebug_line0
+ 186 0025 02       		.uleb128 0x2
+ 187 0026 01       		.byte	0x1
+ 188 0027 06       		.byte	0x6
+ 189 0028 21020000 		.4byte	.LASF0
+ 190 002c 02       		.uleb128 0x2
+ 191 002d 01       		.byte	0x1
+ 192 002e 08       		.byte	0x8
+ 193 002f CF000000 		.4byte	.LASF1
+ 194 0033 02       		.uleb128 0x2
+ 195 0034 02       		.byte	0x2
+ 196 0035 05       		.byte	0x5
+ 197 0036 03020000 		.4byte	.LASF2
+ 198 003a 02       		.uleb128 0x2
+ 199 003b 02       		.byte	0x2
+ 200 003c 07       		.byte	0x7
+ 201 003d FA000000 		.4byte	.LASF3
+ 202 0041 02       		.uleb128 0x2
+ 203 0042 04       		.byte	0x4
+ 204 0043 05       		.byte	0x5
+ 205 0044 13020000 		.4byte	.LASF4
+ 206 0048 02       		.uleb128 0x2
+ 207 0049 04       		.byte	0x4
+ 208 004a 07       		.byte	0x7
+ 209 004b E8000000 		.4byte	.LASF5
+ 210 004f 02       		.uleb128 0x2
+ 211 0050 08       		.byte	0x8
+ 212 0051 05       		.byte	0x5
+ 213 0052 D0010000 		.4byte	.LASF6
+ 214 0056 02       		.uleb128 0x2
+ 215 0057 08       		.byte	0x8
+ 216 0058 07       		.byte	0x7
+ 217 0059 AC010000 		.4byte	.LASF7
+ 218 005d 03       		.uleb128 0x3
+ 219 005e 04       		.byte	0x4
+ 220 005f 05       		.byte	0x5
+ 221 0060 696E7400 		.ascii	"int\000"
+ 222 0064 02       		.uleb128 0x2
+ 223 0065 04       		.byte	0x4
+ 224 0066 07       		.byte	0x7
+ 225 0067 9F010000 		.4byte	.LASF8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 7
+
+
+ 226 006b 04       		.uleb128 0x4
+ 227 006c 0D020000 		.4byte	.LASF20
+ 228 0070 03       		.byte	0x3
+ 229 0071 E401     		.2byte	0x1e4
+ 230 0073 2C000000 		.4byte	0x2c
+ 231 0077 02       		.uleb128 0x2
+ 232 0078 04       		.byte	0x4
+ 233 0079 04       		.byte	0x4
+ 234 007a B6000000 		.4byte	.LASF9
+ 235 007e 02       		.uleb128 0x2
+ 236 007f 08       		.byte	0x8
+ 237 0080 04       		.byte	0x4
+ 238 0081 0D010000 		.4byte	.LASF10
+ 239 0085 02       		.uleb128 0x2
+ 240 0086 01       		.byte	0x1
+ 241 0087 08       		.byte	0x8
+ 242 0088 DE010000 		.4byte	.LASF11
+ 243 008c 05       		.uleb128 0x5
+ 244 008d C3010000 		.4byte	.LASF21
+ 245 0091 01       		.byte	0x1
+ 246 0092 24       		.byte	0x24
+ 247 0093 01       		.byte	0x1
+ 248 0094 A4000000 		.4byte	0xa4
+ 249 0098 06       		.uleb128 0x6
+ 250 0099 1C020000 		.4byte	.LASF22
+ 251 009d 01       		.byte	0x1
+ 252 009e 26       		.byte	0x26
+ 253 009f 6B000000 		.4byte	0x6b
+ 254 00a3 00       		.byte	0
+ 255 00a4 07       		.uleb128 0x7
+ 256 00a5 8C000000 		.4byte	0x8c
+ 257 00a9 00000000 		.4byte	.LFB0
+ 258 00ad 1C000000 		.4byte	.LFE0-.LFB0
+ 259 00b1 01       		.uleb128 0x1
+ 260 00b2 9C       		.byte	0x9c
+ 261 00b3 E3000000 		.4byte	0xe3
+ 262 00b7 08       		.uleb128 0x8
+ 263 00b8 98000000 		.4byte	0x98
+ 264 00bc 00000000 		.4byte	.LLST0
+ 265 00c0 09       		.uleb128 0x9
+ 266 00c1 08000000 		.4byte	.LVL1
+ 267 00c5 AC010000 		.4byte	0x1ac
+ 268 00c9 D3000000 		.4byte	0xd3
+ 269 00cd 0A       		.uleb128 0xa
+ 270 00ce 01       		.uleb128 0x1
+ 271 00cf 50       		.byte	0x50
+ 272 00d0 01       		.uleb128 0x1
+ 273 00d1 30       		.byte	0x30
+ 274 00d2 00       		.byte	0
+ 275 00d3 0B       		.uleb128 0xb
+ 276 00d4 0E000000 		.4byte	.LVL2
+ 277 00d8 AC010000 		.4byte	0x1ac
+ 278 00dc 0A       		.uleb128 0xa
+ 279 00dd 01       		.uleb128 0x1
+ 280 00de 50       		.byte	0x50
+ 281 00df 01       		.uleb128 0x1
+ 282 00e0 31       		.byte	0x31
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 8
+
+
+ 283 00e1 00       		.byte	0
+ 284 00e2 00       		.byte	0
+ 285 00e3 0C       		.uleb128 0xc
+ 286 00e4 96000000 		.4byte	.LASF12
+ 287 00e8 01       		.byte	0x1
+ 288 00e9 45       		.byte	0x45
+ 289 00ea 00000000 		.4byte	.LFB1
+ 290 00ee 24000000 		.4byte	.LFE1-.LFB1
+ 291 00f2 01       		.uleb128 0x1
+ 292 00f3 9C       		.byte	0x9c
+ 293 00f4 5D010000 		.4byte	0x15d
+ 294 00f8 0D       		.uleb128 0xd
+ 295 00f9 00000000 		.4byte	.LASF14
+ 296 00fd 01       		.byte	0x1
+ 297 00fe 45       		.byte	0x45
+ 298 00ff 6B000000 		.4byte	0x6b
+ 299 0103 2C000000 		.4byte	.LLST1
+ 300 0107 0E       		.uleb128 0xe
+ 301 0108 8C000000 		.4byte	0x8c
+ 302 010c 04000000 		.4byte	.LBB4
+ 303 0110 00000000 		.4byte	.Ldebug_ranges0+0
+ 304 0114 01       		.byte	0x1
+ 305 0115 47       		.byte	0x47
+ 306 0116 4C010000 		.4byte	0x14c
+ 307 011a 0F       		.uleb128 0xf
+ 308 011b 00000000 		.4byte	.Ldebug_ranges0+0
+ 309 011f 08       		.uleb128 0x8
+ 310 0120 98000000 		.4byte	0x98
+ 311 0124 4D000000 		.4byte	.LLST2
+ 312 0128 09       		.uleb128 0x9
+ 313 0129 0A000000 		.4byte	.LVL5
+ 314 012d AC010000 		.4byte	0x1ac
+ 315 0131 3B010000 		.4byte	0x13b
+ 316 0135 0A       		.uleb128 0xa
+ 317 0136 01       		.uleb128 0x1
+ 318 0137 50       		.byte	0x50
+ 319 0138 01       		.uleb128 0x1
+ 320 0139 30       		.byte	0x30
+ 321 013a 00       		.byte	0
+ 322 013b 0B       		.uleb128 0xb
+ 323 013c 12000000 		.4byte	.LVL6
+ 324 0140 AC010000 		.4byte	0x1ac
+ 325 0144 0A       		.uleb128 0xa
+ 326 0145 01       		.uleb128 0x1
+ 327 0146 50       		.byte	0x50
+ 328 0147 01       		.uleb128 0x1
+ 329 0148 31       		.byte	0x31
+ 330 0149 00       		.byte	0
+ 331 014a 00       		.byte	0
+ 332 014b 00       		.byte	0
+ 333 014c 0B       		.uleb128 0xb
+ 334 014d 1C000000 		.4byte	.LVL8
+ 335 0151 B7010000 		.4byte	0x1b7
+ 336 0155 0A       		.uleb128 0xa
+ 337 0156 01       		.uleb128 0x1
+ 338 0157 50       		.byte	0x50
+ 339 0158 02       		.uleb128 0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 9
+
+
+ 340 0159 75       		.byte	0x75
+ 341 015a 00       		.sleb128 0
+ 342 015b 00       		.byte	0
+ 343 015c 00       		.byte	0
+ 344 015d 0C       		.uleb128 0xc
+ 345 015e A4000000 		.4byte	.LASF13
+ 346 0162 01       		.byte	0x1
+ 347 0163 5E       		.byte	0x5e
+ 348 0164 00000000 		.4byte	.LFB2
+ 349 0168 20000000 		.4byte	.LFE2-.LFB2
+ 350 016c 01       		.uleb128 0x1
+ 351 016d 9C       		.byte	0x9c
+ 352 016e 9B010000 		.4byte	0x19b
+ 353 0172 0D       		.uleb128 0xd
+ 354 0173 00000000 		.4byte	.LASF14
+ 355 0177 01       		.byte	0x1
+ 356 0178 5E       		.byte	0x5e
+ 357 0179 6B000000 		.4byte	0x6b
+ 358 017d 79000000 		.4byte	.LLST3
+ 359 0181 10       		.uleb128 0x10
+ 360 0182 10000000 		.4byte	.LVL11
+ 361 0186 AC010000 		.4byte	0x1ac
+ 362 018a 0B       		.uleb128 0xb
+ 363 018b 16000000 		.4byte	.LVL12
+ 364 018f B7010000 		.4byte	0x1b7
+ 365 0193 0A       		.uleb128 0xa
+ 366 0194 01       		.uleb128 0x1
+ 367 0195 50       		.byte	0x50
+ 368 0196 02       		.uleb128 0x2
+ 369 0197 75       		.byte	0x75
+ 370 0198 00       		.sleb128 0
+ 371 0199 00       		.byte	0
+ 372 019a 00       		.byte	0
+ 373 019b 11       		.uleb128 0x11
+ 374 019c BC000000 		.4byte	.LASF23
+ 375 01a0 01       		.byte	0x1
+ 376 01a1 14       		.byte	0x14
+ 377 01a2 6B000000 		.4byte	0x6b
+ 378 01a6 05       		.uleb128 0x5
+ 379 01a7 03       		.byte	0x3
+ 380 01a8 00000000 		.4byte	AMux_3_lastChannel
+ 381 01ac 12       		.uleb128 0x12
+ 382 01ad 14010000 		.4byte	.LASF15
+ 383 01b1 14010000 		.4byte	.LASF15
+ 384 01b5 02       		.byte	0x2
+ 385 01b6 2F       		.byte	0x2f
+ 386 01b7 12       		.uleb128 0x12
+ 387 01b8 DD000000 		.4byte	.LASF16
+ 388 01bc DD000000 		.4byte	.LASF16
+ 389 01c0 02       		.byte	0x2
+ 390 01c1 2E       		.byte	0x2e
+ 391 01c2 00       		.byte	0
+ 392              		.section	.debug_abbrev,"",%progbits
+ 393              	.Ldebug_abbrev0:
+ 394 0000 01       		.uleb128 0x1
+ 395 0001 11       		.uleb128 0x11
+ 396 0002 01       		.byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 10
+
+
+ 397 0003 25       		.uleb128 0x25
+ 398 0004 0E       		.uleb128 0xe
+ 399 0005 13       		.uleb128 0x13
+ 400 0006 0B       		.uleb128 0xb
+ 401 0007 03       		.uleb128 0x3
+ 402 0008 0E       		.uleb128 0xe
+ 403 0009 1B       		.uleb128 0x1b
+ 404 000a 0E       		.uleb128 0xe
+ 405 000b 55       		.uleb128 0x55
+ 406 000c 17       		.uleb128 0x17
+ 407 000d 11       		.uleb128 0x11
+ 408 000e 01       		.uleb128 0x1
+ 409 000f 10       		.uleb128 0x10
+ 410 0010 17       		.uleb128 0x17
+ 411 0011 00       		.byte	0
+ 412 0012 00       		.byte	0
+ 413 0013 02       		.uleb128 0x2
+ 414 0014 24       		.uleb128 0x24
+ 415 0015 00       		.byte	0
+ 416 0016 0B       		.uleb128 0xb
+ 417 0017 0B       		.uleb128 0xb
+ 418 0018 3E       		.uleb128 0x3e
+ 419 0019 0B       		.uleb128 0xb
+ 420 001a 03       		.uleb128 0x3
+ 421 001b 0E       		.uleb128 0xe
+ 422 001c 00       		.byte	0
+ 423 001d 00       		.byte	0
+ 424 001e 03       		.uleb128 0x3
+ 425 001f 24       		.uleb128 0x24
+ 426 0020 00       		.byte	0
+ 427 0021 0B       		.uleb128 0xb
+ 428 0022 0B       		.uleb128 0xb
+ 429 0023 3E       		.uleb128 0x3e
+ 430 0024 0B       		.uleb128 0xb
+ 431 0025 03       		.uleb128 0x3
+ 432 0026 08       		.uleb128 0x8
+ 433 0027 00       		.byte	0
+ 434 0028 00       		.byte	0
+ 435 0029 04       		.uleb128 0x4
+ 436 002a 16       		.uleb128 0x16
+ 437 002b 00       		.byte	0
+ 438 002c 03       		.uleb128 0x3
+ 439 002d 0E       		.uleb128 0xe
+ 440 002e 3A       		.uleb128 0x3a
+ 441 002f 0B       		.uleb128 0xb
+ 442 0030 3B       		.uleb128 0x3b
+ 443 0031 05       		.uleb128 0x5
+ 444 0032 49       		.uleb128 0x49
+ 445 0033 13       		.uleb128 0x13
+ 446 0034 00       		.byte	0
+ 447 0035 00       		.byte	0
+ 448 0036 05       		.uleb128 0x5
+ 449 0037 2E       		.uleb128 0x2e
+ 450 0038 01       		.byte	0x1
+ 451 0039 3F       		.uleb128 0x3f
+ 452 003a 19       		.uleb128 0x19
+ 453 003b 03       		.uleb128 0x3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 11
+
+
+ 454 003c 0E       		.uleb128 0xe
+ 455 003d 3A       		.uleb128 0x3a
+ 456 003e 0B       		.uleb128 0xb
+ 457 003f 3B       		.uleb128 0x3b
+ 458 0040 0B       		.uleb128 0xb
+ 459 0041 27       		.uleb128 0x27
+ 460 0042 19       		.uleb128 0x19
+ 461 0043 20       		.uleb128 0x20
+ 462 0044 0B       		.uleb128 0xb
+ 463 0045 01       		.uleb128 0x1
+ 464 0046 13       		.uleb128 0x13
+ 465 0047 00       		.byte	0
+ 466 0048 00       		.byte	0
+ 467 0049 06       		.uleb128 0x6
+ 468 004a 34       		.uleb128 0x34
+ 469 004b 00       		.byte	0
+ 470 004c 03       		.uleb128 0x3
+ 471 004d 0E       		.uleb128 0xe
+ 472 004e 3A       		.uleb128 0x3a
+ 473 004f 0B       		.uleb128 0xb
+ 474 0050 3B       		.uleb128 0x3b
+ 475 0051 0B       		.uleb128 0xb
+ 476 0052 49       		.uleb128 0x49
+ 477 0053 13       		.uleb128 0x13
+ 478 0054 00       		.byte	0
+ 479 0055 00       		.byte	0
+ 480 0056 07       		.uleb128 0x7
+ 481 0057 2E       		.uleb128 0x2e
+ 482 0058 01       		.byte	0x1
+ 483 0059 31       		.uleb128 0x31
+ 484 005a 13       		.uleb128 0x13
+ 485 005b 11       		.uleb128 0x11
+ 486 005c 01       		.uleb128 0x1
+ 487 005d 12       		.uleb128 0x12
+ 488 005e 06       		.uleb128 0x6
+ 489 005f 40       		.uleb128 0x40
+ 490 0060 18       		.uleb128 0x18
+ 491 0061 9742     		.uleb128 0x2117
+ 492 0063 19       		.uleb128 0x19
+ 493 0064 01       		.uleb128 0x1
+ 494 0065 13       		.uleb128 0x13
+ 495 0066 00       		.byte	0
+ 496 0067 00       		.byte	0
+ 497 0068 08       		.uleb128 0x8
+ 498 0069 34       		.uleb128 0x34
+ 499 006a 00       		.byte	0
+ 500 006b 31       		.uleb128 0x31
+ 501 006c 13       		.uleb128 0x13
+ 502 006d 02       		.uleb128 0x2
+ 503 006e 17       		.uleb128 0x17
+ 504 006f 00       		.byte	0
+ 505 0070 00       		.byte	0
+ 506 0071 09       		.uleb128 0x9
+ 507 0072 898201   		.uleb128 0x4109
+ 508 0075 01       		.byte	0x1
+ 509 0076 11       		.uleb128 0x11
+ 510 0077 01       		.uleb128 0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 12
+
+
+ 511 0078 31       		.uleb128 0x31
+ 512 0079 13       		.uleb128 0x13
+ 513 007a 01       		.uleb128 0x1
+ 514 007b 13       		.uleb128 0x13
+ 515 007c 00       		.byte	0
+ 516 007d 00       		.byte	0
+ 517 007e 0A       		.uleb128 0xa
+ 518 007f 8A8201   		.uleb128 0x410a
+ 519 0082 00       		.byte	0
+ 520 0083 02       		.uleb128 0x2
+ 521 0084 18       		.uleb128 0x18
+ 522 0085 9142     		.uleb128 0x2111
+ 523 0087 18       		.uleb128 0x18
+ 524 0088 00       		.byte	0
+ 525 0089 00       		.byte	0
+ 526 008a 0B       		.uleb128 0xb
+ 527 008b 898201   		.uleb128 0x4109
+ 528 008e 01       		.byte	0x1
+ 529 008f 11       		.uleb128 0x11
+ 530 0090 01       		.uleb128 0x1
+ 531 0091 31       		.uleb128 0x31
+ 532 0092 13       		.uleb128 0x13
+ 533 0093 00       		.byte	0
+ 534 0094 00       		.byte	0
+ 535 0095 0C       		.uleb128 0xc
+ 536 0096 2E       		.uleb128 0x2e
+ 537 0097 01       		.byte	0x1
+ 538 0098 3F       		.uleb128 0x3f
+ 539 0099 19       		.uleb128 0x19
+ 540 009a 03       		.uleb128 0x3
+ 541 009b 0E       		.uleb128 0xe
+ 542 009c 3A       		.uleb128 0x3a
+ 543 009d 0B       		.uleb128 0xb
+ 544 009e 3B       		.uleb128 0x3b
+ 545 009f 0B       		.uleb128 0xb
+ 546 00a0 27       		.uleb128 0x27
+ 547 00a1 19       		.uleb128 0x19
+ 548 00a2 11       		.uleb128 0x11
+ 549 00a3 01       		.uleb128 0x1
+ 550 00a4 12       		.uleb128 0x12
+ 551 00a5 06       		.uleb128 0x6
+ 552 00a6 40       		.uleb128 0x40
+ 553 00a7 18       		.uleb128 0x18
+ 554 00a8 9742     		.uleb128 0x2117
+ 555 00aa 19       		.uleb128 0x19
+ 556 00ab 01       		.uleb128 0x1
+ 557 00ac 13       		.uleb128 0x13
+ 558 00ad 00       		.byte	0
+ 559 00ae 00       		.byte	0
+ 560 00af 0D       		.uleb128 0xd
+ 561 00b0 05       		.uleb128 0x5
+ 562 00b1 00       		.byte	0
+ 563 00b2 03       		.uleb128 0x3
+ 564 00b3 0E       		.uleb128 0xe
+ 565 00b4 3A       		.uleb128 0x3a
+ 566 00b5 0B       		.uleb128 0xb
+ 567 00b6 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 13
+
+
+ 568 00b7 0B       		.uleb128 0xb
+ 569 00b8 49       		.uleb128 0x49
+ 570 00b9 13       		.uleb128 0x13
+ 571 00ba 02       		.uleb128 0x2
+ 572 00bb 17       		.uleb128 0x17
+ 573 00bc 00       		.byte	0
+ 574 00bd 00       		.byte	0
+ 575 00be 0E       		.uleb128 0xe
+ 576 00bf 1D       		.uleb128 0x1d
+ 577 00c0 01       		.byte	0x1
+ 578 00c1 31       		.uleb128 0x31
+ 579 00c2 13       		.uleb128 0x13
+ 580 00c3 52       		.uleb128 0x52
+ 581 00c4 01       		.uleb128 0x1
+ 582 00c5 55       		.uleb128 0x55
+ 583 00c6 17       		.uleb128 0x17
+ 584 00c7 58       		.uleb128 0x58
+ 585 00c8 0B       		.uleb128 0xb
+ 586 00c9 59       		.uleb128 0x59
+ 587 00ca 0B       		.uleb128 0xb
+ 588 00cb 01       		.uleb128 0x1
+ 589 00cc 13       		.uleb128 0x13
+ 590 00cd 00       		.byte	0
+ 591 00ce 00       		.byte	0
+ 592 00cf 0F       		.uleb128 0xf
+ 593 00d0 0B       		.uleb128 0xb
+ 594 00d1 01       		.byte	0x1
+ 595 00d2 55       		.uleb128 0x55
+ 596 00d3 17       		.uleb128 0x17
+ 597 00d4 00       		.byte	0
+ 598 00d5 00       		.byte	0
+ 599 00d6 10       		.uleb128 0x10
+ 600 00d7 898201   		.uleb128 0x4109
+ 601 00da 00       		.byte	0
+ 602 00db 11       		.uleb128 0x11
+ 603 00dc 01       		.uleb128 0x1
+ 604 00dd 31       		.uleb128 0x31
+ 605 00de 13       		.uleb128 0x13
+ 606 00df 00       		.byte	0
+ 607 00e0 00       		.byte	0
+ 608 00e1 11       		.uleb128 0x11
+ 609 00e2 34       		.uleb128 0x34
+ 610 00e3 00       		.byte	0
+ 611 00e4 03       		.uleb128 0x3
+ 612 00e5 0E       		.uleb128 0xe
+ 613 00e6 3A       		.uleb128 0x3a
+ 614 00e7 0B       		.uleb128 0xb
+ 615 00e8 3B       		.uleb128 0x3b
+ 616 00e9 0B       		.uleb128 0xb
+ 617 00ea 49       		.uleb128 0x49
+ 618 00eb 13       		.uleb128 0x13
+ 619 00ec 02       		.uleb128 0x2
+ 620 00ed 18       		.uleb128 0x18
+ 621 00ee 00       		.byte	0
+ 622 00ef 00       		.byte	0
+ 623 00f0 12       		.uleb128 0x12
+ 624 00f1 2E       		.uleb128 0x2e
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 14
+
+
+ 625 00f2 00       		.byte	0
+ 626 00f3 3F       		.uleb128 0x3f
+ 627 00f4 19       		.uleb128 0x19
+ 628 00f5 3C       		.uleb128 0x3c
+ 629 00f6 19       		.uleb128 0x19
+ 630 00f7 6E       		.uleb128 0x6e
+ 631 00f8 0E       		.uleb128 0xe
+ 632 00f9 03       		.uleb128 0x3
+ 633 00fa 0E       		.uleb128 0xe
+ 634 00fb 3A       		.uleb128 0x3a
+ 635 00fc 0B       		.uleb128 0xb
+ 636 00fd 3B       		.uleb128 0x3b
+ 637 00fe 0B       		.uleb128 0xb
+ 638 00ff 00       		.byte	0
+ 639 0100 00       		.byte	0
+ 640 0101 00       		.byte	0
+ 641              		.section	.debug_loc,"",%progbits
+ 642              	.Ldebug_loc0:
+ 643              	.LLST0:
+ 644 0000 00000000 		.4byte	.LVL0
+ 645 0004 08000000 		.4byte	.LVL1
+ 646 0008 0200     		.2byte	0x2
+ 647 000a 30       		.byte	0x30
+ 648 000b 9F       		.byte	0x9f
+ 649 000c 08000000 		.4byte	.LVL1
+ 650 0010 0E000000 		.4byte	.LVL2
+ 651 0014 0200     		.2byte	0x2
+ 652 0016 31       		.byte	0x31
+ 653 0017 9F       		.byte	0x9f
+ 654 0018 0E000000 		.4byte	.LVL2
+ 655 001c 1C000000 		.4byte	.LFE0
+ 656 0020 0200     		.2byte	0x2
+ 657 0022 32       		.byte	0x32
+ 658 0023 9F       		.byte	0x9f
+ 659 0024 00000000 		.4byte	0
+ 660 0028 00000000 		.4byte	0
+ 661              	.LLST1:
+ 662 002c 00000000 		.4byte	.LVL3
+ 663 0030 06000000 		.4byte	.LVL4
+ 664 0034 0100     		.2byte	0x1
+ 665 0036 50       		.byte	0x50
+ 666 0037 06000000 		.4byte	.LVL4
+ 667 003b 24000000 		.4byte	.LFE1
+ 668 003f 0400     		.2byte	0x4
+ 669 0041 F3       		.byte	0xf3
+ 670 0042 01       		.uleb128 0x1
+ 671 0043 50       		.byte	0x50
+ 672 0044 9F       		.byte	0x9f
+ 673 0045 00000000 		.4byte	0
+ 674 0049 00000000 		.4byte	0
+ 675              	.LLST2:
+ 676 004d 00000000 		.4byte	.LVL3
+ 677 0051 0A000000 		.4byte	.LVL5
+ 678 0055 0200     		.2byte	0x2
+ 679 0057 30       		.byte	0x30
+ 680 0058 9F       		.byte	0x9f
+ 681 0059 0A000000 		.4byte	.LVL5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 15
+
+
+ 682 005d 12000000 		.4byte	.LVL6
+ 683 0061 0200     		.2byte	0x2
+ 684 0063 31       		.byte	0x31
+ 685 0064 9F       		.byte	0x9f
+ 686 0065 12000000 		.4byte	.LVL6
+ 687 0069 18000000 		.4byte	.LVL7
+ 688 006d 0200     		.2byte	0x2
+ 689 006f 32       		.byte	0x32
+ 690 0070 9F       		.byte	0x9f
+ 691 0071 00000000 		.4byte	0
+ 692 0075 00000000 		.4byte	0
+ 693              	.LLST3:
+ 694 0079 00000000 		.4byte	.LVL9
+ 695 007d 08000000 		.4byte	.LVL10
+ 696 0081 0100     		.2byte	0x1
+ 697 0083 50       		.byte	0x50
+ 698 0084 08000000 		.4byte	.LVL10
+ 699 0088 20000000 		.4byte	.LFE2
+ 700 008c 0400     		.2byte	0x4
+ 701 008e F3       		.byte	0xf3
+ 702 008f 01       		.uleb128 0x1
+ 703 0090 50       		.byte	0x50
+ 704 0091 9F       		.byte	0x9f
+ 705 0092 00000000 		.4byte	0
+ 706 0096 00000000 		.4byte	0
+ 707              		.section	.debug_aranges,"",%progbits
+ 708 0000 2C000000 		.4byte	0x2c
+ 709 0004 0200     		.2byte	0x2
+ 710 0006 00000000 		.4byte	.Ldebug_info0
+ 711 000a 04       		.byte	0x4
+ 712 000b 00       		.byte	0
+ 713 000c 0000     		.2byte	0
+ 714 000e 0000     		.2byte	0
+ 715 0010 00000000 		.4byte	.LFB0
+ 716 0014 1C000000 		.4byte	.LFE0-.LFB0
+ 717 0018 00000000 		.4byte	.LFB1
+ 718 001c 24000000 		.4byte	.LFE1-.LFB1
+ 719 0020 00000000 		.4byte	.LFB2
+ 720 0024 20000000 		.4byte	.LFE2-.LFB2
+ 721 0028 00000000 		.4byte	0
+ 722 002c 00000000 		.4byte	0
+ 723              		.section	.debug_ranges,"",%progbits
+ 724              	.Ldebug_ranges0:
+ 725 0000 04000000 		.4byte	.LBB4
+ 726 0004 14000000 		.4byte	.LBE4
+ 727 0008 16000000 		.4byte	.LBB7
+ 728 000c 18000000 		.4byte	.LBE7
+ 729 0010 00000000 		.4byte	0
+ 730 0014 00000000 		.4byte	0
+ 731 0018 00000000 		.4byte	.LFB0
+ 732 001c 1C000000 		.4byte	.LFE0
+ 733 0020 00000000 		.4byte	.LFB1
+ 734 0024 24000000 		.4byte	.LFE1
+ 735 0028 00000000 		.4byte	.LFB2
+ 736 002c 20000000 		.4byte	.LFE2
+ 737 0030 00000000 		.4byte	0
+ 738 0034 00000000 		.4byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 16
+
+
+ 739              		.section	.debug_line,"",%progbits
+ 740              	.Ldebug_line0:
+ 741 0000 A5000000 		.section	.debug_str,"MS",%progbits,1
+ 741      02005500 
+ 741      00000201 
+ 741      FB0E0D00 
+ 741      01010101 
+ 742              	.LASF14:
+ 743 0000 6368616E 		.ascii	"channel\000"
+ 743      6E656C00 
+ 744              	.LASF17:
+ 745 0008 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 745      43313120 
+ 745      352E342E 
+ 745      31203230 
+ 745      31363036 
+ 746 003b 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 746      20726576 
+ 746      6973696F 
+ 746      6E203233 
+ 746      37373135 
+ 747 006e 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
+ 747      66756E63 
+ 747      74696F6E 
+ 747      2D736563 
+ 747      74696F6E 
+ 748              	.LASF12:
+ 749 0096 414D7578 		.ascii	"AMux_3_Select\000"
+ 749      5F335F53 
+ 749      656C6563 
+ 749      7400
+ 750              	.LASF13:
+ 751 00a4 414D7578 		.ascii	"AMux_3_FastSelect\000"
+ 751      5F335F46 
+ 751      61737453 
+ 751      656C6563 
+ 751      7400
+ 752              	.LASF9:
+ 753 00b6 666C6F61 		.ascii	"float\000"
+ 753      7400
+ 754              	.LASF23:
+ 755 00bc 414D7578 		.ascii	"AMux_3_lastChannel\000"
+ 755      5F335F6C 
+ 755      61737443 
+ 755      68616E6E 
+ 755      656C00
+ 756              	.LASF1:
+ 757 00cf 756E7369 		.ascii	"unsigned char\000"
+ 757      676E6564 
+ 757      20636861 
+ 757      7200
+ 758              	.LASF16:
+ 759 00dd 414D7578 		.ascii	"AMux_3_Set\000"
+ 759      5F335F53 
+ 759      657400
+ 760              	.LASF5:
+ 761 00e8 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 17
+
+
+ 761      20756E73 
+ 761      69676E65 
+ 761      6420696E 
+ 761      7400
+ 762              	.LASF3:
+ 763 00fa 73686F72 		.ascii	"short unsigned int\000"
+ 763      7420756E 
+ 763      7369676E 
+ 763      65642069 
+ 763      6E7400
+ 764              	.LASF10:
+ 765 010d 646F7562 		.ascii	"double\000"
+ 765      6C6500
+ 766              	.LASF15:
+ 767 0114 414D7578 		.ascii	"AMux_3_Unset\000"
+ 767      5F335F55 
+ 767      6E736574 
+ 767      00
+ 768              	.LASF19:
+ 769 0121 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 769      73657273 
+ 769      5C6C6567 
+ 769      6F635C44 
+ 769      6F63756D 
+ 770 014e 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 770      72205072 
+ 770      6F6A6563 
+ 770      745C5365 
+ 770      6E696F72 
+ 771 017f 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 771      7420496E 
+ 771      74656772 
+ 771      61746564 
+ 771      5C446573 
+ 772              	.LASF8:
+ 773 019f 756E7369 		.ascii	"unsigned int\000"
+ 773      676E6564 
+ 773      20696E74 
+ 773      00
+ 774              	.LASF7:
+ 775 01ac 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 775      206C6F6E 
+ 775      6720756E 
+ 775      7369676E 
+ 775      65642069 
+ 776              	.LASF21:
+ 777 01c3 414D7578 		.ascii	"AMux_3_Start\000"
+ 777      5F335F53 
+ 777      74617274 
+ 777      00
+ 778              	.LASF6:
+ 779 01d0 6C6F6E67 		.ascii	"long long int\000"
+ 779      206C6F6E 
+ 779      6720696E 
+ 779      7400
+ 780              	.LASF11:
+ 781 01de 63686172 		.ascii	"char\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccnmD6cL.s 			page 18
+
+
+ 781      00
+ 782              	.LASF18:
+ 783 01e3 47656E65 		.ascii	"Generated_Source\\PSoC5\\AMux_3.c\000"
+ 783      72617465 
+ 783      645F536F 
+ 783      75726365 
+ 783      5C50536F 
+ 784              	.LASF2:
+ 785 0203 73686F72 		.ascii	"short int\000"
+ 785      7420696E 
+ 785      7400
+ 786              	.LASF20:
+ 787 020d 75696E74 		.ascii	"uint8\000"
+ 787      3800
+ 788              	.LASF4:
+ 789 0213 6C6F6E67 		.ascii	"long int\000"
+ 789      20696E74 
+ 789      00
+ 790              	.LASF22:
+ 791 021c 6368616E 		.ascii	"chan\000"
+ 791      00
+ 792              	.LASF0:
+ 793 0221 7369676E 		.ascii	"signed char\000"
+ 793      65642063 
+ 793      68617200 
+ 794              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
