@@ -294,6 +294,42 @@ void draw_line(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
     }
 }
 
+void draw_button(int16_t x, int16_t y, int16_t w, int16_t h, 
+        uint16_t button_color, uint16_t text_color, char string[])
+{
+    //fills in the rectangle on the screen for the button
+    fill_rect(x,y,w,h,button_color);
+    
+    //defines needed variables
+    int rect_center_x = x+(w/2);
+    int rect_center_y = y+(h/2);
+    int string_length = 0;
+    
+    //gets the length of the string
+    while(*string != 0)
+    {
+        string_length++;
+        string++;
+    }
+    
+    char the_string[string_length];
+    int i = 0;
+    string = string-string_length; //resets string pointer
+    
+    //recreates the string as a character array
+    while(*string != 0)
+    {
+        the_string[i] = *string;
+        string++;
+        i++;
+    }
+    
+    int pixel_start = rect_center_x - string_length*7/2 + 3;
+    
+    //prints string to center of button rectangle
+    draw_string(pixel_start,rect_center_y-1,text_color,the_string);
+}
+
 void draw_coordinates(int y_max, unsigned int device_selection)
 {
     fill_screen(BLACK);
@@ -348,32 +384,54 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);//draw x major label
     }
     
-    fill_rect(130,209,60,30,RED);
-    draw_string(148,223,BLACK,"STOP");
+    char temp[] = "STOP";
+    draw_button(130,209,60,30,RED,BLACK,temp);
         
-    screen_state = 1;
+    screen_state = 2;   //sets screen state to graph screen
 }
 
 void draw_choose_screen()
 {
     fill_rect(0,0,160,240,BLUE);
     fill_rect(160,0,160,240,RED);
-    fill_rect(10,10,139,99,LIGHTBLUE);
-    fill_rect(10,131,139,99,LIGHTBLUE);
-    fill_rect(171,10,139,99,LIGHTRED);
-    fill_rect(171,131,139,99,LIGHTRED);
     
     fill_rect(159,0,2,240,BLACK);
     fill_rect(0,119,320,2,BLACK);
     
     fill_rect(33,109,252,22,BLACK);
-    fill_rect(35,111,248,18,WHITE); 
     
-    draw_string(66,118,BLACK,"CHOOSE A SEMICONDUCTOR TYPE");
-    draw_string(58,177,BLACK,"NPN BJT");
-    draw_string(48,57,BLACK,"N TYPE FET");
-    draw_string(218,177,BLACK,"PNP BJT");
-    draw_string(208,57,BLACK,"P TYPE FET");
+    draw_button(35,111,248,18,WHITE,BLACK,"CHOOSE A SEMICONDUCTOR TYPE");
+    draw_button(10,10,139,99,LIGHTBLUE,BLACK,"N TYPE FET");
+    draw_button(10,131,139,99,LIGHTBLUE,BLACK,"NPN BJT");
+    draw_button(171,10,139,99,LIGHTRED,BLACK,"P TYPE FET");
+    draw_button(171,131,139,99,LIGHTRED,BLACK,"PNP BJT");
     
     screen_state = 0;
+}
+
+void draw_options_screen()
+{
+    screen_state = 1;
+    fill_screen(BLACK);
+}
+
+void draw_debug_screen(uint16_t x, uint16_t y)
+{
+    fill_screen(BLACK);
+    
+    screen_state = 3;
+    
+    char x_touch[10];
+    char y_touch[10];
+
+    itoa(x, x_touch, 10);
+    itoa(y, y_touch, 10);
+    
+    draw_string(100,110,WHITE,x_touch);
+    draw_string(100,100,WHITE,y_touch);
+    
+    draw_string(100,200,WHITE,"TOUCH COORDINATES");
+    
+    char temp[] = "RETURN";
+    draw_button(0,0,50,30,WHITE,BLACK,temp);
 }

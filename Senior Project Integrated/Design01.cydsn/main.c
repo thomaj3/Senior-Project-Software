@@ -207,11 +207,11 @@ int main(void)
     
     // Resets screen
     Reset_Write(1);
-    CyDelay(1000);
+    CyDelay(100);
     Reset_Write(0);
-    CyDelay(1000);
+    CyDelay(100);
     Reset_Write(1);
-    CyDelay(1000);
+    CyDelay(100);
     
     
     
@@ -225,26 +225,6 @@ int main(void)
     
     isr_Start();
     isr_Enable();
-    
-//    // Test case for writing characters 0-9 and period
-//    uint16_t char_x = 5;
-//    for(int p=0;p<=21;p++)
-//    {
-//        draw_character(char_x,235,WHITE,p);
-//        char_x = char_x+7;
-//    }
-//    
-//    double temp_num = 87.926;
-//    
-//    draw_number(100,100,WHITE,temp_num);
-//    
-//    char string_test[] = {"abcdefghijklmnopqrstuvwxyz"};
-//    draw_string(200,100,WHITE,string_test);
-//    draw_string(120, 160, WHITE, "abc");
-//    
-//    CyDelay(10000);
-//    
-//    fill_screen(BLACK);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();
@@ -297,7 +277,7 @@ int main(void)
     { 
         draw_choose_screen();
         device_selection = -1;
-        while(device_selection < 0)
+        while(screen_state != 2)
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {

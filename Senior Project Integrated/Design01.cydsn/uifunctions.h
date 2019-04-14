@@ -8,7 +8,9 @@
     extern int device_selection;
     
     #define DEVICE_SELECTION_SCREEN     0
-    #define PLOT_SCREEN                 1
+    #define OPTIONS_SCREEN              1
+    #define PLOT_SCREEN                 2
+    #define DEBUG_SCREEN                3
     #define NMOS                        0
     #define NPN                         1
     #define PMOS                        2
