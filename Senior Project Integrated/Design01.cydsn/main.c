@@ -8,17 +8,19 @@
 #include <FS.h>
 #include <Global.h>
 #include "sd.h"
+#include "uifunctions.h"
 
-#define VDAC_G_B_MAX 255 //Max VDAC code for the Gate/Base 
-#define VDAC_D_C_MAX 188 //Max VDAC for the Drain/Common
+#define VDAC_G_B_MAX    255 //Max VDAC code for the Gate/Base 
+#define VDAC_D_C_MAX    188 //Max VDAC for the Drain/Common
 #define VDS_NMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_NMOS) + 1)
 #define VCE_NPN_LENGTH  ((VDAC_D_C_MAX/VC_STEP_NPN) + 1)
 #define VDS_PMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_PMOS) + 1)
 #define VCE_PNP_LENGTH  ((VDAC_D_C_MAX/VC_STEP_PNP) + 1)
-#define VDAC_N_1_VOLT 21
-#define VDAC_P_1_VOLT 13
-#define ADC_GAIN 52.0
-#define CURVE_MAX 10
+#define VDAC_N_1_VOLT   21
+#define VDAC_P_1_VOLT   13
+#define ADC_GAIN        52.0
+#define CURVE_MAX       10
+
 
 //The lengths of Drain or Common testing points
 
@@ -126,7 +128,7 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 
 //This function runs the main test, it intakes the y_max used to calculate the
 //pixels for line segments and the Vgs test points
-void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_double[CURVE_NUM], unsigned char device_selection)
+int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_double[CURVE_NUM], unsigned char device_selection)
 {
     int i,j,k;
     double Id;
@@ -138,11 +140,14 @@ void run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_dou
     
     for(i = 0; i < CURVE_NUM; i++)
     {
-       write_header_info("data.txt",device_selection,i,Vgs_double); 
+        write_header_info("data.txt",device_selection,i,Vgs_double); 
         ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j <VDS_NMOS_LENGTH; j++)
         {
-            
+            if(!screen_state)
+            {
+                return 0;   
+            }
             Id_avg = 0.0;//reset Id Value
             //Averaging multiple tests to elminate noise
             for(k=0; k<AVG; k++)
@@ -213,10 +218,8 @@ int main(void)
     // Calls start screen
     StartScreen();
     
-    // Fills screen in black
-    fill_screen(BLACK);
-    
-    draw_choose_screen();   
+    // Fills screen in black    
+      
     
     isr_ClearPending();
     
@@ -254,7 +257,6 @@ int main(void)
     int j;  //used for for loop iterations
     int k;  //used for for loop iterations
     
-    unsigned char device_selection = 0;     //The device selected 0: NMOS, 1: PMOS, 3: NPN, 4: PNP
     double y_max_mA;                        //The highest plottable Id in mA    
     double x_max_mV = 10000;                   //the highest plottable Vds in mV
     
@@ -291,8 +293,11 @@ int main(void)
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
     
-    //for(;;)
-    //{ 
+    for(;;)
+    { 
+        draw_choose_screen();
+        device_selection = -1;
+        while(device_selection < 0)
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {
@@ -305,9 +310,10 @@ int main(void)
         }
         if (Vth == 0)
         {
+            fill_screen(BLACK);
             draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND");
             create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
-            return 0;
+//            return 0;
         }
         Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
         Vgs_step = (Vgs_max - Vth)/(CURVE_NUM-1); //Creating the step size for linearlly spaced
@@ -373,10 +379,10 @@ int main(void)
         
         
         ADC_SAR_1_Sleep();
-    //}
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
-//        //fillScreen(WHITE);
-//
-//    //}
+        //fillScreen(WHITE);
+
+        while(screen_state != 0){}
+    }
 }

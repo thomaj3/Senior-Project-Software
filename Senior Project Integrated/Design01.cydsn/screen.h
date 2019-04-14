@@ -106,6 +106,4 @@
     #define NUMSAMPLES 2
     #define _swap_int16_t(a, b) { int16_t t = a; a = b; b = t; }
     
-    extern int screen_state;
-    
 #endif /* (SCREEN_H) */

@@ -44,6 +44,8 @@
           <File BuildType="BUILD" Toolchain="">font.c</File>
           <File BuildType="BUILD" Toolchain="">sd.c</File>
           <File BuildType="BUILD" Toolchain="">sd.h</File>
+          <File BuildType="BUILD" Toolchain="">uifunctions.h</File>
+          <File BuildType="BUILD" Toolchain="">uifunctions.c</File>
           <File BuildType="BUILD" Toolchain="">cyapicallbacks.h</File>
         </Files>
       </Folder>

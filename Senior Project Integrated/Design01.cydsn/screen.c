@@ -10,8 +10,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "font.h"
-
-int screen_state;
+#include "uifunctions.h"
 
 // Initialization command/data
 static const uint8_t initcmd[] = {
@@ -297,6 +296,7 @@ void draw_line(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
 
 void draw_coordinates(int y_max, unsigned int device_selection)
 {
+    fill_screen(BLACK);
     
     int y_max_pixel = (int) 240/(1.25);
     int five_mA_pixel = (int) (y_max_pixel*5.0/y_max);
@@ -347,8 +347,11 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         draw_line(i*x_max_step+30,10,i*x_max_step+30,y_max_pixel+10,WHITE);//draw x major
         draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);//draw x major label
     }
-        
     
+    fill_rect(130,209,60,30,RED);
+    draw_string(148,223,BLACK,"STOP");
+        
+    screen_state = 1;
 }
 
 void draw_choose_screen()
