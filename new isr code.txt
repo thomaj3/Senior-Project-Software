@@ -28,6 +28,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "I2C.h"
+#include "uifunctions.h"
 
 #define FT6206_ADDR             0x38
 #define Read_Register_X_1         0x03
@@ -232,50 +233,7 @@ CY_ISR(isr_Interrupt)
     uint16_t touch_x = get_touch(X);
     uint16_t touch_y = get_touch(Y);
     
-    if(screen_state == 0)
-    {
-        if(touch_x>=35 && touch_x<=283 && touch_y>=111 && touch_y<=129)
-        {
-            fill_screen(BLACK);
-            
-            screen_state = 1;
-            
-            char x_touch[10];
-            char y_touch[10];
-
-            itoa(touch_x, x_touch, 10);
-            itoa(touch_y, y_touch, 10);
-            
-            draw_string(100,110,WHITE,x_touch);
-            draw_string(100,100,WHITE,y_touch);
-            
-            draw_string(100,200,WHITE,"TOUCH COORDINATES");
-            
-            fill_rect(0,0,50,30,WHITE);
-            
-            draw_string(10,15,BLACK,"RETURN");
-        }
-    }
-    else if(screen_state == 1)
-    {
-        if(touch_x>=0 && touch_x<=50 && touch_y>=0 && touch_y<=30)
-        {
-            draw_choose_screen();
-        }
-        else
-        {
-            fill_rect(95,95,30,30,BLACK);
-            
-            char x_touch[10];
-            char y_touch[10];
-
-            itoa(touch_x, x_touch, 10);
-            itoa(touch_y, y_touch, 10);
-            
-            draw_string(100,110,WHITE,x_touch);
-            draw_string(100,100,WHITE,y_touch);
-        }
-    }
+    ui_control(touch_x, touch_y);
         
     isr_ClearPending();
     
