@@ -277,7 +277,20 @@ int main(void)
     { 
         draw_choose_screen();
         device_selection = -1;
+        while(device_selection < 0)
+        {
+            if(device_selection >= 0)
+            {
+                break;
+            }
+        }
         while(screen_state != 2)
+        {
+            if(screen_state == 2)
+            {
+                break;
+            }
+        }
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {
@@ -363,6 +376,12 @@ int main(void)
         VDAC8_GS_SetValue(0);
         //fillScreen(WHITE);
 
-        while(screen_state != 0){}
+        while(screen_state != 0)
+        {
+            if(screen_state == 0)
+            {
+                break;
+            }
+        }
     }
 }

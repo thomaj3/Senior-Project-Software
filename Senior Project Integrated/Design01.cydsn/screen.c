@@ -392,14 +392,18 @@ void draw_coordinates(int y_max, unsigned int device_selection)
 
 void draw_choose_screen()
 {
+    //fills in background color
     fill_rect(0,0,160,240,BLUE);
     fill_rect(160,0,160,240,RED);
     
+    //creates lines to separate buttons
     fill_rect(159,0,2,240,BLACK);
     fill_rect(0,119,320,2,BLACK);
     
+    //center background colors
     fill_rect(33,109,252,22,BLACK);
     
+    //draws buttons
     draw_button(35,111,248,18,WHITE,BLACK,"CHOOSE A SEMICONDUCTOR TYPE");
     draw_button(10,10,139,99,LIGHTBLUE,BLACK,"N TYPE FET");
     draw_button(10,131,139,99,LIGHTBLUE,BLACK,"NPN BJT");
@@ -412,7 +416,14 @@ void draw_choose_screen()
 void draw_options_screen()
 {
     screen_state = 1;
-    fill_screen(BLACK);
+    
+    fill_rect(159,0,2,240,BLACK);
+    fill_rect(0,119,320,2,BLACK);
+    
+    draw_button(0,0,158,118,LIGHTBLUE,BLACK,"AVERAGES PER POINT");
+    draw_button(0,121,158,118,LIGHTRED,BLACK,"WRITE TO SD CARD");
+    draw_button(161,0,158,118,LIGHTRED,BLACK,"NUMBER OF CURVES");
+    draw_button(161,121,158,118,LIGHTBLUE,BLACK,"SETTLING TIME");
 }
 
 void draw_debug_screen(uint16_t x, uint16_t y)
