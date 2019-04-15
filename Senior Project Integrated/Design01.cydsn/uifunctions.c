@@ -14,6 +14,7 @@ int device_selection;
 
 void ui_control(uint16_t x, uint16_t y)
 {
+    //switch statement that controls the touchscreen
     switch(screen_state)
     {
         case DEVICE_SELECTION_SCREEN :
@@ -43,22 +44,50 @@ void ui_control(uint16_t x, uint16_t y)
             }
             break;
         case OPTIONS_SCREEN :
-            if(x>=0 && x<=319 && y>=0 && y<=239)
+            if(x>=0 && x<=159 && y>=0 && y<=119)
             {
-                screen_state = 2;  
+                draw_options_averages_screen(); 
+            }
+            if(x>=160 && x<=319 && y>=0 && y<=119)
+            {
+                draw_coordinates();
             }
             break;
         case PLOT_SCREEN :
             if(x>=130 && x<=190 && y>=209 && y<=239)
             {
-                screen_state = 0;  
+                draw_choose_screen();  
+            }
+            break;
+        case OPTION_AVERAGES_SCREEN :
+            if(x>=0 && x<=50 && y>=0 && y<=30)
+            {
+                draw_options_screen();  
+            }
+            break;
+        case OPTION_SD_SCREEN :
+            if(x>=0 && x<=50 && y>=0 && y<=30)
+            {
+                draw_options_screen();  
+            }
+            break;
+        case OPTION_CURVES_SCREEN :
+            if(x>=0 && x<=50 && y>=0 && y<=30)
+            {
+                draw_options_screen();  
+            }
+            break;
+        case OPTION_SETTLING_SCREEN :
+            if(x>=0 && x<=50 && y>=0 && y<=30)
+            {
+                draw_options_screen();  
             }
             break;
         case DEBUG_SCREEN :
             if(x>=0 && x<=50 && y>=0 && y<=30)
             {
                 draw_choose_screen();  
-                screen_state = 0;
+                screen_state = DEVICE_SELECTION_SCREEN;
             }
             else
             {

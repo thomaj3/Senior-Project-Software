@@ -384,14 +384,18 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);//draw x major label
     }
     
+    //DO NOT TOUCH! without having the string be separate from
+    //the draw_button function, it will write "STOPH"
     char temp[] = "STOP";
     draw_button(130,209,60,30,RED,BLACK,temp);
         
-    screen_state = 2;   //sets screen state to graph screen
+    screen_state = PLOT_SCREEN;   //sets screen state to graph screen
 }
 
 void draw_choose_screen()
 {
+    screen_state = DEVICE_SELECTION_SCREEN;
+    
     //fills in background color
     fill_rect(0,0,160,240,BLUE);
     fill_rect(160,0,160,240,RED);
@@ -409,28 +413,79 @@ void draw_choose_screen()
     draw_button(10,131,139,99,LIGHTBLUE,BLACK,"NPN BJT");
     draw_button(171,10,139,99,LIGHTRED,BLACK,"P TYPE FET");
     draw_button(171,131,139,99,LIGHTRED,BLACK,"PNP BJT");
-    
-    screen_state = 0;
 }
 
 void draw_options_screen()
 {
-    screen_state = 1;
+    screen_state = OPTIONS_SCREEN;
     
+    char temp[] = "NUMBER OF CURVES";
+    
+    //draws buttons
+    draw_button(0,0,159,119,LIGHTBLUE,BLACK,"AVERAGES PER POINT");
+    draw_button(0,121,159,119,LIGHTRED,BLACK,"WRITE TO SD CARD");
+    draw_button(161,0,159,119,LIGHTRED,BLACK,temp);
+    draw_button(161,121,159,119,LIGHTBLUE,BLACK,"SETTLING TIME");
+    
+    //creates lines to separate buttons
     fill_rect(159,0,2,240,BLACK);
     fill_rect(0,119,320,2,BLACK);
-    
-    draw_button(0,0,158,118,LIGHTBLUE,BLACK,"AVERAGES PER POINT");
-    draw_button(0,121,158,118,LIGHTRED,BLACK,"WRITE TO SD CARD");
-    draw_button(161,0,158,118,LIGHTRED,BLACK,"NUMBER OF CURVES");
-    draw_button(161,121,158,118,LIGHTBLUE,BLACK,"SETTLING TIME");
 }
 
+void draw_options_averages_screen()
+{
+    screen_state = OPTION_AVERAGES_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_string(10,100,WHITE,"NUMBER OF AVERAGES OPTION SCREEN");
+    
+    //return button
+    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+}
+
+void draw_options_sd_screen()
+{
+    screen_state = OPTION_SD_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_string(10,100,WHITE,"SD CARD OPTION SCREEN");
+    
+    //return button
+    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+}
+
+void draw_options_curves_screen()
+{
+    screen_state = OPTION_CURVES_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_string(10,100,WHITE,"NUMBER OF CURVES OPTION SCREEN");
+    
+    //return button
+    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+}
+
+void draw_options_settling_screen()
+{
+    screen_state = OPTION_SETTLING_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_string(10,100,WHITE,"SETTLING TIME OPTION SCREEN");
+    
+    //return button
+    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+}
+
+//screen used for debugging. Feel free to change as needed, keep return button
 void draw_debug_screen(uint16_t x, uint16_t y)
 {
     fill_screen(BLACK);
     
-    screen_state = 3;
+    screen_state = DEBUG_SCREEN;
     
     char x_touch[10];
     char y_touch[10];
@@ -443,6 +498,6 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     
     draw_string(100,200,WHITE,"TOUCH COORDINATES");
     
-    char temp[] = "RETURN";
-    draw_button(0,0,50,30,WHITE,BLACK,temp);
+    //return button
+    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
 }

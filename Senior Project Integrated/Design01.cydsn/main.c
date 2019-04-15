@@ -279,17 +279,11 @@ int main(void)
         device_selection = -1;
         while(device_selection < 0)
         {
-            if(device_selection >= 0)
-            {
-                break;
-            }
+            
         }
         while(screen_state != 2)
         {
-            if(screen_state == 2)
-            {
-                break;
-            }
+            
         }
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
