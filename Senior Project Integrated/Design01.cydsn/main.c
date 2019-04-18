@@ -142,7 +142,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_doub
     {
         write_header_info("data.txt",device_selection,i,Vgs_double); 
         ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
-        for(j = 0; j <VDS_NMOS_LENGTH; j++)
+        for(j = 0; j <VDAC_D_C_MAX; j++)
         {
             if(!screen_state)
             {

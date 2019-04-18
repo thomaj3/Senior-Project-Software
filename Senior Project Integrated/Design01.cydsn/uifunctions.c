@@ -15,6 +15,7 @@ int device_selection;
 void ui_control(uint16_t x, uint16_t y)
 {
     //switch statement that controls the touchscreen
+    //if statements outline rectangular coordinates for button presses
     switch(screen_state)
     {
         case DEVICE_SELECTION_SCREEN :
@@ -44,31 +45,57 @@ void ui_control(uint16_t x, uint16_t y)
             }
             break;
         case OPTIONS_SCREEN :
-            if(x>=0 && x<=159 && y>=0 && y<=119)
+            if(x>=0 && x<=119 && y>=0 && y<=119)                //button for number of averages options
             {
                 draw_options_averages_screen(); 
             }
-            if(x>=160 && x<=319 && y>=0 && y<=119)
+            else if(x>=0 && x<=119 && y>=121 && y<=239)         //button for sd card options
+            {
+                draw_options_sd_screen(); 
+            }
+            else if(x>=121 && x<=240 && y>=0 && y<=119)         //button for number of curves options
+            {
+                draw_options_curves_screen(); 
+            }
+            else if(x>=121 && x<=240 && y>=121 && y<=239)       //button for settling time options
+            {
+                draw_options_settling_screen(); 
+            }
+            else if(x>=241 && x<=319 && y>=0 && y<=119)         //return button
+            {
+                draw_choose_screen();
+            }
+            else if(x>=241 && x<=319 && y>=121 && y<=239)       //run test button
             {
                 draw_coordinates();
             }
             break;
         case PLOT_SCREEN :
-            if(x>=130 && x<=190 && y>=209 && y<=239)
+            if(x>=130 && x<=190 && y>=209 && y<=239)            //stop/return button
             {
                 draw_choose_screen();  
             }
             break;
         case OPTION_AVERAGES_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)
+            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
             {
                 draw_options_screen();  
             }
             break;
         case OPTION_SD_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)
+            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
             {
                 draw_options_screen();  
+            }
+            else if(x>=70 && x<=150 && y>=100 && y<=150)        //yes button
+            {
+                draw_button(70,100,80,50,LIGHTBLUE,BLACK,"YES");  
+                draw_button(170,100,80,50,WHITE,BLACK,"NO");
+            }
+            else if(x>=170 && x<=250 && y>=100 && y<=150)       //no button
+            {
+                draw_button(70,100,80,50,WHITE,BLACK,"YES");  
+                draw_button(170,100,80,50,LIGHTBLUE,BLACK,"NO");
             }
             break;
         case OPTION_CURVES_SCREEN :

@@ -312,18 +312,21 @@ void draw_button(int16_t x, int16_t y, int16_t w, int16_t h,
         string++;
     }
     
-    char the_string[string_length];
-    int i = 0;
+    char the_string[string_length+1];
+    
     string = string-string_length; //resets string pointer
     
     //recreates the string as a character array
-    while(*string != 0)
+    for(int i = 0;i<string_length;i++)
     {
         the_string[i] = *string;
         string++;
-        i++;
     }
     
+    //adds null character to end of string
+    the_string[string_length] = 0;
+    
+    //gets starting x-coord. of string
     int pixel_start = rect_center_x - string_length*7/2 + 3;
     
     //prints string to center of button rectangle
@@ -387,6 +390,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     //DO NOT TOUCH! without having the string be separate from
     //the draw_button function, it will write "STOPH"
     char temp[] = "STOP";
+    
     draw_button(130,209,60,30,RED,BLACK,temp);
         
     screen_state = PLOT_SCREEN;   //sets screen state to graph screen
@@ -419,17 +423,28 @@ void draw_options_screen()
 {
     screen_state = OPTIONS_SCREEN;
     
-    char temp[] = "NUMBER OF CURVES";
+    //need temp variables for strings otherwise it reads
+    //into the next string upon returning from an option screen
+    char temp1[] = "AVERAGES";
+    char temp2[] = "SD CARD OPTIONS";
+    char temp3[] = "CURVES";
+    char temp4[] = "SETTLING";
+    char temp5[] = "RETURN";
+    char temp6[] = "RUN TEST";
     
     //draws buttons
-    draw_button(0,0,159,119,LIGHTBLUE,BLACK,"AVERAGES PER POINT");
-    draw_button(0,121,159,119,LIGHTRED,BLACK,"WRITE TO SD CARD");
-    draw_button(161,0,159,119,LIGHTRED,BLACK,temp);
-    draw_button(161,121,159,119,LIGHTBLUE,BLACK,"SETTLING TIME");
+    draw_button(0,0,119,119,LIGHTBLUE,BLACK,temp1);
+    draw_button(0,121,119,119,LIGHTRED,BLACK,temp2);
+    draw_button(121,0,119,119,LIGHTRED,BLACK,temp3);
+    draw_button(121,121,119,119,LIGHTBLUE,BLACK,temp4);
+    
+    draw_button(241,0,79,119,WHITE,BLACK,temp5);
+    draw_button(241,121,79,119,WHITE,BLACK,temp6);
     
     //creates lines to separate buttons
-    fill_rect(159,0,2,240,BLACK);
+    fill_rect(119,0,2,240,BLACK);
     fill_rect(0,119,320,2,BLACK);
+    fill_rect(239,0,2,240,BLACK);
 }
 
 void draw_options_averages_screen()
@@ -450,7 +465,12 @@ void draw_options_sd_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"SD CARD OPTION SCREEN");
+    draw_button(0,219,320,20,WHITE,BLACK,"SD CARD OPTIONS");
+    char temp[] = "WRITE RESULTS TO SD CARD";
+    draw_button(0,170,320,10,WHITE,BLACK,temp);
+    
+    draw_button(70,100,80,50,WHITE,BLACK,"YES");
+    draw_button(170,100,80,50,WHITE,BLACK,"NO");
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
