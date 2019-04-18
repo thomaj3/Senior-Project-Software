@@ -190,7 +190,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_doub
                 sprintf(print_string,"%6.3f MIL A",Vgs_double[i]);
                 break;
         }
-        draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string);
+        draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string,1);
     }
     
 }
@@ -230,6 +230,16 @@ int main(void)
     VDAC8_GS_Start();
     VDAC8_DS_Start();
     ADC_SAR_1_Start();
+    
+    //Sets touch interrupt mode
+    I2C_Start();
+    I2C_MasterSendStart(0x38, 0); 
+    I2C_MasterWriteByte(0xa4); 
+    I2C_MasterWriteByte(0x00);   
+    I2C_MasterSendStop();
+    I2C_Stop();
+    
+    CURVE_NUM1 = 4;
     
     int return_code;    //Going to be used for error displays
     
@@ -298,7 +308,7 @@ int main(void)
         if (Vth == 0)
         {
             fill_screen(BLACK);
-            draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND");
+            draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND",1);
             create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
 //            return 0;
         }

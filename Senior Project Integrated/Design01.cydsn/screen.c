@@ -330,7 +330,7 @@ void draw_button(int16_t x, int16_t y, int16_t w, int16_t h,
     int pixel_start = rect_center_x - string_length*7/2 + 3;
     
     //prints string to center of button rectangle
-    draw_string(pixel_start,rect_center_y-1,text_color,the_string);
+    draw_string(pixel_start,rect_center_y-1,text_color,the_string,1);
 }
 
 void draw_coordinates(int y_max, unsigned int device_selection)
@@ -361,13 +361,13 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     
     if((device_selection)%2 == 0)
     {
-        draw_string(230,4,WHITE,"VDS V");
-        draw_string(3,y_max_pixel + 25,WHITE,"ID MIL A");
+        draw_string(230,4,WHITE,"VDS V",1);
+        draw_string(3,y_max_pixel + 25,WHITE,"ID MIL A",1);
     }
     else
     {
-        draw_string(230,4,WHITE,"VCE V");
-        draw_string(3,y_max_pixel+ 25,WHITE,"IC MIL A");
+        draw_string(230,4,WHITE,"VCE V",1);
+        draw_string(3,y_max_pixel+ 25,WHITE,"IC MIL A",1);
     }
     
     for(i=1; 5*i <= y_max ;i++)
@@ -376,7 +376,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         sprintf(string_throwaway_y,"%d", y_label);
         
         draw_line(30,i*five_mA_pixel+10,220,i*five_mA_pixel+10,WHITE);//draw y major 
-        draw_string(3,i*five_mA_pixel+10,WHITE,string_throwaway_y);//draw y major label
+        draw_string(3,i*five_mA_pixel+10,WHITE,string_throwaway_y,1);//draw y major label
         
     }
     
@@ -384,7 +384,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     {
         sprintf(string_throwaway_x,"%i", i);
         draw_line(i*x_max_step+30,10,i*x_max_step+30,y_max_pixel+10,WHITE);//draw x major
-        draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x);//draw x major label
+        draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x,1);//draw x major label
     }
     
     //DO NOT TOUCH! without having the string be separate from
@@ -453,7 +453,7 @@ void draw_options_averages_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"NUMBER OF AVERAGES OPTION SCREEN");
+    draw_string(10,100,WHITE,"NUMBER OF AVERAGES OPTION SCREEN",1);
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
@@ -482,7 +482,15 @@ void draw_options_curves_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"NUMBER OF CURVES OPTION SCREEN");
+    draw_button(0,219,320,20,WHITE,BLACK,"NUMBER OF CURVES TO DRAW");
+    
+    draw_button(200,40,70,70,WHITE,BLACK,"DECREASE");
+    draw_button(200,130,70,70,WHITE,BLACK,"INCREASE");
+    
+    char num_curve[2];
+    itoa(CURVE_NUM1, num_curve, 10);
+    
+    draw_string(100,115,WHITE,num_curve,3);
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
@@ -494,7 +502,7 @@ void draw_options_settling_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"SETTLING TIME OPTION SCREEN");
+    draw_string(10,100,WHITE,"SETTLING TIME OPTION SCREEN",1);
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
@@ -513,11 +521,47 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     itoa(x, x_touch, 10);
     itoa(y, y_touch, 10);
     
-    draw_string(100,110,WHITE,x_touch);
-    draw_string(100,100,WHITE,y_touch);
+    draw_string(100,110,WHITE,x_touch,1);
+    draw_string(100,100,WHITE,y_touch,1);
     
-    draw_string(100,200,WHITE,"TOUCH COORDINATES");
+    draw_string(100,200,WHITE,"TOUCH COORDINATES",1);
+    
+    draw_string(100,150,WHITE,"FONT SIZE TEST",2);
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    
+    
+    #define FT6206_ADDR                 0x38
+    #define Read_Register_X_1           0x03
+    #define Read_Register_X_2           0x04
+    #define Read_Register_Y_1           0x05
+    #define Read_Register_Y_2           0x06
+    #define WRITE                       0
+    #define READ                        1
+    #define X                           1
+    #define Y                           0    
+    
+    uint16_t data_rec;
+    uint16_t touch;
+    uint8_t reg_1 = 0xa4;
+    
+    I2C_Start();
+    
+    I2C_MasterSendStart(FT6206_ADDR, WRITE);
+    
+    I2C_MasterWriteByte(reg_1);
+    
+    I2C_MasterSendRestart(FT6206_ADDR, READ);
+    
+    data_rec = I2C_MasterReadByte(I2C_NAK_DATA);
+    
+    I2C_MasterSendStop();
+    
+    I2C_Stop();
+    
+    char data[2];
+    itoa(data_rec, data, 10);
+    
+    draw_string(250,50,WHITE,data,1);
 }

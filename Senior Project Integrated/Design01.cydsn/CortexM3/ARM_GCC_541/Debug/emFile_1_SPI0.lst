@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
   28:Generated_Source\PSoC5/emFile_1_SPI0.c ****     volatile uint8 emFile_1_SPI0_rxBuffer[emFile_1_SPI0_RX_BUFFER_SIZE] = {0u};
   29:Generated_Source\PSoC5/emFile_1_SPI0.c ****     volatile uint8 emFile_1_SPI0_rxBufferFull;
   30:Generated_Source\PSoC5/emFile_1_SPI0.c ****     volatile uint8 emFile_1_SPI0_rxBufferRead;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 2
 
 
   31:Generated_Source\PSoC5/emFile_1_SPI0.c ****     volatile uint8 emFile_1_SPI0_rxBufferWrite;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
   72:Generated_Source\PSoC5/emFile_1_SPI0.c ****         (void) CyIntSetVector(emFile_1_SPI0_TX_ISR_NUMBER, &emFile_1_SPI0_TX_ISR);
   73:Generated_Source\PSoC5/emFile_1_SPI0.c ****     #endif /* (0u != emFile_1_SPI0_INTERNAL_TX_INT_ENABLED) */
   74:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 3
 
 
   75:Generated_Source\PSoC5/emFile_1_SPI0.c ****     /* Init RX ISR  */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  129:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  130:Generated_Source\PSoC5/emFile_1_SPI0.c ****     #if(0u != emFile_1_SPI0_INTERNAL_CLOCK)
  131:Generated_Source\PSoC5/emFile_1_SPI0.c ****         emFile_1_SPI0_IntClock_Enable();
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 4
 
 
  132:Generated_Source\PSoC5/emFile_1_SPI0.c ****     #endif /* (0u != emFile_1_SPI0_INTERNAL_CLOCK) */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  186:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
  187:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  188:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Theory:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 5
 
 
  189:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  Disable the clock input to enable operation.
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  243:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
  244:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  245:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Return:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 6
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 6
 
 
  246:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  300:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  301:Generated_Source\PSoC5/emFile_1_SPI0.c **** *******************************************************************************/
  302:Generated_Source\PSoC5/emFile_1_SPI0.c **** void emFile_1_SPI0_DisableRxInt(void) 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 7
 
 
  303:Generated_Source\PSoC5/emFile_1_SPI0.c **** {
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  357:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  358:Generated_Source\PSoC5/emFile_1_SPI0.c **** /*******************************************************************************
  359:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Function Name: emFile_1_SPI0_ReadTxStatus
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 8
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 8
 
 
  360:Generated_Source\PSoC5/emFile_1_SPI0.c **** ********************************************************************************
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  414:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  Read the Rx status register for the component.
  415:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  416:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Parameters:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 9
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 9
 
 
  417:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  471:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
  472:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  473:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Global variables:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 10
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 10
 
 
  474:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  emFile_1_SPI0_txBufferWrite - used for the account of the bytes which
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  528:Generated_Source\PSoC5/emFile_1_SPI0.c ****         }
  529:Generated_Source\PSoC5/emFile_1_SPI0.c ****         else
  530:Generated_Source\PSoC5/emFile_1_SPI0.c ****         {
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 11
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 11
 
 
  531:Generated_Source\PSoC5/emFile_1_SPI0.c ****             /* Add to the TX software buffer */
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  585:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  emFile_1_SPI0_rxBufferRead - used for the account of the bytes which
  586:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  have been read from the RX software buffer, modified every function
  587:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  call if RX Software Buffer is used.
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 12
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 12
 
 
  588:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  emFile_1_SPI0_rxBuffer[emFile_1_SPI0_RX_BUFFER_SIZE] - used to store
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  642:Generated_Source\PSoC5/emFile_1_SPI0.c **** /*******************************************************************************
  643:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Function Name: emFile_1_SPI0_GetRxBufferSize
  644:Generated_Source\PSoC5/emFile_1_SPI0.c **** ********************************************************************************
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 13
 
 
  645:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  699:Generated_Source\PSoC5/emFile_1_SPI0.c **** }
  700:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  701:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 14
 
 
  702:Generated_Source\PSoC5/emFile_1_SPI0.c **** /*******************************************************************************
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  756:Generated_Source\PSoC5/emFile_1_SPI0.c ****         {
  757:Generated_Source\PSoC5/emFile_1_SPI0.c ****             size = 0u;
  758:Generated_Source\PSoC5/emFile_1_SPI0.c ****         }
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 15
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 15
 
 
  759:Generated_Source\PSoC5/emFile_1_SPI0.c ****         else if(0u != (size & emFile_1_SPI0_STS_TX_FIFO_NOT_FULL))
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  813:Generated_Source\PSoC5/emFile_1_SPI0.c ****     }
  814:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  815:Generated_Source\PSoC5/emFile_1_SPI0.c ****     #if(emFile_1_SPI0_RX_SOFTWARE_BUF_ENABLED)
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 16
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 16
 
 
  816:Generated_Source\PSoC5/emFile_1_SPI0.c ****         /* Disable RX interrupt to protect global veriables */
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  870:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  871:Generated_Source\PSoC5/emFile_1_SPI0.c ****     #if(emFile_1_SPI0_USE_SECOND_DATAPATH)
  872:Generated_Source\PSoC5/emFile_1_SPI0.c ****         /* Clear TX FIFO for 2nd Datapath */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 17
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 17
 
 
  873:Generated_Source\PSoC5/emFile_1_SPI0.c ****         emFile_1_SPI0_AUX_CONTROL_DP1_REG |= ((uint8)  emFile_1_SPI0_TX_FIFO_CLR);
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  927:Generated_Source\PSoC5/emFile_1_SPI0.c ****     * Return:
  928:Generated_Source\PSoC5/emFile_1_SPI0.c ****     *  None.
  929:Generated_Source\PSoC5/emFile_1_SPI0.c ****     *
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 18
 
 
  930:Generated_Source\PSoC5/emFile_1_SPI0.c ****     *******************************************************************************/
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  984:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  Clear the RX and TX FIFO's of all data for a fresh start.
  985:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
  986:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Parameters:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 19
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 19
 
 
  987:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  401:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
   71              		.loc 1 401 0
   72 0020 0D4C     		ldr	r4, .L11+16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 20
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 20
 
 
   73              	.LBE42:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  113              	.LBE49:
  101:Generated_Source\PSoC5/emFile_1_SPI0.c ****     emFile_1_SPI0_RX_STATUS_MASK_REG = emFile_1_SPI0_RX_INIT_INTERRUPTS_MASK;
  114              		.loc 1 101 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 21
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 21
 
 
  115 0042 0B70     		strb	r3, [r1]
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  161 0012 0B78     		ldrb	r3, [r1]	@ zero_extendqisi2
  127:Generated_Source\PSoC5/emFile_1_SPI0.c ****     CyExitCriticalSection(enableInterrupts);
  162              		.loc 1 127 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 22
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 22
 
 
  163 0014 074A     		ldr	r2, .L15+8
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  211              	.LBB60:
  212              	.LBB61:
  125:Generated_Source\PSoC5/emFile_1_SPI0.c ****     emFile_1_SPI0_TX_STATUS_ACTL_REG  |= emFile_1_SPI0_INT_ENABLE;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 23
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 23
 
 
  213              		.loc 1 125 0
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
   66:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  257              		.loc 1 66 0
  258 0032 164B     		ldr	r3, .L28+16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 24
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 24
 
 
  259 0034 0F21     		movs	r1, #15
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  452:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
  304              		.loc 1 452 0
  305 0054 0E4D     		ldr	r5, .L28+20
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 25
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 25
 
 
  306              	.LBE77:
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  350              	.LBE82:
  351              	.LBE83:
  168:Generated_Source\PSoC5/emFile_1_SPI0.c ****     }
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 26
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 26
 
 
  352              		.loc 1 168 0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  400 0014 03F0EF03 		and	r3, r3, #239
  401 0018 1370     		strb	r3, [r2]
  207:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 27
 
 
  402              		.loc 1 207 0
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  455              		.type	emFile_1_SPI0_DisableTxInt, %function
  456              	emFile_1_SPI0_DisableTxInt:
  457              	.LFB29:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 28
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 28
 
 
  458              		.cfi_startproc
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  510              		.thumb
  511              		.thumb_func
  512              		.type	emFile_1_SPI0_SetRxInterruptMode, %function
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 29
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 29
 
 
  513              	emFile_1_SPI0_SetRxInterruptMode:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  562              		.thumb_func
  563              		.type	emFile_1_SPI0_ReadRxStatus, %function
  564              	emFile_1_SPI0_ReadRxStatus:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 30
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 30
 
 
  565              	.LFB11:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  612 0010 63640040 		.word	1073767523
  613 0014 44640040 		.word	1073767492
  614              		.cfi_endproc
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 31
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 31
 
 
  615              	.LFE12:
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  663 0008 7047     		bx	lr
  664              	.L61:
  665 000a 00BF     		.align	2
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 32
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 32
 
 
  666              	.L60:
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  713              		.align	2
  714              		.global	emFile_1_SPI0_ClearRxBuffer
  715              		.thumb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 33
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 33
 
 
  716              		.thumb_func
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  764              		.loc 1 866 0
  765 0002 FFF7FEFF 		bl	CyEnterCriticalSection
  766              	.LVL20:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 34
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 34
 
 
  868:Generated_Source\PSoC5/emFile_1_SPI0.c ****     emFile_1_SPI0_AUX_CONTROL_DP0_REG &= ((uint8) ~emFile_1_SPI0_TX_FIFO_CLR);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  814              	.LBB85:
  557:Generated_Source\PSoC5/emFile_1_SPI0.c ****         {
  815              		.loc 1 557 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 35
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 35
 
 
  816 0004 064A     		ldr	r2, .L93
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  861              	.L94:
  862              		.align	2
  863              	.L93:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 36
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 36
 
 
  864 0020 63640040 		.word	1073767523
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
 1017:Generated_Source\PSoC5/emFile_1_SPI0.c **** }
  911              		.loc 1 1017 0
  912 002a BDE80840 		pop	{r3, lr}
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 37
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 37
 
 
  913              		.cfi_restore 14
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
 1032:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Parameters:
 1033:Generated_Source\PSoC5/emFile_1_SPI0.c **** *  None.
 1034:Generated_Source\PSoC5/emFile_1_SPI0.c **** *
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 38
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 38
 
 
 1035:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Return:
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
 1072:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
 1073:Generated_Source\PSoC5/emFile_1_SPI0.c **** /*******************************************************************************
 1074:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Function Name: emFile_1_SPI0_SetInterruptMode
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 39
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 39
 
 
 1075:Generated_Source\PSoC5/emFile_1_SPI0.c **** ********************************************************************************
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
 1096:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
 1097:Generated_Source\PSoC5/emFile_1_SPI0.c **** 
 1098:Generated_Source\PSoC5/emFile_1_SPI0.c **** /*******************************************************************************
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 40
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 40
 
 
 1099:Generated_Source\PSoC5/emFile_1_SPI0.c **** * Function Name: emFile_1_SPI0_ReadStatus
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
 1146:Generated_Source\PSoC5/emFile_1_SPI0.c ****         tmpStatus |= emFile_1_SPI0_TX_STATUS_REG;
  1008              		.loc 1 1146 0
  1009 0002 044B     		ldr	r3, .L112+4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 41
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 41
 
 
 1145:Generated_Source\PSoC5/emFile_1_SPI0.c ****         tmpStatus |= emFile_1_SPI0_TX_STATUS_REG;
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1057 0026 01       		.byte	0x1
  1058 0027 06       		.byte	0x6
  1059 0028 C7040000 		.4byte	.LASF0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 42
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 42
 
 
  1060 002c 02       		.uleb128 0x2
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1114 008d ED010000 		.4byte	.LASF13
  1115 0091 02       		.byte	0x2
  1116 0092 8E02     		.2byte	0x28e
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 43
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 43
 
 
  1117 0094 98000000 		.4byte	0x98
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1171 0100 6B000000 		.4byte	0x6b
  1172 0104 00       		.byte	0
  1173 0105 0A       		.uleb128 0xa
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 44
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 44
 
 
  1174 0106 59010000 		.4byte	.LASF21
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1228 018b 00       		.byte	0
  1229 018c 00       		.byte	0
  1230 018d 0D       		.uleb128 0xd
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 45
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 45
 
 
  1231 018e 05010000 		.4byte	0x105
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1285 020f 16       		.uleb128 0x16
  1286 0210 D8030000 		.4byte	.LASF28
  1287 0214 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 46
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 46
 
 
  1288 0215 A3       		.byte	0xa3
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1342 02a2 50000000 		.4byte	.LBB72
  1343 02a6 A8000000 		.4byte	.Ldebug_ranges0+0xa8
  1344 02aa 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 47
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 47
 
 
  1345 02ab 61       		.byte	0x61
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1399 0327 5C020000 		.4byte	.LASF32
  1400 032b 01       		.byte	0x1
  1401 032c 4801     		.2byte	0x148
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 48
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 48
 
 
  1402 032e 6B000000 		.4byte	0x6b
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1456 03a8 01       		.uleb128 0x1
  1457 03a9 50       		.byte	0x50
  1458 03aa 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 49
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 49
 
 
  1459 03ab 1C       		.uleb128 0x1c
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1513 042f 01       		.byte	0x1
  1514 0430 2703     		.2byte	0x327
  1515 0432 00000000 		.4byte	.LFB16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 50
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 50
 
 
  1516 0436 1C000000 		.4byte	.LFE16-.LFB16
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1570 04ba CD000000 		.4byte	0xcd
  1571 04be 04000000 		.4byte	.LBB84
  1572 04c2 D8000000 		.4byte	.Ldebug_ranges0+0xd8
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 51
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 51
 
 
  1573 04c6 01       		.byte	0x1
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1627 0548 01       		.uleb128 0x1
  1628 0549 50       		.byte	0x50
  1629 054a 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 52
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 52
 
 
  1630 054b 1C       		.uleb128 0x1c
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1684 0000 01       		.uleb128 0x1
  1685 0001 11       		.uleb128 0x11
  1686 0002 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 53
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 53
 
 
  1687 0003 25       		.uleb128 0x25
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1741 0039 49       		.uleb128 0x49
  1742 003a 13       		.uleb128 0x13
  1743 003b 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 54
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 54
 
 
  1744 003c 00       		.byte	0
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1798 0072 09       		.uleb128 0x9
  1799 0073 05       		.uleb128 0x5
  1800 0074 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 55
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 55
 
 
  1801 0075 03       		.uleb128 0x3
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1855 00ab 18       		.uleb128 0x18
  1856 00ac 9742     		.uleb128 0x2117
  1857 00ae 19       		.uleb128 0x19
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 56
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 56
 
 
  1858 00af 01       		.uleb128 0x1
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1912 00e7 1D       		.uleb128 0x1d
  1913 00e8 01       		.byte	0x1
  1914 00e9 31       		.uleb128 0x31
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 57
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 57
 
 
  1915 00ea 13       		.uleb128 0x13
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  1969 0123 16       		.uleb128 0x16
  1970 0124 2E       		.uleb128 0x2e
  1971 0125 01       		.byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 58
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 58
 
 
  1972 0126 3F       		.uleb128 0x3f
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2026 015d 40       		.uleb128 0x40
  2027 015e 18       		.uleb128 0x18
  2028 015f 9742     		.uleb128 0x2117
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 59
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 59
 
 
  2029 0161 19       		.uleb128 0x19
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2083 0197 01       		.uleb128 0x1
  2084 0198 12       		.uleb128 0x12
  2085 0199 06       		.uleb128 0x6
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 60
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 60
 
 
  2086 019a 40       		.uleb128 0x40
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2140 01d1 06       		.uleb128 0x6
  2141 01d2 40       		.uleb128 0x40
  2142 01d3 18       		.uleb128 0x18
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 61
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 61
 
 
  2143 01d4 9742     		.uleb128 0x2117
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2197 020b 00       		.byte	0
  2198 020c 49       		.uleb128 0x49
  2199 020d 13       		.uleb128 0x13
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 62
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 62
 
 
  2200 020e 00       		.byte	0
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2254              	.LLST0:
  2255 0000 1E000000 		.4byte	.LVL0
  2256 0004 35000000 		.4byte	.LVL1-1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 63
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 63
 
 
  2257 0008 0100     		.2byte	0x1
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2311 008a 20000000 		.4byte	.LFE15
  2312 008e 0100     		.2byte	0x1
  2313 0090 50       		.byte	0x50
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 64
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 64
 
 
  2314 0091 00000000 		.4byte	0
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2368 011b 00000000 		.4byte	0
  2369              	.LLST12:
  2370 011f 06000000 		.4byte	.LVL31
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 65
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 65
 
 
  2371 0123 0A000000 		.4byte	.LVL32
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2425 0090 00000000 		.4byte	.LFB21
  2426 0094 02000000 		.4byte	.LFE21-.LFB21
  2427 0098 00000000 		.4byte	.LFB22
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 66
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 66
 
 
  2428 009c 18000000 		.4byte	.LFE22-.LFB22
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2482 00bc 00000000 		.4byte	0
  2483 00c0 54000000 		.4byte	.LBB76
  2484 00c4 56000000 		.4byte	.LBE76
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 67
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 67
 
 
  2485 00c8 72000000 		.4byte	.LBB81
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2539 0000 8C020000 		.section	.debug_str,"MS",%progbits,1
  2539      02005500 
  2539      00000201 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 68
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 68
 
 
  2539      FB0E0D00 
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2558              	.LASF18:
  2559 0122 656D4669 		.ascii	"emFile_1_SPI0_DisableRxInt\000"
  2559      6C655F31 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 69
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 69
 
 
  2559      5F535049 
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2580              	.LASF5:
  2581 01f2 6C6F6E67 		.ascii	"long unsigned int\000"
  2581      20756E73 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 70
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 70
 
 
  2581      69676E65 
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2601      65637469 
  2602              	.LASF8:
  2603 02f8 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 71
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 71
 
 
  2603      676E6564 
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2623      6C655F31 
  2623      5F535049 
  2623      305F7377 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 72
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 72
 
 
  2623      53746174 
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 1
  2645 04a8 6C6F6E67 		.ascii	"long int\000"
  2645      20696E74 
  2645      00
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc6opcAa.s 			page 73
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc32igA3.s 			page 73
 
 
  2646              	.LASF22:

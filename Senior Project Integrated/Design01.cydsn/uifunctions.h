@@ -6,6 +6,7 @@
 
     extern int screen_state;
     extern int device_selection;
+    extern int CURVE_NUM1;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1

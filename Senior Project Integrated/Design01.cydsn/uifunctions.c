@@ -11,6 +11,7 @@
 
 int screen_state;
 int device_selection;
+int CURVE_NUM1;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -99,24 +100,44 @@ void ui_control(uint16_t x, uint16_t y)
             }
             break;
         case OPTION_CURVES_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)
+            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
             {
                 draw_options_screen();  
             }
+            else if(x>=200 && x<=270 && y>=40 && y<=110)                  //return button
+            {
+                CURVE_NUM1--;
+                fill_rect(90,105,60,30,BLACK);
+                
+                char num_curve[2];
+                itoa(CURVE_NUM1, num_curve, 10);
+                
+                draw_string(100,115,WHITE,num_curve,3);
+            }
+            else if(x>=200 && x<=270 && y>=130 && y<=200)                  //return button
+            {
+                CURVE_NUM1++;
+                fill_rect(90,105,60,30,BLACK);
+                
+                char num_curve[2];
+                itoa(CURVE_NUM1, num_curve, 10);
+                
+                draw_string(100,115,WHITE,num_curve,3);
+            }
             break;
         case OPTION_SETTLING_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)
+            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
             {
                 draw_options_screen();  
             }
             break;
         case DEBUG_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)
+            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
             {
                 draw_choose_screen();  
                 screen_state = DEVICE_SELECTION_SCREEN;
             }
-            else
+            else                                                //draws coordinates of touch
             {
                 fill_rect(95,95,30,30,BLACK);
             
@@ -126,8 +147,8 @@ void ui_control(uint16_t x, uint16_t y)
                 itoa(x, x_touch, 10);
                 itoa(y, y_touch, 10);
                 
-                draw_string(100,110,WHITE,x_touch);
-                draw_string(100,100,WHITE,y_touch);
+                draw_string(100,110,WHITE,x_touch,1);
+                draw_string(100,100,WHITE,y_touch,1);
             }
             break;
     }
