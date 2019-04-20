@@ -550,8 +550,8 @@ void draw_options_curves_screen()
     
     draw_button(0,219,239,20,WHITE,BLACK,"NUMBER OF CURVES TO DRAW");
     
-    draw_button(130,40,70,70,WHITE,BLACK,"DECREASE");
-    draw_button(130,130,70,70,WHITE,BLACK,"INCREASE");
+    draw_button(130,30,70,70,WHITE,BLACK,"DECREASE");
+    draw_button(130,120,70,70,WHITE,BLACK,"INCREASE");
     
     char num_curve[2];
     itoa(curve_nums, num_curve, 10);

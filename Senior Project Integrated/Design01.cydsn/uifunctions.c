@@ -86,11 +86,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=80 && x<=150 && y>=150 && y<=200)  //+1
             {
-                if(num_avg<1000)
-                {
-                    num_avg++;
-                }
-                else
+                num_avg = num_avg+1;
+                if(num_avg>1000)
                 {
                     num_avg = 1000;
                 }
@@ -103,11 +100,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=80 && x<=150 && y>=80 && y<=130)   //+10                 
             {
-                if(num_avg<1000)
-                {
-                    num_avg = num_avg+10;
-                }
-                else
+                num_avg = num_avg+10;
+                if(num_avg>1000)
                 {
                     num_avg = 1000;
                 }
@@ -120,11 +114,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=80 && x<=150 && y>=10 && y<=60)  //+100                  
             {
-                if(num_avg<1000)
-                {
-                    num_avg = num_avg+100;
-                }
-                else
+                num_avg = num_avg+100;
+                if(num_avg>1000)
                 {
                     num_avg = 1000;
                 }
@@ -137,11 +128,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=160 && x<=230 && y>=150 && y<=200)  //-1
             {
-                if(num_avg>1)
-                {
-                    num_avg--;
-                }
-                else
+                num_avg = num_avg-1;
+                if(num_avg<1)
                 {
                     num_avg = 1;
                 }
@@ -154,11 +142,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=160 && x<=230 && y>=80 && y<=130)   //-10                 
             {
-                if(num_avg>1)
-                {
-                    num_avg = num_avg-10;
-                }
-                else
+                num_avg = num_avg-10;
+                if(num_avg<1)
                 {
                     num_avg = 1;
                 }
@@ -171,11 +156,8 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=160 && x<=230 && y>=10 && y<=60)  //-100                  
             {
-                if(num_avg>1)
-                {
-                    num_avg = num_avg-100;
-                }
-                else
+                num_avg = num_avg-100;
+                if(num_avg<1)
                 {
                     num_avg = 1;
                 }
@@ -210,7 +192,7 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_options_screen();
             }
-            else if(x>=130 && x<=200 && y>=40 && y<=110)                  
+            else if(x>=130 && x<=200 && y>=30 && y<=100)                  
             {
                 if(curve_nums>1)
                 {
@@ -227,7 +209,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(50,105,WHITE,num_curve,3);
             }
-            else if(x>=130 && x<=200 && y>=130 && y<=200)                  //return button
+            else if(x>=130 && x<=200 && y>=120 && y<=190)                  //return button
             {
                 if(curve_nums<8)
                 {
