@@ -326,11 +326,49 @@ void draw_button(int16_t x, int16_t y, int16_t w, int16_t h,
     //adds null character to end of string
     the_string[string_length] = 0;
     
-    //gets starting x-coord. of string
-    int pixel_start = rect_center_x - string_length*7/2 + 3;
-    
-    //prints string to center of button rectangle
-    draw_string(pixel_start,rect_center_y-1,text_color,the_string,1);
+    if(string_length*7<w)
+    {
+        //gets starting x-coord. of string
+        int pixel_start = rect_center_x - string_length*7/2 + 3;
+        
+        //prints string to center of button rectangle
+        draw_string(pixel_start,rect_center_y-1,text_color,the_string,1);
+    }
+    else if(string_length*7>w)
+    {
+        int button_character_width = w/7-1;
+        
+        while(the_string[button_character_width] != 32)
+        {
+            button_character_width--;
+        }
+        
+        char new_string_1[button_character_width+1];
+        char new_string_2[string_length-button_character_width+1];
+        
+        for(int i = 0; i<button_character_width; i++)
+        {
+            new_string_1[i] = the_string[i];
+        }
+        for(int i = 0; i<string_length-button_character_width; i++)
+        {
+            new_string_2[i] = the_string[button_character_width+i+1];
+        }
+        
+        new_string_1[button_character_width] = 0;
+        new_string_2[string_length-button_character_width] = 0;
+        
+        int new_string_1_length = sizeof(new_string_1)/sizeof(new_string_1[0]);
+        int new_string_2_length = sizeof(new_string_2)/sizeof(new_string_2[0])-1;
+        
+        //gets starting x-coord. of string
+        int pixel_start_1 = rect_center_x - new_string_1_length*7/2 + 5;
+        int pixel_start_2 = rect_center_x - new_string_2_length*7/2 + 4;
+        
+        //prints string to center of button rectangle
+        draw_string(pixel_start_1,rect_center_y+3,text_color,new_string_1,1);
+        draw_string(pixel_start_2,rect_center_y-5,text_color,new_string_2,1);
+    }
 }
 
 void draw_coordinates(int y_max, unsigned int device_selection)
@@ -425,10 +463,10 @@ void draw_options_screen()
     
     //need temp variables for strings otherwise it reads
     //into the next string upon returning from an option screen
-    char temp1[] = "AVERAGES";
+    char temp1[] = "NUMBER OF AVERAGES";
     char temp2[] = "SD CARD OPTIONS";
-    char temp3[] = "CURVES";
-    char temp4[] = "SETTLING";
+    char temp3[] = "NUMBER OF CURVES";
+    char temp4[] = "SETTLING TIME OPTIONS";
     char temp5[] = "RETURN";
     char temp6[] = "RUN TEST";
     
@@ -453,10 +491,24 @@ void draw_options_averages_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"NUMBER OF AVERAGES OPTION SCREEN",1);
+    draw_button(0,219,239,20,WHITE,BLACK,"NUMBER OF AVERAGES TO TAKE");
     
-    //return button
-    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    draw_button(80,150,70,50,WHITE,BLACK,"PLUS 1");
+    draw_button(80,80,70,50,WHITE,BLACK,"PLUS 10");
+    draw_button(80,10,70,50,WHITE,BLACK,"PLUS 100");
+    
+    draw_button(160,150,70,50,WHITE,BLACK,"MINUS 1");
+    draw_button(160,80,70,50,WHITE,BLACK,"MINUS 10");
+    draw_button(160,10,70,50,WHITE,BLACK,"MINUS 100");
+    
+    char avg_num[4];
+    itoa(num_avg, avg_num, 10);
+    
+    draw_string(20,105,WHITE,avg_num,2);
+    
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
 }
 
 void draw_options_sd_screen()
@@ -465,15 +517,29 @@ void draw_options_sd_screen()
     
     fill_screen(BLACK);
     
-    draw_button(0,219,320,20,WHITE,BLACK,"SD CARD OPTIONS");
+    draw_button(0,219,239,20,WHITE,BLACK,"SD CARD OPTIONS");
     char temp[] = "WRITE RESULTS TO SD CARD";
-    draw_button(0,170,320,10,WHITE,BLACK,temp);
+    draw_button(0,170,239,10,WHITE,BLACK,temp);
     
-    draw_button(70,100,80,50,WHITE,BLACK,"YES");
-    draw_button(170,100,80,50,WHITE,BLACK,"NO");
+    if(write_sd == 1)
+    {
+        draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");
+        draw_button(130,100,80,50,WHITE,BLACK,"NO");
+    }
+    else if(write_sd == 0)
+    {
+        draw_button(30,100,80,50,WHITE,BLACK,"YES");
+        draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
+    }
+    else
+    {
+        draw_button(80,100,80,50,WHITE,BLACK,"YES");
+        draw_button(130,100,80,50,WHITE,BLACK,"NO");
+    }
     
-    //return button
-    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
 }
 
 void draw_options_curves_screen()
@@ -482,18 +548,19 @@ void draw_options_curves_screen()
     
     fill_screen(BLACK);
     
-    draw_button(0,219,320,20,WHITE,BLACK,"NUMBER OF CURVES TO DRAW");
+    draw_button(0,219,239,20,WHITE,BLACK,"NUMBER OF CURVES TO DRAW");
     
-    draw_button(200,40,70,70,WHITE,BLACK,"DECREASE");
-    draw_button(200,130,70,70,WHITE,BLACK,"INCREASE");
+    draw_button(130,40,70,70,WHITE,BLACK,"DECREASE");
+    draw_button(130,130,70,70,WHITE,BLACK,"INCREASE");
     
     char num_curve[2];
-    itoa(CURVE_NUM1, num_curve, 10);
+    itoa(curve_nums, num_curve, 10);
     
-    draw_string(100,115,WHITE,num_curve,3);
+    draw_string(50,105,WHITE,num_curve,3);
     
-    //return button
-    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
 }
 
 void draw_options_settling_screen()
@@ -502,10 +569,11 @@ void draw_options_settling_screen()
     
     fill_screen(BLACK);
     
-    draw_string(10,100,WHITE,"SETTLING TIME OPTION SCREEN",1);
+    draw_button(0,219,239,20,WHITE,BLACK,"SETTLING TIME OPTIONS SCREEN");
     
-    //return button
-    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
 }
 
 //screen used for debugging. Feel free to change as needed, keep return button
@@ -526,42 +594,10 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     
     draw_string(100,200,WHITE,"TOUCH COORDINATES",1);
     
-    draw_string(100,150,WHITE,"FONT SIZE TEST",2);
+    draw_string(50,150,WHITE,"TEST",6);
+    
+    draw_button(150,40,119,70,WHITE,BLACK,"SETTLING TIME OPTIONS");
     
     //return button
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
-    
-    
-    #define FT6206_ADDR                 0x38
-    #define Read_Register_X_1           0x03
-    #define Read_Register_X_2           0x04
-    #define Read_Register_Y_1           0x05
-    #define Read_Register_Y_2           0x06
-    #define WRITE                       0
-    #define READ                        1
-    #define X                           1
-    #define Y                           0    
-    
-    uint16_t data_rec;
-    uint16_t touch;
-    uint8_t reg_1 = 0xa4;
-    
-    I2C_Start();
-    
-    I2C_MasterSendStart(FT6206_ADDR, WRITE);
-    
-    I2C_MasterWriteByte(reg_1);
-    
-    I2C_MasterSendRestart(FT6206_ADDR, READ);
-    
-    data_rec = I2C_MasterReadByte(I2C_NAK_DATA);
-    
-    I2C_MasterSendStop();
-    
-    I2C_Stop();
-    
-    char data[2];
-    itoa(data_rec, data, 10);
-    
-    draw_string(250,50,WHITE,data,1);
 }

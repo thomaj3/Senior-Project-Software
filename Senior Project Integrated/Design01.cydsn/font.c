@@ -722,17 +722,7 @@ void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character, ui
     x = x-2*font_scale;
     uint8_t height = font[0];
     
-    //reads through array, and changes pixels to ddraw character
-//    for(int i=0; i<height; i++)
-//    {
-//        for(int j=0; j<font[index]; j++)
-//        {
-//            draw_pixel(x+font[index+j+1],y,color);
-//        }
-//        y = y+1;
-//        index = index+font[index]+1;
-//    }
-    
+    //reads through array, and changes pixels to ddraw character    
     for(int i=0; i<height; i++)
     {
         for(int j=0; j<font[index]; j++)

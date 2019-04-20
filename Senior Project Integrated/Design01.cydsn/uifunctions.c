@@ -11,7 +11,9 @@
 
 int screen_state;
 int device_selection;
-int CURVE_NUM1;
+int curve_nums;
+int write_sd;
+int num_avg;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -78,57 +80,175 @@ void ui_control(uint16_t x, uint16_t y)
             }
             break;
         case OPTION_AVERAGES_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_options_screen();  
+                draw_options_screen();
+            }
+            else if(x>=80 && x<=150 && y>=150 && y<=200)  //+1
+            {
+                if(num_avg<1000)
+                {
+                    num_avg++;
+                }
+                else
+                {
+                    num_avg = 1000;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
+            }
+            else if(x>=80 && x<=150 && y>=80 && y<=130)   //+10                 
+            {
+                if(num_avg<1000)
+                {
+                    num_avg = num_avg+10;
+                }
+                else
+                {
+                    num_avg = 1000;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
+            }
+            else if(x>=80 && x<=150 && y>=10 && y<=60)  //+100                  
+            {
+                if(num_avg<1000)
+                {
+                    num_avg = num_avg+100;
+                }
+                else
+                {
+                    num_avg = 1000;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
+            }
+            else if(x>=160 && x<=230 && y>=150 && y<=200)  //-1
+            {
+                if(num_avg>1)
+                {
+                    num_avg--;
+                }
+                else
+                {
+                    num_avg = 1;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
+            }
+            else if(x>=160 && x<=230 && y>=80 && y<=130)   //-10                 
+            {
+                if(num_avg>1)
+                {
+                    num_avg = num_avg-10;
+                }
+                else
+                {
+                    num_avg = 1;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
+            }
+            else if(x>=160 && x<=230 && y>=10 && y<=60)  //-100                  
+            {
+                if(num_avg>1)
+                {
+                    num_avg = num_avg-100;
+                }
+                else
+                {
+                    num_avg = 1;
+                }
+                fill_rect(10,95,60,30,BLACK);
+                
+                char avg_num[4];
+                itoa(num_avg, avg_num, 10);
+                
+                draw_string(20,105,WHITE,avg_num,2);
             }
             break;
         case OPTION_SD_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_options_screen();  
+                draw_options_screen();
             }
-            else if(x>=70 && x<=150 && y>=100 && y<=150)        //yes button
+            else if(x>=30 && x<=110 && y>=100 && y<=150)        //yes button
             {
-                draw_button(70,100,80,50,LIGHTBLUE,BLACK,"YES");  
-                draw_button(170,100,80,50,WHITE,BLACK,"NO");
+                draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
+                draw_button(130,100,80,50,WHITE,BLACK,"NO");
+                write_sd = 1;
             }
-            else if(x>=170 && x<=250 && y>=100 && y<=150)       //no button
+            else if(x>=130 && x<=210 && y>=100 && y<=150)       //no button
             {
-                draw_button(70,100,80,50,WHITE,BLACK,"YES");  
-                draw_button(170,100,80,50,LIGHTBLUE,BLACK,"NO");
+                draw_button(30,100,80,50,WHITE,BLACK,"YES");  
+                draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
+                write_sd = 0;
             }
             break;
         case OPTION_CURVES_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_options_screen();  
+                draw_options_screen();
             }
-            else if(x>=200 && x<=270 && y>=40 && y<=110)                  //return button
+            else if(x>=130 && x<=200 && y>=40 && y<=110)                  
             {
-                CURVE_NUM1--;
-                fill_rect(90,105,60,30,BLACK);
+                if(curve_nums>1)
+                {
+                    curve_nums--;
+                }
+                else
+                {
+                    curve_nums = 1;
+                }
+                fill_rect(40,95,60,30,BLACK);
                 
                 char num_curve[2];
-                itoa(CURVE_NUM1, num_curve, 10);
+                itoa(curve_nums, num_curve, 10);
                 
-                draw_string(100,115,WHITE,num_curve,3);
+                draw_string(50,105,WHITE,num_curve,3);
             }
-            else if(x>=200 && x<=270 && y>=130 && y<=200)                  //return button
+            else if(x>=130 && x<=200 && y>=130 && y<=200)                  //return button
             {
-                CURVE_NUM1++;
-                fill_rect(90,105,60,30,BLACK);
+                if(curve_nums<8)
+                {
+                    curve_nums++;
+                }
+                else
+                {
+                    curve_nums = 8;
+                }
+                fill_rect(40,95,60,30,BLACK);
                 
                 char num_curve[2];
-                itoa(CURVE_NUM1, num_curve, 10);
+                itoa(curve_nums, num_curve, 10);
                 
-                draw_string(100,115,WHITE,num_curve,3);
+                draw_string(50,105,WHITE,num_curve,3);
             }
             break;
         case OPTION_SETTLING_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_options_screen();  
+                draw_options_screen();
             }
             break;
         case DEBUG_SCREEN :

@@ -239,7 +239,9 @@ int main(void)
     I2C_MasterSendStop();
     I2C_Stop();
     
-    CURVE_NUM1 = 4;
+    curve_nums = 4;
+    write_sd = 1;
+    num_avg = 10;
     
     int return_code;    //Going to be used for error displays
     
