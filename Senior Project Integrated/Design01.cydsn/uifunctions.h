@@ -9,6 +9,7 @@
     extern int curve_nums;
     extern int write_sd;
     extern int num_avg;
+    extern int draw_grid;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1
@@ -16,7 +17,7 @@
     #define OPTION_AVERAGES_SCREEN      3
     #define OPTION_SD_SCREEN            4
     #define OPTION_CURVES_SCREEN        5
-    #define OPTION_SETTLING_SCREEN      6
+    #define OPTION_GRID_SCREEN          6
     #define DEBUG_SCREEN                7
     #define NMOS                        0
     #define NPN                         1

@@ -413,7 +413,10 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         y_label =  5 * i;
         sprintf(string_throwaway_y,"%d", y_label);
         
-        draw_line(30,i*five_mA_pixel+10,220,i*five_mA_pixel+10,WHITE);//draw y major 
+        if(draw_grid == 1)
+        {
+            draw_line(30,i*five_mA_pixel+10,220,i*five_mA_pixel+10,WHITE);//draw y major 
+        }
         draw_string(3,i*five_mA_pixel+10,WHITE,string_throwaway_y,1);//draw y major label
         
     }
@@ -421,7 +424,10 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     for(i = 1; i <= 189/x_max_step; i++)
     {
         sprintf(string_throwaway_x,"%i", i);
-        draw_line(i*x_max_step+30,10,i*x_max_step+30,y_max_pixel+10,WHITE);//draw x major
+        if(draw_grid == 1)
+        {
+            draw_line(i*x_max_step+30,10,i*x_max_step+30,y_max_pixel+10,WHITE);//draw x major
+        }
         draw_string(i*x_max_step+30,4,WHITE,string_throwaway_x,1);//draw x major label
     }
     
@@ -466,7 +472,7 @@ void draw_options_screen()
     char temp1[] = "NUMBER OF AVERAGES";
     char temp2[] = "SD CARD OPTIONS";
     char temp3[] = "NUMBER OF CURVES";
-    char temp4[] = "SETTLING TIME OPTIONS";
+    char temp4[] = "PLOTTING GRID OPTIONS";
     char temp5[] = "RETURN";
     char temp6[] = "RUN TEST";
     
@@ -563,13 +569,32 @@ void draw_options_curves_screen()
     fill_rect(239,0,2,240,BLACK);
 }
 
-void draw_options_settling_screen()
+void draw_options_grid_screen()
 {
-    screen_state = OPTION_SETTLING_SCREEN;
+    screen_state = OPTION_GRID_SCREEN;
     
     fill_screen(BLACK);
     
-    draw_button(0,219,239,20,WHITE,BLACK,"SETTLING TIME OPTIONS SCREEN");
+    draw_button(0,219,239,20,WHITE,BLACK,"PLOTTING GRID OPTIONS SCREEN");
+    
+    char temp[] = "ENABLE GRID OVERLAY FOR PLOT SCREEN";
+    draw_button(0,170,239,10,WHITE,BLACK,temp);
+    
+    if(draw_grid == 1)
+    {
+        draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");
+        draw_button(130,100,80,50,WHITE,BLACK,"NO");
+    }
+    else if(draw_grid == 0)
+    {
+        draw_button(30,100,80,50,WHITE,BLACK,"YES");
+        draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
+    }
+    else
+    {
+        draw_button(80,100,80,50,WHITE,BLACK,"YES");
+        draw_button(130,100,80,50,WHITE,BLACK,"NO");
+    }
     
     //Return button with boundary
     draw_button(241,0,79,240,WHITE,BLACK,"RETURN");

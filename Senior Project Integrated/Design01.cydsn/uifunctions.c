@@ -14,6 +14,7 @@ int device_selection = -1;
 int curve_nums = 4;
 int write_sd = 1;
 int num_avg = 10;
+int draw_grid = 1;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -62,7 +63,7 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=121 && x<=240 && y>=121 && y<=239)       //button for settling time options
             {
-                draw_options_settling_screen(); 
+                draw_options_grid_screen(); 
             }
             else if(x>=241 && x<=319 && y>=0 && y<=119)         //return button
             {
@@ -227,10 +228,22 @@ void ui_control(uint16_t x, uint16_t y)
                 draw_string(50,105,WHITE,num_curve,3);
             }
             break;
-        case OPTION_SETTLING_SCREEN :
+        case OPTION_GRID_SCREEN :
             if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
                 draw_options_screen();
+            }
+            else if(x>=30 && x<=110 && y>=100 && y<=150)        //yes button
+            {
+                draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
+                draw_button(130,100,80,50,WHITE,BLACK,"NO");
+                draw_grid = 1;
+            }
+            else if(x>=130 && x<=210 && y>=100 && y<=150)       //no button
+            {
+                draw_button(30,100,80,50,WHITE,BLACK,"YES");  
+                draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
+                draw_grid = 0;
             }
             break;
         case DEBUG_SCREEN :
