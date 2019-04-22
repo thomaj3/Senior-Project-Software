@@ -9,11 +9,11 @@
 #include "font.h"
 #include "uifunctions.h"
 
-int screen_state;
-int device_selection;
-int curve_nums;
-int write_sd;
-int num_avg;
+int screen_state = 0;
+int device_selection = -1;
+int curve_nums = 4;
+int write_sd = 1;
+int num_avg = 10;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -70,13 +70,13 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=241 && x<=319 && y>=121 && y<=239)       //run test button
             {
-                draw_coordinates();
+                screen_state = PLOT_SCREEN;
             }
             break;
         case PLOT_SCREEN :
             if(x>=130 && x<=190 && y>=209 && y<=239)            //stop/return button
             {
-                draw_choose_screen();  
+                screen_state = DEVICE_SELECTION_SCREEN;  
             }
             break;
         case OPTION_AVERAGES_SCREEN :
@@ -178,13 +178,13 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
                 draw_button(130,100,80,50,WHITE,BLACK,"NO");
-                write_sd = 1;
+                emFile_1_Wakeup();
             }
             else if(x>=130 && x<=210 && y>=100 && y<=150)       //no button
             {
                 draw_button(30,100,80,50,WHITE,BLACK,"YES");  
                 draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
-                write_sd = 0;
+                emFile_1_Sleep();
             }
             break;
         case OPTION_CURVES_SCREEN :
@@ -211,13 +211,13 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=130 && x<=200 && y>=120 && y<=190)                  //return button
             {
-                if(curve_nums<8)
+                if(curve_nums<6)
                 {
                     curve_nums++;
                 }
                 else
                 {
-                    curve_nums = 8;
+                    curve_nums = 6;
                 }
                 fill_rect(40,95,60,30,BLACK);
                 

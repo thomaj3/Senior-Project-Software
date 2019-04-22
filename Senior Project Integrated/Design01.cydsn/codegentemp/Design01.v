@@ -1,6 +1,6 @@
 // ======================================================================
 // Design01.v generated from TopDesign.cysch
-// 04/18/2019 at 17:40
+// 04/20/2019 at 16:36
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1180,7 +1180,7 @@ module top ;
           wire  Net_201;
           wire  Net_200;
     electrical  Net_199;
-    electrical  Net_250;
+    electrical  Net_280;
     electrical  Net_196;
           wire [7:0] Net_195;
           wire  Net_194;
@@ -1831,7 +1831,7 @@ module top ;
 		 (.oe(tmpOE__Pin_GS_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__Pin_GS_net[0:0]}),
-		  .analog({Net_250}),
+		  .analog({Net_280}),
 		  .io({tmpIO_0__Pin_GS_net[0:0]}),
 		  .siovref(tmpSIOVREF__Pin_GS_net),
 		  .interrupt({tmpINTERRUPT_0__Pin_GS_net[0:0]}),
@@ -2446,7 +2446,7 @@ module top ;
     cy_psoc3_amux_v1_0 AMux_2(
         .muxin({
             Net_251,
-            Net_250
+            Net_280
             }),
         .vout(Net_196)
         );

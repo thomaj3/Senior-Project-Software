@@ -4,6 +4,7 @@
 #include "stdio.h"
 #include "math.h"
 #include "string.h"
+#include "strings.h"
 #include "settings.h"
 #include <FS.h>
 #include <Global.h>
@@ -19,7 +20,6 @@
 #define VDAC_N_1_VOLT   21
 #define VDAC_P_1_VOLT   13
 #define ADC_GAIN        52.0
-#define CURVE_MAX       10
 
 
 //The lengths of Drain or Common testing points
@@ -128,7 +128,7 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 
 //This function runs the main test, it intakes the y_max used to calculate the
 //pixels for line segments and the Vgs test points
-int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_double[CURVE_NUM], unsigned char device_selection)
+int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], unsigned char device_selection)
 {
     int i,j,k;
     double Id;
@@ -136,9 +136,9 @@ int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_doub
     char print_string[20];
     int y_pixel_prev, x_pixel_prev;
     int y_pixel, x_pixel;
-    int curve_color[CURVE_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
+    int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
     
-    for(i = 0; i < CURVE_NUM; i++)
+    for(i = 0; i < curve_nums; i++)
     {
         write_header_info("data.txt",device_selection,i,Vgs_double); 
         ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
@@ -150,22 +150,22 @@ int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_doub
             }
             Id_avg = 0.0;//reset Id Value
             //Averaging multiple tests to elminate noise
-            for(k=0; k<AVG; k++)
+            for(k=0; k<num_avg; k++)
             {
                 if(device_selection < 2) //if testing N-Type Devices
                 {
                     Id = single_test(j,Vgs_test_points[i]);
                 }
-                else //if testing P-Type devices
+                lkjunhgtvfr5else //if testing P-Type devices
                 {
                     Id = single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
                 }
                 Id_avg += Id;
             }
-            Id_avg /= AVG;
+            Id_avg /= num_avg;
             write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
-            y_pixel = (int) ((Id_avg*Y_RES)/(1.25*y_max));
+            y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
             x_pixel = (int) j;
             if (j > 0) //only draw a line if 2 points have been tested already
             {
@@ -190,7 +190,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[CURVE_NUM],double Vgs_doub
                 sprintf(print_string,"%6.3f MIL A",Vgs_double[i]);
                 break;
         }
-        draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string,1);
+        draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
     }
     
 }
@@ -239,10 +239,6 @@ int main(void)
     I2C_MasterSendStop();
     I2C_Stop();
     
-    curve_nums = 4;
-    write_sd = 1;
-    num_avg = 10;
-    
     int return_code;    //Going to be used for error displays
     
     int i;  //used for for loop iterations
@@ -262,13 +258,12 @@ int main(void)
     
     
     unsigned char Vgs_step;                         //The stepping amount to create the Vgs test points
-    unsigned char Vgs_test_points[CURVE_NUM];       //The Vgs stepping points of ammount specified in settings.h
+    unsigned char Vgs_test_points[CURVE_NUM_MAX];       //The Vgs stepping points of ammount specified in settings.h
     
-    double Output_data_y[CURVE_NUM][VDS_NMOS_LENGTH] = {0};     //The output data of Id NMOS trace in mA
-    double Output_data_x[VDS_NMOS_LENGTH];                      //The Vds points used. Used for plottings
-    double Vgs_points_double[CURVE_NUM];                        //The actual Vgs output by DAC
+    double Vgs_points_double[CURVE_NUM_MAX];                        //The actual Vgs output by DAC
     FS_FILE * pFile;
     int debug;
+    
     
     FS_Init();
     debug = FS_MountEx("PSOC",FS_MOUNT_RW);
@@ -288,14 +283,13 @@ int main(void)
     for(;;)
     { 
         draw_choose_screen();
-        device_selection = -1;
-        while(device_selection < 0)
+        
+        for(;;)
         {
-            
-        }
-        while(screen_state != 2)
-        {
-            
+            if(screen_state == 2)
+            {
+                break;
+            }
         }
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
@@ -307,15 +301,12 @@ int main(void)
         {
             Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
         }
-        if (Vth == 0)
-        {
-            fill_screen(BLACK);
-            draw_string(120, 160, WHITE, "VTH CANNOT BE FOUND",1);
-            create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
-//            return 0;
-        }
+        
+//        fill_screen(BLACK);
+        create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
+            
         Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
-        Vgs_step = (Vgs_max - Vth)/(CURVE_NUM-1); //Creating the step size for linearlly spaced
+        Vgs_step = (Vgs_max - Vth)/(curve_nums-1); //Creating the step size for linearlly spaced
         Vgs_test_points[0] = Vth;
         switch(device_selection)
         {
@@ -333,7 +324,7 @@ int main(void)
                 break;
         }
         //Creating Vgs test point 
-        for (i=1; i < CURVE_NUM; i++)
+        for (i=1; i < curve_nums; i++)
         {
             Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
             switch(device_selection)
@@ -352,27 +343,17 @@ int main(void)
                     break;
             }
         }
-        for(i=0; i < VDS_NMOS_LENGTH; i++)
-        {
-            if(device_selection < 2)
-            {
-                Output_data_x[i] = i * 4.096 * 3 / 256.0; //actual Vds
-            }
-            else
-            {
-                Output_data_x[i] = i * 4.096 * 5 / 256.0;
-            }
-        }
-        ADC_SAR_1_Wakeup();
+       
         y_max_mA = 0.0;
-        for (i = 0; i <AVG;i++)
+        for (i = 0; i <num_avg;i++)
         {
-            y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[CURVE_NUM-1]);
+            ADC_SAR_1_Wakeup();
+            y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
+            ADC_SAR_1_Sleep(); //Reset SAR from previous tests
         }
-        y_max_mA /= AVG;
+        y_max_mA /= num_avg;
         y_max_calc = (int) (y_max_mA);
         y_max_calc = (y_max_calc - (y_max_calc % 5) + 5);
-        ADC_SAR_1_Sleep(); //Reset SAR from previous tests
         draw_coordinates(y_max_calc,device_selection);
         run_test(y_max_calc,Vgs_test_points,Vgs_points_double,device_selection);
         
@@ -382,12 +363,12 @@ int main(void)
         VDAC8_GS_SetValue(0);
         //fillScreen(WHITE);
 
-        while(screen_state != 0)
+        for(;;)
         {
             if(screen_state == 0)
             {
                 break;
             }
-        }
+        }     
     }
 }

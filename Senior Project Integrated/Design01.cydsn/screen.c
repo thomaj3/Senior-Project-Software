@@ -375,7 +375,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
 {
     fill_screen(BLACK);
     
-    int y_max_pixel = (int) 240/(1.25);
+    int y_max_pixel = (int) ((0.8)*240);
     int five_mA_pixel = (int) (y_max_pixel*5.0/y_max);
     int y_label;
     int x_label;
@@ -397,7 +397,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
         x_max_step = 189/15;
     }
     
-    if((device_selection)%2 == 0)
+    if((device_selection%2) == 0)
     {
         draw_string(230,4,WHITE,"VDS V",1);
         draw_string(3,y_max_pixel + 25,WHITE,"ID MIL A",1);

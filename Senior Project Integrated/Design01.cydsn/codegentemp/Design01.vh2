@@ -2,7 +2,7 @@
 --	Conversion of Design01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
---	Thu Apr 18 17:40:34 2019
+--	Sat Apr 20 16:36:06 2019
 --
 
 USE cypress.cypress.all;
@@ -186,7 +186,7 @@ TERMINAL Net_196 : bit;
 TERMINAL \VDAC8_GS:Net_77\ : bit;
 SIGNAL tmpOE__Pin_GS_net_0 : bit;
 SIGNAL tmpFB_0__Pin_GS_net_0 : bit;
-TERMINAL Net_250 : bit;
+TERMINAL Net_280 : bit;
 SIGNAL tmpIO_0__Pin_GS_net_0 : bit;
 TERMINAL tmpSIOVREF__Pin_GS_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Pin_GS_net_0 : bit;
@@ -1343,7 +1343,7 @@ Pin_GS:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__MOSI_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__Pin_GS_net_0),
-		analog=>Net_250,
+		analog=>Net_280,
 		io=>(tmpIO_0__Pin_GS_net_0),
 		siovref=>(tmpSIOVREF__Pin_GS_net_0),
 		annotation=>(open),
@@ -2388,7 +2388,7 @@ AMux_2:cy_psoc3_amux_v1_0
 		init_mux_sel=>"00",
 		api_type=>0,
 		connect_mode=>1)
-	PORT MAP(muxin=>(Net_251, Net_250),
+	PORT MAP(muxin=>(Net_251, Net_280),
 		hw_ctrl_en=>(others => zero),
 		vout=>Net_196);
 \SPIM:BSPIM:so_send_reg\:cy_dff

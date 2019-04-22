@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 30, 1
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -19,15 +19,14 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
   16              		.text
   17              	.Ltext0:
   18              		.cfi_sections	.debug_frame
-  19              		.section	.text.FS_MMC_HW_X_EnableCS,"ax",%progbits
+  19              		.section	.text.emFile_1_Init,"ax",%progbits
   20              		.align	2
-  21              		.global	FS_MMC_HW_X_EnableCS
-  22              		.thumb
-  23              		.thumb_func
-  24              		.type	FS_MMC_HW_X_EnableCS, %function
-  25              	FS_MMC_HW_X_EnableCS:
-  26              	.LFB2:
-  27              		.file 1 "Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c"
+  21              		.thumb
+  22              		.thumb_func
+  23              		.type	emFile_1_Init, %function
+  24              	emFile_1_Init:
+  25              	.LFB0:
+  26              		.file 1 "Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c"
    1:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
    2:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * File Name: emFile_1_MMC_HW_SPI.c
    3:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Version 1.20
@@ -58,10 +57,10 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
   28:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   29:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /* Max. startup frequency (KHz) */
   30:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** #define emFile_1_STARTUP_FREQ                   (400u)
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 2
-
-
   31:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 2
+
+
   32:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   33:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*********************************************************************
   34:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *       Static data
@@ -107,31 +106,67 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
   74:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
   75:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** static void emFile_1_Init(U8 Unit) CYREENTRANT
   76:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
+  27              		.loc 1 76 0
+  28              		.cfi_startproc
+  29              		@ args = 0, pretend = 0, frame = 0
+  30              		@ frame_needed = 0, uses_anonymous_args = 0
+  31              	.LVL0:
+  32 0000 10B5     		push	{r4, lr}
+  33              		.cfi_def_cfa_offset 8
+  34              		.cfi_offset 4, -8
+  35              		.cfi_offset 14, -4
   77:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
+  36              		.loc 1 77 0
+  37 0002 80B9     		cbnz	r0, .L5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 3
+
+
   78:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
   79:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 0u:
   80:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   81:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         if (emFile_1_isInited0 == 0u)
+  38              		.loc 1 81 0
+  39 0004 104B     		ldr	r3, .L7
+  40 0006 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  41 0008 EBB9     		cbnz	r3, .L1
   82:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
   83:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Indicate that SPI 0 was initialized */
   84:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_isInited0 = 1u;
+  42              		.loc 1 84 0
+  43 000a 0124     		movs	r4, #1
+  44 000c 0E4B     		ldr	r3, .L7
+  45 000e 1C70     		strb	r4, [r3]
   85:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   86:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Initialize SPI */
   87:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 3
-
-
   88:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Stop the clock to set a required divider */
   89:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Stop();
+  46              		.loc 1 89 0
+  47 0010 FFF7FEFF 		bl	emFile_1_Clock_1_Stop
+  48              	.LVL1:
   90:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   91:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Set the inital clock frequency to 400 KHz */
   92:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_SetDividerValue(BCLK__BUS_CLK__KHZ/emFile_1_STARTUP_FREQ);
+  49              		.loc 1 92 0
+  50 0014 2146     		mov	r1, r4
+  51 0016 3B20     		movs	r0, #59
+  52 0018 FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
+  53              	.LVL2:
   93:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   94:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Start the clock */
   95:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Start();
+  54              		.loc 1 95 0
+  55 001c FFF7FEFF 		bl	emFile_1_Clock_1_Start
+  56              	.LVL3:
   96:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
   97:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Start SPI 0 */
   98:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI0_Start();
+  57              		.loc 1 98 0
+  58 0020 FFF7FEFF 		bl	emFile_1_SPI0_Start
+  59              	.LVL4:
+  60 0024 10BD     		pop	{r4, pc}
+  61              	.LVL5:
+  62              	.L5:
   99:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
  100:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  101:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
@@ -143,6 +178,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  107:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 if (emFile_1_isInited1 == 0u)
  108:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 {
  109:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Indicate that SPI 1 was initialized */
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 4
+
+
  110:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_isInited1 = 1u;
  111:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  112:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Stop the clock to set a required divider */
@@ -178,9 +216,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  142:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_Clock_3_SetDividerValue(BCLK__BUS_CLK__KHZ/emFile_1_STARTUP_FREQ);
  143:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  144:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Start the clock */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 4
-
-
  145:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_Clock_3_Start();
  146:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  147:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Start SPI 2 */
@@ -203,6 +238,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  164:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Stop the clock to set a required divider */
  165:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_Clock_4_Stop();
  166:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 5
+
+
  167:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Set the inital clock frequency to 400 KHz */
  168:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_Clock_4_SetDividerValue(BCLK__BUS_CLK__KHZ/emFile_1_STARTUP_FREQ);
  169:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -220,27 +258,65 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  181:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     default:
  182:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  183:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         if (emFile_1_isInited0 == 0u)
+  63              		.loc 1 183 0
+  64 0026 084B     		ldr	r3, .L7
+  65 0028 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+  66 002a 63B9     		cbnz	r3, .L1
  184:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  185:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Indicate that SPI 0 was initialized */
  186:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_isInited0 = 1u;
+  67              		.loc 1 186 0
+  68 002c 0124     		movs	r4, #1
+  69 002e 064B     		ldr	r3, .L7
+  70 0030 1C70     		strb	r4, [r3]
  187:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  188:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Stop the clock to set a required divider */
  189:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Stop();
+  71              		.loc 1 189 0
+  72 0032 FFF7FEFF 		bl	emFile_1_Clock_1_Stop
+  73              	.LVL6:
  190:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  191:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Set the inital clock frequency to 400 KHz */
  192:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_SetDividerValue(BCLK__BUS_CLK__KHZ/emFile_1_STARTUP_FREQ);
+  74              		.loc 1 192 0
+  75 0036 2146     		mov	r1, r4
+  76 0038 3B20     		movs	r0, #59
+  77 003a FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
+  78              	.LVL7:
  193:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  194:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Start the clock */
  195:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Start();
+  79              		.loc 1 195 0
+  80 003e FFF7FEFF 		bl	emFile_1_Clock_1_Start
+  81              	.LVL8:
  196:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  197:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Start SPI 0 */
  198:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI0_Start();
+  82              		.loc 1 198 0
+  83 0042 FFF7FEFF 		bl	emFile_1_SPI0_Start
+  84              	.LVL9:
+  85              	.L1:
+  86 0046 10BD     		pop	{r4, pc}
+  87              	.L8:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 6
+
+
+  88              		.align	2
+  89              	.L7:
+  90 0048 00000000 		.word	.LANCHOR0
+  91              		.cfi_endproc
+  92              	.LFE0:
+  93              		.size	emFile_1_Init, .-emFile_1_Init
+  94              		.section	.text.emFile_1_ReadWriteSPI,"ax",%progbits
+  95              		.align	2
+  96              		.thumb
+  97              		.thumb_func
+  98              		.type	emFile_1_ReadWriteSPI, %function
+  99              	emFile_1_ReadWriteSPI:
+ 100              	.LFB1:
  199:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
  200:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
  201:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 5
-
-
  202:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****       }
  203:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
  204:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -265,22 +341,54 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  223:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  224:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** static U8 emFile_1_ReadWriteSPI(U8 Unit, U8 Data) CYREENTRANT
  225:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
+ 101              		.loc 1 225 0
+ 102              		.cfi_startproc
+ 103              		@ args = 0, pretend = 0, frame = 0
+ 104              		@ frame_needed = 0, uses_anonymous_args = 0
+ 105              	.LVL10:
+ 106 0000 08B5     		push	{r3, lr}
+ 107              		.cfi_def_cfa_offset 8
+ 108              		.cfi_offset 3, -8
+ 109              		.cfi_offset 14, -4
  226:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     U8 spiData;
  227:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  228:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
+ 110              		.loc 1 228 0
+ 111 0002 50B9     		cbnz	r0, .L15
  229:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  230:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 0u:
  231:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 7
+
+
  232:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Send Data */
  233:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         emFile_1_SPI0_WriteTxData(Data);
+ 112              		.loc 1 233 0
+ 113 0004 0846     		mov	r0, r1
+ 114              	.LVL11:
+ 115 0006 FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
+ 116              	.LVL12:
+ 117              	.L12:
  234:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  235:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Wait until all bits are shifted */
  236:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         while (0u == (emFile_1_SPI0_STS_SPI_DONE & emFile_1_SPI0_ReadTxStatus()));
+ 118              		.loc 1 236 0 discriminator 1
+ 119 000a FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
+ 120              	.LVL13:
+ 121 000e 10F0010F 		tst	r0, #1
+ 122 0012 FAD0     		beq	.L12
  237:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  238:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Read data */
  239:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         spiData = emFile_1_SPI0_ReadRxData();
+ 123              		.loc 1 239 0
+ 124 0014 FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
+ 125              	.LVL14:
  240:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  241:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
+ 126              		.loc 1 241 0
+ 127 0018 08BD     		pop	{r3, pc}
+ 128              	.LVL15:
+ 129              	.L15:
  242:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  243:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 2u)
  244:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -298,9 +406,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  256:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
  257:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  258:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #endif /* (emFile_1_NUMBER_SD_CARDS >= 2u) */
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 6
-
-
  259:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  260:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 3u)
  261:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -313,6 +418,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  268:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             while (0u == (emFile_1_SPI2_STS_SPI_DONE & emFile_1_SPI2_ReadTxStatus()));
  269:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  270:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Read data */
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 8
+
+
  271:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             spiData = emFile_1_SPI2_ReadRxData();
  272:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  273:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
@@ -340,27 +448,54 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  295:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  296:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Send Data */
  297:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         emFile_1_SPI0_WriteTxData(Data);
+ 130              		.loc 1 297 0
+ 131 001a 0846     		mov	r0, r1
+ 132              	.LVL16:
+ 133 001c FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
+ 134              	.LVL17:
+ 135              	.L14:
  298:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  299:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Wait until all bits are shifted */
  300:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         while (0u == (emFile_1_SPI0_STS_SPI_DONE & emFile_1_SPI0_ReadTxStatus()));
+ 136              		.loc 1 300 0 discriminator 1
+ 137 0020 FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
+ 138              	.LVL18:
+ 139 0024 10F0010F 		tst	r0, #1
+ 140 0028 FAD0     		beq	.L14
  301:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  302:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Read data */
  303:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         spiData = emFile_1_SPI0_ReadRxData();
+ 141              		.loc 1 303 0
+ 142 002a FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
+ 143              	.LVL19:
  304:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
  305:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
  306:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  307:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  308:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return(spiData);
  309:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
+ 144              		.loc 1 309 0
+ 145 002e 08BD     		pop	{r3, pc}
+ 146              		.cfi_endproc
+ 147              	.LFE1:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 9
+
+
+ 148              		.size	emFile_1_ReadWriteSPI, .-emFile_1_ReadWriteSPI
+ 149              		.section	.text.FS_MMC_HW_X_EnableCS,"ax",%progbits
+ 150              		.align	2
+ 151              		.global	FS_MMC_HW_X_EnableCS
+ 152              		.thumb
+ 153              		.thumb_func
+ 154              		.type	FS_MMC_HW_X_EnableCS, %function
+ 155              	FS_MMC_HW_X_EnableCS:
+ 156              	.LFB2:
  310:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  311:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
  312:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Function Name: FS_MMC_HW_X_EnableCS
  313:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** ********************************************************************************
  314:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  315:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Summary:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 7
-
-
  316:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  FS low level function. Sets the card slot active using the
  317:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  chip select (CS) line.
  318:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
@@ -376,23 +511,36 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  328:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  329:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** void FS_MMC_HW_X_EnableCS(U8 Unit)
  330:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
-  28              		.loc 1 330 0
-  29              		.cfi_startproc
-  30              		@ args = 0, pretend = 0, frame = 0
-  31              		@ frame_needed = 0, uses_anonymous_args = 0
-  32              		@ link register save eliminated.
-  33              	.LVL0:
+ 157              		.loc 1 330 0
+ 158              		.cfi_startproc
+ 159              		@ args = 0, pretend = 0, frame = 0
+ 160              		@ frame_needed = 0, uses_anonymous_args = 0
+ 161              	.LVL20:
+ 162 0000 08B5     		push	{r3, lr}
+ 163              		.cfi_def_cfa_offset 8
+ 164              		.cfi_offset 3, -8
+ 165              		.cfi_offset 14, -4
  331:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
-  34              		.loc 1 331 0
-  35 0000 00B1     		cbz	r0, .L5
+ 166              		.loc 1 331 0
+ 167 0002 10B9     		cbnz	r0, .L21
  332:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  333:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         case 0u:
  334:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  335:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Set CS to 0 */
  336:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI0_CS_Write(0u);
+ 168              		.loc 1 336 0
+ 169 0004 FFF7FEFF 		bl	emFile_1_SPI0_CS_Write
+ 170              	.LVL21:
  337:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  338:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
+ 171              		.loc 1 338 0
+ 172 0008 08BD     		pop	{r3, pc}
+ 173              	.LVL22:
+ 174              	.L21:
  339:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 10
+
+
  340:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #if (emFile_1_NUMBER_SD_CARDS >= 2u)
  341:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  342:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             case 1u:
@@ -418,9 +566,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  362:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #if (emFile_1_NUMBER_SD_CARDS == 4u)
  363:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  364:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             case 3u:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 8
-
-
  365:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  366:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 /* Set CS to 0 */
  367:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 emFile_1_SPI3_CS_Write(0u);
@@ -432,27 +577,30 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  373:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         default:
  374:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  375:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI0_CS_Write(0u);
-  36              		.loc 1 375 0
-  37 0002 0020     		movs	r0, #0
-  38              	.LVL1:
-  39              	.L5:
-  40 0004 FFF7FEBF 		b	emFile_1_SPI0_CS_Write
-  41              	.LVL2:
-  42              		.cfi_endproc
-  43              	.LFE2:
-  44              		.size	FS_MMC_HW_X_EnableCS, .-FS_MMC_HW_X_EnableCS
-  45              		.section	.text.FS_MMC_HW_X_DisableCS,"ax",%progbits
-  46              		.align	2
-  47              		.global	FS_MMC_HW_X_DisableCS
-  48              		.thumb
-  49              		.thumb_func
-  50              		.type	FS_MMC_HW_X_DisableCS, %function
-  51              	FS_MMC_HW_X_DisableCS:
-  52              	.LFB3:
+ 175              		.loc 1 375 0
+ 176 000a 0020     		movs	r0, #0
+ 177              	.LVL23:
+ 178 000c FFF7FEFF 		bl	emFile_1_SPI0_CS_Write
+ 179              	.LVL24:
+ 180 0010 08BD     		pop	{r3, pc}
+ 181              		.cfi_endproc
+ 182              	.LFE2:
+ 183              		.size	FS_MMC_HW_X_EnableCS, .-FS_MMC_HW_X_EnableCS
+ 184 0012 00BF     		.section	.text.FS_MMC_HW_X_DisableCS,"ax",%progbits
+ 185              		.align	2
+ 186              		.global	FS_MMC_HW_X_DisableCS
+ 187              		.thumb
+ 188              		.thumb_func
+ 189              		.type	FS_MMC_HW_X_DisableCS, %function
+ 190              	FS_MMC_HW_X_DisableCS:
+ 191              	.LFB3:
  376:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  377:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
  378:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  379:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 11
+
+
  380:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  381:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  382:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
@@ -475,22 +623,33 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  399:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  400:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** void FS_MMC_HW_X_DisableCS(U8 Unit)
  401:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
-  53              		.loc 1 401 0
-  54              		.cfi_startproc
-  55              		@ args = 0, pretend = 0, frame = 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 9
-
-
-  56              		@ frame_needed = 0, uses_anonymous_args = 0
-  57              		@ link register save eliminated.
-  58              	.LVL3:
+ 192              		.loc 1 401 0
+ 193              		.cfi_startproc
+ 194              		@ args = 0, pretend = 0, frame = 0
+ 195              		@ frame_needed = 0, uses_anonymous_args = 0
+ 196              	.LVL25:
+ 197 0000 08B5     		push	{r3, lr}
+ 198              		.cfi_def_cfa_offset 8
+ 199              		.cfi_offset 3, -8
+ 200              		.cfi_offset 14, -4
  402:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
+ 201              		.loc 1 402 0
+ 202 0002 18B9     		cbnz	r0, .L27
  403:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  404:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 0u:
  405:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  406:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         emFile_1_SPI0_CS_Write(1u);
+ 203              		.loc 1 406 0
+ 204 0004 0120     		movs	r0, #1
+ 205              	.LVL26:
+ 206 0006 FFF7FEFF 		bl	emFile_1_SPI0_CS_Write
+ 207              	.LVL27:
  407:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  408:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
+ 208              		.loc 1 408 0
+ 209 000a 08BD     		pop	{r3, pc}
+ 210              	.LVL28:
+ 211              	.L27:
  409:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  410:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 2u)
  411:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -499,6 +658,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  414:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI1_CS_Write(1u);
  415:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  416:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 12
+
+
  417:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  418:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #endif /* (emFile_1_NUMBER_SD_CARDS >= 2u) */
  419:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -525,25 +687,23 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  440:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     default:
  441:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  442:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         emFile_1_SPI0_CS_Write(1u);
-  59              		.loc 1 442 0
-  60 0000 0120     		movs	r0, #1
-  61              	.LVL4:
-  62 0002 FFF7FEBF 		b	emFile_1_SPI0_CS_Write
-  63              	.LVL5:
-  64              		.cfi_endproc
-  65              	.LFE3:
-  66              		.size	FS_MMC_HW_X_DisableCS, .-FS_MMC_HW_X_DisableCS
-  67 0006 00BF     		.section	.text.FS_MMC_HW_X_IsWriteProtected,"ax",%progbits
-  68              		.align	2
-  69              		.global	FS_MMC_HW_X_IsWriteProtected
-  70              		.thumb
-  71              		.thumb_func
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 10
-
-
-  72              		.type	FS_MMC_HW_X_IsWriteProtected, %function
-  73              	FS_MMC_HW_X_IsWriteProtected:
-  74              	.LFB4:
+ 212              		.loc 1 442 0
+ 213 000c 0120     		movs	r0, #1
+ 214              	.LVL29:
+ 215 000e FFF7FEFF 		bl	emFile_1_SPI0_CS_Write
+ 216              	.LVL30:
+ 217 0012 08BD     		pop	{r3, pc}
+ 218              		.cfi_endproc
+ 219              	.LFE3:
+ 220              		.size	FS_MMC_HW_X_DisableCS, .-FS_MMC_HW_X_DisableCS
+ 221              		.section	.text.FS_MMC_HW_X_IsWriteProtected,"ax",%progbits
+ 222              		.align	2
+ 223              		.global	FS_MMC_HW_X_IsWriteProtected
+ 224              		.thumb
+ 225              		.thumb_func
+ 226              		.type	FS_MMC_HW_X_IsWriteProtected, %function
+ 227              	FS_MMC_HW_X_IsWriteProtected:
+ 228              	.LFB4:
  443:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
  444:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
  445:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
@@ -558,6 +718,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  454:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  FS low level function. Returns the state of the physical write
  455:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  protection of the SD cards.
  456:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 13
+
+
  457:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Parameters:
  458:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  Unit      - Device Index.
  459:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
@@ -571,12 +734,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  467:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  468:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** int FS_MMC_HW_X_IsWriteProtected(U8 Unit)
  469:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
-  75              		.loc 1 469 0
-  76              		.cfi_startproc
-  77              		@ args = 0, pretend = 0, frame = 0
-  78              		@ frame_needed = 0, uses_anonymous_args = 0
-  79              		@ link register save eliminated.
-  80              	.LVL6:
+ 229              		.loc 1 469 0
+ 230              		.cfi_startproc
+ 231              		@ args = 0, pretend = 0, frame = 0
+ 232              		@ frame_needed = 0, uses_anonymous_args = 0
+ 233              		@ link register save eliminated.
+ 234              	.LVL31:
  470:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****    int wpState;
  471:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  472:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
@@ -598,9 +761,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  488:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  489:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 2u)
  490:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 11
-
-
  491:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         case 1u:
  492:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  493:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             #if (emFile_1_WP1_EN)
@@ -618,6 +778,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  505:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  506:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #endif /* (emFile_1_NUMBER_SD_CARDS >= 2u) */
  507:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 14
+
+
  508:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 3u)
  509:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  510:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         case 2u:
@@ -658,9 +821,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  545:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  546:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     default:
  547:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 12
-
-
  548:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #if (emFile_1_WP0_EN)
  549:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  550:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****               /* Based on physical switch state */
@@ -677,21 +837,24 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  561:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  562:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return(wpState);
  563:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
-  81              		.loc 1 563 0
-  82 0000 0020     		movs	r0, #0
-  83              	.LVL7:
-  84 0002 7047     		bx	lr
-  85              		.cfi_endproc
-  86              	.LFE4:
-  87              		.size	FS_MMC_HW_X_IsWriteProtected, .-FS_MMC_HW_X_IsWriteProtected
-  88              		.section	.text.FS_MMC_HW_X_SetMaxSpeed,"ax",%progbits
-  89              		.align	2
-  90              		.global	FS_MMC_HW_X_SetMaxSpeed
-  91              		.thumb
-  92              		.thumb_func
-  93              		.type	FS_MMC_HW_X_SetMaxSpeed, %function
-  94              	FS_MMC_HW_X_SetMaxSpeed:
-  95              	.LFB5:
+ 235              		.loc 1 563 0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 15
+
+
+ 236 0000 0020     		movs	r0, #0
+ 237              	.LVL32:
+ 238 0002 7047     		bx	lr
+ 239              		.cfi_endproc
+ 240              	.LFE4:
+ 241              		.size	FS_MMC_HW_X_IsWriteProtected, .-FS_MMC_HW_X_IsWriteProtected
+ 242              		.section	.text.FS_MMC_HW_X_SetMaxSpeed,"ax",%progbits
+ 243              		.align	2
+ 244              		.global	FS_MMC_HW_X_SetMaxSpeed
+ 245              		.thumb
+ 246              		.thumb_func
+ 247              		.type	FS_MMC_HW_X_SetMaxSpeed, %function
+ 248              	FS_MMC_HW_X_SetMaxSpeed:
+ 249              	.LFB5:
  564:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  565:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  566:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
@@ -717,41 +880,48 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  586:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  587:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** U16 FS_MMC_HW_X_SetMaxSpeed(U8 Unit, U16 MaxFreq)
  588:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
-  96              		.loc 1 588 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 13
-
-
-  97              		.cfi_startproc
-  98              		@ args = 0, pretend = 0, frame = 0
-  99              		@ frame_needed = 0, uses_anonymous_args = 0
- 100              	.LVL8:
+ 250              		.loc 1 588 0
+ 251              		.cfi_startproc
+ 252              		@ args = 0, pretend = 0, frame = 0
+ 253              		@ frame_needed = 0, uses_anonymous_args = 0
+ 254              	.LVL33:
+ 255 0000 38B5     		push	{r3, r4, r5, lr}
+ 256              		.cfi_def_cfa_offset 16
+ 257              		.cfi_offset 3, -16
+ 258              		.cfi_offset 4, -12
+ 259              		.cfi_offset 5, -8
+ 260              		.cfi_offset 14, -4
  589:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     U16 freq;
  590:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     U32 divResult;
  591:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  592:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     if(MaxFreq < emFile_1_STARTUP_FREQ)
- 101              		.loc 1 592 0
- 102 0000 B1F5C87F 		cmp	r1, #400
- 588:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     U16 freq;
- 103              		.loc 1 588 0
- 104 0004 38B5     		push	{r3, r4, r5, lr}
- 105              		.cfi_def_cfa_offset 16
- 106              		.cfi_offset 3, -16
- 107              		.cfi_offset 4, -12
- 108              		.cfi_offset 5, -8
- 109              		.cfi_offset 14, -4
- 110              		.loc 1 592 0
- 111 0006 0CD2     		bcs	.L20
- 112 0008 1D25     		movs	r5, #29
+ 261              		.loc 1 592 0
+ 262 0002 B1F5C87F 		cmp	r1, #400
+ 263 0006 04D3     		bcc	.L35
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 16
+
+
+ 264 0008 0D46     		mov	r5, r1
  593:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  594:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         MaxFreq = emFile_1_STARTUP_FREQ;
- 113              		.loc 1 594 0
- 114 000a 4FF4C874 		mov	r4, #400
- 115              	.LVL9:
- 116              	.L13:
  595:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  596:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     else if(MaxFreq > emFile_1_MAX_SPI_FREQ)
+ 265              		.loc 1 596 0
+ 266 000a B1F57A6F 		cmp	r1, #4000
+ 267 000e 03D8     		bhi	.L36
+ 268 0010 04E0     		b	.L31
+ 269              	.L35:
+ 594:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
+ 270              		.loc 1 594 0
+ 271 0012 4FF4C875 		mov	r5, #400
+ 272 0016 01E0     		b	.L31
+ 273              	.L36:
  597:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  598:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         MaxFreq = emFile_1_MAX_SPI_FREQ;
+ 274              		.loc 1 598 0
+ 275 0018 4FF47A65 		mov	r5, #4000
+ 276              	.L31:
+ 277              	.LVL34:
  599:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  600:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     else
  601:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
@@ -759,16 +929,45 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  603:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  604:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  605:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     freq = MaxFreq << 1u;
+ 278              		.loc 1 605 0
+ 279 001c 6C00     		lsls	r4, r5, #1
+ 280 001e A4B2     		uxth	r4, r4
+ 281              	.LVL35:
  606:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  607:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     divResult = ((U32) BCLK__BUS_CLK__KHZ)/((U32) freq);
+ 282              		.loc 1 607 0
+ 283 0020 45F6C053 		movw	r3, #24000
+ 284 0024 B3FBF4F4 		udiv	r4, r3, r4
+ 285              	.LVL36:
  608:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  609:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
+ 286              		.loc 1 609 0
+ 287 0028 48B9     		cbnz	r0, .L37
  610:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  611:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         case 0u:
  612:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Stop();
+ 288              		.loc 1 612 0
+ 289 002a FFF7FEFF 		bl	emFile_1_Clock_1_Stop
+ 290              	.LVL37:
  613:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_SetDividerValue((U16)divResult);    /* update the frequency */
+ 291              		.loc 1 613 0
+ 292 002e 601E     		subs	r0, r4, #1
+ 293 0030 0121     		movs	r1, #1
+ 294 0032 80B2     		uxth	r0, r0
+ 295 0034 FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
+ 296              	.LVL38:
  614:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Start();
+ 297              		.loc 1 614 0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 17
+
+
+ 298 0038 FFF7FEFF 		bl	emFile_1_Clock_1_Start
+ 299              	.LVL39:
  615:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
+ 300              		.loc 1 615 0
+ 301 003c 08E0     		b	.L34
+ 302              	.LVL40:
+ 303              	.L37:
  616:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  617:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #if (emFile_1_NUMBER_SD_CARDS >= 2u)
  618:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -778,9 +977,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  622:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_2_SetDividerValue((U16)divResult);    /* update the frequency */
  623:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_2_Start();
  624:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 14
-
-
  625:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  626:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #endif /* (emFile_1_NUMBER_SD_CARDS >= 2u) */
  627:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -808,56 +1004,44 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  649:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  650:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         default:
  651:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Stop();
- 117              		.loc 1 651 0
- 118 000e FFF7FEFF 		bl	emFile_1_Clock_1_Stop
- 119              	.LVL10:
+ 304              		.loc 1 651 0
+ 305 003e FFF7FEFF 		bl	emFile_1_Clock_1_Stop
+ 306              	.LVL41:
  652:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_SetDividerValue((U16)divResult);    /* update the frequency */
- 120              		.loc 1 652 0
- 121 0012 2846     		mov	r0, r5
- 122 0014 0121     		movs	r1, #1
- 123 0016 FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
- 124              	.LVL11:
+ 307              		.loc 1 652 0
+ 308 0042 601E     		subs	r0, r4, #1
+ 309 0044 0121     		movs	r1, #1
+ 310 0046 80B2     		uxth	r0, r0
+ 311 0048 FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
+ 312              	.LVL42:
  653:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Start();
- 125              		.loc 1 653 0
- 126 001a FFF7FEFF 		bl	emFile_1_Clock_1_Start
- 127              	.LVL12:
+ 313              		.loc 1 653 0
+ 314 004c FFF7FEFF 		bl	emFile_1_Clock_1_Start
+ 315              	.LVL43:
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 18
+
+
+ 316              	.L34:
  654:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
  655:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  656:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  657:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return (MaxFreq);
  658:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  659:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
- 128              		.loc 1 659 0
- 129 001e 2046     		mov	r0, r4
- 130 0020 38BD     		pop	{r3, r4, r5, pc}
- 131              	.LVL13:
- 132              	.L20:
- 133 0022 45F6C053 		movw	r3, #24000
- 134 0026 B1F57A6F 		cmp	r1, #4000
- 135 002a 28BF     		it	cs
- 136 002c 4FF47A61 		movcs	r1, #4000
- 137              	.LVL14:
- 138 0030 4D00     		lsls	r5, r1, #1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 15
-
-
- 139 0032 ADB2     		uxth	r5, r5
- 140 0034 B3FBF5F5 		udiv	r5, r3, r5
- 141 0038 013D     		subs	r5, r5, #1
- 142 003a 0C46     		mov	r4, r1
- 143 003c ADB2     		uxth	r5, r5
- 144 003e E6E7     		b	.L13
- 145              		.cfi_endproc
- 146              	.LFE5:
- 147              		.size	FS_MMC_HW_X_SetMaxSpeed, .-FS_MMC_HW_X_SetMaxSpeed
- 148              		.section	.text.FS_MMC_HW_X_SetVoltage,"ax",%progbits
- 149              		.align	2
- 150              		.global	FS_MMC_HW_X_SetVoltage
- 151              		.thumb
- 152              		.thumb_func
- 153              		.type	FS_MMC_HW_X_SetVoltage, %function
- 154              	FS_MMC_HW_X_SetVoltage:
- 155              	.LFB6:
+ 317              		.loc 1 659 0
+ 318 0050 2846     		mov	r0, r5
+ 319 0052 38BD     		pop	{r3, r4, r5, pc}
+ 320              		.cfi_endproc
+ 321              	.LFE5:
+ 322              		.size	FS_MMC_HW_X_SetMaxSpeed, .-FS_MMC_HW_X_SetMaxSpeed
+ 323              		.section	.text.FS_MMC_HW_X_SetVoltage,"ax",%progbits
+ 324              		.align	2
+ 325              		.global	FS_MMC_HW_X_SetVoltage
+ 326              		.thumb
+ 327              		.thumb_func
+ 328              		.type	FS_MMC_HW_X_SetVoltage, %function
+ 329              	FS_MMC_HW_X_SetVoltage:
+ 330              	.LFB6:
  660:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  661:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  662:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
@@ -884,28 +1068,39 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  683:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  684:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** int FS_MMC_HW_X_SetVoltage(U8 Unit, U16 Vmin, U16 Vmax)
  685:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
- 156              		.loc 1 685 0
- 157              		.cfi_startproc
- 158              		@ args = 0, pretend = 0, frame = 0
- 159              		@ frame_needed = 0, uses_anonymous_args = 0
- 160              		@ link register save eliminated.
- 161              	.LVL15:
+ 331              		.loc 1 685 0
+ 332              		.cfi_startproc
+ 333              		@ args = 0, pretend = 0, frame = 0
+ 334              		@ frame_needed = 0, uses_anonymous_args = 0
+ 335              		@ link register save eliminated.
+ 336              	.LVL44:
  686:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     int result;
  687:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  688:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
+ 337              		.loc 1 688 0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 19
+
+
+ 338 0000 0328     		cmp	r0, #3
+ 339 0002 09D8     		bhi	.L40
  689:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  690:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 0u:
  691:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  692:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 1u:
  693:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 16
-
-
  694:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 2u:
  695:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  696:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 3u:
  697:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  698:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         if((Vmin <= emFile_1_MMC_DEFAULT_SUPPLY_VOLTAGE) &&
+ 340              		.loc 1 698 0
+ 341 0004 40F6E443 		movw	r3, #3300
+ 342 0008 9942     		cmp	r1, r3
+ 343 000a 0FD8     		bhi	.L43
+ 344              		.loc 1 698 0 is_stmt 0 discriminator 1
+ 345 000c 40F6E343 		movw	r3, #3299
+ 346 0010 9A42     		cmp	r2, r3
+ 347 0012 0DD8     		bhi	.L44
  699:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             (emFile_1_MMC_DEFAULT_SUPPLY_VOLTAGE <= Vmax))
  700:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  701:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             result = emFile_1_RET_SUCCCESS;
@@ -913,6 +1108,12 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  703:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         else
  704:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  705:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             result = emFile_1_RET_FAIL;
+ 348              		.loc 1 705 0 is_stmt 1
+ 349 0014 0020     		movs	r0, #0
+ 350              	.LVL45:
+ 351 0016 7047     		bx	lr
+ 352              	.LVL46:
+ 353              	.L40:
  706:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
  707:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  708:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
@@ -920,25 +1121,14 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  710:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     default:
  711:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  712:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         if((Vmin <= emFile_1_MMC_DEFAULT_SUPPLY_VOLTAGE) &&
- 162              		.loc 1 712 0
- 163 0000 40F6E443 		movw	r3, #3300
- 164 0004 9942     		cmp	r1, r3
- 165 0006 06D8     		bhi	.L26
- 705:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
- 166              		.loc 1 705 0 discriminator 1
- 167 0008 40F6E340 		movw	r0, #3299
- 168              	.LVL16:
- 169 000c 8242     		cmp	r2, r0
- 170 000e 94BF     		ite	ls
- 171 0010 0020     		movls	r0, #0
- 172 0012 0120     		movhi	r0, #1
- 173 0014 7047     		bx	lr
- 174              	.LVL17:
- 175              	.L26:
- 705:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
- 176              		.loc 1 705 0 is_stmt 0
- 177 0016 0020     		movs	r0, #0
- 178              	.LVL18:
+ 354              		.loc 1 712 0
+ 355 0018 40F6E443 		movw	r3, #3300
+ 356 001c 9942     		cmp	r1, r3
+ 357 001e 09D8     		bhi	.L45
+ 358              		.loc 1 712 0 is_stmt 0 discriminator 1
+ 359 0020 40F6E343 		movw	r3, #3299
+ 360 0024 9A42     		cmp	r2, r3
+ 361 0026 07D8     		bhi	.L46
  713:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             (emFile_1_MMC_DEFAULT_SUPPLY_VOLTAGE <= Vmax))
  714:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  715:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             result = emFile_1_RET_SUCCCESS;
@@ -946,6 +1136,39 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  717:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         else
  718:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  719:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             result = emFile_1_RET_FAIL;
+ 362              		.loc 1 719 0 is_stmt 1
+ 363 0028 0020     		movs	r0, #0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 20
+
+
+ 364              	.LVL47:
+ 365 002a 7047     		bx	lr
+ 366              	.LVL48:
+ 367              	.L43:
+ 705:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
+ 368              		.loc 1 705 0
+ 369 002c 0020     		movs	r0, #0
+ 370              	.LVL49:
+ 371 002e 7047     		bx	lr
+ 372              	.LVL50:
+ 373              	.L44:
+ 701:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
+ 374              		.loc 1 701 0
+ 375 0030 0120     		movs	r0, #1
+ 376              	.LVL51:
+ 377 0032 7047     		bx	lr
+ 378              	.LVL52:
+ 379              	.L45:
+ 380              		.loc 1 719 0
+ 381 0034 0020     		movs	r0, #0
+ 382              	.LVL53:
+ 383 0036 7047     		bx	lr
+ 384              	.LVL54:
+ 385              	.L46:
+ 715:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
+ 386              		.loc 1 715 0
+ 387 0038 0120     		movs	r0, #1
+ 388              	.LVL55:
  720:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
  721:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
  722:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         break;
@@ -953,22 +1176,19 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  724:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  725:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return(result);
  726:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
- 179              		.loc 1 726 0 is_stmt 1
- 180 0018 7047     		bx	lr
- 181              		.cfi_endproc
- 182              	.LFE6:
- 183              		.size	FS_MMC_HW_X_SetVoltage, .-FS_MMC_HW_X_SetVoltage
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 17
-
-
- 184 001a 00BF     		.section	.text.FS_MMC_HW_X_IsPresent,"ax",%progbits
- 185              		.align	2
- 186              		.global	FS_MMC_HW_X_IsPresent
- 187              		.thumb
- 188              		.thumb_func
- 189              		.type	FS_MMC_HW_X_IsPresent, %function
- 190              	FS_MMC_HW_X_IsPresent:
- 191              	.LFB7:
+ 389              		.loc 1 726 0
+ 390 003a 7047     		bx	lr
+ 391              		.cfi_endproc
+ 392              	.LFE6:
+ 393              		.size	FS_MMC_HW_X_SetVoltage, .-FS_MMC_HW_X_SetVoltage
+ 394              		.section	.text.FS_MMC_HW_X_IsPresent,"ax",%progbits
+ 395              		.align	2
+ 396              		.global	FS_MMC_HW_X_IsPresent
+ 397              		.thumb
+ 398              		.thumb_func
+ 399              		.type	FS_MMC_HW_X_IsPresent, %function
+ 400              	FS_MMC_HW_X_IsPresent:
+ 401              	.LFB7:
  727:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  728:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  729:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
@@ -978,6 +1198,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  733:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Summary:
  734:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  Returns the state of the media. If you do not know the state, return
  735:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  FS_MEDIA_STATE_UNKNOWN and the higher layer will try to figure out if
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 21
+
+
  736:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  a media is present.
  737:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  738:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Parameters:
@@ -994,53 +1217,21 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  749:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  750:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** int FS_MMC_HW_X_IsPresent(U8 Unit)
  751:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** {
- 192              		.loc 1 751 0
- 193              		.cfi_startproc
- 194              		@ args = 0, pretend = 0, frame = 0
- 195              		@ frame_needed = 0, uses_anonymous_args = 0
- 196              	.LVL19:
- 197 0000 10B5     		push	{r4, lr}
- 198              		.cfi_def_cfa_offset 8
- 199              		.cfi_offset 4, -8
- 200              		.cfi_offset 14, -4
- 201              	.LBB4:
- 202              	.LBB5:
-  81:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
- 203              		.loc 1 81 0
- 204 0002 084B     		ldr	r3, .L40
- 205 0004 1A78     		ldrb	r2, [r3]	@ zero_extendqisi2
- 206 0006 5AB9     		cbnz	r2, .L32
-  84:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 207              		.loc 1 84 0
- 208 0008 0124     		movs	r4, #1
- 209 000a 1C70     		strb	r4, [r3]
-  89:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 210              		.loc 1 89 0
- 211 000c FFF7FEFF 		bl	emFile_1_Clock_1_Stop
- 212              	.LVL20:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 18
-
-
-  92:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 213              		.loc 1 92 0
- 214 0010 2146     		mov	r1, r4
- 215 0012 3B20     		movs	r0, #59
- 216 0014 FFF7FEFF 		bl	emFile_1_Clock_1_SetDividerRegister
- 217              	.LVL21:
-  95:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 218              		.loc 1 95 0
- 219 0018 FFF7FEFF 		bl	emFile_1_Clock_1_Start
- 220              	.LVL22:
-  98:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         }
- 221              		.loc 1 98 0
- 222 001c FFF7FEFF 		bl	emFile_1_SPI0_Start
- 223              	.LVL23:
- 224              	.L32:
- 225              	.LBE5:
- 226              	.LBE4:
+ 402              		.loc 1 751 0
+ 403              		.cfi_startproc
+ 404              		@ args = 0, pretend = 0, frame = 0
+ 405              		@ frame_needed = 0, uses_anonymous_args = 0
+ 406              	.LVL56:
+ 407 0000 08B5     		push	{r3, lr}
+ 408              		.cfi_def_cfa_offset 8
+ 409              		.cfi_offset 3, -8
+ 410              		.cfi_offset 14, -4
  752:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****      int result;
  753:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  754:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     emFile_1_Init(Unit);
+ 411              		.loc 1 754 0
+ 412 0002 FFF7FEFF 		bl	emFile_1_Init
+ 413              	.LVL57:
  755:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  756:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
  757:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
@@ -1063,27 +1254,23 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  774:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  775:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return(result);
  776:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
- 227              		.loc 1 776 0
- 228 0020 0220     		movs	r0, #2
- 229 0022 10BD     		pop	{r4, pc}
- 230              	.L41:
- 231              		.align	2
- 232              	.L40:
- 233 0024 00000000 		.word	.LANCHOR0
- 234              		.cfi_endproc
- 235              	.LFE7:
- 236              		.size	FS_MMC_HW_X_IsPresent, .-FS_MMC_HW_X_IsPresent
- 237              		.section	.text.FS_MMC_HW_X_Read,"ax",%progbits
- 238              		.align	2
- 239              		.global	FS_MMC_HW_X_Read
- 240              		.thumb
- 241              		.thumb_func
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 19
+ 414              		.loc 1 776 0
+ 415 0006 0220     		movs	r0, #2
+ 416 0008 08BD     		pop	{r3, pc}
+ 417              		.cfi_endproc
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 22
 
 
- 242              		.type	FS_MMC_HW_X_Read, %function
- 243              	FS_MMC_HW_X_Read:
- 244              	.LFB8:
+ 418              	.LFE7:
+ 419              		.size	FS_MMC_HW_X_IsPresent, .-FS_MMC_HW_X_IsPresent
+ 420 000a 00BF     		.section	.text.FS_MMC_HW_X_Read,"ax",%progbits
+ 421              		.align	2
+ 422              		.global	FS_MMC_HW_X_Read
+ 423              		.thumb
+ 424              		.thumb_func
+ 425              		.type	FS_MMC_HW_X_Read, %function
+ 426              	FS_MMC_HW_X_Read:
+ 427              	.LFB8:
  777:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  778:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  779:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /*******************************************************************************
@@ -1109,129 +1296,59 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  799:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** #if (CY_PSOC5)
  800:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     void  FS_MMC_HW_X_Read (U8 Unit, U8 * pData, int NumBytes)
  801:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
- 245              		.loc 1 801 0
- 246              		.cfi_startproc
- 247              		@ args = 0, pretend = 0, frame = 0
- 248              		@ frame_needed = 0, uses_anonymous_args = 0
- 249              	.LVL24:
- 250 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
- 251              		.cfi_def_cfa_offset 24
- 252              		.cfi_offset 3, -24
- 253              		.cfi_offset 4, -20
- 254              		.cfi_offset 5, -16
- 255              		.cfi_offset 6, -12
- 256              		.cfi_offset 7, -8
- 257              		.cfi_offset 14, -4
- 258 0002 0746     		mov	r7, r0
- 259 0004 0E46     		mov	r6, r1
- 260 0006 1546     		mov	r5, r2
- 261              	.LVL25:
- 262              	.L48:
+ 428              		.loc 1 801 0
+ 429              		.cfi_startproc
+ 430              		@ args = 0, pretend = 0, frame = 0
+ 431              		@ frame_needed = 0, uses_anonymous_args = 0
+ 432              	.LVL58:
+ 433 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 434              		.cfi_def_cfa_offset 24
+ 435              		.cfi_offset 3, -24
+ 436              		.cfi_offset 4, -20
+ 437              		.cfi_offset 5, -16
+ 438              		.cfi_offset 6, -12
+ 439              		.cfi_offset 7, -8
+ 440              		.cfi_offset 14, -4
+ 441 0002 0746     		mov	r7, r0
+ 442 0004 0D46     		mov	r5, r1
+ 443 0006 1446     		mov	r4, r2
+ 444              	.LVL59:
+ 445              	.L50:
  802:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         do
  803:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  804:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             *pData++ = emFile_1_ReadWriteSPI(Unit, 0xff);
- 263              		.loc 1 804 0 discriminator 1
- 264 0008 741C     		adds	r4, r6, #1
- 265              	.LVL26:
- 266              	.LBB10:
- 267              	.LBB11:
- 228:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
- 268              		.loc 1 228 0 discriminator 1
- 269 000a 77B1     		cbz	r7, .L58
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 20
+ 446              		.loc 1 804 0 discriminator 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 23
 
 
- 270              	.LVL27:
- 271              	.LBB12:
- 272              	.LBB13:
- 297:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 273              		.loc 1 297 0
- 274 000c FF20     		movs	r0, #255
- 275 000e FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
- 276              	.LVL28:
- 277              	.L47:
- 300:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 278              		.loc 1 300 0
- 279 0012 FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
- 280              	.LVL29:
- 281 0016 C307     		lsls	r3, r0, #31
- 282 0018 FBD5     		bpl	.L47
- 303:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
- 283              		.loc 1 303 0
- 284 001a FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
- 285              	.LVL30:
- 286              	.LBE13:
- 287              	.LBE12:
- 288              	.LBE11:
- 289              	.LBE10:
+ 447 0008 6E1C     		adds	r6, r5, #1
+ 448              	.LVL60:
+ 449 000a FF21     		movs	r1, #255
+ 450 000c 3846     		mov	r0, r7
+ 451 000e FFF7FEFF 		bl	emFile_1_ReadWriteSPI
+ 452              	.LVL61:
+ 453 0012 2870     		strb	r0, [r5]
+ 454              	.LVL62:
+ 455 0014 3546     		mov	r5, r6
  805:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 290              		.loc 1 805 0
- 291 001e 013D     		subs	r5, r5, #1
- 292 0020 2646     		mov	r6, r4
- 804:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 293              		.loc 1 804 0
- 294 0022 04F8010C 		strb	r0, [r4, #-1]
- 295              		.loc 1 805 0
- 296 0026 EFD1     		bne	.L48
- 297 0028 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 298              	.LVL31:
- 299              	.L58:
- 300 002a 013D     		subs	r5, r5, #1
- 301 002c 2544     		add	r5, r5, r4
- 302              	.LVL32:
- 303              	.L50:
- 304              	.LBB15:
- 305              	.LBB14:
- 233:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 306              		.loc 1 233 0
- 307 002e FF20     		movs	r0, #255
- 308 0030 FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
- 309              	.LVL33:
- 310              	.L45:
- 236:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 311              		.loc 1 236 0
- 312 0034 FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
- 313              	.LVL34:
- 314 0038 C207     		lsls	r2, r0, #31
- 315 003a FBD5     		bpl	.L45
- 239:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 316              		.loc 1 239 0
- 317 003c FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
- 318              	.LVL35:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 21
-
-
- 319              	.LBE14:
- 320              	.LBE15:
- 321              		.loc 1 805 0
- 322 0040 A542     		cmp	r5, r4
- 804:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 323              		.loc 1 804 0
- 324 0042 3070     		strb	r0, [r6]
- 325              		.loc 1 805 0
- 326 0044 02D0     		beq	.L59
- 327              	.LVL36:
- 328 0046 2646     		mov	r6, r4
- 804:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 329              		.loc 1 804 0
- 330 0048 0134     		adds	r4, r4, #1
- 331              	.LVL37:
- 332 004a F0E7     		b	.L50
- 333              	.LVL38:
- 334              	.L59:
- 335 004c F8BD     		pop	{r3, r4, r5, r6, r7, pc}
- 336              		.cfi_endproc
- 337              	.LFE8:
- 338              		.size	FS_MMC_HW_X_Read, .-FS_MMC_HW_X_Read
- 339 004e 00BF     		.section	.text.FS_MMC_HW_X_Write,"ax",%progbits
- 340              		.align	2
- 341              		.global	FS_MMC_HW_X_Write
- 342              		.thumb
- 343              		.thumb_func
- 344              		.type	FS_MMC_HW_X_Write, %function
- 345              	FS_MMC_HW_X_Write:
- 346              	.LFB9:
+ 456              		.loc 1 805 0 discriminator 1
+ 457 0016 013C     		subs	r4, r4, #1
+ 458              	.LVL63:
+ 459 0018 F6D1     		bne	.L50
  806:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
+ 460              		.loc 1 806 0
+ 461 001a F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 462              		.cfi_endproc
+ 463              	.LFE8:
+ 464              		.size	FS_MMC_HW_X_Read, .-FS_MMC_HW_X_Read
+ 465              		.section	.text.FS_MMC_HW_X_Write,"ax",%progbits
+ 466              		.align	2
+ 467              		.global	FS_MMC_HW_X_Write
+ 468              		.thumb
+ 469              		.thumb_func
+ 470              		.type	FS_MMC_HW_X_Write, %function
+ 471              	FS_MMC_HW_X_Write:
+ 472              	.LFB9:
  807:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** #else
  808:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     void  FS_MMC_HW_X_Read (U8 Unit, U8 xdata * pData, int NumBytes)
  809:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
@@ -1258,1895 +1375,1764 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 1
  830:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  831:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Return:
  832:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  None
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 22
-
-
  833:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  834:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Reentrant:
  835:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  No
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 24
+
+
  836:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  837:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *******************************************************************************/
  838:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** #if (CY_PSOC5)
  839:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     void  FS_MMC_HW_X_Write(U8 Unit, const U8 * pData, int NumBytes) 
  840:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
- 347              		.loc 1 840 0
- 348              		.cfi_startproc
- 349              		@ args = 0, pretend = 0, frame = 0
- 350              		@ frame_needed = 0, uses_anonymous_args = 0
- 351              	.LVL39:
- 352 0000 70B5     		push	{r4, r5, r6, lr}
- 353              		.cfi_def_cfa_offset 16
- 354              		.cfi_offset 4, -16
- 355              		.cfi_offset 5, -12
- 356              		.cfi_offset 6, -8
- 357              		.cfi_offset 14, -4
- 358 0002 0646     		mov	r6, r0
- 359 0004 0C46     		mov	r4, r1
- 360 0006 1546     		mov	r5, r2
- 361              	.LVL40:
- 362              	.L66:
+ 473              		.loc 1 840 0
+ 474              		.cfi_startproc
+ 475              		@ args = 0, pretend = 0, frame = 0
+ 476              		@ frame_needed = 0, uses_anonymous_args = 0
+ 477              	.LVL64:
+ 478 0000 70B5     		push	{r4, r5, r6, lr}
+ 479              		.cfi_def_cfa_offset 16
+ 480              		.cfi_offset 4, -16
+ 481              		.cfi_offset 5, -12
+ 482              		.cfi_offset 6, -8
+ 483              		.cfi_offset 14, -4
+ 484 0002 0646     		mov	r6, r0
+ 485 0004 1446     		mov	r4, r2
+ 486              	.LVL65:
+ 487              	.L53:
  841:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         do
  842:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  843:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_ReadWriteSPI(Unit, *pData++);
- 363              		.loc 1 843 0 discriminator 1
- 364 0008 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2
- 365              	.LVL41:
- 366              	.LBB20:
- 367              	.LBB21:
- 228:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
- 368              		.loc 1 228 0 discriminator 1
- 369 000c 56B1     		cbz	r6, .L76
- 370              	.LVL42:
- 371              	.LBB22:
- 372              	.LBB23:
- 297:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 373              		.loc 1 297 0
- 374 000e FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
- 375              	.LVL43:
- 376              	.L65:
- 300:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 377              		.loc 1 300 0
- 378 0012 FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
- 379              	.LVL44:
- 380 0016 C307     		lsls	r3, r0, #31
- 381 0018 FBD5     		bpl	.L65
- 303:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         
- 382              		.loc 1 303 0
- 383 001a FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
- 384              	.LVL45:
- 385              	.LBE23:
- 386              	.LBE22:
- 387              	.LBE21:
- 388              	.LBE20:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 23
-
-
+ 488              		.loc 1 843 0 discriminator 1
+ 489 0006 4D1C     		adds	r5, r1, #1
+ 490              	.LVL66:
+ 491 0008 0978     		ldrb	r1, [r1]	@ zero_extendqisi2
+ 492 000a 3046     		mov	r0, r6
+ 493 000c FFF7FEFF 		bl	emFile_1_ReadWriteSPI
+ 494              	.LVL67:
+ 495 0010 2946     		mov	r1, r5
  844:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 389              		.loc 1 844 0
- 390 001e 013D     		subs	r5, r5, #1
- 391              	.LVL46:
- 392 0020 F2D1     		bne	.L66
- 393 0022 70BD     		pop	{r4, r5, r6, pc}
- 394              	.LVL47:
- 395              	.L76:
- 396 0024 013D     		subs	r5, r5, #1
- 397              	.LVL48:
- 398 0026 2544     		add	r5, r5, r4
- 399              	.LVL49:
- 400              	.L68:
- 401              	.LBB25:
- 402              	.LBB24:
- 233:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 403              		.loc 1 233 0
- 404 0028 FFF7FEFF 		bl	emFile_1_SPI0_WriteTxData
- 405              	.LVL50:
- 406              	.L63:
- 236:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 407              		.loc 1 236 0
- 408 002c FFF7FEFF 		bl	emFile_1_SPI0_ReadTxStatus
- 409              	.LVL51:
- 410 0030 C207     		lsls	r2, r0, #31
- 411 0032 FBD5     		bpl	.L63
- 239:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
- 412              		.loc 1 239 0
- 413 0034 FFF7FEFF 		bl	emFile_1_SPI0_ReadRxData
- 414              	.LVL52:
- 415              	.LBE24:
- 416              	.LBE25:
- 417              		.loc 1 844 0
- 418 0038 AC42     		cmp	r4, r5
- 419 003a 02D0     		beq	.L77
- 843:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         } while (--NumBytes);
- 420              		.loc 1 843 0
- 421 003c 14F8010B 		ldrb	r0, [r4], #1	@ zero_extendqisi2
- 422              	.LVL53:
- 423 0040 F2E7     		b	.L68
- 424              	.LVL54:
- 425              	.L77:
- 426 0042 70BD     		pop	{r4, r5, r6, pc}
- 427              		.cfi_endproc
- 428              	.LFE9:
- 429              		.size	FS_MMC_HW_X_Write, .-FS_MMC_HW_X_Write
- 430              		.bss
- 431              		.set	.LANCHOR0,. + 0
- 432              		.type	emFile_1_isInited0, %object
- 433              		.size	emFile_1_isInited0, 1
- 434              	emFile_1_isInited0:
- 435 0000 00       		.space	1
- 436              		.text
- 437              	.Letext0:
- 438              		.file 2 "Generated_Source\\PSoC5\\emFile_1_SPI0_CS.h"
- 439              		.file 3 "Generated_Source\\PSoC5\\emFile_1_Clock_1.h"
- 440              		.file 4 "Generated_Source\\PSoC5\\emFile_1_SPI0.h"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 24
+ 496              		.loc 1 844 0 discriminator 1
+ 497 0012 013C     		subs	r4, r4, #1
+ 498              	.LVL68:
+ 499 0014 F7D1     		bne	.L53
+ 845:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
+ 500              		.loc 1 845 0
+ 501 0016 70BD     		pop	{r4, r5, r6, pc}
+ 502              		.cfi_endproc
+ 503              	.LFE9:
+ 504              		.size	FS_MMC_HW_X_Write, .-FS_MMC_HW_X_Write
+ 505              		.bss
+ 506              		.set	.LANCHOR0,. + 0
+ 507              		.type	emFile_1_isInited0, %object
+ 508              		.size	emFile_1_isInited0, 1
+ 509              	emFile_1_isInited0:
+ 510 0000 00       		.space	1
+ 511              		.text
+ 512              	.Letext0:
+ 513              		.file 2 "Generated_Source\\PSoC5\\emFile_1_Clock_1.h"
+ 514              		.file 3 "Generated_Source\\PSoC5\\emFile_1_SPI0.h"
+ 515              		.file 4 "Generated_Source\\PSoC5\\emFile_1_SPI0_CS.h"
+ 516              		.file 5 "Generated_Source\\PSoC5/cytypes.h"
+ 517              		.section	.debug_info,"",%progbits
+ 518              	.Ldebug_info0:
+ 519 0000 DC040000 		.4byte	0x4dc
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 25
 
 
- 441              		.file 5 "Generated_Source\\PSoC5/cytypes.h"
- 442              		.section	.debug_info,"",%progbits
- 443              	.Ldebug_info0:
- 444 0000 19050000 		.4byte	0x519
- 445 0004 0400     		.2byte	0x4
- 446 0006 00000000 		.4byte	.Ldebug_abbrev0
- 447 000a 04       		.byte	0x4
- 448 000b 01       		.uleb128 0x1
- 449 000c 5E000000 		.4byte	.LASF42
- 450 0010 0C       		.byte	0xc
- 451 0011 BF030000 		.4byte	.LASF43
- 452 0015 E7010000 		.4byte	.LASF44
- 453 0019 30000000 		.4byte	.Ldebug_ranges0+0x30
- 454 001d 00000000 		.4byte	0
- 455 0021 00000000 		.4byte	.Ldebug_line0
- 456 0025 02       		.uleb128 0x2
- 457 0026 02       		.byte	0x2
- 458 0027 07       		.byte	0x7
- 459 0028 64010000 		.4byte	.LASF0
- 460 002c 02       		.uleb128 0x2
- 461 002d 04       		.byte	0x4
- 462 002e 07       		.byte	0x7
- 463 002f A2010000 		.4byte	.LASF1
- 464 0033 02       		.uleb128 0x2
- 465 0034 04       		.byte	0x4
- 466 0035 07       		.byte	0x7
- 467 0036 65020000 		.4byte	.LASF2
- 468 003a 03       		.uleb128 0x3
- 469 003b 04       		.byte	0x4
- 470 003c 05       		.byte	0x5
- 471 003d 696E7400 		.ascii	"int\000"
- 472 0041 02       		.uleb128 0x2
- 473 0042 01       		.byte	0x1
- 474 0043 08       		.byte	0x8
- 475 0044 36010000 		.4byte	.LASF3
- 476 0048 02       		.uleb128 0x2
- 477 0049 04       		.byte	0x4
- 478 004a 07       		.byte	0x7
- 479 004b FC020000 		.4byte	.LASF4
- 480 004f 02       		.uleb128 0x2
- 481 0050 01       		.byte	0x1
- 482 0051 08       		.byte	0x8
- 483 0052 1C030000 		.4byte	.LASF5
- 484 0056 02       		.uleb128 0x2
- 485 0057 02       		.byte	0x2
- 486 0058 05       		.byte	0x5
- 487 0059 CB010000 		.4byte	.LASF6
- 488 005d 02       		.uleb128 0x2
- 489 005e 04       		.byte	0x4
- 490 005f 05       		.byte	0x5
- 491 0060 61030000 		.4byte	.LASF7
- 492 0064 04       		.uleb128 0x4
- 493 0065 04       		.byte	0x4
- 494 0066 41000000 		.4byte	0x41
- 495 006a 02       		.uleb128 0x2
- 496 006b 01       		.byte	0x1
- 497 006c 06       		.byte	0x6
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 25
+ 520 0004 0400     		.2byte	0x4
+ 521 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 522 000a 04       		.byte	0x4
+ 523 000b 01       		.uleb128 0x1
+ 524 000c B6000000 		.4byte	.LASF43
+ 525 0010 0C       		.byte	0xc
+ 526 0011 BF030000 		.4byte	.LASF44
+ 527 0015 E7010000 		.4byte	.LASF45
+ 528 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 529 001d 00000000 		.4byte	0
+ 530 0021 00000000 		.4byte	.Ldebug_line0
+ 531 0025 02       		.uleb128 0x2
+ 532 0026 02       		.byte	0x2
+ 533 0027 07       		.byte	0x7
+ 534 0028 64010000 		.4byte	.LASF0
+ 535 002c 02       		.uleb128 0x2
+ 536 002d 04       		.byte	0x4
+ 537 002e 07       		.byte	0x7
+ 538 002f A2010000 		.4byte	.LASF1
+ 539 0033 02       		.uleb128 0x2
+ 540 0034 04       		.byte	0x4
+ 541 0035 07       		.byte	0x7
+ 542 0036 65020000 		.4byte	.LASF2
+ 543 003a 03       		.uleb128 0x3
+ 544 003b 04       		.byte	0x4
+ 545 003c 05       		.byte	0x5
+ 546 003d 696E7400 		.ascii	"int\000"
+ 547 0041 02       		.uleb128 0x2
+ 548 0042 01       		.byte	0x1
+ 549 0043 08       		.byte	0x8
+ 550 0044 A8000000 		.4byte	.LASF3
+ 551 0048 02       		.uleb128 0x2
+ 552 0049 04       		.byte	0x4
+ 553 004a 07       		.byte	0x7
+ 554 004b FC020000 		.4byte	.LASF4
+ 555 004f 02       		.uleb128 0x2
+ 556 0050 01       		.byte	0x1
+ 557 0051 08       		.byte	0x8
+ 558 0052 1C030000 		.4byte	.LASF5
+ 559 0056 02       		.uleb128 0x2
+ 560 0057 02       		.byte	0x2
+ 561 0058 05       		.byte	0x5
+ 562 0059 CB010000 		.4byte	.LASF6
+ 563 005d 02       		.uleb128 0x2
+ 564 005e 04       		.byte	0x4
+ 565 005f 05       		.byte	0x5
+ 566 0060 61030000 		.4byte	.LASF7
+ 567 0064 04       		.uleb128 0x4
+ 568 0065 04       		.byte	0x4
+ 569 0066 41000000 		.4byte	0x41
+ 570 006a 02       		.uleb128 0x2
+ 571 006b 01       		.byte	0x1
+ 572 006c 06       		.byte	0x6
+ 573 006d A8020000 		.4byte	.LASF8
+ 574 0071 02       		.uleb128 0x2
+ 575 0072 08       		.byte	0x8
+ 576 0073 05       		.byte	0x5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 26
 
 
- 498 006d A8020000 		.4byte	.LASF8
- 499 0071 02       		.uleb128 0x2
- 500 0072 08       		.byte	0x8
- 501 0073 05       		.byte	0x5
- 502 0074 05030000 		.4byte	.LASF9
- 503 0078 02       		.uleb128 0x2
- 504 0079 08       		.byte	0x8
- 505 007a 07       		.byte	0x7
- 506 007b 85020000 		.4byte	.LASF10
- 507 007f 05       		.uleb128 0x5
- 508 0080 5B030000 		.4byte	.LASF45
- 509 0084 05       		.byte	0x5
- 510 0085 E401     		.2byte	0x1e4
- 511 0087 41000000 		.4byte	0x41
- 512 008b 02       		.uleb128 0x2
- 513 008c 04       		.byte	0x4
- 514 008d 04       		.byte	0x4
- 515 008e 30010000 		.4byte	.LASF11
- 516 0092 02       		.uleb128 0x2
- 517 0093 08       		.byte	0x8
- 518 0094 04       		.byte	0x4
- 519 0095 EC000000 		.4byte	.LASF12
- 520 0099 02       		.uleb128 0x2
- 521 009a 08       		.byte	0x8
- 522 009b 04       		.byte	0x4
- 523 009c C6020000 		.4byte	.LASF13
- 524 00a0 06       		.uleb128 0x6
- 525 00a1 A9030000 		.4byte	.LASF46
- 526 00a5 01       		.byte	0x1
- 527 00a6 E0       		.byte	0xe0
- 528 00a7 41000000 		.4byte	0x41
- 529 00ab 01       		.byte	0x1
- 530 00ac D2000000 		.4byte	0xd2
- 531 00b0 07       		.uleb128 0x7
- 532 00b1 8E030000 		.4byte	.LASF14
- 533 00b5 01       		.byte	0x1
- 534 00b6 E0       		.byte	0xe0
- 535 00b7 41000000 		.4byte	0x41
- 536 00bb 07       		.uleb128 0x7
- 537 00bc F3000000 		.4byte	.LASF15
- 538 00c0 01       		.byte	0x1
- 539 00c1 E0       		.byte	0xe0
- 540 00c2 41000000 		.4byte	0x41
- 541 00c6 08       		.uleb128 0x8
- 542 00c7 5C010000 		.4byte	.LASF47
- 543 00cb 01       		.byte	0x1
- 544 00cc E2       		.byte	0xe2
- 545 00cd 41000000 		.4byte	0x41
- 546 00d1 00       		.byte	0
- 547 00d2 09       		.uleb128 0x9
- 548 00d3 00000000 		.4byte	.LASF16
- 549 00d7 01       		.byte	0x1
- 550 00d8 4901     		.2byte	0x149
- 551 00da 00000000 		.4byte	.LFB2
- 552 00de 08000000 		.4byte	.LFE2-.LFB2
- 553 00e2 01       		.uleb128 0x1
- 554 00e3 9C       		.byte	0x9c
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 26
+ 577 0074 05030000 		.4byte	.LASF9
+ 578 0078 02       		.uleb128 0x2
+ 579 0079 08       		.byte	0x8
+ 580 007a 07       		.byte	0x7
+ 581 007b 85020000 		.4byte	.LASF10
+ 582 007f 05       		.uleb128 0x5
+ 583 0080 5B030000 		.4byte	.LASF46
+ 584 0084 05       		.byte	0x5
+ 585 0085 E401     		.2byte	0x1e4
+ 586 0087 41000000 		.4byte	0x41
+ 587 008b 02       		.uleb128 0x2
+ 588 008c 04       		.byte	0x4
+ 589 008d 04       		.byte	0x4
+ 590 008e A2000000 		.4byte	.LASF11
+ 591 0092 02       		.uleb128 0x2
+ 592 0093 08       		.byte	0x8
+ 593 0094 04       		.byte	0x4
+ 594 0095 5E000000 		.4byte	.LASF12
+ 595 0099 02       		.uleb128 0x2
+ 596 009a 08       		.byte	0x8
+ 597 009b 04       		.byte	0x4
+ 598 009c C6020000 		.4byte	.LASF13
+ 599 00a0 06       		.uleb128 0x6
+ 600 00a1 6A030000 		.4byte	.LASF47
+ 601 00a5 01       		.byte	0x1
+ 602 00a6 4B       		.byte	0x4b
+ 603 00a7 00000000 		.4byte	.LFB0
+ 604 00ab 4C000000 		.4byte	.LFE0-.LFB0
+ 605 00af 01       		.uleb128 0x1
+ 606 00b0 9C       		.byte	0x9c
+ 607 00b1 2F010000 		.4byte	0x12f
+ 608 00b5 07       		.uleb128 0x7
+ 609 00b6 8E030000 		.4byte	.LASF14
+ 610 00ba 01       		.byte	0x1
+ 611 00bb 4B       		.byte	0x4b
+ 612 00bc 41000000 		.4byte	0x41
+ 613 00c0 00000000 		.4byte	.LLST0
+ 614 00c4 08       		.uleb128 0x8
+ 615 00c5 14000000 		.4byte	.LVL1
+ 616 00c9 87040000 		.4byte	0x487
+ 617 00cd 09       		.uleb128 0x9
+ 618 00ce 1C000000 		.4byte	.LVL2
+ 619 00d2 92040000 		.4byte	0x492
+ 620 00d6 E7000000 		.4byte	0xe7
+ 621 00da 0A       		.uleb128 0xa
+ 622 00db 01       		.uleb128 0x1
+ 623 00dc 50       		.byte	0x50
+ 624 00dd 02       		.uleb128 0x2
+ 625 00de 08       		.byte	0x8
+ 626 00df 3B       		.byte	0x3b
+ 627 00e0 0A       		.uleb128 0xa
+ 628 00e1 01       		.uleb128 0x1
+ 629 00e2 51       		.byte	0x51
+ 630 00e3 02       		.uleb128 0x2
+ 631 00e4 74       		.byte	0x74
+ 632 00e5 00       		.sleb128 0
+ 633 00e6 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 27
 
 
- 555 00e4 02010000 		.4byte	0x102
- 556 00e8 0A       		.uleb128 0xa
- 557 00e9 8E030000 		.4byte	.LASF14
- 558 00ed 01       		.byte	0x1
- 559 00ee 4901     		.2byte	0x149
- 560 00f0 41000000 		.4byte	0x41
- 561 00f4 00000000 		.4byte	.LLST0
- 562 00f8 0B       		.uleb128 0xb
- 563 00f9 08000000 		.4byte	.LVL2
- 564 00fd C4040000 		.4byte	0x4c4
- 565 0101 00       		.byte	0
- 566 0102 09       		.uleb128 0x9
- 567 0103 93030000 		.4byte	.LASF17
- 568 0107 01       		.byte	0x1
- 569 0108 9001     		.2byte	0x190
- 570 010a 00000000 		.4byte	.LFB3
- 571 010e 06000000 		.4byte	.LFE3-.LFB3
- 572 0112 01       		.uleb128 0x1
- 573 0113 9C       		.byte	0x9c
- 574 0114 38010000 		.4byte	0x138
- 575 0118 0A       		.uleb128 0xa
- 576 0119 8E030000 		.4byte	.LASF14
- 577 011d 01       		.byte	0x1
- 578 011e 9001     		.2byte	0x190
- 579 0120 41000000 		.4byte	0x41
- 580 0124 21000000 		.4byte	.LLST1
- 581 0128 0C       		.uleb128 0xc
- 582 0129 06000000 		.4byte	.LVL5
- 583 012d C4040000 		.4byte	0x4c4
- 584 0131 0D       		.uleb128 0xd
- 585 0132 01       		.uleb128 0x1
- 586 0133 50       		.byte	0x50
- 587 0134 01       		.uleb128 0x1
- 588 0135 31       		.byte	0x31
- 589 0136 00       		.byte	0
- 590 0137 00       		.byte	0
- 591 0138 0E       		.uleb128 0xe
- 592 0139 15000000 		.4byte	.LASF18
- 593 013d 01       		.byte	0x1
- 594 013e D401     		.2byte	0x1d4
- 595 0140 3A000000 		.4byte	0x3a
- 596 0144 00000000 		.4byte	.LFB4
- 597 0148 04000000 		.4byte	.LFE4-.LFB4
- 598 014c 01       		.uleb128 0x1
- 599 014d 9C       		.byte	0x9c
- 600 014e 70010000 		.4byte	0x170
- 601 0152 0A       		.uleb128 0xa
- 602 0153 8E030000 		.4byte	.LASF14
- 603 0157 01       		.byte	0x1
- 604 0158 D401     		.2byte	0x1d4
- 605 015a 41000000 		.4byte	0x41
- 606 015e 42000000 		.4byte	.LLST2
- 607 0162 0F       		.uleb128 0xf
- 608 0163 32000000 		.4byte	.LASF21
- 609 0167 01       		.byte	0x1
- 610 0168 D601     		.2byte	0x1d6
- 611 016a 3A000000 		.4byte	0x3a
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 27
+ 634 00e7 08       		.uleb128 0x8
+ 635 00e8 20000000 		.4byte	.LVL3
+ 636 00ec 9D040000 		.4byte	0x49d
+ 637 00f0 08       		.uleb128 0x8
+ 638 00f1 24000000 		.4byte	.LVL4
+ 639 00f5 A8040000 		.4byte	0x4a8
+ 640 00f9 08       		.uleb128 0x8
+ 641 00fa 36000000 		.4byte	.LVL6
+ 642 00fe 87040000 		.4byte	0x487
+ 643 0102 09       		.uleb128 0x9
+ 644 0103 3E000000 		.4byte	.LVL7
+ 645 0107 92040000 		.4byte	0x492
+ 646 010b 1C010000 		.4byte	0x11c
+ 647 010f 0A       		.uleb128 0xa
+ 648 0110 01       		.uleb128 0x1
+ 649 0111 50       		.byte	0x50
+ 650 0112 02       		.uleb128 0x2
+ 651 0113 08       		.byte	0x8
+ 652 0114 3B       		.byte	0x3b
+ 653 0115 0A       		.uleb128 0xa
+ 654 0116 01       		.uleb128 0x1
+ 655 0117 51       		.byte	0x51
+ 656 0118 02       		.uleb128 0x2
+ 657 0119 74       		.byte	0x74
+ 658 011a 00       		.sleb128 0
+ 659 011b 00       		.byte	0
+ 660 011c 08       		.uleb128 0x8
+ 661 011d 42000000 		.4byte	.LVL8
+ 662 0121 9D040000 		.4byte	0x49d
+ 663 0125 08       		.uleb128 0x8
+ 664 0126 46000000 		.4byte	.LVL9
+ 665 012a A8040000 		.4byte	0x4a8
+ 666 012e 00       		.byte	0
+ 667 012f 0B       		.uleb128 0xb
+ 668 0130 A9030000 		.4byte	.LASF48
+ 669 0134 01       		.byte	0x1
+ 670 0135 E0       		.byte	0xe0
+ 671 0136 41000000 		.4byte	0x41
+ 672 013a 00000000 		.4byte	.LFB1
+ 673 013e 30000000 		.4byte	.LFE1-.LFB1
+ 674 0142 01       		.uleb128 0x1
+ 675 0143 9C       		.byte	0x9c
+ 676 0144 AC010000 		.4byte	0x1ac
+ 677 0148 07       		.uleb128 0x7
+ 678 0149 8E030000 		.4byte	.LASF14
+ 679 014d 01       		.byte	0x1
+ 680 014e E0       		.byte	0xe0
+ 681 014f 41000000 		.4byte	0x41
+ 682 0153 3A000000 		.4byte	.LLST1
+ 683 0157 07       		.uleb128 0x7
+ 684 0158 65000000 		.4byte	.LASF15
+ 685 015c 01       		.byte	0x1
+ 686 015d E0       		.byte	0xe0
+ 687 015e 41000000 		.4byte	0x41
+ 688 0162 74000000 		.4byte	.LLST2
+ 689 0166 0C       		.uleb128 0xc
+ 690 0167 5C010000 		.4byte	.LASF18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 28
 
 
- 612 016e 00       		.byte	0
- 613 016f 00       		.byte	0
- 614 0170 0E       		.uleb128 0xe
- 615 0171 44010000 		.4byte	.LASF19
- 616 0175 01       		.byte	0x1
- 617 0176 4B02     		.2byte	0x24b
- 618 0178 25000000 		.4byte	0x25
- 619 017c 00000000 		.4byte	.LFB5
- 620 0180 40000000 		.4byte	.LFE5-.LFB5
- 621 0184 01       		.uleb128 0x1
- 622 0185 9C       		.byte	0x9c
- 623 0186 F6010000 		.4byte	0x1f6
- 624 018a 0A       		.uleb128 0xa
- 625 018b 8E030000 		.4byte	.LASF14
- 626 018f 01       		.byte	0x1
- 627 0190 4B02     		.2byte	0x24b
- 628 0192 41000000 		.4byte	0x41
- 629 0196 63000000 		.4byte	.LLST3
- 630 019a 0A       		.uleb128 0xa
- 631 019b DF010000 		.4byte	.LASF20
- 632 019f 01       		.byte	0x1
- 633 01a0 4B02     		.2byte	0x24b
- 634 01a2 25000000 		.4byte	0x25
- 635 01a6 8F000000 		.4byte	.LLST4
- 636 01aa 10       		.uleb128 0x10
- 637 01ab 3F030000 		.4byte	.LASF22
- 638 01af 01       		.byte	0x1
- 639 01b0 4D02     		.2byte	0x24d
- 640 01b2 25000000 		.4byte	0x25
- 641 01b6 C6000000 		.4byte	.LLST5
- 642 01ba 10       		.uleb128 0x10
- 643 01bb D5010000 		.4byte	.LASF23
- 644 01bf 01       		.byte	0x1
- 645 01c0 4E02     		.2byte	0x24e
- 646 01c2 2C000000 		.4byte	0x2c
- 647 01c6 DD000000 		.4byte	.LLST6
- 648 01ca 11       		.uleb128 0x11
- 649 01cb 12000000 		.4byte	.LVL10
- 650 01cf CF040000 		.4byte	0x4cf
- 651 01d3 12       		.uleb128 0x12
- 652 01d4 1A000000 		.4byte	.LVL11
- 653 01d8 DA040000 		.4byte	0x4da
- 654 01dc EC010000 		.4byte	0x1ec
- 655 01e0 0D       		.uleb128 0xd
- 656 01e1 01       		.uleb128 0x1
- 657 01e2 50       		.byte	0x50
- 658 01e3 02       		.uleb128 0x2
- 659 01e4 75       		.byte	0x75
- 660 01e5 00       		.sleb128 0
- 661 01e6 0D       		.uleb128 0xd
- 662 01e7 01       		.uleb128 0x1
- 663 01e8 51       		.byte	0x51
- 664 01e9 01       		.uleb128 0x1
- 665 01ea 31       		.byte	0x31
- 666 01eb 00       		.byte	0
- 667 01ec 11       		.uleb128 0x11
- 668 01ed 1E000000 		.4byte	.LVL12
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 28
+ 691 016b 01       		.byte	0x1
+ 692 016c E2       		.byte	0xe2
+ 693 016d 41000000 		.4byte	0x41
+ 694 0171 AE000000 		.4byte	.LLST3
+ 695 0175 08       		.uleb128 0x8
+ 696 0176 0A000000 		.4byte	.LVL12
+ 697 017a B3040000 		.4byte	0x4b3
+ 698 017e 08       		.uleb128 0x8
+ 699 017f 0E000000 		.4byte	.LVL13
+ 700 0183 BE040000 		.4byte	0x4be
+ 701 0187 08       		.uleb128 0x8
+ 702 0188 18000000 		.4byte	.LVL14
+ 703 018c C9040000 		.4byte	0x4c9
+ 704 0190 08       		.uleb128 0x8
+ 705 0191 20000000 		.4byte	.LVL17
+ 706 0195 B3040000 		.4byte	0x4b3
+ 707 0199 08       		.uleb128 0x8
+ 708 019a 24000000 		.4byte	.LVL18
+ 709 019e BE040000 		.4byte	0x4be
+ 710 01a2 08       		.uleb128 0x8
+ 711 01a3 2E000000 		.4byte	.LVL19
+ 712 01a7 C9040000 		.4byte	0x4c9
+ 713 01ab 00       		.byte	0
+ 714 01ac 0D       		.uleb128 0xd
+ 715 01ad 00000000 		.4byte	.LASF16
+ 716 01b1 01       		.byte	0x1
+ 717 01b2 4901     		.2byte	0x149
+ 718 01b4 00000000 		.4byte	.LFB2
+ 719 01b8 12000000 		.4byte	.LFE2-.LFB2
+ 720 01bc 01       		.uleb128 0x1
+ 721 01bd 9C       		.byte	0x9c
+ 722 01be EB010000 		.4byte	0x1eb
+ 723 01c2 0E       		.uleb128 0xe
+ 724 01c3 8E030000 		.4byte	.LASF14
+ 725 01c7 01       		.byte	0x1
+ 726 01c8 4901     		.2byte	0x149
+ 727 01ca 41000000 		.4byte	0x41
+ 728 01ce CC000000 		.4byte	.LLST4
+ 729 01d2 08       		.uleb128 0x8
+ 730 01d3 08000000 		.4byte	.LVL21
+ 731 01d7 D4040000 		.4byte	0x4d4
+ 732 01db 0F       		.uleb128 0xf
+ 733 01dc 10000000 		.4byte	.LVL24
+ 734 01e0 D4040000 		.4byte	0x4d4
+ 735 01e4 0A       		.uleb128 0xa
+ 736 01e5 01       		.uleb128 0x1
+ 737 01e6 50       		.byte	0x50
+ 738 01e7 01       		.uleb128 0x1
+ 739 01e8 30       		.byte	0x30
+ 740 01e9 00       		.byte	0
+ 741 01ea 00       		.byte	0
+ 742 01eb 0D       		.uleb128 0xd
+ 743 01ec 93030000 		.4byte	.LASF17
+ 744 01f0 01       		.byte	0x1
+ 745 01f1 9001     		.2byte	0x190
+ 746 01f3 00000000 		.4byte	.LFB3
+ 747 01f7 14000000 		.4byte	.LFE3-.LFB3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 29
 
 
- 669 01f1 E5040000 		.4byte	0x4e5
- 670 01f5 00       		.byte	0
- 671 01f6 0E       		.uleb128 0xe
- 672 01f7 B4010000 		.4byte	.LASF24
- 673 01fb 01       		.byte	0x1
- 674 01fc AC02     		.2byte	0x2ac
- 675 01fe 3A000000 		.4byte	0x3a
- 676 0202 00000000 		.4byte	.LFB6
- 677 0206 1A000000 		.4byte	.LFE6-.LFB6
- 678 020a 01       		.uleb128 0x1
- 679 020b 9C       		.byte	0x9c
- 680 020c 4B020000 		.4byte	0x24b
- 681 0210 0A       		.uleb128 0xa
- 682 0211 8E030000 		.4byte	.LASF14
- 683 0215 01       		.byte	0x1
- 684 0216 AC02     		.2byte	0x2ac
- 685 0218 41000000 		.4byte	0x41
- 686 021c 02010000 		.4byte	.LLST7
- 687 0220 13       		.uleb128 0x13
- 688 0221 21030000 		.4byte	.LASF25
- 689 0225 01       		.byte	0x1
- 690 0226 AC02     		.2byte	0x2ac
- 691 0228 25000000 		.4byte	0x25
- 692 022c 01       		.uleb128 0x1
- 693 022d 51       		.byte	0x51
- 694 022e 13       		.uleb128 0x13
- 695 022f 9C020000 		.4byte	.LASF26
- 696 0233 01       		.byte	0x1
- 697 0234 AC02     		.2byte	0x2ac
- 698 0236 25000000 		.4byte	0x25
- 699 023a 01       		.uleb128 0x1
- 700 023b 52       		.byte	0x52
- 701 023c 14       		.uleb128 0x14
- 702 023d A1020000 		.4byte	.LASF27
- 703 0241 01       		.byte	0x1
- 704 0242 AE02     		.2byte	0x2ae
- 705 0244 3A000000 		.4byte	0x3a
- 706 0248 01       		.uleb128 0x1
- 707 0249 50       		.byte	0x50
- 708 024a 00       		.byte	0
- 709 024b 15       		.uleb128 0x15
- 710 024c 6A030000 		.4byte	.LASF48
- 711 0250 01       		.byte	0x1
- 712 0251 4B       		.byte	0x4b
- 713 0252 01       		.byte	0x1
- 714 0253 63020000 		.4byte	0x263
- 715 0257 07       		.uleb128 0x7
- 716 0258 8E030000 		.4byte	.LASF14
- 717 025c 01       		.byte	0x1
- 718 025d 4B       		.byte	0x4b
- 719 025e 41000000 		.4byte	0x41
- 720 0262 00       		.byte	0
- 721 0263 0E       		.uleb128 0xe
- 722 0264 D2020000 		.4byte	.LASF28
- 723 0268 01       		.byte	0x1
- 724 0269 EE02     		.2byte	0x2ee
- 725 026b 3A000000 		.4byte	0x3a
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 29
+ 748 01fb 01       		.uleb128 0x1
+ 749 01fc 9C       		.byte	0x9c
+ 750 01fd 34020000 		.4byte	0x234
+ 751 0201 0E       		.uleb128 0xe
+ 752 0202 8E030000 		.4byte	.LASF14
+ 753 0206 01       		.byte	0x1
+ 754 0207 9001     		.2byte	0x190
+ 755 0209 41000000 		.4byte	0x41
+ 756 020d 06010000 		.4byte	.LLST5
+ 757 0211 09       		.uleb128 0x9
+ 758 0212 0A000000 		.4byte	.LVL27
+ 759 0216 D4040000 		.4byte	0x4d4
+ 760 021a 24020000 		.4byte	0x224
+ 761 021e 0A       		.uleb128 0xa
+ 762 021f 01       		.uleb128 0x1
+ 763 0220 50       		.byte	0x50
+ 764 0221 01       		.uleb128 0x1
+ 765 0222 31       		.byte	0x31
+ 766 0223 00       		.byte	0
+ 767 0224 0F       		.uleb128 0xf
+ 768 0225 12000000 		.4byte	.LVL30
+ 769 0229 D4040000 		.4byte	0x4d4
+ 770 022d 0A       		.uleb128 0xa
+ 771 022e 01       		.uleb128 0x1
+ 772 022f 50       		.byte	0x50
+ 773 0230 01       		.uleb128 0x1
+ 774 0231 31       		.byte	0x31
+ 775 0232 00       		.byte	0
+ 776 0233 00       		.byte	0
+ 777 0234 10       		.uleb128 0x10
+ 778 0235 15000000 		.4byte	.LASF20
+ 779 0239 01       		.byte	0x1
+ 780 023a D401     		.2byte	0x1d4
+ 781 023c 3A000000 		.4byte	0x3a
+ 782 0240 00000000 		.4byte	.LFB4
+ 783 0244 04000000 		.4byte	.LFE4-.LFB4
+ 784 0248 01       		.uleb128 0x1
+ 785 0249 9C       		.byte	0x9c
+ 786 024a 6C020000 		.4byte	0x26c
+ 787 024e 0E       		.uleb128 0xe
+ 788 024f 8E030000 		.4byte	.LASF14
+ 789 0253 01       		.byte	0x1
+ 790 0254 D401     		.2byte	0x1d4
+ 791 0256 41000000 		.4byte	0x41
+ 792 025a 40010000 		.4byte	.LLST6
+ 793 025e 11       		.uleb128 0x11
+ 794 025f 32000000 		.4byte	.LASF19
+ 795 0263 01       		.byte	0x1
+ 796 0264 D601     		.2byte	0x1d6
+ 797 0266 3A000000 		.4byte	0x3a
+ 798 026a 00       		.byte	0
+ 799 026b 00       		.byte	0
+ 800 026c 10       		.uleb128 0x10
+ 801 026d 44010000 		.4byte	.LASF21
+ 802 0271 01       		.byte	0x1
+ 803 0272 4B02     		.2byte	0x24b
+ 804 0274 25000000 		.4byte	0x25
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 30
 
 
- 726 026f 00000000 		.4byte	.LFB7
- 727 0273 28000000 		.4byte	.LFE7-.LFB7
- 728 0277 01       		.uleb128 0x1
- 729 0278 9C       		.byte	0x9c
- 730 0279 E6020000 		.4byte	0x2e6
- 731 027d 0A       		.uleb128 0xa
- 732 027e 8E030000 		.4byte	.LASF14
- 733 0282 01       		.byte	0x1
- 734 0283 EE02     		.2byte	0x2ee
- 735 0285 41000000 		.4byte	0x41
- 736 0289 3C010000 		.4byte	.LLST8
- 737 028d 0F       		.uleb128 0xf
- 738 028e A1020000 		.4byte	.LASF27
- 739 0292 01       		.byte	0x1
- 740 0293 F002     		.2byte	0x2f0
- 741 0295 3A000000 		.4byte	0x3a
- 742 0299 02       		.byte	0x2
- 743 029a 16       		.uleb128 0x16
- 744 029b 4B020000 		.4byte	0x24b
- 745 029f 02000000 		.4byte	.LBB4
- 746 02a3 1E000000 		.4byte	.LBE4-.LBB4
- 747 02a7 01       		.byte	0x1
- 748 02a8 F202     		.2byte	0x2f2
- 749 02aa 17       		.uleb128 0x17
- 750 02ab 57020000 		.4byte	0x257
- 751 02af 11       		.uleb128 0x11
- 752 02b0 10000000 		.4byte	.LVL20
- 753 02b4 CF040000 		.4byte	0x4cf
- 754 02b8 12       		.uleb128 0x12
- 755 02b9 18000000 		.4byte	.LVL21
- 756 02bd DA040000 		.4byte	0x4da
- 757 02c1 D2020000 		.4byte	0x2d2
- 758 02c5 0D       		.uleb128 0xd
- 759 02c6 01       		.uleb128 0x1
- 760 02c7 50       		.byte	0x50
- 761 02c8 02       		.uleb128 0x2
- 762 02c9 08       		.byte	0x8
- 763 02ca 3B       		.byte	0x3b
- 764 02cb 0D       		.uleb128 0xd
- 765 02cc 01       		.uleb128 0x1
- 766 02cd 51       		.byte	0x51
- 767 02ce 02       		.uleb128 0x2
- 768 02cf 74       		.byte	0x74
- 769 02d0 00       		.sleb128 0
- 770 02d1 00       		.byte	0
- 771 02d2 11       		.uleb128 0x11
- 772 02d3 1C000000 		.4byte	.LVL22
- 773 02d7 E5040000 		.4byte	0x4e5
- 774 02db 11       		.uleb128 0x11
- 775 02dc 20000000 		.4byte	.LVL23
- 776 02e0 F0040000 		.4byte	0x4f0
- 777 02e4 00       		.byte	0
- 778 02e5 00       		.byte	0
- 779 02e6 09       		.uleb128 0x9
- 780 02e7 77010000 		.4byte	.LASF29
- 781 02eb 01       		.byte	0x1
- 782 02ec 2003     		.2byte	0x320
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 30
+ 805 0278 00000000 		.4byte	.LFB5
+ 806 027c 54000000 		.4byte	.LFE5-.LFB5
+ 807 0280 01       		.uleb128 0x1
+ 808 0281 9C       		.byte	0x9c
+ 809 0282 21030000 		.4byte	0x321
+ 810 0286 0E       		.uleb128 0xe
+ 811 0287 8E030000 		.4byte	.LASF14
+ 812 028b 01       		.byte	0x1
+ 813 028c 4B02     		.2byte	0x24b
+ 814 028e 41000000 		.4byte	0x41
+ 815 0292 61010000 		.4byte	.LLST7
+ 816 0296 0E       		.uleb128 0xe
+ 817 0297 DF010000 		.4byte	.LASF22
+ 818 029b 01       		.byte	0x1
+ 819 029c 4B02     		.2byte	0x24b
+ 820 029e 25000000 		.4byte	0x25
+ 821 02a2 9B010000 		.4byte	.LLST8
+ 822 02a6 12       		.uleb128 0x12
+ 823 02a7 3F030000 		.4byte	.LASF23
+ 824 02ab 01       		.byte	0x1
+ 825 02ac 4D02     		.2byte	0x24d
+ 826 02ae 25000000 		.4byte	0x25
+ 827 02b2 B9010000 		.4byte	.LLST9
+ 828 02b6 13       		.uleb128 0x13
+ 829 02b7 D5010000 		.4byte	.LASF24
+ 830 02bb 01       		.byte	0x1
+ 831 02bc 4E02     		.2byte	0x24e
+ 832 02be 2C000000 		.4byte	0x2c
+ 833 02c2 07       		.uleb128 0x7
+ 834 02c3 74       		.byte	0x74
+ 835 02c4 00       		.sleb128 0
+ 836 02c5 0A       		.byte	0xa
+ 837 02c6 FFFF     		.2byte	0xffff
+ 838 02c8 1A       		.byte	0x1a
+ 839 02c9 9F       		.byte	0x9f
+ 840 02ca 08       		.uleb128 0x8
+ 841 02cb 2E000000 		.4byte	.LVL37
+ 842 02cf 87040000 		.4byte	0x487
+ 843 02d3 09       		.uleb128 0x9
+ 844 02d4 38000000 		.4byte	.LVL38
+ 845 02d8 92040000 		.4byte	0x492
+ 846 02dc EC020000 		.4byte	0x2ec
+ 847 02e0 0A       		.uleb128 0xa
+ 848 02e1 01       		.uleb128 0x1
+ 849 02e2 50       		.byte	0x50
+ 850 02e3 02       		.uleb128 0x2
+ 851 02e4 74       		.byte	0x74
+ 852 02e5 7F       		.sleb128 -1
+ 853 02e6 0A       		.uleb128 0xa
+ 854 02e7 01       		.uleb128 0x1
+ 855 02e8 51       		.byte	0x51
+ 856 02e9 01       		.uleb128 0x1
+ 857 02ea 31       		.byte	0x31
+ 858 02eb 00       		.byte	0
+ 859 02ec 08       		.uleb128 0x8
+ 860 02ed 3C000000 		.4byte	.LVL39
+ 861 02f1 9D040000 		.4byte	0x49d
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 31
 
 
- 783 02ee 00000000 		.4byte	.LFB8
- 784 02f2 4E000000 		.4byte	.LFE8-.LFB8
- 785 02f6 01       		.uleb128 0x1
- 786 02f7 9C       		.byte	0x9c
- 787 02f8 D2030000 		.4byte	0x3d2
- 788 02fc 0A       		.uleb128 0xa
- 789 02fd 8E030000 		.4byte	.LASF14
- 790 0301 01       		.byte	0x1
- 791 0302 2003     		.2byte	0x320
- 792 0304 41000000 		.4byte	0x41
- 793 0308 5D010000 		.4byte	.LLST9
- 794 030c 0A       		.uleb128 0xa
- 795 030d 0F010000 		.4byte	.LASF30
- 796 0311 01       		.byte	0x1
- 797 0312 2003     		.2byte	0x320
- 798 0314 64000000 		.4byte	0x64
- 799 0318 7E010000 		.4byte	.LLST10
- 800 031c 0A       		.uleb128 0xa
- 801 031d 13030000 		.4byte	.LASF31
- 802 0321 01       		.byte	0x1
- 803 0322 2003     		.2byte	0x320
- 804 0324 3A000000 		.4byte	0x3a
- 805 0328 BF010000 		.4byte	.LLST11
- 806 032c 18       		.uleb128 0x18
- 807 032d A0000000 		.4byte	0xa0
- 808 0331 0A000000 		.4byte	.LBB10
- 809 0335 00000000 		.4byte	.Ldebug_ranges0+0
- 810 0339 01       		.byte	0x1
- 811 033a 2403     		.2byte	0x324
- 812 033c 19       		.uleb128 0x19
- 813 033d BB000000 		.4byte	0xbb
- 814 0341 D2010000 		.4byte	.LLST12
- 815 0345 19       		.uleb128 0x19
- 816 0346 B0000000 		.4byte	0xb0
- 817 034a 01020000 		.4byte	.LLST13
- 818 034e 1A       		.uleb128 0x1a
- 819 034f 00000000 		.4byte	.Ldebug_ranges0+0
- 820 0353 1B       		.uleb128 0x1b
- 821 0354 C6000000 		.4byte	0xc6
- 822 0358 1C       		.uleb128 0x1c
- 823 0359 0C000000 		.4byte	.LBB12
- 824 035d 12000000 		.4byte	.LBE12-.LBB12
- 825 0361 A9030000 		.4byte	0x3a9
- 826 0365 17       		.uleb128 0x17
- 827 0366 B0000000 		.4byte	0xb0
- 828 036a 19       		.uleb128 0x19
- 829 036b BB000000 		.4byte	0xbb
- 830 036f 37020000 		.4byte	.LLST14
- 831 0373 1D       		.uleb128 0x1d
- 832 0374 0C000000 		.4byte	.LBB13
- 833 0378 12000000 		.4byte	.LBE13-.LBB13
- 834 037c 1B       		.uleb128 0x1b
- 835 037d C6000000 		.4byte	0xc6
- 836 0381 12       		.uleb128 0x12
- 837 0382 12000000 		.4byte	.LVL28
- 838 0386 FB040000 		.4byte	0x4fb
- 839 038a 95030000 		.4byte	0x395
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 31
+ 862 02f5 08       		.uleb128 0x8
+ 863 02f6 42000000 		.4byte	.LVL41
+ 864 02fa 87040000 		.4byte	0x487
+ 865 02fe 09       		.uleb128 0x9
+ 866 02ff 4C000000 		.4byte	.LVL42
+ 867 0303 92040000 		.4byte	0x492
+ 868 0307 17030000 		.4byte	0x317
+ 869 030b 0A       		.uleb128 0xa
+ 870 030c 01       		.uleb128 0x1
+ 871 030d 50       		.byte	0x50
+ 872 030e 02       		.uleb128 0x2
+ 873 030f 74       		.byte	0x74
+ 874 0310 7F       		.sleb128 -1
+ 875 0311 0A       		.uleb128 0xa
+ 876 0312 01       		.uleb128 0x1
+ 877 0313 51       		.byte	0x51
+ 878 0314 01       		.uleb128 0x1
+ 879 0315 31       		.byte	0x31
+ 880 0316 00       		.byte	0
+ 881 0317 08       		.uleb128 0x8
+ 882 0318 50000000 		.4byte	.LVL43
+ 883 031c 9D040000 		.4byte	0x49d
+ 884 0320 00       		.byte	0
+ 885 0321 10       		.uleb128 0x10
+ 886 0322 B4010000 		.4byte	.LASF25
+ 887 0326 01       		.byte	0x1
+ 888 0327 AC02     		.2byte	0x2ac
+ 889 0329 3A000000 		.4byte	0x3a
+ 890 032d 00000000 		.4byte	.LFB6
+ 891 0331 3C000000 		.4byte	.LFE6-.LFB6
+ 892 0335 01       		.uleb128 0x1
+ 893 0336 9C       		.byte	0x9c
+ 894 0337 76030000 		.4byte	0x376
+ 895 033b 0E       		.uleb128 0xe
+ 896 033c 8E030000 		.4byte	.LASF14
+ 897 0340 01       		.byte	0x1
+ 898 0341 AC02     		.2byte	0x2ac
+ 899 0343 41000000 		.4byte	0x41
+ 900 0347 DB010000 		.4byte	.LLST10
+ 901 034b 14       		.uleb128 0x14
+ 902 034c 21030000 		.4byte	.LASF26
+ 903 0350 01       		.byte	0x1
+ 904 0351 AC02     		.2byte	0x2ac
+ 905 0353 25000000 		.4byte	0x25
+ 906 0357 01       		.uleb128 0x1
+ 907 0358 51       		.byte	0x51
+ 908 0359 14       		.uleb128 0x14
+ 909 035a 9C020000 		.4byte	.LASF27
+ 910 035e 01       		.byte	0x1
+ 911 035f AC02     		.2byte	0x2ac
+ 912 0361 25000000 		.4byte	0x25
+ 913 0365 01       		.uleb128 0x1
+ 914 0366 52       		.byte	0x52
+ 915 0367 13       		.uleb128 0x13
+ 916 0368 A1020000 		.4byte	.LASF28
+ 917 036c 01       		.byte	0x1
+ 918 036d AE02     		.2byte	0x2ae
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 32
 
 
- 840 038e 0D       		.uleb128 0xd
- 841 038f 01       		.uleb128 0x1
- 842 0390 50       		.byte	0x50
- 843 0391 02       		.uleb128 0x2
- 844 0392 09       		.byte	0x9
- 845 0393 FF       		.byte	0xff
- 846 0394 00       		.byte	0
- 847 0395 11       		.uleb128 0x11
- 848 0396 16000000 		.4byte	.LVL29
- 849 039a 06050000 		.4byte	0x506
- 850 039e 11       		.uleb128 0x11
- 851 039f 1E000000 		.4byte	.LVL30
- 852 03a3 11050000 		.4byte	0x511
- 853 03a7 00       		.byte	0
- 854 03a8 00       		.byte	0
- 855 03a9 12       		.uleb128 0x12
- 856 03aa 34000000 		.4byte	.LVL33
- 857 03ae FB040000 		.4byte	0x4fb
- 858 03b2 BD030000 		.4byte	0x3bd
- 859 03b6 0D       		.uleb128 0xd
- 860 03b7 01       		.uleb128 0x1
- 861 03b8 50       		.byte	0x50
- 862 03b9 02       		.uleb128 0x2
- 863 03ba 09       		.byte	0x9
- 864 03bb FF       		.byte	0xff
- 865 03bc 00       		.byte	0
- 866 03bd 11       		.uleb128 0x11
- 867 03be 38000000 		.4byte	.LVL34
- 868 03c2 06050000 		.4byte	0x506
- 869 03c6 11       		.uleb128 0x11
- 870 03c7 40000000 		.4byte	.LVL35
- 871 03cb 11050000 		.4byte	0x511
- 872 03cf 00       		.byte	0
- 873 03d0 00       		.byte	0
- 874 03d1 00       		.byte	0
- 875 03d2 09       		.uleb128 0x9
- 876 03d3 B4020000 		.4byte	.LASF32
- 877 03d7 01       		.byte	0x1
- 878 03d8 4703     		.2byte	0x347
- 879 03da 00000000 		.4byte	.LFB9
- 880 03de 44000000 		.4byte	.LFE9-.LFB9
- 881 03e2 01       		.uleb128 0x1
- 882 03e3 9C       		.byte	0x9c
- 883 03e4 A8040000 		.4byte	0x4a8
- 884 03e8 0A       		.uleb128 0xa
- 885 03e9 8E030000 		.4byte	.LASF14
- 886 03ed 01       		.byte	0x1
- 887 03ee 4703     		.2byte	0x347
- 888 03f0 41000000 		.4byte	0x41
- 889 03f4 4C020000 		.4byte	.LLST15
- 890 03f8 0A       		.uleb128 0xa
- 891 03f9 0F010000 		.4byte	.LASF30
- 892 03fd 01       		.byte	0x1
- 893 03fe 4703     		.2byte	0x347
- 894 0400 A8040000 		.4byte	0x4a8
- 895 0404 6D020000 		.4byte	.LLST16
- 896 0408 0A       		.uleb128 0xa
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 32
+ 919 036f 3A000000 		.4byte	0x3a
+ 920 0373 01       		.uleb128 0x1
+ 921 0374 50       		.byte	0x50
+ 922 0375 00       		.byte	0
+ 923 0376 10       		.uleb128 0x10
+ 924 0377 D2020000 		.4byte	.LASF29
+ 925 037b 01       		.byte	0x1
+ 926 037c EE02     		.2byte	0x2ee
+ 927 037e 3A000000 		.4byte	0x3a
+ 928 0382 00000000 		.4byte	.LFB7
+ 929 0386 0A000000 		.4byte	.LFE7-.LFB7
+ 930 038a 01       		.uleb128 0x1
+ 931 038b 9C       		.byte	0x9c
+ 932 038c B7030000 		.4byte	0x3b7
+ 933 0390 0E       		.uleb128 0xe
+ 934 0391 8E030000 		.4byte	.LASF14
+ 935 0395 01       		.byte	0x1
+ 936 0396 EE02     		.2byte	0x2ee
+ 937 0398 41000000 		.4byte	0x41
+ 938 039c 79020000 		.4byte	.LLST11
+ 939 03a0 11       		.uleb128 0x11
+ 940 03a1 A1020000 		.4byte	.LASF28
+ 941 03a5 01       		.byte	0x1
+ 942 03a6 F002     		.2byte	0x2f0
+ 943 03a8 3A000000 		.4byte	0x3a
+ 944 03ac 02       		.byte	0x2
+ 945 03ad 08       		.uleb128 0x8
+ 946 03ae 06000000 		.4byte	.LVL57
+ 947 03b2 A0000000 		.4byte	0xa0
+ 948 03b6 00       		.byte	0
+ 949 03b7 0D       		.uleb128 0xd
+ 950 03b8 77010000 		.4byte	.LASF30
+ 951 03bc 01       		.byte	0x1
+ 952 03bd 2003     		.2byte	0x320
+ 953 03bf 00000000 		.4byte	.LFB8
+ 954 03c3 1C000000 		.4byte	.LFE8-.LFB8
+ 955 03c7 01       		.uleb128 0x1
+ 956 03c8 9C       		.byte	0x9c
+ 957 03c9 14040000 		.4byte	0x414
+ 958 03cd 0E       		.uleb128 0xe
+ 959 03ce 8E030000 		.4byte	.LASF14
+ 960 03d2 01       		.byte	0x1
+ 961 03d3 2003     		.2byte	0x320
+ 962 03d5 41000000 		.4byte	0x41
+ 963 03d9 9A020000 		.4byte	.LLST12
+ 964 03dd 0E       		.uleb128 0xe
+ 965 03de 81000000 		.4byte	.LASF31
+ 966 03e2 01       		.byte	0x1
+ 967 03e3 2003     		.2byte	0x320
+ 968 03e5 64000000 		.4byte	0x64
+ 969 03e9 BB020000 		.4byte	.LLST13
+ 970 03ed 0E       		.uleb128 0xe
+ 971 03ee 13030000 		.4byte	.LASF32
+ 972 03f2 01       		.byte	0x1
+ 973 03f3 2003     		.2byte	0x320
+ 974 03f5 3A000000 		.4byte	0x3a
+ 975 03f9 E4020000 		.4byte	.LLST14
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 33
 
 
- 897 0409 13030000 		.4byte	.LASF31
- 898 040d 01       		.byte	0x1
- 899 040e 4703     		.2byte	0x347
- 900 0410 3A000000 		.4byte	0x3a
- 901 0414 BB020000 		.4byte	.LLST17
- 902 0418 18       		.uleb128 0x18
- 903 0419 A0000000 		.4byte	0xa0
- 904 041d 0C000000 		.4byte	.LBB20
- 905 0421 18000000 		.4byte	.Ldebug_ranges0+0x18
- 906 0425 01       		.byte	0x1
- 907 0426 4B03     		.2byte	0x34b
- 908 0428 19       		.uleb128 0x19
- 909 0429 BB000000 		.4byte	0xbb
- 910 042d FE020000 		.4byte	.LLST18
- 911 0431 19       		.uleb128 0x19
- 912 0432 B0000000 		.4byte	0xb0
- 913 0436 27030000 		.4byte	.LLST19
- 914 043a 1A       		.uleb128 0x1a
- 915 043b 18000000 		.4byte	.Ldebug_ranges0+0x18
- 916 043f 1B       		.uleb128 0x1b
- 917 0440 C6000000 		.4byte	0xc6
- 918 0444 1C       		.uleb128 0x1c
- 919 0445 0E000000 		.4byte	.LBB22
- 920 0449 10000000 		.4byte	.LBE22-.LBB22
- 921 044d 8A040000 		.4byte	0x48a
- 922 0451 17       		.uleb128 0x17
- 923 0452 B0000000 		.4byte	0xb0
- 924 0456 19       		.uleb128 0x19
- 925 0457 BB000000 		.4byte	0xbb
- 926 045b 5D030000 		.4byte	.LLST20
- 927 045f 1D       		.uleb128 0x1d
- 928 0460 0E000000 		.4byte	.LBB23
- 929 0464 10000000 		.4byte	.LBE23-.LBB23
- 930 0468 1B       		.uleb128 0x1b
- 931 0469 C6000000 		.4byte	0xc6
- 932 046d 11       		.uleb128 0x11
- 933 046e 12000000 		.4byte	.LVL43
- 934 0472 FB040000 		.4byte	0x4fb
- 935 0476 11       		.uleb128 0x11
- 936 0477 16000000 		.4byte	.LVL44
- 937 047b 06050000 		.4byte	0x506
- 938 047f 11       		.uleb128 0x11
- 939 0480 1E000000 		.4byte	.LVL45
- 940 0484 11050000 		.4byte	0x511
- 941 0488 00       		.byte	0
- 942 0489 00       		.byte	0
- 943 048a 11       		.uleb128 0x11
- 944 048b 2C000000 		.4byte	.LVL50
- 945 048f FB040000 		.4byte	0x4fb
- 946 0493 11       		.uleb128 0x11
- 947 0494 30000000 		.4byte	.LVL51
- 948 0498 06050000 		.4byte	0x506
- 949 049c 11       		.uleb128 0x11
- 950 049d 38000000 		.4byte	.LVL52
- 951 04a1 11050000 		.4byte	0x511
- 952 04a5 00       		.byte	0
- 953 04a6 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 33
+ 976 03fd 0F       		.uleb128 0xf
+ 977 03fe 12000000 		.4byte	.LVL61
+ 978 0402 2F010000 		.4byte	0x12f
+ 979 0406 0A       		.uleb128 0xa
+ 980 0407 01       		.uleb128 0x1
+ 981 0408 50       		.byte	0x50
+ 982 0409 02       		.uleb128 0x2
+ 983 040a 77       		.byte	0x77
+ 984 040b 00       		.sleb128 0
+ 985 040c 0A       		.uleb128 0xa
+ 986 040d 01       		.uleb128 0x1
+ 987 040e 51       		.byte	0x51
+ 988 040f 02       		.uleb128 0x2
+ 989 0410 09       		.byte	0x9
+ 990 0411 FF       		.byte	0xff
+ 991 0412 00       		.byte	0
+ 992 0413 00       		.byte	0
+ 993 0414 0D       		.uleb128 0xd
+ 994 0415 B4020000 		.4byte	.LASF33
+ 995 0419 01       		.byte	0x1
+ 996 041a 4703     		.2byte	0x347
+ 997 041c 00000000 		.4byte	.LFB9
+ 998 0420 18000000 		.4byte	.LFE9-.LFB9
+ 999 0424 01       		.uleb128 0x1
+ 1000 0425 9C       		.byte	0x9c
+ 1001 0426 6B040000 		.4byte	0x46b
+ 1002 042a 0E       		.uleb128 0xe
+ 1003 042b 8E030000 		.4byte	.LASF14
+ 1004 042f 01       		.byte	0x1
+ 1005 0430 4703     		.2byte	0x347
+ 1006 0432 41000000 		.4byte	0x41
+ 1007 0436 1A030000 		.4byte	.LLST15
+ 1008 043a 0E       		.uleb128 0xe
+ 1009 043b 81000000 		.4byte	.LASF31
+ 1010 043f 01       		.byte	0x1
+ 1011 0440 4703     		.2byte	0x347
+ 1012 0442 6B040000 		.4byte	0x46b
+ 1013 0446 3B030000 		.4byte	.LLST16
+ 1014 044a 0E       		.uleb128 0xe
+ 1015 044b 13030000 		.4byte	.LASF32
+ 1016 044f 01       		.byte	0x1
+ 1017 0450 4703     		.2byte	0x347
+ 1018 0452 3A000000 		.4byte	0x3a
+ 1019 0456 59030000 		.4byte	.LLST17
+ 1020 045a 0F       		.uleb128 0xf
+ 1021 045b 10000000 		.4byte	.LVL67
+ 1022 045f 2F010000 		.4byte	0x12f
+ 1023 0463 0A       		.uleb128 0xa
+ 1024 0464 01       		.uleb128 0x1
+ 1025 0465 50       		.byte	0x50
+ 1026 0466 02       		.uleb128 0x2
+ 1027 0467 76       		.byte	0x76
+ 1028 0468 00       		.sleb128 0
+ 1029 0469 00       		.byte	0
+ 1030 046a 00       		.byte	0
+ 1031 046b 04       		.uleb128 0x4
+ 1032 046c 04       		.byte	0x4
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 34
 
 
- 954 04a7 00       		.byte	0
- 955 04a8 04       		.uleb128 0x4
- 956 04a9 04       		.byte	0x4
- 957 04aa AE040000 		.4byte	0x4ae
- 958 04ae 1E       		.uleb128 0x1e
- 959 04af 41000000 		.4byte	0x41
- 960 04b3 1F       		.uleb128 0x1f
- 961 04b4 72020000 		.4byte	.LASF33
- 962 04b8 01       		.byte	0x1
- 963 04b9 25       		.byte	0x25
- 964 04ba 4F000000 		.4byte	0x4f
- 965 04be 05       		.uleb128 0x5
- 966 04bf 03       		.byte	0x3
- 967 04c0 00000000 		.4byte	emFile_1_isInited0
- 968 04c4 20       		.uleb128 0x20
- 969 04c5 44030000 		.4byte	.LASF34
- 970 04c9 44030000 		.4byte	.LASF34
- 971 04cd 02       		.byte	0x2
- 972 04ce 28       		.byte	0x28
- 973 04cf 20       		.uleb128 0x20
- 974 04d0 78030000 		.4byte	.LASF35
- 975 04d4 78030000 		.4byte	.LASF35
- 976 04d8 03       		.byte	0x3
- 977 04d9 28       		.byte	0x28
- 978 04da 20       		.uleb128 0x20
- 979 04db 3A000000 		.4byte	.LASF36
- 980 04df 3A000000 		.4byte	.LASF36
- 981 04e3 03       		.byte	0x3
- 982 04e4 2F       		.byte	0x2f
- 983 04e5 20       		.uleb128 0x20
- 984 04e6 F8000000 		.4byte	.LASF37
- 985 04ea F8000000 		.4byte	.LASF37
- 986 04ee 03       		.byte	0x3
- 987 04ef 27       		.byte	0x27
- 988 04f0 20       		.uleb128 0x20
- 989 04f1 E8020000 		.4byte	.LASF38
- 990 04f5 E8020000 		.4byte	.LASF38
- 991 04f9 04       		.byte	0x4
- 992 04fa 58       		.byte	0x58
- 993 04fb 20       		.uleb128 0x20
- 994 04fc 88010000 		.4byte	.LASF39
- 995 0500 88010000 		.4byte	.LASF39
- 996 0504 04       		.byte	0x4
- 997 0505 69       		.byte	0x69
- 998 0506 20       		.uleb128 0x20
- 999 0507 15010000 		.4byte	.LASF40
- 1000 050b 15010000 		.4byte	.LASF40
- 1001 050f 04       		.byte	0x4
- 1002 0510 67       		.byte	0x67
- 1003 0511 20       		.uleb128 0x20
- 1004 0512 26030000 		.4byte	.LASF41
- 1005 0516 26030000 		.4byte	.LASF41
- 1006 051a 04       		.byte	0x4
- 1007 051b 6B       		.byte	0x6b
- 1008 051c 00       		.byte	0
- 1009              		.section	.debug_abbrev,"",%progbits
- 1010              	.Ldebug_abbrev0:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 34
+ 1033 046d 71040000 		.4byte	0x471
+ 1034 0471 15       		.uleb128 0x15
+ 1035 0472 41000000 		.4byte	0x41
+ 1036 0476 16       		.uleb128 0x16
+ 1037 0477 72020000 		.4byte	.LASF34
+ 1038 047b 01       		.byte	0x1
+ 1039 047c 25       		.byte	0x25
+ 1040 047d 4F000000 		.4byte	0x4f
+ 1041 0481 05       		.uleb128 0x5
+ 1042 0482 03       		.byte	0x3
+ 1043 0483 00000000 		.4byte	emFile_1_isInited0
+ 1044 0487 17       		.uleb128 0x17
+ 1045 0488 78030000 		.4byte	.LASF35
+ 1046 048c 78030000 		.4byte	.LASF35
+ 1047 0490 02       		.byte	0x2
+ 1048 0491 28       		.byte	0x28
+ 1049 0492 17       		.uleb128 0x17
+ 1050 0493 3A000000 		.4byte	.LASF36
+ 1051 0497 3A000000 		.4byte	.LASF36
+ 1052 049b 02       		.byte	0x2
+ 1053 049c 2F       		.byte	0x2f
+ 1054 049d 17       		.uleb128 0x17
+ 1055 049e 6A000000 		.4byte	.LASF37
+ 1056 04a2 6A000000 		.4byte	.LASF37
+ 1057 04a6 02       		.byte	0x2
+ 1058 04a7 27       		.byte	0x27
+ 1059 04a8 17       		.uleb128 0x17
+ 1060 04a9 E8020000 		.4byte	.LASF38
+ 1061 04ad E8020000 		.4byte	.LASF38
+ 1062 04b1 03       		.byte	0x3
+ 1063 04b2 58       		.byte	0x58
+ 1064 04b3 17       		.uleb128 0x17
+ 1065 04b4 88010000 		.4byte	.LASF39
+ 1066 04b8 88010000 		.4byte	.LASF39
+ 1067 04bc 03       		.byte	0x3
+ 1068 04bd 69       		.byte	0x69
+ 1069 04be 17       		.uleb128 0x17
+ 1070 04bf 87000000 		.4byte	.LASF40
+ 1071 04c3 87000000 		.4byte	.LASF40
+ 1072 04c7 03       		.byte	0x3
+ 1073 04c8 67       		.byte	0x67
+ 1074 04c9 17       		.uleb128 0x17
+ 1075 04ca 26030000 		.4byte	.LASF41
+ 1076 04ce 26030000 		.4byte	.LASF41
+ 1077 04d2 03       		.byte	0x3
+ 1078 04d3 6B       		.byte	0x6b
+ 1079 04d4 17       		.uleb128 0x17
+ 1080 04d5 44030000 		.4byte	.LASF42
+ 1081 04d9 44030000 		.4byte	.LASF42
+ 1082 04dd 04       		.byte	0x4
+ 1083 04de 28       		.byte	0x28
+ 1084 04df 00       		.byte	0
+ 1085              		.section	.debug_abbrev,"",%progbits
+ 1086              	.Ldebug_abbrev0:
+ 1087 0000 01       		.uleb128 0x1
+ 1088 0001 11       		.uleb128 0x11
+ 1089 0002 01       		.byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 35
 
 
- 1011 0000 01       		.uleb128 0x1
- 1012 0001 11       		.uleb128 0x11
- 1013 0002 01       		.byte	0x1
- 1014 0003 25       		.uleb128 0x25
- 1015 0004 0E       		.uleb128 0xe
- 1016 0005 13       		.uleb128 0x13
- 1017 0006 0B       		.uleb128 0xb
- 1018 0007 03       		.uleb128 0x3
- 1019 0008 0E       		.uleb128 0xe
- 1020 0009 1B       		.uleb128 0x1b
- 1021 000a 0E       		.uleb128 0xe
- 1022 000b 55       		.uleb128 0x55
- 1023 000c 17       		.uleb128 0x17
- 1024 000d 11       		.uleb128 0x11
- 1025 000e 01       		.uleb128 0x1
- 1026 000f 10       		.uleb128 0x10
- 1027 0010 17       		.uleb128 0x17
- 1028 0011 00       		.byte	0
- 1029 0012 00       		.byte	0
- 1030 0013 02       		.uleb128 0x2
- 1031 0014 24       		.uleb128 0x24
- 1032 0015 00       		.byte	0
- 1033 0016 0B       		.uleb128 0xb
- 1034 0017 0B       		.uleb128 0xb
- 1035 0018 3E       		.uleb128 0x3e
- 1036 0019 0B       		.uleb128 0xb
- 1037 001a 03       		.uleb128 0x3
- 1038 001b 0E       		.uleb128 0xe
- 1039 001c 00       		.byte	0
- 1040 001d 00       		.byte	0
- 1041 001e 03       		.uleb128 0x3
- 1042 001f 24       		.uleb128 0x24
- 1043 0020 00       		.byte	0
- 1044 0021 0B       		.uleb128 0xb
- 1045 0022 0B       		.uleb128 0xb
- 1046 0023 3E       		.uleb128 0x3e
- 1047 0024 0B       		.uleb128 0xb
- 1048 0025 03       		.uleb128 0x3
- 1049 0026 08       		.uleb128 0x8
- 1050 0027 00       		.byte	0
- 1051 0028 00       		.byte	0
- 1052 0029 04       		.uleb128 0x4
- 1053 002a 0F       		.uleb128 0xf
- 1054 002b 00       		.byte	0
- 1055 002c 0B       		.uleb128 0xb
- 1056 002d 0B       		.uleb128 0xb
- 1057 002e 49       		.uleb128 0x49
- 1058 002f 13       		.uleb128 0x13
- 1059 0030 00       		.byte	0
- 1060 0031 00       		.byte	0
- 1061 0032 05       		.uleb128 0x5
- 1062 0033 16       		.uleb128 0x16
- 1063 0034 00       		.byte	0
- 1064 0035 03       		.uleb128 0x3
- 1065 0036 0E       		.uleb128 0xe
- 1066 0037 3A       		.uleb128 0x3a
- 1067 0038 0B       		.uleb128 0xb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 35
+ 1090 0003 25       		.uleb128 0x25
+ 1091 0004 0E       		.uleb128 0xe
+ 1092 0005 13       		.uleb128 0x13
+ 1093 0006 0B       		.uleb128 0xb
+ 1094 0007 03       		.uleb128 0x3
+ 1095 0008 0E       		.uleb128 0xe
+ 1096 0009 1B       		.uleb128 0x1b
+ 1097 000a 0E       		.uleb128 0xe
+ 1098 000b 55       		.uleb128 0x55
+ 1099 000c 17       		.uleb128 0x17
+ 1100 000d 11       		.uleb128 0x11
+ 1101 000e 01       		.uleb128 0x1
+ 1102 000f 10       		.uleb128 0x10
+ 1103 0010 17       		.uleb128 0x17
+ 1104 0011 00       		.byte	0
+ 1105 0012 00       		.byte	0
+ 1106 0013 02       		.uleb128 0x2
+ 1107 0014 24       		.uleb128 0x24
+ 1108 0015 00       		.byte	0
+ 1109 0016 0B       		.uleb128 0xb
+ 1110 0017 0B       		.uleb128 0xb
+ 1111 0018 3E       		.uleb128 0x3e
+ 1112 0019 0B       		.uleb128 0xb
+ 1113 001a 03       		.uleb128 0x3
+ 1114 001b 0E       		.uleb128 0xe
+ 1115 001c 00       		.byte	0
+ 1116 001d 00       		.byte	0
+ 1117 001e 03       		.uleb128 0x3
+ 1118 001f 24       		.uleb128 0x24
+ 1119 0020 00       		.byte	0
+ 1120 0021 0B       		.uleb128 0xb
+ 1121 0022 0B       		.uleb128 0xb
+ 1122 0023 3E       		.uleb128 0x3e
+ 1123 0024 0B       		.uleb128 0xb
+ 1124 0025 03       		.uleb128 0x3
+ 1125 0026 08       		.uleb128 0x8
+ 1126 0027 00       		.byte	0
+ 1127 0028 00       		.byte	0
+ 1128 0029 04       		.uleb128 0x4
+ 1129 002a 0F       		.uleb128 0xf
+ 1130 002b 00       		.byte	0
+ 1131 002c 0B       		.uleb128 0xb
+ 1132 002d 0B       		.uleb128 0xb
+ 1133 002e 49       		.uleb128 0x49
+ 1134 002f 13       		.uleb128 0x13
+ 1135 0030 00       		.byte	0
+ 1136 0031 00       		.byte	0
+ 1137 0032 05       		.uleb128 0x5
+ 1138 0033 16       		.uleb128 0x16
+ 1139 0034 00       		.byte	0
+ 1140 0035 03       		.uleb128 0x3
+ 1141 0036 0E       		.uleb128 0xe
+ 1142 0037 3A       		.uleb128 0x3a
+ 1143 0038 0B       		.uleb128 0xb
+ 1144 0039 3B       		.uleb128 0x3b
+ 1145 003a 05       		.uleb128 0x5
+ 1146 003b 49       		.uleb128 0x49
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 36
 
 
- 1068 0039 3B       		.uleb128 0x3b
- 1069 003a 05       		.uleb128 0x5
- 1070 003b 49       		.uleb128 0x49
- 1071 003c 13       		.uleb128 0x13
- 1072 003d 00       		.byte	0
- 1073 003e 00       		.byte	0
- 1074 003f 06       		.uleb128 0x6
- 1075 0040 2E       		.uleb128 0x2e
- 1076 0041 01       		.byte	0x1
- 1077 0042 03       		.uleb128 0x3
- 1078 0043 0E       		.uleb128 0xe
- 1079 0044 3A       		.uleb128 0x3a
- 1080 0045 0B       		.uleb128 0xb
- 1081 0046 3B       		.uleb128 0x3b
- 1082 0047 0B       		.uleb128 0xb
- 1083 0048 27       		.uleb128 0x27
- 1084 0049 19       		.uleb128 0x19
- 1085 004a 49       		.uleb128 0x49
- 1086 004b 13       		.uleb128 0x13
- 1087 004c 20       		.uleb128 0x20
- 1088 004d 0B       		.uleb128 0xb
- 1089 004e 01       		.uleb128 0x1
- 1090 004f 13       		.uleb128 0x13
- 1091 0050 00       		.byte	0
- 1092 0051 00       		.byte	0
- 1093 0052 07       		.uleb128 0x7
- 1094 0053 05       		.uleb128 0x5
- 1095 0054 00       		.byte	0
- 1096 0055 03       		.uleb128 0x3
- 1097 0056 0E       		.uleb128 0xe
- 1098 0057 3A       		.uleb128 0x3a
- 1099 0058 0B       		.uleb128 0xb
- 1100 0059 3B       		.uleb128 0x3b
- 1101 005a 0B       		.uleb128 0xb
- 1102 005b 49       		.uleb128 0x49
- 1103 005c 13       		.uleb128 0x13
- 1104 005d 00       		.byte	0
- 1105 005e 00       		.byte	0
- 1106 005f 08       		.uleb128 0x8
- 1107 0060 34       		.uleb128 0x34
- 1108 0061 00       		.byte	0
- 1109 0062 03       		.uleb128 0x3
- 1110 0063 0E       		.uleb128 0xe
- 1111 0064 3A       		.uleb128 0x3a
- 1112 0065 0B       		.uleb128 0xb
- 1113 0066 3B       		.uleb128 0x3b
- 1114 0067 0B       		.uleb128 0xb
- 1115 0068 49       		.uleb128 0x49
- 1116 0069 13       		.uleb128 0x13
- 1117 006a 00       		.byte	0
- 1118 006b 00       		.byte	0
- 1119 006c 09       		.uleb128 0x9
- 1120 006d 2E       		.uleb128 0x2e
- 1121 006e 01       		.byte	0x1
- 1122 006f 3F       		.uleb128 0x3f
- 1123 0070 19       		.uleb128 0x19
- 1124 0071 03       		.uleb128 0x3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 36
+ 1147 003c 13       		.uleb128 0x13
+ 1148 003d 00       		.byte	0
+ 1149 003e 00       		.byte	0
+ 1150 003f 06       		.uleb128 0x6
+ 1151 0040 2E       		.uleb128 0x2e
+ 1152 0041 01       		.byte	0x1
+ 1153 0042 03       		.uleb128 0x3
+ 1154 0043 0E       		.uleb128 0xe
+ 1155 0044 3A       		.uleb128 0x3a
+ 1156 0045 0B       		.uleb128 0xb
+ 1157 0046 3B       		.uleb128 0x3b
+ 1158 0047 0B       		.uleb128 0xb
+ 1159 0048 27       		.uleb128 0x27
+ 1160 0049 19       		.uleb128 0x19
+ 1161 004a 11       		.uleb128 0x11
+ 1162 004b 01       		.uleb128 0x1
+ 1163 004c 12       		.uleb128 0x12
+ 1164 004d 06       		.uleb128 0x6
+ 1165 004e 40       		.uleb128 0x40
+ 1166 004f 18       		.uleb128 0x18
+ 1167 0050 9742     		.uleb128 0x2117
+ 1168 0052 19       		.uleb128 0x19
+ 1169 0053 01       		.uleb128 0x1
+ 1170 0054 13       		.uleb128 0x13
+ 1171 0055 00       		.byte	0
+ 1172 0056 00       		.byte	0
+ 1173 0057 07       		.uleb128 0x7
+ 1174 0058 05       		.uleb128 0x5
+ 1175 0059 00       		.byte	0
+ 1176 005a 03       		.uleb128 0x3
+ 1177 005b 0E       		.uleb128 0xe
+ 1178 005c 3A       		.uleb128 0x3a
+ 1179 005d 0B       		.uleb128 0xb
+ 1180 005e 3B       		.uleb128 0x3b
+ 1181 005f 0B       		.uleb128 0xb
+ 1182 0060 49       		.uleb128 0x49
+ 1183 0061 13       		.uleb128 0x13
+ 1184 0062 02       		.uleb128 0x2
+ 1185 0063 17       		.uleb128 0x17
+ 1186 0064 00       		.byte	0
+ 1187 0065 00       		.byte	0
+ 1188 0066 08       		.uleb128 0x8
+ 1189 0067 898201   		.uleb128 0x4109
+ 1190 006a 00       		.byte	0
+ 1191 006b 11       		.uleb128 0x11
+ 1192 006c 01       		.uleb128 0x1
+ 1193 006d 31       		.uleb128 0x31
+ 1194 006e 13       		.uleb128 0x13
+ 1195 006f 00       		.byte	0
+ 1196 0070 00       		.byte	0
+ 1197 0071 09       		.uleb128 0x9
+ 1198 0072 898201   		.uleb128 0x4109
+ 1199 0075 01       		.byte	0x1
+ 1200 0076 11       		.uleb128 0x11
+ 1201 0077 01       		.uleb128 0x1
+ 1202 0078 31       		.uleb128 0x31
+ 1203 0079 13       		.uleb128 0x13
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 37
 
 
- 1125 0072 0E       		.uleb128 0xe
- 1126 0073 3A       		.uleb128 0x3a
- 1127 0074 0B       		.uleb128 0xb
- 1128 0075 3B       		.uleb128 0x3b
- 1129 0076 05       		.uleb128 0x5
- 1130 0077 27       		.uleb128 0x27
- 1131 0078 19       		.uleb128 0x19
- 1132 0079 11       		.uleb128 0x11
- 1133 007a 01       		.uleb128 0x1
- 1134 007b 12       		.uleb128 0x12
- 1135 007c 06       		.uleb128 0x6
- 1136 007d 40       		.uleb128 0x40
- 1137 007e 18       		.uleb128 0x18
- 1138 007f 9742     		.uleb128 0x2117
- 1139 0081 19       		.uleb128 0x19
- 1140 0082 01       		.uleb128 0x1
- 1141 0083 13       		.uleb128 0x13
- 1142 0084 00       		.byte	0
- 1143 0085 00       		.byte	0
- 1144 0086 0A       		.uleb128 0xa
- 1145 0087 05       		.uleb128 0x5
- 1146 0088 00       		.byte	0
- 1147 0089 03       		.uleb128 0x3
- 1148 008a 0E       		.uleb128 0xe
- 1149 008b 3A       		.uleb128 0x3a
- 1150 008c 0B       		.uleb128 0xb
- 1151 008d 3B       		.uleb128 0x3b
- 1152 008e 05       		.uleb128 0x5
- 1153 008f 49       		.uleb128 0x49
- 1154 0090 13       		.uleb128 0x13
- 1155 0091 02       		.uleb128 0x2
- 1156 0092 17       		.uleb128 0x17
- 1157 0093 00       		.byte	0
- 1158 0094 00       		.byte	0
- 1159 0095 0B       		.uleb128 0xb
- 1160 0096 898201   		.uleb128 0x4109
- 1161 0099 00       		.byte	0
- 1162 009a 11       		.uleb128 0x11
- 1163 009b 01       		.uleb128 0x1
- 1164 009c 9542     		.uleb128 0x2115
- 1165 009e 19       		.uleb128 0x19
- 1166 009f 31       		.uleb128 0x31
- 1167 00a0 13       		.uleb128 0x13
- 1168 00a1 00       		.byte	0
- 1169 00a2 00       		.byte	0
- 1170 00a3 0C       		.uleb128 0xc
- 1171 00a4 898201   		.uleb128 0x4109
- 1172 00a7 01       		.byte	0x1
- 1173 00a8 11       		.uleb128 0x11
- 1174 00a9 01       		.uleb128 0x1
- 1175 00aa 9542     		.uleb128 0x2115
- 1176 00ac 19       		.uleb128 0x19
- 1177 00ad 31       		.uleb128 0x31
- 1178 00ae 13       		.uleb128 0x13
- 1179 00af 00       		.byte	0
- 1180 00b0 00       		.byte	0
- 1181 00b1 0D       		.uleb128 0xd
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 37
+ 1204 007a 01       		.uleb128 0x1
+ 1205 007b 13       		.uleb128 0x13
+ 1206 007c 00       		.byte	0
+ 1207 007d 00       		.byte	0
+ 1208 007e 0A       		.uleb128 0xa
+ 1209 007f 8A8201   		.uleb128 0x410a
+ 1210 0082 00       		.byte	0
+ 1211 0083 02       		.uleb128 0x2
+ 1212 0084 18       		.uleb128 0x18
+ 1213 0085 9142     		.uleb128 0x2111
+ 1214 0087 18       		.uleb128 0x18
+ 1215 0088 00       		.byte	0
+ 1216 0089 00       		.byte	0
+ 1217 008a 0B       		.uleb128 0xb
+ 1218 008b 2E       		.uleb128 0x2e
+ 1219 008c 01       		.byte	0x1
+ 1220 008d 03       		.uleb128 0x3
+ 1221 008e 0E       		.uleb128 0xe
+ 1222 008f 3A       		.uleb128 0x3a
+ 1223 0090 0B       		.uleb128 0xb
+ 1224 0091 3B       		.uleb128 0x3b
+ 1225 0092 0B       		.uleb128 0xb
+ 1226 0093 27       		.uleb128 0x27
+ 1227 0094 19       		.uleb128 0x19
+ 1228 0095 49       		.uleb128 0x49
+ 1229 0096 13       		.uleb128 0x13
+ 1230 0097 11       		.uleb128 0x11
+ 1231 0098 01       		.uleb128 0x1
+ 1232 0099 12       		.uleb128 0x12
+ 1233 009a 06       		.uleb128 0x6
+ 1234 009b 40       		.uleb128 0x40
+ 1235 009c 18       		.uleb128 0x18
+ 1236 009d 9742     		.uleb128 0x2117
+ 1237 009f 19       		.uleb128 0x19
+ 1238 00a0 01       		.uleb128 0x1
+ 1239 00a1 13       		.uleb128 0x13
+ 1240 00a2 00       		.byte	0
+ 1241 00a3 00       		.byte	0
+ 1242 00a4 0C       		.uleb128 0xc
+ 1243 00a5 34       		.uleb128 0x34
+ 1244 00a6 00       		.byte	0
+ 1245 00a7 03       		.uleb128 0x3
+ 1246 00a8 0E       		.uleb128 0xe
+ 1247 00a9 3A       		.uleb128 0x3a
+ 1248 00aa 0B       		.uleb128 0xb
+ 1249 00ab 3B       		.uleb128 0x3b
+ 1250 00ac 0B       		.uleb128 0xb
+ 1251 00ad 49       		.uleb128 0x49
+ 1252 00ae 13       		.uleb128 0x13
+ 1253 00af 02       		.uleb128 0x2
+ 1254 00b0 17       		.uleb128 0x17
+ 1255 00b1 00       		.byte	0
+ 1256 00b2 00       		.byte	0
+ 1257 00b3 0D       		.uleb128 0xd
+ 1258 00b4 2E       		.uleb128 0x2e
+ 1259 00b5 01       		.byte	0x1
+ 1260 00b6 3F       		.uleb128 0x3f
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 38
 
 
- 1182 00b2 8A8201   		.uleb128 0x410a
- 1183 00b5 00       		.byte	0
- 1184 00b6 02       		.uleb128 0x2
- 1185 00b7 18       		.uleb128 0x18
- 1186 00b8 9142     		.uleb128 0x2111
- 1187 00ba 18       		.uleb128 0x18
- 1188 00bb 00       		.byte	0
- 1189 00bc 00       		.byte	0
- 1190 00bd 0E       		.uleb128 0xe
- 1191 00be 2E       		.uleb128 0x2e
- 1192 00bf 01       		.byte	0x1
- 1193 00c0 3F       		.uleb128 0x3f
- 1194 00c1 19       		.uleb128 0x19
- 1195 00c2 03       		.uleb128 0x3
- 1196 00c3 0E       		.uleb128 0xe
- 1197 00c4 3A       		.uleb128 0x3a
- 1198 00c5 0B       		.uleb128 0xb
- 1199 00c6 3B       		.uleb128 0x3b
- 1200 00c7 05       		.uleb128 0x5
- 1201 00c8 27       		.uleb128 0x27
- 1202 00c9 19       		.uleb128 0x19
- 1203 00ca 49       		.uleb128 0x49
- 1204 00cb 13       		.uleb128 0x13
- 1205 00cc 11       		.uleb128 0x11
- 1206 00cd 01       		.uleb128 0x1
- 1207 00ce 12       		.uleb128 0x12
- 1208 00cf 06       		.uleb128 0x6
- 1209 00d0 40       		.uleb128 0x40
- 1210 00d1 18       		.uleb128 0x18
- 1211 00d2 9742     		.uleb128 0x2117
- 1212 00d4 19       		.uleb128 0x19
- 1213 00d5 01       		.uleb128 0x1
- 1214 00d6 13       		.uleb128 0x13
- 1215 00d7 00       		.byte	0
- 1216 00d8 00       		.byte	0
- 1217 00d9 0F       		.uleb128 0xf
- 1218 00da 34       		.uleb128 0x34
- 1219 00db 00       		.byte	0
- 1220 00dc 03       		.uleb128 0x3
- 1221 00dd 0E       		.uleb128 0xe
- 1222 00de 3A       		.uleb128 0x3a
- 1223 00df 0B       		.uleb128 0xb
- 1224 00e0 3B       		.uleb128 0x3b
- 1225 00e1 05       		.uleb128 0x5
- 1226 00e2 49       		.uleb128 0x49
- 1227 00e3 13       		.uleb128 0x13
- 1228 00e4 1C       		.uleb128 0x1c
- 1229 00e5 0B       		.uleb128 0xb
- 1230 00e6 00       		.byte	0
- 1231 00e7 00       		.byte	0
- 1232 00e8 10       		.uleb128 0x10
- 1233 00e9 34       		.uleb128 0x34
- 1234 00ea 00       		.byte	0
- 1235 00eb 03       		.uleb128 0x3
- 1236 00ec 0E       		.uleb128 0xe
- 1237 00ed 3A       		.uleb128 0x3a
- 1238 00ee 0B       		.uleb128 0xb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 38
+ 1261 00b7 19       		.uleb128 0x19
+ 1262 00b8 03       		.uleb128 0x3
+ 1263 00b9 0E       		.uleb128 0xe
+ 1264 00ba 3A       		.uleb128 0x3a
+ 1265 00bb 0B       		.uleb128 0xb
+ 1266 00bc 3B       		.uleb128 0x3b
+ 1267 00bd 05       		.uleb128 0x5
+ 1268 00be 27       		.uleb128 0x27
+ 1269 00bf 19       		.uleb128 0x19
+ 1270 00c0 11       		.uleb128 0x11
+ 1271 00c1 01       		.uleb128 0x1
+ 1272 00c2 12       		.uleb128 0x12
+ 1273 00c3 06       		.uleb128 0x6
+ 1274 00c4 40       		.uleb128 0x40
+ 1275 00c5 18       		.uleb128 0x18
+ 1276 00c6 9742     		.uleb128 0x2117
+ 1277 00c8 19       		.uleb128 0x19
+ 1278 00c9 01       		.uleb128 0x1
+ 1279 00ca 13       		.uleb128 0x13
+ 1280 00cb 00       		.byte	0
+ 1281 00cc 00       		.byte	0
+ 1282 00cd 0E       		.uleb128 0xe
+ 1283 00ce 05       		.uleb128 0x5
+ 1284 00cf 00       		.byte	0
+ 1285 00d0 03       		.uleb128 0x3
+ 1286 00d1 0E       		.uleb128 0xe
+ 1287 00d2 3A       		.uleb128 0x3a
+ 1288 00d3 0B       		.uleb128 0xb
+ 1289 00d4 3B       		.uleb128 0x3b
+ 1290 00d5 05       		.uleb128 0x5
+ 1291 00d6 49       		.uleb128 0x49
+ 1292 00d7 13       		.uleb128 0x13
+ 1293 00d8 02       		.uleb128 0x2
+ 1294 00d9 17       		.uleb128 0x17
+ 1295 00da 00       		.byte	0
+ 1296 00db 00       		.byte	0
+ 1297 00dc 0F       		.uleb128 0xf
+ 1298 00dd 898201   		.uleb128 0x4109
+ 1299 00e0 01       		.byte	0x1
+ 1300 00e1 11       		.uleb128 0x11
+ 1301 00e2 01       		.uleb128 0x1
+ 1302 00e3 31       		.uleb128 0x31
+ 1303 00e4 13       		.uleb128 0x13
+ 1304 00e5 00       		.byte	0
+ 1305 00e6 00       		.byte	0
+ 1306 00e7 10       		.uleb128 0x10
+ 1307 00e8 2E       		.uleb128 0x2e
+ 1308 00e9 01       		.byte	0x1
+ 1309 00ea 3F       		.uleb128 0x3f
+ 1310 00eb 19       		.uleb128 0x19
+ 1311 00ec 03       		.uleb128 0x3
+ 1312 00ed 0E       		.uleb128 0xe
+ 1313 00ee 3A       		.uleb128 0x3a
+ 1314 00ef 0B       		.uleb128 0xb
+ 1315 00f0 3B       		.uleb128 0x3b
+ 1316 00f1 05       		.uleb128 0x5
+ 1317 00f2 27       		.uleb128 0x27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 39
 
 
- 1239 00ef 3B       		.uleb128 0x3b
- 1240 00f0 05       		.uleb128 0x5
- 1241 00f1 49       		.uleb128 0x49
- 1242 00f2 13       		.uleb128 0x13
- 1243 00f3 02       		.uleb128 0x2
- 1244 00f4 17       		.uleb128 0x17
- 1245 00f5 00       		.byte	0
- 1246 00f6 00       		.byte	0
- 1247 00f7 11       		.uleb128 0x11
- 1248 00f8 898201   		.uleb128 0x4109
- 1249 00fb 00       		.byte	0
- 1250 00fc 11       		.uleb128 0x11
- 1251 00fd 01       		.uleb128 0x1
- 1252 00fe 31       		.uleb128 0x31
- 1253 00ff 13       		.uleb128 0x13
- 1254 0100 00       		.byte	0
- 1255 0101 00       		.byte	0
- 1256 0102 12       		.uleb128 0x12
- 1257 0103 898201   		.uleb128 0x4109
- 1258 0106 01       		.byte	0x1
- 1259 0107 11       		.uleb128 0x11
- 1260 0108 01       		.uleb128 0x1
- 1261 0109 31       		.uleb128 0x31
- 1262 010a 13       		.uleb128 0x13
- 1263 010b 01       		.uleb128 0x1
- 1264 010c 13       		.uleb128 0x13
- 1265 010d 00       		.byte	0
- 1266 010e 00       		.byte	0
- 1267 010f 13       		.uleb128 0x13
- 1268 0110 05       		.uleb128 0x5
- 1269 0111 00       		.byte	0
- 1270 0112 03       		.uleb128 0x3
- 1271 0113 0E       		.uleb128 0xe
- 1272 0114 3A       		.uleb128 0x3a
- 1273 0115 0B       		.uleb128 0xb
- 1274 0116 3B       		.uleb128 0x3b
- 1275 0117 05       		.uleb128 0x5
- 1276 0118 49       		.uleb128 0x49
- 1277 0119 13       		.uleb128 0x13
- 1278 011a 02       		.uleb128 0x2
- 1279 011b 18       		.uleb128 0x18
- 1280 011c 00       		.byte	0
- 1281 011d 00       		.byte	0
- 1282 011e 14       		.uleb128 0x14
- 1283 011f 34       		.uleb128 0x34
- 1284 0120 00       		.byte	0
- 1285 0121 03       		.uleb128 0x3
- 1286 0122 0E       		.uleb128 0xe
- 1287 0123 3A       		.uleb128 0x3a
- 1288 0124 0B       		.uleb128 0xb
- 1289 0125 3B       		.uleb128 0x3b
- 1290 0126 05       		.uleb128 0x5
- 1291 0127 49       		.uleb128 0x49
- 1292 0128 13       		.uleb128 0x13
- 1293 0129 02       		.uleb128 0x2
- 1294 012a 18       		.uleb128 0x18
- 1295 012b 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 39
+ 1318 00f3 19       		.uleb128 0x19
+ 1319 00f4 49       		.uleb128 0x49
+ 1320 00f5 13       		.uleb128 0x13
+ 1321 00f6 11       		.uleb128 0x11
+ 1322 00f7 01       		.uleb128 0x1
+ 1323 00f8 12       		.uleb128 0x12
+ 1324 00f9 06       		.uleb128 0x6
+ 1325 00fa 40       		.uleb128 0x40
+ 1326 00fb 18       		.uleb128 0x18
+ 1327 00fc 9742     		.uleb128 0x2117
+ 1328 00fe 19       		.uleb128 0x19
+ 1329 00ff 01       		.uleb128 0x1
+ 1330 0100 13       		.uleb128 0x13
+ 1331 0101 00       		.byte	0
+ 1332 0102 00       		.byte	0
+ 1333 0103 11       		.uleb128 0x11
+ 1334 0104 34       		.uleb128 0x34
+ 1335 0105 00       		.byte	0
+ 1336 0106 03       		.uleb128 0x3
+ 1337 0107 0E       		.uleb128 0xe
+ 1338 0108 3A       		.uleb128 0x3a
+ 1339 0109 0B       		.uleb128 0xb
+ 1340 010a 3B       		.uleb128 0x3b
+ 1341 010b 05       		.uleb128 0x5
+ 1342 010c 49       		.uleb128 0x49
+ 1343 010d 13       		.uleb128 0x13
+ 1344 010e 1C       		.uleb128 0x1c
+ 1345 010f 0B       		.uleb128 0xb
+ 1346 0110 00       		.byte	0
+ 1347 0111 00       		.byte	0
+ 1348 0112 12       		.uleb128 0x12
+ 1349 0113 34       		.uleb128 0x34
+ 1350 0114 00       		.byte	0
+ 1351 0115 03       		.uleb128 0x3
+ 1352 0116 0E       		.uleb128 0xe
+ 1353 0117 3A       		.uleb128 0x3a
+ 1354 0118 0B       		.uleb128 0xb
+ 1355 0119 3B       		.uleb128 0x3b
+ 1356 011a 05       		.uleb128 0x5
+ 1357 011b 49       		.uleb128 0x49
+ 1358 011c 13       		.uleb128 0x13
+ 1359 011d 02       		.uleb128 0x2
+ 1360 011e 17       		.uleb128 0x17
+ 1361 011f 00       		.byte	0
+ 1362 0120 00       		.byte	0
+ 1363 0121 13       		.uleb128 0x13
+ 1364 0122 34       		.uleb128 0x34
+ 1365 0123 00       		.byte	0
+ 1366 0124 03       		.uleb128 0x3
+ 1367 0125 0E       		.uleb128 0xe
+ 1368 0126 3A       		.uleb128 0x3a
+ 1369 0127 0B       		.uleb128 0xb
+ 1370 0128 3B       		.uleb128 0x3b
+ 1371 0129 05       		.uleb128 0x5
+ 1372 012a 49       		.uleb128 0x49
+ 1373 012b 13       		.uleb128 0x13
+ 1374 012c 02       		.uleb128 0x2
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 40
 
 
- 1296 012c 00       		.byte	0
- 1297 012d 15       		.uleb128 0x15
- 1298 012e 2E       		.uleb128 0x2e
- 1299 012f 01       		.byte	0x1
- 1300 0130 03       		.uleb128 0x3
- 1301 0131 0E       		.uleb128 0xe
- 1302 0132 3A       		.uleb128 0x3a
- 1303 0133 0B       		.uleb128 0xb
- 1304 0134 3B       		.uleb128 0x3b
- 1305 0135 0B       		.uleb128 0xb
- 1306 0136 27       		.uleb128 0x27
- 1307 0137 19       		.uleb128 0x19
- 1308 0138 20       		.uleb128 0x20
- 1309 0139 0B       		.uleb128 0xb
- 1310 013a 01       		.uleb128 0x1
- 1311 013b 13       		.uleb128 0x13
- 1312 013c 00       		.byte	0
- 1313 013d 00       		.byte	0
- 1314 013e 16       		.uleb128 0x16
- 1315 013f 1D       		.uleb128 0x1d
- 1316 0140 01       		.byte	0x1
- 1317 0141 31       		.uleb128 0x31
- 1318 0142 13       		.uleb128 0x13
- 1319 0143 11       		.uleb128 0x11
- 1320 0144 01       		.uleb128 0x1
- 1321 0145 12       		.uleb128 0x12
- 1322 0146 06       		.uleb128 0x6
- 1323 0147 58       		.uleb128 0x58
- 1324 0148 0B       		.uleb128 0xb
- 1325 0149 59       		.uleb128 0x59
- 1326 014a 05       		.uleb128 0x5
- 1327 014b 00       		.byte	0
- 1328 014c 00       		.byte	0
- 1329 014d 17       		.uleb128 0x17
- 1330 014e 05       		.uleb128 0x5
- 1331 014f 00       		.byte	0
- 1332 0150 31       		.uleb128 0x31
- 1333 0151 13       		.uleb128 0x13
- 1334 0152 00       		.byte	0
- 1335 0153 00       		.byte	0
- 1336 0154 18       		.uleb128 0x18
- 1337 0155 1D       		.uleb128 0x1d
- 1338 0156 01       		.byte	0x1
- 1339 0157 31       		.uleb128 0x31
- 1340 0158 13       		.uleb128 0x13
- 1341 0159 52       		.uleb128 0x52
- 1342 015a 01       		.uleb128 0x1
- 1343 015b 55       		.uleb128 0x55
- 1344 015c 17       		.uleb128 0x17
- 1345 015d 58       		.uleb128 0x58
- 1346 015e 0B       		.uleb128 0xb
- 1347 015f 59       		.uleb128 0x59
- 1348 0160 05       		.uleb128 0x5
- 1349 0161 00       		.byte	0
- 1350 0162 00       		.byte	0
- 1351 0163 19       		.uleb128 0x19
- 1352 0164 05       		.uleb128 0x5
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 40
+ 1375 012d 18       		.uleb128 0x18
+ 1376 012e 00       		.byte	0
+ 1377 012f 00       		.byte	0
+ 1378 0130 14       		.uleb128 0x14
+ 1379 0131 05       		.uleb128 0x5
+ 1380 0132 00       		.byte	0
+ 1381 0133 03       		.uleb128 0x3
+ 1382 0134 0E       		.uleb128 0xe
+ 1383 0135 3A       		.uleb128 0x3a
+ 1384 0136 0B       		.uleb128 0xb
+ 1385 0137 3B       		.uleb128 0x3b
+ 1386 0138 05       		.uleb128 0x5
+ 1387 0139 49       		.uleb128 0x49
+ 1388 013a 13       		.uleb128 0x13
+ 1389 013b 02       		.uleb128 0x2
+ 1390 013c 18       		.uleb128 0x18
+ 1391 013d 00       		.byte	0
+ 1392 013e 00       		.byte	0
+ 1393 013f 15       		.uleb128 0x15
+ 1394 0140 26       		.uleb128 0x26
+ 1395 0141 00       		.byte	0
+ 1396 0142 49       		.uleb128 0x49
+ 1397 0143 13       		.uleb128 0x13
+ 1398 0144 00       		.byte	0
+ 1399 0145 00       		.byte	0
+ 1400 0146 16       		.uleb128 0x16
+ 1401 0147 34       		.uleb128 0x34
+ 1402 0148 00       		.byte	0
+ 1403 0149 03       		.uleb128 0x3
+ 1404 014a 0E       		.uleb128 0xe
+ 1405 014b 3A       		.uleb128 0x3a
+ 1406 014c 0B       		.uleb128 0xb
+ 1407 014d 3B       		.uleb128 0x3b
+ 1408 014e 0B       		.uleb128 0xb
+ 1409 014f 49       		.uleb128 0x49
+ 1410 0150 13       		.uleb128 0x13
+ 1411 0151 02       		.uleb128 0x2
+ 1412 0152 18       		.uleb128 0x18
+ 1413 0153 00       		.byte	0
+ 1414 0154 00       		.byte	0
+ 1415 0155 17       		.uleb128 0x17
+ 1416 0156 2E       		.uleb128 0x2e
+ 1417 0157 00       		.byte	0
+ 1418 0158 3F       		.uleb128 0x3f
+ 1419 0159 19       		.uleb128 0x19
+ 1420 015a 3C       		.uleb128 0x3c
+ 1421 015b 19       		.uleb128 0x19
+ 1422 015c 6E       		.uleb128 0x6e
+ 1423 015d 0E       		.uleb128 0xe
+ 1424 015e 03       		.uleb128 0x3
+ 1425 015f 0E       		.uleb128 0xe
+ 1426 0160 3A       		.uleb128 0x3a
+ 1427 0161 0B       		.uleb128 0xb
+ 1428 0162 3B       		.uleb128 0x3b
+ 1429 0163 0B       		.uleb128 0xb
+ 1430 0164 00       		.byte	0
+ 1431 0165 00       		.byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 41
 
 
- 1353 0165 00       		.byte	0
- 1354 0166 31       		.uleb128 0x31
- 1355 0167 13       		.uleb128 0x13
- 1356 0168 02       		.uleb128 0x2
- 1357 0169 17       		.uleb128 0x17
- 1358 016a 00       		.byte	0
- 1359 016b 00       		.byte	0
- 1360 016c 1A       		.uleb128 0x1a
- 1361 016d 0B       		.uleb128 0xb
- 1362 016e 01       		.byte	0x1
- 1363 016f 55       		.uleb128 0x55
- 1364 0170 17       		.uleb128 0x17
- 1365 0171 00       		.byte	0
- 1366 0172 00       		.byte	0
- 1367 0173 1B       		.uleb128 0x1b
- 1368 0174 34       		.uleb128 0x34
- 1369 0175 00       		.byte	0
- 1370 0176 31       		.uleb128 0x31
- 1371 0177 13       		.uleb128 0x13
- 1372 0178 00       		.byte	0
- 1373 0179 00       		.byte	0
- 1374 017a 1C       		.uleb128 0x1c
- 1375 017b 0B       		.uleb128 0xb
- 1376 017c 01       		.byte	0x1
- 1377 017d 11       		.uleb128 0x11
- 1378 017e 01       		.uleb128 0x1
- 1379 017f 12       		.uleb128 0x12
- 1380 0180 06       		.uleb128 0x6
- 1381 0181 01       		.uleb128 0x1
- 1382 0182 13       		.uleb128 0x13
- 1383 0183 00       		.byte	0
- 1384 0184 00       		.byte	0
- 1385 0185 1D       		.uleb128 0x1d
- 1386 0186 0B       		.uleb128 0xb
- 1387 0187 01       		.byte	0x1
- 1388 0188 11       		.uleb128 0x11
- 1389 0189 01       		.uleb128 0x1
- 1390 018a 12       		.uleb128 0x12
- 1391 018b 06       		.uleb128 0x6
- 1392 018c 00       		.byte	0
- 1393 018d 00       		.byte	0
- 1394 018e 1E       		.uleb128 0x1e
- 1395 018f 26       		.uleb128 0x26
- 1396 0190 00       		.byte	0
- 1397 0191 49       		.uleb128 0x49
- 1398 0192 13       		.uleb128 0x13
- 1399 0193 00       		.byte	0
- 1400 0194 00       		.byte	0
- 1401 0195 1F       		.uleb128 0x1f
- 1402 0196 34       		.uleb128 0x34
- 1403 0197 00       		.byte	0
- 1404 0198 03       		.uleb128 0x3
- 1405 0199 0E       		.uleb128 0xe
- 1406 019a 3A       		.uleb128 0x3a
- 1407 019b 0B       		.uleb128 0xb
- 1408 019c 3B       		.uleb128 0x3b
- 1409 019d 0B       		.uleb128 0xb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 41
+ 1432 0166 00       		.byte	0
+ 1433              		.section	.debug_loc,"",%progbits
+ 1434              	.Ldebug_loc0:
+ 1435              	.LLST0:
+ 1436 0000 00000000 		.4byte	.LVL0
+ 1437 0004 13000000 		.4byte	.LVL1-1
+ 1438 0008 0100     		.2byte	0x1
+ 1439 000a 50       		.byte	0x50
+ 1440 000b 13000000 		.4byte	.LVL1-1
+ 1441 000f 26000000 		.4byte	.LVL5
+ 1442 0013 0400     		.2byte	0x4
+ 1443 0015 F3       		.byte	0xf3
+ 1444 0016 01       		.uleb128 0x1
+ 1445 0017 50       		.byte	0x50
+ 1446 0018 9F       		.byte	0x9f
+ 1447 0019 26000000 		.4byte	.LVL5
+ 1448 001d 35000000 		.4byte	.LVL6-1
+ 1449 0021 0100     		.2byte	0x1
+ 1450 0023 50       		.byte	0x50
+ 1451 0024 35000000 		.4byte	.LVL6-1
+ 1452 0028 4C000000 		.4byte	.LFE0
+ 1453 002c 0400     		.2byte	0x4
+ 1454 002e F3       		.byte	0xf3
+ 1455 002f 01       		.uleb128 0x1
+ 1456 0030 50       		.byte	0x50
+ 1457 0031 9F       		.byte	0x9f
+ 1458 0032 00000000 		.4byte	0
+ 1459 0036 00000000 		.4byte	0
+ 1460              	.LLST1:
+ 1461 003a 00000000 		.4byte	.LVL10
+ 1462 003e 06000000 		.4byte	.LVL11
+ 1463 0042 0100     		.2byte	0x1
+ 1464 0044 50       		.byte	0x50
+ 1465 0045 06000000 		.4byte	.LVL11
+ 1466 0049 1A000000 		.4byte	.LVL15
+ 1467 004d 0400     		.2byte	0x4
+ 1468 004f F3       		.byte	0xf3
+ 1469 0050 01       		.uleb128 0x1
+ 1470 0051 50       		.byte	0x50
+ 1471 0052 9F       		.byte	0x9f
+ 1472 0053 1A000000 		.4byte	.LVL15
+ 1473 0057 1C000000 		.4byte	.LVL16
+ 1474 005b 0100     		.2byte	0x1
+ 1475 005d 50       		.byte	0x50
+ 1476 005e 1C000000 		.4byte	.LVL16
+ 1477 0062 30000000 		.4byte	.LFE1
+ 1478 0066 0400     		.2byte	0x4
+ 1479 0068 F3       		.byte	0xf3
+ 1480 0069 01       		.uleb128 0x1
+ 1481 006a 50       		.byte	0x50
+ 1482 006b 9F       		.byte	0x9f
+ 1483 006c 00000000 		.4byte	0
+ 1484 0070 00000000 		.4byte	0
+ 1485              	.LLST2:
+ 1486 0074 00000000 		.4byte	.LVL10
+ 1487 0078 09000000 		.4byte	.LVL12-1
+ 1488 007c 0100     		.2byte	0x1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 42
 
 
- 1410 019e 49       		.uleb128 0x49
- 1411 019f 13       		.uleb128 0x13
- 1412 01a0 02       		.uleb128 0x2
- 1413 01a1 18       		.uleb128 0x18
- 1414 01a2 00       		.byte	0
- 1415 01a3 00       		.byte	0
- 1416 01a4 20       		.uleb128 0x20
- 1417 01a5 2E       		.uleb128 0x2e
- 1418 01a6 00       		.byte	0
- 1419 01a7 3F       		.uleb128 0x3f
- 1420 01a8 19       		.uleb128 0x19
- 1421 01a9 3C       		.uleb128 0x3c
- 1422 01aa 19       		.uleb128 0x19
- 1423 01ab 6E       		.uleb128 0x6e
- 1424 01ac 0E       		.uleb128 0xe
- 1425 01ad 03       		.uleb128 0x3
- 1426 01ae 0E       		.uleb128 0xe
- 1427 01af 3A       		.uleb128 0x3a
- 1428 01b0 0B       		.uleb128 0xb
- 1429 01b1 3B       		.uleb128 0x3b
- 1430 01b2 0B       		.uleb128 0xb
- 1431 01b3 00       		.byte	0
- 1432 01b4 00       		.byte	0
- 1433 01b5 00       		.byte	0
- 1434              		.section	.debug_loc,"",%progbits
- 1435              	.Ldebug_loc0:
- 1436              	.LLST0:
- 1437 0000 00000000 		.4byte	.LVL0
- 1438 0004 04000000 		.4byte	.LVL1
- 1439 0008 0100     		.2byte	0x1
- 1440 000a 50       		.byte	0x50
- 1441 000b 04000000 		.4byte	.LVL1
- 1442 000f 08000000 		.4byte	.LFE2
- 1443 0013 0400     		.2byte	0x4
- 1444 0015 F3       		.byte	0xf3
- 1445 0016 01       		.uleb128 0x1
- 1446 0017 50       		.byte	0x50
- 1447 0018 9F       		.byte	0x9f
- 1448 0019 00000000 		.4byte	0
- 1449 001d 00000000 		.4byte	0
- 1450              	.LLST1:
- 1451 0021 00000000 		.4byte	.LVL3
- 1452 0025 02000000 		.4byte	.LVL4
- 1453 0029 0100     		.2byte	0x1
- 1454 002b 50       		.byte	0x50
- 1455 002c 02000000 		.4byte	.LVL4
- 1456 0030 06000000 		.4byte	.LFE3
- 1457 0034 0400     		.2byte	0x4
- 1458 0036 F3       		.byte	0xf3
- 1459 0037 01       		.uleb128 0x1
- 1460 0038 50       		.byte	0x50
- 1461 0039 9F       		.byte	0x9f
- 1462 003a 00000000 		.4byte	0
- 1463 003e 00000000 		.4byte	0
- 1464              	.LLST2:
- 1465 0042 00000000 		.4byte	.LVL6
- 1466 0046 02000000 		.4byte	.LVL7
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 42
+ 1489 007e 51       		.byte	0x51
+ 1490 007f 09000000 		.4byte	.LVL12-1
+ 1491 0083 1A000000 		.4byte	.LVL15
+ 1492 0087 0400     		.2byte	0x4
+ 1493 0089 F3       		.byte	0xf3
+ 1494 008a 01       		.uleb128 0x1
+ 1495 008b 51       		.byte	0x51
+ 1496 008c 9F       		.byte	0x9f
+ 1497 008d 1A000000 		.4byte	.LVL15
+ 1498 0091 1F000000 		.4byte	.LVL17-1
+ 1499 0095 0100     		.2byte	0x1
+ 1500 0097 51       		.byte	0x51
+ 1501 0098 1F000000 		.4byte	.LVL17-1
+ 1502 009c 30000000 		.4byte	.LFE1
+ 1503 00a0 0400     		.2byte	0x4
+ 1504 00a2 F3       		.byte	0xf3
+ 1505 00a3 01       		.uleb128 0x1
+ 1506 00a4 51       		.byte	0x51
+ 1507 00a5 9F       		.byte	0x9f
+ 1508 00a6 00000000 		.4byte	0
+ 1509 00aa 00000000 		.4byte	0
+ 1510              	.LLST3:
+ 1511 00ae 18000000 		.4byte	.LVL14
+ 1512 00b2 1A000000 		.4byte	.LVL15
+ 1513 00b6 0100     		.2byte	0x1
+ 1514 00b8 50       		.byte	0x50
+ 1515 00b9 2E000000 		.4byte	.LVL19
+ 1516 00bd 30000000 		.4byte	.LFE1
+ 1517 00c1 0100     		.2byte	0x1
+ 1518 00c3 50       		.byte	0x50
+ 1519 00c4 00000000 		.4byte	0
+ 1520 00c8 00000000 		.4byte	0
+ 1521              	.LLST4:
+ 1522 00cc 00000000 		.4byte	.LVL20
+ 1523 00d0 07000000 		.4byte	.LVL21-1
+ 1524 00d4 0100     		.2byte	0x1
+ 1525 00d6 50       		.byte	0x50
+ 1526 00d7 07000000 		.4byte	.LVL21-1
+ 1527 00db 0A000000 		.4byte	.LVL22
+ 1528 00df 0400     		.2byte	0x4
+ 1529 00e1 F3       		.byte	0xf3
+ 1530 00e2 01       		.uleb128 0x1
+ 1531 00e3 50       		.byte	0x50
+ 1532 00e4 9F       		.byte	0x9f
+ 1533 00e5 0A000000 		.4byte	.LVL22
+ 1534 00e9 0C000000 		.4byte	.LVL23
+ 1535 00ed 0100     		.2byte	0x1
+ 1536 00ef 50       		.byte	0x50
+ 1537 00f0 0C000000 		.4byte	.LVL23
+ 1538 00f4 12000000 		.4byte	.LFE2
+ 1539 00f8 0400     		.2byte	0x4
+ 1540 00fa F3       		.byte	0xf3
+ 1541 00fb 01       		.uleb128 0x1
+ 1542 00fc 50       		.byte	0x50
+ 1543 00fd 9F       		.byte	0x9f
+ 1544 00fe 00000000 		.4byte	0
+ 1545 0102 00000000 		.4byte	0
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 43
 
 
- 1467 004a 0100     		.2byte	0x1
- 1468 004c 50       		.byte	0x50
- 1469 004d 02000000 		.4byte	.LVL7
- 1470 0051 04000000 		.4byte	.LFE4
- 1471 0055 0400     		.2byte	0x4
- 1472 0057 F3       		.byte	0xf3
- 1473 0058 01       		.uleb128 0x1
- 1474 0059 50       		.byte	0x50
- 1475 005a 9F       		.byte	0x9f
- 1476 005b 00000000 		.4byte	0
- 1477 005f 00000000 		.4byte	0
- 1478              	.LLST3:
- 1479 0063 00000000 		.4byte	.LVL8
- 1480 0067 11000000 		.4byte	.LVL10-1
- 1481 006b 0100     		.2byte	0x1
- 1482 006d 50       		.byte	0x50
- 1483 006e 11000000 		.4byte	.LVL10-1
- 1484 0072 22000000 		.4byte	.LVL13
- 1485 0076 0400     		.2byte	0x4
- 1486 0078 F3       		.byte	0xf3
- 1487 0079 01       		.uleb128 0x1
- 1488 007a 50       		.byte	0x50
- 1489 007b 9F       		.byte	0x9f
- 1490 007c 22000000 		.4byte	.LVL13
- 1491 0080 40000000 		.4byte	.LFE5
- 1492 0084 0100     		.2byte	0x1
- 1493 0086 50       		.byte	0x50
- 1494 0087 00000000 		.4byte	0
- 1495 008b 00000000 		.4byte	0
- 1496              	.LLST4:
- 1497 008f 00000000 		.4byte	.LVL8
- 1498 0093 0E000000 		.4byte	.LVL9
- 1499 0097 0100     		.2byte	0x1
- 1500 0099 51       		.byte	0x51
- 1501 009a 0E000000 		.4byte	.LVL9
- 1502 009e 22000000 		.4byte	.LVL13
- 1503 00a2 0100     		.2byte	0x1
- 1504 00a4 54       		.byte	0x54
- 1505 00a5 22000000 		.4byte	.LVL13
- 1506 00a9 30000000 		.4byte	.LVL14
- 1507 00ad 0100     		.2byte	0x1
- 1508 00af 51       		.byte	0x51
- 1509 00b0 30000000 		.4byte	.LVL14
- 1510 00b4 40000000 		.4byte	.LFE5
- 1511 00b8 0400     		.2byte	0x4
- 1512 00ba F3       		.byte	0xf3
- 1513 00bb 01       		.uleb128 0x1
- 1514 00bc 51       		.byte	0x51
- 1515 00bd 9F       		.byte	0x9f
- 1516 00be 00000000 		.4byte	0
- 1517 00c2 00000000 		.4byte	0
- 1518              	.LLST5:
- 1519 00c6 0E000000 		.4byte	.LVL9
- 1520 00ca 22000000 		.4byte	.LVL13
- 1521 00ce 0500     		.2byte	0x5
- 1522 00d0 74       		.byte	0x74
- 1523 00d1 00       		.sleb128 0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 43
+ 1546              	.LLST5:
+ 1547 0106 00000000 		.4byte	.LVL25
+ 1548 010a 06000000 		.4byte	.LVL26
+ 1549 010e 0100     		.2byte	0x1
+ 1550 0110 50       		.byte	0x50
+ 1551 0111 06000000 		.4byte	.LVL26
+ 1552 0115 0C000000 		.4byte	.LVL28
+ 1553 0119 0400     		.2byte	0x4
+ 1554 011b F3       		.byte	0xf3
+ 1555 011c 01       		.uleb128 0x1
+ 1556 011d 50       		.byte	0x50
+ 1557 011e 9F       		.byte	0x9f
+ 1558 011f 0C000000 		.4byte	.LVL28
+ 1559 0123 0E000000 		.4byte	.LVL29
+ 1560 0127 0100     		.2byte	0x1
+ 1561 0129 50       		.byte	0x50
+ 1562 012a 0E000000 		.4byte	.LVL29
+ 1563 012e 14000000 		.4byte	.LFE3
+ 1564 0132 0400     		.2byte	0x4
+ 1565 0134 F3       		.byte	0xf3
+ 1566 0135 01       		.uleb128 0x1
+ 1567 0136 50       		.byte	0x50
+ 1568 0137 9F       		.byte	0x9f
+ 1569 0138 00000000 		.4byte	0
+ 1570 013c 00000000 		.4byte	0
+ 1571              	.LLST6:
+ 1572 0140 00000000 		.4byte	.LVL31
+ 1573 0144 02000000 		.4byte	.LVL32
+ 1574 0148 0100     		.2byte	0x1
+ 1575 014a 50       		.byte	0x50
+ 1576 014b 02000000 		.4byte	.LVL32
+ 1577 014f 04000000 		.4byte	.LFE4
+ 1578 0153 0400     		.2byte	0x4
+ 1579 0155 F3       		.byte	0xf3
+ 1580 0156 01       		.uleb128 0x1
+ 1581 0157 50       		.byte	0x50
+ 1582 0158 9F       		.byte	0x9f
+ 1583 0159 00000000 		.4byte	0
+ 1584 015d 00000000 		.4byte	0
+ 1585              	.LLST7:
+ 1586 0161 00000000 		.4byte	.LVL33
+ 1587 0165 2D000000 		.4byte	.LVL37-1
+ 1588 0169 0100     		.2byte	0x1
+ 1589 016b 50       		.byte	0x50
+ 1590 016c 2D000000 		.4byte	.LVL37-1
+ 1591 0170 3E000000 		.4byte	.LVL40
+ 1592 0174 0400     		.2byte	0x4
+ 1593 0176 F3       		.byte	0xf3
+ 1594 0177 01       		.uleb128 0x1
+ 1595 0178 50       		.byte	0x50
+ 1596 0179 9F       		.byte	0x9f
+ 1597 017a 3E000000 		.4byte	.LVL40
+ 1598 017e 41000000 		.4byte	.LVL41-1
+ 1599 0182 0100     		.2byte	0x1
+ 1600 0184 50       		.byte	0x50
+ 1601 0185 41000000 		.4byte	.LVL41-1
+ 1602 0189 54000000 		.4byte	.LFE5
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 44
 
 
- 1524 00d2 31       		.byte	0x31
- 1525 00d3 24       		.byte	0x24
- 1526 00d4 9F       		.byte	0x9f
- 1527 00d5 00000000 		.4byte	0
- 1528 00d9 00000000 		.4byte	0
- 1529              	.LLST6:
- 1530 00dd 0E000000 		.4byte	.LVL9
- 1531 00e1 22000000 		.4byte	.LVL13
- 1532 00e5 1300     		.2byte	0x13
- 1533 00e7 0A       		.byte	0xa
- 1534 00e8 C05D     		.2byte	0x5dc0
- 1535 00ea F7       		.byte	0xf7
- 1536 00eb 25       		.uleb128 0x25
- 1537 00ec 74       		.byte	0x74
- 1538 00ed 00       		.sleb128 0
- 1539 00ee 31       		.byte	0x31
- 1540 00ef 24       		.byte	0x24
- 1541 00f0 F7       		.byte	0xf7
- 1542 00f1 25       		.uleb128 0x25
- 1543 00f2 1B       		.byte	0x1b
- 1544 00f3 F7       		.byte	0xf7
- 1545 00f4 00       		.uleb128 0
- 1546 00f5 0A       		.byte	0xa
- 1547 00f6 FFFF     		.2byte	0xffff
- 1548 00f8 1A       		.byte	0x1a
- 1549 00f9 9F       		.byte	0x9f
- 1550 00fa 00000000 		.4byte	0
- 1551 00fe 00000000 		.4byte	0
- 1552              	.LLST7:
- 1553 0102 00000000 		.4byte	.LVL15
- 1554 0106 0C000000 		.4byte	.LVL16
- 1555 010a 0100     		.2byte	0x1
- 1556 010c 50       		.byte	0x50
- 1557 010d 0C000000 		.4byte	.LVL16
- 1558 0111 16000000 		.4byte	.LVL17
- 1559 0115 0400     		.2byte	0x4
- 1560 0117 F3       		.byte	0xf3
- 1561 0118 01       		.uleb128 0x1
- 1562 0119 50       		.byte	0x50
- 1563 011a 9F       		.byte	0x9f
- 1564 011b 16000000 		.4byte	.LVL17
- 1565 011f 18000000 		.4byte	.LVL18
- 1566 0123 0100     		.2byte	0x1
- 1567 0125 50       		.byte	0x50
- 1568 0126 18000000 		.4byte	.LVL18
- 1569 012a 1A000000 		.4byte	.LFE6
- 1570 012e 0400     		.2byte	0x4
- 1571 0130 F3       		.byte	0xf3
- 1572 0131 01       		.uleb128 0x1
- 1573 0132 50       		.byte	0x50
- 1574 0133 9F       		.byte	0x9f
- 1575 0134 00000000 		.4byte	0
- 1576 0138 00000000 		.4byte	0
- 1577              	.LLST8:
- 1578 013c 00000000 		.4byte	.LVL19
- 1579 0140 0F000000 		.4byte	.LVL20-1
- 1580 0144 0100     		.2byte	0x1
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 44
+ 1603 018d 0400     		.2byte	0x4
+ 1604 018f F3       		.byte	0xf3
+ 1605 0190 01       		.uleb128 0x1
+ 1606 0191 50       		.byte	0x50
+ 1607 0192 9F       		.byte	0x9f
+ 1608 0193 00000000 		.4byte	0
+ 1609 0197 00000000 		.4byte	0
+ 1610              	.LLST8:
+ 1611 019b 00000000 		.4byte	.LVL33
+ 1612 019f 1C000000 		.4byte	.LVL34
+ 1613 01a3 0100     		.2byte	0x1
+ 1614 01a5 51       		.byte	0x51
+ 1615 01a6 1C000000 		.4byte	.LVL34
+ 1616 01aa 54000000 		.4byte	.LFE5
+ 1617 01ae 0100     		.2byte	0x1
+ 1618 01b0 55       		.byte	0x55
+ 1619 01b1 00000000 		.4byte	0
+ 1620 01b5 00000000 		.4byte	0
+ 1621              	.LLST9:
+ 1622 01b9 20000000 		.4byte	.LVL35
+ 1623 01bd 28000000 		.4byte	.LVL36
+ 1624 01c1 0100     		.2byte	0x1
+ 1625 01c3 54       		.byte	0x54
+ 1626 01c4 28000000 		.4byte	.LVL36
+ 1627 01c8 54000000 		.4byte	.LFE5
+ 1628 01cc 0500     		.2byte	0x5
+ 1629 01ce 75       		.byte	0x75
+ 1630 01cf 00       		.sleb128 0
+ 1631 01d0 31       		.byte	0x31
+ 1632 01d1 24       		.byte	0x24
+ 1633 01d2 9F       		.byte	0x9f
+ 1634 01d3 00000000 		.4byte	0
+ 1635 01d7 00000000 		.4byte	0
+ 1636              	.LLST10:
+ 1637 01db 00000000 		.4byte	.LVL44
+ 1638 01df 16000000 		.4byte	.LVL45
+ 1639 01e3 0100     		.2byte	0x1
+ 1640 01e5 50       		.byte	0x50
+ 1641 01e6 16000000 		.4byte	.LVL45
+ 1642 01ea 18000000 		.4byte	.LVL46
+ 1643 01ee 0400     		.2byte	0x4
+ 1644 01f0 F3       		.byte	0xf3
+ 1645 01f1 01       		.uleb128 0x1
+ 1646 01f2 50       		.byte	0x50
+ 1647 01f3 9F       		.byte	0x9f
+ 1648 01f4 18000000 		.4byte	.LVL46
+ 1649 01f8 2A000000 		.4byte	.LVL47
+ 1650 01fc 0100     		.2byte	0x1
+ 1651 01fe 50       		.byte	0x50
+ 1652 01ff 2A000000 		.4byte	.LVL47
+ 1653 0203 2C000000 		.4byte	.LVL48
+ 1654 0207 0400     		.2byte	0x4
+ 1655 0209 F3       		.byte	0xf3
+ 1656 020a 01       		.uleb128 0x1
+ 1657 020b 50       		.byte	0x50
+ 1658 020c 9F       		.byte	0x9f
+ 1659 020d 2C000000 		.4byte	.LVL48
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 45
 
 
- 1581 0146 50       		.byte	0x50
- 1582 0147 0F000000 		.4byte	.LVL20-1
- 1583 014b 28000000 		.4byte	.LFE7
- 1584 014f 0400     		.2byte	0x4
- 1585 0151 F3       		.byte	0xf3
- 1586 0152 01       		.uleb128 0x1
- 1587 0153 50       		.byte	0x50
- 1588 0154 9F       		.byte	0x9f
- 1589 0155 00000000 		.4byte	0
- 1590 0159 00000000 		.4byte	0
- 1591              	.LLST9:
- 1592 015d 00000000 		.4byte	.LVL24
- 1593 0161 08000000 		.4byte	.LVL25
- 1594 0165 0100     		.2byte	0x1
- 1595 0167 50       		.byte	0x50
- 1596 0168 08000000 		.4byte	.LVL25
- 1597 016c 4E000000 		.4byte	.LFE8
- 1598 0170 0400     		.2byte	0x4
- 1599 0172 F3       		.byte	0xf3
- 1600 0173 01       		.uleb128 0x1
- 1601 0174 50       		.byte	0x50
- 1602 0175 9F       		.byte	0x9f
- 1603 0176 00000000 		.4byte	0
- 1604 017a 00000000 		.4byte	0
- 1605              	.LLST10:
- 1606 017e 00000000 		.4byte	.LVL24
- 1607 0182 08000000 		.4byte	.LVL25
- 1608 0186 0100     		.2byte	0x1
- 1609 0188 51       		.byte	0x51
- 1610 0189 08000000 		.4byte	.LVL25
- 1611 018d 0A000000 		.4byte	.LVL26
- 1612 0191 0100     		.2byte	0x1
- 1613 0193 56       		.byte	0x56
- 1614 0194 0A000000 		.4byte	.LVL26
- 1615 0198 46000000 		.4byte	.LVL36
- 1616 019c 0100     		.2byte	0x1
- 1617 019e 54       		.byte	0x54
- 1618 019f 46000000 		.4byte	.LVL36
- 1619 01a3 4A000000 		.4byte	.LVL37
- 1620 01a7 0300     		.2byte	0x3
- 1621 01a9 74       		.byte	0x74
- 1622 01aa 01       		.sleb128 1
- 1623 01ab 9F       		.byte	0x9f
- 1624 01ac 4A000000 		.4byte	.LVL37
- 1625 01b0 4E000000 		.4byte	.LFE8
- 1626 01b4 0100     		.2byte	0x1
- 1627 01b6 54       		.byte	0x54
- 1628 01b7 00000000 		.4byte	0
- 1629 01bb 00000000 		.4byte	0
- 1630              	.LLST11:
- 1631 01bf 00000000 		.4byte	.LVL24
- 1632 01c3 08000000 		.4byte	.LVL25
- 1633 01c7 0100     		.2byte	0x1
- 1634 01c9 52       		.byte	0x52
- 1635 01ca 00000000 		.4byte	0
- 1636 01ce 00000000 		.4byte	0
- 1637              	.LLST12:
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 45
+ 1660 0211 2E000000 		.4byte	.LVL49
+ 1661 0215 0100     		.2byte	0x1
+ 1662 0217 50       		.byte	0x50
+ 1663 0218 2E000000 		.4byte	.LVL49
+ 1664 021c 30000000 		.4byte	.LVL50
+ 1665 0220 0400     		.2byte	0x4
+ 1666 0222 F3       		.byte	0xf3
+ 1667 0223 01       		.uleb128 0x1
+ 1668 0224 50       		.byte	0x50
+ 1669 0225 9F       		.byte	0x9f
+ 1670 0226 30000000 		.4byte	.LVL50
+ 1671 022a 32000000 		.4byte	.LVL51
+ 1672 022e 0100     		.2byte	0x1
+ 1673 0230 50       		.byte	0x50
+ 1674 0231 32000000 		.4byte	.LVL51
+ 1675 0235 34000000 		.4byte	.LVL52
+ 1676 0239 0400     		.2byte	0x4
+ 1677 023b F3       		.byte	0xf3
+ 1678 023c 01       		.uleb128 0x1
+ 1679 023d 50       		.byte	0x50
+ 1680 023e 9F       		.byte	0x9f
+ 1681 023f 34000000 		.4byte	.LVL52
+ 1682 0243 36000000 		.4byte	.LVL53
+ 1683 0247 0100     		.2byte	0x1
+ 1684 0249 50       		.byte	0x50
+ 1685 024a 36000000 		.4byte	.LVL53
+ 1686 024e 38000000 		.4byte	.LVL54
+ 1687 0252 0400     		.2byte	0x4
+ 1688 0254 F3       		.byte	0xf3
+ 1689 0255 01       		.uleb128 0x1
+ 1690 0256 50       		.byte	0x50
+ 1691 0257 9F       		.byte	0x9f
+ 1692 0258 38000000 		.4byte	.LVL54
+ 1693 025c 3A000000 		.4byte	.LVL55
+ 1694 0260 0100     		.2byte	0x1
+ 1695 0262 50       		.byte	0x50
+ 1696 0263 3A000000 		.4byte	.LVL55
+ 1697 0267 3C000000 		.4byte	.LFE6
+ 1698 026b 0400     		.2byte	0x4
+ 1699 026d F3       		.byte	0xf3
+ 1700 026e 01       		.uleb128 0x1
+ 1701 026f 50       		.byte	0x50
+ 1702 0270 9F       		.byte	0x9f
+ 1703 0271 00000000 		.4byte	0
+ 1704 0275 00000000 		.4byte	0
+ 1705              	.LLST11:
+ 1706 0279 00000000 		.4byte	.LVL56
+ 1707 027d 05000000 		.4byte	.LVL57-1
+ 1708 0281 0100     		.2byte	0x1
+ 1709 0283 50       		.byte	0x50
+ 1710 0284 05000000 		.4byte	.LVL57-1
+ 1711 0288 0A000000 		.4byte	.LFE7
+ 1712 028c 0400     		.2byte	0x4
+ 1713 028e F3       		.byte	0xf3
+ 1714 028f 01       		.uleb128 0x1
+ 1715 0290 50       		.byte	0x50
+ 1716 0291 9F       		.byte	0x9f
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 46
 
 
- 1638 01d2 0A000000 		.4byte	.LVL26
- 1639 01d6 1E000000 		.4byte	.LVL30
- 1640 01da 0300     		.2byte	0x3
- 1641 01dc 09       		.byte	0x9
- 1642 01dd FF       		.byte	0xff
- 1643 01de 9F       		.byte	0x9f
- 1644 01df 2A000000 		.4byte	.LVL31
- 1645 01e3 40000000 		.4byte	.LVL35
- 1646 01e7 0300     		.2byte	0x3
- 1647 01e9 09       		.byte	0x9
- 1648 01ea FF       		.byte	0xff
- 1649 01eb 9F       		.byte	0x9f
- 1650 01ec 46000000 		.4byte	.LVL36
- 1651 01f0 4C000000 		.4byte	.LVL38
- 1652 01f4 0300     		.2byte	0x3
- 1653 01f6 09       		.byte	0x9
- 1654 01f7 FF       		.byte	0xff
- 1655 01f8 9F       		.byte	0x9f
- 1656 01f9 00000000 		.4byte	0
- 1657 01fd 00000000 		.4byte	0
- 1658              	.LLST13:
- 1659 0201 0A000000 		.4byte	.LVL26
- 1660 0205 1E000000 		.4byte	.LVL30
- 1661 0209 0100     		.2byte	0x1
- 1662 020b 57       		.byte	0x57
- 1663 020c 2A000000 		.4byte	.LVL31
- 1664 0210 2E000000 		.4byte	.LVL32
- 1665 0214 0100     		.2byte	0x1
- 1666 0216 57       		.byte	0x57
- 1667 0217 2E000000 		.4byte	.LVL32
- 1668 021b 40000000 		.4byte	.LVL35
- 1669 021f 0200     		.2byte	0x2
- 1670 0221 30       		.byte	0x30
- 1671 0222 9F       		.byte	0x9f
- 1672 0223 46000000 		.4byte	.LVL36
- 1673 0227 4C000000 		.4byte	.LVL38
- 1674 022b 0200     		.2byte	0x2
- 1675 022d 30       		.byte	0x30
- 1676 022e 9F       		.byte	0x9f
- 1677 022f 00000000 		.4byte	0
- 1678 0233 00000000 		.4byte	0
- 1679              	.LLST14:
- 1680 0237 0C000000 		.4byte	.LVL27
- 1681 023b 1E000000 		.4byte	.LVL30
- 1682 023f 0300     		.2byte	0x3
- 1683 0241 09       		.byte	0x9
- 1684 0242 FF       		.byte	0xff
- 1685 0243 9F       		.byte	0x9f
- 1686 0244 00000000 		.4byte	0
- 1687 0248 00000000 		.4byte	0
- 1688              	.LLST15:
- 1689 024c 00000000 		.4byte	.LVL39
- 1690 0250 08000000 		.4byte	.LVL40
- 1691 0254 0100     		.2byte	0x1
- 1692 0256 50       		.byte	0x50
- 1693 0257 08000000 		.4byte	.LVL40
- 1694 025b 44000000 		.4byte	.LFE9
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 46
-
-
- 1695 025f 0400     		.2byte	0x4
- 1696 0261 F3       		.byte	0xf3
- 1697 0262 01       		.uleb128 0x1
- 1698 0263 50       		.byte	0x50
- 1699 0264 9F       		.byte	0x9f
- 1700 0265 00000000 		.4byte	0
- 1701 0269 00000000 		.4byte	0
- 1702              	.LLST16:
- 1703 026d 00000000 		.4byte	.LVL39
- 1704 0271 08000000 		.4byte	.LVL40
- 1705 0275 0100     		.2byte	0x1
- 1706 0277 51       		.byte	0x51
- 1707 0278 08000000 		.4byte	.LVL40
- 1708 027c 0C000000 		.4byte	.LVL41
- 1709 0280 0100     		.2byte	0x1
- 1710 0282 54       		.byte	0x54
- 1711 0283 0C000000 		.4byte	.LVL41
- 1712 0287 28000000 		.4byte	.LVL49
- 1713 028b 0300     		.2byte	0x3
- 1714 028d 74       		.byte	0x74
- 1715 028e 7F       		.sleb128 -1
- 1716 028f 9F       		.byte	0x9f
- 1717 0290 28000000 		.4byte	.LVL49
- 1718 0294 40000000 		.4byte	.LVL53
- 1719 0298 0100     		.2byte	0x1
- 1720 029a 54       		.byte	0x54
- 1721 029b 40000000 		.4byte	.LVL53
- 1722 029f 42000000 		.4byte	.LVL54
- 1723 02a3 0300     		.2byte	0x3
- 1724 02a5 74       		.byte	0x74
- 1725 02a6 7F       		.sleb128 -1
- 1726 02a7 9F       		.byte	0x9f
- 1727 02a8 42000000 		.4byte	.LVL54
- 1728 02ac 44000000 		.4byte	.LFE9
- 1729 02b0 0100     		.2byte	0x1
- 1730 02b2 54       		.byte	0x54
+ 1717 0292 00000000 		.4byte	0
+ 1718 0296 00000000 		.4byte	0
+ 1719              	.LLST12:
+ 1720 029a 00000000 		.4byte	.LVL58
+ 1721 029e 08000000 		.4byte	.LVL59
+ 1722 02a2 0100     		.2byte	0x1
+ 1723 02a4 50       		.byte	0x50
+ 1724 02a5 08000000 		.4byte	.LVL59
+ 1725 02a9 1C000000 		.4byte	.LFE8
+ 1726 02ad 0400     		.2byte	0x4
+ 1727 02af F3       		.byte	0xf3
+ 1728 02b0 01       		.uleb128 0x1
+ 1729 02b1 50       		.byte	0x50
+ 1730 02b2 9F       		.byte	0x9f
  1731 02b3 00000000 		.4byte	0
  1732 02b7 00000000 		.4byte	0
- 1733              	.LLST17:
- 1734 02bb 00000000 		.4byte	.LVL39
- 1735 02bf 08000000 		.4byte	.LVL40
+ 1733              	.LLST13:
+ 1734 02bb 00000000 		.4byte	.LVL58
+ 1735 02bf 08000000 		.4byte	.LVL59
  1736 02c3 0100     		.2byte	0x1
- 1737 02c5 52       		.byte	0x52
- 1738 02c6 08000000 		.4byte	.LVL40
- 1739 02ca 1E000000 		.4byte	.LVL45
+ 1737 02c5 51       		.byte	0x51
+ 1738 02c6 08000000 		.4byte	.LVL59
+ 1739 02ca 0A000000 		.4byte	.LVL60
  1740 02ce 0100     		.2byte	0x1
  1741 02d0 55       		.byte	0x55
- 1742 02d1 1E000000 		.4byte	.LVL45
- 1743 02d5 20000000 		.4byte	.LVL46
- 1744 02d9 0300     		.2byte	0x3
- 1745 02db 75       		.byte	0x75
- 1746 02dc 7F       		.sleb128 -1
- 1747 02dd 9F       		.byte	0x9f
- 1748 02de 20000000 		.4byte	.LVL46
- 1749 02e2 26000000 		.4byte	.LVL48
- 1750 02e6 0100     		.2byte	0x1
- 1751 02e8 55       		.byte	0x55
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 47
+ 1742 02d1 0A000000 		.4byte	.LVL60
+ 1743 02d5 1C000000 		.4byte	.LFE8
+ 1744 02d9 0100     		.2byte	0x1
+ 1745 02db 56       		.byte	0x56
+ 1746 02dc 00000000 		.4byte	0
+ 1747 02e0 00000000 		.4byte	0
+ 1748              	.LLST14:
+ 1749 02e4 00000000 		.4byte	.LVL58
+ 1750 02e8 08000000 		.4byte	.LVL59
+ 1751 02ec 0100     		.2byte	0x1
+ 1752 02ee 52       		.byte	0x52
+ 1753 02ef 08000000 		.4byte	.LVL59
+ 1754 02f3 14000000 		.4byte	.LVL62
+ 1755 02f7 0100     		.2byte	0x1
+ 1756 02f9 54       		.byte	0x54
+ 1757 02fa 14000000 		.4byte	.LVL62
+ 1758 02fe 18000000 		.4byte	.LVL63
+ 1759 0302 0300     		.2byte	0x3
+ 1760 0304 74       		.byte	0x74
+ 1761 0305 7F       		.sleb128 -1
+ 1762 0306 9F       		.byte	0x9f
+ 1763 0307 18000000 		.4byte	.LVL63
+ 1764 030b 1C000000 		.4byte	.LFE8
+ 1765 030f 0100     		.2byte	0x1
+ 1766 0311 54       		.byte	0x54
+ 1767 0312 00000000 		.4byte	0
+ 1768 0316 00000000 		.4byte	0
+ 1769              	.LLST15:
+ 1770 031a 00000000 		.4byte	.LVL64
+ 1771 031e 06000000 		.4byte	.LVL65
+ 1772 0322 0100     		.2byte	0x1
+ 1773 0324 50       		.byte	0x50
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 47
 
 
- 1752 02e9 26000000 		.4byte	.LVL48
- 1753 02ed 28000000 		.4byte	.LVL49
- 1754 02f1 0300     		.2byte	0x3
- 1755 02f3 75       		.byte	0x75
- 1756 02f4 01       		.sleb128 1
- 1757 02f5 9F       		.byte	0x9f
- 1758 02f6 00000000 		.4byte	0
- 1759 02fa 00000000 		.4byte	0
- 1760              	.LLST18:
- 1761 02fe 0C000000 		.4byte	.LVL41
- 1762 0302 11000000 		.4byte	.LVL43-1
- 1763 0306 0100     		.2byte	0x1
- 1764 0308 50       		.byte	0x50
- 1765 0309 24000000 		.4byte	.LVL47
- 1766 030d 2B000000 		.4byte	.LVL50-1
- 1767 0311 0100     		.2byte	0x1
- 1768 0313 50       		.byte	0x50
- 1769 0314 40000000 		.4byte	.LVL53
- 1770 0318 42000000 		.4byte	.LVL54
- 1771 031c 0100     		.2byte	0x1
- 1772 031e 50       		.byte	0x50
- 1773 031f 00000000 		.4byte	0
- 1774 0323 00000000 		.4byte	0
- 1775              	.LLST19:
- 1776 0327 0C000000 		.4byte	.LVL41
- 1777 032b 1E000000 		.4byte	.LVL45
- 1778 032f 0100     		.2byte	0x1
- 1779 0331 56       		.byte	0x56
- 1780 0332 24000000 		.4byte	.LVL47
- 1781 0336 28000000 		.4byte	.LVL49
- 1782 033a 0100     		.2byte	0x1
- 1783 033c 56       		.byte	0x56
- 1784 033d 28000000 		.4byte	.LVL49
- 1785 0341 38000000 		.4byte	.LVL52
- 1786 0345 0200     		.2byte	0x2
- 1787 0347 30       		.byte	0x30
- 1788 0348 9F       		.byte	0x9f
- 1789 0349 40000000 		.4byte	.LVL53
- 1790 034d 42000000 		.4byte	.LVL54
- 1791 0351 0200     		.2byte	0x2
- 1792 0353 30       		.byte	0x30
- 1793 0354 9F       		.byte	0x9f
- 1794 0355 00000000 		.4byte	0
- 1795 0359 00000000 		.4byte	0
- 1796              	.LLST20:
- 1797 035d 0E000000 		.4byte	.LVL42
- 1798 0361 11000000 		.4byte	.LVL43-1
- 1799 0365 0100     		.2byte	0x1
- 1800 0367 50       		.byte	0x50
- 1801 0368 00000000 		.4byte	0
- 1802 036c 00000000 		.4byte	0
- 1803              		.section	.debug_aranges,"",%progbits
- 1804 0000 54000000 		.4byte	0x54
- 1805 0004 0200     		.2byte	0x2
- 1806 0006 00000000 		.4byte	.Ldebug_info0
- 1807 000a 04       		.byte	0x4
- 1808 000b 00       		.byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 48
+ 1774 0325 06000000 		.4byte	.LVL65
+ 1775 0329 18000000 		.4byte	.LFE9
+ 1776 032d 0400     		.2byte	0x4
+ 1777 032f F3       		.byte	0xf3
+ 1778 0330 01       		.uleb128 0x1
+ 1779 0331 50       		.byte	0x50
+ 1780 0332 9F       		.byte	0x9f
+ 1781 0333 00000000 		.4byte	0
+ 1782 0337 00000000 		.4byte	0
+ 1783              	.LLST16:
+ 1784 033b 00000000 		.4byte	.LVL64
+ 1785 033f 08000000 		.4byte	.LVL66
+ 1786 0343 0100     		.2byte	0x1
+ 1787 0345 51       		.byte	0x51
+ 1788 0346 08000000 		.4byte	.LVL66
+ 1789 034a 18000000 		.4byte	.LFE9
+ 1790 034e 0100     		.2byte	0x1
+ 1791 0350 55       		.byte	0x55
+ 1792 0351 00000000 		.4byte	0
+ 1793 0355 00000000 		.4byte	0
+ 1794              	.LLST17:
+ 1795 0359 00000000 		.4byte	.LVL64
+ 1796 035d 06000000 		.4byte	.LVL65
+ 1797 0361 0100     		.2byte	0x1
+ 1798 0363 52       		.byte	0x52
+ 1799 0364 06000000 		.4byte	.LVL65
+ 1800 0368 10000000 		.4byte	.LVL67
+ 1801 036c 0100     		.2byte	0x1
+ 1802 036e 54       		.byte	0x54
+ 1803 036f 10000000 		.4byte	.LVL67
+ 1804 0373 14000000 		.4byte	.LVL68
+ 1805 0377 0300     		.2byte	0x3
+ 1806 0379 74       		.byte	0x74
+ 1807 037a 7F       		.sleb128 -1
+ 1808 037b 9F       		.byte	0x9f
+ 1809 037c 14000000 		.4byte	.LVL68
+ 1810 0380 18000000 		.4byte	.LFE9
+ 1811 0384 0100     		.2byte	0x1
+ 1812 0386 54       		.byte	0x54
+ 1813 0387 00000000 		.4byte	0
+ 1814 038b 00000000 		.4byte	0
+ 1815              		.section	.debug_aranges,"",%progbits
+ 1816 0000 64000000 		.4byte	0x64
+ 1817 0004 0200     		.2byte	0x2
+ 1818 0006 00000000 		.4byte	.Ldebug_info0
+ 1819 000a 04       		.byte	0x4
+ 1820 000b 00       		.byte	0
+ 1821 000c 0000     		.2byte	0
+ 1822 000e 0000     		.2byte	0
+ 1823 0010 00000000 		.4byte	.LFB0
+ 1824 0014 4C000000 		.4byte	.LFE0-.LFB0
+ 1825 0018 00000000 		.4byte	.LFB1
+ 1826 001c 30000000 		.4byte	.LFE1-.LFB1
+ 1827 0020 00000000 		.4byte	.LFB2
+ 1828 0024 12000000 		.4byte	.LFE2-.LFB2
+ 1829 0028 00000000 		.4byte	.LFB3
+ 1830 002c 14000000 		.4byte	.LFE3-.LFB3
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 48
 
 
- 1809 000c 0000     		.2byte	0
- 1810 000e 0000     		.2byte	0
- 1811 0010 00000000 		.4byte	.LFB2
- 1812 0014 08000000 		.4byte	.LFE2-.LFB2
- 1813 0018 00000000 		.4byte	.LFB3
- 1814 001c 06000000 		.4byte	.LFE3-.LFB3
- 1815 0020 00000000 		.4byte	.LFB4
- 1816 0024 04000000 		.4byte	.LFE4-.LFB4
- 1817 0028 00000000 		.4byte	.LFB5
- 1818 002c 40000000 		.4byte	.LFE5-.LFB5
- 1819 0030 00000000 		.4byte	.LFB6
- 1820 0034 1A000000 		.4byte	.LFE6-.LFB6
- 1821 0038 00000000 		.4byte	.LFB7
- 1822 003c 28000000 		.4byte	.LFE7-.LFB7
- 1823 0040 00000000 		.4byte	.LFB8
- 1824 0044 4E000000 		.4byte	.LFE8-.LFB8
- 1825 0048 00000000 		.4byte	.LFB9
- 1826 004c 44000000 		.4byte	.LFE9-.LFB9
- 1827 0050 00000000 		.4byte	0
- 1828 0054 00000000 		.4byte	0
- 1829              		.section	.debug_ranges,"",%progbits
- 1830              	.Ldebug_ranges0:
- 1831 0000 0A000000 		.4byte	.LBB10
- 1832 0004 1E000000 		.4byte	.LBE10
- 1833 0008 2E000000 		.4byte	.LBB15
- 1834 000c 40000000 		.4byte	.LBE15
- 1835 0010 00000000 		.4byte	0
- 1836 0014 00000000 		.4byte	0
- 1837 0018 0C000000 		.4byte	.LBB20
- 1838 001c 1E000000 		.4byte	.LBE20
- 1839 0020 28000000 		.4byte	.LBB25
- 1840 0024 38000000 		.4byte	.LBE25
- 1841 0028 00000000 		.4byte	0
- 1842 002c 00000000 		.4byte	0
- 1843 0030 00000000 		.4byte	.LFB2
- 1844 0034 08000000 		.4byte	.LFE2
- 1845 0038 00000000 		.4byte	.LFB3
- 1846 003c 06000000 		.4byte	.LFE3
- 1847 0040 00000000 		.4byte	.LFB4
- 1848 0044 04000000 		.4byte	.LFE4
- 1849 0048 00000000 		.4byte	.LFB5
- 1850 004c 40000000 		.4byte	.LFE5
- 1851 0050 00000000 		.4byte	.LFB6
- 1852 0054 1A000000 		.4byte	.LFE6
- 1853 0058 00000000 		.4byte	.LFB7
- 1854 005c 28000000 		.4byte	.LFE7
- 1855 0060 00000000 		.4byte	.LFB8
- 1856 0064 4E000000 		.4byte	.LFE8
- 1857 0068 00000000 		.4byte	.LFB9
- 1858 006c 44000000 		.4byte	.LFE9
- 1859 0070 00000000 		.4byte	0
- 1860 0074 00000000 		.4byte	0
- 1861              		.section	.debug_line,"",%progbits
- 1862              	.Ldebug_line0:
- 1863 0000 8E010000 		.section	.debug_str,"MS",%progbits,1
- 1863      02008F00 
- 1863      00000201 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 49
+ 1831 0030 00000000 		.4byte	.LFB4
+ 1832 0034 04000000 		.4byte	.LFE4-.LFB4
+ 1833 0038 00000000 		.4byte	.LFB5
+ 1834 003c 54000000 		.4byte	.LFE5-.LFB5
+ 1835 0040 00000000 		.4byte	.LFB6
+ 1836 0044 3C000000 		.4byte	.LFE6-.LFB6
+ 1837 0048 00000000 		.4byte	.LFB7
+ 1838 004c 0A000000 		.4byte	.LFE7-.LFB7
+ 1839 0050 00000000 		.4byte	.LFB8
+ 1840 0054 1C000000 		.4byte	.LFE8-.LFB8
+ 1841 0058 00000000 		.4byte	.LFB9
+ 1842 005c 18000000 		.4byte	.LFE9-.LFB9
+ 1843 0060 00000000 		.4byte	0
+ 1844 0064 00000000 		.4byte	0
+ 1845              		.section	.debug_ranges,"",%progbits
+ 1846              	.Ldebug_ranges0:
+ 1847 0000 00000000 		.4byte	.LFB0
+ 1848 0004 4C000000 		.4byte	.LFE0
+ 1849 0008 00000000 		.4byte	.LFB1
+ 1850 000c 30000000 		.4byte	.LFE1
+ 1851 0010 00000000 		.4byte	.LFB2
+ 1852 0014 12000000 		.4byte	.LFE2
+ 1853 0018 00000000 		.4byte	.LFB3
+ 1854 001c 14000000 		.4byte	.LFE3
+ 1855 0020 00000000 		.4byte	.LFB4
+ 1856 0024 04000000 		.4byte	.LFE4
+ 1857 0028 00000000 		.4byte	.LFB5
+ 1858 002c 54000000 		.4byte	.LFE5
+ 1859 0030 00000000 		.4byte	.LFB6
+ 1860 0034 3C000000 		.4byte	.LFE6
+ 1861 0038 00000000 		.4byte	.LFB7
+ 1862 003c 0A000000 		.4byte	.LFE7
+ 1863 0040 00000000 		.4byte	.LFB8
+ 1864 0044 1C000000 		.4byte	.LFE8
+ 1865 0048 00000000 		.4byte	.LFB9
+ 1866 004c 18000000 		.4byte	.LFE9
+ 1867 0050 00000000 		.4byte	0
+ 1868 0054 00000000 		.4byte	0
+ 1869              		.section	.debug_line,"",%progbits
+ 1870              	.Ldebug_line0:
+ 1871 0000 B3010000 		.section	.debug_str,"MS",%progbits,1
+ 1871      02008F00 
+ 1871      00000201 
+ 1871      FB0E0D00 
+ 1871      01010101 
+ 1872              	.LASF16:
+ 1873 0000 46535F4D 		.ascii	"FS_MMC_HW_X_EnableCS\000"
+ 1873      4D435F48 
+ 1873      575F585F 
+ 1873      456E6162 
+ 1873      6C654353 
+ 1874              	.LASF20:
+ 1875 0015 46535F4D 		.ascii	"FS_MMC_HW_X_IsWriteProtected\000"
+ 1875      4D435F48 
+ 1875      575F585F 
+ 1875      49735772 
+ 1875      69746550 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 49
 
 
- 1863      FB0E0D00 
- 1863      01010101 
- 1864              	.LASF16:
- 1865 0000 46535F4D 		.ascii	"FS_MMC_HW_X_EnableCS\000"
- 1865      4D435F48 
- 1865      575F585F 
- 1865      456E6162 
- 1865      6C654353 
- 1866              	.LASF18:
- 1867 0015 46535F4D 		.ascii	"FS_MMC_HW_X_IsWriteProtected\000"
- 1867      4D435F48 
- 1867      575F585F 
- 1867      49735772 
- 1867      69746550 
- 1868              	.LASF21:
- 1869 0032 77705374 		.ascii	"wpState\000"
- 1869      61746500 
- 1870              	.LASF36:
- 1871 003a 656D4669 		.ascii	"emFile_1_Clock_1_SetDividerRegister\000"
- 1871      6C655F31 
- 1871      5F436C6F 
- 1871      636B5F31 
- 1871      5F536574 
- 1872              	.LASF42:
- 1873 005e 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 1873      43313120 
- 1873      352E342E 
- 1873      31203230 
- 1873      31363036 
- 1874 0091 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 1874      20726576 
- 1874      6973696F 
- 1874      6E203233 
- 1874      37373135 
- 1875 00c4 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
- 1875      66756E63 
- 1875      74696F6E 
- 1875      2D736563 
- 1875      74696F6E 
- 1876              	.LASF12:
- 1877 00ec 646F7562 		.ascii	"double\000"
- 1877      6C6500
- 1878              	.LASF15:
- 1879 00f3 44617461 		.ascii	"Data\000"
- 1879      00
- 1880              	.LASF37:
- 1881 00f8 656D4669 		.ascii	"emFile_1_Clock_1_Start\000"
- 1881      6C655F31 
- 1881      5F436C6F 
- 1881      636B5F31 
- 1881      5F537461 
- 1882              	.LASF30:
- 1883 010f 70446174 		.ascii	"pData\000"
- 1883      6100
- 1884              	.LASF40:
- 1885 0115 656D4669 		.ascii	"emFile_1_SPI0_ReadTxStatus\000"
+ 1876              	.LASF19:
+ 1877 0032 77705374 		.ascii	"wpState\000"
+ 1877      61746500 
+ 1878              	.LASF36:
+ 1879 003a 656D4669 		.ascii	"emFile_1_Clock_1_SetDividerRegister\000"
+ 1879      6C655F31 
+ 1879      5F436C6F 
+ 1879      636B5F31 
+ 1879      5F536574 
+ 1880              	.LASF12:
+ 1881 005e 646F7562 		.ascii	"double\000"
+ 1881      6C6500
+ 1882              	.LASF15:
+ 1883 0065 44617461 		.ascii	"Data\000"
+ 1883      00
+ 1884              	.LASF37:
+ 1885 006a 656D4669 		.ascii	"emFile_1_Clock_1_Start\000"
  1885      6C655F31 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 50
+ 1885      5F436C6F 
+ 1885      636B5F31 
+ 1885      5F537461 
+ 1886              	.LASF31:
+ 1887 0081 70446174 		.ascii	"pData\000"
+ 1887      6100
+ 1888              	.LASF40:
+ 1889 0087 656D4669 		.ascii	"emFile_1_SPI0_ReadTxStatus\000"
+ 1889      6C655F31 
+ 1889      5F535049 
+ 1889      305F5265 
+ 1889      61645478 
+ 1890              	.LASF11:
+ 1891 00a2 666C6F61 		.ascii	"float\000"
+ 1891      7400
+ 1892              	.LASF3:
+ 1893 00a8 756E7369 		.ascii	"unsigned char\000"
+ 1893      676E6564 
+ 1893      20636861 
+ 1893      7200
+ 1894              	.LASF43:
+ 1895 00b6 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 1895      43313120 
+ 1895      352E342E 
+ 1895      31203230 
+ 1895      31363036 
+ 1896 00e9 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 1896      20726576 
+ 1896      6973696F 
+ 1896      6E203233 
+ 1896      37373135 
+ 1897 011c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1897      66756E63 
+ 1897      74696F6E 
+ 1897      2D736563 
+ 1897      74696F6E 
+ 1898              	.LASF21:
+ 1899 0144 46535F4D 		.ascii	"FS_MMC_HW_X_SetMaxSpeed\000"
+ 1899      4D435F48 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 50
 
 
- 1885      5F535049 
- 1885      305F5265 
- 1885      61645478 
- 1886              	.LASF11:
- 1887 0130 666C6F61 		.ascii	"float\000"
- 1887      7400
- 1888              	.LASF3:
- 1889 0136 756E7369 		.ascii	"unsigned char\000"
- 1889      676E6564 
- 1889      20636861 
- 1889      7200
- 1890              	.LASF19:
- 1891 0144 46535F4D 		.ascii	"FS_MMC_HW_X_SetMaxSpeed\000"
- 1891      4D435F48 
- 1891      575F585F 
- 1891      5365744D 
- 1891      61785370 
- 1892              	.LASF47:
- 1893 015c 73706944 		.ascii	"spiData\000"
- 1893      61746100 
- 1894              	.LASF0:
- 1895 0164 73686F72 		.ascii	"short unsigned int\000"
- 1895      7420756E 
- 1895      7369676E 
- 1895      65642069 
- 1895      6E7400
- 1896              	.LASF29:
- 1897 0177 46535F4D 		.ascii	"FS_MMC_HW_X_Read\000"
- 1897      4D435F48 
- 1897      575F585F 
- 1897      52656164 
- 1897      00
- 1898              	.LASF39:
- 1899 0188 656D4669 		.ascii	"emFile_1_SPI0_WriteTxData\000"
- 1899      6C655F31 
- 1899      5F535049 
- 1899      305F5772 
- 1899      69746554 
- 1900              	.LASF1:
- 1901 01a2 6C6F6E67 		.ascii	"long unsigned int\000"
- 1901      20756E73 
- 1901      69676E65 
- 1901      6420696E 
- 1901      7400
- 1902              	.LASF24:
- 1903 01b4 46535F4D 		.ascii	"FS_MMC_HW_X_SetVoltage\000"
- 1903      4D435F48 
- 1903      575F585F 
- 1903      53657456 
- 1903      6F6C7461 
- 1904              	.LASF6:
- 1905 01cb 73686F72 		.ascii	"short int\000"
- 1905      7420696E 
- 1905      7400
- 1906              	.LASF23:
- 1907 01d5 64697652 		.ascii	"divResult\000"
- 1907      6573756C 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 51
+ 1899      575F585F 
+ 1899      5365744D 
+ 1899      61785370 
+ 1900              	.LASF18:
+ 1901 015c 73706944 		.ascii	"spiData\000"
+ 1901      61746100 
+ 1902              	.LASF0:
+ 1903 0164 73686F72 		.ascii	"short unsigned int\000"
+ 1903      7420756E 
+ 1903      7369676E 
+ 1903      65642069 
+ 1903      6E7400
+ 1904              	.LASF30:
+ 1905 0177 46535F4D 		.ascii	"FS_MMC_HW_X_Read\000"
+ 1905      4D435F48 
+ 1905      575F585F 
+ 1905      52656164 
+ 1905      00
+ 1906              	.LASF39:
+ 1907 0188 656D4669 		.ascii	"emFile_1_SPI0_WriteTxData\000"
+ 1907      6C655F31 
+ 1907      5F535049 
+ 1907      305F5772 
+ 1907      69746554 
+ 1908              	.LASF1:
+ 1909 01a2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1909      20756E73 
+ 1909      69676E65 
+ 1909      6420696E 
+ 1909      7400
+ 1910              	.LASF25:
+ 1911 01b4 46535F4D 		.ascii	"FS_MMC_HW_X_SetVoltage\000"
+ 1911      4D435F48 
+ 1911      575F585F 
+ 1911      53657456 
+ 1911      6F6C7461 
+ 1912              	.LASF6:
+ 1913 01cb 73686F72 		.ascii	"short int\000"
+ 1913      7420696E 
+ 1913      7400
+ 1914              	.LASF24:
+ 1915 01d5 64697652 		.ascii	"divResult\000"
+ 1915      6573756C 
+ 1915      7400
+ 1916              	.LASF22:
+ 1917 01df 4D617846 		.ascii	"MaxFreq\000"
+ 1917      72657100 
+ 1918              	.LASF45:
+ 1919 01e7 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 1919      73657273 
+ 1919      5C6C6567 
+ 1919      6F635C44 
+ 1919      6F63756D 
+ 1920 0214 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 1920      72205072 
+ 1920      6F6A6563 
+ 1920      745C5365 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 51
 
 
- 1907      7400
- 1908              	.LASF20:
- 1909 01df 4D617846 		.ascii	"MaxFreq\000"
- 1909      72657100 
- 1910              	.LASF44:
- 1911 01e7 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 1911      73657273 
- 1911      5C6C6567 
- 1911      6F635C44 
- 1911      6F63756D 
- 1912 0214 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 1912      72205072 
- 1912      6F6A6563 
- 1912      745C5365 
- 1912      6E696F72 
- 1913 0245 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 1913      7420496E 
- 1913      74656772 
- 1913      61746564 
- 1913      5C446573 
- 1914              	.LASF2:
- 1915 0265 756E7369 		.ascii	"unsigned int\000"
- 1915      676E6564 
- 1915      20696E74 
- 1915      00
- 1916              	.LASF33:
- 1917 0272 656D4669 		.ascii	"emFile_1_isInited0\000"
- 1917      6C655F31 
- 1917      5F697349 
- 1917      6E697465 
- 1917      643000
- 1918              	.LASF10:
- 1919 0285 6C6F6E67 		.ascii	"long long unsigned int\000"
- 1919      206C6F6E 
- 1919      6720756E 
- 1919      7369676E 
- 1919      65642069 
- 1920              	.LASF26:
- 1921 029c 566D6178 		.ascii	"Vmax\000"
- 1921      00
- 1922              	.LASF27:
- 1923 02a1 72657375 		.ascii	"result\000"
- 1923      6C7400
- 1924              	.LASF8:
- 1925 02a8 7369676E 		.ascii	"signed char\000"
- 1925      65642063 
- 1925      68617200 
- 1926              	.LASF32:
- 1927 02b4 46535F4D 		.ascii	"FS_MMC_HW_X_Write\000"
- 1927      4D435F48 
- 1927      575F585F 
- 1927      57726974 
- 1927      6500
- 1928              	.LASF13:
- 1929 02c6 6C6F6E67 		.ascii	"long double\000"
- 1929      20646F75 
- 1929      626C6500 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 52
-
-
+ 1920      6E696F72 
+ 1921 0245 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 1921      7420496E 
+ 1921      74656772 
+ 1921      61746564 
+ 1921      5C446573 
+ 1922              	.LASF2:
+ 1923 0265 756E7369 		.ascii	"unsigned int\000"
+ 1923      676E6564 
+ 1923      20696E74 
+ 1923      00
+ 1924              	.LASF34:
+ 1925 0272 656D4669 		.ascii	"emFile_1_isInited0\000"
+ 1925      6C655F31 
+ 1925      5F697349 
+ 1925      6E697465 
+ 1925      643000
+ 1926              	.LASF10:
+ 1927 0285 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1927      206C6F6E 
+ 1927      6720756E 
+ 1927      7369676E 
+ 1927      65642069 
+ 1928              	.LASF27:
+ 1929 029c 566D6178 		.ascii	"Vmax\000"
+ 1929      00
  1930              	.LASF28:
- 1931 02d2 46535F4D 		.ascii	"FS_MMC_HW_X_IsPresent\000"
- 1931      4D435F48 
- 1931      575F585F 
- 1931      49735072 
- 1931      6573656E 
- 1932              	.LASF38:
- 1933 02e8 656D4669 		.ascii	"emFile_1_SPI0_Start\000"
- 1933      6C655F31 
- 1933      5F535049 
- 1933      305F5374 
- 1933      61727400 
- 1934              	.LASF4:
- 1935 02fc 73697A65 		.ascii	"sizetype\000"
- 1935      74797065 
- 1935      00
- 1936              	.LASF9:
- 1937 0305 6C6F6E67 		.ascii	"long long int\000"
- 1937      206C6F6E 
- 1937      6720696E 
- 1937      7400
- 1938              	.LASF31:
- 1939 0313 4E756D42 		.ascii	"NumBytes\000"
- 1939      79746573 
- 1939      00
- 1940              	.LASF5:
- 1941 031c 63686172 		.ascii	"char\000"
- 1941      00
- 1942              	.LASF25:
- 1943 0321 566D696E 		.ascii	"Vmin\000"
+ 1931 02a1 72657375 		.ascii	"result\000"
+ 1931      6C7400
+ 1932              	.LASF8:
+ 1933 02a8 7369676E 		.ascii	"signed char\000"
+ 1933      65642063 
+ 1933      68617200 
+ 1934              	.LASF33:
+ 1935 02b4 46535F4D 		.ascii	"FS_MMC_HW_X_Write\000"
+ 1935      4D435F48 
+ 1935      575F585F 
+ 1935      57726974 
+ 1935      6500
+ 1936              	.LASF13:
+ 1937 02c6 6C6F6E67 		.ascii	"long double\000"
+ 1937      20646F75 
+ 1937      626C6500 
+ 1938              	.LASF29:
+ 1939 02d2 46535F4D 		.ascii	"FS_MMC_HW_X_IsPresent\000"
+ 1939      4D435F48 
+ 1939      575F585F 
+ 1939      49735072 
+ 1939      6573656E 
+ 1940              	.LASF38:
+ 1941 02e8 656D4669 		.ascii	"emFile_1_SPI0_Start\000"
+ 1941      6C655F31 
+ 1941      5F535049 
+ 1941      305F5374 
+ 1941      61727400 
+ 1942              	.LASF4:
+ 1943 02fc 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 52
+
+
+ 1943      74797065 
  1943      00
- 1944              	.LASF41:
- 1945 0326 656D4669 		.ascii	"emFile_1_SPI0_ReadRxData\000"
- 1945      6C655F31 
- 1945      5F535049 
- 1945      305F5265 
- 1945      61645278 
- 1946              	.LASF22:
- 1947 033f 66726571 		.ascii	"freq\000"
+ 1944              	.LASF9:
+ 1945 0305 6C6F6E67 		.ascii	"long long int\000"
+ 1945      206C6F6E 
+ 1945      6720696E 
+ 1945      7400
+ 1946              	.LASF32:
+ 1947 0313 4E756D42 		.ascii	"NumBytes\000"
+ 1947      79746573 
  1947      00
- 1948              	.LASF34:
- 1949 0344 656D4669 		.ascii	"emFile_1_SPI0_CS_Write\000"
- 1949      6C655F31 
- 1949      5F535049 
- 1949      305F4353 
- 1949      5F577269 
- 1950              	.LASF45:
- 1951 035b 75696E74 		.ascii	"uint8\000"
- 1951      3800
- 1952              	.LASF7:
- 1953 0361 6C6F6E67 		.ascii	"long int\000"
- 1953      20696E74 
- 1953      00
- 1954              	.LASF48:
- 1955 036a 656D4669 		.ascii	"emFile_1_Init\000"
- 1955      6C655F31 
- 1955      5F496E69 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\cc3EWdAL.s 			page 53
-
-
- 1955      7400
- 1956              	.LASF35:
- 1957 0378 656D4669 		.ascii	"emFile_1_Clock_1_Stop\000"
+ 1948              	.LASF5:
+ 1949 031c 63686172 		.ascii	"char\000"
+ 1949      00
+ 1950              	.LASF26:
+ 1951 0321 566D696E 		.ascii	"Vmin\000"
+ 1951      00
+ 1952              	.LASF41:
+ 1953 0326 656D4669 		.ascii	"emFile_1_SPI0_ReadRxData\000"
+ 1953      6C655F31 
+ 1953      5F535049 
+ 1953      305F5265 
+ 1953      61645278 
+ 1954              	.LASF23:
+ 1955 033f 66726571 		.ascii	"freq\000"
+ 1955      00
+ 1956              	.LASF42:
+ 1957 0344 656D4669 		.ascii	"emFile_1_SPI0_CS_Write\000"
  1957      6C655F31 
- 1957      5F436C6F 
- 1957      636B5F31 
- 1957      5F53746F 
- 1958              	.LASF14:
- 1959 038e 556E6974 		.ascii	"Unit\000"
- 1959      00
- 1960              	.LASF17:
- 1961 0393 46535F4D 		.ascii	"FS_MMC_HW_X_DisableCS\000"
- 1961      4D435F48 
- 1961      575F585F 
- 1961      44697361 
- 1961      626C6543 
- 1962              	.LASF46:
- 1963 03a9 656D4669 		.ascii	"emFile_1_ReadWriteSPI\000"
+ 1957      5F535049 
+ 1957      305F4353 
+ 1957      5F577269 
+ 1958              	.LASF46:
+ 1959 035b 75696E74 		.ascii	"uint8\000"
+ 1959      3800
+ 1960              	.LASF7:
+ 1961 0361 6C6F6E67 		.ascii	"long int\000"
+ 1961      20696E74 
+ 1961      00
+ 1962              	.LASF47:
+ 1963 036a 656D4669 		.ascii	"emFile_1_Init\000"
  1963      6C655F31 
- 1963      5F526561 
- 1963      64577269 
- 1963      74655350 
- 1964              	.LASF43:
- 1965 03bf 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c\000"
- 1965      72617465 
- 1965      645F536F 
- 1965      75726365 
- 1965      5C50536F 
- 1966              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 1963      5F496E69 
+ 1963      7400
+ 1964              	.LASF35:
+ 1965 0378 656D4669 		.ascii	"emFile_1_Clock_1_Stop\000"
+ 1965      6C655F31 
+ 1965      5F436C6F 
+ 1965      636B5F31 
+ 1965      5F53746F 
+ 1966              	.LASF14:
+ 1967 038e 556E6974 		.ascii	"Unit\000"
+ 1967      00
+ 1968              	.LASF17:
+ 1969 0393 46535F4D 		.ascii	"FS_MMC_HW_X_DisableCS\000"
+ 1969      4D435F48 
+ 1969      575F585F 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccr6bICM.s 			page 53
+
+
+ 1969      44697361 
+ 1969      626C6543 
+ 1970              	.LASF48:
+ 1971 03a9 656D4669 		.ascii	"emFile_1_ReadWriteSPI\000"
+ 1971      6C655F31 
+ 1971      5F526561 
+ 1971      64577269 
+ 1971      74655350 
+ 1972              	.LASF44:
+ 1973 03bf 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c\000"
+ 1973      72617465 
+ 1973      645F536F 
+ 1973      75726365 
+ 1973      5C50536F 
+ 1974              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

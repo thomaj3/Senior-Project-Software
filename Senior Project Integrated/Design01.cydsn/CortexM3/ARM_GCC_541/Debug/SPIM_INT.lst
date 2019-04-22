@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 1
 
 
    1              		.syntax unified
@@ -10,7 +10,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
    7              		.eabi_attribute 24, 1
    8              		.eabi_attribute 25, 1
    9              		.eabi_attribute 26, 1
-  10              		.eabi_attribute 30, 2
+  10              		.eabi_attribute 30, 1
   11              		.eabi_attribute 34, 1
   12              		.eabi_attribute 18, 4
   13              		.thumb
@@ -26,24 +26,8 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
   23              		.thumb_func
   24              		.type	SPIM_TX_ISR, %function
   25              	SPIM_TX_ISR:
-  26              	.LFB3:
-  27              		.cfi_startproc
-  28              		@ args = 0, pretend = 0, frame = 0
-  29              		@ frame_needed = 0, uses_anonymous_args = 0
-  30              		@ link register save eliminated.
-  31 0000 7047     		bx	lr
-  32              		.cfi_endproc
-  33              	.LFE3:
-  34              		.size	SPIM_TX_ISR, .-SPIM_TX_ISR
-  35 0002 00BF     		.section	.text.SPIM_RX_ISR,"ax",%progbits
-  36              		.align	2
-  37              		.global	SPIM_RX_ISR
-  38              		.thumb
-  39              		.thumb_func
-  40              		.type	SPIM_RX_ISR, %function
-  41              	SPIM_RX_ISR:
-  42              	.LFB1:
-  43              		.file 1 "Generated_Source\\PSoC5\\SPIM_INT.c"
+  26              	.LFB0:
+  27              		.file 1 "Generated_Source\\PSoC5\\SPIM_INT.c"
    1:Generated_Source\PSoC5/SPIM_INT.c **** /*******************************************************************************
    2:Generated_Source\PSoC5/SPIM_INT.c **** * File Name: SPIM_INT.c
    3:Generated_Source\PSoC5/SPIM_INT.c **** * Version 2.50
@@ -58,9 +42,6 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
   12:Generated_Source\PSoC5/SPIM_INT.c **** ********************************************************************************
   13:Generated_Source\PSoC5/SPIM_INT.c **** * Copyright 2008-2015, Cypress Semiconductor Corporation.  All rights reserved.
   14:Generated_Source\PSoC5/SPIM_INT.c **** * You may use this file only in accordance with the license, terms, conditions,
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 2
-
-
   15:Generated_Source\PSoC5/SPIM_INT.c **** * disclaimers, and limitations in the end user license agreement accompanying
   16:Generated_Source\PSoC5/SPIM_INT.c **** * the software package with which this file was provided.
   17:Generated_Source\PSoC5/SPIM_INT.c **** *******************************************************************************/
@@ -77,6 +58,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
   28:Generated_Source\PSoC5/SPIM_INT.c **** /*******************************************************************************
   29:Generated_Source\PSoC5/SPIM_INT.c **** * Function Name: SPIM_TX_ISR
   30:Generated_Source\PSoC5/SPIM_INT.c **** ********************************************************************************
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 2
+
+
   31:Generated_Source\PSoC5/SPIM_INT.c **** *
   32:Generated_Source\PSoC5/SPIM_INT.c **** * Summary:
   33:Generated_Source\PSoC5/SPIM_INT.c **** *  Interrupt Service Routine for TX portion of the SPI Master.
@@ -100,6 +84,23 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
   51:Generated_Source\PSoC5/SPIM_INT.c **** *******************************************************************************/
   52:Generated_Source\PSoC5/SPIM_INT.c **** CY_ISR(SPIM_TX_ISR)
   53:Generated_Source\PSoC5/SPIM_INT.c **** {
+  28              		.loc 1 53 0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+  33 0000 7047     		bx	lr
+  34              		.cfi_endproc
+  35              	.LFE0:
+  36              		.size	SPIM_TX_ISR, .-SPIM_TX_ISR
+  37 0002 00BF     		.section	.text.SPIM_RX_ISR,"ax",%progbits
+  38              		.align	2
+  39              		.global	SPIM_RX_ISR
+  40              		.thumb
+  41              		.thumb_func
+  42              		.type	SPIM_RX_ISR, %function
+  43              	SPIM_RX_ISR:
+  44              	.LFB1:
   54:Generated_Source\PSoC5/SPIM_INT.c ****     #if(SPIM_TX_SOFTWARE_BUF_ENABLED)
   55:Generated_Source\PSoC5/SPIM_INT.c ****         uint8 tmpStatus;
   56:Generated_Source\PSoC5/SPIM_INT.c ****     #endif /* (SPIM_TX_SOFTWARE_BUF_ENABLED) */
@@ -117,10 +118,10 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
   68:Generated_Source\PSoC5/SPIM_INT.c ****         /* Check if TX data buffer is not empty and there is space in TX FIFO */
   69:Generated_Source\PSoC5/SPIM_INT.c ****         while(SPIM_txBufferRead != SPIM_txBufferWrite)
   70:Generated_Source\PSoC5/SPIM_INT.c ****         {
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 3
+
+
   71:Generated_Source\PSoC5/SPIM_INT.c ****             tmpStatus = SPIM_GET_STATUS_TX(SPIM_swStatusTx);
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 3
-
-
   72:Generated_Source\PSoC5/SPIM_INT.c ****             SPIM_swStatusTx = tmpStatus;
   73:Generated_Source\PSoC5/SPIM_INT.c **** 
   74:Generated_Source\PSoC5/SPIM_INT.c ****             if(0u != (SPIM_swStatusTx & SPIM_STS_TX_FIFO_NOT_FULL))
@@ -177,10 +178,10 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
  125:Generated_Source\PSoC5/SPIM_INT.c **** *
  126:Generated_Source\PSoC5/SPIM_INT.c **** * Parameters:
  127:Generated_Source\PSoC5/SPIM_INT.c **** *  None.
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 4
+
+
  128:Generated_Source\PSoC5/SPIM_INT.c **** *
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 4
-
-
  129:Generated_Source\PSoC5/SPIM_INT.c **** * Return:
  130:Generated_Source\PSoC5/SPIM_INT.c **** *  None.
  131:Generated_Source\PSoC5/SPIM_INT.c **** *
@@ -197,321 +198,325 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 1
  142:Generated_Source\PSoC5/SPIM_INT.c **** *******************************************************************************/
  143:Generated_Source\PSoC5/SPIM_INT.c **** CY_ISR(SPIM_RX_ISR)
  144:Generated_Source\PSoC5/SPIM_INT.c **** {
-  44              		.loc 1 144 0
-  45              		.cfi_startproc
-  46              		@ args = 0, pretend = 0, frame = 0
-  47              		@ frame_needed = 0, uses_anonymous_args = 0
-  48              		@ link register save eliminated.
-  49 0000 7047     		bx	lr
-  50              		.cfi_endproc
-  51              	.LFE1:
-  52              		.size	SPIM_RX_ISR, .-SPIM_RX_ISR
-  53 0002 00BF     		.text
-  54              	.Letext0:
-  55              		.section	.debug_info,"",%progbits
-  56              	.Ldebug_info0:
-  57 0000 A2000000 		.4byte	0xa2
-  58 0004 0400     		.2byte	0x4
-  59 0006 00000000 		.4byte	.Ldebug_abbrev0
-  60 000a 04       		.byte	0x4
-  61 000b 01       		.uleb128 0x1
-  62 000c 04010000 		.4byte	.LASF14
-  63 0010 0C       		.byte	0xc
-  64 0011 1B000000 		.4byte	.LASF15
-  65 0015 72000000 		.4byte	.LASF16
-  66 0019 00000000 		.4byte	.Ldebug_ranges0+0
-  67 001d 00000000 		.4byte	0
-  68 0021 00000000 		.4byte	.Ldebug_line0
-  69 0025 02       		.uleb128 0x2
-  70 0026 01       		.byte	0x1
-  71 0027 06       		.byte	0x6
-  72 0028 BA010000 		.4byte	.LASF0
-  73 002c 02       		.uleb128 0x2
-  74 002d 01       		.byte	0x1
-  75 002e 08       		.byte	0x8
-  76 002f F6000000 		.4byte	.LASF1
-  77 0033 02       		.uleb128 0x2
-  78 0034 02       		.byte	0x2
-  79 0035 05       		.byte	0x5
-  80 0036 D2010000 		.4byte	.LASF2
-  81 003a 02       		.uleb128 0x2
-  82 003b 02       		.byte	0x2
-  83 003c 07       		.byte	0x7
-  84 003d A7010000 		.4byte	.LASF3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 5
+  45              		.loc 1 144 0
+  46              		.cfi_startproc
+  47              		@ args = 0, pretend = 0, frame = 0
+  48              		@ frame_needed = 0, uses_anonymous_args = 0
+  49              		@ link register save eliminated.
+  50 0000 7047     		bx	lr
+  51              		.cfi_endproc
+  52              	.LFE1:
+  53              		.size	SPIM_RX_ISR, .-SPIM_RX_ISR
+  54 0002 00BF     		.text
+  55              	.Letext0:
+  56              		.section	.debug_info,"",%progbits
+  57              	.Ldebug_info0:
+  58 0000 AD000000 		.4byte	0xad
+  59 0004 0400     		.2byte	0x4
+  60 0006 00000000 		.4byte	.Ldebug_abbrev0
+  61 000a 04       		.byte	0x4
+  62 000b 01       		.uleb128 0x1
+  63 000c 55000000 		.4byte	.LASF16
+  64 0010 0C       		.byte	0xc
+  65 0011 1B000000 		.4byte	.LASF17
+  66 0015 0C010000 		.4byte	.LASF18
+  67 0019 00000000 		.4byte	.Ldebug_ranges0+0
+  68 001d 00000000 		.4byte	0
+  69 0021 00000000 		.4byte	.Ldebug_line0
+  70 0025 02       		.uleb128 0x2
+  71 0026 01       		.byte	0x1
+  72 0027 06       		.byte	0x6
+  73 0028 C6010000 		.4byte	.LASF0
+  74 002c 02       		.uleb128 0x2
+  75 002d 01       		.byte	0x1
+  76 002e 08       		.byte	0x8
+  77 002f 90010000 		.4byte	.LASF1
+  78 0033 02       		.uleb128 0x2
+  79 0034 02       		.byte	0x2
+  80 0035 05       		.byte	0x5
+  81 0036 DE010000 		.4byte	.LASF2
+  82 003a 02       		.uleb128 0x2
+  83 003b 02       		.byte	0x2
+  84 003c 07       		.byte	0x7
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 5
 
 
-  85 0041 02       		.uleb128 0x2
-  86 0042 04       		.byte	0x4
-  87 0043 05       		.byte	0x5
-  88 0044 97010000 		.4byte	.LASF4
-  89 0048 02       		.uleb128 0x2
-  90 0049 04       		.byte	0x4
-  91 004a 07       		.byte	0x7
-  92 004b 49000000 		.4byte	.LASF5
-  93 004f 02       		.uleb128 0x2
-  94 0050 08       		.byte	0x8
-  95 0051 05       		.byte	0x5
-  96 0052 00000000 		.4byte	.LASF6
-  97 0056 02       		.uleb128 0x2
-  98 0057 08       		.byte	0x8
-  99 0058 07       		.byte	0x7
- 100 0059 5B000000 		.4byte	.LASF7
- 101 005d 03       		.uleb128 0x3
- 102 005e 04       		.byte	0x4
- 103 005f 05       		.byte	0x5
- 104 0060 696E7400 		.ascii	"int\000"
- 105 0064 02       		.uleb128 0x2
- 106 0065 04       		.byte	0x4
- 107 0066 07       		.byte	0x7
- 108 0067 0E000000 		.4byte	.LASF8
- 109 006b 02       		.uleb128 0x2
- 110 006c 04       		.byte	0x4
- 111 006d 04       		.byte	0x4
- 112 006e F0000000 		.4byte	.LASF9
- 113 0072 02       		.uleb128 0x2
- 114 0073 08       		.byte	0x8
- 115 0074 04       		.byte	0x4
- 116 0075 A0010000 		.4byte	.LASF10
- 117 0079 02       		.uleb128 0x2
- 118 007a 01       		.byte	0x1
- 119 007b 08       		.byte	0x8
- 120 007c 92010000 		.4byte	.LASF11
- 121 0080 02       		.uleb128 0x2
- 122 0081 08       		.byte	0x8
- 123 0082 04       		.byte	0x4
- 124 0083 C6010000 		.4byte	.LASF12
- 125 0087 02       		.uleb128 0x2
- 126 0088 04       		.byte	0x4
- 127 0089 07       		.byte	0x7
- 128 008a DC010000 		.4byte	.LASF13
- 129 008e 04       		.uleb128 0x4
- 130 008f 3D000000 		.4byte	.LASF17
- 131 0093 01       		.byte	0x1
- 132 0094 8F       		.byte	0x8f
- 133 0095 01       		.byte	0x1
- 134 0096 05       		.uleb128 0x5
- 135 0097 8E000000 		.4byte	0x8e
- 136 009b 00000000 		.4byte	.LFB1
- 137 009f 02000000 		.4byte	.LFE1-.LFB1
- 138 00a3 01       		.uleb128 0x1
- 139 00a4 9C       		.byte	0x9c
- 140 00a5 00       		.byte	0
- 141              		.section	.debug_abbrev,"",%progbits
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 6
+  85 003d B3010000 		.4byte	.LASF3
+  86 0041 02       		.uleb128 0x2
+  87 0042 04       		.byte	0x4
+  88 0043 05       		.byte	0x5
+  89 0044 A3010000 		.4byte	.LASF4
+  90 0048 02       		.uleb128 0x2
+  91 0049 04       		.byte	0x4
+  92 004a 07       		.byte	0x7
+  93 004b E3000000 		.4byte	.LASF5
+  94 004f 02       		.uleb128 0x2
+  95 0050 08       		.byte	0x8
+  96 0051 05       		.byte	0x5
+  97 0052 00000000 		.4byte	.LASF6
+  98 0056 02       		.uleb128 0x2
+  99 0057 08       		.byte	0x8
+ 100 0058 07       		.byte	0x7
+ 101 0059 F5000000 		.4byte	.LASF7
+ 102 005d 03       		.uleb128 0x3
+ 103 005e 04       		.byte	0x4
+ 104 005f 05       		.byte	0x5
+ 105 0060 696E7400 		.ascii	"int\000"
+ 106 0064 02       		.uleb128 0x2
+ 107 0065 04       		.byte	0x4
+ 108 0066 07       		.byte	0x7
+ 109 0067 0E000000 		.4byte	.LASF8
+ 110 006b 02       		.uleb128 0x2
+ 111 006c 04       		.byte	0x4
+ 112 006d 04       		.byte	0x4
+ 113 006e 8A010000 		.4byte	.LASF9
+ 114 0072 02       		.uleb128 0x2
+ 115 0073 08       		.byte	0x8
+ 116 0074 04       		.byte	0x4
+ 117 0075 AC010000 		.4byte	.LASF10
+ 118 0079 02       		.uleb128 0x2
+ 119 007a 01       		.byte	0x1
+ 120 007b 08       		.byte	0x8
+ 121 007c 9E010000 		.4byte	.LASF11
+ 122 0080 02       		.uleb128 0x2
+ 123 0081 08       		.byte	0x8
+ 124 0082 04       		.byte	0x4
+ 125 0083 D2010000 		.4byte	.LASF12
+ 126 0087 02       		.uleb128 0x2
+ 127 0088 04       		.byte	0x4
+ 128 0089 07       		.byte	0x7
+ 129 008a E8010000 		.4byte	.LASF13
+ 130 008e 04       		.uleb128 0x4
+ 131 008f 3D000000 		.4byte	.LASF14
+ 132 0093 01       		.byte	0x1
+ 133 0094 34       		.byte	0x34
+ 134 0095 00000000 		.4byte	.LFB0
+ 135 0099 02000000 		.4byte	.LFE0-.LFB0
+ 136 009d 01       		.uleb128 0x1
+ 137 009e 9C       		.byte	0x9c
+ 138 009f 04       		.uleb128 0x4
+ 139 00a0 49000000 		.4byte	.LASF15
+ 140 00a4 01       		.byte	0x1
+ 141 00a5 8F       		.byte	0x8f
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 6
 
 
- 142              	.Ldebug_abbrev0:
- 143 0000 01       		.uleb128 0x1
- 144 0001 11       		.uleb128 0x11
- 145 0002 01       		.byte	0x1
- 146 0003 25       		.uleb128 0x25
- 147 0004 0E       		.uleb128 0xe
- 148 0005 13       		.uleb128 0x13
- 149 0006 0B       		.uleb128 0xb
- 150 0007 03       		.uleb128 0x3
- 151 0008 0E       		.uleb128 0xe
- 152 0009 1B       		.uleb128 0x1b
- 153 000a 0E       		.uleb128 0xe
- 154 000b 55       		.uleb128 0x55
- 155 000c 17       		.uleb128 0x17
- 156 000d 11       		.uleb128 0x11
- 157 000e 01       		.uleb128 0x1
- 158 000f 10       		.uleb128 0x10
- 159 0010 17       		.uleb128 0x17
- 160 0011 00       		.byte	0
- 161 0012 00       		.byte	0
- 162 0013 02       		.uleb128 0x2
- 163 0014 24       		.uleb128 0x24
- 164 0015 00       		.byte	0
- 165 0016 0B       		.uleb128 0xb
- 166 0017 0B       		.uleb128 0xb
- 167 0018 3E       		.uleb128 0x3e
- 168 0019 0B       		.uleb128 0xb
- 169 001a 03       		.uleb128 0x3
- 170 001b 0E       		.uleb128 0xe
- 171 001c 00       		.byte	0
- 172 001d 00       		.byte	0
- 173 001e 03       		.uleb128 0x3
- 174 001f 24       		.uleb128 0x24
- 175 0020 00       		.byte	0
- 176 0021 0B       		.uleb128 0xb
- 177 0022 0B       		.uleb128 0xb
- 178 0023 3E       		.uleb128 0x3e
- 179 0024 0B       		.uleb128 0xb
- 180 0025 03       		.uleb128 0x3
- 181 0026 08       		.uleb128 0x8
- 182 0027 00       		.byte	0
- 183 0028 00       		.byte	0
- 184 0029 04       		.uleb128 0x4
- 185 002a 2E       		.uleb128 0x2e
- 186 002b 00       		.byte	0
- 187 002c 3F       		.uleb128 0x3f
- 188 002d 19       		.uleb128 0x19
- 189 002e 03       		.uleb128 0x3
- 190 002f 0E       		.uleb128 0xe
- 191 0030 3A       		.uleb128 0x3a
- 192 0031 0B       		.uleb128 0xb
- 193 0032 3B       		.uleb128 0x3b
- 194 0033 0B       		.uleb128 0xb
- 195 0034 27       		.uleb128 0x27
- 196 0035 19       		.uleb128 0x19
- 197 0036 20       		.uleb128 0x20
- 198 0037 0B       		.uleb128 0xb
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 7
+ 142 00a6 00000000 		.4byte	.LFB1
+ 143 00aa 02000000 		.4byte	.LFE1-.LFB1
+ 144 00ae 01       		.uleb128 0x1
+ 145 00af 9C       		.byte	0x9c
+ 146 00b0 00       		.byte	0
+ 147              		.section	.debug_abbrev,"",%progbits
+ 148              	.Ldebug_abbrev0:
+ 149 0000 01       		.uleb128 0x1
+ 150 0001 11       		.uleb128 0x11
+ 151 0002 01       		.byte	0x1
+ 152 0003 25       		.uleb128 0x25
+ 153 0004 0E       		.uleb128 0xe
+ 154 0005 13       		.uleb128 0x13
+ 155 0006 0B       		.uleb128 0xb
+ 156 0007 03       		.uleb128 0x3
+ 157 0008 0E       		.uleb128 0xe
+ 158 0009 1B       		.uleb128 0x1b
+ 159 000a 0E       		.uleb128 0xe
+ 160 000b 55       		.uleb128 0x55
+ 161 000c 17       		.uleb128 0x17
+ 162 000d 11       		.uleb128 0x11
+ 163 000e 01       		.uleb128 0x1
+ 164 000f 10       		.uleb128 0x10
+ 165 0010 17       		.uleb128 0x17
+ 166 0011 00       		.byte	0
+ 167 0012 00       		.byte	0
+ 168 0013 02       		.uleb128 0x2
+ 169 0014 24       		.uleb128 0x24
+ 170 0015 00       		.byte	0
+ 171 0016 0B       		.uleb128 0xb
+ 172 0017 0B       		.uleb128 0xb
+ 173 0018 3E       		.uleb128 0x3e
+ 174 0019 0B       		.uleb128 0xb
+ 175 001a 03       		.uleb128 0x3
+ 176 001b 0E       		.uleb128 0xe
+ 177 001c 00       		.byte	0
+ 178 001d 00       		.byte	0
+ 179 001e 03       		.uleb128 0x3
+ 180 001f 24       		.uleb128 0x24
+ 181 0020 00       		.byte	0
+ 182 0021 0B       		.uleb128 0xb
+ 183 0022 0B       		.uleb128 0xb
+ 184 0023 3E       		.uleb128 0x3e
+ 185 0024 0B       		.uleb128 0xb
+ 186 0025 03       		.uleb128 0x3
+ 187 0026 08       		.uleb128 0x8
+ 188 0027 00       		.byte	0
+ 189 0028 00       		.byte	0
+ 190 0029 04       		.uleb128 0x4
+ 191 002a 2E       		.uleb128 0x2e
+ 192 002b 00       		.byte	0
+ 193 002c 3F       		.uleb128 0x3f
+ 194 002d 19       		.uleb128 0x19
+ 195 002e 03       		.uleb128 0x3
+ 196 002f 0E       		.uleb128 0xe
+ 197 0030 3A       		.uleb128 0x3a
+ 198 0031 0B       		.uleb128 0xb
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 7
 
 
- 199 0038 00       		.byte	0
- 200 0039 00       		.byte	0
- 201 003a 05       		.uleb128 0x5
- 202 003b 2E       		.uleb128 0x2e
- 203 003c 00       		.byte	0
- 204 003d 31       		.uleb128 0x31
- 205 003e 13       		.uleb128 0x13
- 206 003f 11       		.uleb128 0x11
- 207 0040 01       		.uleb128 0x1
- 208 0041 12       		.uleb128 0x12
- 209 0042 06       		.uleb128 0x6
- 210 0043 40       		.uleb128 0x40
- 211 0044 18       		.uleb128 0x18
- 212 0045 9742     		.uleb128 0x2117
- 213 0047 19       		.uleb128 0x19
- 214 0048 00       		.byte	0
- 215 0049 00       		.byte	0
- 216 004a 00       		.byte	0
- 217              		.section	.debug_aranges,"",%progbits
- 218 0000 1C000000 		.4byte	0x1c
- 219 0004 0200     		.2byte	0x2
- 220 0006 00000000 		.4byte	.Ldebug_info0
- 221 000a 04       		.byte	0x4
- 222 000b 00       		.byte	0
- 223 000c 0000     		.2byte	0
- 224 000e 0000     		.2byte	0
- 225 0010 00000000 		.4byte	.LFB1
- 226 0014 02000000 		.4byte	.LFE1-.LFB1
- 227 0018 00000000 		.4byte	0
- 228 001c 00000000 		.4byte	0
- 229              		.section	.debug_ranges,"",%progbits
- 230              	.Ldebug_ranges0:
- 231 0000 00000000 		.4byte	.LFB1
- 232 0004 02000000 		.4byte	.LFE1
- 233 0008 00000000 		.4byte	0
- 234 000c 00000000 		.4byte	0
- 235              		.section	.debug_line,"",%progbits
- 236              	.Ldebug_line0:
- 237 0000 4E000000 		.section	.debug_str,"MS",%progbits,1
- 237      02003800 
- 237      00000201 
- 237      FB0E0D00 
- 237      01010101 
- 238              	.LASF6:
- 239 0000 6C6F6E67 		.ascii	"long long int\000"
- 239      206C6F6E 
- 239      6720696E 
- 239      7400
- 240              	.LASF8:
- 241 000e 756E7369 		.ascii	"unsigned int\000"
- 241      676E6564 
- 241      20696E74 
- 241      00
- 242              	.LASF15:
- 243 001b 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPIM_INT.c\000"
- 243      72617465 
- 243      645F536F 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 8
+ 199 0032 3B       		.uleb128 0x3b
+ 200 0033 0B       		.uleb128 0xb
+ 201 0034 27       		.uleb128 0x27
+ 202 0035 19       		.uleb128 0x19
+ 203 0036 11       		.uleb128 0x11
+ 204 0037 01       		.uleb128 0x1
+ 205 0038 12       		.uleb128 0x12
+ 206 0039 06       		.uleb128 0x6
+ 207 003a 40       		.uleb128 0x40
+ 208 003b 18       		.uleb128 0x18
+ 209 003c 9742     		.uleb128 0x2117
+ 210 003e 19       		.uleb128 0x19
+ 211 003f 00       		.byte	0
+ 212 0040 00       		.byte	0
+ 213 0041 00       		.byte	0
+ 214              		.section	.debug_aranges,"",%progbits
+ 215 0000 24000000 		.4byte	0x24
+ 216 0004 0200     		.2byte	0x2
+ 217 0006 00000000 		.4byte	.Ldebug_info0
+ 218 000a 04       		.byte	0x4
+ 219 000b 00       		.byte	0
+ 220 000c 0000     		.2byte	0
+ 221 000e 0000     		.2byte	0
+ 222 0010 00000000 		.4byte	.LFB0
+ 223 0014 02000000 		.4byte	.LFE0-.LFB0
+ 224 0018 00000000 		.4byte	.LFB1
+ 225 001c 02000000 		.4byte	.LFE1-.LFB1
+ 226 0020 00000000 		.4byte	0
+ 227 0024 00000000 		.4byte	0
+ 228              		.section	.debug_ranges,"",%progbits
+ 229              	.Ldebug_ranges0:
+ 230 0000 00000000 		.4byte	.LFB0
+ 231 0004 02000000 		.4byte	.LFE0
+ 232 0008 00000000 		.4byte	.LFB1
+ 233 000c 02000000 		.4byte	.LFE1
+ 234 0010 00000000 		.4byte	0
+ 235 0014 00000000 		.4byte	0
+ 236              		.section	.debug_line,"",%progbits
+ 237              	.Ldebug_line0:
+ 238 0000 5D000000 		.section	.debug_str,"MS",%progbits,1
+ 238      02003800 
+ 238      00000201 
+ 238      FB0E0D00 
+ 238      01010101 
+ 239              	.LASF6:
+ 240 0000 6C6F6E67 		.ascii	"long long int\000"
+ 240      206C6F6E 
+ 240      6720696E 
+ 240      7400
+ 241              	.LASF8:
+ 242 000e 756E7369 		.ascii	"unsigned int\000"
+ 242      676E6564 
+ 242      20696E74 
+ 242      00
+ 243              	.LASF17:
+ 244 001b 47656E65 		.ascii	"Generated_Source\\PSoC5\\SPIM_INT.c\000"
+ 244      72617465 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 8
 
 
- 243      75726365 
- 243      5C50536F 
- 244              	.LASF17:
- 245 003d 5350494D 		.ascii	"SPIM_RX_ISR\000"
- 245      5F52585F 
- 245      49535200 
- 246              	.LASF5:
- 247 0049 6C6F6E67 		.ascii	"long unsigned int\000"
- 247      20756E73 
- 247      69676E65 
- 247      6420696E 
- 247      7400
- 248              	.LASF7:
- 249 005b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 249      206C6F6E 
- 249      6720756E 
- 249      7369676E 
- 249      65642069 
- 250              	.LASF16:
- 251 0072 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 251      73657273 
- 251      5C6C6567 
- 251      6F635C44 
- 251      6F63756D 
- 252 009f 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 252      72205072 
- 252      6F6A6563 
- 252      745C5365 
- 252      6E696F72 
- 253 00d0 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 253      7420496E 
- 253      74656772 
- 253      61746564 
- 253      5C446573 
- 254              	.LASF9:
- 255 00f0 666C6F61 		.ascii	"float\000"
- 255      7400
- 256              	.LASF1:
- 257 00f6 756E7369 		.ascii	"unsigned char\000"
- 257      676E6564 
- 257      20636861 
- 257      7200
- 258              	.LASF14:
- 259 0104 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 259      43313120 
- 259      352E342E 
- 259      31203230 
- 259      31363036 
- 260 0137 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 260      20726576 
- 260      6973696F 
- 260      6E203233 
- 260      37373135 
- 261 016a 33202D66 		.ascii	"3 -ffunction-sections -ffat-lto-objects\000"
- 261      66756E63 
- 261      74696F6E 
- 261      2D736563 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccwHs0on.s 			page 9
+ 244      645F536F 
+ 244      75726365 
+ 244      5C50536F 
+ 245              	.LASF14:
+ 246 003d 5350494D 		.ascii	"SPIM_TX_ISR\000"
+ 246      5F54585F 
+ 246      49535200 
+ 247              	.LASF15:
+ 248 0049 5350494D 		.ascii	"SPIM_RX_ISR\000"
+ 248      5F52585F 
+ 248      49535200 
+ 249              	.LASF16:
+ 250 0055 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 250      43313120 
+ 250      352E342E 
+ 250      31203230 
+ 250      31363036 
+ 251 0088 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 251      20726576 
+ 251      6973696F 
+ 251      6E203233 
+ 251      37373135 
+ 252 00bb 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 252      66756E63 
+ 252      74696F6E 
+ 252      2D736563 
+ 252      74696F6E 
+ 253              	.LASF5:
+ 254 00e3 6C6F6E67 		.ascii	"long unsigned int\000"
+ 254      20756E73 
+ 254      69676E65 
+ 254      6420696E 
+ 254      7400
+ 255              	.LASF7:
+ 256 00f5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 256      206C6F6E 
+ 256      6720756E 
+ 256      7369676E 
+ 256      65642069 
+ 257              	.LASF18:
+ 258 010c 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 258      73657273 
+ 258      5C6C6567 
+ 258      6F635C44 
+ 258      6F63756D 
+ 259 0139 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 259      72205072 
+ 259      6F6A6563 
+ 259      745C5365 
+ 259      6E696F72 
+ 260 016a 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 260      7420496E 
+ 260      74656772 
+ 260      61746564 
+ 260      5C446573 
+ 261              	.LASF9:
+ 262 018a 666C6F61 		.ascii	"float\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccAU2rG7.s 			page 9
 
 
- 261      74696F6E 
- 262              	.LASF11:
- 263 0192 63686172 		.ascii	"char\000"
- 263      00
- 264              	.LASF4:
- 265 0197 6C6F6E67 		.ascii	"long int\000"
- 265      20696E74 
- 265      00
- 266              	.LASF10:
- 267 01a0 646F7562 		.ascii	"double\000"
- 267      6C6500
- 268              	.LASF3:
- 269 01a7 73686F72 		.ascii	"short unsigned int\000"
- 269      7420756E 
- 269      7369676E 
- 269      65642069 
- 269      6E7400
- 270              	.LASF0:
- 271 01ba 7369676E 		.ascii	"signed char\000"
- 271      65642063 
- 271      68617200 
- 272              	.LASF12:
- 273 01c6 6C6F6E67 		.ascii	"long double\000"
- 273      20646F75 
- 273      626C6500 
- 274              	.LASF2:
- 275 01d2 73686F72 		.ascii	"short int\000"
- 275      7420696E 
- 275      7400
- 276              	.LASF13:
- 277 01dc 73697A65 		.ascii	"sizetype\000"
- 277      74797065 
- 277      00
- 278              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 262      7400
+ 263              	.LASF1:
+ 264 0190 756E7369 		.ascii	"unsigned char\000"
+ 264      676E6564 
+ 264      20636861 
+ 264      7200
+ 265              	.LASF11:
+ 266 019e 63686172 		.ascii	"char\000"
+ 266      00
+ 267              	.LASF4:
+ 268 01a3 6C6F6E67 		.ascii	"long int\000"
+ 268      20696E74 
+ 268      00
+ 269              	.LASF10:
+ 270 01ac 646F7562 		.ascii	"double\000"
+ 270      6C6500
+ 271              	.LASF3:
+ 272 01b3 73686F72 		.ascii	"short unsigned int\000"
+ 272      7420756E 
+ 272      7369676E 
+ 272      65642069 
+ 272      6E7400
+ 273              	.LASF0:
+ 274 01c6 7369676E 		.ascii	"signed char\000"
+ 274      65642063 
+ 274      68617200 
+ 275              	.LASF12:
+ 276 01d2 6C6F6E67 		.ascii	"long double\000"
+ 276      20646F75 
+ 276      626C6500 
+ 277              	.LASF2:
+ 278 01de 73686F72 		.ascii	"short int\000"
+ 278      7420696E 
+ 278      7400
+ 279              	.LASF13:
+ 280 01e8 73697A65 		.ascii	"sizetype\000"
+ 280      74797065 
+ 280      00
+ 281              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
