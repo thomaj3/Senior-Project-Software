@@ -683,18 +683,34 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     draw_string(5,230,BLACK,"MAKING",1);
     draw_string(5,222,BLACK,"DOUGH",1);
     fill_circle(159,119,110,PIZZATIME_1);
+    if(screen_state != DEBUG_SCREEN)
+    {
+        return;
+    }
     fill_rect(0,220,80,19,WHITE);
     draw_string(5,230,BLACK,"APPLYING",1);
     draw_string(5,222,BLACK,"SAUCE",1);
     fill_circle(159,119,95,PIZZATIME_2);
+    if(screen_state != DEBUG_SCREEN)
+    {
+        return;
+    }
     fill_rect(0,220,80,19,WHITE);
     draw_string(5,230,BLACK,"YUMMY",1);
     draw_string(5,222,BLACK,"CHEESE",1);
     fill_circle(159,119,90,PIZZATIME_3);
+    if(screen_state != DEBUG_SCREEN)
+    {
+        return;
+    }
     fill_rect(0,220,80,19,WHITE);
     draw_string(5,230,BLACK,"ADDING",1);
     draw_string(5,222,BLACK,"TOPPINGS",1);   
     fill_circle(130,84,10,PIZZATIME_2);
+    if(screen_state != DEBUG_SCREEN)
+    {
+        return;
+    }
     fill_circle(115,148,10,PIZZATIME_2);
     fill_circle(184,132,10,PIZZATIME_2);
     fill_circle(92,113,10,PIZZATIME_2);
@@ -709,15 +725,15 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     
     int time = 1000;
     int text_color[] = {BLUE, GREEN, RED, ORANGE, BLACK, CYAN, PINK, LIGHTGREY, OLIVE, GREENYELLOW};
+    srand(rand_num_1*rand_num_2);
     
     for(;;)
     {
-        srand(x*y); 
-        int x = rand() % 231;
-        int y = rand() % 236;
+        int x1 = rand() % 231;
+        int y1 = rand() % 236;
         int size = rand() % 4;
         int rand_color = rand() % 10;
-        draw_string(x,y,text_color[rand_color],"PIZZA TIME",size);
+        draw_string(x1,y1,text_color[rand_color],"PIZZA TIME",size);
         
         CyDelay(time);
         time = time-10;
@@ -725,7 +741,7 @@ void draw_debug_screen(uint16_t x, uint16_t y)
         {
             time = 1;
         }
-        if(screen_state == 0)
+        if(screen_state != DEBUG_SCREEN)
         {
             break;
         }

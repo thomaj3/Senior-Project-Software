@@ -6,6 +6,8 @@
 #include "string.h"
 #include "strings.h"
 #include "settings.h"
+#include "stdio.h"
+#include "stdlib.h"
 #include <FS.h>
 #include <Global.h>
 #include "sd.h"
@@ -55,6 +57,12 @@ double single_test(unsigned char Vds, unsigned char Vgs)
     ADC_SAR_1_StopConvert();
     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
     ADC_SAR_1_Sleep();
+//    if(cooldown)
+//    {
+//        VDAC8_DS_SetValue(0);
+//        VDAC8_GS_SetValue(0);
+//        CyDelay(10*SETTLING_WAIT_TIME);
+//    }
     return Output;
 }
 
@@ -84,11 +92,13 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
     double          Id=0;         
 	//The Drain Current | Id_real = Id/100
+    int i;
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     VDAC8_GS_SetValue(0);
     for(Vgs = 0; Vgs < Vgs_max; Vgs++)
     {
         Id = single_test_preset_vds(Vgs);
+        
         if(Id > ID_TH)
         {
             //Once Id > 1 mV transistor is "on" and we can return Vgs as Vth
@@ -105,13 +115,16 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 {
     unsigned char   Vgs;
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
-    double          Id; 
+    double          Id=0.0; 
 	//The Drain Current | Id_real = Id/100
     VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
+    int i;
     for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
-    {
+    {            
+        
         Id = single_test_preset_vds(Vgs);
+        
         if (Id >= ID_MAX)
         {
             VDAC8_DS_SetValue(0);
@@ -119,8 +132,7 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
             return Vgs-1; //Stop stepping once max current is hit
         }
     }
-    VDAC8_DS_SetValue(0);
-    VDAC8_GS_SetValue(0);
+
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
 }
 
@@ -152,13 +164,12 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             {
                 if(device_selection < 2) //if testing N-Type Devices
                 {
-                    Id = single_test(j,Vgs_test_points[i]);
+                    Id_avg += single_test(j,Vgs_test_points[i]);
                 }
                 else //if testing P-Type devices
                 {
-                    Id = single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
+                    Id_avg += single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
                 }
-                Id_avg += Id;
             }
             Id_avg /= num_avg;
             write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
@@ -237,7 +248,7 @@ int main(void)
     I2C_MasterWriteByte(0x00);   
     I2C_MasterSendStop();
     I2C_Stop();
-    
+        
     int return_code;    //Going to be used for error displays
     
     int i;  //used for for loop iterations
@@ -288,8 +299,13 @@ int main(void)
             if(screen_state == 2)
             {
                 break;
+            } else if (screen_state == DEBUG_SCREEN)
+            {
+                draw_debug_screen(0,0);
+                draw_choose_screen();
             }
         }
+
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {

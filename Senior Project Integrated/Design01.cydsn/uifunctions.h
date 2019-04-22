@@ -10,6 +10,8 @@
     extern int write_sd;
     extern int num_avg;
     extern int draw_grid;
+    extern int rand_num_1;
+    extern int rand_num_2;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1

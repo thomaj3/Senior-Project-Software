@@ -15,6 +15,8 @@ int curve_nums = 4;
 int write_sd = 1;
 int num_avg = 10;
 int draw_grid = 1;
+int rand_num_1 = 0;
+int rand_num_2 = 0;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -25,7 +27,7 @@ void ui_control(uint16_t x, uint16_t y)
         case DEVICE_SELECTION_SCREEN :
             if(x>=35 && x<=283 && y>=111 && y<=129)             //Debug center white
             {
-                draw_debug_warning_screen();
+                screen_state = DEBUG_SCREEN;
             }
             else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET button
             {
@@ -47,6 +49,8 @@ void ui_control(uint16_t x, uint16_t y)
                 device_selection = PNP;  
                 draw_options_screen();
             }
+            rand_num_1 = x;
+            rand_num_2 = y;
             break;
         case OPTIONS_SCREEN :
             if(x>=0 && x<=119 && y>=0 && y<=119)                //button for number of averages options
@@ -179,6 +183,7 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
                 draw_button(130,100,80,50,WHITE,BLACK,"NO");
+                write_sd = 1;
                 emFile_1_Wakeup();
             }
             else if(x>=130 && x<=210 && y>=100 && y<=150)       //no button
@@ -186,6 +191,7 @@ void ui_control(uint16_t x, uint16_t y)
                 draw_button(30,100,80,50,WHITE,BLACK,"YES");  
                 draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
                 emFile_1_Sleep();
+                write_sd = 0;
             }
             break;
         case OPTION_CURVES_SCREEN :
@@ -250,7 +256,7 @@ void ui_control(uint16_t x, uint16_t y)
             if(x>=0 && x<=319 && y>=0 && y<=239)                  //return button
             {
                 screen_state = DEVICE_SELECTION_SCREEN;
-                draw_choose_screen();  
+
             }
 //            else                                                //draws coordinates of touch
 //            {
