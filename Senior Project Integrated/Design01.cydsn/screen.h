@@ -80,6 +80,9 @@
     #define PINK                0xFC18  ///< 255, 130, 198
     #define LIGHTBLUE           0x9E9F
     #define LIGHTRED            0xFCF3
+    #define PIZZATIME_1         0xBC05
+    #define PIZZATIME_2         0xB165
+    #define PIZZATIME_3         0xE6C9
 
     // Other definitions
     #define xstart              0

@@ -156,7 +156,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                 {
                     Id = single_test(j,Vgs_test_points[i]);
                 }
-                lkjunhgtvfr5else //if testing P-Type devices
+                else //if testing P-Type devices
                 {
                     Id = single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
                 }
@@ -225,6 +225,8 @@ int main(void)
     
     isr_Start();
     isr_Enable();
+    
+    isr_SetPriority(0);
     
     //Enabling VDACs and ADCs
     VDAC8_GS_Start();

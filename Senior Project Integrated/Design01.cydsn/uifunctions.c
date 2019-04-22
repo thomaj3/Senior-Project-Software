@@ -25,7 +25,7 @@ void ui_control(uint16_t x, uint16_t y)
         case DEVICE_SELECTION_SCREEN :
             if(x>=35 && x<=283 && y>=111 && y<=129)             //Debug center white
             {
-                draw_debug_screen(x, y);
+                draw_debug_warning_screen();
             }
             else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET button
             {
@@ -247,23 +247,33 @@ void ui_control(uint16_t x, uint16_t y)
             }
             break;
         case DEBUG_SCREEN :
-            if(x>=0 && x<=50 && y>=0 && y<=30)                  //return button
+            if(x>=0 && x<=319 && y>=0 && y<=239)                  //return button
             {
-                draw_choose_screen();  
                 screen_state = DEVICE_SELECTION_SCREEN;
+                draw_choose_screen();  
             }
-            else                                                //draws coordinates of touch
+//            else                                                //draws coordinates of touch
+//            {
+//                fill_rect(95,95,30,30,BLACK);
+//            
+//                char x_touch[10];
+//                char y_touch[10];
+//
+//                itoa(x, x_touch, 10);
+//                itoa(y, y_touch, 10);
+//                
+//                draw_string(100,110,WHITE,x_touch,1);
+//                draw_string(100,100,WHITE,y_touch,1);
+//            }
+            break;
+        case DEBUG_WARNING_SCREEN :
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                fill_rect(95,95,30,30,BLACK);
-            
-                char x_touch[10];
-                char y_touch[10];
-
-                itoa(x, x_touch, 10);
-                itoa(y, y_touch, 10);
-                
-                draw_string(100,110,WHITE,x_touch,1);
-                draw_string(100,100,WHITE,y_touch,1);
+                draw_choose_screen();
+            }
+            else if(x>=100 && x<=180 && y>=100 && y<=150)
+            {
+                draw_debug_screen(x, y);
             }
             break;
     }

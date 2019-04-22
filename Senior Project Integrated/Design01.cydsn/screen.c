@@ -11,6 +11,7 @@
 #include "math.h"
 #include "font.h"
 #include "uifunctions.h"
+#include<time.h> 
 
 //Initialization command/data
 static const uint8_t initcmd[] = {
@@ -292,6 +293,51 @@ void draw_line(int16_t x0, int16_t y0, int16_t x1, int16_t y1,
     {
         write_line(x0, y0, x1, y1, color);
     }
+}
+
+void fill_circle_helper(int16_t x0, int16_t y0, int16_t r,
+  uint8_t corners, int16_t delta, uint16_t color) {
+
+    int16_t f     = 1 - r;
+    int16_t ddF_x = 1;
+    int16_t ddF_y = -2 * r;
+    int16_t x     = 0;
+    int16_t y     = r;
+    int16_t px    = x;
+    int16_t py    = y;
+
+    delta++; // Avoid some +1's in the loop
+
+    while(x < y) {
+        if (f >= 0) {
+            y--;
+            ddF_y += 2;
+            f     += ddF_y;
+        }
+        x++;
+        ddF_x += 2;
+        f     += ddF_x;
+        // These checks avoid double-drawing certain lines, important
+        // for the SSD1306 library which has an INVERT drawing mode.
+        if(x < (y + 1)) {
+            if(corners & 1) drawFastVLine(x0+x, y0-y, 2*y+delta, color);
+            if(corners & 2) drawFastVLine(x0-x, y0-y, 2*y+delta, color);
+        }
+        if(y != py) {
+            if(corners & 1) drawFastVLine(x0+py, y0-px, 2*px+delta, color);
+            if(corners & 2) drawFastVLine(x0-py, y0-px, 2*px+delta, color);
+            py = y;
+        }
+        px = x;
+    }
+}
+
+void fill_circle(int16_t x0, int16_t y0, int16_t r,
+        uint16_t color) {
+    //startWrite();
+    drawFastVLine(x0, y0-r, 2*r+1, color);
+    fill_circle_helper(x0, y0, r, 3, 0, color);
+    //endWrite();
 }
 
 void draw_button(int16_t x, int16_t y, int16_t w, int16_t h, 
@@ -586,7 +632,7 @@ void draw_options_grid_screen()
     draw_button(0,219,239,20,WHITE,BLACK,"PLOTTING GRID OPTIONS SCREEN");
     
     char temp[] = "ENABLE GRID OVERLAY FOR PLOT SCREEN";
-    draw_button(0,170,239,10,WHITE,BLACK,temp);
+    draw_button(0,170,239,20,WHITE,BLACK,temp);
     
     if(draw_grid == 1)
     {
@@ -613,26 +659,93 @@ void draw_options_grid_screen()
 //should be changed into easter egg screen when finished
 void draw_debug_screen(uint16_t x, uint16_t y)
 {
-    fill_screen(BLACK);
+    fill_screen(WHITE);
     
     screen_state = DEBUG_SCREEN;
     
-    char x_touch[10];
-    char y_touch[10];
-
-    itoa(x, x_touch, 10);
-    itoa(y, y_touch, 10);
-    
-    draw_string(100,110,WHITE,x_touch,1);
-    draw_string(100,100,WHITE,y_touch,1);
-    
-    draw_string(100,200,WHITE,"TOUCH COORDINATES",1);
-    
-    draw_string(50,150,WHITE,"TEST",6);
-    
-    draw_button(150,40,119,70,WHITE,BLACK,"SETTLING TIME OPTIONS");
-    
     //return button
     //DO NOT TOUCH!!
-    draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
+    //draw_button(0,0,50,30,BLACK,WHITE,"RETURN");
+    
+//    char x_touch[10];
+//    char y_touch[10];
+//
+//    itoa(x, x_touch, 10);
+//    itoa(y, y_touch, 10);
+//    
+//    draw_string(100,110,WHITE,x_touch,1);
+//    draw_string(100,100,WHITE,y_touch,1);
+//    
+//    draw_string(100,200,WHITE,"TOUCH COORDINATES",1);
+//    
+//    draw_string(50,150,WHITE,"TEST",6);
+//    
+//    draw_button(150,40,119,70,WHITE,BLACK,"SETTLING TIME OPTIONS");
+    draw_string(5,230,BLACK,"MAKING",1);
+    draw_string(5,222,BLACK,"DOUGH",1);
+    fill_circle(159,119,110,PIZZATIME_1);
+    fill_rect(0,220,80,19,WHITE);
+    draw_string(5,230,BLACK,"APPLYING",1);
+    draw_string(5,222,BLACK,"SAUCE",1);
+    fill_circle(159,119,95,PIZZATIME_2);
+    fill_rect(0,220,80,19,WHITE);
+    draw_string(5,230,BLACK,"YUMMY",1);
+    draw_string(5,222,BLACK,"CHEESE",1);
+    fill_circle(159,119,90,PIZZATIME_3);
+    fill_rect(0,220,80,19,WHITE);
+    draw_string(5,230,BLACK,"ADDING",1);
+    draw_string(5,222,BLACK,"TOPPINGS",1);   
+    fill_circle(130,84,10,PIZZATIME_2);
+    fill_circle(115,148,10,PIZZATIME_2);
+    fill_circle(184,132,10,PIZZATIME_2);
+    fill_circle(92,113,10,PIZZATIME_2);
+    fill_circle(205,98,10,PIZZATIME_2);
+    fill_circle(148,116,10,PIZZATIME_2);
+    fill_circle(184,68,10,PIZZATIME_2);
+    fill_circle(153,54,10,PIZZATIME_2);
+    fill_circle(174,189,10,PIZZATIME_2);
+    fill_circle(140,168,10,PIZZATIME_2);
+    fill_circle(208,154,10,PIZZATIME_2);
+    fill_rect(0,220,80,19,WHITE);
+    
+    int time = 1000;
+    int text_color[] = {BLUE, GREEN, RED, ORANGE, BLACK, CYAN, PINK, LIGHTGREY, OLIVE, GREENYELLOW};
+    
+    for(;;)
+    {
+        srand(x*y); 
+        int x = rand() % 231;
+        int y = rand() % 236;
+        int size = rand() % 4;
+        int rand_color = rand() % 10;
+        draw_string(x,y,text_color[rand_color],"PIZZA TIME",size);
+        
+        CyDelay(time);
+        time = time-10;
+        if(time < 1)
+        {
+            time = 1;
+        }
+        if(screen_state == 0)
+        {
+            break;
+        }
+    }
+}
+
+void draw_debug_warning_screen()
+{
+    screen_state = DEBUG_WARNING_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_button(0,219,239,20,WHITE,BLACK,"WARNING");
+    char temp[] = "THERE IS NO WAY OUT OF THE NEXT SCREEN BESIDES A HARD RESET. DO YOU WISH TO CONTINUE";
+    draw_button(0,170,239,10,WHITE,BLACK,temp);
+    
+    draw_button(100,100,80,50,LIGHTBLUE,BLACK,"YES");
+    
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
 }
