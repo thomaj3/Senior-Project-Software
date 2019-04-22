@@ -9,13 +9,18 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-// How to read
+// font array holds the font being used in the program
+// How to read font array
+
 //  // Character, integer code
 //  # of array indecies to next number
 
 //  # of pixels in line 0, 
 //	(index of pixels to draw from 0-4),
-//	# of pixels in line 1...
+//	# of pixels in line 1,
+//  ...
+//  # of pixels in line 6,
+//  (index of pixels to draw from 0-4),
 
 //  // Character, integer code...
 
@@ -707,6 +712,13 @@ static const uint8_t font[] =
     0
 };
 
+//****************************************draw_character***************************************//
+//                                                                                             //
+//                                                                                             //
+//              Draws a single character to the screen using font array                        //
+//                                                                                             //
+//                                                                                             //
+//****************************************draw_character***************************************//
 void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character, uint8_t font_scale)
 {
     uint16_t index = 1;
@@ -717,12 +729,15 @@ void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character, ui
         index = index + font[index] + 1;
     }
     
-    index = index+1;
+    index = index+1;    //increments index to be in proper position for reading character pixels
+    
+    //changes x and y coordinates from being center of char to bottom left
     y = y-2*font_scale;
     x = x-2*font_scale;
-    uint8_t height = font[0];
     
-    //reads through array, and changes pixels to ddraw character    
+    uint8_t height = font[0];   //reads font height from font array
+    
+    //reads through array, and changes pixels to draw character    
     for(int i=0; i<height; i++)
     {
         for(int j=0; j<font[index]; j++)
@@ -734,15 +749,26 @@ void draw_character(int16_t x, int16_t y, uint16_t color, uint16_t character, ui
     }
 }
 
+//*****************************************draw_string*****************************************//
+//                                                                                             //
+//                                                                                             //
+//                   Draws a full string to the screen using draw_character                    //
+//                                                                                             //
+//                                                                                             //
+//*****************************************draw_string*****************************************//
 void draw_string(int16_t x, int16_t y, uint16_t color, char string[], uint8_t font_scale)
 {
-    int16_t x_coor = x;
+    int16_t x_coor = x;     //copies x coordinate to save original for wrapping
     
+    //constrains font scaling. Cannot make a font of 0, and font of 8+
+    //would not be useful
     if(font_scale<1 || font_scale>8)
     {
         font_scale = 1;   
     }
     
+    //reads through char array using pointer until null character. Prints each character to screen
+    //uses ascii code for characters
     while(*string != 0)
     {
         char g = *string;
@@ -865,13 +891,16 @@ void draw_string(int16_t x, int16_t y, uint16_t color, char string[], uint8_t fo
                 break;
         }
         
-        x_coor = x_coor+7*font_scale;
+        x_coor = x_coor+7*font_scale;   //increments x coordinate for next char
+        
+        //if next char will be placed partially or fully off screen
+        //goes to a new line
         if (x_coor>316)
         {
             x_coor = x;
             y = y-9;
         }
         
-        string = string+1;
+        string = string+1;  //increments char array pointer
     }
 }

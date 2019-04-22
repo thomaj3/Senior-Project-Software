@@ -1,5 +1,5 @@
 // Steven Andresen
-// Senior Project Fall 2018
+// Senior Project Fall 2018-2019
 
 #include "project.h"
 #include "screen.h"
@@ -12,7 +12,7 @@
 #include "font.h"
 #include "uifunctions.h"
 
-// Initialization command/data
+//Initialization command/data
 static const uint8_t initcmd[] = {
   0xEF, 3, 0x03, 0x80, 0x02,
   0xCF, 3, 0x00, 0xC1, 0x30,
@@ -326,6 +326,7 @@ void draw_button(int16_t x, int16_t y, int16_t w, int16_t h,
     //adds null character to end of string
     the_string[string_length] = 0;
     
+    //if the string can fit in the button in one line
     if(string_length*7<w)
     {
         //gets starting x-coord. of string
@@ -334,6 +335,9 @@ void draw_button(int16_t x, int16_t y, int16_t w, int16_t h,
         //prints string to center of button rectangle
         draw_string(pixel_start,rect_center_y-1,text_color,the_string,1);
     }
+    //if the string takes more than one line to fit in the button
+    //NOTE! right now this only works for 2 lines. It should be able
+    //to be addapted for multiple lines easily
     else if(string_length*7>w)
     {
         int button_character_width = w/7-1;
@@ -433,6 +437,8 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     
     //DO NOT TOUCH! without having the string be separate from
     //the draw_button function, it will write "STOPH"
+    //might be fixed now, added null char to end of recreated string in draw_button
+    //don't want to tempt fate by changing this
     char temp[] = "STOP";
     
     draw_button(130,209,60,30,RED,BLACK,temp);
@@ -469,6 +475,8 @@ void draw_options_screen()
     
     //need temp variables for strings otherwise it reads
     //into the next string upon returning from an option screen
+    //might be fixed now, added null char to end of recreated string in draw_button
+    //don't want to tempt fate by changing this
     char temp1[] = "NUMBER OF AVERAGES";
     char temp2[] = "SD CARD OPTIONS";
     char temp3[] = "NUMBER OF CURVES";
@@ -602,6 +610,7 @@ void draw_options_grid_screen()
 }
 
 //screen used for debugging. Feel free to change as needed, keep return button
+//should be changed into easter egg screen when finished
 void draw_debug_screen(uint16_t x, uint16_t y)
 {
     fill_screen(BLACK);
@@ -624,5 +633,6 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     draw_button(150,40,119,70,WHITE,BLACK,"SETTLING TIME OPTIONS");
     
     //return button
+    //DO NOT TOUCH!!
     draw_button(0,0,50,30,WHITE,BLACK,"RETURN");
 }

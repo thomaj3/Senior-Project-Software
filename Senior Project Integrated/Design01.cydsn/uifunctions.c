@@ -27,22 +27,22 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_debug_screen(x, y);
             }
-            else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET
+            else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET button
             {
                 device_selection = NMOS;
                 draw_options_screen();
             }
-            else if(x>=10 && x<=149 && y>=131 && y<=230)        //NPN
+            else if(x>=10 && x<=149 && y>=131 && y<=230)        //NPN button
             {
                 device_selection = NPN;    
                 draw_options_screen();
             }
-            else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET
+            else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET button
             {
                 device_selection = PMOS;     
                 draw_options_screen();
             }
-            else if(x>=171 && x<=310 && y>=131 && y<=230)        //PNP
+            else if(x>=171 && x<=310 && y>=131 && y<=230)        //PNP button
             {
                 device_selection = PNP;  
                 draw_options_screen();
@@ -85,7 +85,7 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_options_screen();
             }
-            else if(x>=80 && x<=150 && y>=150 && y<=200)  //+1
+            else if(x>=80 && x<=150 && y>=150 && y<=200)  //+1 button
             {
                 num_avg = num_avg+1;
                 if(num_avg>1000)
@@ -99,7 +99,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(20,105,WHITE,avg_num,2);
             }
-            else if(x>=80 && x<=150 && y>=80 && y<=130)   //+10                 
+            else if(x>=80 && x<=150 && y>=80 && y<=130)   //+10 button         
             {
                 num_avg = num_avg+10;
                 if(num_avg>1000)
@@ -113,7 +113,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(20,105,WHITE,avg_num,2);
             }
-            else if(x>=80 && x<=150 && y>=10 && y<=60)  //+100                  
+            else if(x>=80 && x<=150 && y>=10 && y<=60)  //+100 button                  
             {
                 num_avg = num_avg+100;
                 if(num_avg>1000)
@@ -127,7 +127,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(20,105,WHITE,avg_num,2);
             }
-            else if(x>=160 && x<=230 && y>=150 && y<=200)  //-1
+            else if(x>=160 && x<=230 && y>=150 && y<=200)  //-1 button
             {
                 num_avg = num_avg-1;
                 if(num_avg<1)
@@ -141,7 +141,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(20,105,WHITE,avg_num,2);
             }
-            else if(x>=160 && x<=230 && y>=80 && y<=130)   //-10                 
+            else if(x>=160 && x<=230 && y>=80 && y<=130)   //-10 button                 
             {
                 num_avg = num_avg-10;
                 if(num_avg<1)
@@ -155,7 +155,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(20,105,WHITE,avg_num,2);
             }
-            else if(x>=160 && x<=230 && y>=10 && y<=60)  //-100                  
+            else if(x>=160 && x<=230 && y>=10 && y<=60)  //-100 button                  
             {
                 num_avg = num_avg-100;
                 if(num_avg<1)
@@ -193,7 +193,7 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_options_screen();
             }
-            else if(x>=130 && x<=200 && y>=30 && y<=100)                  
+            else if(x>=130 && x<=200 && y>=30 && y<=100)    //decrease button                 
             {
                 if(curve_nums>1)
                 {
@@ -210,7 +210,7 @@ void ui_control(uint16_t x, uint16_t y)
                 
                 draw_string(50,105,WHITE,num_curve,3);
             }
-            else if(x>=130 && x<=200 && y>=120 && y<=190)                  //return button
+            else if(x>=130 && x<=200 && y>=120 && y<=190)   //increase button
             {
                 if(curve_nums<6)
                 {
