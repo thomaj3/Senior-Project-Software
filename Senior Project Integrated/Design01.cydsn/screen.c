@@ -739,7 +739,7 @@ void draw_debug_warning_screen()
     
     fill_screen(BLACK);
     
-    draw_button(0,219,239,20,WHITE,BLACK,"WARNING");
+    draw_button(0,219,239,30,WHITE,BLACK,"WARNING");
     char temp[] = "THERE IS NO WAY OUT OF THE NEXT SCREEN BESIDES A HARD RESET. DO YOU WISH TO CONTINUE";
     draw_button(0,170,239,10,WHITE,BLACK,temp);
     

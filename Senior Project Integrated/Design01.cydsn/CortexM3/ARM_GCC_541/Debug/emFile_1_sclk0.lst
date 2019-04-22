@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 1
 
 
    1              		.syntax unified
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
   28:Generated_Source\PSoC5/emFile_1_sclk0.c **** *
   29:Generated_Source\PSoC5/emFile_1_sclk0.c **** * Summary:
   30:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  Assign a new value to the digital port's data output register.  
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 2
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 2
 
 
   31:Generated_Source\PSoC5/emFile_1_sclk0.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
   52:Generated_Source\PSoC5/emFile_1_sclk0.c **** * 
   53:Generated_Source\PSoC5/emFile_1_sclk0.c **** * Parameters:  
   54:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  mode:  Change the pins to one of the following drive modes.
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 3
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 3
 
 
   55:Generated_Source\PSoC5/emFile_1_sclk0.c **** *
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
   79:Generated_Source\PSoC5/emFile_1_sclk0.c **** * Summary:
   80:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  form.
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 4
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 4
 
 
   82:Generated_Source\PSoC5/emFile_1_sclk0.c **** *
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  110:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  Returns the current value assigned to the Digital Port's data output register
  111:Generated_Source\PSoC5/emFile_1_sclk0.c **** *  
  112:Generated_Source\PSoC5/emFile_1_sclk0.c **** *******************************************************************************/
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 5
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 5
 
 
  113:Generated_Source\PSoC5/emFile_1_sclk0.c **** uint8 emFile_1_sclk0_ReadDataReg(void) 
@@ -275,15 +275,15 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  144 000b 01       		.uleb128 0x1
  145 000c 54000000 		.4byte	.LASF20
  146 0010 0C       		.byte	0xc
- 147 0011 0C010000 		.4byte	.LASF21
- 148 0015 57010000 		.4byte	.LASF22
+ 147 0011 80010000 		.4byte	.LASF21
+ 148 0015 E2000000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 3F020000 		.4byte	.LASF0
+ 155 0028 3A020000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
@@ -291,30 +291,30 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 26020000 		.4byte	.LASF2
+ 163 0036 21020000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d F9000000 		.4byte	.LASF3
+ 167 003d 6D010000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 6
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 6
 
 
  170 0043 05       		.byte	0x5
- 171 0044 36020000 		.4byte	.LASF4
+ 171 0044 31020000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b E7000000 		.4byte	.LASF5
+ 175 004b 5B010000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
- 179 0052 13020000 		.4byte	.LASF6
+ 179 0052 0E020000 		.4byte	.LASF6
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 F7010000 		.4byte	.LASF7
+ 183 0059 ED010000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -322,9 +322,9 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  188 0064 02       		.uleb128 0x2
  189 0065 04       		.byte	0x4
  190 0066 07       		.byte	0x7
- 191 0067 D5010000 		.4byte	.LASF8
+ 191 0067 CB010000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c 30020000 		.4byte	.LASF12
+ 193 006c 2B020000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 E401     		.2byte	0x1e4
  196 0073 2C000000 		.4byte	0x2c
@@ -335,20 +335,20 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  201 007e 02       		.uleb128 0x2
  202 007f 08       		.byte	0x8
  203 0080 04       		.byte	0x4
- 204 0081 50010000 		.4byte	.LASF10
+ 204 0081 C4010000 		.4byte	.LASF10
  205 0085 02       		.uleb128 0x2
  206 0086 01       		.byte	0x1
  207 0087 08       		.byte	0x8
- 208 0088 21020000 		.4byte	.LASF11
+ 208 0088 1C020000 		.4byte	.LASF11
  209 008c 04       		.uleb128 0x4
- 210 008d E2000000 		.4byte	.LASF13
+ 210 008d 09020000 		.4byte	.LASF13
  211 0091 02       		.byte	0x2
  212 0092 8E02     		.2byte	0x28e
  213 0094 98000000 		.4byte	0x98
  214 0098 05       		.uleb128 0x5
  215 0099 6B000000 		.4byte	0x6b
  216 009d 06       		.uleb128 0x6
- 217 009e E2010000 		.4byte	.LASF14
+ 217 009e D8010000 		.4byte	.LASF14
  218 00a2 01       		.byte	0x1
  219 00a3 27       		.byte	0x27
  220 00a4 00000000 		.4byte	.LFB0
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  224 00ae CF000000 		.4byte	0xcf
  225 00b2 07       		.uleb128 0x7
  226 00b3 00000000 		.4byte	.LASF16
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 7
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 7
 
 
  227 00b7 01       		.byte	0x1
@@ -374,7 +374,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  237 00cd 53       		.byte	0x53
  238 00ce 00       		.byte	0
  239 00cf 06       		.uleb128 0x6
- 240 00d0 34010000 		.4byte	.LASF15
+ 240 00d0 A8010000 		.4byte	.LASF15
  241 00d4 01       		.byte	0x1
  242 00d5 45       		.byte	0x45
  243 00d6 00000000 		.4byte	.LFB1
@@ -383,7 +383,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  246 00df 9C       		.byte	0x9c
  247 00e0 F4000000 		.4byte	0xf4
  248 00e4 07       		.uleb128 0x7
- 249 00e5 0E020000 		.4byte	.LASF17
+ 249 00e5 04020000 		.4byte	.LASF17
  250 00e9 01       		.byte	0x1
  251 00ea 45       		.byte	0x45
  252 00eb 6B000000 		.4byte	0x6b
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  281 0005 13       		.uleb128 0x13
  282 0006 0B       		.uleb128 0xb
  283 0007 03       		.uleb128 0x3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 8
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 8
 
 
  284 0008 0E       		.uleb128 0xe
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  338 003e 2E       		.uleb128 0x2e
  339 003f 01       		.byte	0x1
  340 0040 3F       		.uleb128 0x3f
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 9
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 9
 
 
  341 0041 19       		.uleb128 0x19
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  395 0078 3F       		.uleb128 0x3f
  396 0079 19       		.uleb128 0x19
  397 007a 03       		.uleb128 0x3
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 10
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 10
 
 
  398 007b 0E       		.uleb128 0xe
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  452 000a 04       		.byte	0x4
  453 000b 00       		.byte	0
  454 000c 0000     		.2byte	0
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 11
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 11
 
 
  455 000e 0000     		.2byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  492      676E6564 
  492      20636861 
  492      7200
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 12
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 12
 
 
  493              	.LASF20:
@@ -677,96 +677,96 @@ ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 1
  496      74696F6E 
  496      2D736563 
  496      74696F6E 
- 497              	.LASF13:
- 498 00e2 72656738 		.ascii	"reg8\000"
- 498      00
- 499              	.LASF5:
- 500 00e7 6C6F6E67 		.ascii	"long unsigned int\000"
- 500      20756E73 
- 500      69676E65 
- 500      6420696E 
- 500      7400
- 501              	.LASF3:
- 502 00f9 73686F72 		.ascii	"short unsigned int\000"
- 502      7420756E 
- 502      7369676E 
- 502      65642069 
- 502      6E7400
- 503              	.LASF21:
- 504 010c 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_sclk0.c\000"
- 504      72617465 
- 504      645F536F 
- 504      75726365 
- 504      5C50536F 
- 505              	.LASF15:
- 506 0134 656D4669 		.ascii	"emFile_1_sclk0_SetDriveMode\000"
- 506      6C655F31 
- 506      5F73636C 
- 506      6B305F53 
- 506      65744472 
- 507              	.LASF10:
- 508 0150 646F7562 		.ascii	"double\000"
- 508      6C6500
- 509              	.LASF22:
- 510 0157 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 510      73657273 
- 510      5C6C6567 
- 510      6F635C44 
- 510      6F63756D 
- 511 0184 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 511      72205072 
- 511      6F6A6563 
- 511      745C5365 
- 511      6E696F72 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccEy2Myz.s 			page 13
+ 497              	.LASF22:
+ 498 00e2 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
+ 498      73657273 
+ 498      5C4A6163 
+ 498      6F622D4C 
+ 498      6170746F 
+ 499 0110 656E696F 		.ascii	"enior Project Stuff Backup - Copy\\Senior Project I"
+ 499      72205072 
+ 499      6F6A6563 
+ 499      74205374 
+ 499      75666620 
+ 500 0142 6E746567 		.ascii	"ntegrated\\Design01.cydsn\000"
+ 500      72617465 
+ 500      645C4465 
+ 500      7369676E 
+ 500      30312E63 
+ 501              	.LASF5:
+ 502 015b 6C6F6E67 		.ascii	"long unsigned int\000"
+ 502      20756E73 
+ 502      69676E65 
+ 502      6420696E 
+ 502      7400
+ 503              	.LASF3:
+ 504 016d 73686F72 		.ascii	"short unsigned int\000"
+ 504      7420756E 
+ 504      7369676E 
+ 504      65642069 
+ 504      6E7400
+ 505              	.LASF21:
+ 506 0180 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_sclk0.c\000"
+ 506      72617465 
+ 506      645F536F 
+ 506      75726365 
+ 506      5C50536F 
+ 507              	.LASF15:
+ 508 01a8 656D4669 		.ascii	"emFile_1_sclk0_SetDriveMode\000"
+ 508      6C655F31 
+ 508      5F73636C 
+ 508      6B305F53 
+ 508      65744472 
+ 509              	.LASF10:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccMoxwC6.s 			page 13
 
 
- 512 01b5 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 512      7420496E 
- 512      74656772 
- 512      61746564 
- 512      5C446573 
- 513              	.LASF8:
- 514 01d5 756E7369 		.ascii	"unsigned int\000"
- 514      676E6564 
- 514      20696E74 
- 514      00
- 515              	.LASF14:
- 516 01e2 656D4669 		.ascii	"emFile_1_sclk0_Write\000"
- 516      6C655F31 
- 516      5F73636C 
- 516      6B305F57 
- 516      72697465 
- 517              	.LASF7:
- 518 01f7 6C6F6E67 		.ascii	"long long unsigned int\000"
- 518      206C6F6E 
- 518      6720756E 
- 518      7369676E 
- 518      65642069 
- 519              	.LASF17:
- 520 020e 6D6F6465 		.ascii	"mode\000"
+ 510 01c4 646F7562 		.ascii	"double\000"
+ 510      6C6500
+ 511              	.LASF8:
+ 512 01cb 756E7369 		.ascii	"unsigned int\000"
+ 512      676E6564 
+ 512      20696E74 
+ 512      00
+ 513              	.LASF14:
+ 514 01d8 656D4669 		.ascii	"emFile_1_sclk0_Write\000"
+ 514      6C655F31 
+ 514      5F73636C 
+ 514      6B305F57 
+ 514      72697465 
+ 515              	.LASF7:
+ 516 01ed 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 516      206C6F6E 
+ 516      6720756E 
+ 516      7369676E 
+ 516      65642069 
+ 517              	.LASF17:
+ 518 0204 6D6F6465 		.ascii	"mode\000"
+ 518      00
+ 519              	.LASF13:
+ 520 0209 72656738 		.ascii	"reg8\000"
  520      00
  521              	.LASF6:
- 522 0213 6C6F6E67 		.ascii	"long long int\000"
+ 522 020e 6C6F6E67 		.ascii	"long long int\000"
  522      206C6F6E 
  522      6720696E 
  522      7400
  523              	.LASF11:
- 524 0221 63686172 		.ascii	"char\000"
+ 524 021c 63686172 		.ascii	"char\000"
  524      00
  525              	.LASF2:
- 526 0226 73686F72 		.ascii	"short int\000"
+ 526 0221 73686F72 		.ascii	"short int\000"
  526      7420696E 
  526      7400
  527              	.LASF12:
- 528 0230 75696E74 		.ascii	"uint8\000"
+ 528 022b 75696E74 		.ascii	"uint8\000"
  528      3800
  529              	.LASF4:
- 530 0236 6C6F6E67 		.ascii	"long int\000"
+ 530 0231 6C6F6E67 		.ascii	"long int\000"
  530      20696E74 
  530      00
  531              	.LASF0:
- 532 023f 7369676E 		.ascii	"signed char\000"
+ 532 023a 7369676E 		.ascii	"signed char\000"
  532      65642063 
  532      68617200 
  533              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

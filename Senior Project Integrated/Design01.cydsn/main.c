@@ -42,6 +42,7 @@ void set_transistor_test_type(unsigned char device_selection)
 //Conducts a test for a singular Vds and Vgs
 double single_test(unsigned char Vds, unsigned char Vgs)
 {
+    ADC_SAR_1_Wakeup();
     double Output;
     double Output_avg;
     int i;
@@ -53,6 +54,7 @@ double single_test(unsigned char Vds, unsigned char Vgs)
 	//waiting until conversion is over
     ADC_SAR_1_StopConvert();
     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
+    ADC_SAR_1_Sleep();
     return Output;
 }
 
@@ -60,6 +62,7 @@ double single_test_preset_vds(unsigned char Vgs)
 {
     double Output;
     
+    ADC_SAR_1_Wakeup();
     VDAC8_GS_SetValue(Vgs);
     CyDelay(SETTLING_WAIT_TIME);
     ADC_SAR_1_StartConvert();
@@ -67,6 +70,7 @@ double single_test_preset_vds(unsigned char Vgs)
 	//waiting until conversion is over
     ADC_SAR_1_StopConvert();
     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
+    ADC_SAR_1_Sleep();
     return Output;
 }
     
@@ -80,7 +84,6 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
     double          Id=0;         
 	//The Drain Current | Id_real = Id/100
-    ADC_SAR_1_Wakeup();
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     VDAC8_GS_SetValue(0);
     for(Vgs = 0; Vgs < Vgs_max; Vgs++)
@@ -89,11 +92,9 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
         if(Id > ID_TH)
         {
             //Once Id > 1 mV transistor is "on" and we can return Vgs as Vth
-            ADC_SAR_1_Sleep();
             return Vgs;
         }
     }
-    ADC_SAR_1_Sleep();
     return 0; //If a Vth cannot be found
 }
 
@@ -106,7 +107,6 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
     double          Id; 
 	//The Drain Current | Id_real = Id/100
-    ADC_SAR_1_Wakeup();
     VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
     for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
@@ -114,13 +114,11 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
         Id = single_test_preset_vds(Vgs);
         if (Id >= ID_MAX)
         {
-            ADC_SAR_1_Sleep();
             VDAC8_DS_SetValue(0);
             VDAC8_GS_SetValue(0);
             return Vgs-1; //Stop stepping once max current is hit
         }
     }
-    ADC_SAR_1_Sleep();
     VDAC8_DS_SetValue(0);
     VDAC8_GS_SetValue(0);
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
@@ -141,7 +139,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
     for(i = 0; i < curve_nums; i++)
     {
         write_header_info("data.txt",device_selection,i,Vgs_double); 
-        ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
+        //ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j <VDAC_D_C_MAX; j++)
         {
             if(!screen_state)
@@ -174,7 +172,6 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             y_pixel_prev = y_pixel;
             x_pixel_prev = x_pixel;
             }
-        ADC_SAR_1_Sleep(); //sleep to reset ADC between curves
         switch(device_selection)
         {
             case 0:
@@ -303,9 +300,13 @@ int main(void)
         {
             Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
         }
-        
-//        fill_screen(BLACK);
-        create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
+        if (Vth == 0)
+        {
+            fill_screen(BLACK);
+            draw_string(100,150,"NO VTH FOUND",WHITE);
+            create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
+            CyDelay(200);
+        }
             
         Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
         Vgs_step = (Vgs_max - Vth)/(curve_nums-1); //Creating the step size for linearlly spaced
@@ -349,9 +350,7 @@ int main(void)
         y_max_mA = 0.0;
         for (i = 0; i <num_avg;i++)
         {
-            ADC_SAR_1_Wakeup();
             y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
-            ADC_SAR_1_Sleep(); //Reset SAR from previous tests
         }
         y_max_mA /= num_avg;
         y_max_calc = (int) (y_max_mA);
@@ -359,8 +358,6 @@ int main(void)
         draw_coordinates(y_max_calc,device_selection);
         run_test(y_max_calc,Vgs_test_points,Vgs_points_double,device_selection);
         
-        
-        ADC_SAR_1_Sleep();
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
         //fillScreen(WHITE);
