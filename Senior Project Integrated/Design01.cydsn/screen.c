@@ -10,8 +10,7 @@
 #include "stdlib.h"
 #include "math.h"
 #include "font.h"
-#include "uifunctions.h"
-#include<time.h> 
+#include "uifunctions.h" 
 
 //Initialization command/data
 static const uint8_t initcmd[] = {
