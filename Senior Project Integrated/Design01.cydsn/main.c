@@ -57,12 +57,12 @@ double single_test(unsigned char Vds, unsigned char Vgs)
     ADC_SAR_1_StopConvert();
     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
     ADC_SAR_1_Sleep();
-//    if(cooldown)
-//    {
-//        VDAC8_DS_SetValue(0);
-//        VDAC8_GS_SetValue(0);
-//        CyDelay(10*SETTLING_WAIT_TIME);
-//    }
+    if(cooldown_time != 0)
+    {
+        VDAC8_DS_SetValue(0);
+        VDAC8_GS_SetValue(0);
+        CyDelay(cooldown_time*SETTLING_WAIT_TIME);
+    }
     return Output;
 }
 

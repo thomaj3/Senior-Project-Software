@@ -13,6 +13,7 @@
     extern int rand_num_1;
     extern int rand_num_2;
     extern int cooldown_time;
+    extern int vds_high;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1
@@ -24,6 +25,7 @@
     #define DEBUG_SCREEN                7
     #define OPTIONS_SCREEN_2            8
     #define OPTION_COOLDOWN_SCREEN      9
+    #define OPTION_VDS_SCREEN           10
     #define NMOS                        0
     #define NPN                         1
     #define PMOS                        2

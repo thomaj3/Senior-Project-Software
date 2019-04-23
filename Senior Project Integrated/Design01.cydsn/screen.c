@@ -552,7 +552,7 @@ void draw_more_options_screen()
     //into the next string upon returning from an option screen
     //might be fixed now, added null char to end of recreated string in draw_button
     //don't want to tempt fate by changing this
-    //char temp1[] = "NUMBER OF AVERAGES";
+    char temp1[] = "VDS OPTIONS";
     char temp2[] = "PLOTTING GRID OPTIONS";
     //char temp3[] = "MORE OPTIONS";
     char temp4[] = "COOLDOWN TIME OPTIONS";
@@ -560,17 +560,17 @@ void draw_more_options_screen()
     char temp6[] = "RUN TEST";
     
     //draws buttons
-    //draw_button(0,0,119,119,LIGHTBLUE,BLACK,temp1);
+    draw_button(0,0,119,119,LIGHTBLUE,BLACK,temp1);
     draw_button(0,121,119,119,LIGHTRED,BLACK,temp2);
     //draw_button(121,0,119,119,LIGHTRED,BLACK,temp3);
     draw_button(121,121,119,119,LIGHTBLUE,BLACK,temp4);
-    fill_rect(0,0,241,119,WHITE);
+    fill_rect(121,0,119,119,WHITE);
     
     draw_button(241,0,79,119,WHITE,BLACK,temp5);
     draw_button(241,121,79,119,WHITE,BLACK,temp6);
     
     //creates lines to separate buttons
-    fill_rect(119,119,2,120,BLACK);
+    fill_rect(119,0,2,240,BLACK);
     fill_rect(0,119,320,2,BLACK);
     fill_rect(239,0,2,240,BLACK);
 }
@@ -717,6 +717,27 @@ void draw_options_cooldown_screen()
             draw_button(130,15,70,50,LIGHTBLUE,BLACK,"10");
             break;
     }
+    
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
+}
+
+void draw_vds_options_screen()
+{
+    screen_state = OPTION_VDS_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_button(0,219,239,20,WHITE,BLACK,"HIGHEST VDS TO TEST");
+    
+    draw_button(130,30,70,70,WHITE,BLACK,"DECREASE");
+    draw_button(130,120,70,70,WHITE,BLACK,"INCREASE");
+    
+    char num_vds[2];
+    itoa(vds_high, num_vds, 10);
+    
+    draw_string(50,105,WHITE,num_vds,3);
     
     //Return button with boundary
     draw_button(241,0,79,240,WHITE,BLACK,"RETURN");

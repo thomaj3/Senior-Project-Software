@@ -18,6 +18,7 @@ int draw_grid = 1;
 int rand_num_1 = 0;
 int rand_num_2 = 0;
 int cooldown_time = 0;
+int vds_high = 9;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -275,7 +276,11 @@ void ui_control(uint16_t x, uint16_t y)
 //            }
             break;
         case OPTIONS_SCREEN_2 :
-            if(x>=0 && x<=119 && y>=121 && y<=239)         //button for grid options
+            if(x>=0 && x<=119 && y>=0 && y<=119)                //button for number of averages options
+            {
+                draw_vds_options_screen(); 
+            }
+            else if(x>=0 && x<=119 && y>=121 && y<=239)         //button for grid options
             {
                 draw_options_grid_screen();
             }
@@ -341,6 +346,46 @@ void ui_control(uint16_t x, uint16_t y)
                 draw_button(40,85,70,50,WHITE,BLACK,"1");
                 draw_button(130,85,70,50,WHITE,BLACK,"2");
                 draw_button(85,155,70,50,LIGHTBLUE,BLACK,"NO COOLDOWN");
+            }
+            break;
+        case OPTION_VDS_SCREEN :
+            if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
+            {
+                draw_more_options_screen();
+            }
+            else if(x>=130 && x<=200 && y>=30 && y<=100)    //decrease button                 
+            {
+                if(vds_high>3)
+                {
+                    vds_high--;
+                }
+                else
+                {
+                    vds_high = 3;
+                }
+                fill_rect(40,95,60,30,BLACK);
+                
+                char num_vds[2];
+                itoa(vds_high, num_vds, 10);
+                
+                draw_string(50,105,WHITE,num_vds,3);
+            }
+            else if(x>=130 && x<=200 && y>=120 && y<=190)   //increase button
+            {
+                if(vds_high<9)
+                {
+                    vds_high++;
+                }
+                else
+                {
+                    vds_high = 9;
+                }
+                fill_rect(40,95,60,30,BLACK);
+                
+                char num_vds[2];
+                itoa(vds_high, num_vds, 10);
+                
+                draw_string(50,105,WHITE,num_vds,3);
             }
             break;
     }
