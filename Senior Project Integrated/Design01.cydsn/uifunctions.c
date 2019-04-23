@@ -9,17 +9,6 @@
 #include "font.h"
 #include "uifunctions.h"
 
-int screen_state = 0;
-int device_selection = -1;
-int curve_nums = 4;
-int write_sd = 1;
-int num_avg = 10;
-int draw_grid = 1;
-int rand_num_1 = 0;
-int rand_num_2 = 0;
-int cooldown_time = 0;
-int vds_high = 9;
-
 void ui_control(uint16_t x, uint16_t y)
 {
     //switch statement that controls the touchscreen
@@ -33,22 +22,38 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET button
             {
+                if (device_selection == -1)
+                {
+                    vds_high = 9;
+                }
                 device_selection = NMOS;
                 draw_options_screen();
             }
             else if(x>=10 && x<=149 && y>=131 && y<=230)        //NPN button
             {
-                device_selection = NPN;    
+                if (device_selection == -1)
+                {
+                    vds_high = 9;
+                }
+                device_selection = NPN;
                 draw_options_screen();
             }
             else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET button
             {
-                device_selection = PMOS;     
+                if (device_selection == -1)
+                {
+                    vds_high = 12;
+                }
+                device_selection = PMOS;
                 draw_options_screen();
             }
-            else if(x>=171 && x<=310 && y>=131 && y<=230)        //PNP button
+            else if(x>=171 && x<=310 && y>=131 && y<=230)       //PNP button
             {
-                device_selection = PNP;  
+                if (device_selection == -1)
+                {
+                    vds_high = 12;
+                }
+                device_selection = PNP;
                 draw_options_screen();
             }
             rand_num_1 = x;
@@ -372,20 +377,46 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=130 && x<=200 && y>=120 && y<=190)   //increase button
             {
-                if(vds_high<9)
+                if(device_selection < 2)
                 {
-                    vds_high++;
-                }
-                else
+                    if(vds_high<9)
+                    {
+                        vds_high++;
+                    }
+                    else
+                    {
+                        vds_high = 9;
+                    }
+                    fill_rect(40,95,60,30,BLACK);
+                    
+                    char num_vds[2];
+                    itoa(vds_high, num_vds, 10);
+                    
+                    draw_string(50,105,WHITE,num_vds,3);
+                } else
                 {
-                    vds_high = 9;
+                     if(vds_high<12)
+                    {
+                        vds_high++;
+                    }
+                    else
+                    {
+                        vds_high = 12;
+                    }
+                    fill_rect(40,95,60,30,BLACK);
+                    
+                    char num_vds[3];
+                    itoa(vds_high, num_vds, 10);
+                    
+                    draw_string(50,105,WHITE,num_vds,3);
                 }
-                fill_rect(40,95,60,30,BLACK);
-                
-                char num_vds[2];
-                itoa(vds_high, num_vds, 10);
-                
-                draw_string(50,105,WHITE,num_vds,3);
+            }
+            if(device_selection < 2)
+            {
+                vds_high_vdac_code = (int) (vds_high*256.0)/(4.096*3);
+            } else
+            {
+                vds_high_vdac_code = (int) (vds_high*256.0)/(4.096*4);
             }
             break;
     }

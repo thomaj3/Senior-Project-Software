@@ -437,14 +437,7 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     draw_line(30,10,220,10,WHITE); //draw x axis line
     draw_line(30,10,30,y_max_pixel+9,WHITE);//draw y axis line
     
-    if(device_selection < 2)
-    {
-        x_max_step = 189/9;
-    }
-    else
-    {
-        x_max_step = 189/15;
-    }
+    x_max_step = 189/vds_high;
     
     if((device_selection%2) == 0)
     {

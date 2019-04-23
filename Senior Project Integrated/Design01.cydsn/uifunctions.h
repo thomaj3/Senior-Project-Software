@@ -14,6 +14,7 @@
     extern int rand_num_2;
     extern int cooldown_time;
     extern int vds_high;
+    extern int vds_high_vdac_code;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1

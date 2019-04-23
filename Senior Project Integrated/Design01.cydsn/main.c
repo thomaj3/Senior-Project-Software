@@ -138,19 +138,27 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 
 //This function runs the main test, it intakes the y_max used to calculate the
 //pixels for line segments and the Vgs test points
-int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], unsigned char device_selection)
+int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], unsigned char device_selection, int SD_files_written)
 {
     int i,j,k;
     double Id;
     double Id_avg;
     char print_string[20];
+    char file_name[11]="data";
+    char SD_files_written_str[3];
     int y_pixel_prev, x_pixel_prev;
     int y_pixel, x_pixel;
     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
     
     for(i = 0; i < curve_nums; i++)
     {
-        write_header_info("data.txt",device_selection,i,Vgs_double); 
+        if(write_sd)
+        {
+            sprintf(SD_files_written_str,"%d",SD_files_written);
+            strcat(file_name,SD_files_written_str);
+            strcat(file_name,".txt");
+            write_header_info(file_name,device_selection,i,Vgs_double);
+        }
         //ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j <VDAC_D_C_MAX; j++)
         {
@@ -165,37 +173,45 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                 if(device_selection < 2) //if testing N-Type Devices
                 {
                     Id_avg += single_test(j,Vgs_test_points[i]);
-                }
-                else //if testing P-Type devices
+                } else //if testing P-Type devices
                 {
                     Id_avg += single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
                 }
             }
             Id_avg /= num_avg;
-            write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
+            if(write_sd)
+            {
+                write_data(file_name,Id_avg,j,device_selection);//update CSV File with new Id/Ic
+            }
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
-            x_pixel = (int) j;
+            if (device_selection < 2)
+            {
+                x_pixel = (int) j*(vds_high/9.0);
+            } else
+            {
+                x_pixel = (int) j*(vds_high/12);
+            }
             if (j > 0) //only draw a line if 2 points have been tested already
             {
                 draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
             }
             y_pixel_prev = y_pixel;
             x_pixel_prev = x_pixel;
-            }
+        }
         switch(device_selection)
         {
             case 0:
                 sprintf(print_string,"%5.3f V",Vgs_double[i]);
                 break;
             case 1:
-                sprintf(print_string,"%.3f MIL A",Vgs_double[i]);
+                sprintf(print_string,"%.3f MA",Vgs_double[i]);
                 break;
             case 2:
                 sprintf(print_string,"%6.3f V",Vgs_double[i]);
                 break;
             case 3:
-                sprintf(print_string,"%6.3f MIL A",Vgs_double[i]);
+                sprintf(print_string,"%6.3f MA",Vgs_double[i]);
                 break;
         }
         draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
@@ -248,6 +264,8 @@ int main(void)
     I2C_MasterWriteByte(0x00);   
     I2C_MasterSendStop();
     I2C_Stop();
+    
+    FS_Init();
         
     int return_code;    //Going to be used for error displays
     
@@ -256,7 +274,6 @@ int main(void)
     int k;  //used for for loop iterations
     
     double y_max_mA;                        //The highest plottable Id in mA    
-    double x_max_mV = 10000;                   //the highest plottable Vds in mV
     
     unsigned int Vth;      //VDAC code for the threshold voltage
     unsigned int Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA
@@ -267,33 +284,56 @@ int main(void)
     int y_max_calc;
     
     
-    unsigned char Vgs_step;                         //The stepping amount to create the Vgs test points
+    unsigned char Vgs_step;                             //The stepping amount to create the Vgs test points
     unsigned char Vgs_test_points[CURVE_NUM_MAX];       //The Vgs stepping points of ammount specified in settings.h
     
-    double Vgs_points_double[CURVE_NUM_MAX];                        //The actual Vgs output by DAC
+    double Vgs_points_double[CURVE_NUM_MAX];            //The actual Vgs output by DAC
     FS_FILE * pFile;
     int debug;
+    int SD_files_written = 0;
+    int device_selection_prev = -1;
+    
+    //global variable intializations
+    int screen_state = 0;
+    int device_selection = -1;
+    int curve_nums = 4;
+    int write_sd = 1;
+    int num_avg = 10;
+    int draw_grid = 1;
+    int rand_num_1 = 0;
+    int rand_num_2 = 0;
+    int cooldown_time = 0;
+    int vds_high = 9;
+    int vds_high_vdac_code = 188;
+
     
     
-    FS_Init();
-    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
-//    if (debug <= 0)
-//    {
-//        draw_string(100,80,WHITE,"NO MOUNT");
-//    }
-    pFile = FS_FOpen("test.txt", "+w");
-//    if (pFile == 0)
-//    {
-//        draw_string(100,100,WHITE,"NO OPEN");
-//    }
-    const char text[] = "Can Write";
-    FS_Write(pFile,text,strlen(text));
-    FS_FClose(pFile);
+//    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
+////    if (debug <= 0)
+////    {
+////        draw_string(100,80,WHITE,"NO MOUNT");
+////    }
+//    pFile = FS_FOpen("test.txt", "+w");
+////    if (pFile == 0)
+////    {
+////        draw_string(100,100,WHITE,"NO OPEN");
+////    }
+//    const char text[] = "Can Write";
+//    FS_Write(pFile,text,strlen(text));
+//    FS_FClose(pFile);
+
+    fill_screen(BLACK);
+    draw_string(130,150,"NOTE SD DATA WILL BE OVERWRITTEN",WHITE);
+    draw_string(130,140,"BACKUP SD DATA BEFORE CONTINUING",WHITE);
+    CyDelay(300);
     
     for(;;)
-    { 
+    {        
+        if (device_selection != -1)
+        {
+            device_selection_prev = device_selection;
+        }
         draw_choose_screen();
-        
         for(;;)
         {
             if(screen_state == 2)
@@ -305,7 +345,23 @@ int main(void)
                 draw_choose_screen();
             }
         }
-
+        if(write_sd)
+        {
+            SD_files_written++;
+        }
+        if(((device_selection % 2) != (device_selection_prev %2)) & (device_selection_prev != -1)) 
+        //if the previous test is not the same N or P type device and it is at least the 2nd test
+        //this resets the vds high so there isn't any funky stuff due to the different VDAC Gains
+        {
+            vds_high_vdac_code = 188;
+            if(device_selection < 2)
+            {
+                vds_high = 9;
+            } else
+            {
+                vds_high = 12;
+            }
+        }
         set_transistor_test_type(device_selection);
         if(device_selection < 2)
         {
@@ -320,7 +376,6 @@ int main(void)
         {
             fill_screen(BLACK);
             draw_string(100,150,"NO VTH FOUND",WHITE);
-            create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
             CyDelay(200);
         }
             
@@ -364,15 +419,24 @@ int main(void)
         }
        
         y_max_mA = 0.0;
-        for (i = 0; i <num_avg;i++)
+        if(cooldown_time) 
+        //calibrates the plotting of the grid
+        //if there is no cooldown enabled it will force the
+        //scale due to unpredictable curves because of heat
         {
-            y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
+            for (i = 0; i <num_avg;i++)
+            {
+                y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
+            }
+            y_max_mA /= num_avg;
+        } else
+        {
+            y_max_mA = 29.0;
         }
-        y_max_mA /= num_avg;
         y_max_calc = (int) (y_max_mA);
         y_max_calc = (y_max_calc - (y_max_calc % 5) + 5);
         draw_coordinates(y_max_calc,device_selection);
-        run_test(y_max_calc,Vgs_test_points,Vgs_points_double,device_selection);
+        run_test(y_max_calc,Vgs_test_points,Vgs_points_double,device_selection,SD_files_written);
         
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
