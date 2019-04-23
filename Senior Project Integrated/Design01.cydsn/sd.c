@@ -67,14 +67,14 @@ void write_header_info(char * file_name, unsigned char device_selection, unsigne
     strcpy(legend_label[1], "Ib");  //P Type Test
     char temp_str[5];
     char beginning_message[] = "*Note all currents are in mA, all other units are SI*\n";
-    char options_str[30];
+    char options_str[35];
     if(!curve_num)
     {
         create_file_with_text(file_name, beginning_message);
         sprintf(options_str,"Averages Per Point: %d\n",num_avg);
         append_file(file_name,options_str);
-        sprintf(options_str,"Cooldown Seconds: %d\n",cooldown_time);
-        append_file(file_name,num_avg);
+        sprintf(options_str,"Cooldown milliseconds: %d\n",cooldown_time);
+        append_file(file_name,options_str);
     }
     //Vgs = x.xxx OR Ib = x.xxx
     append_file(file_name,legend_label[device_selection/2]);

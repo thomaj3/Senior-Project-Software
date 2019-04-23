@@ -57,7 +57,7 @@ double single_test(unsigned char Vds, unsigned char Vgs)
     ADC_SAR_1_StopConvert();
     Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
     ADC_SAR_1_Sleep();
-    if(cooldown_time != 0)
+    if(cooldown_time)
     {
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
@@ -348,19 +348,6 @@ int main(void)
         if(write_sd)
         {
             SD_files_written++;
-        }
-        if(((device_selection % 2) != (device_selection_prev %2)) & (device_selection_prev != -1)) 
-        //if the previous test is not the same N or P type device and it is at least the 2nd test
-        //this resets the vds high so there isn't any funky stuff due to the different VDAC Gains
-        {
-            vds_high_vdac_code = 188;
-            if(device_selection < 2)
-            {
-                vds_high = 9;
-            } else
-            {
-                vds_high = 12;
-            }
         }
         set_transistor_test_type(device_selection);
         if(device_selection < 2)

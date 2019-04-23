@@ -22,42 +22,39 @@ void ui_control(uint16_t x, uint16_t y)
             }
             else if(x>=10 && x<=149 && y>=10 && y<=109)         //N-type FET button
             {
-                if (device_selection == -1)
-                {
-                    vds_high = 9;
-                }
+                
+                vds_high = 9;
+                
                 device_selection = NMOS;
                 draw_options_screen();
             }
             else if(x>=10 && x<=149 && y>=131 && y<=230)        //NPN button
             {
-                if (device_selection == -1)
-                {
-                    vds_high = 9;
-                }
+                
+                vds_high = 9;
+                
                 device_selection = NPN;
                 draw_options_screen();
             }
             else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET button
             {
-                if (device_selection == -1)
-                {
-                    vds_high = 12;
-                }
+                
+                vds_high = 12;
+                
                 device_selection = PMOS;
                 draw_options_screen();
             }
             else if(x>=171 && x<=310 && y>=131 && y<=230)       //PNP button
             {
-                if (device_selection == -1)
-                {
-                    vds_high = 12;
-                }
+                
+                vds_high = 12;
+                
                 device_selection = PNP;
                 draw_options_screen();
             }
             rand_num_1 = x;
             rand_num_2 = y;
+            vds_high_vdac_code = 188;
             break;
         case OPTIONS_SCREEN :
             if(x>=0 && x<=119 && y>=0 && y<=119)                //button for number of averages options
