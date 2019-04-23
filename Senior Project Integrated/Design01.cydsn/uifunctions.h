@@ -12,6 +12,7 @@
     extern int draw_grid;
     extern int rand_num_1;
     extern int rand_num_2;
+    extern int cooldown_time;
     
     #define DEVICE_SELECTION_SCREEN     0
     #define OPTIONS_SCREEN              1
@@ -21,7 +22,8 @@
     #define OPTION_CURVES_SCREEN        5
     #define OPTION_GRID_SCREEN          6
     #define DEBUG_SCREEN                7
-    #define DEBUG_WARNING_SCREEN        8
+    #define OPTIONS_SCREEN_2            8
+    #define OPTION_COOLDOWN_SCREEN      9
     #define NMOS                        0
     #define NPN                         1
     #define PMOS                        2

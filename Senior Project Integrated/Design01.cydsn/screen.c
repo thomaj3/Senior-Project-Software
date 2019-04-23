@@ -524,8 +524,8 @@ void draw_options_screen()
     //don't want to tempt fate by changing this
     char temp1[] = "NUMBER OF AVERAGES";
     char temp2[] = "SD CARD OPTIONS";
-    char temp3[] = "NUMBER OF CURVES";
-    char temp4[] = "PLOTTING GRID OPTIONS";
+    char temp3[] = "MORE OPTIONS";
+    char temp4[] = "NUMBER OF CURVES"; //PLOTTING GRID OPTIONS
     char temp5[] = "RETURN";
     char temp6[] = "RUN TEST";
     
@@ -540,6 +540,37 @@ void draw_options_screen()
     
     //creates lines to separate buttons
     fill_rect(119,0,2,240,BLACK);
+    fill_rect(0,119,320,2,BLACK);
+    fill_rect(239,0,2,240,BLACK);
+}
+
+void draw_more_options_screen()
+{
+    screen_state = OPTIONS_SCREEN_2;
+    
+    //need temp variables for strings otherwise it reads
+    //into the next string upon returning from an option screen
+    //might be fixed now, added null char to end of recreated string in draw_button
+    //don't want to tempt fate by changing this
+    //char temp1[] = "NUMBER OF AVERAGES";
+    char temp2[] = "PLOTTING GRID OPTIONS";
+    //char temp3[] = "MORE OPTIONS";
+    char temp4[] = "COOLDOWN TIME OPTIONS";
+    char temp5[] = "RETURN";
+    char temp6[] = "RUN TEST";
+    
+    //draws buttons
+    //draw_button(0,0,119,119,LIGHTBLUE,BLACK,temp1);
+    draw_button(0,121,119,119,LIGHTRED,BLACK,temp2);
+    //draw_button(121,0,119,119,LIGHTRED,BLACK,temp3);
+    draw_button(121,121,119,119,LIGHTBLUE,BLACK,temp4);
+    fill_rect(0,0,241,119,WHITE);
+    
+    draw_button(241,0,79,119,WHITE,BLACK,temp5);
+    draw_button(241,121,79,119,WHITE,BLACK,temp6);
+    
+    //creates lines to separate buttons
+    fill_rect(119,119,2,120,BLACK);
     fill_rect(0,119,320,2,BLACK);
     fill_rect(239,0,2,240,BLACK);
 }
@@ -654,6 +685,44 @@ void draw_options_grid_screen()
     fill_rect(239,0,2,240,BLACK);
 }
 
+void draw_options_cooldown_screen()
+{
+    screen_state = OPTION_COOLDOWN_SCREEN;
+    
+    fill_screen(BLACK);
+    
+    draw_button(0,219,239,20,WHITE,BLACK,"RATIO OF TIME FOR DUT TO COOL AGAINST RUNNING TEST");
+    
+    draw_button(40,15,70,50,WHITE,BLACK,"5");
+    draw_button(130,15,70,50,WHITE,BLACK,"10");
+    draw_button(40,85,70,50,WHITE,BLACK,"1");
+    draw_button(130,85,70,50,WHITE,BLACK,"2");
+    draw_button(85,155,70,50,WHITE,BLACK,"NO COOLDOWN");
+    
+    switch(cooldown_time)
+    {
+        case 0 :
+            draw_button(85,155,70,50,LIGHTBLUE,BLACK,"NO COOLDOWN");
+            break;
+        case 1 :
+            draw_button(40,85,70,50,LIGHTBLUE,BLACK,"1");
+            break;
+        case 2 :
+            draw_button(130,85,70,50,LIGHTBLUE,BLACK,"2");
+            break;
+        case 5 :
+            draw_button(40,15,70,50,LIGHTBLUE,BLACK,"5");
+            break;
+        case 10 :
+            draw_button(130,15,70,50,LIGHTBLUE,BLACK,"10");
+            break;
+    }
+    
+    //Return button with boundary
+    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
+    fill_rect(239,0,2,240,BLACK);
+}
+
 //screen used for debugging. Feel free to change as needed, keep return button
 //should be changed into easter egg screen when finished
 void draw_debug_screen(uint16_t x, uint16_t y)
@@ -746,21 +815,4 @@ void draw_debug_screen(uint16_t x, uint16_t y)
             break;
         }
     }
-}
-
-void draw_debug_warning_screen()
-{
-    screen_state = DEBUG_WARNING_SCREEN;
-    
-    fill_screen(BLACK);
-    
-    draw_button(0,219,239,30,WHITE,BLACK,"WARNING");
-    char temp[] = "THERE IS NO WAY OUT OF THE NEXT SCREEN BESIDES A HARD RESET. DO YOU WISH TO CONTINUE";
-    draw_button(0,170,239,10,WHITE,BLACK,temp);
-    
-    draw_button(100,100,80,50,LIGHTBLUE,BLACK,"YES");
-    
-    //Return button with boundary
-    draw_button(241,0,79,240,WHITE,BLACK,"RETURN");
-    fill_rect(239,0,2,240,BLACK);
 }

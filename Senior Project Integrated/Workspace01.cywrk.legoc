@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\Design01\Source Files\uifunctions.h">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\Design01\Generated_Source\PSoC5\isr\isr.c">
 <ExpandedNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\Design01</v>
@@ -44,30 +44,6 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5\isr</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
-<v>Workspace01</v>
-<v>Workspace01\Design01</v>
-<v>Workspace01\Design01\TopDesign</v>
-<v>Workspace01\Design01\Design01.cydwr</v>
-<v>Workspace01\Design01\Design01.cydwr\Pins</v>
-<v>Workspace01\Design01\Design01.cydwr\Analog</v>
-<v>Workspace01\Design01\Design01.cydwr\Clocks</v>
-<v>Workspace01\Design01\Design01.cydwr\Interrupts</v>
-<v>Workspace01\Design01\Design01.cydwr\DMA</v>
-<v>Workspace01\Design01\Design01.cydwr\System</v>
-<v>Workspace01\Design01\Design01.cydwr\Directives</v>
-<v>Workspace01\Design01\Design01.cydwr\Flash Security</v>
-<v>Workspace01\Design01\Design01.cydwr\EEPROM</v>
-<v>Workspace01\Design01\Header Files</v>
-<v>Workspace01\Design01\Header Files\cyapicallbacks.h</v>
-<v>Workspace01\Design01\Source Files</v>
-<v>Workspace01\Design01\Source Files\font.c</v>
-<v>Workspace01\Design01\Source Files\font.h</v>
-<v>Workspace01\Design01\Source Files\main.c</v>
-<v>Workspace01\Design01\Source Files\screen.c</v>
-<v>Workspace01\Design01\Source Files\screen.h</v>
-<v>Workspace01\Design01\Source Files\sd.c</v>
-<v>Workspace01\Design01\Source Files\sd.h</v>
-<v>Workspace01\Design01\Source Files\settings.h</v>
 <v>Workspace01\Design01\Source Files\uifunctions.c</v>
 <v>Workspace01\Design01\Source Files\uifunctions.h</v>
 <v>Workspace01\Design01\Generated_Source</v>
@@ -93,6 +69,30 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5\I2C</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\IRQ</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\isr</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\isr\isr.c</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\isr\isr.h</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\MISO</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\MOSI</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_DS</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_DS_P</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_GS</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_GS_P</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_ID</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_ID_P</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\Reset</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\scl</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\sda</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\SPIM</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\SS</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\VDAC8_DS</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\VDAC8_GS</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareexport.ld</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.ld</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.scat</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cydevice.h</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cydevice_trm.h</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu.inc</v>
+<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -192,53 +192,6 @@
 <VisibleNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\Design01</v>
-<v>Workspace01\Design01\CortexM3</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_INT.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_IRQ.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_PM.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\ADC_SAR_1_theACLK.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_1.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_2.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\AMux_3.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CLK.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Clock.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\Cm3Start.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cy_em_eeprom.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyBootAsmGnu.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyDmac.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyfitter_cfg.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyFlash.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CyLib.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cymetadata.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyPm.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\CySpc.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\cyutils.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\D_C.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_Clock_1.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_ConfigMMC_SPI.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_miso0.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_MMC_HW_SPI.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_mosi0.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_PM.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_sclk0.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_SPI0.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_SPI0_CS.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_SPI0_INT.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\emFile_1_SPI0_PM.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\font.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_BOOT.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_INT.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_MASTER.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_PM.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_SLAVE.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\IRQ.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\isr.lst</v>
-<v>Workspace01\Design01\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>

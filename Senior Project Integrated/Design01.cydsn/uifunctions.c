@@ -17,6 +17,7 @@ int num_avg = 10;
 int draw_grid = 1;
 int rand_num_1 = 0;
 int rand_num_2 = 0;
+int cooldown_time = 0;
 
 void ui_control(uint16_t x, uint16_t y)
 {
@@ -61,13 +62,13 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 draw_options_sd_screen(); 
             }
-            else if(x>=121 && x<=240 && y>=0 && y<=119)         //button for number of curves options
+            else if(x>=121 && x<=240 && y>=0 && y<=119)         //button for more options
             {
-                draw_options_curves_screen(); 
+                draw_more_options_screen(); 
             }
             else if(x>=121 && x<=240 && y>=121 && y<=239)       //button for settling time options
             {
-                draw_options_grid_screen(); 
+                draw_options_curves_screen(); 
             }
             else if(x>=241 && x<=319 && y>=0 && y<=119)         //return button
             {
@@ -77,6 +78,7 @@ void ui_control(uint16_t x, uint16_t y)
             {
                 screen_state = PLOT_SCREEN;
             }
+            break;
             break;
         case PLOT_SCREEN :
             if(x>=130 && x<=190 && y>=209 && y<=239)            //stop/return button
@@ -237,7 +239,7 @@ void ui_control(uint16_t x, uint16_t y)
         case OPTION_GRID_SCREEN :
             if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_options_screen();
+                draw_more_options_screen();
             }
             else if(x>=30 && x<=110 && y>=100 && y<=150)        //yes button
             {
@@ -272,14 +274,73 @@ void ui_control(uint16_t x, uint16_t y)
 //                draw_string(100,100,WHITE,y_touch,1);
 //            }
             break;
-        case DEBUG_WARNING_SCREEN :
+        case OPTIONS_SCREEN_2 :
+            if(x>=0 && x<=119 && y>=121 && y<=239)         //button for grid options
+            {
+                draw_options_grid_screen();
+            }
+            else if(x>=121 && x<=240 && y>=121 && y<=239)       //button for cooldown options
+            {
+                draw_options_cooldown_screen();
+            }
+            else if(x>=241 && x<=319 && y>=0 && y<=119)         //return button
+            {
+                draw_options_screen();
+            }
+            else if(x>=241 && x<=319 && y>=121 && y<=239)       //run test button
+            {
+                screen_state = PLOT_SCREEN;
+            }
+            break;
+        case OPTION_COOLDOWN_SCREEN :
             if(x>=241 && x<=319 && y>=0 && y<=239)         //return button
             {
-                draw_choose_screen();
+                draw_more_options_screen();
             }
-            else if(x>=100 && x<=180 && y>=100 && y<=150)
+            else if(x>=40 && x<=110 && y>=15 && y<=65)      //button 5
             {
-                draw_debug_screen(x, y);
+                cooldown_time = 5;
+                draw_button(40,15,70,50,LIGHTBLUE,BLACK,"5");
+                draw_button(130,15,70,50,WHITE,BLACK,"10");
+                draw_button(40,85,70,50,WHITE,BLACK,"1");
+                draw_button(130,85,70,50,WHITE,BLACK,"2");
+                draw_button(85,155,70,50,WHITE,BLACK,"NO COOLDOWN");
+            }
+            else if(x>=130 && x<=200 && y>=15 && y<=65)      //button 10
+            {
+                cooldown_time = 10;
+                draw_button(40,15,70,50,WHITE,BLACK,"5");
+                draw_button(130,15,70,50,LIGHTBLUE,BLACK,"10");
+                draw_button(40,85,70,50,WHITE,BLACK,"1");
+                draw_button(130,85,70,50,WHITE,BLACK,"2");
+                draw_button(85,155,70,50,WHITE,BLACK,"NO COOLDOWN");
+            }
+            else if(x>=40 && x<=110 && y>=85 && y<=135)      //button 1
+            {
+                cooldown_time = 1;
+                draw_button(40,15,70,50,WHITE,BLACK,"5");
+                draw_button(130,15,70,50,WHITE,BLACK,"10");
+                draw_button(40,85,70,50,LIGHTBLUE,BLACK,"1");
+                draw_button(130,85,70,50,WHITE,BLACK,"2");
+                draw_button(85,155,70,50,WHITE,BLACK,"NO COOLDOWN");
+            }
+            else if(x>=130 && x<=200 && y>=85 && y<=135)      //button 2
+            {
+                cooldown_time = 2;
+                draw_button(40,15,70,50,WHITE,BLACK,"5");
+                draw_button(130,15,70,50,WHITE,BLACK,"10");
+                draw_button(40,85,70,50,WHITE,BLACK,"1");
+                draw_button(130,85,70,50,LIGHTBLUE,BLACK,"2");
+                draw_button(85,155,70,50,WHITE,BLACK,"NO COOLDOWN");
+            }
+            else if(x>=85 && x<=155 && y>=155 && y<=205)      //button no cooldown
+            {
+                cooldown_time = 0;
+                draw_button(40,15,70,50,WHITE,BLACK,"5");
+                draw_button(130,15,70,50,WHITE,BLACK,"10");
+                draw_button(40,85,70,50,WHITE,BLACK,"1");
+                draw_button(130,85,70,50,WHITE,BLACK,"2");
+                draw_button(85,155,70,50,LIGHTBLUE,BLACK,"NO COOLDOWN");
             }
             break;
     }
