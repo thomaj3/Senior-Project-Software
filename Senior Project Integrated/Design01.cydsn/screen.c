@@ -814,7 +814,7 @@ void draw_debug_screen(uint16_t x, uint16_t y)
     fill_rect(0,220,80,19,WHITE);
     
     int time = 1000;
-    int text_color[] = {BLUE, GREEN, RED, ORANGE, BLACK, CYAN, PINK, LIGHTGREY, OLIVE, GREENYELLOW};
+    int text_color[] = {BLUE, GREEN, RED, ORANGE, BLACK, CYAN, PINK, LIGHTGREY, OLIVE, GREENYELLOW, YELLOW, PURPLE};
     srand(rand_num_1*rand_num_2);
     
     for(;;)
@@ -822,7 +822,7 @@ void draw_debug_screen(uint16_t x, uint16_t y)
         int x1 = rand() % 231;
         int y1 = rand() % 236;
         int size = rand() % 4;
-        int rand_color = rand() % 10;
+        int rand_color = rand() % 12;
         draw_string(x1,y1,text_color[rand_color],"PIZZA TIME",size);
         
         CyDelay(time);
