@@ -480,6 +480,9 @@ void draw_coordinates(int y_max, unsigned int device_selection)
     char temp[] = "STOP";
     
     draw_button(130,209,60,30,RED,BLACK,temp);
+    
+    //Return button with boundary
+    draw_button(241,209,79,30,WHITE,BLACK,"HOME");
         
     screen_state = PLOT_SCREEN;   //sets screen state to graph screen
 }

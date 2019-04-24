@@ -30,15 +30,15 @@
 #include "I2C.h"
 #include "uifunctions.h"
 
-#define FT6206_ADDR             0x38
-#define Read_Register_X_1         0x03
-#define Read_Register_X_2         0x04
-#define Read_Register_Y_1         0x05
-#define Read_Register_Y_2         0x06
-#define WRITE                   0
-#define READ                    1
-#define X                       1
-#define Y                       0
+#define FT6206_ADDR                 0x38
+#define Read_Register_X_1           0x03
+#define Read_Register_X_2           0x04
+#define Read_Register_Y_1           0x05
+#define Read_Register_Y_2           0x06
+#define WRITE                       0
+#define READ                        1
+#define X                           1
+#define Y                           0      
 
 #if !defined(isr__REMOVED) /* Check for removal by optimization */
 

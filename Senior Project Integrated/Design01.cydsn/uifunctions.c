@@ -9,6 +9,18 @@
 #include "font.h"
 #include "uifunctions.h"
 
+int screen_state = 0;
+int device_selection = -1;
+int curve_nums = 4;
+int write_sd = 1;
+int num_avg = 10;
+int draw_grid = 1;
+int rand_num_1 = 0;
+int rand_num_2 = 0;
+int cooldown_time = 0;
+int vds_high = 9;
+int vds_high_vdac_code = 188;
+
 void ui_control(uint16_t x, uint16_t y)
 {
     //switch statement that controls the touchscreen
@@ -86,7 +98,12 @@ void ui_control(uint16_t x, uint16_t y)
         case PLOT_SCREEN :
             if(x>=130 && x<=190 && y>=209 && y<=239)            //stop/return button
             {
-                screen_state = DEVICE_SELECTION_SCREEN;  
+                screen_state = OPTIONS_SCREEN;  
+            }
+            else if(x>=241 && x<=319 && y>=209 && y<=239)            //stop/return button
+            {
+                screen_state = DEVICE_SELECTION_SCREEN;
+                device_selection = -1;
             }
             break;
         case OPTION_AVERAGES_SCREEN :

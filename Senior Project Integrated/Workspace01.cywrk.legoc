@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01\Design01\Generated_Source\PSoC5\isr\isr.c">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="Workspace01">
 <ExpandedNodeIds>
 <v>Workspace01</v>
 <v>Workspace01\Design01</v>
@@ -44,6 +44,30 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5\isr</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
+<v>Workspace01</v>
+<v>Workspace01\Design01</v>
+<v>Workspace01\Design01\TopDesign</v>
+<v>Workspace01\Design01\Design01.cydwr</v>
+<v>Workspace01\Design01\Design01.cydwr\Pins</v>
+<v>Workspace01\Design01\Design01.cydwr\Analog</v>
+<v>Workspace01\Design01\Design01.cydwr\Clocks</v>
+<v>Workspace01\Design01\Design01.cydwr\Interrupts</v>
+<v>Workspace01\Design01\Design01.cydwr\DMA</v>
+<v>Workspace01\Design01\Design01.cydwr\System</v>
+<v>Workspace01\Design01\Design01.cydwr\Directives</v>
+<v>Workspace01\Design01\Design01.cydwr\Flash Security</v>
+<v>Workspace01\Design01\Design01.cydwr\EEPROM</v>
+<v>Workspace01\Design01\Header Files</v>
+<v>Workspace01\Design01\Header Files\cyapicallbacks.h</v>
+<v>Workspace01\Design01\Source Files</v>
+<v>Workspace01\Design01\Source Files\font.c</v>
+<v>Workspace01\Design01\Source Files\font.h</v>
+<v>Workspace01\Design01\Source Files\main.c</v>
+<v>Workspace01\Design01\Source Files\screen.c</v>
+<v>Workspace01\Design01\Source Files\screen.h</v>
+<v>Workspace01\Design01\Source Files\sd.c</v>
+<v>Workspace01\Design01\Source Files\sd.h</v>
+<v>Workspace01\Design01\Source Files\settings.h</v>
 <v>Workspace01\Design01\Source Files\uifunctions.c</v>
 <v>Workspace01\Design01\Source Files\uifunctions.h</v>
 <v>Workspace01\Design01\Generated_Source</v>
@@ -69,30 +93,6 @@
 <v>Workspace01\Design01\Generated_Source\PSoC5\I2C</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\IRQ</v>
 <v>Workspace01\Design01\Generated_Source\PSoC5\isr</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\isr\isr.c</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\isr\isr.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\MISO</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\MOSI</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_DS</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_DS_P</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_GS</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_GS_P</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_ID</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Pin_ID_P</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\Reset</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\scl</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\sda</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\SPIM</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\SS</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\VDAC8_DS</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\VDAC8_GS</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareexport.ld</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.ld</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cycodeshareimport.scat</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevice.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevice_trm.h</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu.inc</v>
-<v>Workspace01\Design01\Generated_Source\PSoC5\cydevicegnu_trm.inc</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 <CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
@@ -253,7 +253,9 @@
 <name v=".\Design01.cydsn\main.c" />
 <name v=".\Design01.cydsn\screen.h" />
 <name v=".\Design01.cydsn\screen.c" />
+<name v=".\Design01.cydsn\uifunctions.h" />
 <name v=".\Design01.cydsn\uifunctions.c" />
+<name v=".\Design01.cydsn\Generated_Source\PSoC5\isr.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -261,7 +263,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1461, 737" SelectedTabbedMdiWindow="70b1f59e-2102-4062-a66f-7ac1be699729"><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\main.c" Guid="1bc639a5-853f-40c5-b6dd-b43f6bc1dba5" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.h" Guid="92563998-6bc6-4db4-bc73-8d17e76dea4c" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.c" Guid="077eefae-78cd-482f-b800-4ec06cf7b074" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\uifunctions.c" Guid="70b1f59e-2102-4062-a66f-7ac1be699729" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="1461, 737" SelectedTabbedMdiWindow="077eefae-78cd-482f-b800-4ec06cf7b074"><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\main.c" Guid="1bc639a5-853f-40c5-b6dd-b43f6bc1dba5" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.h" Guid="92563998-6bc6-4db4-bc73-8d17e76dea4c" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\screen.c" Guid="077eefae-78cd-482f-b800-4ec06cf7b074" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\uifunctions.h" Guid="943ec755-7bd3-4096-bedc-b119412278fe" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\uifunctions.c" Guid="70b1f59e-2102-4062-a66f-7ac1be699729" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="0518775a-cf7f-4c3e-8171-67a3c353b577" /><DocumentWindow Key="C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\isr.c" Guid="fd0a7e29-bfd9-47e0-bdf8-cb3e53b6888f" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -160,9 +160,9 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             write_header_info(file_name,device_selection,i,Vgs_double);
         }
         //ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
-        for(j = 0; j <VDAC_D_C_MAX; j++)
+        for(j = 0; j < vds_high_vdac_code; j++)
         {
-            if(!screen_state)
+            if(/*!screen_state*/ screen_state != PLOT_SCREEN)
             {
                 return 0;   
             }
@@ -185,13 +185,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             }
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
-            if (device_selection < 2)
-            {
-                x_pixel = (int) j*(vds_high/9.0);
-            } else
-            {
-                x_pixel = (int) j*(vds_high/12);
-            }
+            x_pixel = (int) (VDAC_D_C_MAX * j)/vds_high_vdac_code;
             if (j > 0) //only draw a line if 2 points have been tested already
             {
                 draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
@@ -294,18 +288,7 @@ int main(void)
     int device_selection_prev = -1;
     
     //global variable intializations
-    int screen_state = 0;
-    int device_selection = -1;
-    int curve_nums = 4;
-    int write_sd = 1;
-    int num_avg = 10;
-    int draw_grid = 1;
-    int rand_num_1 = 0;
-    int rand_num_2 = 0;
-    int cooldown_time = 0;
-    int vds_high = 9;
-    int vds_high_vdac_code = 188;
-
+    device_selection = -1;
     
     
 //    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
@@ -322,18 +305,26 @@ int main(void)
 //    FS_Write(pFile,text,strlen(text));
 //    FS_FClose(pFile);
 
-    fill_screen(BLACK);
-    draw_string(130,150,"NOTE SD DATA WILL BE OVERWRITTEN",WHITE);
-    draw_string(130,140,"BACKUP SD DATA BEFORE CONTINUING",WHITE);
-    CyDelay(300);
+    //fill_screen(BLACK);
+//    draw_string(100,150,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN",1);
+//    draw_string(100,140,WHITE,"BACKUP SD DATA BEFORE CONTINUING",1);
+    draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
+    CyDelay(1000);
     
     for(;;)
-    {        
+    { 
         if (device_selection != -1)
         {
             device_selection_prev = device_selection;
         }
-        draw_choose_screen();
+        if(device_selection == -1)
+        {
+            draw_choose_screen();
+        }
+        else
+        {
+            draw_options_screen();
+        }
         for(;;)
         {
             if(screen_state == 2)
@@ -431,7 +422,7 @@ int main(void)
 
         for(;;)
         {
-            if(screen_state == 0)
+            if(screen_state != PLOT_SCREEN)
             {
                 break;
             }
