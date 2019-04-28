@@ -368,8 +368,8 @@ uint8 CYXDATA * const CYCODE AMux_1__addrTable[2] = {
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 const uint8 CYCODE AMux_1__maskTable[2] = {
-	0x20u, 
 	0x02u, 
+	0x20u, 
 };
 
 /*******************************************************************************
@@ -418,15 +418,15 @@ void AMux_1_Unset(uint8 channel)
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 uint8 CYXDATA * const CYCODE AMux_2__addrTable[2] = {
-	(uint8 CYXDATA *)CYREG_PRT3_AMUX, 
 	(uint8 CYXDATA *)CYREG_PRT15_AMUX, 
+	(uint8 CYXDATA *)CYREG_PRT3_AMUX, 
 };
 
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 const uint8 CYCODE AMux_2__maskTable[2] = {
-	0x10u, 
 	0x04u, 
+	0x10u, 
 };
 
 /*******************************************************************************
@@ -475,8 +475,8 @@ void AMux_2_Unset(uint8 channel)
 /* This is an implementation detail of the AMux. Code that depends on it may be
    incompatible with other versions of PSoC Creator. */
 uint8 CYXDATA * const CYCODE AMux_3__addrTable[2] = {
-	(uint8 CYXDATA *)CYREG_PRT3_AG, 
 	(uint8 CYXDATA *)CYREG_PRT15_AG, 
+	(uint8 CYXDATA *)CYREG_PRT3_AG, 
 };
 
 /* This is an implementation detail of the AMux. Code that depends on it may be

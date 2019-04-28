@@ -60,15 +60,15 @@ set_location "\I2C:I2C_IRQ\" interrupt -1 -1 15
 set_io "D_C(0)" iocell 0 0
 # Note: port 15 is the logical name for port 8
 set_io "Reset(0)" iocell 15 5
-set_io "Pin_DS(0)" iocell 3 5
-set_io "Pin_GS(0)" iocell 3 4
-set_io "Pin_ID(0)" iocell 3 3
+set_io "Pin_DS(0)" iocell 3 1
+# Note: port 15 is the logical name for port 8
+set_io "Pin_GS(0)" iocell 15 2
+# Note: port 15 is the logical name for port 8
+set_io "Pin_ID(0)" iocell 15 3
 set_io "\emFile_1:SPI0_CS(0)\" iocell 1 2
-set_io "Pin_DS_P(0)" iocell 3 1
-# Note: port 15 is the logical name for port 8
-set_io "Pin_GS_P(0)" iocell 15 2
-# Note: port 15 is the logical name for port 8
-set_io "Pin_ID_P(0)" iocell 15 3
+set_io "Pin_DS_P(0)" iocell 3 5
+set_io "Pin_GS_P(0)" iocell 3 4
+set_io "Pin_ID_P(0)" iocell 3 3
 # Note: port 15 is the logical name for port 8
 set_io "IRQ(0)" iocell 15 0
 set_io "sda(0)" iocell 3 6

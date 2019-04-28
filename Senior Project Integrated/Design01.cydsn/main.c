@@ -14,14 +14,16 @@
 #include "uifunctions.h"
 
 #define VDAC_G_B_MAX    255 //Max VDAC code for the Gate/Base 
-#define VDAC_D_C_MAX    188 //Max VDAC for the Drain/Common
+#define VDAC_D_C_P_MAX  250 //Max VDAC for the Drain/Common
 #define VDS_NMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_NMOS) + 1)
 #define VCE_NPN_LENGTH  ((VDAC_D_C_MAX/VC_STEP_NPN) + 1)
 #define VDS_PMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_PMOS) + 1)
 #define VCE_PNP_LENGTH  ((VDAC_D_C_MAX/VC_STEP_PNP) + 1)
 #define VDAC_N_1_VOLT   21
-#define VDAC_P_1_VOLT   13
+#define VDAC_P_1_VOLT   229
+#define VDAC_G_1_VOLT   63
 #define ADC_GAIN        52.0
+#define P_SOURCE_VOLTAGE 12
 
 
 //The lengths of Drain or Common testing points
@@ -86,8 +88,9 @@ double single_test_preset_vds(unsigned char Vgs)
 //Finds Vth (The minimum Vgs needed to turn the transistor by sorting through Vgs's until 
 //a minumum current of 1 mA is found Id is found by a 1 Ohm series resistor whose potential 
 //difference is magnitifed 100 fold for accurate reading
-int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
+int vgs_th_find(unsigned char Vgs_max, unsigned char Vgs_min ,unsigned char Vds)
 {
+    //63,255,229
     unsigned char   Vgs;           
 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
     double          Id=0;         
@@ -95,7 +98,7 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
     int i;
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     VDAC8_GS_SetValue(0);
-    for(Vgs = 0; Vgs < Vgs_max; Vgs++)
+    for(Vgs = Vgs_min; Vgs < Vgs_max; Vgs++)
     {
         Id = single_test_preset_vds(Vgs);
         
@@ -105,13 +108,13 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
             return Vgs;
         }
     }
-    return 0; //If a Vth cannot be found
+    return 0;
 }
 
 //Finds the MAX current 20mA, Id is found through a 100 Ohm series resistor
 //Sweeps through Vgs until a max current of 20 mA is found
 //Therefor ID_MAX = 20*100 == 2000
-unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned char Vgs_max)
+unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max)
 {
     unsigned char   Vgs;
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
@@ -119,8 +122,8 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 	//The Drain Current | Id_real = Id/100
     VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
-    int i;
-    for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
+    
+    for(Vgs = Vth; Vgs < 255; Vgs++)
     {            
         
         Id = single_test_preset_vds(Vgs);
@@ -132,6 +135,8 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
             return Vgs-1; //Stop stepping once max current is hit
         }
     }
+    
+    
 
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
 }
@@ -175,7 +180,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                     Id_avg += single_test(j,Vgs_test_points[i]);
                 } else //if testing P-Type devices
                 {
-                    Id_avg += single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
+                    Id_avg += single_test(vds_high_vdac_code - j, Vgs_double[i]);
                 }
             }
             Id_avg /= num_avg;
@@ -185,7 +190,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             }
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
-            x_pixel = (int) (VDAC_D_C_MAX * j)/vds_high_vdac_code;
+            x_pixel = (int) (VDAC_D_C_P_MAX * j)/vds_high_vdac_code;
             if (j > 0) //only draw a line if 2 points have been tested already
             {
                 draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
@@ -278,7 +283,7 @@ int main(void)
     int y_max_calc;
     
     
-    unsigned char Vgs_step;                             //The stepping amount to create the Vgs test points
+    int Vgs_step;                                       //The stepping amount to create the Vgs test points
     unsigned char Vgs_test_points[CURVE_NUM_MAX];       //The Vgs stepping points of ammount specified in settings.h
     
     double Vgs_points_double[CURVE_NUM_MAX];            //The actual Vgs output by DAC
@@ -310,7 +315,11 @@ int main(void)
 //    draw_string(100,140,WHITE,"BACKUP SD DATA BEFORE CONTINUING",1);
     draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
     CyDelay(1000);
-    
+    AMux_1_Select(1);
+    AMux_2_Select(1);
+    AMux_3_Select(1);
+    VDAC8_GS_SetValue(125);
+    VDAC8_DS_SetValue(250);
     for(;;)
     { 
         if (device_selection != -1)
@@ -344,20 +353,27 @@ int main(void)
         if(device_selection < 2)
         {
             
-            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
+            Vth = vgs_th_find(VDAC_G_B_MAX,0,VDAC_N_1_VOLT);
         }
         else
         {
-            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
+            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_G_1_VOLT,VDAC_P_1_VOLT);
+            //vgs_max, vgs_min,Vdac
+            
         }
         if (Vth == 0)
         {
             fill_screen(BLACK);
-            draw_string(100,150,"NO VTH FOUND",WHITE);
-            CyDelay(200);
+            draw_string(100,150,WHITE,"NO VTH FOUND",1);
+            CyDelay(2000);
         }
-            
-        Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
+        if(device_selection < 2)
+        {
+            Vgs_max = vgs_max_id_find(Vth,vds_high_vdac_code);
+        } else
+        {
+            Vgs_max = vgs_max_id_find(Vth,(VDAC_D_C_P_MAX - vds_high_vdac_code));
+        }
         Vgs_step = (Vgs_max - Vth)/(curve_nums-1); //Creating the step size for linearlly spaced
         Vgs_test_points[0] = Vth;
         switch(device_selection)
@@ -369,10 +385,10 @@ int main(void)
                 Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/10;
                 break;
             case 2:
-                Vgs_points_double[0] = -15 + Vth*4.096/256.0;
+                Vgs_points_double[0] = -Vth*4.096/256.0;
                 break;
             case 3:
-                Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/10;
+                Vgs_points_double[0] = -((Vth*4.096/256.0) - 0.7)/10;
                 break;
         }
         //Creating Vgs test point 
@@ -388,10 +404,10 @@ int main(void)
                     Vgs_points_double[i] = (Vgs_test_points[i]*4.096/256.0 - 0.7)/10;
                     break;
                 case 2:
-                    Vgs_points_double[i] = -15 + Vgs_test_points[i]*4.096/256.0;
+                    Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE;
                     break;
                 case 3:
-                    Vgs_points_double[i] = (-15 + Vgs_test_points[i]*4.096/256.0)/10;
+                    Vgs_points_double[i] =  (Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE + 0.7)/10;
                     break;
             }
         }
@@ -404,7 +420,7 @@ int main(void)
         {
             for (i = 0; i <num_avg;i++)
             {
-                y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
+                y_max_mA += single_test(vds_high_vdac_code,Vgs_test_points[curve_nums-1]);
             }
             y_max_mA /= num_avg;
         } else

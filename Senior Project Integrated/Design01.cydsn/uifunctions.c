@@ -66,7 +66,13 @@ void ui_control(uint16_t x, uint16_t y)
             }
             rand_num_1 = x;
             rand_num_2 = y;
-            vds_high_vdac_code = 188;
+            if(device_selection < 2)
+            {
+                vds_high_vdac_code = 188;
+            } else
+            {
+                vds_high_vdac_code = 250;
+            }
             break;
         case OPTIONS_SCREEN :
             if(x>=0 && x<=119 && y>=0 && y<=119)                //button for number of averages options
@@ -427,10 +433,10 @@ void ui_control(uint16_t x, uint16_t y)
             }
             if(device_selection < 2)
             {
-                vds_high_vdac_code = (int) (vds_high*256.0)/(4.096*3);
+                vds_high_vdac_code = (int) ((vds_high*256.0)/(4.096*3) + 0.5);
             } else
             {
-                vds_high_vdac_code = (int) (vds_high*256.0)/(4.096*4);
+                vds_high_vdac_code = (int) ((vds_high*256.0)/(4.096*3) + 0.5);
             }
             break;
     }

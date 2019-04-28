@@ -1,5 +1,5 @@
 -- Project:   Design01
--- Generated: 04/24/2019 15:43:41
+-- Generated: 04/26/2019 12:58:35
 -- PSoC Creator  4.2
 
 ENTITY Design01 IS
@@ -177,11 +177,11 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF Reset(0) : LABEL IS "iocell6";
     ATTRIBUTE Location OF Reset(0) : LABEL IS "P15[5]";
     ATTRIBUTE lib_model OF Pin_DS(0) : LABEL IS "iocell7";
-    ATTRIBUTE Location OF Pin_DS(0) : LABEL IS "P3[5]";
+    ATTRIBUTE Location OF Pin_DS(0) : LABEL IS "P3[1]";
     ATTRIBUTE lib_model OF Pin_GS(0) : LABEL IS "iocell8";
-    ATTRIBUTE Location OF Pin_GS(0) : LABEL IS "P3[4]";
+    ATTRIBUTE Location OF Pin_GS(0) : LABEL IS "P15[2]";
     ATTRIBUTE lib_model OF Pin_ID(0) : LABEL IS "iocell9";
-    ATTRIBUTE Location OF Pin_ID(0) : LABEL IS "P3[3]";
+    ATTRIBUTE Location OF Pin_ID(0) : LABEL IS "P15[3]";
     ATTRIBUTE lib_model OF scl(0) : LABEL IS "iocell10";
     ATTRIBUTE Location OF scl(0) : LABEL IS "P3[7]";
     ATTRIBUTE lib_model OF sda(0) : LABEL IS "iocell11";
@@ -189,11 +189,11 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF IRQ(0) : LABEL IS "iocell12";
     ATTRIBUTE Location OF IRQ(0) : LABEL IS "P15[0]";
     ATTRIBUTE lib_model OF Pin_DS_P(0) : LABEL IS "iocell13";
-    ATTRIBUTE Location OF Pin_DS_P(0) : LABEL IS "P3[1]";
+    ATTRIBUTE Location OF Pin_DS_P(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF Pin_GS_P(0) : LABEL IS "iocell14";
-    ATTRIBUTE Location OF Pin_GS_P(0) : LABEL IS "P15[2]";
+    ATTRIBUTE Location OF Pin_GS_P(0) : LABEL IS "P3[4]";
     ATTRIBUTE lib_model OF Pin_ID_P(0) : LABEL IS "iocell15";
-    ATTRIBUTE Location OF Pin_ID_P(0) : LABEL IS "P15[3]";
+    ATTRIBUTE Location OF Pin_ID_P(0) : LABEL IS "P3[3]";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:load_rx_data\ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_0\ : LABEL IS "macrocell3";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_4\ : LABEL IS "macrocell4";
