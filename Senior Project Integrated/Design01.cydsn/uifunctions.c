@@ -48,22 +48,22 @@ void ui_control(uint16_t x, uint16_t y)
                 device_selection = NPN;
                 draw_options_screen();
             }
-            else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET button
-            {
-                
-                vds_high = 12;
-                
-                device_selection = PMOS;
-                draw_options_screen();
-            }
-            else if(x>=171 && x<=310 && y>=131 && y<=230)       //PNP button
-            {
-                
-                vds_high = 12;
-                
-                device_selection = PNP;
-                draw_options_screen();
-            }
+//            else if(x>=171 && x<=310 && y>=10 && y<=109)        //P-type FET button
+//            {
+//                
+//                vds_high = 12;
+//                
+//                device_selection = PMOS;
+//                draw_options_screen();
+//            }
+//            else if(x>=171 && x<=310 && y>=131 && y<=230)       //PNP button
+//            {
+//                
+//                vds_high = 12;
+//                
+//                device_selection = PNP;
+//                draw_options_screen();
+//            }
             rand_num_1 = x;
             rand_num_2 = y;
             if(device_selection < 2)
@@ -212,13 +212,11 @@ void ui_control(uint16_t x, uint16_t y)
                 draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
                 draw_button(130,100,80,50,WHITE,BLACK,"NO");
                 write_sd = 1;
-                emFile_1_Wakeup();
             }
             else if(x>=130 && x<=210 && y>=100 && y<=150)       //no button
             {
                 draw_button(30,100,80,50,WHITE,BLACK,"YES");  
                 draw_button(130,100,80,50,LIGHTBLUE,BLACK,"NO");
-                emFile_1_Sleep();
                 write_sd = 0;
             }
             break;
@@ -437,6 +435,12 @@ void ui_control(uint16_t x, uint16_t y)
             } else
             {
                 vds_high_vdac_code = (int) ((vds_high*256.0)/(4.096*3) + 0.5);
+            }
+            break;
+        case WARNING_SCREEN :
+            if(x>=0 && x<=319 && y>=0 && y<=239)         //touch screen to continue
+            {
+                draw_choose_screen();
             }
             break;
     }

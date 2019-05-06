@@ -27,6 +27,7 @@
     #define OPTIONS_SCREEN_2            8
     #define OPTION_COOLDOWN_SCREEN      9
     #define OPTION_VDS_SCREEN           10
+    #define WARNING_SCREEN              11
     #define NMOS                        0
     #define NPN                         1
     #define PMOS                        2

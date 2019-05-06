@@ -740,6 +740,15 @@ void draw_vds_options_screen()
     fill_rect(239,0,2,240,BLACK);
 }
 
+void draw_warning_screen()
+{
+    screen_state = WARNING_SCREEN;
+    
+    draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
+    
+    draw_button(0,50,320,30,BLACK,WHITE,"TOUCH SCREEN TO CONTINUE");
+}
+
 //screen used for debugging. Feel free to change as needed, keep return button
 //should be changed into easter egg screen when finished
 void draw_debug_screen(uint16_t x, uint16_t y)

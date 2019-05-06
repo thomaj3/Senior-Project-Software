@@ -1,4 +1,4 @@
---------------- Rebuild Started: 04/20/2019 16:36:03 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+--------------- Rebuild Started: 05/05/2019 23:34:06 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\main.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\screen.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\font.o"
@@ -47,6 +47,12 @@ Deleting file ".\CortexM3\ARM_GCC_541\Debug\scl.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\sda.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\isr.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\IRQ.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_1.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Pin_GS_P.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Pin_DS_P.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_2.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\AMux_3.o"
+Deleting file ".\CortexM3\ARM_GCC_541\Debug\Pin_ID_P.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\emFile_1_ConfigMMC_SPI.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\emFile_1_MMC_HW_SPI.o"
 Deleting file ".\CortexM3\ARM_GCC_541\Debug\emFile_1_PM.o"
@@ -75,10 +81,11 @@ ADD: fit.M0032: warning: Clock Warning: (Clock's accuracy range '24 MHz +/- 1%, 
 HDL Generation...
 Synthesis...
 Tech Mapping...
-ADD: pft.M0040: information: The following 7 pin(s) will be assigned a location by the fitter: \emFile_1:miso0(0)\, \emFile_1:mosi0(0)\, \emFile_1:sclk0(0)\, \emFile_1:SPI0_CS(0)\, Pin_DS_P(0), Pin_GS_P(0), Pin_ID_P(0)
+ADD: pft.M0040: information: The following 3 pin(s) will be assigned a location by the fitter: Pin_DS_P(0), Pin_GS_P(0), Pin_ID_P(0)
 Analog Placement...
-Log: apr.M0058: The analog placement iterative improvement is 43% done. (App=cydsfit)
-Log: apr.M0058: The analog placement iterative improvement is 67% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 35% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 60% done. (App=cydsfit)
+Log: apr.M0058: The analog placement iterative improvement is 82% done. (App=cydsfit)
 Analog Routing...
 Analog Code Generation...
 Digital Placement...
@@ -91,130 +98,153 @@ Dependency Generation...
 Cleanup...
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'single_test':
-main.c:47:9: warning: unused variable 'i' [-Wunused-variable]
+main.c:50:9: warning: unused variable 'i' [-Wunused-variable]
      int i;
          ^
-main.c:46:12: warning: unused variable 'Output_avg' [-Wunused-variable]
+main.c:49:12: warning: unused variable 'Output_avg' [-Wunused-variable]
      double Output_avg;
             ^
-main.c: In function 'run_test':
-main.c:143:9: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
-         write_header_info("data.txt",device_selection,i,Vgs_double); 
+main.c: In function 'vgs_th_find':
+main.c:95:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
          ^
-main.c:166:13: warning: implicit declaration of function 'write_data' [-Wimplicit-function-declaration]
-             write_data("data.txt",Id_avg,j,device_selection);//update CSV File with new Id/Ic
+main.c: In function 'vgs_max_id_find':
+main.c:122:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
+main.c: In function 'run_test':
+main.c:160:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
+             write_header_info(file_name,device_selection,i,Vgs_double);
              ^
-main.c:172:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
+main.c:184:17: warning: implicit declaration of function 'write_data' [-Wimplicit-function-declaration]
+                 write_data(file_name,Id_avg,j,device_selection);//update CSV File with new Id/Ic
+                 ^
+main.c:191:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
                  draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
                  ^
-main.c:193:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
-         draw_string(x_pixel_prev+35,y_pixel_prev+10,WHITE,print_string,1);
+main.c:211:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+         draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
          ^
+main.c:144:12: warning: unused variable 'Id' [-Wunused-variable]
+     double Id;
+            ^
 main.c: In function 'main':
-main.c:219:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
+main.c:224:5: warning: implicit declaration of function 'spi_device_select' [-Wimplicit-function-declaration]
+     spi_device_select(SCREEN_SELECT);
+     ^
+main.c:237:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
      StartScreen();
      ^
-main.c:288:9: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
-         draw_choose_screen();
-         ^
-main.c:316:13: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/screen.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c screen.c -o .\CortexM3\ARM_GCC_541\Debug\screen.o
+main.c:323:13: warning: implicit declaration of function 'draw_warning_screen' [-Wimplicit-function-declaration]
+             draw_warning_screen();
+             ^
+main.c:327:13: warning: implicit declaration of function 'draw_options_screen' [-Wimplicit-function-declaration]
+             draw_options_screen();
+             ^
+main.c:336:17: warning: implicit declaration of function 'draw_debug_screen' [-Wimplicit-function-declaration]
+                 draw_debug_screen(0,0);
+                 ^
+main.c:337:17: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
+                 draw_choose_screen();
+                 ^
+main.c:356:13: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
              fill_screen(BLACK);
              ^
-main.c:318:13: warning: implicit declaration of function 'create_file_with_text' [-Wimplicit-function-declaration]
-             create_file_with_text("log.txt", "No Threshold Voltage found, check power supplies");
-             ^
-main.c:369:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
+main.c:417:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
          draw_coordinates(y_max_calc,device_selection);
          ^
-main.c:269:9: warning: variable 'debug' set but not used [-Wunused-but-set-variable]
+main.c:285:9: warning: variable 'device_selection_prev' set but not used [-Wunused-but-set-variable]
+     int device_selection_prev = -1;
+         ^
+main.c:283:9: warning: variable 'debug' set but not used [-Wunused-but-set-variable]
      int debug;
          ^
-main.c:260:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
+main.c:274:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
      int y_pixel_prev;
          ^
-main.c:259:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
+main.c:273:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
      int x_pixel_prev;
          ^
-main.c:258:9: warning: unused variable 'y_pixel' [-Wunused-variable]
+main.c:272:9: warning: unused variable 'y_pixel' [-Wunused-variable]
      int y_pixel;
          ^
-main.c:257:9: warning: unused variable 'x_pixel' [-Wunused-variable]
+main.c:271:9: warning: unused variable 'x_pixel' [-Wunused-variable]
      int x_pixel;
          ^
-main.c:253:12: warning: unused variable 'x_max_mV' [-Wunused-variable]
-     double x_max_mV = 10000;                   //the highest plottable Vds in mV
-            ^
-main.c:250:9: warning: unused variable 'k' [-Wunused-variable]
+main.c:265:9: warning: unused variable 'k' [-Wunused-variable]
      int k;  //used for for loop iterations
          ^
-main.c:249:9: warning: unused variable 'j' [-Wunused-variable]
+main.c:264:9: warning: unused variable 'j' [-Wunused-variable]
      int j;  //used for for loop iterations
          ^
-main.c:246:9: warning: unused variable 'return_code' [-Wunused-variable]
+main.c:261:9: warning: unused variable 'return_code' [-Wunused-variable]
      int return_code;    //Going to be used for error displays
          ^
 main.c: In function 'run_test':
-main.c:196:1: warning: control reaches end of non-void function [-Wreturn-type]
+main.c:214:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-main.c:172:17: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
-                 draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
-                 ^
-main.c:172:17: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/screen.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c screen.c -o .\CortexM3\ARM_GCC_541\Debug\screen.o
+main.c:211:9: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+         draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
+         ^
+main.c:211:9: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
 screen.c: In function 'draw_button':
-screen.c:335:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+screen.c:381:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
          draw_string(pixel_start,rect_center_y-1,text_color,the_string,1);
          ^
 screen.c: In function 'draw_coordinates':
-screen.c:387:9: warning: unused variable 'k' [-Wunused-variable]
+screen.c:436:9: warning: unused variable 'k' [-Wunused-variable]
      int k;
          ^
-screen.c:381:9: warning: unused variable 'x_label' [-Wunused-variable]
+screen.c:430:9: warning: unused variable 'x_label' [-Wunused-variable]
      int x_label;
          ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/font.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c font.c -o .\CortexM3\ARM_GCC_541\Debug\font.o
 font.c: In function 'draw_character':
-font.c:730:13: warning: implicit declaration of function 'fill_rect' [-Wimplicit-function-declaration]
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/sd.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c sd.c -o .\CortexM3\ARM_GCC_541\Debug\sd.o
+font.c:745:13: warning: implicit declaration of function 'fill_rect' [-Wimplicit-function-declaration]
              fill_rect(x+font[index+j+1]*font_scale,y+(i*(font_scale-1)),font_scale,font_scale, color);
              ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/sd.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c sd.c -o .\CortexM3\ARM_GCC_541\Debug\sd.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/uifunctions.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c uifunctions.c -o .\CortexM3\ARM_GCC_541\Debug\uifunctions.o
 uifunctions.c: In function 'ui_control':
-uifunctions.c:27:17: warning: implicit declaration of function 'draw_debug_screen' [-Wimplicit-function-declaration]
-                 draw_debug_screen(x, y);
-                 ^
-uifunctions.c:32:17: warning: implicit declaration of function 'draw_options_screen' [-Wimplicit-function-declaration]
+uifunctions.c:41:17: warning: implicit declaration of function 'draw_options_screen' [-Wimplicit-function-declaration]
                  draw_options_screen();
                  ^
-uifunctions.c:53:17: warning: implicit declaration of function 'draw_options_averages_screen' [-Wimplicit-function-declaration]
+uifunctions.c:74:17: warning: implicit declaration of function 'draw_options_averages_screen' [-Wimplicit-function-declaration]
                  draw_options_averages_screen(); 
                  ^
-uifunctions.c:57:17: warning: implicit declaration of function 'draw_options_sd_screen' [-Wimplicit-function-declaration]
+uifunctions.c:78:17: warning: implicit declaration of function 'draw_options_sd_screen' [-Wimplicit-function-declaration]
                  draw_options_sd_screen(); 
                  ^
-uifunctions.c:61:17: warning: implicit declaration of function 'draw_options_curves_screen' [-Wimplicit-function-declaration]
+uifunctions.c:82:17: warning: implicit declaration of function 'draw_more_options_screen' [-Wimplicit-function-declaration]
+                 draw_more_options_screen(); 
+                 ^
+uifunctions.c:86:17: warning: implicit declaration of function 'draw_options_curves_screen' [-Wimplicit-function-declaration]
                  draw_options_curves_screen(); 
                  ^
-uifunctions.c:65:17: warning: implicit declaration of function 'draw_options_settling_screen' [-Wimplicit-function-declaration]
-                 draw_options_settling_screen(); 
-                 ^
-uifunctions.c:69:17: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
+uifunctions.c:90:17: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
                  draw_choose_screen();
                  ^
-uifunctions.c:73:17: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
-                 draw_coordinates();
-                 ^
-uifunctions.c:94:17: warning: implicit declaration of function 'fill_rect' [-Wimplicit-function-declaration]
+arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+uifunctions.c:121:17: warning: implicit declaration of function 'fill_rect' [-Wimplicit-function-declaration]
                  fill_rect(10,95,60,30,BLACK);
                  ^
-uifunctions.c:99:17: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+uifunctions.c:126:17: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
                  draw_string(20,105,WHITE,avg_num,2);
                  ^
-uifunctions.c:179:17: warning: implicit declaration of function 'draw_button' [-Wimplicit-function-declaration]
+uifunctions.c:206:17: warning: implicit declaration of function 'draw_button' [-Wimplicit-function-declaration]
                  draw_button(30,100,80,50,LIGHTBLUE,BLACK,"YES");  
                  ^
-arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cyfitter_cfg.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cyfitter_cfg.c -o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o
+uifunctions.c:298:17: warning: implicit declaration of function 'draw_vds_options_screen' [-Wimplicit-function-declaration]
+                 draw_vds_options_screen(); 
+                 ^
+uifunctions.c:302:17: warning: implicit declaration of function 'draw_options_grid_screen' [-Wimplicit-function-declaration]
+                 draw_options_grid_screen();
+                 ^
+uifunctions.c:306:17: warning: implicit declaration of function 'draw_options_cooldown_screen' [-Wimplicit-function-declaration]
+                 draw_options_cooldown_screen();
+                 ^
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/cymetadata.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\cymetadata.c -o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/Cm3Start.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\Cm3Start.c -o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/CyDmac.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c Generated_Source\PSoC5\CyDmac.c -o .\CortexM3\ARM_GCC_541\Debug\CyDmac.o
@@ -282,6 +312,6 @@ No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
 cyelftool.exe -S "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
-Flash used: 28856 of 262144 bytes (11.0%).
-SRAM used: 10897 of 65536 bytes (16.6%). Stack: 2048 bytes. Heap: 4096 bytes.
---------------- Rebuild Succeeded: 04/20/2019 16:36:23 ---------------
+Flash used: 25904 of 262144 bytes (9.9%).
+SRAM used: 10905 of 65536 bytes (16.6%). Stack: 2048 bytes. Heap: 4096 bytes.
+--------------- Rebuild Succeeded: 05/05/2019 23:34:27 ---------------

@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 1
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
    1              		.syntax unified
@@ -58,7 +62,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
   29:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** /* Max. startup frequency (KHz) */
   30:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** #define emFile_1_STARTUP_FREQ                   (400u)
   31:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 2
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 2
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   32:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -118,7 +126,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
   77:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
   36              		.loc 1 77 0
   37 0002 80B9     		cbnz	r0, .L5
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 3
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 3
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   78:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
@@ -178,7 +190,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  107:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 if (emFile_1_isInited1 == 0u)
  108:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                 {
  109:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Indicate that SPI 1 was initialized */
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 4
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 4
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  110:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_isInited1 = 1u;
@@ -238,7 +254,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  164:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Stop the clock to set a required divider */
  165:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     emFile_1_Clock_4_Stop();
  166:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 5
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 5
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  167:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****                     /* Set the inital clock frequency to 400 KHz */
@@ -298,7 +318,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
   85              	.L1:
   86 0046 10BD     		pop	{r4, pc}
   87              	.L8:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 6
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 6
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   88              		.align	2
@@ -358,7 +382,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  229:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     {
  230:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     case 0u:
  231:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 7
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 7
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  232:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         /* Send Data */
@@ -418,7 +446,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  268:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             while (0u == (emFile_1_SPI2_STS_SPI_DONE & emFile_1_SPI2_ReadTxStatus()));
  269:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  270:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             /* Read data */
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 8
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 8
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  271:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             spiData = emFile_1_SPI2_ReadRxData();
@@ -478,7 +510,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  145 002e 08BD     		pop	{r3, pc}
  146              		.cfi_endproc
  147              	.LFE1:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 9
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 9
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  148              		.size	emFile_1_ReadWriteSPI, .-emFile_1_ReadWriteSPI
@@ -538,7 +574,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  173              	.LVL22:
  174              	.L21:
  339:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 10
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 10
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  340:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         #if (emFile_1_NUMBER_SD_CARDS >= 2u)
@@ -598,7 +638,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  377:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
  378:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     }
  379:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 11
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 11
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  380:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -658,7 +702,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  414:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_SPI1_CS_Write(1u);
  415:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  416:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             break;
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 12
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 12
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  417:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
@@ -718,7 +766,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  454:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  FS low level function. Returns the state of the physical write
  455:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  protection of the SD cards.
  456:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 13
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 13
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  457:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Parameters:
@@ -778,7 +830,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  505:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  506:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #endif /* (emFile_1_NUMBER_SD_CARDS >= 2u) */
  507:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 14
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 14
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  508:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     #if (emFile_1_NUMBER_SD_CARDS >= 3u)
@@ -838,7 +894,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  562:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     return(wpState);
  563:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** }
  235              		.loc 1 563 0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 15
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 15
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  236 0000 0020     		movs	r0, #0
@@ -898,7 +958,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  261              		.loc 1 592 0
  262 0002 B1F5C87F 		cmp	r1, #400
  263 0006 04D3     		bcc	.L35
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 16
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 16
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  264 0008 0D46     		mov	r5, r1
@@ -958,7 +1022,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  296              	.LVL38:
  614:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             emFile_1_Clock_1_Start();
  297              		.loc 1 614 0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 17
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 17
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  298 0038 FFF7FEFF 		bl	emFile_1_Clock_1_Start
@@ -1018,7 +1086,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  313              		.loc 1 653 0
  314 004c FFF7FEFF 		bl	emFile_1_Clock_1_Start
  315              	.LVL43:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 18
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 18
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  316              	.L34:
@@ -1078,7 +1150,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  687:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** 
  688:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****     switch(Unit)
  337              		.loc 1 688 0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 19
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 19
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  338 0000 0328     		cmp	r0, #3
@@ -1138,7 +1214,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  719:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             result = emFile_1_RET_FAIL;
  362              		.loc 1 719 0 is_stmt 1
  363 0028 0020     		movs	r0, #0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 20
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 20
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  364              	.LVL47:
@@ -1198,7 +1278,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  733:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Summary:
  734:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  Returns the state of the media. If you do not know the state, return
  735:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  FS_MEDIA_STATE_UNKNOWN and the higher layer will try to figure out if
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 21
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 21
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  736:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  a media is present.
@@ -1258,7 +1342,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  415 0006 0220     		movs	r0, #2
  416 0008 08BD     		pop	{r3, pc}
  417              		.cfi_endproc
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 22
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 22
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  418              	.LFE7:
@@ -1318,7 +1406,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  803:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****         {
  804:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c ****             *pData++ = emFile_1_ReadWriteSPI(Unit, 0xff);
  446              		.loc 1 804 0 discriminator 1
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 23
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 23
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  447 0008 6E1C     		adds	r6, r5, #1
@@ -1378,7 +1470,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  833:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
  834:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** * Reentrant:
  835:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *  No
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 24
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 24
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  836:Generated_Source\PSoC5/emFile_1_MMC_HW_SPI.c **** *
@@ -1438,7 +1534,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  517              		.section	.debug_info,"",%progbits
  518              	.Ldebug_info0:
  519 0000 DC040000 		.4byte	0x4dc
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 25
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 25
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  520 0004 0400     		.2byte	0x4
@@ -1447,23 +1547,23 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  523 000b 01       		.uleb128 0x1
  524 000c B6000000 		.4byte	.LASF43
  525 0010 0C       		.byte	0xc
- 526 0011 BA030000 		.4byte	.LASF44
- 527 0015 44010000 		.4byte	.LASF45
+ 526 0011 BF030000 		.4byte	.LASF44
+ 527 0015 E7010000 		.4byte	.LASF45
  528 0019 00000000 		.4byte	.Ldebug_ranges0+0
  529 001d 00000000 		.4byte	0
  530 0021 00000000 		.4byte	.Ldebug_line0
  531 0025 02       		.uleb128 0x2
  532 0026 02       		.byte	0x2
  533 0027 07       		.byte	0x7
- 534 0028 DD010000 		.4byte	.LASF0
+ 534 0028 64010000 		.4byte	.LASF0
  535 002c 02       		.uleb128 0x2
  536 002d 04       		.byte	0x4
  537 002e 07       		.byte	0x7
- 538 002f 1B020000 		.4byte	.LASF1
+ 538 002f A2010000 		.4byte	.LASF1
  539 0033 02       		.uleb128 0x2
  540 0034 04       		.byte	0x4
  541 0035 07       		.byte	0x7
- 542 0036 76020000 		.4byte	.LASF2
+ 542 0036 65020000 		.4byte	.LASF2
  543 003a 03       		.uleb128 0x3
  544 003b 04       		.byte	0x4
  545 003c 05       		.byte	0x5
@@ -1475,39 +1575,43 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  551 0048 02       		.uleb128 0x2
  552 0049 04       		.byte	0x4
  553 004a 07       		.byte	0x7
- 554 004b E3020000 		.4byte	.LASF4
+ 554 004b FC020000 		.4byte	.LASF4
  555 004f 02       		.uleb128 0x2
  556 0050 01       		.byte	0x1
  557 0051 08       		.byte	0x8
- 558 0052 17030000 		.4byte	.LASF5
+ 558 0052 1C030000 		.4byte	.LASF5
  559 0056 02       		.uleb128 0x2
  560 0057 02       		.byte	0x2
  561 0058 05       		.byte	0x5
- 562 0059 44020000 		.4byte	.LASF6
+ 562 0059 CB010000 		.4byte	.LASF6
  563 005d 02       		.uleb128 0x2
  564 005e 04       		.byte	0x4
  565 005f 05       		.byte	0x5
- 566 0060 5C030000 		.4byte	.LASF7
+ 566 0060 61030000 		.4byte	.LASF7
  567 0064 04       		.uleb128 0x4
  568 0065 04       		.byte	0x4
  569 0066 41000000 		.4byte	0x41
  570 006a 02       		.uleb128 0x2
  571 006b 01       		.byte	0x1
  572 006c 06       		.byte	0x6
- 573 006d B9020000 		.4byte	.LASF8
+ 573 006d A8020000 		.4byte	.LASF8
  574 0071 02       		.uleb128 0x2
  575 0072 08       		.byte	0x8
  576 0073 05       		.byte	0x5
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 26
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 26
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
- 577 0074 00030000 		.4byte	.LASF9
+ 577 0074 05030000 		.4byte	.LASF9
  578 0078 02       		.uleb128 0x2
  579 0079 08       		.byte	0x8
  580 007a 07       		.byte	0x7
- 581 007b 96020000 		.4byte	.LASF10
+ 581 007b 85020000 		.4byte	.LASF10
  582 007f 05       		.uleb128 0x5
- 583 0080 56030000 		.4byte	.LASF46
+ 583 0080 5B030000 		.4byte	.LASF46
  584 0084 05       		.byte	0x5
  585 0085 E401     		.2byte	0x1e4
  586 0087 41000000 		.4byte	0x41
@@ -1522,9 +1626,9 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  595 0099 02       		.uleb128 0x2
  596 009a 08       		.byte	0x8
  597 009b 04       		.byte	0x4
- 598 009c D7020000 		.4byte	.LASF13
+ 598 009c C6020000 		.4byte	.LASF13
  599 00a0 06       		.uleb128 0x6
- 600 00a1 65030000 		.4byte	.LASF47
+ 600 00a1 6A030000 		.4byte	.LASF47
  601 00a5 01       		.byte	0x1
  602 00a6 4B       		.byte	0x4b
  603 00a7 00000000 		.4byte	.LFB0
@@ -1533,7 +1637,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  606 00b0 9C       		.byte	0x9c
  607 00b1 2F010000 		.4byte	0x12f
  608 00b5 07       		.uleb128 0x7
- 609 00b6 89030000 		.4byte	.LASF14
+ 609 00b6 8E030000 		.4byte	.LASF14
  610 00ba 01       		.byte	0x1
  611 00bb 4B       		.byte	0x4b
  612 00bc 41000000 		.4byte	0x41
@@ -1558,7 +1662,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  631 00e4 74       		.byte	0x74
  632 00e5 00       		.sleb128 0
  633 00e6 00       		.byte	0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 27
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 27
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  634 00e7 08       		.uleb128 0x8
@@ -1595,7 +1703,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  665 012a A8040000 		.4byte	0x4a8
  666 012e 00       		.byte	0
  667 012f 0B       		.uleb128 0xb
- 668 0130 A4030000 		.4byte	.LASF48
+ 668 0130 A9030000 		.4byte	.LASF48
  669 0134 01       		.byte	0x1
  670 0135 E0       		.byte	0xe0
  671 0136 41000000 		.4byte	0x41
@@ -1605,7 +1713,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  675 0143 9C       		.byte	0x9c
  676 0144 AC010000 		.4byte	0x1ac
  677 0148 07       		.uleb128 0x7
- 678 0149 89030000 		.4byte	.LASF14
+ 678 0149 8E030000 		.4byte	.LASF14
  679 014d 01       		.byte	0x1
  680 014e E0       		.byte	0xe0
  681 014f 41000000 		.4byte	0x41
@@ -1617,8 +1725,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  687 015e 41000000 		.4byte	0x41
  688 0162 74000000 		.4byte	.LLST2
  689 0166 0C       		.uleb128 0xc
+<<<<<<< HEAD
+ 690 0167 5C010000 		.4byte	.LASF18
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 28
+=======
  690 0167 D5010000 		.4byte	.LASF18
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 28
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  691 016b 01       		.byte	0x1
@@ -1654,7 +1767,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  721 01bd 9C       		.byte	0x9c
  722 01be EB010000 		.4byte	0x1eb
  723 01c2 0E       		.uleb128 0xe
- 724 01c3 89030000 		.4byte	.LASF14
+ 724 01c3 8E030000 		.4byte	.LASF14
  725 01c7 01       		.byte	0x1
  726 01c8 4901     		.2byte	0x149
  727 01ca 41000000 		.4byte	0x41
@@ -1673,19 +1786,23 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  740 01e9 00       		.byte	0
  741 01ea 00       		.byte	0
  742 01eb 0D       		.uleb128 0xd
- 743 01ec 8E030000 		.4byte	.LASF17
+ 743 01ec 93030000 		.4byte	.LASF17
  744 01f0 01       		.byte	0x1
  745 01f1 9001     		.2byte	0x190
  746 01f3 00000000 		.4byte	.LFB3
  747 01f7 14000000 		.4byte	.LFE3-.LFB3
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 29
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 29
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  748 01fb 01       		.uleb128 0x1
  749 01fc 9C       		.byte	0x9c
  750 01fd 34020000 		.4byte	0x234
  751 0201 0E       		.uleb128 0xe
- 752 0202 89030000 		.4byte	.LASF14
+ 752 0202 8E030000 		.4byte	.LASF14
  753 0206 01       		.byte	0x1
  754 0207 9001     		.2byte	0x190
  755 0209 41000000 		.4byte	0x41
@@ -1721,7 +1838,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  785 0249 9C       		.byte	0x9c
  786 024a 6C020000 		.4byte	0x26c
  787 024e 0E       		.uleb128 0xe
- 788 024f 89030000 		.4byte	.LASF14
+ 788 024f 8E030000 		.4byte	.LASF14
  789 0253 01       		.byte	0x1
  790 0254 D401     		.2byte	0x1d4
  791 0256 41000000 		.4byte	0x41
@@ -1734,11 +1851,15 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  798 026a 00       		.byte	0
  799 026b 00       		.byte	0
  800 026c 10       		.uleb128 0x10
- 801 026d BD010000 		.4byte	.LASF21
+ 801 026d 44010000 		.4byte	.LASF21
  802 0271 01       		.byte	0x1
  803 0272 4B02     		.2byte	0x24b
  804 0274 25000000 		.4byte	0x25
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 30
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 30
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  805 0278 00000000 		.4byte	.LFB5
@@ -1747,25 +1868,25 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  808 0281 9C       		.byte	0x9c
  809 0282 21030000 		.4byte	0x321
  810 0286 0E       		.uleb128 0xe
- 811 0287 89030000 		.4byte	.LASF14
+ 811 0287 8E030000 		.4byte	.LASF14
  812 028b 01       		.byte	0x1
  813 028c 4B02     		.2byte	0x24b
  814 028e 41000000 		.4byte	0x41
  815 0292 61010000 		.4byte	.LLST7
  816 0296 0E       		.uleb128 0xe
- 817 0297 58020000 		.4byte	.LASF22
+ 817 0297 DF010000 		.4byte	.LASF22
  818 029b 01       		.byte	0x1
  819 029c 4B02     		.2byte	0x24b
  820 029e 25000000 		.4byte	0x25
  821 02a2 9B010000 		.4byte	.LLST8
  822 02a6 12       		.uleb128 0x12
- 823 02a7 3A030000 		.4byte	.LASF23
+ 823 02a7 3F030000 		.4byte	.LASF23
  824 02ab 01       		.byte	0x1
  825 02ac 4D02     		.2byte	0x24d
  826 02ae 25000000 		.4byte	0x25
  827 02b2 B9010000 		.4byte	.LLST9
  828 02b6 13       		.uleb128 0x13
- 829 02b7 4E020000 		.4byte	.LASF24
+ 829 02b7 D5010000 		.4byte	.LASF24
  830 02bb 01       		.byte	0x1
  831 02bc 4E02     		.2byte	0x24e
  832 02be 2C000000 		.4byte	0x2c
@@ -1798,7 +1919,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  859 02ec 08       		.uleb128 0x8
  860 02ed 3C000000 		.4byte	.LVL39
  861 02f1 9D040000 		.4byte	0x49d
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 31
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 31
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  862 02f5 08       		.uleb128 0x8
@@ -1825,7 +1950,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  883 031c 9D040000 		.4byte	0x49d
  884 0320 00       		.byte	0
  885 0321 10       		.uleb128 0x10
- 886 0322 2D020000 		.4byte	.LASF25
+ 886 0322 B4010000 		.4byte	.LASF25
  887 0326 01       		.byte	0x1
  888 0327 AC02     		.2byte	0x2ac
  889 0329 3A000000 		.4byte	0x3a
@@ -1835,30 +1960,34 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  893 0336 9C       		.byte	0x9c
  894 0337 76030000 		.4byte	0x376
  895 033b 0E       		.uleb128 0xe
- 896 033c 89030000 		.4byte	.LASF14
+ 896 033c 8E030000 		.4byte	.LASF14
  897 0340 01       		.byte	0x1
  898 0341 AC02     		.2byte	0x2ac
  899 0343 41000000 		.4byte	0x41
  900 0347 DB010000 		.4byte	.LLST10
  901 034b 14       		.uleb128 0x14
- 902 034c 1C030000 		.4byte	.LASF26
+ 902 034c 21030000 		.4byte	.LASF26
  903 0350 01       		.byte	0x1
  904 0351 AC02     		.2byte	0x2ac
  905 0353 25000000 		.4byte	0x25
  906 0357 01       		.uleb128 0x1
  907 0358 51       		.byte	0x51
  908 0359 14       		.uleb128 0x14
- 909 035a AD020000 		.4byte	.LASF27
+ 909 035a 9C020000 		.4byte	.LASF27
  910 035e 01       		.byte	0x1
  911 035f AC02     		.2byte	0x2ac
  912 0361 25000000 		.4byte	0x25
  913 0365 01       		.uleb128 0x1
  914 0366 52       		.byte	0x52
  915 0367 13       		.uleb128 0x13
- 916 0368 B2020000 		.4byte	.LASF28
+ 916 0368 A1020000 		.4byte	.LASF28
  917 036c 01       		.byte	0x1
  918 036d AE02     		.2byte	0x2ae
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 32
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 32
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  919 036f 3A000000 		.4byte	0x3a
@@ -1866,7 +1995,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  921 0374 50       		.byte	0x50
  922 0375 00       		.byte	0
  923 0376 10       		.uleb128 0x10
- 924 0377 60020000 		.4byte	.LASF29
+ 924 0377 D2020000 		.4byte	.LASF29
  925 037b 01       		.byte	0x1
  926 037c EE02     		.2byte	0x2ee
  927 037e 3A000000 		.4byte	0x3a
@@ -1876,13 +2005,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  931 038b 9C       		.byte	0x9c
  932 038c B7030000 		.4byte	0x3b7
  933 0390 0E       		.uleb128 0xe
- 934 0391 89030000 		.4byte	.LASF14
+ 934 0391 8E030000 		.4byte	.LASF14
  935 0395 01       		.byte	0x1
  936 0396 EE02     		.2byte	0x2ee
  937 0398 41000000 		.4byte	0x41
  938 039c 79020000 		.4byte	.LLST11
  939 03a0 11       		.uleb128 0x11
- 940 03a1 B2020000 		.4byte	.LASF28
+ 940 03a1 A1020000 		.4byte	.LASF28
  941 03a5 01       		.byte	0x1
  942 03a6 F002     		.2byte	0x2f0
  943 03a8 3A000000 		.4byte	0x3a
@@ -1892,7 +2021,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  947 03b2 A0000000 		.4byte	0xa0
  948 03b6 00       		.byte	0
  949 03b7 0D       		.uleb128 0xd
- 950 03b8 F0010000 		.4byte	.LASF30
+ 950 03b8 77010000 		.4byte	.LASF30
  951 03bc 01       		.byte	0x1
  952 03bd 2003     		.2byte	0x320
  953 03bf 00000000 		.4byte	.LFB8
@@ -1901,7 +2030,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  956 03c8 9C       		.byte	0x9c
  957 03c9 14040000 		.4byte	0x414
  958 03cd 0E       		.uleb128 0xe
- 959 03ce 89030000 		.4byte	.LASF14
+ 959 03ce 8E030000 		.4byte	.LASF14
  960 03d2 01       		.byte	0x1
  961 03d3 2003     		.2byte	0x320
  962 03d5 41000000 		.4byte	0x41
@@ -1913,12 +2042,16 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  968 03e5 64000000 		.4byte	0x64
  969 03e9 BB020000 		.4byte	.LLST13
  970 03ed 0E       		.uleb128 0xe
- 971 03ee 0E030000 		.4byte	.LASF32
+ 971 03ee 13030000 		.4byte	.LASF32
  972 03f2 01       		.byte	0x1
  973 03f3 2003     		.2byte	0x320
  974 03f5 3A000000 		.4byte	0x3a
  975 03f9 E4020000 		.4byte	.LLST14
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 33
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 33
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  976 03fd 0F       		.uleb128 0xf
@@ -1939,7 +2072,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  991 0412 00       		.byte	0
  992 0413 00       		.byte	0
  993 0414 0D       		.uleb128 0xd
- 994 0415 C5020000 		.4byte	.LASF33
+ 994 0415 B4020000 		.4byte	.LASF33
  995 0419 01       		.byte	0x1
  996 041a 4703     		.2byte	0x347
  997 041c 00000000 		.4byte	.LFB9
@@ -1948,7 +2081,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1000 0425 9C       		.byte	0x9c
  1001 0426 6B040000 		.4byte	0x46b
  1002 042a 0E       		.uleb128 0xe
- 1003 042b 89030000 		.4byte	.LASF14
+ 1003 042b 8E030000 		.4byte	.LASF14
  1004 042f 01       		.byte	0x1
  1005 0430 4703     		.2byte	0x347
  1006 0432 41000000 		.4byte	0x41
@@ -1960,7 +2093,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1012 0442 6B040000 		.4byte	0x46b
  1013 0446 3B030000 		.4byte	.LLST16
  1014 044a 0E       		.uleb128 0xe
- 1015 044b 0E030000 		.4byte	.LASF32
+ 1015 044b 13030000 		.4byte	.LASF32
  1016 044f 01       		.byte	0x1
  1017 0450 4703     		.2byte	0x347
  1018 0452 3A000000 		.4byte	0x3a
@@ -1978,14 +2111,18 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1030 046a 00       		.byte	0
  1031 046b 04       		.uleb128 0x4
  1032 046c 04       		.byte	0x4
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 34
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 34
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1033 046d 71040000 		.4byte	0x471
  1034 0471 15       		.uleb128 0x15
  1035 0472 41000000 		.4byte	0x41
  1036 0476 16       		.uleb128 0x16
- 1037 0477 83020000 		.4byte	.LASF34
+ 1037 0477 72020000 		.4byte	.LASF34
  1038 047b 01       		.byte	0x1
  1039 047c 25       		.byte	0x25
  1040 047d 4F000000 		.4byte	0x4f
@@ -1993,8 +2130,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1042 0482 03       		.byte	0x3
  1043 0483 00000000 		.4byte	emFile_1_isInited0
  1044 0487 17       		.uleb128 0x17
- 1045 0488 73030000 		.4byte	.LASF35
- 1046 048c 73030000 		.4byte	.LASF35
+ 1045 0488 78030000 		.4byte	.LASF35
+ 1046 048c 78030000 		.4byte	.LASF35
  1047 0490 02       		.byte	0x2
  1048 0491 28       		.byte	0x28
  1049 0492 17       		.uleb128 0x17
@@ -2008,13 +2145,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1057 04a6 02       		.byte	0x2
  1058 04a7 27       		.byte	0x27
  1059 04a8 17       		.uleb128 0x17
- 1060 04a9 EC020000 		.4byte	.LASF38
- 1061 04ad EC020000 		.4byte	.LASF38
+ 1060 04a9 E8020000 		.4byte	.LASF38
+ 1061 04ad E8020000 		.4byte	.LASF38
  1062 04b1 03       		.byte	0x3
  1063 04b2 58       		.byte	0x58
  1064 04b3 17       		.uleb128 0x17
- 1065 04b4 01020000 		.4byte	.LASF39
- 1066 04b8 01020000 		.4byte	.LASF39
+ 1065 04b4 88010000 		.4byte	.LASF39
+ 1066 04b8 88010000 		.4byte	.LASF39
  1067 04bc 03       		.byte	0x3
  1068 04bd 69       		.byte	0x69
  1069 04be 17       		.uleb128 0x17
@@ -2023,13 +2160,13 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1072 04c7 03       		.byte	0x3
  1073 04c8 67       		.byte	0x67
  1074 04c9 17       		.uleb128 0x17
- 1075 04ca 21030000 		.4byte	.LASF41
- 1076 04ce 21030000 		.4byte	.LASF41
+ 1075 04ca 26030000 		.4byte	.LASF41
+ 1076 04ce 26030000 		.4byte	.LASF41
  1077 04d2 03       		.byte	0x3
  1078 04d3 6B       		.byte	0x6b
  1079 04d4 17       		.uleb128 0x17
- 1080 04d5 3F030000 		.4byte	.LASF42
- 1081 04d9 3F030000 		.4byte	.LASF42
+ 1080 04d5 44030000 		.4byte	.LASF42
+ 1081 04d9 44030000 		.4byte	.LASF42
  1082 04dd 04       		.byte	0x4
  1083 04de 28       		.byte	0x28
  1084 04df 00       		.byte	0
@@ -2038,7 +2175,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1087 0000 01       		.uleb128 0x1
  1088 0001 11       		.uleb128 0x11
  1089 0002 01       		.byte	0x1
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 35
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 35
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1090 0003 25       		.uleb128 0x25
@@ -2098,7 +2239,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1144 0039 3B       		.uleb128 0x3b
  1145 003a 05       		.uleb128 0x5
  1146 003b 49       		.uleb128 0x49
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 36
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 36
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1147 003c 13       		.uleb128 0x13
@@ -2158,7 +2303,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1201 0077 01       		.uleb128 0x1
  1202 0078 31       		.uleb128 0x31
  1203 0079 13       		.uleb128 0x13
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 37
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 37
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1204 007a 01       		.uleb128 0x1
@@ -2218,7 +2367,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1258 00b4 2E       		.uleb128 0x2e
  1259 00b5 01       		.byte	0x1
  1260 00b6 3F       		.uleb128 0x3f
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 38
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 38
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1261 00b7 19       		.uleb128 0x19
@@ -2278,7 +2431,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1315 00f0 3B       		.uleb128 0x3b
  1316 00f1 05       		.uleb128 0x5
  1317 00f2 27       		.uleb128 0x27
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 39
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 39
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1318 00f3 19       		.uleb128 0x19
@@ -2338,7 +2495,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1372 012a 49       		.uleb128 0x49
  1373 012b 13       		.uleb128 0x13
  1374 012c 02       		.uleb128 0x2
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 40
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 40
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1375 012d 18       		.uleb128 0x18
@@ -2398,7 +2559,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1429 0163 0B       		.uleb128 0xb
  1430 0164 00       		.byte	0
  1431 0165 00       		.byte	0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 41
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 41
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1432 0166 00       		.byte	0
@@ -2458,7 +2623,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1486 0074 00000000 		.4byte	.LVL10
  1487 0078 09000000 		.4byte	.LVL12-1
  1488 007c 0100     		.2byte	0x1
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 42
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 42
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1489 007e 51       		.byte	0x51
@@ -2518,7 +2687,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1543 00fd 9F       		.byte	0x9f
  1544 00fe 00000000 		.4byte	0
  1545 0102 00000000 		.4byte	0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 43
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 43
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1546              	.LLST5:
@@ -2578,7 +2751,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1600 0184 50       		.byte	0x50
  1601 0185 41000000 		.4byte	.LVL41-1
  1602 0189 54000000 		.4byte	.LFE5
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 44
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 44
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1603 018d 0400     		.2byte	0x4
@@ -2638,7 +2815,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1657 020b 50       		.byte	0x50
  1658 020c 9F       		.byte	0x9f
  1659 020d 2C000000 		.4byte	.LVL48
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 45
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 45
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1660 0211 2E000000 		.4byte	.LVL49
@@ -2698,7 +2879,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1714 028f 01       		.uleb128 0x1
  1715 0290 50       		.byte	0x50
  1716 0291 9F       		.byte	0x9f
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 46
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 46
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1717 0292 00000000 		.4byte	0
@@ -2758,7 +2943,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1771 031e 06000000 		.4byte	.LVL65
  1772 0322 0100     		.2byte	0x1
  1773 0324 50       		.byte	0x50
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 47
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 47
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1774 0325 06000000 		.4byte	.LVL65
@@ -2818,7 +3007,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1828 0024 12000000 		.4byte	.LFE2-.LFB2
  1829 0028 00000000 		.4byte	.LFB3
  1830 002c 14000000 		.4byte	.LFE3-.LFB3
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 48
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 48
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1831 0030 00000000 		.4byte	.LFB4
@@ -2878,7 +3071,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1875      575F585F 
  1875      49735772 
  1875      69746550 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 49
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 49
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1876              	.LASF19:
@@ -2935,6 +3132,136 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
  1897      74696F6E 
  1897      2D736563 
  1897      74696F6E 
+<<<<<<< HEAD
+ 1898              	.LASF21:
+ 1899 0144 46535F4D 		.ascii	"FS_MMC_HW_X_SetMaxSpeed\000"
+ 1899      4D435F48 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 50
+
+
+ 1899      575F585F 
+ 1899      5365744D 
+ 1899      61785370 
+ 1900              	.LASF18:
+ 1901 015c 73706944 		.ascii	"spiData\000"
+ 1901      61746100 
+ 1902              	.LASF0:
+ 1903 0164 73686F72 		.ascii	"short unsigned int\000"
+ 1903      7420756E 
+ 1903      7369676E 
+ 1903      65642069 
+ 1903      6E7400
+ 1904              	.LASF30:
+ 1905 0177 46535F4D 		.ascii	"FS_MMC_HW_X_Read\000"
+ 1905      4D435F48 
+ 1905      575F585F 
+ 1905      52656164 
+ 1905      00
+ 1906              	.LASF39:
+ 1907 0188 656D4669 		.ascii	"emFile_1_SPI0_WriteTxData\000"
+ 1907      6C655F31 
+ 1907      5F535049 
+ 1907      305F5772 
+ 1907      69746554 
+ 1908              	.LASF1:
+ 1909 01a2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1909      20756E73 
+ 1909      69676E65 
+ 1909      6420696E 
+ 1909      7400
+ 1910              	.LASF25:
+ 1911 01b4 46535F4D 		.ascii	"FS_MMC_HW_X_SetVoltage\000"
+ 1911      4D435F48 
+ 1911      575F585F 
+ 1911      53657456 
+ 1911      6F6C7461 
+ 1912              	.LASF6:
+ 1913 01cb 73686F72 		.ascii	"short int\000"
+ 1913      7420696E 
+ 1913      7400
+ 1914              	.LASF24:
+ 1915 01d5 64697652 		.ascii	"divResult\000"
+ 1915      6573756C 
+ 1915      7400
+ 1916              	.LASF22:
+ 1917 01df 4D617846 		.ascii	"MaxFreq\000"
+ 1917      72657100 
+ 1918              	.LASF45:
+ 1919 01e7 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 1919      73657273 
+ 1919      5C6C6567 
+ 1919      6F635C44 
+ 1919      6F63756D 
+ 1920 0214 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 1920      72205072 
+ 1920      6F6A6563 
+ 1920      745C5365 
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 51
+
+
+ 1920      6E696F72 
+ 1921 0245 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 1921      7420496E 
+ 1921      74656772 
+ 1921      61746564 
+ 1921      5C446573 
+ 1922              	.LASF2:
+ 1923 0265 756E7369 		.ascii	"unsigned int\000"
+ 1923      676E6564 
+ 1923      20696E74 
+ 1923      00
+ 1924              	.LASF34:
+ 1925 0272 656D4669 		.ascii	"emFile_1_isInited0\000"
+ 1925      6C655F31 
+ 1925      5F697349 
+ 1925      6E697465 
+ 1925      643000
+ 1926              	.LASF10:
+ 1927 0285 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1927      206C6F6E 
+ 1927      6720756E 
+ 1927      7369676E 
+ 1927      65642069 
+ 1928              	.LASF27:
+ 1929 029c 566D6178 		.ascii	"Vmax\000"
+ 1929      00
+ 1930              	.LASF28:
+ 1931 02a1 72657375 		.ascii	"result\000"
+ 1931      6C7400
+ 1932              	.LASF8:
+ 1933 02a8 7369676E 		.ascii	"signed char\000"
+ 1933      65642063 
+ 1933      68617200 
+ 1934              	.LASF33:
+ 1935 02b4 46535F4D 		.ascii	"FS_MMC_HW_X_Write\000"
+ 1935      4D435F48 
+ 1935      575F585F 
+ 1935      57726974 
+ 1935      6500
+ 1936              	.LASF13:
+ 1937 02c6 6C6F6E67 		.ascii	"long double\000"
+ 1937      20646F75 
+ 1937      626C6500 
+ 1938              	.LASF29:
+ 1939 02d2 46535F4D 		.ascii	"FS_MMC_HW_X_IsPresent\000"
+ 1939      4D435F48 
+ 1939      575F585F 
+ 1939      49735072 
+ 1939      6573656E 
+ 1940              	.LASF38:
+ 1941 02e8 656D4669 		.ascii	"emFile_1_SPI0_Start\000"
+ 1941      6C655F31 
+ 1941      5F535049 
+ 1941      305F5374 
+ 1941      61727400 
+ 1942              	.LASF4:
+ 1943 02fc 73697A65 		.ascii	"sizetype\000"
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 52
+
+
+ 1943      74797065 
+ 1943      00
+=======
  1898              	.LASF45:
  1899 0144 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
  1899      73657273 
@@ -3063,74 +3390,79 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 1
 
  1943      305F5374 
  1943      61727400 
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
  1944              	.LASF9:
- 1945 0300 6C6F6E67 		.ascii	"long long int\000"
+ 1945 0305 6C6F6E67 		.ascii	"long long int\000"
  1945      206C6F6E 
  1945      6720696E 
  1945      7400
  1946              	.LASF32:
- 1947 030e 4E756D42 		.ascii	"NumBytes\000"
+ 1947 0313 4E756D42 		.ascii	"NumBytes\000"
  1947      79746573 
  1947      00
  1948              	.LASF5:
- 1949 0317 63686172 		.ascii	"char\000"
+ 1949 031c 63686172 		.ascii	"char\000"
  1949      00
  1950              	.LASF26:
- 1951 031c 566D696E 		.ascii	"Vmin\000"
+ 1951 0321 566D696E 		.ascii	"Vmin\000"
  1951      00
  1952              	.LASF41:
- 1953 0321 656D4669 		.ascii	"emFile_1_SPI0_ReadRxData\000"
+ 1953 0326 656D4669 		.ascii	"emFile_1_SPI0_ReadRxData\000"
  1953      6C655F31 
  1953      5F535049 
  1953      305F5265 
  1953      61645278 
  1954              	.LASF23:
- 1955 033a 66726571 		.ascii	"freq\000"
+ 1955 033f 66726571 		.ascii	"freq\000"
  1955      00
  1956              	.LASF42:
- 1957 033f 656D4669 		.ascii	"emFile_1_SPI0_CS_Write\000"
+ 1957 0344 656D4669 		.ascii	"emFile_1_SPI0_CS_Write\000"
  1957      6C655F31 
  1957      5F535049 
  1957      305F4353 
  1957      5F577269 
  1958              	.LASF46:
- 1959 0356 75696E74 		.ascii	"uint8\000"
+ 1959 035b 75696E74 		.ascii	"uint8\000"
  1959      3800
  1960              	.LASF7:
- 1961 035c 6C6F6E67 		.ascii	"long int\000"
+ 1961 0361 6C6F6E67 		.ascii	"long int\000"
  1961      20696E74 
  1961      00
  1962              	.LASF47:
- 1963 0365 656D4669 		.ascii	"emFile_1_Init\000"
+ 1963 036a 656D4669 		.ascii	"emFile_1_Init\000"
  1963      6C655F31 
  1963      5F496E69 
  1963      7400
  1964              	.LASF35:
- 1965 0373 656D4669 		.ascii	"emFile_1_Clock_1_Stop\000"
+ 1965 0378 656D4669 		.ascii	"emFile_1_Clock_1_Stop\000"
  1965      6C655F31 
  1965      5F436C6F 
  1965      636B5F31 
  1965      5F53746F 
  1966              	.LASF14:
- 1967 0389 556E6974 		.ascii	"Unit\000"
+ 1967 038e 556E6974 		.ascii	"Unit\000"
  1967      00
  1968              	.LASF17:
- 1969 038e 46535F4D 		.ascii	"FS_MMC_HW_X_DisableCS\000"
+ 1969 0393 46535F4D 		.ascii	"FS_MMC_HW_X_DisableCS\000"
  1969      4D435F48 
  1969      575F585F 
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRZldxH.s 			page 53
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc4KzcNa.s 			page 53
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  1969      44697361 
  1969      626C6543 
  1970              	.LASF48:
- 1971 03a4 656D4669 		.ascii	"emFile_1_ReadWriteSPI\000"
+ 1971 03a9 656D4669 		.ascii	"emFile_1_ReadWriteSPI\000"
  1971      6C655F31 
  1971      5F526561 
  1971      64577269 
  1971      74655350 
  1972              	.LASF44:
- 1973 03ba 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c\000"
+ 1973 03bf 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_MMC_HW_SPI.c\000"
  1973      72617465 
  1973      645F536F 
  1973      75726365 

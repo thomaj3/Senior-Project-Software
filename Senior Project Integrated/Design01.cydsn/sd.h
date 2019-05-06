@@ -12,6 +12,8 @@
 #if !defined(SD_H)
 #define SD_H
 
+    #define SCREEN_SELECT 1
+    #define SD_SELECT 2
 
 #endif /* (FONT_H) */
 /* [] END OF FILE */

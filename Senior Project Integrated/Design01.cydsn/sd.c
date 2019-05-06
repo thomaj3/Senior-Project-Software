@@ -7,6 +7,34 @@
 #include "stdio.h"
 #include "sd.h"
 #include "uifunctions.h"
+#include "project.h"
+
+void spi_device_select(int selection)
+{
+    
+    if(selection == SCREEN_SELECT)
+    {
+        emFile_1_mosi0_SetDriveMode(emFile_1_mosi0_DM_DIG_HIZ);
+        //emFile_1_miso0_SetDriveMode(emFile_1_miso0_DM_DIG_HIZ);
+        emFile_1_sclk0_SetDriveMode(emFile_1_sclk0_DM_DIG_HIZ);
+        
+        
+        MOSI_SetDriveMode(MOSI_DM_STRONG);
+        MISO_SetDriveMode(MISO_DM_STRONG);
+        CLK_SetDriveMode(CLK_DM_STRONG);
+        
+    } else if (selection == SD_SELECT)
+    {
+        emFile_1_mosi0_SetDriveMode(emFile_1_mosi0_DM_STRONG);
+        //emFile_1_miso0_SetDriveMode(emFile_1_miso0_DM_DIG_HIZ);
+        emFile_1_sclk0_SetDriveMode(emFile_1_sclk0_DM_STRONG);
+        
+        MOSI_SetDriveMode(MOSI_DM_DIG_HIZ);
+        MISO_SetDriveMode(MISO_DM_DIG_HIZ);
+        CLK_SetDriveMode(CLK_DM_DIG_HIZ);
+    }
+}
+    
 
 //This is the backend for implementing CSV support for Curve Tracer
 
@@ -52,6 +80,7 @@ void append_file(char * file_name, char * text)
 //it will also label Vgs/Ib, Ic/Id, and Vds/Vce 
 void write_header_info(char * file_name, unsigned char device_selection, unsigned char curve_num, double Vgs_double[])
 {
+    spi_device_select(SD_SELECT);
     //file_name is the char array of the file with extension to be overwritten
     //device_selection is the type of test (NMOS, NPN,PMOS,PNP) being run effects label
     //curve num is the current VGS iteration
@@ -87,10 +116,12 @@ void write_header_info(char * file_name, unsigned char device_selection, unsigne
     append_file(file_name,",");//comma seperation
     append_file(file_name,x_label[device_selection/2]);
     append_file(file_name,"\n");//create new line
+    spi_device_select(SCREEN_SELECT);
 }
 
 void write_data(char * file_name, double Id, unsigned char Vds_code, unsigned char device_selection)
 {
+    spi_device_select(SD_SELECT);
     char temp_str[10];  //temp string to be used to move doubles to
     double Vds;         //Used to convert the VDAC code to real value
     if(device_selection < 2)
@@ -107,4 +138,5 @@ void write_data(char * file_name, double Id, unsigned char Vds_code, unsigned ch
     sprintf(temp_str,"%5f",Vds);
     append_file(file_name,temp_str); //print Vds value
     append_file(file_name,"\n");//create new line
+    spi_device_select(SCREEN_SELECT);
 }

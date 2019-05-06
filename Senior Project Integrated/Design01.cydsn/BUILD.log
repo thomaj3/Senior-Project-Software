@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+--------------- Build Started: 05/05/2019 23:38:35 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+=======
 --------------- Build Started: 04/26/2019 14:18:58 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'single_test':
@@ -12,8 +16,10 @@ main.c: In function 'vgs_th_find':
 main.c:98:9: warning: unused variable 'i' [-Wunused-variable]
      int i;
          ^
-In file included from main.c:2:0:
 main.c: In function 'run_test':
+<<<<<<< HEAD
+main.c:160:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
+=======
 screen.h:69:33: warning: excess elements in array initializer
      #define LIGHTGREY           0xC618  ///< 198, 195, 198
                                  ^
@@ -63,6 +69,7 @@ main.c:156:102: note: in expansion of macro 'GREENYELLOW'
      int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
                                                                                                       ^
 main.c:165:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
              write_header_info(file_name,device_selection,i,Vgs_double);
              ^
 main.c:189:17: warning: implicit declaration of function 'write_data' [-Wimplicit-function-declaration]
@@ -78,6 +85,57 @@ main.c:149:12: warning: unused variable 'Id' [-Wunused-variable]
      double Id;
             ^
 main.c: In function 'main':
+<<<<<<< HEAD
+main.c:224:5: warning: implicit declaration of function 'spi_device_select' [-Wimplicit-function-declaration]
+     spi_device_select(SCREEN_SELECT);
+     ^
+main.c:237:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
+     StartScreen();
+     ^
+main.c:321:13: warning: implicit declaration of function 'draw_warning_screen' [-Wimplicit-function-declaration]
+             draw_warning_screen();
+             ^
+main.c:325:13: warning: implicit declaration of function 'draw_options_screen' [-Wimplicit-function-declaration]
+             draw_options_screen();
+             ^
+main.c:334:17: warning: implicit declaration of function 'draw_debug_screen' [-Wimplicit-function-declaration]
+                 draw_debug_screen(0,0);
+                 ^
+main.c:335:17: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
+                 draw_choose_screen();
+                 ^
+main.c:354:13: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
+             fill_screen(BLACK);
+             ^
+main.c:415:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
+         draw_coordinates(y_max_calc,device_selection);
+         ^
+main.c:285:9: warning: variable 'device_selection_prev' set but not used [-Wunused-but-set-variable]
+     int device_selection_prev = -1;
+         ^
+main.c:283:9: warning: variable 'debug' set but not used [-Wunused-but-set-variable]
+     int debug;
+         ^
+main.c:274:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
+     int y_pixel_prev;
+         ^
+main.c:273:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
+     int x_pixel_prev;
+         ^
+main.c:272:9: warning: unused variable 'y_pixel' [-Wunused-variable]
+     int y_pixel;
+         ^
+main.c:271:9: warning: unused variable 'x_pixel' [-Wunused-variable]
+     int x_pixel;
+         ^
+main.c:265:9: warning: unused variable 'k' [-Wunused-variable]
+     int k;  //used for for loop iterations
+         ^
+main.c:264:9: warning: unused variable 'j' [-Wunused-variable]
+     int j;  //used for for loop iterations
+         ^
+main.c:261:9: warning: unused variable 'return_code' [-Wunused-variable]
+=======
 main.c:242:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
      StartScreen();
      ^
@@ -127,6 +185,7 @@ main.c:272:9: warning: unused variable 'j' [-Wunused-variable]
      int j;  //used for for loop iterations
          ^
 main.c:269:9: warning: unused variable 'return_code' [-Wunused-variable]
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
      int return_code;    //Going to be used for error displays
          ^
 main.c: In function 'run_test':
@@ -144,7 +203,14 @@ cyelftool.exe -C "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project St
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
+<<<<<<< HEAD
+cyelftool.exe -S "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
+Flash used: 42112 of 262144 bytes (16.1%).
+SRAM used: 10929 of 65536 bytes (16.7%). Stack: 2048 bytes. Heap: 4096 bytes.
+--------------- Build Succeeded: 05/05/2019 23:38:36 ---------------
+=======
 cyelftool.exe -S "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
 Flash used: 41896 of 262144 bytes (16.0%).
 SRAM used: 10929 of 65536 bytes (16.7%). Stack: 2048 bytes. Heap: 4096 bytes.
 --------------- Build Succeeded: 04/26/2019 14:19:00 ---------------
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a

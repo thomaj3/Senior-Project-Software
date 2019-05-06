@@ -1,5 +1,9 @@
 -- Project:   Design01
+<<<<<<< HEAD
+-- Generated: 05/05/2019 23:34:13
+=======
 -- Generated: 04/26/2019 12:58:35
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 -- PSoC Creator  4.2
 
 ENTITY Design01 IS
@@ -165,28 +169,53 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     SIGNAL \ClockBlock.aclk_glb_ff_0__sig\ : bit;
     ATTRIBUTE lib_model OF \emFile_1:SPI0:BSPIM:mosi_pre_reg_split\ : LABEL IS "macrocell1";
     ATTRIBUTE lib_model OF MOSI(0) : LABEL IS "iocell1";
-    ATTRIBUTE Location OF MOSI(0) : LABEL IS "P0[5]";
+    ATTRIBUTE Location OF MOSI(0) : LABEL IS "P0[0]";
     ATTRIBUTE lib_model OF CLK(0) : LABEL IS "iocell2";
     ATTRIBUTE Location OF CLK(0) : LABEL IS "P0[7]";
     ATTRIBUTE lib_model OF SS(0) : LABEL IS "iocell3";
-    ATTRIBUTE Location OF SS(0) : LABEL IS "P0[1]";
+    ATTRIBUTE Location OF SS(0) : LABEL IS "P15[1]";
     ATTRIBUTE lib_model OF MISO(0) : LABEL IS "iocell4";
-    ATTRIBUTE Location OF MISO(0) : LABEL IS "P0[6]";
+    ATTRIBUTE Location OF MISO(0) : LABEL IS "P0[5]";
     ATTRIBUTE lib_model OF D_C(0) : LABEL IS "iocell5";
-    ATTRIBUTE Location OF D_C(0) : LABEL IS "P0[0]";
+    ATTRIBUTE Location OF D_C(0) : LABEL IS "P15[0]";
     ATTRIBUTE lib_model OF Reset(0) : LABEL IS "iocell6";
-    ATTRIBUTE Location OF Reset(0) : LABEL IS "P15[5]";
+    ATTRIBUTE Location OF Reset(0) : LABEL IS "P3[5]";
     ATTRIBUTE lib_model OF Pin_DS(0) : LABEL IS "iocell7";
+<<<<<<< HEAD
+    ATTRIBUTE Location OF Pin_DS(0) : LABEL IS "P1[7]";
+    ATTRIBUTE lib_model OF Pin_GS(0) : LABEL IS "iocell8";
+    ATTRIBUTE Location OF Pin_GS(0) : LABEL IS "P1[6]";
+    ATTRIBUTE lib_model OF Pin_ID(0) : LABEL IS "iocell9";
+    ATTRIBUTE Location OF Pin_ID(0) : LABEL IS "P2[3]";
+=======
     ATTRIBUTE Location OF Pin_DS(0) : LABEL IS "P3[1]";
     ATTRIBUTE lib_model OF Pin_GS(0) : LABEL IS "iocell8";
     ATTRIBUTE Location OF Pin_GS(0) : LABEL IS "P15[2]";
     ATTRIBUTE lib_model OF Pin_ID(0) : LABEL IS "iocell9";
     ATTRIBUTE Location OF Pin_ID(0) : LABEL IS "P15[3]";
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
     ATTRIBUTE lib_model OF scl(0) : LABEL IS "iocell10";
-    ATTRIBUTE Location OF scl(0) : LABEL IS "P3[7]";
+    ATTRIBUTE Location OF scl(0) : LABEL IS "P3[1]";
     ATTRIBUTE lib_model OF sda(0) : LABEL IS "iocell11";
-    ATTRIBUTE Location OF sda(0) : LABEL IS "P3[6]";
+    ATTRIBUTE Location OF sda(0) : LABEL IS "P3[3]";
     ATTRIBUTE lib_model OF IRQ(0) : LABEL IS "iocell12";
+<<<<<<< HEAD
+    ATTRIBUTE Location OF IRQ(0) : LABEL IS "P3[4]";
+    ATTRIBUTE lib_model OF \emFile_1:mosi0(0)\ : LABEL IS "iocell13";
+    ATTRIBUTE Location OF \emFile_1:mosi0(0)\ : LABEL IS "P15[5]";
+    ATTRIBUTE lib_model OF \emFile_1:miso0(0)\ : LABEL IS "iocell14";
+    ATTRIBUTE Location OF \emFile_1:miso0(0)\ : LABEL IS "P0[1]";
+    ATTRIBUTE lib_model OF \emFile_1:sclk0(0)\ : LABEL IS "iocell15";
+    ATTRIBUTE Location OF \emFile_1:sclk0(0)\ : LABEL IS "P0[6]";
+    ATTRIBUTE lib_model OF \emFile_1:SPI0_CS(0)\ : LABEL IS "iocell16";
+    ATTRIBUTE Location OF \emFile_1:SPI0_CS(0)\ : LABEL IS "P3[0]";
+    ATTRIBUTE lib_model OF Pin_DS_P(0) : LABEL IS "iocell17";
+    ATTRIBUTE Location OF Pin_DS_P(0) : LABEL IS "P3[7]";
+    ATTRIBUTE lib_model OF Pin_GS_P(0) : LABEL IS "iocell18";
+    ATTRIBUTE Location OF Pin_GS_P(0) : LABEL IS "P1[2]";
+    ATTRIBUTE lib_model OF Pin_ID_P(0) : LABEL IS "iocell19";
+    ATTRIBUTE Location OF Pin_ID_P(0) : LABEL IS "P2[7]";
+=======
     ATTRIBUTE Location OF IRQ(0) : LABEL IS "P15[0]";
     ATTRIBUTE lib_model OF Pin_DS_P(0) : LABEL IS "iocell13";
     ATTRIBUTE Location OF Pin_DS_P(0) : LABEL IS "P3[5]";
@@ -194,6 +223,7 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE Location OF Pin_GS_P(0) : LABEL IS "P3[4]";
     ATTRIBUTE lib_model OF Pin_ID_P(0) : LABEL IS "iocell15";
     ATTRIBUTE Location OF Pin_ID_P(0) : LABEL IS "P3[3]";
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
     ATTRIBUTE lib_model OF \SPIM:BSPIM:load_rx_data\ : LABEL IS "macrocell2";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_0\ : LABEL IS "macrocell3";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:tx_status_4\ : LABEL IS "macrocell4";
@@ -209,8 +239,8 @@ ARCHITECTURE __DEFAULT__ OF Design01 IS
     ATTRIBUTE lib_model OF \SPIM:BSPIM:RxStsReg\ : LABEL IS "statusicell2";
     ATTRIBUTE lib_model OF \SPIM:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell1";
     ATTRIBUTE Location OF \VDAC8_DS:viDAC8\ : LABEL IS "F(VIDAC,3)";
-    ATTRIBUTE Location OF \VDAC8_GS:viDAC8\ : LABEL IS "F(VIDAC,1)";
-    ATTRIBUTE Location OF \ADC_SAR_1:ADC_SAR\ : LABEL IS "F(SAR,1)";
+    ATTRIBUTE Location OF \VDAC8_GS:viDAC8\ : LABEL IS "F(VIDAC,2)";
+    ATTRIBUTE Location OF \ADC_SAR_1:ADC_SAR\ : LABEL IS "F(SAR,0)";
     ATTRIBUTE lib_model OF \emFile_1:SPI0:BSPIM:TxStsReg\ : LABEL IS "statusicell3";
     ATTRIBUTE lib_model OF \emFile_1:SPI0:BSPIM:RxStsReg\ : LABEL IS "statusicell4";
     ATTRIBUTE lib_model OF \emFile_1:SPI0:BSPIM:sR8:Dp:u0\ : LABEL IS "datapathcell2";

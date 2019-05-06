@@ -573,6 +573,12 @@
 <v>Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h</v>
 <v>Generated_Source\PSoC5\emFile_1_SPI0_CS.c</v>
 <v>Generated_Source\PSoC5\emFile_1_SPI0_CS.h</v>
+<v>Generated_Source\PSoC5\opamp_D.c</v>
+<v>Generated_Source\PSoC5\opamp_D.h</v>
+<v>Generated_Source\PSoC5\opamp_D_PM.c</v>
+<v>Generated_Source\PSoC5\Opamp_1.c</v>
+<v>Generated_Source\PSoC5\Opamp_1.h</v>
+<v>Generated_Source\PSoC5\Opamp_1_PM.c</v>
 </gen_list>
 <warp_dep>
 <v>D:\PSoC\PSoC Creator\4.2\PSoC Creator\warp\lib\ieee\work\stdlogic.vif</v>
@@ -582,7 +588,7 @@
 <v>D:\PSoC\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\rtlpkg.vif</v>
 <v>D:\PSoC\PSoC Creator\4.2\PSoC Creator\warp\lib\common\stdlogic\cy_psoc3.vif</v>
 </warp_dep>
-<deps_time v="132006086492903431" />
+<deps_time v="132015872584545789" />
 <top_block v="TopDesign" />
 <last_generation v="2" />
 <pdl_path v="" />
@@ -767,164 +773,6 @@
 <file name=".\sd.h" />
 <file name=".\settings.h" />
 <file name=".\uifunctions.h" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\uifunctions.o">
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
-<dep name=".\Generated_Source\PSoC5\CLK.h" />
-<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Clock.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\D_C.h" />
-<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\I2C.h" />
-<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MISO.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Reset.h" />
-<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\SS.h" />
-<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\isr.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
-<dep name=".\Generated_Source\PSoC5\scl.h" />
-<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\sda.h" />
-<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
-<dep name=".\font.h" />
-<dep name=".\screen.h" />
-<dep name=".\uifunctions.c" />
-<dep name=".\uifunctions.h" />
-</file>
-<file name=".\uifunctions.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\screen.o">
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
-<dep name=".\Generated_Source\PSoC5\CLK.h" />
-<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Clock.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\D_C.h" />
-<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\I2C.h" />
-<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MISO.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Reset.h" />
-<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\SS.h" />
-<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\isr.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
-<dep name=".\Generated_Source\PSoC5\scl.h" />
-<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\sda.h" />
-<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
-<dep name=".\font.h" />
-<dep name=".\screen.c" />
-<dep name=".\screen.h" />
-<dep name=".\uifunctions.h" />
-</file>
-<file name=".\screen.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\isr.o">
 <dep name=".\Generated_Source\PSoC5\CyFlash.h" />
 <dep name=".\Generated_Source\PSoC5\CyLib.h" />
@@ -943,98 +791,6 @@
 </file>
 <file name=".\Generated_Source\PSoC5\isr.c" />
 <file name=".\cyapicallbacks.h" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\sd.o">
-<dep name=".\emFile_V322c\Code\Include\PSoC5\FS.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_ConfDefaults.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Dev.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Storage.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Types.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\SEGGER.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\emf16nOS\FS_Conf.h" />
-<dep name=".\sd.c" />
-<dep name=".\sd.h" />
-<dep name=".\uifunctions.h" />
-</file>
-<file name=".\sd.c" />
-<file name=".\CortexM3\ARM_GCC_541\Debug\font.o">
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
-<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
-<dep name=".\Generated_Source\PSoC5\CLK.h" />
-<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Clock.h" />
-<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
-<dep name=".\Generated_Source\PSoC5\D_C.h" />
-<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ.h" />
-<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MISO.h" />
-<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI.h" />
-<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\Reset.h" />
-<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM.h" />
-<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\SS.h" />
-<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
-<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
-<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
-<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
-<dep name=".\Generated_Source\PSoC5\cypins.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
-<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\project.h" />
-<dep name=".\Generated_Source\PSoC5\scl.h" />
-<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
-<dep name=".\Generated_Source\PSoC5\sda.h" />
-<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
-<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
-<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
-<dep name=".\Generated_Source\PSoC5\CyLib.h" />
-<dep name=".\Generated_Source\PSoC5\CySpc.h" />
-<dep name=".\Generated_Source\PSoC5\I2C.h" />
-<dep name=".\Generated_Source\PSoC5\cyPm.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice.h" />
-<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
-<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
-<dep name=".\Generated_Source\PSoC5\cytypes.h" />
-<dep name=".\Generated_Source\PSoC5\isr.h" />
-<dep name=".\font.c" />
-<dep name=".\font.h" />
-<dep name=".\screen.h" />
-</file>
-<file name=".\font.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1.o">
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.c" />
 <dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
@@ -1855,6 +1611,327 @@
 <dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
 </file>
 <file name=".\Generated_Source\PSoC5\sda.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\font.o">
+<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
+<dep name=".\Generated_Source\PSoC5\CLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Clock.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\D_C.h" />
+<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\I2C.h" />
+<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Reset.h" />
+<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS.h" />
+<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\isr.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\scl.h" />
+<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\sda.h" />
+<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
+<dep name=".\font.c" />
+<dep name=".\font.h" />
+<dep name=".\screen.h" />
+</file>
+<file name=".\font.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\screen.o">
+<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
+<dep name=".\Generated_Source\PSoC5\CLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Clock.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\D_C.h" />
+<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\I2C.h" />
+<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Reset.h" />
+<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS.h" />
+<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\isr.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\scl.h" />
+<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\sda.h" />
+<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
+<dep name=".\font.h" />
+<dep name=".\screen.c" />
+<dep name=".\screen.h" />
+<dep name=".\uifunctions.h" />
+</file>
+<file name=".\screen.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\sd.o">
+<dep name=".\emFile_V322c\Code\Include\PSoC5\FS.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_ConfDefaults.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Dev.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Storage.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\FS_Types.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\SEGGER.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\emf16nOS\FS_Conf.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
+<dep name=".\Generated_Source\PSoC5\CLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Clock.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\D_C.h" />
+<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\I2C.h" />
+<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Reset.h" />
+<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS.h" />
+<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\isr.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\scl.h" />
+<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\sda.h" />
+<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
+<dep name=".\sd.c" />
+<dep name=".\sd.h" />
+<dep name=".\uifunctions.h" />
+</file>
+<file name=".\sd.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\uifunctions.o">
+<dep name=".\emFile_V322c\Code\Include\PSoC5\Global.h" />
+<dep name=".\emFile_V322c\Code\Include\PSoC5\MMC_X_HW.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\ADC_SAR_1_theACLK.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_1.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_2.h" />
+<dep name=".\Generated_Source\PSoC5\AMux_3.h" />
+<dep name=".\Generated_Source\PSoC5\CLK.h" />
+<dep name=".\Generated_Source\PSoC5\CLK_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Clock.h" />
+<dep name=".\Generated_Source\PSoC5\CyDmac.h" />
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\D_C.h" />
+<dep name=".\Generated_Source\PSoC5\D_C_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\I2C.h" />
+<dep name=".\Generated_Source\PSoC5\I2C_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ.h" />
+<dep name=".\Generated_Source\PSoC5\IRQ_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MISO.h" />
+<dep name=".\Generated_Source\PSoC5\MISO_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI.h" />
+<dep name=".\Generated_Source\PSoC5\MOSI_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_DS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_GS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_P_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Pin_ID_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\Reset.h" />
+<dep name=".\Generated_Source\PSoC5\Reset_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM.h" />
+<dep name=".\Generated_Source\PSoC5\SPIM_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\SS.h" />
+<dep name=".\Generated_Source\PSoC5\SS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_DS.h" />
+<dep name=".\Generated_Source\PSoC5\VDAC8_GS.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cy_em_eeprom.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC5\cypins.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_Clock_1.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_SPI0_PVT.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_miso0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_mosi0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0.h" />
+<dep name=".\Generated_Source\PSoC5\emFile_1_sclk0_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\isr.h" />
+<dep name=".\Generated_Source\PSoC5\project.h" />
+<dep name=".\Generated_Source\PSoC5\scl.h" />
+<dep name=".\Generated_Source\PSoC5\scl_aliases.h" />
+<dep name=".\Generated_Source\PSoC5\sda.h" />
+<dep name=".\Generated_Source\PSoC5\sda_aliases.h" />
+<dep name=".\font.h" />
+<dep name=".\screen.h" />
+<dep name=".\uifunctions.c" />
+<dep name=".\uifunctions.h" />
+</file>
+<file name=".\uifunctions.c" />
 <file name=".\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o">
 <dep name=".\Generated_Source\PSoC5\CyBootAsmGnu.s" />
 <dep name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
@@ -1865,6 +1942,60 @@
 <file name=".\Generated_Source\PSoC5\cydevicegnu.inc" />
 <file name=".\Generated_Source\PSoC5\cydevicegnu_trm.inc" />
 <file name=".\Generated_Source\PSoC5\cyfittergnu.inc" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\Opamp_1.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\Opamp_1.c" />
+<dep name=".\Generated_Source\PSoC5\Opamp_1.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Opamp_1.c" />
+<file name=".\Generated_Source\PSoC5\Opamp_1.h" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\Opamp_1_PM.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\Opamp_1.h" />
+<dep name=".\Generated_Source\PSoC5\Opamp_1_PM.c" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\Opamp_1_PM.c" />
+<file name=".\Generated_Source\PSoC5\opamp_D.h" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\opamp_D.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\opamp_D.c" />
+<dep name=".\Generated_Source\PSoC5\opamp_D.h" />
+</file>
+<file name=".\Generated_Source\PSoC5\opamp_D.c" />
+<file name=".\CortexM3\ARM_GCC_541\Debug\opamp_D_PM.o">
+<dep name=".\Generated_Source\PSoC5\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC5\CyLib.h" />
+<dep name=".\Generated_Source\PSoC5\CySpc.h" />
+<dep name=".\Generated_Source\PSoC5\cyPm.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice.h" />
+<dep name=".\Generated_Source\PSoC5\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC5\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC5\cytypes.h" />
+<dep name=".\Generated_Source\PSoC5\opamp_D.h" />
+<dep name=".\Generated_Source\PSoC5\opamp_D_PM.c" />
+</file>
+<file name=".\Generated_Source\PSoC5\opamp_D_PM.c" />
 <file name=".\Generated_Source\PSoC5\cmsis_armcc.h" />
 <file name=".\Generated_Source\PSoC5\cmsis_compiler.h" />
 <file name=".\Generated_Source\PSoC5\cmsis_gcc.h" />
@@ -2369,6 +2500,10 @@
 <name_val_pair name="Generated_Source\PSoC5\emFile_1_sclk0.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="Generated_Source\PSoC5\emFile_1_SPI0_CS.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 <name_val_pair name="uifunctions.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\opamp_D.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\opamp_D_PM.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\Opamp_1.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
+<name_val_pair name="Generated_Source\PSoC5\Opamp_1_PM.c" v="-mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og" />
 </name>
 </genericCmdLineData>
 <codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\legoc\AppData\Local\Cypress Semiconductor\PSoC Creator\4.2&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Design01.cyprj&quot; -d CY8C5888LTI-LP097 -s &quot;C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
@@ -2377,7 +2512,7 @@
 <dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
 <CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
 <link_deps_times>
-<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132006118267334931" />
+<name_val_pair name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM3" v="132015875158737595" />
 </link_deps_times>
 </CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
 </dataGuid>
@@ -2447,12 +2582,12 @@
 <dataGuid v="504337dd-7d07-4bc7-9057-90e60cf6c469">
 <CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469 type_name="CyDesigner.Common.Debugger.CyBreakpointList" version="1">
 <debugger_breakpoint_list>
-<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="True" hardware="True" temparary="False" filename=".\main.c" linenumber="347" />
+<CyGuid_76464711-0ae1-4583-b869-f07a0403fc6e type_name="CyDesigner.Common.Debugger.CyFileLineBreakpoint" version="1" hitcount="0" condition="" enabled="False" hardware="True" temparary="False" filename=".\main.c" linenumber="348" />
 </debugger_breakpoint_list>
 </CyGuid_504337dd-7d07-4bc7-9057-90e60cf6c469>
 </dataGuid>
 <dataGuid v="237c8ed1-e161-4c9d-af97-582eda6d6952">
-<CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31 type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyCustomAnalogDevData" version="1" ZoomToPage="False" ZoomScale="1.321109" ScrollX="161" ScrollY="5">
+<CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31 type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyCustomAnalogDevData" version="1" ZoomToPage="False" ZoomScale="1.2010082" ScrollX="0" ScrollY="4">
 <ComponentStates>
 <CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_41" Color="-9580801" />
 <CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="AmuxNet::Mux_1" Color="-8213505" />
@@ -2468,6 +2603,25 @@
 <CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_131" Color="-16755457" />
 <CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_132" Color="-16776961" />
 <CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_142" Color="-8453889" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_191" Color="-9580801" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_235" Color="-8213505" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_236" Color="-8289793" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_196" Color="-4160769" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="AmuxNet::AMux_2" Color="-37377" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_280" Color="-32064" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_251" Color="-32383" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_258" Color="-24190" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="AmuxNet::AMux_3" Color="-16255" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_253" Color="-8575" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_254" Color="-16740650" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="\ADC_SAR_1:Net_126\" Color="-16755457" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="\ADC_SAR_1:Net_209\" Color="-16776961" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="\ADC_SAR_1:Net_233\" Color="-8453889" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_283" Color="-2817835" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="\VDAC8_DS:Net_77\" Color="-65410" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="\VDAC8_GS:Net_77\" Color="-65536" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_288" Color="-9580801" />
+<CyGuid_50eb6c77-9735-4e57-8808-b714f60fbc0d type_name="CyDesigner.Device.FitterPSoC.Common.DesignWideResources.DeviceEditor.CyItemState" version="1" Name="Net_289" Color="-8213505" />
 </ComponentStates>
 </CyGuid_d442b0b8-dd66-4eee-b5be-1cb213792b31>
 </dataGuid>

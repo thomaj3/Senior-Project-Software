@@ -153,11 +153,11 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
     char SD_files_written_str[3];
     int y_pixel_prev, x_pixel_prev;
     int y_pixel, x_pixel;
-    int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
+    int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK};
     
     for(i = 0; i < curve_nums; i++)
     {
-        if(write_sd)
+        if(write_sd==1)
         {
             sprintf(SD_files_written_str,"%d",SD_files_written);
             strcat(file_name,SD_files_written_str);
@@ -184,7 +184,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                 }
             }
             Id_avg /= num_avg;
-            if(write_sd)
+            if(write_sd==1)
             {
                 write_data(file_name,Id_avg,j,device_selection);//update CSV File with new Id/Ic
             }
@@ -215,7 +215,6 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
         }
         draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
     }
-    
 }
 
 
@@ -226,7 +225,7 @@ int main(void)
     // Starts clock for SPI
     SPIM_Start();
     Clock_Start();
-    
+    spi_device_select(SCREEN_SELECT);
     
     // Resets screen
     Reset_Write(1);
@@ -237,12 +236,9 @@ int main(void)
     CyDelay(100);
     
     
-    
+    //emFile_1_SPI0_Stop();
     // Calls start screen
     StartScreen();
-    
-    // Fills screen in black    
-      
     
     isr_ClearPending();
     
@@ -265,7 +261,7 @@ int main(void)
     I2C_Stop();
     
     FS_Init();
-        
+    
     int return_code;    //Going to be used for error displays
     
     int i;  //used for for loop iterations
@@ -295,7 +291,31 @@ int main(void)
     //global variable intializations
     device_selection = -1;
     
+    spi_device_select(SD_SELECT);
     
+<<<<<<< HEAD
+    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
+//    if (debug <= 0)
+//    {
+//        spi_device_select(SCREEN_SELECT);
+//        draw_button(320,240,BLACK,WHITE,"NO MOUNT");
+//        CyDelay(2000);
+//        spi_device_select(SD_SELECT);
+//    }
+    pFile = FS_FOpen("test.txt", "w");
+//    if (pFile == 0)
+//    {
+//        char no_open[] = "NO OPEN";
+//        //spi_device_select(SCREEN_SELECT);
+//        draw_button(0,0,320,240,BLACK,WHITE,no_open);
+//        CyDelay(2000);
+//        //spi_device_select(SD_SELECT);
+//    }
+    const char text[] = "Can Write";
+    FS_Write(pFile,text,strlen(text));
+    FS_FClose(pFile);
+    spi_device_select(SCREEN_SELECT);
+=======
 //    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
 ////    if (debug <= 0)
 ////    {
@@ -320,6 +340,7 @@ int main(void)
     AMux_3_Select(1);
     VDAC8_GS_SetValue(125);
     VDAC8_DS_SetValue(250);
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
     for(;;)
     { 
         if (device_selection != -1)
@@ -328,7 +349,7 @@ int main(void)
         }
         if(device_selection == -1)
         {
-            draw_choose_screen();
+            draw_warning_screen();
         }
         else
         {
@@ -382,13 +403,17 @@ int main(void)
                 Vgs_points_double[0] = Vth*4.096/256.0;
                 break;
             case 1:
-                Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/10;
+                Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/26.0;
                 break;
             case 2:
                 Vgs_points_double[0] = -Vth*4.096/256.0;
                 break;
             case 3:
+<<<<<<< HEAD
+                Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/26.0;
+=======
                 Vgs_points_double[0] = -((Vth*4.096/256.0) - 0.7)/10;
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
                 break;
         }
         //Creating Vgs test point 
@@ -401,13 +426,17 @@ int main(void)
                     Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0;
                     break;
                 case 1:
-                    Vgs_points_double[i] = (Vgs_test_points[i]*4.096/256.0 - 0.7)/10;
+                    Vgs_points_double[i] = (Vgs_test_points[i]*4.096/256.0 - 0.7)/26.0;
                     break;
                 case 2:
                     Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE;
                     break;
                 case 3:
+<<<<<<< HEAD
+                    Vgs_points_double[i] = (-15 + Vgs_test_points[i]*4.096/256.0)/26.0;
+=======
                     Vgs_points_double[i] =  (Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE + 0.7)/10;
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
                     break;
             }
         }

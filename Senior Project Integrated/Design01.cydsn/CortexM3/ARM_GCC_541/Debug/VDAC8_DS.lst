@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 1
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
    1              		.syntax unified
@@ -58,7 +62,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
   28:Generated_Source\PSoC5/VDAC8_DS.c **** 
   29:Generated_Source\PSoC5/VDAC8_DS.c **** #if (CY_PSOC5A)
   30:Generated_Source\PSoC5/VDAC8_DS.c ****     static uint8 VDAC8_DS_restoreVal = 0u;
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 2
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 2
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   31:Generated_Source\PSoC5/VDAC8_DS.c **** #endif /* CY_PSOC5A */
@@ -118,7 +126,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
   85:Generated_Source\PSoC5/VDAC8_DS.c **** * Parameters:
   86:Generated_Source\PSoC5/VDAC8_DS.c **** *  void
   87:Generated_Source\PSoC5/VDAC8_DS.c **** *
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 3
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 3
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   88:Generated_Source\PSoC5/VDAC8_DS.c **** * Return:
@@ -178,7 +190,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  111:Generated_Source\PSoC5/VDAC8_DS.c **** 
  112:Generated_Source\PSoC5/VDAC8_DS.c **** 
  113:Generated_Source\PSoC5/VDAC8_DS.c **** /*******************************************************************************
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 4
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 4
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  114:Generated_Source\PSoC5/VDAC8_DS.c **** * Function Name: VDAC8_DS_Start
@@ -238,7 +254,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  168:Generated_Source\PSoC5/VDAC8_DS.c **** void VDAC8_DS_Stop(void) 
  169:Generated_Source\PSoC5/VDAC8_DS.c **** {
   59              		.loc 1 169 0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 5
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 5
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
   60              		.cfi_startproc
@@ -298,7 +318,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  194:Generated_Source\PSoC5/VDAC8_DS.c **** * Return:
  195:Generated_Source\PSoC5/VDAC8_DS.c **** *  void
  196:Generated_Source\PSoC5/VDAC8_DS.c **** *
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 6
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 6
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  197:Generated_Source\PSoC5/VDAC8_DS.c **** * Theory:
@@ -358,7 +382,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  218:Generated_Source\PSoC5/VDAC8_DS.c **** *  Range: Sets one of Three valid ranges.
  219:Generated_Source\PSoC5/VDAC8_DS.c **** *
  220:Generated_Source\PSoC5/VDAC8_DS.c **** * Return:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 7
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 7
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  221:Generated_Source\PSoC5/VDAC8_DS.c **** *  void 
@@ -418,7 +446,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  137              		.cfi_endproc
  138              	.LFE6:
  139              		.size	VDAC8_DS_SetValue, .-VDAC8_DS_SetValue
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 8
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 8
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  140              		.section	.text.VDAC8_DS_DacTrim,"ax",%progbits
@@ -478,7 +510,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  160              	.LVL4:
  161 000c 0633     		adds	r3, r3, #6
  162              	.LVL5:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 9
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 9
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  163 000e 93F83831 		ldrb	r3, [r3, #312]	@ zero_extendqisi2
@@ -538,7 +574,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  213              		.cfi_endproc
  214              	.LFE5:
  215              		.size	VDAC8_DS_SetRange, .-VDAC8_DS_SetRange
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 10
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 10
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  216              		.section	.text.VDAC8_DS_Init,"ax",%progbits
@@ -598,7 +638,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  264              		.cfi_startproc
  265              		@ args = 0, pretend = 0, frame = 0
  266              		@ frame_needed = 0, uses_anonymous_args = 0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 11
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 11
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  267 0000 08B5     		push	{r3, lr}
@@ -656,9 +700,15 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  314 000b 01       		.uleb128 0x1
  315 000c 4B000000 		.4byte	.LASF25
  316 0010 0C       		.byte	0xc
+<<<<<<< HEAD
+ 317 0011 03010000 		.4byte	.LASF26
+ 318 0015 55010000 		.4byte	.LASF27
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 12
+=======
  317 0011 77010000 		.4byte	.LASF26
  318 0015 D9000000 		.4byte	.LASF27
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 12
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  319 0019 00000000 		.4byte	.Ldebug_ranges0+0
@@ -667,7 +717,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  322 0025 02       		.uleb128 0x2
  323 0026 01       		.byte	0x1
  324 0027 06       		.byte	0x6
- 325 0028 68020000 		.4byte	.LASF0
+ 325 0028 6D020000 		.4byte	.LASF0
  326 002c 02       		.uleb128 0x2
  327 002d 01       		.byte	0x1
  328 002e 08       		.byte	0x8
@@ -675,27 +725,27 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  330 0033 02       		.uleb128 0x2
  331 0034 02       		.byte	0x2
  332 0035 05       		.byte	0x5
- 333 0036 40020000 		.4byte	.LASF2
+ 333 0036 45020000 		.4byte	.LASF2
  334 003a 02       		.uleb128 0x2
  335 003b 02       		.byte	0x2
  336 003c 07       		.byte	0x7
- 337 003d 64010000 		.4byte	.LASF3
+ 337 003d F0000000 		.4byte	.LASF3
  338 0041 02       		.uleb128 0x2
  339 0042 04       		.byte	0x4
  340 0043 05       		.byte	0x5
- 341 0044 5F020000 		.4byte	.LASF4
+ 341 0044 64020000 		.4byte	.LASF4
  342 0048 02       		.uleb128 0x2
  343 0049 04       		.byte	0x4
  344 004a 07       		.byte	0x7
- 345 004b 52010000 		.4byte	.LASF5
+ 345 004b DE000000 		.4byte	.LASF5
  346 004f 02       		.uleb128 0x2
  347 0050 08       		.byte	0x8
  348 0051 05       		.byte	0x5
- 349 0052 1F020000 		.4byte	.LASF6
+ 349 0052 24020000 		.4byte	.LASF6
  350 0056 02       		.uleb128 0x2
  351 0057 08       		.byte	0x8
  352 0058 07       		.byte	0x7
- 353 0059 E8010000 		.4byte	.LASF7
+ 353 0059 F2010000 		.4byte	.LASF7
  354 005d 03       		.uleb128 0x3
  355 005e 04       		.byte	0x4
  356 005f 05       		.byte	0x5
@@ -703,9 +753,9 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  358 0064 02       		.uleb128 0x2
  359 0065 04       		.byte	0x4
  360 0066 07       		.byte	0x7
- 361 0067 C9010000 		.4byte	.LASF8
+ 361 0067 D3010000 		.4byte	.LASF8
  362 006b 04       		.uleb128 0x4
- 363 006c 59020000 		.4byte	.LASF12
+ 363 006c 5E020000 		.4byte	.LASF12
  364 0070 02       		.byte	0x2
  365 0071 E401     		.2byte	0x1e4
  366 0073 2C000000 		.4byte	0x2c
@@ -716,23 +766,27 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  371 007e 02       		.uleb128 0x2
  372 007f 08       		.byte	0x8
  373 0080 04       		.byte	0x4
- 374 0081 B0010000 		.4byte	.LASF10
+ 374 0081 3C010000 		.4byte	.LASF10
  375 0085 02       		.uleb128 0x2
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 13
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 13
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  376 0086 01       		.byte	0x1
  377 0087 08       		.byte	0x8
- 378 0088 2D020000 		.4byte	.LASF11
+ 378 0088 32020000 		.4byte	.LASF11
  379 008c 04       		.uleb128 0x4
- 380 008d 14020000 		.4byte	.LASF13
+ 380 008d D9000000 		.4byte	.LASF13
  381 0091 02       		.byte	0x2
  382 0092 8E02     		.2byte	0x28e
  383 0094 98000000 		.4byte	0x98
  384 0098 05       		.uleb128 0x5
  385 0099 6B000000 		.4byte	0x6b
  386 009d 06       		.uleb128 0x6
- 387 009e FF010000 		.4byte	.LASF14
+ 387 009e 09020000 		.4byte	.LASF14
  388 00a2 01       		.byte	0x1
  389 00a3 60       		.byte	0x60
  390 00a4 00000000 		.4byte	.LFB1
@@ -748,7 +802,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  400 00bd 01       		.uleb128 0x1
  401 00be 9C       		.byte	0x9c
  402 00bf 07       		.uleb128 0x7
- 403 00c0 D6010000 		.4byte	.LASF16
+ 403 00c0 E0010000 		.4byte	.LASF16
  404 00c4 01       		.byte	0x1
  405 00c5 CA       		.byte	0xca
  406 00c6 00000000 		.4byte	.LFB4
@@ -757,7 +811,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  409 00cf 9C       		.byte	0x9c
  410 00d0 E4000000 		.4byte	0xe4
  411 00d4 08       		.uleb128 0x8
- 412 00d5 19020000 		.4byte	.LASF18
+ 412 00d5 1E020000 		.4byte	.LASF18
  413 00d9 01       		.byte	0x1
  414 00da CA       		.byte	0xca
  415 00db 6B000000 		.4byte	0x6b
@@ -778,13 +832,17 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  430 00ff FE       		.byte	0xfe
  431 0100 6B000000 		.4byte	0x6b
  432 0104 01       		.uleb128 0x1
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 14
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 14
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  433 0105 50       		.byte	0x50
  434 0106 00       		.byte	0
  435 0107 0A       		.uleb128 0xa
- 436 0108 9F010000 		.4byte	.LASF20
+ 436 0108 2B010000 		.4byte	.LASF20
  437 010c 01       		.byte	0x1
  438 010d 2101     		.2byte	0x121
  439 010f 00000000 		.4byte	.LFB7
@@ -793,14 +851,14 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  442 0118 9C       		.byte	0x9c
  443 0119 2E010000 		.4byte	0x12e
  444 011d 0B       		.uleb128 0xb
- 445 011e 0F020000 		.4byte	.LASF28
+ 445 011e 19020000 		.4byte	.LASF28
  446 0122 01       		.byte	0x1
  447 0123 2301     		.2byte	0x123
  448 0125 6B000000 		.4byte	0x6b
  449 0129 21000000 		.4byte	.LLST1
  450 012d 00       		.byte	0
  451 012e 07       		.uleb128 0x7
- 452 012f B7010000 		.4byte	.LASF21
+ 452 012f 43010000 		.4byte	.LASF21
  453 0133 01       		.byte	0x1
  454 0134 E4       		.byte	0xe4
  455 0135 00000000 		.4byte	.LFB5
@@ -809,7 +867,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  458 013e 9C       		.byte	0x9c
  459 013f 5C010000 		.4byte	0x15c
  460 0143 08       		.uleb128 0x8
- 461 0144 99010000 		.4byte	.LASF22
+ 461 0144 25010000 		.4byte	.LASF22
  462 0148 01       		.byte	0x1
  463 0149 E4       		.byte	0xe4
  464 014a 6B000000 		.4byte	0x6b
@@ -819,7 +877,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  468 0157 07010000 		.4byte	0x107
  469 015b 00       		.byte	0
  470 015c 07       		.uleb128 0x7
- 471 015d 32020000 		.4byte	.LASF23
+ 471 015d 37020000 		.4byte	.LASF23
  472 0161 01       		.byte	0x1
  473 0162 37       		.byte	0x37
  474 0163 00000000 		.4byte	.LFB0
@@ -838,7 +896,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  487 0182 34       		.byte	0x34
  488 0183 00       		.byte	0
  489 0184 0F       		.uleb128 0xf
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 15
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 15
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  490 0185 18000000 		.4byte	.LVL11
@@ -852,7 +914,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  498 0193 00       		.byte	0
  499 0194 00       		.byte	0
  500 0195 07       		.uleb128 0x7
- 501 0196 4A020000 		.4byte	.LASF24
+ 501 0196 4F020000 		.4byte	.LASF24
  502 019a 01       		.byte	0x1
  503 019b 85       		.byte	0x85
  504 019c 00000000 		.4byte	.LFB2
@@ -898,7 +960,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  544 0007 03       		.uleb128 0x3
  545 0008 0E       		.uleb128 0xe
  546 0009 1B       		.uleb128 0x1b
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 16
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 16
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  547 000a 0E       		.uleb128 0xe
@@ -958,7 +1024,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  601 0040 3F       		.uleb128 0x3f
  602 0041 19       		.uleb128 0x19
  603 0042 03       		.uleb128 0x3
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 17
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 17
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  604 0043 0E       		.uleb128 0xe
@@ -1018,7 +1088,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  658 007b 17       		.uleb128 0x17
  659 007c 00       		.byte	0
  660 007d 00       		.byte	0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 18
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 18
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  661 007e 09       		.uleb128 0x9
@@ -1078,7 +1152,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  715 00b5 00       		.byte	0
  716 00b6 0C       		.uleb128 0xc
  717 00b7 898201   		.uleb128 0x4109
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 19
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 19
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  718 00ba 00       		.byte	0
@@ -1138,7 +1216,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  772              		.section	.debug_loc,"",%progbits
  773              	.Ldebug_loc0:
  774              	.LLST0:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 20
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 20
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  775 0000 00000000 		.4byte	.LVL0
@@ -1198,7 +1280,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  827 000a 04       		.byte	0x4
  828 000b 00       		.byte	0
  829 000c 0000     		.2byte	0
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 21
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 21
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  830 000e 0000     		.2byte	0
@@ -1258,7 +1344,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  875      6500
  876              	.LASF15:
  877 0018 56444143 		.ascii	"VDAC8_DS_Stop\000"
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 22
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 22
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
  877      385F4453 
@@ -1294,6 +1384,33 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  887      74696F6E 
  887      2D736563 
  887      74696F6E 
+<<<<<<< HEAD
+ 888              	.LASF13:
+ 889 00d9 72656738 		.ascii	"reg8\000"
+ 889      00
+ 890              	.LASF5:
+ 891 00de 6C6F6E67 		.ascii	"long unsigned int\000"
+ 891      20756E73 
+ 891      69676E65 
+ 891      6420696E 
+ 891      7400
+ 892              	.LASF3:
+ 893 00f0 73686F72 		.ascii	"short unsigned int\000"
+ 893      7420756E 
+ 893      7369676E 
+ 893      65642069 
+ 893      6E7400
+ 894              	.LASF26:
+ 895 0103 47656E65 		.ascii	"Generated_Source\\PSoC5\\VDAC8_DS.c\000"
+ 895      72617465 
+ 895      645F536F 
+ 895      75726365 
+ 895      5C50536F 
+ 896              	.LASF22:
+ 897 0125 72616E67 		.ascii	"range\000"
+ 897      6500
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 23
+=======
  888              	.LASF27:
  889 00d9 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
  889      73657273 
@@ -1319,101 +1436,106 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 1
  894              	.LASF3:
  895 0164 73686F72 		.ascii	"short unsigned int\000"
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 23
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
- 895      7420756E 
- 895      7369676E 
- 895      65642069 
- 895      6E7400
- 896              	.LASF26:
- 897 0177 47656E65 		.ascii	"Generated_Source\\PSoC5\\VDAC8_DS.c\000"
- 897      72617465 
- 897      645F536F 
- 897      75726365 
- 897      5C50536F 
- 898              	.LASF22:
- 899 0199 72616E67 		.ascii	"range\000"
- 899      6500
- 900              	.LASF20:
- 901 019f 56444143 		.ascii	"VDAC8_DS_DacTrim\000"
- 901      385F4453 
- 901      5F446163 
- 901      5472696D 
- 901      00
- 902              	.LASF10:
- 903 01b0 646F7562 		.ascii	"double\000"
- 903      6C6500
- 904              	.LASF21:
- 905 01b7 56444143 		.ascii	"VDAC8_DS_SetRange\000"
- 905      385F4453 
- 905      5F536574 
- 905      52616E67 
- 905      6500
- 906              	.LASF8:
- 907 01c9 756E7369 		.ascii	"unsigned int\000"
- 907      676E6564 
- 907      20696E74 
- 907      00
- 908              	.LASF16:
- 909 01d6 56444143 		.ascii	"VDAC8_DS_SetSpeed\000"
- 909      385F4453 
- 909      5F536574 
- 909      53706565 
- 909      6400
- 910              	.LASF7:
- 911 01e8 6C6F6E67 		.ascii	"long long unsigned int\000"
- 911      206C6F6E 
- 911      6720756E 
- 911      7369676E 
- 911      65642069 
- 912              	.LASF14:
- 913 01ff 56444143 		.ascii	"VDAC8_DS_Enable\000"
- 913      385F4453 
- 913      5F456E61 
- 913      626C6500 
- 914              	.LASF28:
- 915 020f 6D6F6465 		.ascii	"mode\000"
- 915      00
- 916              	.LASF13:
- 917 0214 72656738 		.ascii	"reg8\000"
+ 898              	.LASF20:
+ 899 012b 56444143 		.ascii	"VDAC8_DS_DacTrim\000"
+ 899      385F4453 
+ 899      5F446163 
+ 899      5472696D 
+ 899      00
+ 900              	.LASF10:
+ 901 013c 646F7562 		.ascii	"double\000"
+ 901      6C6500
+ 902              	.LASF21:
+ 903 0143 56444143 		.ascii	"VDAC8_DS_SetRange\000"
+ 903      385F4453 
+ 903      5F536574 
+ 903      52616E67 
+ 903      6500
+ 904              	.LASF27:
+ 905 0155 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
+ 905      73657273 
+ 905      5C6C6567 
+ 905      6F635C44 
+ 905      6F63756D 
+ 906 0182 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
+ 906      72205072 
+ 906      6F6A6563 
+ 906      745C5365 
+ 906      6E696F72 
+ 907 01b3 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
+ 907      7420496E 
+ 907      74656772 
+ 907      61746564 
+ 907      5C446573 
+ 908              	.LASF8:
+ 909 01d3 756E7369 		.ascii	"unsigned int\000"
+ 909      676E6564 
+ 909      20696E74 
+ 909      00
+ 910              	.LASF16:
+ 911 01e0 56444143 		.ascii	"VDAC8_DS_SetSpeed\000"
+ 911      385F4453 
+ 911      5F536574 
+ 911      53706565 
+ 911      6400
+ 912              	.LASF7:
+ 913 01f2 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 913      206C6F6E 
+ 913      6720756E 
+ 913      7369676E 
+ 913      65642069 
+ 914              	.LASF14:
+ 915 0209 56444143 		.ascii	"VDAC8_DS_Enable\000"
+ 915      385F4453 
+ 915      5F456E61 
+ 915      626C6500 
+ 916              	.LASF28:
+ 917 0219 6D6F6465 		.ascii	"mode\000"
  917      00
  918              	.LASF18:
+<<<<<<< HEAD
+ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccIw6m31.s 			page 24
+=======
 ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccFky3ue.s 			page 24
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 
- 919 0219 73706565 		.ascii	"speed\000"
+ 919 021e 73706565 		.ascii	"speed\000"
  919      6400
  920              	.LASF6:
- 921 021f 6C6F6E67 		.ascii	"long long int\000"
+ 921 0224 6C6F6E67 		.ascii	"long long int\000"
  921      206C6F6E 
  921      6720696E 
  921      7400
  922              	.LASF11:
- 923 022d 63686172 		.ascii	"char\000"
+ 923 0232 63686172 		.ascii	"char\000"
  923      00
  924              	.LASF23:
- 925 0232 56444143 		.ascii	"VDAC8_DS_Init\000"
+ 925 0237 56444143 		.ascii	"VDAC8_DS_Init\000"
  925      385F4453 
  925      5F496E69 
  925      7400
  926              	.LASF2:
- 927 0240 73686F72 		.ascii	"short int\000"
+ 927 0245 73686F72 		.ascii	"short int\000"
  927      7420696E 
  927      7400
  928              	.LASF24:
- 929 024a 56444143 		.ascii	"VDAC8_DS_Start\000"
+ 929 024f 56444143 		.ascii	"VDAC8_DS_Start\000"
  929      385F4453 
  929      5F537461 
  929      727400
  930              	.LASF12:
- 931 0259 75696E74 		.ascii	"uint8\000"
+ 931 025e 75696E74 		.ascii	"uint8\000"
  931      3800
  932              	.LASF4:
- 933 025f 6C6F6E67 		.ascii	"long int\000"
+ 933 0264 6C6F6E67 		.ascii	"long int\000"
  933      20696E74 
  933      00
  934              	.LASF0:
- 935 0268 7369676E 		.ascii	"signed char\000"
+ 935 026d 7369676E 		.ascii	"signed char\000"
  935      65642063 
  935      68617200 
  936              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
