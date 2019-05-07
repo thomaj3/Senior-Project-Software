@@ -258,20 +258,6 @@
 <v>Workspace01\Design01\PSoC 5LP Architecture TRM</v>
 <v>Workspace01\Design01\CY8C58LP Family Datasheet</v>
 <v>Workspace01\Design01\System Reference Guides</v>
-<v>Workspace01\Design01\System Reference Guides\cy_boot_v5_80</v>
-<v>Workspace01\Design01\ADC_SAR_v3_10.pdf</v>
-<v>Workspace01\Design01\AMux_v1_80</v>
-<v>Workspace01\Design01\AMux_v1_80\AMux_v1_80.pdf</v>
-<v>Workspace01\Design01\cy_clock_v2_20.pdf</v>
-<v>Workspace01\Design01\cy_isr_v1_70.pdf</v>
-<v>Workspace01\Design01\cy_pins_v2_20</v>
-<v>Workspace01\Design01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Workspace01\Design01\emFile_v1_20.pdf</v>
-<v>Workspace01\Design01\I2C_v3_50.pdf</v>
-<v>Workspace01\Design01\not_v1_0.pdf</v>
-<v>Workspace01\Design01\SPI_Master_v2_50.pdf</v>
-<v>Workspace01\Design01\VDAC8_v1_90</v>
-<v>Workspace01\Design01\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
 </ExpandedNodeIds>
 <VisibleNodeIds>
 <v>Workspace01</v>
@@ -279,20 +265,6 @@
 <v>Workspace01\Design01\PSoC 5LP Architecture TRM</v>
 <v>Workspace01\Design01\CY8C58LP Family Datasheet</v>
 <v>Workspace01\Design01\System Reference Guides</v>
-<v>Workspace01\Design01\System Reference Guides\cy_boot_v5_80</v>
-<v>Workspace01\Design01\ADC_SAR_v3_10.pdf</v>
-<v>Workspace01\Design01\AMux_v1_80</v>
-<v>Workspace01\Design01\AMux_v1_80\AMux_v1_80.pdf</v>
-<v>Workspace01\Design01\cy_clock_v2_20.pdf</v>
-<v>Workspace01\Design01\cy_isr_v1_70.pdf</v>
-<v>Workspace01\Design01\cy_pins_v2_20</v>
-<v>Workspace01\Design01\cy_pins_v2_20\cy_pins_v2_20.pdf</v>
-<v>Workspace01\Design01\emFile_v1_20.pdf</v>
-<v>Workspace01\Design01\I2C_v3_50.pdf</v>
-<v>Workspace01\Design01\not_v1_0.pdf</v>
-<v>Workspace01\Design01\SPI_Master_v2_50.pdf</v>
-<v>Workspace01\Design01\VDAC8_v1_90</v>
-<v>Workspace01\Design01\VDAC8_v1_90\VDAC8_v1_90.pdf</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStatesV2>
@@ -302,15 +274,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\Design01.cydsn\main.c" />
-<name v=".\Design01.cydsn\sd.c" />
-<name v=".\Design01.cydsn\TopDesign\TopDesign.cysch" />
 <name v=".\Design01.cydsn\Design01.cydwr" />
-<name v=".\Design01.cydsn\screen.c" />
-<name v=".\Design01.cydsn\font.c" />
-<name v=".\Design01.cydsn\uifunctions.c" />
-<name v=".\Design01.cydsn\Generated_Source\PSoC5\isr.c" />
-<name v=".\Design01.cydsn\uifunctions.h" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -318,7 +282,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1232, 751" SelectedTabbedMdiWindow="1114e81b-18c8-471a-bbe0-cf2644cebef4"><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\main.c" Guid="1114e81b-18c8-471a-bbe0-cf2644cebef4" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\sd.c" Guid="51485ccc-4ebc-40a7-959b-c7e997419296" /><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\TopDesign\TopDesign.cysch" Guid="34bd5a12-2df9-4287-a9b5-bd6f3f9f295d" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\Design01.cydwr" Guid="b8a054ad-cef6-4c24-b8aa-2f96d3ff30ea" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\screen.c" Guid="4e23f89d-e839-495a-a672-74d5ec8fd420" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\font.c" Guid="092fcde2-0b32-4f19-9646-36f865d6494a" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\uifunctions.c" Guid="ea9f2515-97d6-4eff-a019-b8b8ffa634d8" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\Generated_Source\PSoC5\isr.c" Guid="a7277e36-dee4-493b-9066-23788f235ec1" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\uifunctions.h" Guid="edb764b9-cfe4-468e-9460-27bc819f0dcb" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Vertical"><TabbedMdiContainer Size="1486, 751" SelectedTabbedMdiWindow="d6a32e3b-3705-4464-a22e-43d430d1e332"><ToolWindow Key="Start Page:bd4649ab-da6b-4d04-a663-c722b8bf99db:Start Page" Guid="1aca30ae-2fba-49ad-861f-cd0572b18d73" /><DocumentWindow Key="C:\Users\Jacob-Laptop\Desktop\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\Design01.cydwr" Guid="d6a32e3b-3705-4464-a22e-43d430d1e332" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="Debug" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

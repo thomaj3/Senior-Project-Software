@@ -293,6 +293,7 @@ int main(void)
     
     spi_device_select(SD_SELECT);
     
+<<<<<<< HEAD
     debug = FS_MountEx("PSOC",FS_MOUNT_RW);
 //    if (debug <= 0)
 //    {
@@ -314,6 +315,32 @@ int main(void)
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
     spi_device_select(SCREEN_SELECT);
+=======
+//    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
+////    if (debug <= 0)
+////    {
+////        draw_string(100,80,WHITE,"NO MOUNT");
+////    }
+//    pFile = FS_FOpen("test.txt", "+w");
+////    if (pFile == 0)
+////    {
+////        draw_string(100,100,WHITE,"NO OPEN");
+////    }
+//    const char text[] = "Can Write";
+//    FS_Write(pFile,text,strlen(text));
+//    FS_FClose(pFile);
+
+    //fill_screen(BLACK);
+//    draw_string(100,150,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN",1);
+//    draw_string(100,140,WHITE,"BACKUP SD DATA BEFORE CONTINUING",1);
+    draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
+    CyDelay(1000);
+    AMux_1_Select(1);
+    AMux_2_Select(1);
+    AMux_3_Select(1);
+    VDAC8_GS_SetValue(125);
+    VDAC8_DS_SetValue(250);
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
     for(;;)
     { 
         if (device_selection != -1)
@@ -382,7 +409,11 @@ int main(void)
                 Vgs_points_double[0] = -Vth*4.096/256.0;
                 break;
             case 3:
+<<<<<<< HEAD
                 Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/26.0;
+=======
+                Vgs_points_double[0] = -((Vth*4.096/256.0) - 0.7)/10;
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
                 break;
         }
         //Creating Vgs test point 
@@ -401,7 +432,11 @@ int main(void)
                     Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE;
                     break;
                 case 3:
+<<<<<<< HEAD
                     Vgs_points_double[i] = (-15 + Vgs_test_points[i]*4.096/256.0)/26.0;
+=======
+                    Vgs_points_double[i] =  (Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE + 0.7)/10;
+>>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
                     break;
             }
         }
