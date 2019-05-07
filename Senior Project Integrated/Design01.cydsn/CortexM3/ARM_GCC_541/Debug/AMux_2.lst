@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 1
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 1
 
 
    1              		.syntax unified
@@ -62,11 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
   28:Generated_Source\PSoC5/AMux_2.c **** *
   29:Generated_Source\PSoC5/AMux_2.c **** * Parameters:
   30:Generated_Source\PSoC5/AMux_2.c **** *  void
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 2
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 2
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 2
 
 
   31:Generated_Source\PSoC5/AMux_2.c **** *
@@ -126,11 +118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
   60              	.LVL5:
   61              	.L6:
   62              		.align	2
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 3
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 3
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 3
 
 
   63              	.L5:
@@ -190,11 +178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
   94 000e 014B     		ldr	r3, .L9
   95 0010 1C70     		strb	r4, [r3]
   96 0012 10BD     		pop	{r4, pc}
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 4
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 4
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 4
 
 
   97              	.L10:
@@ -254,11 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  127 000a 01D0     		beq	.L12
   98:Generated_Source\PSoC5/AMux_2.c ****     {
   99:Generated_Source\PSoC5/AMux_2.c ****         AMux_2_Disconnect(AMux_2_lastChannel);
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 5
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 5
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 5
 
 
  128              		.loc 1 99 0
@@ -309,52 +289,48 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  161 0006 00000000 		.4byte	.Ldebug_abbrev0
  162 000a 04       		.byte	0x4
  163 000b 01       		.uleb128 0x1
- 164 000c 34000000 		.4byte	.LASF20
+ 164 000c 73000000 		.4byte	.LASF20
  165 0010 0C       		.byte	0xc
- 166 0011 E7000000 		.4byte	.LASF21
- 167 0015 0E010000 		.4byte	.LASF22
+ 166 0011 26010000 		.4byte	.LASF21
+ 167 0015 20000000 		.4byte	.LASF22
  168 0019 00000000 		.4byte	.Ldebug_ranges0+0
  169 001d 00000000 		.4byte	0
  170 0021 00000000 		.4byte	.Ldebug_line0
  171 0025 02       		.uleb128 0x2
  172 0026 01       		.byte	0x1
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 6
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 6
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 6
 
 
  173 0027 06       		.byte	0x6
- 174 0028 13020000 		.4byte	.LASF0
+ 174 0028 D4010000 		.4byte	.LASF0
  175 002c 02       		.uleb128 0x2
  176 002d 01       		.byte	0x1
  177 002e 08       		.byte	0x8
- 178 002f 26000000 		.4byte	.LASF1
+ 178 002f 65000000 		.4byte	.LASF1
  179 0033 02       		.uleb128 0x2
  180 0034 02       		.byte	0x2
  181 0035 05       		.byte	0x5
- 182 0036 FA010000 		.4byte	.LASF2
+ 182 0036 BB010000 		.4byte	.LASF2
  183 003a 02       		.uleb128 0x2
  184 003b 02       		.byte	0x2
  185 003c 07       		.byte	0x7
- 186 003d D4000000 		.4byte	.LASF3
+ 186 003d 13010000 		.4byte	.LASF3
  187 0041 02       		.uleb128 0x2
  188 0042 04       		.byte	0x4
  189 0043 05       		.byte	0x5
- 190 0044 0A020000 		.4byte	.LASF4
+ 190 0044 CB010000 		.4byte	.LASF4
  191 0048 02       		.uleb128 0x2
  192 0049 04       		.byte	0x4
  193 004a 07       		.byte	0x7
- 194 004b C2000000 		.4byte	.LASF5
+ 194 004b 01010000 		.4byte	.LASF5
  195 004f 02       		.uleb128 0x2
  196 0050 08       		.byte	0x8
  197 0051 05       		.byte	0x5
- 198 0052 D5010000 		.4byte	.LASF6
+ 198 0052 96010000 		.4byte	.LASF6
  199 0056 02       		.uleb128 0x2
  200 0057 08       		.byte	0x8
  201 0058 07       		.byte	0x7
- 202 0059 A6010000 		.4byte	.LASF7
+ 202 0059 67010000 		.4byte	.LASF7
  203 005d 03       		.uleb128 0x3
  204 005e 04       		.byte	0x4
  205 005f 05       		.byte	0x5
@@ -362,32 +338,27 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  207 0064 02       		.uleb128 0x2
  208 0065 04       		.byte	0x4
  209 0066 07       		.byte	0x7
- 210 0067 8C010000 		.4byte	.LASF8
+ 210 0067 4D010000 		.4byte	.LASF8
  211 006b 04       		.uleb128 0x4
- 212 006c 04020000 		.4byte	.LASF23
+ 212 006c C5010000 		.4byte	.LASF23
  213 0070 03       		.byte	0x3
  214 0071 E401     		.2byte	0x1e4
  215 0073 2C000000 		.4byte	0x2c
  216 0077 02       		.uleb128 0x2
  217 0078 04       		.byte	0x4
  218 0079 04       		.byte	0x4
- 219 007a 20000000 		.4byte	.LASF9
+ 219 007a 5F000000 		.4byte	.LASF9
  220 007e 02       		.uleb128 0x2
  221 007f 08       		.byte	0x8
  222 0080 04       		.byte	0x4
- 223 0081 07010000 		.4byte	.LASF10
+ 223 0081 46010000 		.4byte	.LASF10
  224 0085 02       		.uleb128 0x2
  225 0086 01       		.byte	0x1
  226 0087 08       		.byte	0x8
- 227 0088 E3010000 		.4byte	.LASF11
+ 227 0088 A4010000 		.4byte	.LASF11
  228 008c 05       		.uleb128 0x5
-<<<<<<< HEAD
- 229 008d 99010000 		.4byte	.LASF12
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 7
-=======
- 229 008d 94010000 		.4byte	.LASF12
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 7
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ 229 008d 5A010000 		.4byte	.LASF12
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 7
 
 
  230 0091 01       		.byte	0x1
@@ -398,7 +369,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  235 009c 9C       		.byte	0x9c
  236 009d C1000000 		.4byte	0xc1
  237 00a1 06       		.uleb128 0x6
- 238 00a2 BD010000 		.4byte	.LASF16
+ 238 00a2 7E010000 		.4byte	.LASF16
  239 00a6 01       		.byte	0x1
  240 00a7 26       		.byte	0x26
  241 00a8 6B000000 		.4byte	0x6b
@@ -415,7 +386,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  252 00bf 00       		.byte	0
  253 00c0 00       		.byte	0
  254 00c1 05       		.uleb128 0x5
- 255 00c2 1F020000 		.4byte	.LASF13
+ 255 00c2 E0010000 		.4byte	.LASF13
  256 00c6 01       		.byte	0x1
  257 00c7 45       		.byte	0x45
  258 00c8 00000000 		.4byte	.LFB1
@@ -444,14 +415,10 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  281 00fd 00       		.byte	0
  282 00fe 00       		.byte	0
  283 00ff 05       		.uleb128 0x5
- 284 0100 E8010000 		.4byte	.LASF14
+ 284 0100 A9010000 		.4byte	.LASF14
  285 0104 01       		.byte	0x1
  286 0105 5E       		.byte	0x5e
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 8
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 8
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 8
 
 
  287 0106 00000000 		.4byte	.LFB2
@@ -480,7 +447,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  310 013b 00       		.byte	0
  311 013c 00       		.byte	0
  312 013d 0B       		.uleb128 0xb
- 313 013e C2010000 		.4byte	.LASF17
+ 313 013e 83010000 		.4byte	.LASF17
  314 0142 01       		.byte	0x1
  315 0143 14       		.byte	0x14
  316 0144 6B000000 		.4byte	0x6b
@@ -511,11 +478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  341 0008 0E       		.uleb128 0xe
  342 0009 1B       		.uleb128 0x1b
  343 000a 0E       		.uleb128 0xe
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 9
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 9
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 9
 
 
  344 000b 55       		.uleb128 0x55
@@ -575,11 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  398 0041 27       		.uleb128 0x27
  399 0042 19       		.uleb128 0x19
  400 0043 11       		.uleb128 0x11
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 10
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 10
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 10
 
 
  401 0044 01       		.uleb128 0x1
@@ -639,11 +598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  455 0080 13       		.uleb128 0x13
  456 0081 02       		.uleb128 0x2
  457 0082 17       		.uleb128 0x17
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 11
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 11
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 11
 
 
  458 0083 00       		.byte	0
@@ -703,11 +658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  512 0014 0100     		.2byte	0x1
  513 0016 54       		.byte	0x54
  514 0017 10000000 		.4byte	.LVL4
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 12
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 12
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 12
 
 
  515 001b 1C000000 		.4byte	.LVL5
@@ -767,11 +718,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  569 000c 18000000 		.4byte	.LFE1
  570 0010 00000000 		.4byte	.LFB2
  571 0014 20000000 		.4byte	.LFE2
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 13
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 13
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 13
 
 
  572 0018 00000000 		.4byte	0
@@ -795,151 +742,124 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 1
  582      5F325F55 
  582      6E736574 
  582      00
- 583              	.LASF9:
- 584 0020 666C6F61 		.ascii	"float\000"
- 584      7400
- 585              	.LASF1:
- 586 0026 756E7369 		.ascii	"unsigned char\000"
- 586      676E6564 
- 586      20636861 
- 586      7200
- 587              	.LASF20:
- 588 0034 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 588      43313120 
- 588      352E342E 
- 588      31203230 
- 588      31363036 
- 589 0067 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 589      20726576 
- 589      6973696F 
- 589      6E203233 
- 589      37373135 
- 590 009a 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 590      66756E63 
- 590      74696F6E 
- 590      2D736563 
- 590      74696F6E 
-<<<<<<< HEAD
- 591              	.LASF5:
- 592 00c2 6C6F6E67 		.ascii	"long unsigned int\000"
- 592      20756E73 
- 592      69676E65 
- 592      6420696E 
- 592      7400
- 593              	.LASF3:
- 594 00d4 73686F72 		.ascii	"short unsigned int\000"
- 594      7420756E 
- 594      7369676E 
- 594      65642069 
- 594      6E7400
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 14
-=======
- 591              	.LASF22:
- 592 00c2 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 592      73657273 
- 592      5C4A6163 
- 592      6F622D4C 
- 592      6170746F 
- 593 00f0 656E696F 		.ascii	"enior Project Stuff Backup - Copy\\Senior Project I"
- 593      72205072 
- 593      6F6A6563 
- 593      74205374 
- 593      75666620 
- 594 0122 6E746567 		.ascii	"ntegrated\\Design01.cydsn\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 14
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ 583              	.LASF22:
+ 584 0020 443A5C44 		.ascii	"D:\\Downloads\\Fix_shit\\Senior Project Integrated\\"
+ 584      6F776E6C 
+ 584      6F616473 
+ 584      5C466978 
+ 584      5F736869 
+ 585 0050 44657369 		.ascii	"Design01.cydsn\000"
+ 585      676E3031 
+ 585      2E637964 
+ 585      736E00
+ 586              	.LASF9:
+ 587 005f 666C6F61 		.ascii	"float\000"
+ 587      7400
+ 588              	.LASF1:
+ 589 0065 756E7369 		.ascii	"unsigned char\000"
+ 589      676E6564 
+ 589      20636861 
+ 589      7200
+ 590              	.LASF20:
+ 591 0073 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 591      43313120 
+ 591      352E342E 
+ 591      31203230 
+ 591      31363036 
+ 592 00a6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 592      20726576 
+ 592      6973696F 
+ 592      6E203233 
+ 592      37373135 
+ 593 00d9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 593      66756E63 
+ 593      74696F6E 
+ 593      2D736563 
+ 593      74696F6E 
+ 594              	.LASF5:
+ 595 0101 6C6F6E67 		.ascii	"long unsigned int\000"
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 14
 
 
- 595              	.LASF21:
- 596 00e7 47656E65 		.ascii	"Generated_Source\\PSoC5\\AMux_2.c\000"
- 596      72617465 
- 596      645F536F 
- 596      75726365 
- 596      5C50536F 
- 597              	.LASF10:
- 598 0107 646F7562 		.ascii	"double\000"
- 598      6C6500
- 599              	.LASF22:
- 600 010e 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 600      73657273 
- 600      5C6C6567 
- 600      6F635C44 
- 600      6F63756D 
- 601 013b 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 601      72205072 
- 601      6F6A6563 
- 601      745C5365 
- 601      6E696F72 
- 602 016c 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 602      7420496E 
- 602      74656772 
- 602      61746564 
- 602      5C446573 
- 603              	.LASF8:
- 604 018c 756E7369 		.ascii	"unsigned int\000"
- 604      676E6564 
- 604      20696E74 
- 604      00
- 605              	.LASF12:
- 606 0199 414D7578 		.ascii	"AMux_2_Start\000"
- 606      5F325F53 
- 606      74617274 
- 606      00
- 607              	.LASF7:
- 608 01a6 6C6F6E67 		.ascii	"long long unsigned int\000"
- 608      206C6F6E 
- 608      6720756E 
- 608      7369676E 
- 608      65642069 
- 609              	.LASF16:
- 610 01bd 6368616E 		.ascii	"chan\000"
- 610      00
- 611              	.LASF17:
- 612 01c2 414D7578 		.ascii	"AMux_2_lastChannel\000"
- 612      5F325F6C 
- 612      61737443 
- 612      68616E6E 
- 612      656C00
- 613              	.LASF6:
- 614 01d5 6C6F6E67 		.ascii	"long long int\000"
- 614      206C6F6E 
- 614      6720696E 
- 614      7400
- 615              	.LASF11:
-<<<<<<< HEAD
- 616 01e3 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccXaDRGj.s 			page 15
-=======
- 616 01de 63686172 		.ascii	"char\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccThqx8F.s 			page 15
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ 595      20756E73 
+ 595      69676E65 
+ 595      6420696E 
+ 595      7400
+ 596              	.LASF3:
+ 597 0113 73686F72 		.ascii	"short unsigned int\000"
+ 597      7420756E 
+ 597      7369676E 
+ 597      65642069 
+ 597      6E7400
+ 598              	.LASF21:
+ 599 0126 47656E65 		.ascii	"Generated_Source\\PSoC5\\AMux_2.c\000"
+ 599      72617465 
+ 599      645F536F 
+ 599      75726365 
+ 599      5C50536F 
+ 600              	.LASF10:
+ 601 0146 646F7562 		.ascii	"double\000"
+ 601      6C6500
+ 602              	.LASF8:
+ 603 014d 756E7369 		.ascii	"unsigned int\000"
+ 603      676E6564 
+ 603      20696E74 
+ 603      00
+ 604              	.LASF12:
+ 605 015a 414D7578 		.ascii	"AMux_2_Start\000"
+ 605      5F325F53 
+ 605      74617274 
+ 605      00
+ 606              	.LASF7:
+ 607 0167 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 607      206C6F6E 
+ 607      6720756E 
+ 607      7369676E 
+ 607      65642069 
+ 608              	.LASF16:
+ 609 017e 6368616E 		.ascii	"chan\000"
+ 609      00
+ 610              	.LASF17:
+ 611 0183 414D7578 		.ascii	"AMux_2_lastChannel\000"
+ 611      5F325F6C 
+ 611      61737443 
+ 611      68616E6E 
+ 611      656C00
+ 612              	.LASF6:
+ 613 0196 6C6F6E67 		.ascii	"long long int\000"
+ 613      206C6F6E 
+ 613      6720696E 
+ 613      7400
+ 614              	.LASF11:
+ 615 01a4 63686172 		.ascii	"char\000"
+ 615      00
+ 616              	.LASF14:
+ 617 01a9 414D7578 		.ascii	"AMux_2_FastSelect\000"
+ 617      5F325F46 
+ 617      61737453 
+ 617      656C6563 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccNWxC8f.s 			page 15
 
 
- 616      00
- 617              	.LASF14:
- 618 01e8 414D7578 		.ascii	"AMux_2_FastSelect\000"
- 618      5F325F46 
- 618      61737453 
- 618      656C6563 
- 618      7400
- 619              	.LASF2:
- 620 01fa 73686F72 		.ascii	"short int\000"
- 620      7420696E 
- 620      7400
- 621              	.LASF23:
- 622 0204 75696E74 		.ascii	"uint8\000"
- 622      3800
- 623              	.LASF4:
- 624 020a 6C6F6E67 		.ascii	"long int\000"
- 624      20696E74 
- 624      00
- 625              	.LASF0:
- 626 0213 7369676E 		.ascii	"signed char\000"
- 626      65642063 
- 626      68617200 
- 627              	.LASF13:
- 628 021f 414D7578 		.ascii	"AMux_2_Select\000"
- 628      5F325F53 
- 628      656C6563 
- 628      7400
- 629              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 617      7400
+ 618              	.LASF2:
+ 619 01bb 73686F72 		.ascii	"short int\000"
+ 619      7420696E 
+ 619      7400
+ 620              	.LASF23:
+ 621 01c5 75696E74 		.ascii	"uint8\000"
+ 621      3800
+ 622              	.LASF4:
+ 623 01cb 6C6F6E67 		.ascii	"long int\000"
+ 623      20696E74 
+ 623      00
+ 624              	.LASF0:
+ 625 01d4 7369676E 		.ascii	"signed char\000"
+ 625      65642063 
+ 625      68617200 
+ 626              	.LASF13:
+ 627 01e0 414D7578 		.ascii	"AMux_2_Select\000"
+ 627      5F325F53 
+ 627      656C6563 
+ 627      7400
+ 628              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

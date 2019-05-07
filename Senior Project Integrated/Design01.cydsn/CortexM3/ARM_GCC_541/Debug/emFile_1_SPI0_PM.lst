@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 1
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 1
 
 
    1              		.syntax unified
@@ -62,11 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
   28:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** };
   29:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** 
   30:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** 
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 2
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 2
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 2
 
 
   31:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** /*******************************************************************************
@@ -126,11 +118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
   68:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *
   69:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** * Parameters:
   70:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *  None.
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 3
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 3
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 3
 
 
   71:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *
@@ -190,11 +178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  108:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** * Global Variables:
  109:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *  emFile_1_SPI0_backup - modified when non-retention registers are saved.
  110:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 4
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 4
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 4
 
 
  111:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** * Reentrant:
@@ -254,11 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  130:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *  Prepare SPIM Component to wake up.
  131:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *
  132:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** * Parameters:
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 5
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 5
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 5
 
 
  133:Generated_Source\PSoC5/emFile_1_SPI0_PM.c **** *  None.
@@ -318,11 +298,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  110 0008 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
  111 000a 0BB1     		cbz	r3, .L7
  174:Generated_Source\PSoC5/emFile_1_SPI0_PM.c ****     {
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 6
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 6
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 6
 
 
  175:Generated_Source\PSoC5/emFile_1_SPI0_PM.c ****         emFile_1_SPI0_Enable();
@@ -360,14 +336,14 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  143 000c E2000000 		.4byte	.LASF26
  144 0010 0C       		.byte	0xc
  145 0011 82000000 		.4byte	.LASF27
- 146 0015 A9010000 		.4byte	.LASF28
+ 146 0015 12020000 		.4byte	.LASF28
  147 0019 00000000 		.4byte	.Ldebug_ranges0+0
  148 001d 00000000 		.4byte	0
  149 0021 00000000 		.4byte	.Ldebug_line0
  150 0025 02       		.uleb128 0x2
  151 0026 01       		.byte	0x1
  152 0027 06       		.byte	0x6
- 153 0028 B1020000 		.4byte	.LASF0
+ 153 0028 72020000 		.4byte	.LASF0
  154 002c 02       		.uleb128 0x2
  155 002d 01       		.byte	0x1
  156 002e 08       		.byte	0x8
@@ -375,22 +351,18 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  158 0033 02       		.uleb128 0x2
  159 0034 02       		.byte	0x2
  160 0035 05       		.byte	0x5
- 161 0036 86020000 		.4byte	.LASF2
+ 161 0036 08020000 		.4byte	.LASF2
  162 003a 02       		.uleb128 0x2
  163 003b 02       		.byte	0x2
  164 003c 07       		.byte	0x7
  165 003d 3B000000 		.4byte	.LASF3
  166 0041 02       		.uleb128 0x2
  167 0042 04       		.byte	0x4
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 7
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 7
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 7
 
 
  168 0043 05       		.byte	0x5
- 169 0044 90020000 		.4byte	.LASF4
+ 169 0044 51020000 		.4byte	.LASF4
  170 0048 02       		.uleb128 0x2
  171 0049 04       		.byte	0x4
  172 004a 07       		.byte	0x7
@@ -398,11 +370,11 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  174 004f 02       		.uleb128 0x2
  175 0050 08       		.byte	0x8
  176 0051 05       		.byte	0x5
- 177 0052 73020000 		.4byte	.LASF6
+ 177 0052 F5010000 		.4byte	.LASF6
  178 0056 02       		.uleb128 0x2
  179 0057 08       		.byte	0x8
  180 0058 07       		.byte	0x7
- 181 0059 53020000 		.4byte	.LASF7
+ 181 0059 D5010000 		.4byte	.LASF7
  182 005d 03       		.uleb128 0x3
  183 005e 04       		.byte	0x4
  184 005f 05       		.byte	0x5
@@ -410,7 +382,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  186 0064 02       		.uleb128 0x2
  187 0065 04       		.byte	0x4
  188 0066 07       		.byte	0x7
- 189 0067 46020000 		.4byte	.LASF8
+ 189 0067 C8010000 		.4byte	.LASF8
  190 006b 04       		.uleb128 0x4
  191 006c 87010000 		.4byte	.LASF12
  192 0070 02       		.byte	0x2
@@ -427,7 +399,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  203 0085 02       		.uleb128 0x2
  204 0086 01       		.byte	0x1
  205 0087 08       		.byte	0x8
- 206 0088 81020000 		.4byte	.LASF11
+ 206 0088 03020000 		.4byte	.LASF11
  207 008c 04       		.uleb128 0x4
  208 008d 70010000 		.4byte	.LASF13
  209 0091 02       		.byte	0x2
@@ -438,31 +410,27 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  214 009d 02       		.uleb128 0x2
  215 009e 08       		.byte	0x8
  216 009f 04       		.byte	0x4
- 217 00a0 A5020000 		.4byte	.LASF14
+ 217 00a0 66020000 		.4byte	.LASF14
  218 00a4 02       		.uleb128 0x2
  219 00a5 04       		.byte	0x4
  220 00a6 07       		.byte	0x7
- 221 00a7 6A020000 		.4byte	.LASF15
+ 221 00a7 EC010000 		.4byte	.LASF15
  222 00ab 06       		.uleb128 0x6
  223 00ac 02       		.byte	0x2
  224 00ad 03       		.byte	0x3
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 8
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 8
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 8
 
 
  225 00ae 46       		.byte	0x46
  226 00af CC000000 		.4byte	0xcc
  227 00b3 07       		.uleb128 0x7
- 228 00b4 99020000 		.4byte	.LASF16
+ 228 00b4 5A020000 		.4byte	.LASF16
  229 00b8 03       		.byte	0x3
  230 00b9 48       		.byte	0x48
  231 00ba 6B000000 		.4byte	0x6b
  232 00be 00       		.byte	0
  233 00bf 07       		.uleb128 0x7
- 234 00c0 27020000 		.4byte	.LASF17
+ 234 00c0 A9010000 		.4byte	.LASF17
  235 00c4 03       		.byte	0x3
  236 00c5 49       		.byte	0x49
  237 00c6 6B000000 		.4byte	0x6b
@@ -490,7 +458,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  259 00f7 01       		.uleb128 0x1
  260 00f8 9C       		.byte	0x9c
  261 00f9 0A       		.uleb128 0xa
- 262 00fa 32020000 		.4byte	.LASF21
+ 262 00fa B4010000 		.4byte	.LASF21
  263 00fe 01       		.byte	0x1
  264 00ff 73       		.byte	0x73
  265 0100 00000000 		.4byte	.LFB2
@@ -510,11 +478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  279 0123 18000000 		.4byte	.LFE3-.LFB3
  280 0127 01       		.uleb128 0x1
  281 0128 9C       		.byte	0x9c
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 9
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 9
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 9
 
 
  282 0129 40010000 		.4byte	0x140
@@ -544,8 +508,8 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  306 0165 03       		.byte	0x3
  307 0166 71       		.byte	0x71
  308 0167 0D       		.uleb128 0xd
- 309 0168 BD020000 		.4byte	.LASF25
- 310 016c BD020000 		.4byte	.LASF25
+ 309 0168 7E020000 		.4byte	.LASF25
+ 310 016c 7E020000 		.4byte	.LASF25
  311 0170 03       		.byte	0x3
  312 0171 57       		.byte	0x57
  313 0172 00       		.byte	0
@@ -574,11 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  336 0014 24       		.uleb128 0x24
  337 0015 00       		.byte	0
  338 0016 0B       		.uleb128 0xb
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 10
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 10
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 10
 
 
  339 0017 0B       		.uleb128 0xb
@@ -638,11 +598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  393 004d 03       		.uleb128 0x3
  394 004e 0E       		.uleb128 0xe
  395 004f 3A       		.uleb128 0x3a
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 11
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 11
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 11
 
 
  396 0050 0B       		.uleb128 0xb
@@ -702,11 +658,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  450 0087 3B       		.uleb128 0x3b
  451 0088 0B       		.uleb128 0xb
  452 0089 27       		.uleb128 0x27
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 12
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 12
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 12
 
 
  453 008a 19       		.uleb128 0x19
@@ -766,11 +718,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  507 00c3 00       		.byte	0
  508              		.section	.debug_aranges,"",%progbits
  509 0000 34000000 		.4byte	0x34
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 13
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 13
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 13
 
 
  510 0004 0200     		.2byte	0x2
@@ -830,11 +778,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  548      65642069 
  548      6E7400
  549              	.LASF24:
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 14
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 14
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 14
 
 
  550 004e 656D4669 		.ascii	"emFile_1_SPI0_ClearFIFO\000"
@@ -887,7 +831,6 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  564      74696F6E 
  564      2D736563 
  564      74696F6E 
-<<<<<<< HEAD
  565              	.LASF13:
  566 0170 72656738 		.ascii	"reg8\000"
  566      00
@@ -895,7 +838,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  568 0175 6C6F6E67 		.ascii	"long unsigned int\000"
  568      20756E73 
  568      69676E65 
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 15
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 15
 
 
  568      6420696E 
@@ -912,150 +855,76 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 1
  573              	.LASF10:
  574 01a2 646F7562 		.ascii	"double\000"
  574      6C6500
- 575              	.LASF28:
- 576 01a9 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 576      73657273 
- 576      5C6C6567 
- 576      6F635C44 
- 576      6F63756D 
- 577 01d6 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 577      72205072 
- 577      6F6A6563 
- 577      745C5365 
- 577      6E696F72 
- 578 0207 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 578      7420496E 
- 578      74656772 
- 578      61746564 
- 578      5C446573 
- 579              	.LASF17:
- 580 0227 636E7472 		.ascii	"cntrPeriod\000"
- 580      50657269 
- 580      6F6400
- 581              	.LASF21:
- 582 0232 656D4669 		.ascii	"emFile_1_SPI0_Sleep\000"
- 582      6C655F31 
- 582      5F535049 
- 582      305F536C 
- 582      65657000 
- 583              	.LASF8:
- 584 0246 756E7369 		.ascii	"unsigned int\000"
- 584      676E6564 
- 584      20696E74 
+ 575              	.LASF17:
+ 576 01a9 636E7472 		.ascii	"cntrPeriod\000"
+ 576      50657269 
+ 576      6F6400
+ 577              	.LASF21:
+ 578 01b4 656D4669 		.ascii	"emFile_1_SPI0_Sleep\000"
+ 578      6C655F31 
+ 578      5F535049 
+ 578      305F536C 
+ 578      65657000 
+ 579              	.LASF8:
+ 580 01c8 756E7369 		.ascii	"unsigned int\000"
+ 580      676E6564 
+ 580      20696E74 
+ 580      00
+ 581              	.LASF7:
+ 582 01d5 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 582      206C6F6E 
+ 582      6720756E 
+ 582      7369676E 
+ 582      65642069 
+ 583              	.LASF15:
+ 584 01ec 73697A65 		.ascii	"sizetype\000"
+ 584      74797065 
  584      00
- 585              	.LASF7:
- 586 0253 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 585              	.LASF6:
+ 586 01f5 6C6F6E67 		.ascii	"long long int\000"
  586      206C6F6E 
- 586      6720756E 
- 586      7369676E 
- 586      65642069 
-=======
- 565              	.LASF28:
- 566 0170 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 566      73657273 
- 566      5C4A6163 
- 566      6F622D4C 
- 566      6170746F 
- 567 019e 656E696F 		.ascii	"enior Project Stuff Backup - Copy\\Senior Project I"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 15
-
-
- 567      72205072 
- 567      6F6A6563 
- 567      74205374 
- 567      75666620 
- 568 01d0 6E746567 		.ascii	"ntegrated\\Design01.cydsn\000"
- 568      72617465 
- 568      645C4465 
- 568      7369676E 
- 568      30312E63 
- 569              	.LASF5:
- 570 01e9 6C6F6E67 		.ascii	"long unsigned int\000"
- 570      20756E73 
- 570      69676E65 
- 570      6420696E 
- 570      7400
- 571              	.LASF12:
- 572 01fb 75696E74 		.ascii	"uint8\000"
- 572      3800
- 573              	.LASF22:
- 574 0201 656D4669 		.ascii	"emFile_1_SPI0_Wakeup\000"
- 574      6C655F31 
- 574      5F535049 
- 574      305F5761 
- 574      6B657570 
- 575              	.LASF10:
- 576 0216 646F7562 		.ascii	"double\000"
- 576      6C6500
- 577              	.LASF17:
- 578 021d 636E7472 		.ascii	"cntrPeriod\000"
- 578      50657269 
- 578      6F6400
- 579              	.LASF21:
- 580 0228 656D4669 		.ascii	"emFile_1_SPI0_Sleep\000"
- 580      6C655F31 
- 580      5F535049 
- 580      305F536C 
- 580      65657000 
- 581              	.LASF8:
- 582 023c 756E7369 		.ascii	"unsigned int\000"
- 582      676E6564 
- 582      20696E74 
- 582      00
- 583              	.LASF7:
- 584 0249 6C6F6E67 		.ascii	"long long unsigned int\000"
- 584      206C6F6E 
- 584      6720756E 
- 584      7369676E 
- 584      65642069 
- 585              	.LASF13:
- 586 0260 72656738 		.ascii	"reg8\000"
- 586      00
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
- 587              	.LASF15:
- 588 026a 73697A65 		.ascii	"sizetype\000"
- 588      74797065 
+ 586      6720696E 
+ 586      7400
+ 587              	.LASF11:
+ 588 0203 63686172 		.ascii	"char\000"
  588      00
- 589              	.LASF6:
-<<<<<<< HEAD
- 590 0273 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccRVlU67.s 			page 16
-=======
- 590 026e 6C6F6E67 		.ascii	"long long int\000"
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccqsd870.s 			page 16
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
-
-
- 590      206C6F6E 
- 590      6720696E 
+ 589              	.LASF2:
+ 590 0208 73686F72 		.ascii	"short int\000"
+ 590      7420696E 
  590      7400
- 591              	.LASF11:
- 592 0281 63686172 		.ascii	"char\000"
- 592      00
- 593              	.LASF2:
- 594 0286 73686F72 		.ascii	"short int\000"
- 594      7420696E 
- 594      7400
- 595              	.LASF4:
- 596 0290 6C6F6E67 		.ascii	"long int\000"
- 596      20696E74 
- 596      00
- 597              	.LASF16:
- 598 0299 656E6162 		.ascii	"enableState\000"
- 598      6C655374 
- 598      61746500 
- 599              	.LASF14:
- 600 02a5 6C6F6E67 		.ascii	"long double\000"
- 600      20646F75 
- 600      626C6500 
- 601              	.LASF0:
- 602 02b1 7369676E 		.ascii	"signed char\000"
- 602      65642063 
- 602      68617200 
- 603              	.LASF25:
- 604 02bd 656D4669 		.ascii	"emFile_1_SPI0_Enable\000"
- 604      6C655F31 
- 604      5F535049 
- 604      305F456E 
- 604      61626C65 
- 605              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 591              	.LASF28:
+ 592 0212 443A5C44 		.ascii	"D:\\Downloads\\Fix_shit\\Senior Project Integrated\\"
+ 592      6F776E6C 
+ 592      6F616473 
+ 592      5C466978 
+ 592      5F736869 
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\ccyGGbmT.s 			page 16
+
+
+ 593 0242 44657369 		.ascii	"Design01.cydsn\000"
+ 593      676E3031 
+ 593      2E637964 
+ 593      736E00
+ 594              	.LASF4:
+ 595 0251 6C6F6E67 		.ascii	"long int\000"
+ 595      20696E74 
+ 595      00
+ 596              	.LASF16:
+ 597 025a 656E6162 		.ascii	"enableState\000"
+ 597      6C655374 
+ 597      61746500 
+ 598              	.LASF14:
+ 599 0266 6C6F6E67 		.ascii	"long double\000"
+ 599      20646F75 
+ 599      626C6500 
+ 600              	.LASF0:
+ 601 0272 7369676E 		.ascii	"signed char\000"
+ 601      65642063 
+ 601      68617200 
+ 602              	.LASF25:
+ 603 027e 656D4669 		.ascii	"emFile_1_SPI0_Enable\000"
+ 603      6C655F31 
+ 603      5F535049 
+ 603      305F456E 
+ 603      61626C65 
+ 604              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

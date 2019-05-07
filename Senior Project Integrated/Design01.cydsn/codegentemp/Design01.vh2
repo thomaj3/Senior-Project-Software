@@ -2,11 +2,7 @@
 --	Conversion of Design01.v to vh2:
 --
 --	Cypress Semiconductor - WARP Version 6.3 IR 41
-<<<<<<< HEAD
---	Sun May 05 23:34:09 2019
-=======
---	Fri Apr 26 12:58:29 2019
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+--	Mon May 06 17:02:03 2019
 --
 
 USE cypress.cypress.all;
@@ -175,7 +171,7 @@ SIGNAL tmpINTERRUPT_0__Reset_net_0 : bit;
 SIGNAL \VDAC8_DS:Net_83\ : bit;
 SIGNAL \VDAC8_DS:Net_81\ : bit;
 SIGNAL \VDAC8_DS:Net_82\ : bit;
-TERMINAL Net_283 : bit;
+TERMINAL Net_191 : bit;
 TERMINAL \VDAC8_DS:Net_77\ : bit;
 SIGNAL tmpOE__Pin_DS_net_0 : bit;
 SIGNAL tmpFB_0__Pin_DS_net_0 : bit;
@@ -427,7 +423,7 @@ TERMINAL \emFile_1:tmpSIOVREF__SPI0_CS_net_0\ : bit;
 SIGNAL \emFile_1:tmpINTERRUPT_0__SPI0_CS_net_0\ : bit;
 SIGNAL tmpOE__Pin_DS_P_net_0 : bit;
 SIGNAL tmpFB_0__Pin_DS_P_net_0 : bit;
-TERMINAL Net_288 : bit;
+TERMINAL Net_236 : bit;
 SIGNAL tmpIO_0__Pin_DS_P_net_0 : bit;
 TERMINAL tmpSIOVREF__Pin_DS_P_net_0 : bit;
 SIGNAL tmpINTERRUPT_0__Pin_DS_P_net_0 : bit;
@@ -1199,7 +1195,7 @@ Clock:cy_clock_v1_0
 			zero, zero, zero, zero),
 		strobe=>zero,
 		strobe_udb=>zero,
-		vout=>Net_283,
+		vout=>Net_191,
 		iout=>\VDAC8_DS:Net_77\);
 \VDAC8_DS:cy_analog_noconnect_1\:cy_analog_noconnect_v1_0
 	PORT MAP(noconnect=>\VDAC8_DS:Net_77\);
@@ -2211,7 +2207,7 @@ Pin_DS_P:cy_psoc3_pins_v1_10
 	PORT MAP(oe=>(tmpOE__MOSI_net_0),
 		y=>(zero),
 		fb=>(tmpFB_0__Pin_DS_P_net_0),
-		analog=>Net_288,
+		analog=>Net_236,
 		io=>(tmpIO_0__Pin_DS_P_net_0),
 		siovref=>(tmpSIOVREF__Pin_DS_P_net_0),
 		annotation=>(open),
@@ -2370,9 +2366,9 @@ AMux_1:cy_psoc3_amux_v1_0
 		init_mux_sel=>"00",
 		api_type=>0,
 		connect_mode=>1)
-	PORT MAP(muxin=>(Net_288, Net_235),
+	PORT MAP(muxin=>(Net_236, Net_235),
 		hw_ctrl_en=>(others => zero),
-		vout=>Net_283);
+		vout=>Net_191);
 AMux_3:cy_psoc3_amux_v1_0
 	GENERIC MAP(cy_registers=>"",
 		muxin_width=>2,

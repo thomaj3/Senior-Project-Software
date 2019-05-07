@@ -14,21 +14,19 @@
 #include "uifunctions.h"
 
 #define VDAC_G_B_MAX    255 //Max VDAC code for the Gate/Base 
-#define VDAC_D_C_P_MAX  250 //Max VDAC for the Drain/Common
+#define VDAC_D_C_MAX    188 //Max VDAC for the Drain/Common
 #define VDS_NMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_NMOS) + 1)
 #define VCE_NPN_LENGTH  ((VDAC_D_C_MAX/VC_STEP_NPN) + 1)
 #define VDS_PMOS_LENGTH ((VDAC_D_C_MAX/VD_STEP_PMOS) + 1)
 #define VCE_PNP_LENGTH  ((VDAC_D_C_MAX/VC_STEP_PNP) + 1)
 #define VDAC_N_1_VOLT   21
-#define VDAC_P_1_VOLT   229
-#define VDAC_G_1_VOLT   63
+#define VDAC_P_1_VOLT   13
 #define ADC_GAIN        52.0
-#define P_SOURCE_VOLTAGE 12
 
 
 //The lengths of Drain or Common testing points
 
-void set_transistor_test_type(unsigned char device_selection)
+void set_transistor_test_type(void)
 {
     if(device_selection < 2)
     {
@@ -88,9 +86,8 @@ double single_test_preset_vds(unsigned char Vgs)
 //Finds Vth (The minimum Vgs needed to turn the transistor by sorting through Vgs's until 
 //a minumum current of 1 mA is found Id is found by a 1 Ohm series resistor whose potential 
 //difference is magnitifed 100 fold for accurate reading
-int vgs_th_find(unsigned char Vgs_max, unsigned char Vgs_min ,unsigned char Vds)
+int vgs_th_find(unsigned char Vgs_max, unsigned char Vds)
 {
-    //63,255,229
     unsigned char   Vgs;           
 	//The Gate-Drain Voltage difference | Vds_real = Vds/256 * 4.096 * 3 (OpAmp gain)
     double          Id=0;         
@@ -98,7 +95,7 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vgs_min ,unsigned char Vds)
     int i;
     VDAC8_DS_SetValue(Vds); //Set Vds to 1 Volt
     VDAC8_GS_SetValue(0);
-    for(Vgs = Vgs_min; Vgs < Vgs_max; Vgs++)
+    for(Vgs = 0; Vgs < Vgs_max; Vgs++)
     {
         Id = single_test_preset_vds(Vgs);
         
@@ -108,13 +105,13 @@ int vgs_th_find(unsigned char Vgs_max, unsigned char Vgs_min ,unsigned char Vds)
             return Vgs;
         }
     }
-    return 0;
+    return 0; //If a Vth cannot be found
 }
 
 //Finds the MAX current 20mA, Id is found through a 100 Ohm series resistor
 //Sweeps through Vgs until a max current of 20 mA is found
 //Therefor ID_MAX = 20*100 == 2000
-unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max)
+unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned char Vgs_max)
 {
     unsigned char   Vgs;
 	//The Gate-Source Voltage difference | Vgs_real = Vgs/256 * 4.096
@@ -122,8 +119,8 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max)
 	//The Drain Current | Id_real = Id/100
     VDAC8_DS_SetValue(Vds_max);
 	//Sets Vds = 188/256 * 4.096 * 3 = 9V (max Vds to test wtih) to find max current
-    
-    for(Vgs = Vth; Vgs < 255; Vgs++)
+    int i;
+    for(Vgs = Vth; Vgs < Vgs_max; Vgs++)
     {            
         
         Id = single_test_preset_vds(Vgs);
@@ -135,15 +132,13 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max)
             return Vgs-1; //Stop stepping once max current is hit
         }
     }
-    
-    
 
     return Vgs; //Returns the previous Vgs step to avoid going past 20mA
 }
 
 //This function runs the main test, it intakes the y_max used to calculate the
 //pixels for line segments and the Vgs test points
-int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], unsigned char device_selection, int SD_files_written)
+int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], int SD_files_written)
 {
     int i,j,k;
     double Id;
@@ -155,14 +150,16 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
     int y_pixel, x_pixel;
     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK};
     
+    sprintf(SD_files_written_str,"%d",SD_files_written);
+    strcat(file_name,SD_files_written_str);
+    strcat(file_name,".txt");
+    
     for(i = 0; i < curve_nums; i++)
     {
         if(write_sd==1)
         {
-            sprintf(SD_files_written_str,"%d",SD_files_written);
-            strcat(file_name,SD_files_written_str);
-            strcat(file_name,".txt");
-            write_header_info(file_name,device_selection,i,Vgs_double);
+            
+            write_header_info(file_name,i,Vgs_double);
         }
         //ADC_SAR_1_Wakeup();//wakeup from sleep for reset purposes
         for(j = 0; j < vds_high_vdac_code; j++)
@@ -180,17 +177,17 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                     Id_avg += single_test(j,Vgs_test_points[i]);
                 } else //if testing P-Type devices
                 {
-                    Id_avg += single_test(vds_high_vdac_code - j, Vgs_double[i]);
+                    Id_avg += single_test(VDAC_D_C_MAX - j, Vgs_double[i]);
                 }
             }
             Id_avg /= num_avg;
             if(write_sd==1)
             {
-                write_data(file_name,Id_avg,j,device_selection);//update CSV File with new Id/Ic
+                write_data(file_name,Id_avg,j);//update CSV File with new Id/Ic
             }
             //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
-            x_pixel = (int) (VDAC_D_C_P_MAX * j)/vds_high_vdac_code;
+            x_pixel = (int) (VDAC_D_C_MAX * j)/vds_high_vdac_code;
             if (j > 0) //only draw a line if 2 points have been tested already
             {
                 draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
@@ -279,7 +276,7 @@ int main(void)
     int y_max_calc;
     
     
-    int Vgs_step;                                       //The stepping amount to create the Vgs test points
+    unsigned char Vgs_step;                             //The stepping amount to create the Vgs test points
     unsigned char Vgs_test_points[CURVE_NUM_MAX];       //The Vgs stepping points of ammount specified in settings.h
     
     double Vgs_points_double[CURVE_NUM_MAX];            //The actual Vgs output by DAC
@@ -292,8 +289,6 @@ int main(void)
     device_selection = -1;
     
     spi_device_select(SD_SELECT);
-    
-<<<<<<< HEAD
     debug = FS_MountEx("PSOC",FS_MOUNT_RW);
 //    if (debug <= 0)
 //    {
@@ -315,32 +310,6 @@ int main(void)
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
     spi_device_select(SCREEN_SELECT);
-=======
-//    debug = FS_MountEx("PSOC",FS_MOUNT_RW);
-////    if (debug <= 0)
-////    {
-////        draw_string(100,80,WHITE,"NO MOUNT");
-////    }
-//    pFile = FS_FOpen("test.txt", "+w");
-////    if (pFile == 0)
-////    {
-////        draw_string(100,100,WHITE,"NO OPEN");
-////    }
-//    const char text[] = "Can Write";
-//    FS_Write(pFile,text,strlen(text));
-//    FS_FClose(pFile);
-
-    //fill_screen(BLACK);
-//    draw_string(100,150,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN",1);
-//    draw_string(100,140,WHITE,"BACKUP SD DATA BEFORE CONTINUING",1);
-    draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
-    CyDelay(1000);
-    AMux_1_Select(1);
-    AMux_2_Select(1);
-    AMux_3_Select(1);
-    VDAC8_GS_SetValue(125);
-    VDAC8_DS_SetValue(250);
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
     for(;;)
     { 
         if (device_selection != -1)
@@ -370,31 +339,24 @@ int main(void)
         {
             SD_files_written++;
         }
-        set_transistor_test_type(device_selection);
+        set_transistor_test_type();
         if(device_selection < 2)
         {
             
-            Vth = vgs_th_find(VDAC_G_B_MAX,0,VDAC_N_1_VOLT);
+            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
         }
         else
         {
-            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_G_1_VOLT,VDAC_P_1_VOLT);
-            //vgs_max, vgs_min,Vdac
-            
+            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
         }
         if (Vth == 0)
         {
             fill_screen(BLACK);
-            draw_string(100,150,WHITE,"NO VTH FOUND",1);
-            CyDelay(2000);
+            draw_string(100,150,"NO VTH FOUND",WHITE);
+            CyDelay(200);
         }
-        if(device_selection < 2)
-        {
-            Vgs_max = vgs_max_id_find(Vth,vds_high_vdac_code);
-        } else
-        {
-            Vgs_max = vgs_max_id_find(Vth,(VDAC_D_C_P_MAX - vds_high_vdac_code));
-        }
+            
+        Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
         Vgs_step = (Vgs_max - Vth)/(curve_nums-1); //Creating the step size for linearlly spaced
         Vgs_test_points[0] = Vth;
         switch(device_selection)
@@ -406,14 +368,11 @@ int main(void)
                 Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/26.0;
                 break;
             case 2:
-                Vgs_points_double[0] = -Vth*4.096/256.0;
+                Vgs_points_double[0] = -15 + Vth*4.096/256.0;
                 break;
             case 3:
-<<<<<<< HEAD
                 Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/26.0;
-=======
-                Vgs_points_double[0] = -((Vth*4.096/256.0) - 0.7)/10;
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+
                 break;
         }
         //Creating Vgs test point 
@@ -429,14 +388,11 @@ int main(void)
                     Vgs_points_double[i] = (Vgs_test_points[i]*4.096/256.0 - 0.7)/26.0;
                     break;
                 case 2:
-                    Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE;
+                    Vgs_points_double[i] = -15 + Vgs_test_points[i]*4.096/256.0;
                     break;
                 case 3:
-<<<<<<< HEAD
                     Vgs_points_double[i] = (-15 + Vgs_test_points[i]*4.096/256.0)/26.0;
-=======
-                    Vgs_points_double[i] =  (Vgs_test_points[i]*4.096/256.0 - P_SOURCE_VOLTAGE + 0.7)/10;
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+
                     break;
             }
         }
@@ -449,7 +405,7 @@ int main(void)
         {
             for (i = 0; i <num_avg;i++)
             {
-                y_max_mA += single_test(vds_high_vdac_code,Vgs_test_points[curve_nums-1]);
+                y_max_mA += single_test(VDAC_D_C_MAX,Vgs_test_points[curve_nums-1]);
             }
             y_max_mA /= num_avg;
         } else
@@ -458,8 +414,8 @@ int main(void)
         }
         y_max_calc = (int) (y_max_mA);
         y_max_calc = (y_max_calc - (y_max_calc % 5) + 5);
-        draw_coordinates(y_max_calc,device_selection);
-        run_test(y_max_calc,Vgs_test_points,Vgs_points_double,device_selection,SD_files_written);
+        draw_coordinates(y_max_calc);
+        run_test(y_max_calc,Vgs_test_points,Vgs_points_double,SD_files_written);
         
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);

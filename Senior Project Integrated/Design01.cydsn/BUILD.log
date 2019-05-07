@@ -1,95 +1,42 @@
-<<<<<<< HEAD
---------------- Build Started: 05/05/2019 23:38:35 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
-=======
---------------- Build Started: 04/26/2019 14:18:58 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+--------------- Build Started: 05/06/2019 17:25:22 Project: Design01, Configuration: ARM GCC 5.4-2016-q2-update Debug ---------------
 The code generation step is up to date.
 arm-none-eabi-gcc.exe -mcpu=cortex-m3 -mthumb -I.\emFile_V322c\Code\Include\PSoC5 -I.\emFile_V322c\Code\Include\PSoC5\emf16nOS -I. -IGenerated_Source\PSoC5 -Wa,-alh=.\CortexM3\ARM_GCC_541\Debug/main.lst -g -D DEBUG -D CY_CORE_ID=0 -Wall -ffunction-sections -ffat-lto-objects -Og -c main.c -o .\CortexM3\ARM_GCC_541\Debug\main.o
 main.c: In function 'single_test':
-main.c:52:9: warning: unused variable 'i' [-Wunused-variable]
+main.c:50:9: warning: unused variable 'i' [-Wunused-variable]
      int i;
          ^
-main.c:51:12: warning: unused variable 'Output_avg' [-Wunused-variable]
+main.c:49:12: warning: unused variable 'Output_avg' [-Wunused-variable]
      double Output_avg;
             ^
 main.c: In function 'vgs_th_find':
-main.c:98:9: warning: unused variable 'i' [-Wunused-variable]
+main.c:95:9: warning: unused variable 'i' [-Wunused-variable]
+     int i;
+         ^
+main.c: In function 'vgs_max_id_find':
+main.c:122:9: warning: unused variable 'i' [-Wunused-variable]
      int i;
          ^
 main.c: In function 'run_test':
-<<<<<<< HEAD
-main.c:160:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
-=======
-screen.h:69:33: warning: excess elements in array initializer
-     #define LIGHTGREY           0xC618  ///< 198, 195, 198
-                                 ^
-main.c:156:77: note: in expansion of macro 'LIGHTGREY'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                             ^
-screen.h:69:33: note: (near initialization for 'curve_color')
-     #define LIGHTGREY           0xC618  ///< 198, 195, 198
-                                 ^
-main.c:156:77: note: in expansion of macro 'LIGHTGREY'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                             ^
-screen.h:68:33: warning: excess elements in array initializer
-     #define OLIVE               0x7BE0  ///< 123, 125,   0
-                                 ^
-main.c:156:88: note: in expansion of macro 'OLIVE'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                        ^
-screen.h:68:33: note: (near initialization for 'curve_color')
-     #define OLIVE               0x7BE0  ///< 123, 125,   0
-                                 ^
-main.c:156:88: note: in expansion of macro 'OLIVE'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                        ^
-screen.h:77:33: warning: excess elements in array initializer
-     #define WHITE               0xFFFF  ///< 255, 255, 255
-                                 ^
-main.c:156:95: note: in expansion of macro 'WHITE'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                               ^
-screen.h:77:33: note: (near initialization for 'curve_color')
-     #define WHITE               0xFFFF  ///< 255, 255, 255
-                                 ^
-main.c:156:95: note: in expansion of macro 'WHITE'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                               ^
-screen.h:79:33: warning: excess elements in array initializer
-     #define GREENYELLOW         0xAFE5  ///< 173, 255,  41
-                                 ^
-main.c:156:102: note: in expansion of macro 'GREENYELLOW'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                                      ^
-screen.h:79:33: note: (near initialization for 'curve_color')
-     #define GREENYELLOW         0xAFE5  ///< 173, 255,  41
-                                 ^
-main.c:156:102: note: in expansion of macro 'GREENYELLOW'
-     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK, LIGHTGREY, OLIVE, WHITE, GREENYELLOW};
-                                                                                                      ^
-main.c:165:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
-             write_header_info(file_name,device_selection,i,Vgs_double);
+main.c:162:13: warning: implicit declaration of function 'write_header_info' [-Wimplicit-function-declaration]
+             write_header_info(file_name,i,Vgs_double);
              ^
-main.c:189:17: warning: implicit declaration of function 'write_data' [-Wimplicit-function-declaration]
-                 write_data(file_name,Id_avg,j,device_selection);//update CSV File with new Id/Ic
+main.c:186:17: warning: implicit declaration of function 'write_data' [-Wimplicit-function-declaration]
+                 write_data(file_name,Id_avg,j);//update CSV File with new Id/Ic
                  ^
-main.c:196:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
+main.c:193:17: warning: implicit declaration of function 'draw_line' [-Wimplicit-function-declaration]
                  draw_line(x_pixel_prev+30,y_pixel_prev+10,x_pixel+30,y_pixel+10,curve_color[i]);
                  ^
-main.c:216:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
+main.c:213:9: warning: implicit declaration of function 'draw_string' [-Wimplicit-function-declaration]
          draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
          ^
-main.c:149:12: warning: unused variable 'Id' [-Wunused-variable]
+main.c:144:12: warning: unused variable 'Id' [-Wunused-variable]
      double Id;
             ^
 main.c: In function 'main':
-<<<<<<< HEAD
-main.c:224:5: warning: implicit declaration of function 'spi_device_select' [-Wimplicit-function-declaration]
+main.c:225:5: warning: implicit declaration of function 'spi_device_select' [-Wimplicit-function-declaration]
      spi_device_select(SCREEN_SELECT);
      ^
-main.c:237:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
+main.c:238:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
      StartScreen();
      ^
 main.c:321:13: warning: implicit declaration of function 'draw_warning_screen' [-Wimplicit-function-declaration]
@@ -107,110 +54,52 @@ main.c:335:17: warning: implicit declaration of function 'draw_choose_screen' [-
 main.c:354:13: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
              fill_screen(BLACK);
              ^
-main.c:415:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
-         draw_coordinates(y_max_calc,device_selection);
+main.c:417:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
+         draw_coordinates(y_max_calc);
          ^
-main.c:285:9: warning: variable 'device_selection_prev' set but not used [-Wunused-but-set-variable]
+main.c:286:9: warning: variable 'device_selection_prev' set but not used [-Wunused-but-set-variable]
      int device_selection_prev = -1;
          ^
-main.c:283:9: warning: variable 'debug' set but not used [-Wunused-but-set-variable]
+main.c:284:9: warning: variable 'debug' set but not used [-Wunused-but-set-variable]
      int debug;
          ^
-main.c:274:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
+main.c:275:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
      int y_pixel_prev;
          ^
-main.c:273:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
+main.c:274:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
      int x_pixel_prev;
          ^
-main.c:272:9: warning: unused variable 'y_pixel' [-Wunused-variable]
+main.c:273:9: warning: unused variable 'y_pixel' [-Wunused-variable]
      int y_pixel;
          ^
-main.c:271:9: warning: unused variable 'x_pixel' [-Wunused-variable]
+main.c:272:9: warning: unused variable 'x_pixel' [-Wunused-variable]
      int x_pixel;
          ^
-main.c:265:9: warning: unused variable 'k' [-Wunused-variable]
+main.c:266:9: warning: unused variable 'k' [-Wunused-variable]
      int k;  //used for for loop iterations
          ^
-main.c:264:9: warning: unused variable 'j' [-Wunused-variable]
+main.c:265:9: warning: unused variable 'j' [-Wunused-variable]
      int j;  //used for for loop iterations
          ^
-main.c:261:9: warning: unused variable 'return_code' [-Wunused-variable]
-=======
-main.c:242:5: warning: implicit declaration of function 'StartScreen' [-Wimplicit-function-declaration]
-     StartScreen();
-     ^
-main.c:316:5: warning: implicit declaration of function 'draw_button' [-Wimplicit-function-declaration]
-     draw_button(0,0,320,240,BLACK,WHITE,"NOTE SD DATA WILL BE OVERWRITTEN BACK UP SD DATA BEFORE CONTINUING");
-     ^
-main.c:331:13: warning: implicit declaration of function 'draw_choose_screen' [-Wimplicit-function-declaration]
-             draw_choose_screen();
-             ^
-main.c:335:13: warning: implicit declaration of function 'draw_options_screen' [-Wimplicit-function-declaration]
-             draw_options_screen();
-             ^
-main.c:344:17: warning: implicit declaration of function 'draw_debug_screen' [-Wimplicit-function-declaration]
-                 draw_debug_screen(0,0);
-                 ^
-main.c:366:13: warning: implicit declaration of function 'fill_screen' [-Wimplicit-function-declaration]
-             fill_screen(BLACK);
-             ^
-main.c:432:9: warning: implicit declaration of function 'draw_coordinates' [-Wimplicit-function-declaration]
-         draw_coordinates(y_max_calc,device_selection);
-         ^
-main.c:293:9: warning: variable 'device_selection_prev' set but not used [-Wunused-but-set-variable]
-     int device_selection_prev = -1;
-         ^
-main.c:291:9: warning: unused variable 'debug' [-Wunused-variable]
-     int debug;
-         ^
-main.c:290:15: warning: unused variable 'pFile' [-Wunused-variable]
-     FS_FILE * pFile;
-               ^
-main.c:282:9: warning: unused variable 'y_pixel_prev' [-Wunused-variable]
-     int y_pixel_prev;
-         ^
-main.c:281:9: warning: unused variable 'x_pixel_prev' [-Wunused-variable]
-     int x_pixel_prev;
-         ^
-main.c:280:9: warning: unused variable 'y_pixel' [-Wunused-variable]
-     int y_pixel;
-         ^
-main.c:279:9: warning: unused variable 'x_pixel' [-Wunused-variable]
-     int x_pixel;
-         ^
-main.c:273:9: warning: unused variable 'k' [-Wunused-variable]
-     int k;  //used for for loop iterations
-         ^
-main.c:272:9: warning: unused variable 'j' [-Wunused-variable]
-     int j;  //used for for loop iterations
-         ^
-main.c:269:9: warning: unused variable 'return_code' [-Wunused-variable]
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+main.c:262:9: warning: unused variable 'return_code' [-Wunused-variable]
      int return_code;    //Going to be used for error displays
          ^
 main.c: In function 'run_test':
-main.c:219:1: warning: control reaches end of non-void function [-Wreturn-type]
+main.c:215:1: warning: control reaches end of non-void function [-Wreturn-type]
  }
  ^
-main.c:216:9: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:213:9: warning: 'x_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
          draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
          ^
-main.c:216:9: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
+main.c:213:9: warning: 'y_pixel_prev' may be used uninitialized in this function [-Wmaybe-uninitialized]
 arm-none-eabi-ar.exe -rs .\CortexM3\ARM_GCC_541\Debug\Design01.a .\CortexM3\ARM_GCC_541\Debug\CyDmac.o .\CortexM3\ARM_GCC_541\Debug\CyFlash.o .\CortexM3\ARM_GCC_541\Debug\CyLib.o .\CortexM3\ARM_GCC_541\Debug\cyPm.o .\CortexM3\ARM_GCC_541\Debug\CySpc.o .\CortexM3\ARM_GCC_541\Debug\cyutils.o .\CortexM3\ARM_GCC_541\Debug\cy_em_eeprom.o .\CortexM3\ARM_GCC_541\Debug\MOSI.o .\CortexM3\ARM_GCC_541\Debug\CLK.o .\CortexM3\ARM_GCC_541\Debug\SS.o .\CortexM3\ARM_GCC_541\Debug\MISO.o .\CortexM3\ARM_GCC_541\Debug\D_C.o .\CortexM3\ARM_GCC_541\Debug\Reset.o .\CortexM3\ARM_GCC_541\Debug\Clock.o .\CortexM3\ARM_GCC_541\Debug\SPIM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_PM.o .\CortexM3\ARM_GCC_541\Debug\SPIM_INT.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_DS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_DS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS.o .\CortexM3\ARM_GCC_541\Debug\VDAC8_GS_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_GS.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_INT.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_PM.o .\CortexM3\ARM_GCC_541\Debug\Pin_ID.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_IRQ.o .\CortexM3\ARM_GCC_541\Debug\ADC_SAR_1_theACLK.o .\CortexM3\ARM_GCC_541\Debug\I2C.o .\CortexM3\ARM_GCC_541\Debug\I2C_BOOT.o .\CortexM3\ARM_GCC_541\Debug\I2C_INT.o .\CortexM3\ARM_GCC_541\Debug\I2C_PM.o .\CortexM3\ARM_GCC_541\Debug\I2C_SLAVE.o .\CortexM3\ARM_GCC_541\Debug\I2C_MASTER.o .\CortexM3\ARM_GCC_541\Debug\scl.o .\CortexM3\ARM_GCC_541\Debug\sda.o .\CortexM3\ARM_GCC_541\Debug\isr.o .\CortexM3\ARM_GCC_541\Debug\IRQ.o .\CortexM3\ARM_GCC_541\Debug\AMux_1.o .\CortexM3\ARM_GCC_541\Debug\Pin_GS_P.o .\CortexM3\ARM_GCC_541\Debug\Pin_DS_P.o .\CortexM3\ARM_GCC_541\Debug\AMux_2.o .\CortexM3\ARM_GCC_541\Debug\AMux_3.o .\CortexM3\ARM_GCC_541\Debug\Pin_ID_P.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_ConfigMMC_SPI.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_MMC_HW_SPI.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_PM.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_SPI0.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_SPI0_PM.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_SPI0_INT.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_mosi0.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_Clock_1.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_miso0.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_sclk0.o .\CortexM3\ARM_GCC_541\Debug\emFile_1_SPI0_CS.o .\CortexM3\ARM_GCC_541\Debug\CyBootAsmGnu.o
 arm-none-eabi-ar.exe: creating .\CortexM3\ARM_GCC_541\Debug\Design01.a
-arm-none-eabi-gcc.exe -Wl,--start-group -o "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\font.o .\CortexM3\ARM_GCC_541\Debug\sd.o .\CortexM3\ARM_GCC_541\Debug\uifunctions.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l emf16nosnlfn -L Generated_Source\PSoC5 -L .\emFile_V322c\LinkLibrary\PSoC5\GCC -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
-cyelftool.exe -C "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
+arm-none-eabi-gcc.exe -Wl,--start-group -o "D:\Downloads\Fix_shit\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" .\CortexM3\ARM_GCC_541\Debug\main.o .\CortexM3\ARM_GCC_541\Debug\screen.o .\CortexM3\ARM_GCC_541\Debug\font.o .\CortexM3\ARM_GCC_541\Debug\sd.o .\CortexM3\ARM_GCC_541\Debug\uifunctions.o .\CortexM3\ARM_GCC_541\Debug\cyfitter_cfg.o .\CortexM3\ARM_GCC_541\Debug\cymetadata.o .\CortexM3\ARM_GCC_541\Debug\Cm3Start.o .\CortexM3\ARM_GCC_541\Debug\Design01.a "C:\Program Files (x86)\Cypress\PSoC Creator\4.2\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM3\ARM_GCC_541\Debug\CyComponentLibrary.a" -mcpu=cortex-m3 -mthumb -l emf16nosnlfn -L Generated_Source\PSoC5 -L .\emFile_V322c\LinkLibrary\PSoC5\GCC -Wl,-Map,.\CortexM3\ARM_GCC_541\Debug/Design01.map -T Generated_Source\PSoC5\cm3gcc.ld -specs=nano.specs -u _printf_float -Wl,--gc-sections -g -ffunction-sections -Og -ffat-lto-objects -Wl,--end-group
+cyelftool.exe -C "D:\Downloads\Fix_shit\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf" --flash_row_size 256 --flash_size 262144 --flash_offset 0x00000000
 No ELF section .cychecksum found, creating one
 Application checksum calculated and stored in ELF section .cychecksum
 Checksum calculated and stored in ELF section .cymeta
-<<<<<<< HEAD
-cyelftool.exe -S "C:\Users\legoc\Documents\School\Senior Year\Senior Project\Senior Project Integrated\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
-Flash used: 42112 of 262144 bytes (16.1%).
+cyelftool.exe -S "D:\Downloads\Fix_shit\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
+Flash used: 42152 of 262144 bytes (16.1%).
 SRAM used: 10929 of 65536 bytes (16.7%). Stack: 2048 bytes. Heap: 4096 bytes.
---------------- Build Succeeded: 05/05/2019 23:38:36 ---------------
-=======
-cyelftool.exe -S "C:\Users\Jacob-Laptop\Documents\PSoC Creator\Senior Project Stuff Backup - Copy\Senior Project Integrated\Design01.cydsn\CortexM3\ARM_GCC_541\Debug\Design01.elf"
-Flash used: 41896 of 262144 bytes (16.0%).
-SRAM used: 10929 of 65536 bytes (16.7%). Stack: 2048 bytes. Heap: 4096 bytes.
---------------- Build Succeeded: 04/26/2019 14:19:00 ---------------
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+--------------- Build Succeeded: 05/06/2019 17:25:25 ---------------

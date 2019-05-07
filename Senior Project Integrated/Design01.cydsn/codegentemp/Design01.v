@@ -1,10 +1,6 @@
 // ======================================================================
 // Design01.v generated from TopDesign.cysch
-<<<<<<< HEAD
-// 05/05/2019 at 23:34
-=======
-// 04/26/2019 at 12:58
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+// 05/06/2019 at 17:02
 // This file is auto generated. ANY EDITS YOU MAKE MAY BE LOST WHEN THIS FILE IS REGENERATED!!!
 // ======================================================================
 
@@ -1162,6 +1158,8 @@ endmodule
 module top ;
 
     electrical  Net_254;
+    electrical  Net_251;
+    electrical  Net_236;
           wire  Net_228;
           wire  Net_231;
           wire  Net_226;
@@ -1182,8 +1180,12 @@ module top ;
           wire  Net_201;
           wire  Net_200;
     electrical  Net_199;
+    electrical  Net_280;
+    electrical  Net_196;
           wire [7:0] Net_195;
           wire  Net_194;
+    electrical  Net_235;
+    electrical  Net_191;
           wire [7:0] Net_190;
           wire  Net_189;
           wire  Net_18;
@@ -1196,12 +1198,6 @@ module top ;
           wire  Net_7;
           wire  Net_6;
           wire  Net_5;
-    electrical  Net_280;
-    electrical  Net_288;
-    electrical  Net_235;
-    electrical  Net_283;
-    electrical  Net_251;
-    electrical  Net_196;
     electrical  Net_258;
 
 	wire [0:0] tmpOE__MOSI_net;
@@ -1683,7 +1679,7 @@ module top ;
     VDAC8_v1_90_1 VDAC8_DS (
         .strobe(1'b0),
         .data(8'b00000000),
-        .vOut(Net_283));
+        .vOut(Net_191));
     defparam VDAC8_DS.Data_Source = 0;
     defparam VDAC8_DS.Initial_Value = 100;
     defparam VDAC8_DS.Strobe_Mode = 0;
@@ -2243,7 +2239,7 @@ module top ;
 		 (.oe(tmpOE__Pin_DS_P_net),
 		  .y({1'b0}),
 		  .fb({tmpFB_0__Pin_DS_P_net[0:0]}),
-		  .analog({Net_288}),
+		  .analog({Net_236}),
 		  .io({tmpIO_0__Pin_DS_P_net[0:0]}),
 		  .siovref(tmpSIOVREF__Pin_DS_P_net),
 		  .interrupt({tmpINTERRUPT_0__Pin_DS_P_net[0:0]}),
@@ -2413,10 +2409,10 @@ module top ;
     
     cy_psoc3_amux_v1_0 AMux_1(
         .muxin({
-            Net_288,
+            Net_236,
             Net_235
             }),
-        .vout(Net_283)
+        .vout(Net_191)
         );
     
     defparam AMux_1.muxin_width = 2;

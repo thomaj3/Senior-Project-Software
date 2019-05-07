@@ -78,7 +78,7 @@ void append_file(char * file_name, char * text)
 //This function is exclusive to the Curve Tracer
 //This will write the unit note for currents
 //it will also label Vgs/Ib, Ic/Id, and Vds/Vce 
-void write_header_info(char * file_name, unsigned char device_selection, unsigned char curve_num, double Vgs_double[])
+void write_header_info(char * file_name, unsigned char curve_num, double Vgs_double[])
 {
     spi_device_select(SD_SELECT);
     //file_name is the char array of the file with extension to be overwritten
@@ -97,7 +97,7 @@ void write_header_info(char * file_name, unsigned char device_selection, unsigne
     char temp_str[5];
     char beginning_message[] = "*Note all currents are in mA, all other units are SI*\n";
     char options_str[35];
-    if(!curve_num)
+    if(curve_num != 0)
     {
         create_file_with_text(file_name, beginning_message);
         sprintf(options_str,"Averages Per Point: %d\n",num_avg);
@@ -112,14 +112,14 @@ void write_header_info(char * file_name, unsigned char device_selection, unsigne
     //Id;Vds OR Ic;Vce
     append_file(file_name,temp_str);//print Vgs/Ib value to CSV
     append_file(file_name,"\n");//create new lne
-    append_file(file_name,y_label[device_selection/2]);
+    append_file(file_name,y_label[device_selection%2]);
     append_file(file_name,",");//comma seperation
-    append_file(file_name,x_label[device_selection/2]);
+    append_file(file_name,x_label[device_selection%2]);
     append_file(file_name,"\n");//create new line
     spi_device_select(SCREEN_SELECT);
 }
 
-void write_data(char * file_name, double Id, unsigned char Vds_code, unsigned char device_selection)
+void write_data(char * file_name, double Id, unsigned char Vds_code)
 {
     spi_device_select(SD_SELECT);
     char temp_str[10];  //temp string to be used to move doubles to

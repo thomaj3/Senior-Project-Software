@@ -14,6 +14,5 @@
 
     #define SCREEN_SELECT 1
     #define SD_SELECT 2
-
 #endif /* (FONT_H) */
 /* [] END OF FILE */

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 1
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 1
 
 
    1              		.syntax unified
@@ -62,11 +58,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
   28:Generated_Source\PSoC5/emFile_1_mosi0.c **** *
   29:Generated_Source\PSoC5/emFile_1_mosi0.c **** * Summary:
   30:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  Assign a new value to the digital port's data output register.  
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 2
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 2
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 2
 
 
   31:Generated_Source\PSoC5/emFile_1_mosi0.c **** *
@@ -126,11 +118,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
   52:Generated_Source\PSoC5/emFile_1_mosi0.c **** * 
   53:Generated_Source\PSoC5/emFile_1_mosi0.c **** * Parameters:  
   54:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  mode:  Change the pins to one of the following drive modes.
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 3
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 3
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 3
 
 
   55:Generated_Source\PSoC5/emFile_1_mosi0.c **** *
@@ -190,11 +178,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
   79:Generated_Source\PSoC5/emFile_1_mosi0.c **** * Summary:
   80:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  Read the current value on the pins of the Digital Port in right justified 
   81:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  form.
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 4
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 4
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 4
 
 
   82:Generated_Source\PSoC5/emFile_1_mosi0.c **** *
@@ -254,11 +238,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  110:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  Returns the current value assigned to the Digital Port's data output register
  111:Generated_Source\PSoC5/emFile_1_mosi0.c **** *  
  112:Generated_Source\PSoC5/emFile_1_mosi0.c **** *******************************************************************************/
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 5
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 5
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 5
 
 
  113:Generated_Source\PSoC5/emFile_1_mosi0.c **** uint8 emFile_1_mosi0_ReadDataReg(void) 
@@ -293,52 +273,48 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c 54000000 		.4byte	.LASF20
+ 145 000c 93000000 		.4byte	.LASF20
  146 0010 0C       		.byte	0xc
- 147 0011 F9010000 		.4byte	.LASF21
- 148 0015 13010000 		.4byte	.LASF22
+ 147 0011 BA010000 		.4byte	.LASF21
+ 148 0015 2C000000 		.4byte	.LASF22
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 2A020000 		.4byte	.LASF0
+ 155 0028 EB010000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
- 159 002f 46000000 		.4byte	.LASF1
+ 159 002f 85000000 		.4byte	.LASF1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 CD010000 		.4byte	.LASF2
+ 163 0036 8E010000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d F9000000 		.4byte	.LASF3
+ 167 003d 38010000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 6
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 6
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 6
 
 
  170 0043 05       		.byte	0x5
- 171 0044 21020000 		.4byte	.LASF4
+ 171 0044 E2010000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b E7000000 		.4byte	.LASF5
+ 175 004b 26010000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
- 179 0052 BA010000 		.4byte	.LASF6
+ 179 0052 7B010000 		.4byte	.LASF6
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 9E010000 		.4byte	.LASF7
+ 183 0059 5F010000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -346,33 +322,33 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  188 0064 02       		.uleb128 0x2
  189 0065 04       		.byte	0x4
  190 0066 07       		.byte	0x7
- 191 0067 91010000 		.4byte	.LASF8
+ 191 0067 52010000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c D7010000 		.4byte	.LASF12
+ 193 006c 98010000 		.4byte	.LASF12
  194 0070 02       		.byte	0x2
  195 0071 E401     		.2byte	0x1e4
  196 0073 2C000000 		.4byte	0x2c
  197 0077 02       		.uleb128 0x2
  198 0078 04       		.byte	0x4
  199 0079 04       		.byte	0x4
- 200 007a 2C000000 		.4byte	.LASF9
+ 200 007a 6B000000 		.4byte	.LASF9
  201 007e 02       		.uleb128 0x2
  202 007f 08       		.byte	0x8
  203 0080 04       		.byte	0x4
- 204 0081 0C010000 		.4byte	.LASF10
+ 204 0081 4B010000 		.4byte	.LASF10
  205 0085 02       		.uleb128 0x2
  206 0086 01       		.byte	0x1
  207 0087 08       		.byte	0x8
- 208 0088 C8010000 		.4byte	.LASF11
+ 208 0088 89010000 		.4byte	.LASF11
  209 008c 04       		.uleb128 0x4
- 210 008d E2000000 		.4byte	.LASF13
+ 210 008d 21010000 		.4byte	.LASF13
  211 0091 02       		.byte	0x2
  212 0092 8E02     		.2byte	0x28e
  213 0094 98000000 		.4byte	0x98
  214 0098 05       		.uleb128 0x5
  215 0099 6B000000 		.4byte	0x6b
  216 009d 06       		.uleb128 0x6
- 217 009e 36020000 		.4byte	.LASF14
+ 217 009e F7010000 		.4byte	.LASF14
  218 00a2 01       		.byte	0x1
  219 00a3 27       		.byte	0x27
  220 00a4 00000000 		.4byte	.LFB0
@@ -382,11 +358,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  224 00ae CF000000 		.4byte	0xcf
  225 00b2 07       		.uleb128 0x7
  226 00b3 1B000000 		.4byte	.LASF16
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 7
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 7
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 7
 
 
  227 00b7 01       		.byte	0x1
@@ -402,7 +374,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  237 00cd 53       		.byte	0x53
  238 00ce 00       		.byte	0
  239 00cf 06       		.uleb128 0x6
- 240 00d0 DD010000 		.4byte	.LASF15
+ 240 00d0 9E010000 		.4byte	.LASF15
  241 00d4 01       		.byte	0x1
  242 00d5 45       		.byte	0x45
  243 00d6 00000000 		.4byte	.LFB1
@@ -411,14 +383,14 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  246 00df 9C       		.byte	0x9c
  247 00e0 F4000000 		.4byte	0xf4
  248 00e4 07       		.uleb128 0x7
- 249 00e5 B5010000 		.4byte	.LASF17
+ 249 00e5 76010000 		.4byte	.LASF17
  250 00e9 01       		.byte	0x1
  251 00ea 45       		.byte	0x45
  252 00eb 6B000000 		.4byte	0x6b
  253 00ef 21000000 		.4byte	.LLST1
  254 00f3 00       		.byte	0
  255 00f4 09       		.uleb128 0x9
- 256 00f5 32000000 		.4byte	.LASF18
+ 256 00f5 71000000 		.4byte	.LASF18
  257 00f9 01       		.byte	0x1
  258 00fa 5D       		.byte	0x5d
  259 00fb 6B000000 		.4byte	0x6b
@@ -446,11 +418,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  281 0005 13       		.uleb128 0x13
  282 0006 0B       		.uleb128 0xb
  283 0007 03       		.uleb128 0x3
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 8
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 8
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 8
 
 
  284 0008 0E       		.uleb128 0xe
@@ -510,11 +478,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  338 003e 2E       		.uleb128 0x2e
  339 003f 01       		.byte	0x1
  340 0040 3F       		.uleb128 0x3f
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 9
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 9
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 9
 
 
  341 0041 19       		.uleb128 0x19
@@ -574,11 +538,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  395 0078 3F       		.uleb128 0x3f
  396 0079 19       		.uleb128 0x19
  397 007a 03       		.uleb128 0x3
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 10
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 10
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 10
 
 
  398 007b 0E       		.uleb128 0xe
@@ -638,11 +598,7 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  452 000a 04       		.byte	0x4
  453 000b 00       		.byte	0
  454 000c 0000     		.2byte	0
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 11
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 11
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 11
 
 
  455 000e 0000     		.2byte	0
@@ -688,178 +644,123 @@ ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 1
  486 0021 73746174 		.ascii	"staticBits\000"
  486      69634269 
  486      747300
- 487              	.LASF9:
- 488 002c 666C6F61 		.ascii	"float\000"
- 488      7400
- 489              	.LASF18:
- 490 0032 656D4669 		.ascii	"emFile_1_mosi0_Read\000"
- 490      6C655F31 
- 490      5F6D6F73 
- 490      69305F52 
- 490      65616400 
- 491              	.LASF1:
- 492 0046 756E7369 		.ascii	"unsigned char\000"
- 492      676E6564 
- 492      20636861 
- 492      7200
-<<<<<<< HEAD
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 12
-=======
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 12
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ 487              	.LASF22:
+ 488 002c 443A5C44 		.ascii	"D:\\Downloads\\Fix_shit\\Senior Project Integrated\\"
+ 488      6F776E6C 
+ 488      6F616473 
+ 488      5C466978 
+ 488      5F736869 
+ 489 005c 44657369 		.ascii	"Design01.cydsn\000"
+ 489      676E3031 
+ 489      2E637964 
+ 489      736E00
+ 490              	.LASF9:
+ 491 006b 666C6F61 		.ascii	"float\000"
+ 491      7400
+ 492              	.LASF18:
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 12
 
 
- 493              	.LASF20:
- 494 0054 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
- 494      43313120 
- 494      352E342E 
- 494      31203230 
- 494      31363036 
- 495 0087 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
- 495      20726576 
- 495      6973696F 
- 495      6E203233 
- 495      37373135 
- 496 00ba 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 496      66756E63 
- 496      74696F6E 
- 496      2D736563 
- 496      74696F6E 
-<<<<<<< HEAD
- 497              	.LASF13:
- 498 00e2 72656738 		.ascii	"reg8\000"
- 498      00
- 499              	.LASF5:
- 500 00e7 6C6F6E67 		.ascii	"long unsigned int\000"
- 500      20756E73 
- 500      69676E65 
- 500      6420696E 
- 500      7400
- 501              	.LASF3:
- 502 00f9 73686F72 		.ascii	"short unsigned int\000"
- 502      7420756E 
- 502      7369676E 
- 502      65642069 
- 502      6E7400
- 503              	.LASF10:
- 504 010c 646F7562 		.ascii	"double\000"
- 504      6C6500
- 505              	.LASF22:
- 506 0113 433A5C55 		.ascii	"C:\\Users\\legoc\\Documents\\School\\Senior Year\\S"
- 506      73657273 
- 506      5C6C6567 
- 506      6F635C44 
- 506      6F63756D 
- 507 0140 656E696F 		.ascii	"enior Project\\Senior Project Integrated\\Senior Pr"
- 507      72205072 
- 507      6F6A6563 
- 507      745C5365 
- 507      6E696F72 
- 508 0171 6F6A6563 		.ascii	"oject Integrated\\Design01.cydsn\000"
- 508      7420496E 
- 508      74656772 
- 508      61746564 
- 508      5C446573 
- 509              	.LASF8:
- 510 0191 756E7369 		.ascii	"unsigned int\000"
- 510      676E6564 
- 510      20696E74 
- 510      00
- 511              	.LASF7:
- 512 019e 6C6F6E67 		.ascii	"long long unsigned int\000"
-ARM GAS  C:\Users\legoc\AppData\Local\Temp\ccJPjtFk.s 			page 13
-=======
- 497              	.LASF22:
- 498 00e2 433A5C55 		.ascii	"C:\\Users\\Jacob-Laptop\\Documents\\PSoC Creator\\S"
- 498      73657273 
- 498      5C4A6163 
- 498      6F622D4C 
- 498      6170746F 
- 499 0110 656E696F 		.ascii	"enior Project Stuff Backup - Copy\\Senior Project I"
- 499      72205072 
- 499      6F6A6563 
- 499      74205374 
- 499      75666620 
- 500 0142 6E746567 		.ascii	"ntegrated\\Design01.cydsn\000"
- 500      72617465 
- 500      645C4465 
- 500      7369676E 
- 500      30312E63 
- 501              	.LASF5:
- 502 015b 6C6F6E67 		.ascii	"long unsigned int\000"
- 502      20756E73 
- 502      69676E65 
- 502      6420696E 
- 502      7400
- 503              	.LASF3:
- 504 016d 73686F72 		.ascii	"short unsigned int\000"
- 504      7420756E 
- 504      7369676E 
- 504      65642069 
- 504      6E7400
- 505              	.LASF10:
- 506 0180 646F7562 		.ascii	"double\000"
- 506      6C6500
- 507              	.LASF8:
- 508 0187 756E7369 		.ascii	"unsigned int\000"
- 508      676E6564 
- 508      20696E74 
- 508      00
- 509              	.LASF7:
- 510 0194 6C6F6E67 		.ascii	"long long unsigned int\000"
- 510      206C6F6E 
- 510      6720756E 
- 510      7369676E 
-ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc3Rdrab.s 			page 13
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+ 493 0071 656D4669 		.ascii	"emFile_1_mosi0_Read\000"
+ 493      6C655F31 
+ 493      5F6D6F73 
+ 493      69305F52 
+ 493      65616400 
+ 494              	.LASF1:
+ 495 0085 756E7369 		.ascii	"unsigned char\000"
+ 495      676E6564 
+ 495      20636861 
+ 495      7200
+ 496              	.LASF20:
+ 497 0093 474E5520 		.ascii	"GNU C11 5.4.1 20160609 (release) [ARM/embedded-5-br"
+ 497      43313120 
+ 497      352E342E 
+ 497      31203230 
+ 497      31363036 
+ 498 00c6 616E6368 		.ascii	"anch revision 237715] -mcpu=cortex-m3 -mthumb -g -O"
+ 498      20726576 
+ 498      6973696F 
+ 498      6E203233 
+ 498      37373135 
+ 499 00f9 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 499      66756E63 
+ 499      74696F6E 
+ 499      2D736563 
+ 499      74696F6E 
+ 500              	.LASF13:
+ 501 0121 72656738 		.ascii	"reg8\000"
+ 501      00
+ 502              	.LASF5:
+ 503 0126 6C6F6E67 		.ascii	"long unsigned int\000"
+ 503      20756E73 
+ 503      69676E65 
+ 503      6420696E 
+ 503      7400
+ 504              	.LASF3:
+ 505 0138 73686F72 		.ascii	"short unsigned int\000"
+ 505      7420756E 
+ 505      7369676E 
+ 505      65642069 
+ 505      6E7400
+ 506              	.LASF10:
+ 507 014b 646F7562 		.ascii	"double\000"
+ 507      6C6500
+ 508              	.LASF8:
+ 509 0152 756E7369 		.ascii	"unsigned int\000"
+ 509      676E6564 
+ 509      20696E74 
+ 509      00
+ 510              	.LASF7:
+ 511 015f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 511      206C6F6E 
+ 511      6720756E 
+ 511      7369676E 
+ 511      65642069 
+ 512              	.LASF17:
+ 513 0176 6D6F6465 		.ascii	"mode\000"
+ARM GAS  C:\Users\JACOB-~1\AppData\Local\Temp\cc2V5vNj.s 			page 13
 
 
- 512      206C6F6E 
- 512      6720756E 
- 512      7369676E 
- 512      65642069 
- 513              	.LASF17:
- 514 01b5 6D6F6465 		.ascii	"mode\000"
- 514      00
- 515              	.LASF6:
- 516 01ba 6C6F6E67 		.ascii	"long long int\000"
- 516      206C6F6E 
- 516      6720696E 
- 516      7400
- 517              	.LASF11:
- 518 01c8 63686172 		.ascii	"char\000"
- 518      00
- 519              	.LASF2:
- 520 01cd 73686F72 		.ascii	"short int\000"
- 520      7420696E 
- 520      7400
- 521              	.LASF12:
- 522 01d7 75696E74 		.ascii	"uint8\000"
- 522      3800
- 523              	.LASF15:
- 524 01dd 656D4669 		.ascii	"emFile_1_mosi0_SetDriveMode\000"
- 524      6C655F31 
- 524      5F6D6F73 
- 524      69305F53 
- 524      65744472 
- 525              	.LASF21:
- 526 01f9 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_mosi0.c\000"
- 526      72617465 
- 526      645F536F 
- 526      75726365 
- 526      5C50536F 
- 527              	.LASF4:
- 528 0221 6C6F6E67 		.ascii	"long int\000"
- 528      20696E74 
- 528      00
- 529              	.LASF0:
- 530 022a 7369676E 		.ascii	"signed char\000"
- 530      65642063 
- 530      68617200 
- 531              	.LASF14:
- 532 0236 656D4669 		.ascii	"emFile_1_mosi0_Write\000"
- 532      6C655F31 
- 532      5F6D6F73 
- 532      69305F57 
- 532      72697465 
- 533              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran
+ 513      00
+ 514              	.LASF6:
+ 515 017b 6C6F6E67 		.ascii	"long long int\000"
+ 515      206C6F6E 
+ 515      6720696E 
+ 515      7400
+ 516              	.LASF11:
+ 517 0189 63686172 		.ascii	"char\000"
+ 517      00
+ 518              	.LASF2:
+ 519 018e 73686F72 		.ascii	"short int\000"
+ 519      7420696E 
+ 519      7400
+ 520              	.LASF12:
+ 521 0198 75696E74 		.ascii	"uint8\000"
+ 521      3800
+ 522              	.LASF15:
+ 523 019e 656D4669 		.ascii	"emFile_1_mosi0_SetDriveMode\000"
+ 523      6C655F31 
+ 523      5F6D6F73 
+ 523      69305F53 
+ 523      65744472 
+ 524              	.LASF21:
+ 525 01ba 47656E65 		.ascii	"Generated_Source\\PSoC5\\emFile_1_mosi0.c\000"
+ 525      72617465 
+ 525      645F536F 
+ 525      75726365 
+ 525      5C50536F 
+ 526              	.LASF4:
+ 527 01e2 6C6F6E67 		.ascii	"long int\000"
+ 527      20696E74 
+ 527      00
+ 528              	.LASF0:
+ 529 01eb 7369676E 		.ascii	"signed char\000"
+ 529      65642063 
+ 529      68617200 
+ 530              	.LASF14:
+ 531 01f7 656D4669 		.ascii	"emFile_1_mosi0_Write\000"
+ 531      6C655F31 
+ 531      5F6D6F73 
+ 531      69305F57 
+ 531      72697465 
+ 532              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 5.4.1 20160609 (release) [ARM/embedded-5-bran

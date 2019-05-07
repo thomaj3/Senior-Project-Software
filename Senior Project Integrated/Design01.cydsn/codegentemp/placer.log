@@ -6,11 +6,7 @@
 
 #Build Date:         Dec  5 2017 15:35:27
 
-<<<<<<< HEAD
-#File Generated:     May 5 2019 23:34:13
-=======
-#File Generated:     Apr 26 2019 12:58:35
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+#File Generated:     May 6 2019 17:02:11
 
 #Purpose:            
 
@@ -120,11 +116,7 @@ Clock: emFile_1_Clock_1     | Frequency:  52.5 MHz | Target:  24.0 MHz
 ======================================================================
                      End of Clock Summary
 ######################################################################
-<<<<<<< HEAD
-D2088: Phase 7, elapsed time : 0.2 (sec)
-=======
-D2088: Phase 7, elapsed time : 0.3 (sec)
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+D2088: Phase 7, elapsed time : 0.4 (sec)
 
 Final Design Statistics
     Number of Combinational MCs 	:	12
@@ -164,107 +156,7 @@ Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
 Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
 Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
 Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-<<<<<<< HEAD
 Clock: emFile_1_Clock_1     | Frequency:  55.7 MHz | Target:  26.3 MHz
-=======
-Clock: emFile_1_Clock_1     | Frequency:  54.5 MHz | Target:  26.3 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-
-Phase 6
-
-######################################################################
-Placement Timing Summary
-
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
-
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 10
-Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:   1.6 MHz
-Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.6 MHz
-Clock: Clock                | Frequency:  65.0 MHz | Target:  26.3 MHz
-Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
-Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: emFile_1_Clock_1     | Frequency:  49.7 MHz | Target:  26.3 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-
-D2088: Phase 6, elapsed time : 0.0 (sec)
-
-Phase 7
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 10
-Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:   1.6 MHz
-Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.6 MHz
-Clock: Clock                | Frequency:  65.0 MHz | Target:  28.6 MHz
-Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
-Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: emFile_1_Clock_1     | Frequency:  52.5 MHz | Target:  28.6 MHz
-
-======================================================================
-                     End of Clock Summary
-######################################################################
-D2088: Phase 7, elapsed time : 0.4 (sec)
-
-Final Design Statistics
-    Number of Combinational MCs 	:	12
-    Number of Sequential MCs    	:	20
-    Number of DPs               	:	2
-    Number of Controls          	:	2
-    Number of Status            	:	4
-    Number of SyncCells         	:	0
-    Number of count7cells       	:	2
-    Number of IOs       	:	19
-
-Device Utilization Summary
-    Macrocells                  :	32/192
-    IOs                         :	19/72
-
-
-
-######################################################################
-Placement Timing Summary
-
-The timing summary is based on estimated routing delays after
-placement. For final timing report, please carry out the timing
-analysis after routing.
-======================================================================
-
-
-######################################################################
-                     Clock Summary 
-======================================================================
-Number of clocks: 10
-Clock: ADC_SAR_1_theACLK    | Frequency: N/A       | Target:   1.6 MHz
-Clock: ADC_SAR_1_theACLK(fixed-function) | Frequency: N/A       | Target:   1.6 MHz
-Clock: Clock                | Frequency:  65.0 MHz | Target:  31.3 MHz
-Clock: CyBUS_CLK            | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyBUS_CLK(fixed-function) | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyILO                | Frequency: N/A       | Target:   0.0 MHz
-Clock: CyIMO                | Frequency: N/A       | Target:   3.0 MHz
-Clock: CyMASTER_CLK         | Frequency: N/A       | Target:  24.0 MHz
-Clock: CyPLL_OUT            | Frequency: N/A       | Target:  24.0 MHz
-Clock: emFile_1_Clock_1     | Frequency:  54.3 MHz | Target:  31.3 MHz
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
 
 ======================================================================
                      End of Clock Summary
@@ -275,9 +167,5 @@ D2088: Phase 8, elapsed time : 0.0 (sec)
 
 D2054: Placement of the design completed successfully
 
-<<<<<<< HEAD
-I2076: Total run-time: 0.7 sec.
-=======
-I2076: Total run-time: 1.8 sec.
->>>>>>> 2d7ecf86914b76bbbaff7e814c9baff7add3da2a
+I2076: Total run-time: 1.5 sec.
 
