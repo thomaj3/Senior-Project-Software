@@ -9,13 +9,18 @@
 #include "uifunctions.h"
 #include "project.h"
 
+//*************************************spi_device_select***************************************//
+//                                                                                             //
+//                                                                                             //
+//              Sets the SD and SPIM pins so they do not interfere with each other             //
+//                                                                                             //
+//                                                                                             //
+//*************************************spi_device_select***************************************//
 void spi_device_select(int selection)
 {
-    
     if(selection == SCREEN_SELECT)
     {
         emFile_1_mosi0_SetDriveMode(emFile_1_mosi0_DM_DIG_HIZ);
-        //emFile_1_miso0_SetDriveMode(emFile_1_miso0_DM_DIG_HIZ);
         emFile_1_sclk0_SetDriveMode(emFile_1_sclk0_DM_DIG_HIZ);
         
         
@@ -26,7 +31,6 @@ void spi_device_select(int selection)
     } else if (selection == SD_SELECT)
     {
         emFile_1_mosi0_SetDriveMode(emFile_1_mosi0_DM_STRONG);
-        //emFile_1_miso0_SetDriveMode(emFile_1_miso0_DM_DIG_HIZ);
         emFile_1_sclk0_SetDriveMode(emFile_1_sclk0_DM_STRONG);
         
         MOSI_SetDriveMode(MOSI_DM_DIG_HIZ);
@@ -36,24 +40,13 @@ void spi_device_select(int selection)
 }
     
 
-//This is the backend for implementing CSV support for Curve Tracer
-
-//To be Implemented
-
-//unsigned int move_file_with_same_name(char file_name[], unsigned int i)
-//{
-//    char file_name_ext[5];
-//    char file_name_title[strlen(file_name)+1];
-//    char new_file_name[strlen(file_name)+2];
-//    
-//    strcpy(file_name_ext,&file_name[strlen(file_name)-4]);
-//    strncpy(file_name_title
-//    //determine if file exists
-//    strcat(new_file_name
-//    FS_Rename(file_name,
-//}
-
-//used to create or overwrite a file
+//****************************************create_file_with_text*********************************//
+//                                                                                              //
+//                                                                                              //
+//              creates a fle or overwrites a text file with a beginning message                //
+//                                                                                              //
+//                                                                                              //
+//****************************************create_file_with_text*********************************//
 void create_file_with_text(char * file_name, char * text)
 {
     //char * file_name name + extension of file to be overwritten
@@ -65,7 +58,13 @@ void create_file_with_text(char * file_name, char * text)
     FS_FClose(pFile);
 }
 
-//used to append a file
+//****************************************append_file*******************************************//
+//                                                                                              //
+//                                                                                              //
+//                              appends a text file with text                                   //
+//                                                                                              //
+//                                                                                              //
+//****************************************append_file*******************************************//
 void append_file(char * file_name, char * text)
 {
     //char * file_name name + extension of file to be appended 
@@ -75,9 +74,14 @@ void append_file(char * file_name, char * text)
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
 }
-//This function is exclusive to the Curve Tracer
-//This will write the unit note for currents
-//it will also label Vgs/Ib, Ic/Id, and Vds/Vce 
+
+//*************************************write_header_info****************************************//
+//                                                                                              //
+//                      This function is exclusive to the Curve Tracer                          //
+//                      This will write the unit note for currents and settings                 //
+//                      It will also label Vgs/Ib, Ic/Id, and Vds/Vce                           //
+//                                                                                              //
+//*************************************write_header_info****************************************//
 void write_header_info(char * file_name, unsigned char curve_num, double Vgs_double[])
 {
     spi_device_select(SD_SELECT);
@@ -106,7 +110,7 @@ void write_header_info(char * file_name, unsigned char curve_num, double Vgs_dou
         append_file(file_name,options_str);
     }
     //Vgs = x.xxx OR Ib = x.xxx
-    append_file(file_name,legend_label[device_selection/2]);
+    append_file(file_name,legend_label[device_selection%2]);
     append_file(file_name,"=");
     sprintf(temp_str,"%.3f",Vgs_double[curve_num]); //write Vgs/Ib double to string
     //Id;Vds OR Ic;Vce
@@ -119,6 +123,13 @@ void write_header_info(char * file_name, unsigned char curve_num, double Vgs_dou
     spi_device_select(SCREEN_SELECT);
 }
 
+//****************************************write_data********************************************//
+//                                                                                              //
+//                                                                                              //
+//                              writes the curve tracer data to SD                              //
+//                                                                                              //
+//                                                                                              //
+//****************************************write_data********************************************//
 void write_data(char * file_name, double Id, unsigned char Vds_code)
 {
     spi_device_select(SD_SELECT);

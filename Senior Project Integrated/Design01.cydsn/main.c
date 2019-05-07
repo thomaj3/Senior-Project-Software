@@ -44,21 +44,21 @@ void set_transistor_test_type(void)
 //Conducts a test for a singular Vds and Vgs
 double single_test(unsigned char Vds, unsigned char Vgs)
 {
-    ADC_SAR_1_Wakeup();
+    
     double Output;
-    double Output_avg;
-    int i;
-    VDAC8_DS_SetValue(Vds);
-    VDAC8_GS_SetValue(Vgs);
-    CyDelay(SETTLING_WAIT_TIME);
-    ADC_SAR_1_StartConvert();
-    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-	//waiting until conversion is over
-    ADC_SAR_1_StopConvert();
-    Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
-    ADC_SAR_1_Sleep();
+    
+    ADC_SAR_1_Wakeup();                                                     //wakeup from ADC reset
+    VDAC8_DS_SetValue(Vds);                                                 //Set Vg
+    VDAC8_GS_SetValue(Vgs);                                                 //Set Vd
+    CyDelay(SETTLING_WAIT_TIME);                                            //wait for circuit to settle
+    ADC_SAR_1_StartConvert();                                               //Trigger ADC conversion
+    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);                   //wait until the end of conversion
+    ADC_SAR_1_StopConvert();                                                //stop conversion
+    Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN); //ID calculation from Id code
+    ADC_SAR_1_Sleep();                                                      //set ADC to sleep for reset
     if(cooldown_time)
     {
+        //if cooldown is enabled VDACs will turn off and let DUT cool for cooldown_time * duty_cycle
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
         CyDelay(cooldown_time*SETTLING_WAIT_TIME);
@@ -70,15 +70,14 @@ double single_test_preset_vds(unsigned char Vgs)
 {
     double Output;
     
-    ADC_SAR_1_Wakeup();
-    VDAC8_GS_SetValue(Vgs);
-    CyDelay(SETTLING_WAIT_TIME);
-    ADC_SAR_1_StartConvert();
-    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);
-	//waiting until conversion is over
-    ADC_SAR_1_StopConvert();
-    Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN);
-    ADC_SAR_1_Sleep();
+    ADC_SAR_1_Wakeup();                                                     //wakeup from ADC reset
+    VDAC8_GS_SetValue(Vgs);                                                 //Set Vd
+    CyDelay(SETTLING_WAIT_TIME);                                            //wait for circuit to settle
+    ADC_SAR_1_StartConvert();                                               //Trigger ADC conversion
+    ADC_SAR_1_IsEndConversion(ADC_SAR_1_WAIT_FOR_RESULT);                   //wait until the end of conversion
+    ADC_SAR_1_StopConvert();                                                //stop conversion
+    Output = (ADC_SAR_1_CountsTo_mVolts(ADC_SAR_1_GetResult16())/ADC_GAIN); //ID calculation from Id code
+    ADC_SAR_1_Sleep();                                                      //set ADC to sleep for reset
     return Output;
 }
     
@@ -140,20 +139,19 @@ unsigned int vgs_max_id_find(unsigned char Vth, unsigned char Vds_max, unsigned 
 //pixels for line segments and the Vgs test points
 int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_double[curve_nums], int SD_files_written)
 {
-    int i,j,k;
-    double Id;
-    double Id_avg;
-    char print_string[20];
-    char file_name[11]="data";
+    int i,j,k;                              //loop iterations
+    double Id_avg;                          //exact Id_value averaged
+    char print_string[20];                  //dummy string to be used
+    char file_name[11]="data";              //beginning of file name to be appended
     char SD_files_written_str[3];
-    int y_pixel_prev, x_pixel_prev;
-    int y_pixel, x_pixel;
+    int y_pixel_prev, x_pixel_prev;         //the previous pixel calculation to be used for line drawing
+    int y_pixel, x_pixel;                   //the current pixel calcuation to be used for line drawing
     int curve_color[CURVE_NUM_MAX] = {BLUE, GREEN, RED, ORANGE, CYAN, PINK};
     
     sprintf(SD_files_written_str,"%d",SD_files_written);
     strcat(file_name,SD_files_written_str);
     strcat(file_name,".txt");
-    
+    //create SD file name
     for(i = 0; i < curve_nums; i++)
     {
         if(write_sd==1)
@@ -166,6 +164,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
         {
             if(/*!screen_state*/ screen_state != PLOT_SCREEN)
             {
+                //break from test in case of exit
                 return 0;   
             }
             Id_avg = 0.0;//reset Id Value
@@ -185,7 +184,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
             {
                 write_data(file_name,Id_avg,j);//update CSV File with new Id/Ic
             }
-            //creating pixel coordinates via rations (Id/Id_max == y_pixel/y_resolution)
+            //creating pixel coordinates via ratios (Id/Id_max == y_pixel/y_resolution)
             y_pixel = (int) ((Id_avg*Y_RES*0.8)/(y_max));
             x_pixel = (int) (VDAC_D_C_MAX * j)/vds_high_vdac_code;
             if (j > 0) //only draw a line if 2 points have been tested already
@@ -210,6 +209,7 @@ int run_test(int y_max, unsigned char Vgs_test_points[curve_nums],double Vgs_dou
                 sprintf(print_string,"%6.3f MA",Vgs_double[i]);
                 break;
         }
+        //labeling of Vgs or Ib at the end of the curve
         draw_string(x_pixel_prev+37,y_pixel_prev+10,WHITE,print_string,1);
     }
 }
@@ -233,7 +233,6 @@ int main(void)
     CyDelay(100);
     
     
-    //emFile_1_SPI0_Stop();
     // Calls start screen
     StartScreen();
     
@@ -259,20 +258,12 @@ int main(void)
     
     FS_Init();
     
-    int return_code;    //Going to be used for error displays
+    int i;                                              //used for for loop iterations
     
-    int i;  //used for for loop iterations
-    int j;  //used for for loop iterations
-    int k;  //used for for loop iterations
+    double y_max_mA;                                    //The highest plottable Id in mA    
     
-    double y_max_mA;                        //The highest plottable Id in mA    
-    
-    unsigned int Vth;      //VDAC code for the threshold voltage
-    unsigned int Vgs_max;  //VDAC code for the the maximum Vgs that produces < 20 mA
-    int x_pixel;
-    int y_pixel;
-    int x_pixel_prev;
-    int y_pixel_prev;
+    unsigned int Vth;                                   //VDAC code for the threshold voltage
+    unsigned int Vgs_max;                               //VDAC code for the the maximum Vgs that produces < 20 mA
     int y_max_calc;
     
     
@@ -282,13 +273,16 @@ int main(void)
     double Vgs_points_double[CURVE_NUM_MAX];            //The actual Vgs output by DAC
     FS_FILE * pFile;
     int debug;
-    int SD_files_written = 0;
-    int device_selection_prev = -1;
+    int SD_files_written = 0;                           //The amount of SD files written, used to name SD files
+    int device_selection_prev = -1;                     //Used in keeping track of how many screens
     
     //global variable intializations
-    device_selection = -1;
+    device_selection = -1;                              //initalizing device_selection for infinite while loops
     
     spi_device_select(SD_SELECT);
+    
+    //SD DEBUG START
+    
     debug = FS_MountEx("PSOC",FS_MOUNT_RW);
 //    if (debug <= 0)
 //    {
@@ -297,7 +291,7 @@ int main(void)
 //        CyDelay(2000);
 //        spi_device_select(SD_SELECT);
 //    }
-    pFile = FS_FOpen("test.txt", "w");
+    pFile = FS_FOpen("test.txt", "w+");
 //    if (pFile == 0)
 //    {
 //        char no_open[] = "NO OPEN";
@@ -309,14 +303,20 @@ int main(void)
     const char text[] = "Can Write";
     FS_Write(pFile,text,strlen(text));
     FS_FClose(pFile);
+    const char text2[] = "CAN WRITE";
+    pFile = FS_FOpen("text.txt","w+");
+    FS_Write(pFile,text2,strlen(text2));
+    FS_FClose(pFile);
+    
     spi_device_select(SCREEN_SELECT);
+    //SD DEBUG END
     for(;;)
     { 
         if (device_selection != -1)
         {
-            device_selection_prev = device_selection;
+            device_selection_prev = device_selection; //remember the previous screen
         }
-        if(device_selection == -1)
+        if(device_selection == -1) //draw the data loss screen and wait for touch input
         {
             draw_warning_screen();
         }
@@ -326,10 +326,10 @@ int main(void)
         }
         for(;;)
         {
-            if(screen_state == 2)
+            if(screen_state == 2) //wait until device and options have been selected
             {
-                break;
-            } else if (screen_state == DEBUG_SCREEN)
+                break; 
+            } else if (screen_state == DEBUG_SCREEN) //PIZZA TIME
             {
                 draw_debug_screen(0,0);
                 draw_choose_screen();
@@ -337,50 +337,54 @@ int main(void)
         }
         if(write_sd)
         {
-            SD_files_written++;
+            SD_files_written++; 
+            //if SD writing is enabled increment the SD_files_written for file naming
         }
-        set_transistor_test_type();
+        set_transistor_test_type();//MUX selection for either N or P type test
         if(device_selection < 2)
         {
             
-            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT);
+            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_N_1_VOLT); //find Vt under |Vds| = 1 V
         }
         else
         {
-            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT);
+            Vth = vgs_th_find(VDAC_G_B_MAX,VDAC_P_1_VOLT); // find Vt under |Vds| =  1V
         }
         if (Vth == 0)
         {
-            fill_screen(BLACK);
-            draw_string(100,150,"NO VTH FOUND",WHITE);
-            CyDelay(200);
+            draw_button(0,0,320,240,BLACK,WHITE,"NO VT FOUND CHECK POWER SUPPLIES");
+            CyDelay(1000);
+            //display warning screen for no Vt found
         }
             
-        Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);
-        Vgs_step = (Vgs_max - Vth)/(curve_nums-1); //Creating the step size for linearlly spaced
+        Vgs_max = vgs_max_id_find(Vth,VDAC_D_C_MAX,220);    //find the max Vgs with current draw <= 20 mA
+        Vgs_step = (Vgs_max - Vth)/(curve_nums-1);          //Create step for linearly sapce [Vt,Vgs_max]
         Vgs_test_points[0] = Vth;
         switch(device_selection)
         {
+            //creating equivalent double format Vgs or Ib for labeling 
             case 0:
                 Vgs_points_double[0] = Vth*4.096/256.0;
+                //Vgs_out = Vdac_code*4.096/256;
                 break;
             case 1:
                 Vgs_points_double[0] = (Vth*4.096/256.0 - 0.7)/26.0;
                 break;
             case 2:
-                Vgs_points_double[0] = -15 + Vth*4.096/256.0;
+                Vgs_points_double[0] = -12 + Vth*4.096/256.0;
                 break;
             case 3:
-                Vgs_points_double[0] = (-15 + (Vth*4.096/256.0))/26.0;
-
+                Vgs_points_double[0] = (-12 + (Vth*4.096/256.0))/26.0;
                 break;
         }
         //Creating Vgs test point 
         for (i=1; i < curve_nums; i++)
         {
             Vgs_test_points[i] = (Vgs_test_points[i-1] + Vgs_step);
+            //creating VDAC test points from stepping increment
             switch(device_selection)
             {
+                //creating equivalent double format Vgs or Ib for labeling
                 case 0:
                     Vgs_points_double[i] = Vgs_test_points[i]*4.096/256.0;
                     break;
@@ -398,10 +402,10 @@ int main(void)
         }
        
         y_max_mA = 0.0;
-        if(cooldown_time) 
         //calibrates the plotting of the grid
         //if there is no cooldown enabled it will force the
         //scale due to unpredictable curves because of heat
+        if(cooldown_time) 
         {
             for (i = 0; i <num_avg;i++)
             {
@@ -414,12 +418,15 @@ int main(void)
         }
         y_max_calc = (int) (y_max_mA);
         y_max_calc = (y_max_calc - (y_max_calc % 5) + 5);
+        //creates a y_max used for calcuation that rounds up to nearest multiple of 5
         draw_coordinates(y_max_calc);
+        //draw the coordinates based on the y_max_calc
         run_test(y_max_calc,Vgs_test_points,Vgs_points_double,SD_files_written);
+        //run curve tracer test
         
         VDAC8_DS_SetValue(0);
         VDAC8_GS_SetValue(0);
-        //fillScreen(WHITE);
+        //turn off VDACs
 
         for(;;)
         {
